@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.11.0',
+  version: '0.12.0',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -72,41 +72,28 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
 
     button.setAttribute('aria-expanded', 'false');
     let buttonMorph = null;
+    let buttonMorphTimers = [];
     button.addEventListener('click', () => {
       buttonMorph?.cancel();
+      buttonMorphTimers.forEach(clearTimeout);
+      buttonMorphTimers = [];
+
       const rgb = getComputedStyle(button).getPropertyValue('--corner-rgb').trim();
-      buttonMorph = button.animate([
-        {
-          transform: 'scale(1)',
-          borderRadius: '0%',
-          backgroundColor: 'rgba(' + rgb + ', .68)',
-          filter: 'brightness(1)'
-        },
-        {
-          transform: 'scale(.88)',
-          borderRadius: '24%',
-          backgroundColor: 'rgba(' + rgb + ', .28)',
-          filter: 'brightness(.48)',
-          offset: .34
-        },
-        {
-          transform: 'scale(1.06)',
-          borderRadius: '8%',
-          backgroundColor: 'rgba(' + rgb + ', 1)',
-          filter: 'brightness(1.65)',
-          offset: .72
-        },
-        {
-          transform: 'scale(1)',
-          borderRadius: '0%',
-          backgroundColor: 'rgba(' + rgb + ', .68)',
-          filter: 'brightness(1)'
-        }
-      ], {
-        duration: 720,
-        easing: 'cubic-bezier(.16,1,.3,1)',
-        iterations: 1
-      });
+      const paint = (background, brightness, scale) => {
+        button.style.backgroundColor = background;
+        button.style.filter = 'brightness(' + brightness + ')';
+        button.style.transform = 'scale(' + scale + ')';
+      };
+
+      paint('rgba(' + rgb + ', .32)', .52, .90);
+      buttonMorphTimers.push(setTimeout(() => {
+        paint('rgba(' + rgb + ', 1)', 1.65, 1.06);
+      }, 260));
+      buttonMorphTimers.push(setTimeout(() => {
+        button.style.backgroundColor = '';
+        button.style.filter = '';
+        button.style.transform = '';
+      }, 620));
 
       const current = [...menus.entries()].find(([, candidate]) => candidate.classList.contains('open'));
       const same = current && current[0] === button.dataset.position;
