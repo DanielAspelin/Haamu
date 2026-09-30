@@ -32,6 +32,7 @@ globalThis.HaamuLayout = HaamuLayout;
 function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
   if (!root) throw new Error('Haamu visual root not found.');
 
+  // Phase 1 is deliberately geometry-only: remove every prior projection.
   root.replaceChildren();
   const shell = document.createElement('main');
   shell.className = 'haamu-interface';

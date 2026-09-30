@@ -1,8 +1,10 @@
 {
   "schema": "haamu.visual-layout",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "state": "experimental",
-  "origin": "96e0c05b25688abfc28978a68d6779f0c50b4a99",
+  "origin": "c24890ca1cfeb0a56188421e8000a39be3c34605",
+  "phase": "geometry-only",
+  "visibleText": false,
   "geometry": {
     "center": {
       "content": "empty"
@@ -10,35 +12,45 @@
     "corners": {
       "top-left": {
         "control": "start",
-        "label": false,
+        "visibleLabel": false,
         "color": "neon-green"
       },
       "top-right": {
         "control": "start",
-        "label": false,
+        "visibleLabel": false,
         "color": "lemon-yellow"
       },
       "bottom-left": {
         "control": "start",
-        "label": false,
+        "visibleLabel": false,
         "color": "purple"
       },
       "bottom-right": {
         "control": "start",
-        "label": false,
+        "visibleLabel": false,
         "color": "orange"
       }
     },
-    "panes": [
-      "left-middle",
-      "top-center",
-      "right-middle",
-      "bottom-center"
-    ]
+    "panes": {
+      "top-center": {
+        "content": "empty"
+      },
+      "left-middle": {
+        "content": "empty"
+      },
+      "right-middle": {
+        "content": "empty"
+      },
+      "bottom-center": {
+        "content": "empty"
+      }
+    }
   },
   "invariants": [
-    "center remains empty until explicitly projected into",
-    "corner controls are identified by position and color rather than visible names",
-    "panes occupy cardinal edge positions between corner controls"
+    "no visible textual interface content",
+    "center remains empty",
+    "all four panes remain empty",
+    "corner controls have no visible names",
+    "position and color are the only visible corner identities"
   ]
 }
