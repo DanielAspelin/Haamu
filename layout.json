@@ -1,9 +1,9 @@
 {
   "schema": "haamu.visual-layout",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "state": "experimental",
   "origin": "c24890ca1cfeb0a56188421e8000a39be3c34605",
-  "phase": "square-centerward-corner-sequence",
+  "phase": "single-centerward-corner-plate",
   "visibleText": false,
   "viewport": {
     "mobile": "visual-viewport-bound",
@@ -86,23 +86,22 @@
     "corner menu surfaces remain below their owning corner controls",
     "at most one corner menu surface is open at a time",
     "each pane fades in and fades out without a hard edge",
-    "each corner opens a four-control square sequence toward the viewport center",
     "switching corners completes the active sequence retraction before opening the new sequence",
-    "square menu controls originate beneath their owning anchor"
+    "each corner owns exactly one square glass plate",
+    "the plate begins beneath its owning corner control and morphs diagonally toward the viewport center"
   ],
   "interaction": {
     "cornerMenus": {
       "count": 4,
-      "content": "four empty square glass controls",
+      "content": "one empty square glass plate per corner",
       "activation": "press",
       "simultaneousOpen": 1,
       "layer": "under-corner-control",
-      "motion": "retract old sequence then expand new sequence toward center",
-      "shape": "square-sequence",
-      "itemsPerCorner": 4,
-      "durationMs": 480,
-      "staggerMs": 105,
-      "originScale": 0.04,
+      "motion": "retract old plate beneath anchor then morph new plate toward center",
+      "shape": "single-square-plate",
+      "itemsPerCorner": 1,
+      "durationMs": 520,
+      "originScale": 0.18,
       "direction": "diagonally toward viewport center"
     }
   }

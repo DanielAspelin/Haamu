@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.7.0',
+  version: '0.8.0',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -16,7 +16,7 @@ globalThis.HaamuIngress ??= [];
 globalThis.HaamuIngress.push('browser');
 
 const HaamuLayout = Object.freeze({
-  version: '0.4.0',
+  version: '0.5.0',
   center: 'empty',
   corners: Object.freeze({
     topLeft: Object.freeze({ role: 'start', color: 'neon-green' }),
@@ -67,14 +67,6 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
     menu.className = 'corner-menu';
     menu.dataset.corner = button.dataset.position;
     menu.setAttribute('aria-hidden', 'true');
-    for (let sequence = 0; sequence < 4; sequence += 1) {
-      const item = document.createElement('button');
-      item.type = 'button';
-      item.className = 'corner-menu-item';
-      item.style.setProperty('--sequence', sequence);
-      item.setAttribute('aria-label', 'Menu item ' + (sequence + 1));
-      menu.appendChild(item);
-    }
     shell.appendChild(menu);
     menus.set(button.dataset.position, menu);
 
@@ -112,7 +104,7 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
         } else {
           requestAnimationFrame(openMenu);
         }
-      }, 760);
+      }, 560);
     });
   }
 
