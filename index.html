@@ -42,26 +42,27 @@
     }
     .corner:active{transform:scale(.94)}
     .corner{
-      animation:haamu-corner-breathe 4.8s ease-in-out infinite;
+      animation:haamu-corner-breathe 4.8s linear infinite;
     }
+    /* Four equal 1.2 s quarters: green -> yellow -> orange -> purple. */
     .neon-green{animation-delay:0s}
-    .lemon-yellow{animation-delay:-1.2s}
-    .orange{animation-delay:-2.4s}
-    .purple{animation-delay:-3.6s}
+    .lemon-yellow{animation-delay:1.2s}
+    .orange{animation-delay:2.4s}
+    .purple{animation-delay:3.6s}
     @keyframes haamu-corner-breathe{
-      0%,100%{
+      0%,24%{
         background-color:rgba(var(--corner-rgb),.68);
         filter:brightness(1);
       }
-      18%{
+      8%{
         background-color:rgba(var(--corner-rgb),.42);
         filter:brightness(.66);
       }
-      38%{
+      16%{
         background-color:rgba(var(--corner-rgb),.98);
         filter:brightness(1.42);
       }
-      58%{
+      25%,100%{
         background-color:rgba(var(--corner-rgb),.68);
         filter:brightness(1);
       }
@@ -175,7 +176,7 @@
   <script src="default.js"></script>
   <script src="haamu.js"></script>
   <script src="browser.entry.js"></script>
-  <script src="browser.js?v=0.13.0"></script>
+  <script src="browser.js?v=0.15.0"></script>
   <script src="web.entry.js"></script>
   <script src="web.js"></script>
 </body>
