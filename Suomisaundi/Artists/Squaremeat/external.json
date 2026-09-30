@@ -1,0 +1,23 @@
+{
+  "artist": "Squaremeat",
+  "qualification": "cross-source-observed",
+  "evidence": [
+    {
+      "source": "MusicBrainz",
+      "fact": "Squarebeat released in Germany in 1998 on Nephilim Records, catalogue 23023."
+    },
+    {
+      "source": "MusicBrainz",
+      "fact": "Squaremeat released in Finland in 2000 on Exogenic Records, catalogue EXO1203."
+    },
+    {
+      "source": "Bandcamp",
+      "fact": "Current Squaremeat Bandcamp identifies the project location as Ilola, Finland and hosts newer music."
+    }
+  ],
+  "sources": [
+    "https://musicbrainz.org/label/5aea57c8-c38c-4a37-a4e5-e0f87a9261df",
+    "https://musicbrainz.org/release/be4758c2-0c8e-4444-8f3c-141c5dc00a76/aliases",
+    "https://squaremeat.bandcamp.com/music"
+  ]
+}

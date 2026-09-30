@@ -1,0 +1,12 @@
+{
+  "schema": "haamu.suomisaundi.corroboration",
+  "version": "0.1.0",
+  "levels": {
+    "observed": "Present in one source.",
+    "source_supported": "Specific claim directly supported by an identified source.",
+    "cross_source": "Same material fact independently supported by multiple source classes.",
+    "institutional": "Supported by an institutional/national-library or academic catalogue.",
+    "verified_scope": "Qualified only for the exact fields corroborated; never promotes unrelated entity fields."
+  },
+  "rule": "Qualification attaches to claims/fields, not automatically to an entire artist, release, scene, or historical narrative."
+}

@@ -1,0 +1,23 @@
+{
+  "schema": "haamu.suomisaundi.external.finna",
+  "version": "0.1.0",
+  "observed": "2026-09-30",
+  "records": [
+    {
+      "entity": "Eraser vs Yöjalka",
+      "kind": "track",
+      "title": "Hattivatti",
+      "release": "Round 1",
+      "track_number": 6,
+      "duration": "00:06:21",
+      "isrc": "FIEXC0200030",
+      "performer": "Eraser vs Yöjalka",
+      "composers": [
+        "Yöjalka",
+        "Eraser"
+      ],
+      "record_id": "fikka.4788237"
+    }
+  ],
+  "qualification": "national-library-evidence"
+}
