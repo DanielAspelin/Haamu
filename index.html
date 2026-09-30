@@ -40,6 +40,13 @@
       outline:none;
     }
     .corner:active{transform:scale(.94)}
+    .corner.morphing{animation:haamu-corner-morph .42s cubic-bezier(.16,1,.3,1)}
+    @keyframes haamu-corner-morph{
+      0%{transform:scale(1);border-radius:0}
+      42%{transform:scale(.72);border-radius:28%}
+      72%{transform:scale(1.08);border-radius:10%}
+      100%{transform:scale(1);border-radius:0}
+    }
     /* Corner controls are explicitly snapped to the structural viewport corners. */
     .neon-green{grid-area:tl;align-self:start;justify-self:start;--corner-rgb:57,255,20}
     .lemon-yellow{grid-area:tr;align-self:start;justify-self:end;--corner-rgb:255,244,79}
