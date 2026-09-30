@@ -6,7 +6,7 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<meta name="haamu-build" content="0.67.0">
+<meta name="haamu-build" content="0.68.0>
   <meta name="description" content="Haamu — open community, technology and culture">
   <title>Haamu</title>
   <style>
@@ -59,18 +59,6 @@
       transform:none;
       animation:none;
       filter:none;
-    }
-    .corner-body{
-      position:absolute;
-      inset:0;
-      border-radius:inherit;
-      background:inherit;
-      box-shadow:inherit;
-      pointer-events:none;
-    }
-    @media(max-width:900px){
-      /* Experimental body-only nesting: aura/anchor remain fixed. */
-      .purple .corner-body,.orange .corner-body{translate:0 4px}
     }
     .corner:hover,.corner:focus-visible{
       background-color:rgba(var(--corner-rgb),.82);
@@ -160,6 +148,9 @@
     .corner-menu[data-corner="bottom-right"]{bottom:12px;right:4px;left:auto;top:auto;transform-origin:bottom right;transform:scale(.18);background:linear-gradient(315deg,rgba(0,0,0,.96) 0,rgba(0,0,0,.82) 24px,rgba(0,0,0,.34) 48px,transparent 72px),linear-gradient(135deg,rgba(255,255,255,.14),rgba(255,255,255,.035));box-shadow:0 -14px 30px rgba(0,0,0,.30)}
     .corner-menu.open{opacity:1;pointer-events:auto;transform:scale(1)}
     @media(max-width:600px){
+      /* Lower controls: move the grid anchors themselves down 4px.
+         Aura and body remain one intact control; no transform or inner layer. */
+      .haamu-interface{grid-template-rows:calc(var(--corner) - 4px) 1fr calc(var(--corner) + 4px)}
       /* Qualified mobile geometry recovered from eef48b6d...:
          plates remain corner-owned and nearly full-height beneath controls. */
       .corner-menu{
@@ -247,7 +238,7 @@
   <script src="default.js"></script>
   <script src="haamu.js"></script>
   <script src="browser.entry.js"></script>
-  <script src="browser.js?v=0.67.0"></script>
+  <script src="browser.js?v=0.68.0"></script>
   <script src="web.entry.js"></script>
   <script src="web.js"></script>
 </body>
