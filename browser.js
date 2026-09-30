@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.66.0',
+  version: '0.67.0',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -57,7 +57,13 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
     element.className = classes;
     element.dataset.position = position;
     if (label) element.setAttribute('aria-label', label);
-    if (classes.includes('start')) element.type = 'button';
+    if (classes.includes('start')) {
+      element.type = 'button';
+      const body = document.createElement('span');
+      body.className = 'corner-body';
+      body.setAttribute('aria-hidden', 'true');
+      element.appendChild(body);
+    }
     shell.appendChild(element);
   }
 
