@@ -6,7 +6,7 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<meta name="haamu-build" content="0.47.0">
+<meta name="haamu-build" content="0.48.0">
   <meta name="description" content="Haamu — open community, technology and culture">
   <title>Haamu</title>
   <style>
@@ -144,13 +144,13 @@
     .corner-menu.open{opacity:1;pointer-events:auto;transform:scale(1)}
     @media(max-width:600px){
       .corner-menu{
-        --plate-inline:88vw;
-        --plate-block:42vh;
+        --plate-inline:84vw;
+        --plate-block:calc(100% - 80px);
       }
-      .corner-menu[data-corner="top-left"]{top:16px;left:8px}
-      .corner-menu[data-corner="top-right"]{top:16px;right:8px}
-      .corner-menu[data-corner="bottom-left"]{bottom:16px;left:8px}
-      .corner-menu[data-corner="bottom-right"]{bottom:16px;right:8px}
+      .corner-menu[data-corner="top-left"]{top:8px;left:8px}
+      .corner-menu[data-corner="top-right"]{top:8px;right:8px}
+      .corner-menu[data-corner="bottom-left"]{bottom:8px;left:8px}
+      .corner-menu[data-corner="bottom-right"]{bottom:8px;right:8px}
     }
     @media(min-width:901px){
       .corner-menu{
@@ -208,7 +208,7 @@
   <script src="default.js"></script>
   <script src="haamu.js"></script>
   <script src="browser.entry.js"></script>
-  <script src="browser.js?v=0.47.0"></script>
+  <script src="browser.js?v=0.48.0"></script>
   <script src="web.entry.js"></script>
   <script src="web.js"></script>
 </body>
