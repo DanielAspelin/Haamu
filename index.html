@@ -41,6 +41,23 @@
       outline:none;
     }
     .corner:active{transform:scale(.94)}
+    .corner{
+      animation:haamu-corner-breathe 3.6s ease-in-out infinite;
+    }
+    @keyframes haamu-corner-breathe{
+      0%,100%{
+        background-color:rgba(var(--corner-rgb),.68);
+        filter:brightness(1);
+      }
+      35%{
+        background-color:rgba(var(--corner-rgb),.46);
+        filter:brightness(.72);
+      }
+      70%{
+        background-color:rgba(var(--corner-rgb),.88);
+        filter:brightness(1.28);
+      }
+    }
     .corner.morphing{animation:haamu-corner-morph .58s cubic-bezier(.16,1,.3,1)}
     @keyframes haamu-corner-morph{
       0%{
@@ -150,7 +167,7 @@
   <script src="default.js"></script>
   <script src="haamu.js"></script>
   <script src="browser.entry.js"></script>
-  <script src="browser.js?v=0.12.0"></script>
+  <script src="browser.js?v=0.13.0"></script>
   <script src="web.entry.js"></script>
   <script src="web.js"></script>
 </body>
