@@ -45,40 +45,42 @@
     .purple{grid-area:bl;--corner-rgb:157,53,255}
     .orange{grid-area:br;--corner-rgb:255,140,26}
     .corner-menu{
-      --menu-size:clamp(150px,22vw,240px);
-      position:absolute;width:var(--menu-size);height:var(--menu-size);
-      z-index:2;pointer-events:none;opacity:0;
-      background:linear-gradient(135deg,rgba(255,255,255,.105),rgba(255,255,255,.035));
-      box-shadow:0 18px 50px rgba(0,0,0,.32),inset 0 1px 0 rgba(255,255,255,.16);
-      backdrop-filter:blur(18px) saturate(145%);
-      -webkit-backdrop-filter:blur(18px) saturate(145%);
-      transform:scale(.12);transition:transform .28s cubic-bezier(.2,.85,.2,1),opacity .18s ease,border-radius .28s ease;
-      border-radius:42%;
+      --item:clamp(38px,4.2vw,52px);--gap:10px;
+      position:absolute;z-index:2;pointer-events:none;
+      display:flex;gap:var(--gap);align-items:center;
     }
-    .corner-menu[data-corner="top-left"]{top:0;left:0;transform-origin:top left}
-    .corner-menu[data-corner="top-right"]{top:0;right:0;transform-origin:top right}
-    .corner-menu[data-corner="bottom-left"]{bottom:0;left:0;transform-origin:bottom left}
-    .corner-menu[data-corner="bottom-right"]{bottom:0;right:0;transform-origin:bottom right}
-    .corner-menu.open{opacity:1;pointer-events:auto;transform:scale(1);border-radius:10px}
-    @media(max-width:600px){.corner-menu{--menu-size:min(42vw,180px)}}
+    .corner-menu[data-corner="top-left"]{top:calc((var(--corner) - var(--item))/2);left:calc(var(--corner) * .45);flex-direction:row}
+    .corner-menu[data-corner="top-right"]{top:calc((var(--corner) - var(--item))/2);right:calc(var(--corner) * .45);flex-direction:row-reverse}
+    .corner-menu[data-corner="bottom-left"]{bottom:calc((var(--corner) - var(--item))/2);left:calc(var(--corner) * .45);flex-direction:row}
+    .corner-menu[data-corner="bottom-right"]{bottom:calc((var(--corner) - var(--item))/2);right:calc(var(--corner) * .45);flex-direction:row-reverse}
+    .corner-menu-item{
+      width:var(--item);height:var(--item);border:0;border-radius:50%;padding:0;
+      opacity:0;transform:translateX(var(--morph-x,0)) scale(.08);
+      background:linear-gradient(135deg,rgba(255,255,255,.18),rgba(255,255,255,.045));
+      box-shadow:0 8px 24px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.22);
+      backdrop-filter:blur(16px) saturate(145%);-webkit-backdrop-filter:blur(16px) saturate(145%);
+      transition:opacity .22s ease,transform .34s cubic-bezier(.2,.9,.2,1);
+      transition-delay:calc(var(--sequence) * 55ms);
+    }
+    .corner-menu[data-corner$="left"] .corner-menu-item{--morph-x:calc((var(--sequence) + 1) * -12px)}
+    .corner-menu[data-corner$="right"] .corner-menu-item{--morph-x:calc((var(--sequence) + 1) * 12px)}
+    .corner-menu.open{pointer-events:auto}
+    .corner-menu.open .corner-menu-item{opacity:1;transform:translateX(0) scale(1)}
+    @media(max-width:600px){.corner-menu{--item:40px;--gap:7px}}
     .pane{
-      position:relative;border:0;background:transparent;
-      box-shadow:inset 0 0 0 0 rgba(255,255,255,0);
-      transition:background .18s ease,box-shadow .18s ease,backdrop-filter .18s ease;
+      position:relative;border:0;background:linear-gradient(135deg,rgba(255,255,255,.055),rgba(255,255,255,.018));
+      opacity:0;box-shadow:none;
+      backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+      transition:opacity .32s ease;
     }
-    .pane:hover{
-      background:linear-gradient(135deg,rgba(255,255,255,.055),rgba(255,255,255,.018));
-      box-shadow:none;
-      backdrop-filter:blur(8px);
-      -webkit-backdrop-filter:blur(8px);
-    }
+    .pane:hover,.pane:focus-within{opacity:1}
     .top-pane{grid-area:top}
     .left-pane{grid-area:left}
     .right-pane{grid-area:right}
     .bottom-pane{grid-area:bottom}
     .center{grid-area:center;background:#07090c;min-width:0;min-height:0}
     @media(max-width:600px){.haamu-interface{--corner:48px}}
-    @media(prefers-reduced-motion:reduce){.corner,.pane,.corner-menu{transition:none}}
+    @media(prefers-reduced-motion:reduce){.corner,.pane,.corner-menu,.corner-menu-item{transition:none}}
   </style>
 </head>
 <body>

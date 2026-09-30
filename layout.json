@@ -1,9 +1,9 @@
 {
   "schema": "haamu.visual-layout",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "state": "experimental",
   "origin": "c24890ca1cfeb0a56188421e8000a39be3c34605",
-  "phase": "corner-menu-morph",
+  "phase": "pane-fade-corner-sequence",
   "visibleText": false,
   "viewport": {
     "mobile": "visual-viewport-bound",
@@ -45,26 +45,30 @@
       "top-center": {
         "content": "empty",
         "persistentOutline": false,
-        "hoverReveal": true,
-        "hoverOutline": false
+        "hoverReveal": "fade-in-out",
+        "hoverOutline": false,
+        "fade": true
       },
       "left-middle": {
         "content": "empty",
         "persistentOutline": false,
-        "hoverReveal": true,
-        "hoverOutline": false
+        "hoverReveal": "fade-in-out",
+        "hoverOutline": false,
+        "fade": true
       },
       "right-middle": {
         "content": "empty",
         "persistentOutline": false,
-        "hoverReveal": true,
-        "hoverOutline": false
+        "hoverReveal": "fade-in-out",
+        "hoverOutline": false,
+        "fade": true
       },
       "bottom-center": {
         "content": "empty",
         "persistentOutline": false,
-        "hoverReveal": true,
-        "hoverOutline": false
+        "hoverReveal": "fade-in-out",
+        "hoverOutline": false,
+        "fade": true
       }
     }
   },
@@ -79,19 +83,22 @@
     "pane hover reveal uses no border, outline, or edge line",
     "corner controls have no visible names",
     "corner controls retain position and color identity through a glass surface",
-    "each corner control owns one empty morphing menu surface",
     "corner menu surfaces remain below their owning corner controls",
-    "at most one corner menu surface is open at a time"
+    "at most one corner menu surface is open at a time",
+    "each pane fades in and fades out without a hard edge",
+    "each corner opens a four-control circular sequence from beneath its anchor",
+    "circular menu controls morph outward in staggered order"
   ],
   "interaction": {
     "cornerMenus": {
       "count": 4,
-      "content": "empty",
+      "content": "four empty circular controls",
       "activation": "press",
       "simultaneousOpen": 1,
       "layer": "under-corner-control",
-      "motion": "corner-origin morph",
-      "shape": "square"
+      "motion": "staggered circular row morph",
+      "shape": "circle-sequence",
+      "itemsPerCorner": 4
     }
   }
 }
