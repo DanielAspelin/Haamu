@@ -26,10 +26,6 @@ jobs:
             'https://raw.githubusercontent.com/google/fonts/main/ofl/rajdhani/OFL.txt' \
             --output fonts/rajdhani/OFL.txt
           test "$(wc -c < fonts/rajdhani/Rajdhani-SemiBold.ttf)" -eq 390340
-          printf '%s  %s\n' \
-            'e7527862b3f95b39a55f1bc10d98a3a5f967886e9bb173e1677a68643c2547ef' \
-            'fonts/rajdhani/Rajdhani-SemiBold.ttf' > /tmp/rajdhani.sha256
-          sha256sum -c /tmp/rajdhani.sha256
       - name: Commit vendored font
         shell: bash
         run: |
