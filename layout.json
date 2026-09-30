@@ -1,0 +1,44 @@
+{
+  "schema": "haamu.visual-layout",
+  "version": "0.1.0",
+  "state": "experimental",
+  "origin": "96e0c05b25688abfc28978a68d6779f0c50b4a99",
+  "geometry": {
+    "center": {
+      "content": "empty"
+    },
+    "corners": {
+      "top-left": {
+        "control": "start",
+        "label": false,
+        "color": "neon-green"
+      },
+      "top-right": {
+        "control": "start",
+        "label": false,
+        "color": "lemon-yellow"
+      },
+      "bottom-left": {
+        "control": "start",
+        "label": false,
+        "color": "purple"
+      },
+      "bottom-right": {
+        "control": "start",
+        "label": false,
+        "color": "orange"
+      }
+    },
+    "panes": [
+      "left-middle",
+      "top-center",
+      "right-middle",
+      "bottom-center"
+    ]
+  },
+  "invariants": [
+    "center remains empty until explicitly projected into",
+    "corner controls are identified by position and color rather than visible names",
+    "panes occupy cardinal edge positions between corner controls"
+  ]
+}
