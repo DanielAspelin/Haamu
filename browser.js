@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.27.0',
+  version: '0.28.0',
   position: 'between-browser-entry-and-web-entry',
 });
 
