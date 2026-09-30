@@ -1,0 +1,45 @@
+{
+  "schema": "haamu.gnu.manual-corpus",
+  "version": "0.1.0",
+  "name": "GNU Manual Corpus",
+  "completeness": false,
+  "status": "bootstrap",
+  "source_policy": {
+    "authority": "Prefer official GNU/FSF package documentation and upstream source distributions.",
+    "source_preference": [
+      "Texinfo source",
+      "package source documentation",
+      "official HTML",
+      "official PDF"
+    ],
+    "derived_markdown": "Generated projection; never substitutes for retained authoritative source/provenance."
+  },
+  "provenance_required": [
+    "package",
+    "manual_title",
+    "upstream_version",
+    "source_url",
+    "retrieved_at",
+    "source_format",
+    "license",
+    "source_hash",
+    "transform",
+    "derived_hash"
+  ],
+  "qualification": [
+    "discovered",
+    "license-verified",
+    "source-captured",
+    "transformed",
+    "reconstruction-verified"
+  ],
+  "directories": [
+    "Manifest",
+    "Manuals",
+    "Sources",
+    "Licenses",
+    "Transforms",
+    "Qualification",
+    "Checkpoint"
+  ]
+}
