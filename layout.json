@@ -1,9 +1,9 @@
 {
   "schema": "haamu.visual-layout",
-  "version": "0.5.1",
+  "version": "0.6.0",
   "state": "experimental",
   "origin": "c24890ca1cfeb0a56188421e8000a39be3c34605",
-  "phase": "pane-fade-corner-sequence",
+  "phase": "square-centerward-corner-sequence",
   "visibleText": false,
   "viewport": {
     "mobile": "visual-viewport-bound",
@@ -86,23 +86,24 @@
     "corner menu surfaces remain below their owning corner controls",
     "at most one corner menu surface is open at a time",
     "each pane fades in and fades out without a hard edge",
-    "each corner opens a four-control circular sequence from beneath its anchor",
-    "circular menu controls morph outward in staggered order",
-    "menu circles begin visually beneath the owning anchor and travel to their row positions"
+    "each corner opens a four-control square sequence toward the viewport center",
+    "switching corners completes the active sequence retraction before opening the new sequence",
+    "square menu controls originate beneath their owning anchor"
   ],
   "interaction": {
     "cornerMenus": {
       "count": 4,
-      "content": "four empty circular controls",
+      "content": "four empty square glass controls",
       "activation": "press",
       "simultaneousOpen": 1,
       "layer": "under-corner-control",
-      "motion": "pronounced anchor-origin staggered circular row morph",
-      "shape": "circle-sequence",
+      "motion": "retract old sequence then expand new sequence toward center",
+      "shape": "square-sequence",
       "itemsPerCorner": 4,
-      "durationMs": 520,
-      "staggerMs": 120,
-      "originScale": 0.04
+      "durationMs": 480,
+      "staggerMs": 105,
+      "originScale": 0.04,
+      "direction": "diagonally toward viewport center"
     }
   }
 }
