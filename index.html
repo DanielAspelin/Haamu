@@ -67,6 +67,12 @@
         --plate-block:calc(100% - (var(--corner) * .82) - 32px);
       }
     }
+    @media(min-width:901px) and (pointer:fine){
+      .corner-menu{
+        --plate-inline:min(76vw,1180px);
+        --plate-block:min(72vh,720px);
+      }
+    }
     .pane{
       position:relative;border:0;background:linear-gradient(135deg,rgba(255,255,255,.055),rgba(255,255,255,.018));
       opacity:0;box-shadow:none;background:transparent;
