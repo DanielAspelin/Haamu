@@ -15,7 +15,7 @@ const HaamuWebText = Object.freeze({
   family: 'web',
   role: 'web.text',
   type: 'text-processor-allocator',
-  version: '0.3.0',
+  version: '0.4.0',
 
   normalize(value, form = 'NFC') {
     const text = value == null ? '' : String(value);
@@ -79,6 +79,53 @@ const HaamuWebText = Object.freeze({
    * advance/lineHeight are logical units: SVG, Canvas, WebGPU or another
    * graphics system may map them into its own coordinate space.
    */
+  interoperability() {
+    return Object.freeze({
+      webAssembly: Object.freeze({
+        supported: typeof WebAssembly === 'object',
+        encoding: 'utf-8',
+        memory: 'Uint8Array',
+      }),
+      webGPU: Object.freeze({
+        supported: typeof navigator !== 'undefined' && 'gpu' in navigator,
+        codePoints: 'Uint32Array',
+        positions: 'Float32Array',
+      }),
+    });
+  },
+
+  toWebAssembly(value, options = {}) {
+    const record = this.process(value, options);
+    const bytes = new TextEncoder().encode(record.text);
+    return Object.freeze({
+      type: 'wasm-text-buffer',
+      encoding: 'utf-8',
+      byteLength: bytes.byteLength,
+      bytes,
+      record,
+    });
+  },
+
+  toWebGPU(value, options = {}) {
+    const vector = this.vectorize(value, options);
+    const count = vector.glyphs.length;
+    const codePoints = new Uint32Array(count);
+    const positions = new Float32Array(count * 2);
+    for (let i = 0; i < count; i += 1) {
+      const glyph = vector.glyphs[i];
+      codePoints[i] = glyph.codePoint;
+      positions[i * 2] = glyph.position.x;
+      positions[i * 2 + 1] = glyph.position.y;
+    }
+    return Object.freeze({
+      type: 'webgpu-text-buffer',
+      count,
+      codePoints,
+      positions,
+      vector,
+    });
+  },
+
   vectorize(value, options = {}) {
     const record = this.process(value, options);
     const originX = finite(options.x, 0);
