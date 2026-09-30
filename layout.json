@@ -1,6 +1,6 @@
 {
   "schema": "haamu.visual-layout",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "state": "experimental",
   "origin": "c24890ca1cfeb0a56188421e8000a39be3c34605",
   "phase": "geometry-interaction",
@@ -12,18 +12,60 @@
     "allCornersSimultaneouslyVisible": true
   },
   "geometry": {
-    "center": {"content": "empty"},
+    "center": {
+      "content": "empty"
+    },
     "corners": {
-      "top-left": {"control":"start","visibleLabel":false,"color":"neon-green","surface":"glass"},
-      "top-right": {"control":"start","visibleLabel":false,"color":"lemon-yellow","surface":"glass"},
-      "bottom-left": {"control":"start","visibleLabel":false,"color":"purple","surface":"glass"},
-      "bottom-right": {"control":"start","visibleLabel":false,"color":"orange","surface":"glass"}
+      "top-left": {
+        "control": "start",
+        "visibleLabel": false,
+        "color": "neon-green",
+        "surface": "glass"
+      },
+      "top-right": {
+        "control": "start",
+        "visibleLabel": false,
+        "color": "lemon-yellow",
+        "surface": "glass"
+      },
+      "bottom-left": {
+        "control": "start",
+        "visibleLabel": false,
+        "color": "purple",
+        "surface": "glass"
+      },
+      "bottom-right": {
+        "control": "start",
+        "visibleLabel": false,
+        "color": "orange",
+        "surface": "glass"
+      }
     },
     "panes": {
-      "top-center": {"content":"empty","persistentOutline":false,"hoverReveal":true},
-      "left-middle": {"content":"empty","persistentOutline":false,"hoverReveal":true},
-      "right-middle": {"content":"empty","persistentOutline":false,"hoverReveal":true},
-      "bottom-center": {"content":"empty","persistentOutline":false,"hoverReveal":true}
+      "top-center": {
+        "content": "empty",
+        "persistentOutline": false,
+        "hoverReveal": true,
+        "hoverOutline": false
+      },
+      "left-middle": {
+        "content": "empty",
+        "persistentOutline": false,
+        "hoverReveal": true,
+        "hoverOutline": false
+      },
+      "right-middle": {
+        "content": "empty",
+        "persistentOutline": false,
+        "hoverReveal": true,
+        "hoverOutline": false
+      },
+      "bottom-center": {
+        "content": "empty",
+        "persistentOutline": false,
+        "hoverReveal": true,
+        "hoverOutline": false
+      }
     }
   },
   "invariants": [
@@ -34,7 +76,7 @@
     "the interface does not create document scrolling",
     "mobile safe-area insets are respected",
     "pane boundaries are not persistently visible",
-    "each pane reveals its own boundary only while hovered",
+    "pane hover reveal uses no border, outline, or edge line",
     "corner controls have no visible names",
     "corner controls retain position and color identity through a glass surface"
   ]
