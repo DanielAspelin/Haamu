@@ -27,6 +27,7 @@
     .corner{
       width:100%;height:100%;
       border:0;margin:0;cursor:pointer;position:relative;
+      border-radius:10px;
       background-color:rgba(var(--corner-rgb),.68);
       background-image:linear-gradient(135deg,rgba(255,255,255,.30),rgba(255,255,255,.06) 42%,rgba(0,0,0,.10));
       box-shadow:inset 0 1px 0 rgba(255,255,255,.42),inset 0 -1px 0 rgba(0,0,0,.18);
@@ -93,10 +94,10 @@
       }
     }
     /* Grid-area ownership snaps each full-size control to its corner cell. */
-    .neon-green{grid-area:tl;--corner-rgb:57,255,20}
-    .lemon-yellow{grid-area:tr;--corner-rgb:255,244,79}
-    .purple{grid-area:bl;--corner-rgb:157,53,255}
-    .orange{grid-area:br;--corner-rgb:255,140,26}
+    .neon-green{grid-area:tl;--corner-rgb:212,175,55}
+    .lemon-yellow{grid-area:tr;--corner-rgb:212,175,55}
+    .purple{grid-area:bl;--corner-rgb:212,175,55}
+    .orange{grid-area:br;--corner-rgb:212,175,55}
     .corner-menu{
       --plate-inline:calc(100% - (var(--corner) * .82) - 20px);
       --plate-block:calc(100% - (var(--corner) * .82) - 32px);
@@ -176,7 +177,7 @@
   <script src="default.js"></script>
   <script src="haamu.js"></script>
   <script src="browser.entry.js"></script>
-  <script src="browser.js?v=0.15.0"></script>
+  <script src="browser.js?v=0.16.0"></script>
   <script src="web.entry.js"></script>
   <script src="web.js"></script>
 </body>
