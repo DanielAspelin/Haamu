@@ -98,12 +98,24 @@
     .structural-split{position:fixed;z-index:1;pointer-events:none;visibility:hidden;opacity:0}
     .structural-split.vertical{top:0;bottom:0;left:var(--split-x);width:0}
     .structural-split.horizontal{left:0;right:0;top:var(--split-y);height:0}
+    .pane-layer{position:fixed;inset:0;z-index:1;pointer-events:none;visibility:hidden;opacity:0}
+    .pane-layer .pane-region{position:absolute;pointer-events:none}
+    .pane-layer .pane-left{inset:0 50% 0 0}
+    .pane-layer .pane-up{inset:0 0 50% 0}
+    .pane-layer .pane-right{inset:0 0 0 50%}
+    .pane-layer .pane-down{inset:50% 0 0 0}
     @media(prefers-reduced-motion:reduce){.corner,.pane,.corner-menu{transition:none}}
   </style>
 </head>
 <body>
   <i class="structural-split vertical" aria-hidden="true"></i>
   <i class="structural-split horizontal" aria-hidden="true"></i>
+  <div class="pane-layer" aria-hidden="true">
+    <i class="pane-region pane-left"></i>
+    <i class="pane-region pane-up"></i>
+    <i class="pane-region pane-right"></i>
+    <i class="pane-region pane-down"></i>
+  </div>
   <div id="haamu-root"><noscript>Haamu requires JavaScript for its runtime projection.</noscript></div>
   <script src="entry.pre.js"></script>
   <script src="entry.post.js"></script>
