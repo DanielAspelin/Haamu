@@ -1,22 +1,78 @@
 {
   "schema": "haamu.suomisaundi.catalogue",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "qualification": "pre-informative",
-  "scope": "Research catalogue for the Suomisaundi musical genre, community, history and related works.",
+  "scope": "Research catalogue for Suomisaundi music, community, history, people, organizations, works and provenance.",
   "categories": [
-    "artists",
-    "releases",
-    "labels",
-    "collectives",
-    "events",
-    "history",
-    "scenes",
-    "archives",
-    "media",
-    "sources"
+    "Artists",
+    "Releases",
+    "Labels",
+    "Collectives",
+    "Events",
+    "History",
+    "Scenes",
+    "Archives",
+    "Media",
+    "Sources"
   ],
-  "records": [],
+  "seed": {
+    "artists": [
+      "Texas Faggott",
+      "Squaremeat",
+      "Salakavala"
+    ],
+    "collectives": [
+      "Ruskababa",
+      "Smooth Underground",
+      "Löyhä",
+      "Midiliitto"
+    ],
+    "labels": [
+      "Exogenic Records",
+      "Antiscarp Records",
+      "6-Dimension Sound"
+    ],
+    "releases": [
+      "Flippin Bixies"
+    ],
+    "milestones": [
+      {
+        "period": "early 1990s",
+        "summary": "Ruskababa introduced Goa trance through Finnish underground summertime parties.",
+        "qualification": "source-supported"
+      },
+      {
+        "period": "1995-1996",
+        "summary": "Early Tim Thick recordings circulated in Goa and contributed to the emerging Suomisaundi sound.",
+        "qualification": "source-supported"
+      },
+      {
+        "year": 1996,
+        "summary": "Flippin Bixies was self-published and is described by historical sources as genre-defining.",
+        "qualification": "source-supported"
+      },
+      {
+        "year": 1997,
+        "summary": "Exogenic Records began focusing on Suomisaundi; Midiliitto formed around the same period.",
+        "qualification": "source-supported"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Suomisaundi.fi",
+        "scope": "artists, labels, discographies and genre catalogue"
+      },
+      {
+        "name": "Wikipedia: Suomisaundi",
+        "scope": "secondary historical overview"
+      },
+      {
+        "name": "Salakavala",
+        "scope": "artist/label discography and release evidence"
+      }
+    ]
+  },
   "provenance": {
-    "policy": "Catalogue records require attributable source evidence; conflicting or uncertain claims remain explicitly qualified."
+    "policy": "Every promoted catalogue fact must retain attributable source evidence. Conflicts and uncertain claims remain explicitly qualified."
   }
 }
