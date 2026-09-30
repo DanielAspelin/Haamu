@@ -86,10 +86,24 @@
     .bottom-pane{grid-area:bottom}
     .center{grid-area:center;background:#07090c;min-width:0;min-height:0}
     @media(max-width:600px){.haamu-interface{--corner:48px}}
+    /* Invisible structural viewport lattice: composition only, never rendered. */
+    .haamu-interface{
+      --split-x:50%;--split-y:50%;
+      --region-full:inset(0);
+      --region-left:inset(0 50% 0 0);--region-right:inset(0 0 0 50%);
+      --region-top:inset(0 0 50% 0);--region-bottom:inset(50% 0 0);
+      --region-top-left:inset(0 50% 50% 0);--region-top-right:inset(0 0 50% 50%);
+      --region-bottom-left:inset(50% 50% 0 0);--region-bottom-right:inset(50% 0 0 50%);
+    }
+    .structural-split{position:fixed;pointer-events:none;visibility:hidden;opacity:0}
+    .structural-split.vertical{top:0;bottom:0;left:var(--split-x);width:0}
+    .structural-split.horizontal{left:0;right:0;top:var(--split-y);height:0}
     @media(prefers-reduced-motion:reduce){.corner,.pane,.corner-menu{transition:none}}
   </style>
 </head>
 <body>
+  <i class="structural-split vertical" aria-hidden="true"></i>
+  <i class="structural-split horizontal" aria-hidden="true"></i>
   <div id="haamu-root"><noscript>Haamu requires JavaScript for its runtime projection.</noscript></div>
   <script src="entry.pre.js"></script>
   <script src="entry.post.js"></script>
