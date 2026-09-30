@@ -13,7 +13,6 @@
     button{font:inherit}
     .haamu-interface{
       --corner:clamp(52px,5.5vw,76px);
-      --edge:clamp(64px,8vh,92px);
       width:100vw;height:100vh;display:grid;
       grid-template-columns:var(--corner) 1fr var(--corner);
       grid-template-rows:var(--corner) 1fr var(--corner);
@@ -23,22 +22,44 @@
         "bl bottom br";
       gap:0;background:#07090c;
     }
-    .corner{border:0;margin:0;cursor:pointer;position:relative;transition:filter .12s ease,transform .12s ease}
-    .corner:hover,.corner:focus-visible{filter:brightness(1.18);outline:2px solid rgba(255,255,255,.8);outline-offset:-5px}
-    .corner:active{transform:scale(.94)}
-    .neon-green{grid-area:tl;background:#39ff14}
-    .lemon-yellow{grid-area:tr;background:#fff44f}
-    .purple{grid-area:bl;background:#9d35ff}
-    .orange{grid-area:br;background:#ff8c1a}
-    .pane{background:#0d1116;border-color:#27303a;border-style:solid;position:relative}
-    .top-pane{grid-area:top;border-width:0 1px 1px}
-    .left-pane{grid-area:left;border-width:1px 1px 1px 0}
-    .right-pane{grid-area:right;border-width:1px 0 1px 1px}
-    .bottom-pane{grid-area:bottom;border-width:1px 1px 0}
-    .center{grid-area:center;background:#07090c;min-width:0;min-height:0}
-    @media(max-width:600px){
-      .haamu-interface{--corner:48px}
+    .corner{
+      border:0;margin:0;cursor:pointer;position:relative;
+      background-color:rgba(var(--corner-rgb),.68);
+      background-image:linear-gradient(135deg,rgba(255,255,255,.30),rgba(255,255,255,.06) 42%,rgba(0,0,0,.10));
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.42),inset 0 -1px 0 rgba(0,0,0,.18);
+      backdrop-filter:blur(14px) saturate(150%);
+      -webkit-backdrop-filter:blur(14px) saturate(150%);
+      transition:background-color .16s ease,box-shadow .16s ease,filter .16s ease,transform .12s ease;
     }
+    .corner:hover,.corner:focus-visible{
+      background-color:rgba(var(--corner-rgb),.82);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.62),0 0 22px rgba(var(--corner-rgb),.28);
+      filter:brightness(1.08);
+      outline:none;
+    }
+    .corner:active{transform:scale(.94)}
+    .neon-green{grid-area:tl;--corner-rgb:57,255,20}
+    .lemon-yellow{grid-area:tr;--corner-rgb:255,244,79}
+    .purple{grid-area:bl;--corner-rgb:157,53,255}
+    .orange{grid-area:br;--corner-rgb:255,140,26}
+    .pane{
+      position:relative;border:0;background:transparent;
+      box-shadow:inset 0 0 0 0 rgba(255,255,255,0);
+      transition:background .18s ease,box-shadow .18s ease,backdrop-filter .18s ease;
+    }
+    .pane:hover{
+      background:linear-gradient(135deg,rgba(255,255,255,.055),rgba(255,255,255,.018));
+      box-shadow:inset 0 0 0 1px rgba(255,255,255,.12),inset 0 0 28px rgba(255,255,255,.018);
+      backdrop-filter:blur(8px);
+      -webkit-backdrop-filter:blur(8px);
+    }
+    .top-pane{grid-area:top}
+    .left-pane{grid-area:left}
+    .right-pane{grid-area:right}
+    .bottom-pane{grid-area:bottom}
+    .center{grid-area:center;background:#07090c;min-width:0;min-height:0}
+    @media(max-width:600px){.haamu-interface{--corner:48px}}
+    @media(prefers-reduced-motion:reduce){.corner,.pane{transition:none}}
   </style>
 </head>
 <body>

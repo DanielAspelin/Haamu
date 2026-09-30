@@ -1,56 +1,32 @@
 {
   "schema": "haamu.visual-layout",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "state": "experimental",
   "origin": "c24890ca1cfeb0a56188421e8000a39be3c34605",
-  "phase": "geometry-only",
+  "phase": "geometry-interaction",
   "visibleText": false,
   "geometry": {
-    "center": {
-      "content": "empty"
-    },
+    "center": {"content": "empty"},
     "corners": {
-      "top-left": {
-        "control": "start",
-        "visibleLabel": false,
-        "color": "neon-green"
-      },
-      "top-right": {
-        "control": "start",
-        "visibleLabel": false,
-        "color": "lemon-yellow"
-      },
-      "bottom-left": {
-        "control": "start",
-        "visibleLabel": false,
-        "color": "purple"
-      },
-      "bottom-right": {
-        "control": "start",
-        "visibleLabel": false,
-        "color": "orange"
-      }
+      "top-left": {"control":"start","visibleLabel":false,"color":"neon-green","surface":"glass"},
+      "top-right": {"control":"start","visibleLabel":false,"color":"lemon-yellow","surface":"glass"},
+      "bottom-left": {"control":"start","visibleLabel":false,"color":"purple","surface":"glass"},
+      "bottom-right": {"control":"start","visibleLabel":false,"color":"orange","surface":"glass"}
     },
     "panes": {
-      "top-center": {
-        "content": "empty"
-      },
-      "left-middle": {
-        "content": "empty"
-      },
-      "right-middle": {
-        "content": "empty"
-      },
-      "bottom-center": {
-        "content": "empty"
-      }
+      "top-center": {"content":"empty","persistentOutline":false,"hoverReveal":true},
+      "left-middle": {"content":"empty","persistentOutline":false,"hoverReveal":true},
+      "right-middle": {"content":"empty","persistentOutline":false,"hoverReveal":true},
+      "bottom-center": {"content":"empty","persistentOutline":false,"hoverReveal":true}
     }
   },
   "invariants": [
     "no visible textual interface content",
     "center remains empty",
     "all four panes remain empty",
+    "pane boundaries are not persistently visible",
+    "each pane reveals its own boundary only while hovered",
     "corner controls have no visible names",
-    "position and color are the only visible corner identities"
+    "corner controls retain position and color identity through a glass surface"
   ]
 }
