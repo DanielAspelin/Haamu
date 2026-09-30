@@ -2,19 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover,interactive-widget=resizes-content">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<meta name="haamu-build" content="0.76.0">
+<meta name="haamu-build" content="0.77.0">
   <meta name="description" content="Haamu — open community, technology and culture">
   <title>Haamu</title>
   <style>
     :root{--haamu-sky:#071019;--haamu-sky-gradient:radial-gradient(circle at 50% 38%,#203349 0,#0c1723 35%,#050b12 78%);color-scheme:dark;background:var(--haamu-sky);color:#f5f7fa}
     *{box-sizing:border-box}
     html,body,#haamu-root{margin:0;width:100%;height:100%;min-width:0;min-height:0;overflow:hidden}
-    html,body{width:100dvw;height:100dvh;max-width:100dvw;max-height:100dvh}
-    #haamu-root{position:fixed;inset:0;width:auto;height:auto}
+    html,body{position:fixed;inset:0;width:100%;height:100%;max-width:100%;max-height:100%;touch-action:manipulation}
+    #haamu-root{position:absolute;inset:0;width:auto;height:auto}
     body{overscroll-behavior:none;background:var(--haamu-sky-gradient),var(--haamu-sky)}
     button{font:inherit}
     .haamu-interface{
@@ -206,7 +206,11 @@
     .right-pane{grid-area:right}
     .bottom-pane{grid-area:bottom}
     .center{grid-area:center;background:transparent;min-width:0;min-height:0}
-    @media(max-width:600px){.haamu-interface{--corner:48px}}
+    @media(max-width:600px){
+      .haamu-interface{
+        --corner:min(48px,8.5dvh);
+      }
+    }
     /* Invisible structural viewport lattice: composition only, never rendered. */
     .haamu-interface{
       --split-x:50%;--split-y:50%;
@@ -265,7 +269,7 @@
   <script src="default.js"></script>
   <script src="haamu.js"></script>
   <script src="browser.entry.js"></script>
-  <script src="browser.js?v=0.76.0"></script>
+  <script src="browser.js?v=0.77.0"></script>
   <script src="web.entry.js"></script>
   <script src="web.js"></script>
 </body>
