@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.24.0',
+  version: '0.25.0',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -61,13 +61,22 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
     shell.appendChild(element);
   }
 
+  /*
+   * Plate layer is constructed before the control layer is promoted.
+   * This is a real projection layer, not only a z-index convention.
+   */
+  const plateLayer = document.createElement('div');
+  plateLayer.className = 'plate-layer';
+  plateLayer.setAttribute('aria-hidden', 'true');
+  shell.prepend(plateLayer);
+
   const menus = new Map();
   for (const button of shell.querySelectorAll('.corner.start')) {
     const menu = document.createElement('section');
     menu.className = 'corner-menu';
     menu.dataset.corner = button.dataset.position;
     menu.setAttribute('aria-hidden', 'true');
-    shell.appendChild(menu);
+    plateLayer.appendChild(menu);
     menus.set(button.dataset.position, menu);
 
     button.setAttribute('aria-expanded', 'false');
