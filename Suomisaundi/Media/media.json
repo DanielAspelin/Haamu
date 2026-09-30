@@ -1,0 +1,15 @@
+{
+  "schema": "haamu.suomisaundi.media",
+  "version": "0.1.0",
+  "qualification": "pre-informative",
+  "platforms": [
+    "SoundCloud",
+    "Mixcloud",
+    "Ektoplazm",
+    "Bandcamp",
+    "YouTube",
+    "Spotify",
+    "Last.fm",
+    "Discogs"
+  ]
+}

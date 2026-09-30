@@ -1,0 +1,20 @@
+{
+  "schema": "haamu.suomisaundi.djs",
+  "version": "0.1.0",
+  "qualification": "pre-informative",
+  "source": "https://suomisaundi.fi/djs/",
+  "djs": [
+    "Ain-Soph",
+    "Beatneeq",
+    "Black Amba",
+    "Chai Infused Caramel",
+    "Cucumbara",
+    "DJ GO",
+    "DJ HiiWatti",
+    "Dark El Kante",
+    "Dixie Krystalz",
+    "Dj Drågön",
+    "Dj Hare",
+    "Gramozeka"
+  ]
+}

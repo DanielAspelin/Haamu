@@ -1,0 +1,12 @@
+{
+  "schema": "haamu.suomisaundi.archives",
+  "version": "0.1.0",
+  "qualification": "pre-informative",
+  "archives": [
+    {
+      "name": "Thixx'n'Dixx archive",
+      "provider": "Internet Archive",
+      "description": "Archive described by Suomisaundi.fi as containing nearly all of the original 2001-2002 Thixx'n'Dixx discography."
+    }
+  ]
+}

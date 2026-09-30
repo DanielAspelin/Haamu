@@ -1,0 +1,21 @@
+{
+  "schema": "haamu.suomisaundi.scenes",
+  "version": "0.1.0",
+  "qualification": "pre-informative",
+  "regions": [
+    "Finland",
+    "Russia",
+    "Ukraine",
+    "Japan",
+    "Australia",
+    "New Zealand",
+    "Eastern Europe",
+    "Belgium",
+    "Brazil",
+    "Mexico",
+    "United States",
+    "Romania",
+    "Canada"
+  ],
+  "note": "Regions are represented only where source material documents audiences, artists, labels, groups, or Suomisaundi activity."
+}

@@ -1,0 +1,35 @@
+{
+  "schema": "haamu.suomisaundi.history",
+  "version": "0.1.0",
+  "qualification": "pre-informative",
+  "milestones": [
+    {
+      "period": "early 1990s",
+      "event": "Ruskababa introduced Goa trance through underground summertime parties in Finland."
+    },
+    {
+      "period": "mid-1990s",
+      "event": "Smooth Underground and then Löyhä developed the Finnish party scene; Löyhä emphasized locally made music."
+    },
+    {
+      "period": "1995-1996",
+      "event": "Early Tim Thick recordings circulated in Goa."
+    },
+    {
+      "year": 1996,
+      "event": "Flippin Bixies was self-published and became an early defining compilation."
+    },
+    {
+      "year": 1997,
+      "event": "Exogenic Records began focusing on Finnish psychedelic trance and Midiliitto formed around the same period."
+    },
+    {
+      "year": 2000,
+      "event": "Thixx'n'Dixx launched as an online catalogue/distribution point for Suomisaundi."
+    }
+  ],
+  "sources": [
+    "https://en.wikipedia.org/wiki/Suomisaundi",
+    "https://suomisaundi.fi/links/"
+  ]
+}

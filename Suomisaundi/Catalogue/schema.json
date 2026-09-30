@@ -1,0 +1,30 @@
+{
+  "schema": "haamu.suomisaundi.catalogue.schema",
+  "version": "0.1.0",
+  "record_types": [
+    "artist",
+    "dj",
+    "label",
+    "release",
+    "collective",
+    "event",
+    "history",
+    "scene",
+    "archive",
+    "media",
+    "source"
+  ],
+  "required_common": [
+    "id",
+    "name",
+    "qualification",
+    "sources"
+  ],
+  "qualification_states": [
+    "pre-informative",
+    "unverified",
+    "under-conditional-experiment",
+    "verified",
+    "naturalized"
+  ]
+}
