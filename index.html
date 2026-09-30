@@ -110,10 +110,10 @@
       }
     }
     /* Grid-area ownership snaps each full-size control to its corner cell. */
-    .neon-green{grid-area:tl;align-self:start;justify-self:start;margin:2mm 0 0 2mm;--corner-rgb:212,175,55}
-    .lemon-yellow{grid-area:tr;align-self:start;justify-self:end;margin:2mm 2mm 0 0;--corner-rgb:212,175,55}
-    .purple{grid-area:bl;align-self:end;justify-self:start;margin:0 0 2mm 2mm;--corner-rgb:212,175,55}
-    .orange{grid-area:br;align-self:end;justify-self:end;margin:0 2mm 2mm 0;--corner-rgb:212,175,55}
+    .neon-green{grid-area:tl;align-self:start;justify-self:start;margin:0;--corner-rgb:212,175,55}
+    .lemon-yellow{grid-area:tr;align-self:start;justify-self:end;margin:0;--corner-rgb:212,175,55}
+    .purple{grid-area:bl;align-self:end;justify-self:start;margin:0;--corner-rgb:212,175,55}
+    .orange{grid-area:br;align-self:end;justify-self:end;margin:0;--corner-rgb:212,175,55}
     .corner-menu{
       --plate-inline:calc(100% - (var(--corner) * .82) - 20px);
       --plate-block:calc(100% - (var(--corner) * .82) - 32px);
@@ -121,15 +121,16 @@
       width:var(--plate-inline);height:var(--plate-block);
       z-index:2;pointer-events:none;opacity:0;border-radius:12px;
       background:linear-gradient(135deg,rgba(255,255,255,.14),rgba(255,255,255,.035));
-      box-shadow:inset 0 1px 0 rgba(255,255,255,.20);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.20),0 14px 30px rgba(0,0,0,.30);
+
       backdrop-filter:blur(18px) saturate(145%);
       -webkit-backdrop-filter:blur(18px) saturate(145%);
       transition:opacity .32s ease,transform .52s cubic-bezier(.16,1,.3,1);
     }
-    .corner-menu[data-corner="top-left"]{top:12px;left:4px;right:auto;bottom:auto;transform-origin:top left;transform:scale(.18)}
-    .corner-menu[data-corner="top-right"]{top:12px;right:4px;left:auto;bottom:auto;transform-origin:top right;transform:scale(.18)}
-    .corner-menu[data-corner="bottom-left"]{bottom:12px;left:4px;right:auto;top:auto;transform-origin:bottom left;transform:scale(.18)}
-    .corner-menu[data-corner="bottom-right"]{bottom:12px;right:4px;left:auto;top:auto;transform-origin:bottom right;transform:scale(.18)}
+    .corner-menu[data-corner="top-left"]{top:12px;left:4px;right:auto;bottom:auto;transform-origin:top left;transform:scale(.18);box-shadow:inset 18px 18px 30px rgba(0,0,0,.24),0 14px 30px rgba(0,0,0,.30)}
+    .corner-menu[data-corner="top-right"]{top:12px;right:4px;left:auto;bottom:auto;transform-origin:top right;transform:scale(.18);box-shadow:inset -18px 18px 30px rgba(0,0,0,.24),0 14px 30px rgba(0,0,0,.30)}
+    .corner-menu[data-corner="bottom-left"]{bottom:12px;left:4px;right:auto;top:auto;transform-origin:bottom left;transform:scale(.18);box-shadow:inset 18px -18px 30px rgba(0,0,0,.24),0 -14px 30px rgba(0,0,0,.30)}
+    .corner-menu[data-corner="bottom-right"]{bottom:12px;right:4px;left:auto;top:auto;transform-origin:bottom right;transform:scale(.18);box-shadow:inset -18px -18px 30px rgba(0,0,0,.24),0 -14px 30px rgba(0,0,0,.30)}
     .corner-menu.open{opacity:1;pointer-events:auto;transform:scale(1)}
     @media(max-width:600px){
       .corner-menu{
@@ -193,7 +194,7 @@
   <script src="default.js"></script>
   <script src="haamu.js"></script>
   <script src="browser.entry.js"></script>
-  <script src="browser.js?v=0.23.0"></script>
+  <script src="browser.js?v=0.24.0"></script>
   <script src="web.entry.js"></script>
   <script src="web.js"></script>
 </body>
