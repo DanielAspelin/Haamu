@@ -1,0 +1,22 @@
+{
+  "schema": "haamu.suomisaundi.catalogue",
+  "version": "0.1.0",
+  "qualification": "pre-informative",
+  "scope": "Research catalogue for the Suomisaundi musical genre, community, history and related works.",
+  "categories": [
+    "artists",
+    "releases",
+    "labels",
+    "collectives",
+    "events",
+    "history",
+    "scenes",
+    "archives",
+    "media",
+    "sources"
+  ],
+  "records": [],
+  "provenance": {
+    "policy": "Catalogue records require attributable source evidence; conflicting or uncertain claims remain explicitly qualified."
+  }
+}
