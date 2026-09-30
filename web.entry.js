@@ -1,13 +1,10 @@
 'use strict';
 
-/**
- * Haamu web.entry boundary.
- * Topology derived from the Terraformer web family; implementation is Haamu-owned.
- */
-
+/** Haamu Web Entry — internal web ingress reached through Browser. */
 globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['web.entry'] = Object.freeze({
-  family: 'web',
-  role: 'web.entry',
-  version: '0.1.0',
+  family: 'web', role: 'web.entry', version: '0.2.0',
+  position: 'inside-browser'
 });
+globalThis.HaamuIngress ??= [];
+globalThis.HaamuIngress.push('web.entry');

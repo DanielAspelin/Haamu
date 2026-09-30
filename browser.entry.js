@@ -1,21 +1,16 @@
 'use strict';
 
-/** Haamu browser entry: projects the browser surface after DOM readiness. */
+/**
+ * Haamu Browser Entry — outer human ingress boundary.
+ * Architectural ingress:
+ * Human -> Browser Entry -> Browser -> Web Entry -> Web -> Haamu internals.
+ * Reverse projection:
+ * Haamu internals -> Web -> Web Entry -> Browser -> Browser Entry -> Human.
+ */
 globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser.entry'] = Object.freeze({
-  family: 'browser', role: 'browser.entry', version: '0.2.0'
+  family: 'browser', role: 'browser.entry', version: '0.3.0',
+  position: 'outer-ingress'
 });
-
-function startHaamuBrowser() {
-  const status = globalThis.projectHaamuBrowser?.();
-  globalThis.HaamuRuntime = Object.freeze({
-    state: status?.state ?? 'FAILED',
-    startedAt: new Date().toISOString()
-  });
-}
-
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', startHaamuBrowser, { once: true });
-} else {
-  startHaamuBrowser();
-}
+globalThis.HaamuIngress ??= [];
+globalThis.HaamuIngress.push('browser.entry');
