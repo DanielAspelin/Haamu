@@ -45,11 +45,11 @@
     .purple{grid-area:bl;--corner-rgb:157,53,255}
     .orange{grid-area:br;--corner-rgb:255,140,26}
     .corner-menu{
-      --plate-w:clamp(132px,21vw,210px);--plate-h:clamp(184px,30vw,296px);
+      --plate-w:clamp(132px,21vw,210px);--plate-h:clamp(260px,42vh,440px);
       position:absolute;width:var(--plate-w);height:var(--plate-h);z-index:2;pointer-events:none;
       opacity:0;border-radius:12px;
       background:linear-gradient(135deg,rgba(255,255,255,.14),rgba(255,255,255,.035));
-      box-shadow:0 18px 44px rgba(0,0,0,.30),inset 0 1px 0 rgba(255,255,255,.20);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.20);
       backdrop-filter:blur(18px) saturate(145%);-webkit-backdrop-filter:blur(18px) saturate(145%);
       transition:opacity .32s ease,transform .52s cubic-bezier(.16,1,.3,1);
     }
@@ -62,7 +62,7 @@
     .corner-menu.open[data-corner="top-right"]{transform:translate(calc(var(--corner) * -.72),calc(var(--corner) * .72)) scale(1)}
     .corner-menu.open[data-corner="bottom-left"]{transform:translate(calc(var(--corner) * .72),calc(var(--corner) * -.72)) scale(1)}
     .corner-menu.open[data-corner="bottom-right"]{transform:translate(calc(var(--corner) * -.72),calc(var(--corner) * -.72)) scale(1)}
-    @media(max-width:600px){.corner-menu{--plate-w:min(39vw,164px);--plate-h:min(58vw,240px)}}
+    @media(max-width:600px){.corner-menu{--plate-w:min(39vw,164px);--plate-h:min(42vh,360px)}}
     .pane{
       position:relative;border:0;background:linear-gradient(135deg,rgba(255,255,255,.055),rgba(255,255,255,.018));
       opacity:0;box-shadow:none;
