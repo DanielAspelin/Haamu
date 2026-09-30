@@ -1,0 +1,29 @@
+{
+  "schema": "haamu.suomisaundi.checkpoint",
+  "version": "0.1.0",
+  "name": "catalogue-integrity-v0.1",
+  "date": "2026-09-30",
+  "lineage": {
+    "parent": "72cec216affaadbe4930e11ca2089979363a3adf",
+    "tested_commit": "d6471a7bde9f1349976c91d7337bd364aa1ca778"
+  },
+  "qualification": "Verified",
+  "seal": "Constructive Seal",
+  "workflow_run_id": 36754566343,
+  "scope": [
+    "catalogue identity boundaries",
+    "membership inference boundary",
+    "claim-scoped qualification",
+    "snapshot immutability policy",
+    "person/alias separation",
+    "release-role presence",
+    "pending unknown metadata policy"
+  ],
+  "exclusions": [
+    "completeness",
+    "all source claims",
+    "all external IDs",
+    "open normalization conflicts",
+    "event chronology completeness"
+  ]
+}
