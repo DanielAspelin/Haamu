@@ -1,0 +1,76 @@
+{
+  "schema": "haamu.suomisaundi.external.pending",
+  "version": "0.1.0",
+  "observed": "2026-09-30",
+  "targets": [
+    {
+      "entity": "Texas Faggott",
+      "titles": [
+        "Petoman's Peflett",
+        "From Israel With Love",
+        "Mäntsälän Mad Max"
+      ],
+      "sources": [
+        "MusicBrainz",
+        "Discogs",
+        "Finna"
+      ],
+      "status": "pending"
+    },
+    {
+      "entity": "Squaremeat",
+      "titles": [
+        "Wave Soup",
+        "Jungle Boogie Party Line",
+        "Astronomical Coffee Break"
+      ],
+      "sources": [
+        "MusicBrainz",
+        "Discogs",
+        "Finna"
+      ],
+      "status": "pending"
+    },
+    {
+      "entity": "Salakavala",
+      "titles": [
+        "Fractal Fishing",
+        "Garlic Shake"
+      ],
+      "sources": [
+        "MusicBrainz",
+        "Discogs",
+        "Finna"
+      ],
+      "status": "pending"
+    },
+    {
+      "entity": "Haltya",
+      "titles": [
+        "Forest Flavour",
+        "Hero",
+        "Electric Help Elves"
+      ],
+      "sources": [
+        "MusicBrainz",
+        "Discogs",
+        "Finna"
+      ],
+      "status": "pending"
+    },
+    {
+      "entity": "Eraser vs Yöjalka",
+      "titles": [
+        "Round 1",
+        "Tarinat"
+      ],
+      "sources": [
+        "Finna",
+        "MusicBrainz",
+        "Discogs"
+      ],
+      "status": "pending"
+    }
+  ],
+  "note": "A failed or empty search is not evidence that an external record does not exist."
+}

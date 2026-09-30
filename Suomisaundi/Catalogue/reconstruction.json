@@ -1,0 +1,40 @@
+{
+  "schema": "haamu.suomisaundi.reconstruction",
+  "version": "0.1.0",
+  "order": [
+    "Sources",
+    "External",
+    "People",
+    "Aliases",
+    "Artists",
+    "DJs",
+    "Labels",
+    "Collectives",
+    "Releases",
+    "Tracks",
+    "Events",
+    "Festivals",
+    "Venues",
+    "Scenes",
+    "History",
+    "Community",
+    "Terminology",
+    "Archives",
+    "Media",
+    "Research",
+    "Relationships",
+    "Catalogue"
+  ],
+  "procedure": [
+    "Load source registry and provenance rules.",
+    "Load external identifiers without promoting them to canonical identity.",
+    "Resolve people, aliases and artist/project identities.",
+    "Resolve organizations and collectives.",
+    "Resolve releases before track appearances.",
+    "Apply explicit relationship edges.",
+    "Retain snapshots as immutable observation evidence.",
+    "Apply qualification per claim.",
+    "Emit canonical indexes and unresolved-conflict report."
+  ],
+  "deterministic_goal": true
+}

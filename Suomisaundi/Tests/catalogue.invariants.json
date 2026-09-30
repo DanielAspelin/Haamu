@@ -1,0 +1,35 @@
+{
+  "schema": "haamu.suomisaundi.catalogue-tests",
+  "version": "0.1.0",
+  "invariants": [
+    {
+      "id": "no-name-only-external-id",
+      "assertion": "External artist IDs require discriminating corroboration."
+    },
+    {
+      "id": "no-catalogue-implies-genre",
+      "assertion": "Catalogue inclusion does not imply core Suomisaundi membership."
+    },
+    {
+      "id": "claim-scoped-qualification",
+      "assertion": "Qualification applies to supported claims, not whole entities by default."
+    },
+    {
+      "id": "snapshots-immutable",
+      "assertion": "Dated source snapshots are observation evidence and must not be silently rewritten."
+    },
+    {
+      "id": "alias-not-person",
+      "assertion": "Artist aliases/projects do not replace human identities."
+    },
+    {
+      "id": "release-role-required",
+      "assertion": "Artist/release associations carry an explicit role when known."
+    },
+    {
+      "id": "unknown-not-invented",
+      "assertion": "Unknown metadata remains absent or pending."
+    }
+  ],
+  "state": "specified-not-executed"
+}

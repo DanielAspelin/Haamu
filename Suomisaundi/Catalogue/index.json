@@ -1,0 +1,35 @@
+{
+  "schema": "haamu.suomisaundi.index",
+  "version": "0.1.0",
+  "generated_basis": "repository corpus through 2026-09-30",
+  "families": [
+    "Artists",
+    "People",
+    "Aliases",
+    "DJs",
+    "Labels",
+    "Releases",
+    "Tracks",
+    "Collectives",
+    "Events",
+    "Festivals",
+    "Venues",
+    "History",
+    "Scenes",
+    "Community",
+    "Terminology",
+    "Archives",
+    "Media",
+    "Research",
+    "Relationships",
+    "Sources",
+    "External"
+  ],
+  "canonical_rules": [
+    "Entity records are authoritative over dated snapshots.",
+    "Snapshots preserve observations and are never silently rewritten.",
+    "External identifiers remain source-specific.",
+    "Relationships are explicit edges, not inferred from directory placement."
+  ],
+  "completeness": false
+}

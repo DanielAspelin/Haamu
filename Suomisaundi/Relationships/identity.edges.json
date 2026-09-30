@@ -1,0 +1,41 @@
+{
+  "schema": "haamu.suomisaundi.identity-edges",
+  "version": "0.1.0",
+  "edges": [
+    {
+      "from": "person.tim-thick",
+      "relation": "performs-as",
+      "to": "artist.texas-faggott",
+      "scope": "member"
+    },
+    {
+      "from": "person.tim-thick",
+      "relation": "performs-as",
+      "to": "artist.mandalavandalz",
+      "scope": "project"
+    },
+    {
+      "from": "person.jere-hakkinen",
+      "relation": "performs-as",
+      "to": "artist.luomuhappo"
+    },
+    {
+      "from": "person.jere-hakkinen",
+      "relation": "performs-as",
+      "to": "artist.puukko-jere"
+    },
+    {
+      "from": "artist.eraser-vs-yojalka",
+      "relation": "member",
+      "to": "Julius Lehmuskallio",
+      "alias": "Eraser"
+    },
+    {
+      "from": "artist.eraser-vs-yojalka",
+      "relation": "member",
+      "to": "Simo Ojala",
+      "alias": "Yöjalka"
+    }
+  ],
+  "qualification": "mixed-source-supported"
+}

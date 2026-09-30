@@ -1,0 +1,27 @@
+{
+  "schema": "haamu.suomisaundi.conflicts",
+  "version": "0.1.0",
+  "conflicts": [
+    {
+      "subject": "Aavepyörä",
+      "issue": "source spelling variants may occur",
+      "policy": "Preserve exact display spelling and normalize only identifier."
+    },
+    {
+      "subject": "Kyril & Eskobar",
+      "issue": "source observations also contain spelling Kyril & Escobar",
+      "policy": "Retain both observations until identity/ANV evidence resolves canonical display form."
+    },
+    {
+      "subject": "Microchief",
+      "issue": "source observations also contain MicroChief",
+      "policy": "Case variation retained pending canonical first-party evidence."
+    },
+    {
+      "subject": "Texas Faggott",
+      "issue": "generic external searches return unrelated similarly named artists",
+      "policy": "Require discriminating release-level evidence before ID attachment."
+    }
+  ],
+  "resolution_state": "open"
+}
