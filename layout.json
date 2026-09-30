@@ -1,10 +1,16 @@
 {
   "schema": "haamu.visual-layout",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "state": "experimental",
   "origin": "c24890ca1cfeb0a56188421e8000a39be3c34605",
   "phase": "geometry-interaction",
   "visibleText": false,
+  "viewport": {
+    "mobile": "visual-viewport-bound",
+    "safeArea": true,
+    "scroll": false,
+    "allCornersSimultaneouslyVisible": true
+  },
   "geometry": {
     "center": {"content": "empty"},
     "corners": {
@@ -24,6 +30,9 @@
     "no visible textual interface content",
     "center remains empty",
     "all four panes remain empty",
+    "all four corner controls remain simultaneously visible within the active viewport",
+    "the interface does not create document scrolling",
+    "mobile safe-area insets are respected",
     "pane boundaries are not persistently visible",
     "each pane reveals its own boundary only while hovered",
     "corner controls have no visible names",

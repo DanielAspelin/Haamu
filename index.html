@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="description" content="Haamu — open community, technology and culture">
   <title>Haamu</title>
   <style>
@@ -13,7 +13,9 @@
     button{font:inherit}
     .haamu-interface{
       --corner:clamp(52px,5.5vw,76px);
-      width:100vw;height:100vh;display:grid;
+      position:absolute;
+      inset:env(safe-area-inset-top,0) env(safe-area-inset-right,0) env(safe-area-inset-bottom,0) env(safe-area-inset-left,0);
+      width:auto;height:auto;min-width:0;min-height:0;display:grid;
       grid-template-columns:var(--corner) 1fr var(--corner);
       grid-template-rows:var(--corner) 1fr var(--corner);
       grid-template-areas:
