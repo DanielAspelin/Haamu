@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.77.0',
+  version: '0.83.0',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -37,6 +37,17 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
   const shell = document.createElement('main');
   shell.className = 'haamu-interface';
   shell.setAttribute('aria-label', 'Haamu interface');
+
+  // First projected layer after the shell background: centered identity text.
+  // Controls and plates remain on their higher established z-index layers.
+  const wordmarkLayer = document.createElement('div');
+  wordmarkLayer.className = 'haamu-wordmark-layer';
+  wordmarkLayer.setAttribute('aria-hidden', 'true');
+  const wordmark = document.createElement('div');
+  wordmark.className = 'haamu-wordmark';
+  wordmark.textContent = 'HAAMU';
+  wordmarkLayer.appendChild(wordmark);
+  shell.appendChild(wordmarkLayer);
 
   const positions = [
     ['top-left', 'corner start neon-green', 'Start control, top left'],
