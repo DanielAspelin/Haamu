@@ -40,10 +40,11 @@
       outline:none;
     }
     .corner:active{transform:scale(.94)}
-    .neon-green{grid-area:tl;--corner-rgb:57,255,20}
-    .lemon-yellow{grid-area:tr;--corner-rgb:255,244,79}
-    .purple{grid-area:bl;--corner-rgb:157,53,255}
-    .orange{grid-area:br;--corner-rgb:255,140,26}
+    /* Corner controls are explicitly snapped to the structural viewport corners. */
+    .neon-green{grid-area:tl;align-self:start;justify-self:start;--corner-rgb:57,255,20}
+    .lemon-yellow{grid-area:tr;align-self:start;justify-self:end;--corner-rgb:255,244,79}
+    .purple{grid-area:bl;align-self:end;justify-self:start;--corner-rgb:157,53,255}
+    .orange{grid-area:br;align-self:end;justify-self:end;--corner-rgb:255,140,26}
     .corner-menu{
       --plate-inline:calc(100% - (var(--corner) * .82) - 20px);
       --plate-block:calc(100% - (var(--corner) * .82) - 32px);
