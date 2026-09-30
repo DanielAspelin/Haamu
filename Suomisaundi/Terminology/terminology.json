@@ -1,0 +1,31 @@
+{
+  "schema": "haamu.suomisaundi.terminology",
+  "version": "0.1.0",
+  "qualification": "source-supported",
+  "terms": [
+    {
+      "term": "Suomisaundi",
+      "meaning": "Literally Finnish sound; name used for the Finnish-origin psychedelic trance style."
+    },
+    {
+      "term": "Suomisoundi",
+      "relation": "alternate spelling"
+    },
+    {
+      "term": "Suomistyge",
+      "relation": "alternate name"
+    },
+    {
+      "term": "Spugedelic trance",
+      "relation": "alternate scene/genre name"
+    },
+    {
+      "term": "Finski disco",
+      "relation": "scene-associated terminology; requires further historical normalization"
+    }
+  ],
+  "sources": [
+    "https://en.wikipedia.org/wiki/Suomisaundi",
+    "https://suomisaundi.fi/suomisaundi/"
+  ]
+}

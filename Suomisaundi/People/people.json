@@ -1,0 +1,78 @@
+{
+  "schema": "haamu.suomisaundi.people",
+  "version": "0.1.0",
+  "qualification": "source-supported",
+  "people": [
+    {
+      "id": "person.tim-thick",
+      "name": "Tim Thick",
+      "also_known_as": [
+        "Timo Bentley",
+        "Tomo Tomatoeyes"
+      ],
+      "relationships": [
+        "Texas Faggott",
+        "Shiwa 2000",
+        "MandalaVandalz",
+        "Thixx'n'Dixx"
+      ]
+    },
+    {
+      "id": "person.pasi-hartikainen",
+      "name": "Pasi Hartikainen",
+      "also_known_as": [
+        "Pentti Slayer"
+      ],
+      "relationships": [
+        "Texas Faggott"
+      ]
+    },
+    {
+      "id": "person.pepe-kosminen",
+      "name": "Pepe Kosminen",
+      "relationships": [
+        "Ruskababa",
+        "Squaremeat",
+        "Flying Scorpions",
+        "Midiliitto"
+      ],
+      "historical_role": "Founding chairman of Midiliitto according to secondary historical source."
+    },
+    {
+      "id": "person.ville-tikkanen",
+      "name": "Ville Tikkanen",
+      "relationships": [
+        "Smooth Underground"
+      ],
+      "historical_role": "DJ associated with early Goa-trance presentation in the Finnish scene."
+    },
+    {
+      "id": "person.tommy-lauhiala",
+      "name": "Tommy Lauhiala",
+      "relationships": [
+        "Salakavala"
+      ]
+    },
+    {
+      "id": "person.toni-sorsa",
+      "name": "Toni Sorsa",
+      "relationships": [
+        "Salakavala"
+      ]
+    },
+    {
+      "id": "person.rick-timebees",
+      "name": "Rick Timebees",
+      "relationships": [
+        "Shiwa 2000"
+      ]
+    }
+  ],
+  "sources": [
+    "https://suomisaundi.fi/artists/texas-faggott/",
+    "https://suomisaundi.fi/artists/salakavala/",
+    "https://suomisaundi.fi/artists/shiwa-2000/",
+    "https://suomisaundi.fi/artists/flying-scorpions/",
+    "https://en.wikipedia.org/wiki/Suomisaundi"
+  ]
+}

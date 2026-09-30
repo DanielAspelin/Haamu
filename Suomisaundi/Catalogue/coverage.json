@@ -1,0 +1,47 @@
+{
+  "schema": "haamu.suomisaundi.coverage",
+  "version": "0.1.0",
+  "dimensions": {
+    "artists": {
+      "state": "partial",
+      "next": "enumerate full Suomisaundi.fi artist directory and reconcile identities"
+    },
+    "djs": {
+      "state": "partial",
+      "next": "enumerate and normalize DJ directory"
+    },
+    "labels": {
+      "state": "partial",
+      "next": "enumerate all pages and first-party label evidence"
+    },
+    "releases": {
+      "state": "partial",
+      "next": "normalize release types, artists, labels, catalogue numbers and appearances"
+    },
+    "tracks": {
+      "state": "empty",
+      "next": "extract source-supported tracklists"
+    },
+    "people": {
+      "state": "seeded",
+      "next": "resolve members and aliases"
+    },
+    "events": {
+      "state": "minimal",
+      "next": "research dated parties, festivals and organizers"
+    },
+    "venues": {
+      "state": "minimal",
+      "next": "research historical venues without inventing precise addresses"
+    },
+    "archives": {
+      "state": "minimal",
+      "next": "index archived sites and snapshots"
+    },
+    "research": {
+      "state": "seeded",
+      "next": "extract academic bibliography and DAT catalogue where legally/accessibly available"
+    }
+  },
+  "completeness_claim": false
+}

@@ -1,0 +1,42 @@
+{
+  "schema": "haamu.suomisaundi.aliases",
+  "version": "0.1.0",
+  "aliases": [
+    {
+      "alias": "Tim Thick",
+      "canonical": "Timo Bentley",
+      "context": "artist identity"
+    },
+    {
+      "alias": "Tomo Tomatoeyes",
+      "canonical": "Tim Thick",
+      "context": "Mandalavandalz/Texas Faggott-associated identity"
+    },
+    {
+      "alias": "Pentti Slayer",
+      "canonical": "Pasi Hartikainen",
+      "context": "Texas Faggott"
+    },
+    {
+      "alias": "Suomisoundi",
+      "canonical": "Suomisaundi",
+      "context": "genre spelling"
+    },
+    {
+      "alias": "Suomistyge",
+      "canonical": "Suomisaundi",
+      "context": "genre synonym"
+    },
+    {
+      "alias": "Spugedelic trance",
+      "canonical": "Suomisaundi",
+      "context": "genre/scene synonym"
+    }
+  ],
+  "qualification": "source-supported",
+  "sources": [
+    "https://suomisaundi.fi/artists/texas-faggott/",
+    "https://suomisaundi.fi/artists/mandalavandalz/",
+    "https://en.wikipedia.org/wiki/Suomisaundi"
+  ]
+}
