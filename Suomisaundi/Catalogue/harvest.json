@@ -1,0 +1,23 @@
+{
+  "schema": "haamu.suomisaundi.harvest",
+  "version": "0.1.0",
+  "last_harvest": "2026-09-30",
+  "strategy": [
+    "capture source observations",
+    "preserve exact source identity",
+    "normalize into entities separately",
+    "cross-check consequential facts",
+    "retain uncertainty"
+  ],
+  "outstanding": [
+    "complete all artist-directory pages",
+    "enumerate complete label pagination",
+    "enumerate release pagination",
+    "resolve release-vs-appearance roles",
+    "extract tracklists from reliable sources",
+    "reconcile Discogs/MusicBrainz identifiers",
+    "recover Thixx'n'Dixx archive metadata",
+    "build dated event chronology"
+  ],
+  "completeness": false
+}

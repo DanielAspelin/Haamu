@@ -1,0 +1,10 @@
+{
+  "id": "artist.okta",
+  "name": "Okta",
+  "type": "artist",
+  "description": "Freeform electronic music project active since 2002 and described by the source as deeply rooted in Finnish Suomisaundi tradition.",
+  "qualification": "source-supported",
+  "sources": [
+    "https://suomisaundi.fi/artists/"
+  ]
+}

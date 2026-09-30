@@ -1,0 +1,17 @@
+{
+  "id": "artist.luomuhappo",
+  "name": "Luomuhappo",
+  "type": "artist",
+  "country": "Finland",
+  "person": {
+    "name": "Jere Häkkinen",
+    "birth_year": 1982
+  },
+  "aliases": [
+    "Puukko-Jere"
+  ],
+  "qualification": "source-supported",
+  "sources": [
+    "https://suomisaundi.fi/artists/"
+  ]
+}
