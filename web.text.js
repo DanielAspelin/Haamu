@@ -14,8 +14,8 @@ const finite = (value, fallback) => Number.isFinite(Number(value)) ? Number(valu
 const HaamuWebText = Object.freeze({
   family: 'web',
   role: 'web.text',
-  type: 'text-processor',
-  version: '0.2.0',
+  type: 'text-processor-allocator',
+  version: '0.3.0',
 
   normalize(value, form = 'NFC') {
     const text = value == null ? '' : String(value);
@@ -37,6 +37,25 @@ const HaamuWebText = Object.freeze({
 
   codePoints(value) {
     return this.characters(value).map(character => character.codePointAt(0));
+  },
+
+  allocate(value, options = {}) {
+    const record = this.process(value, options);
+    const start = Math.max(0, Math.trunc(finite(options.start, 0)));
+    const capacity = Math.max(record.characters.length, Math.trunc(finite(options.capacity, record.characters.length)));
+    const end = start + record.characters.length;
+    if (end > start + capacity) throw new RangeError('Text allocation exceeds capacity.');
+
+    return Object.freeze({
+      type: 'text-allocation',
+      start,
+      end,
+      length: record.characters.length,
+      capacity,
+      available: capacity - record.characters.length,
+      units: options.allocationUnits ?? 'characters',
+      record,
+    });
   },
 
   process(value, options = {}) {
