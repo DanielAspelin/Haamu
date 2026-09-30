@@ -1,9 +1,9 @@
 {
   "schema": "haamu.visual-layout",
-  "version": "0.3.2",
+  "version": "0.4.0",
   "state": "experimental",
   "origin": "c24890ca1cfeb0a56188421e8000a39be3c34605",
-  "phase": "geometry-interaction",
+  "phase": "corner-menu-morph",
   "visibleText": false,
   "viewport": {
     "mobile": "visual-viewport-bound",
@@ -78,6 +78,20 @@
     "pane boundaries are not persistently visible",
     "pane hover reveal uses no border, outline, or edge line",
     "corner controls have no visible names",
-    "corner controls retain position and color identity through a glass surface"
-  ]
+    "corner controls retain position and color identity through a glass surface",
+    "each corner control owns one empty morphing menu surface",
+    "corner menu surfaces remain below their owning corner controls",
+    "at most one corner menu surface is open at a time"
+  ],
+  "interaction": {
+    "cornerMenus": {
+      "count": 4,
+      "content": "empty",
+      "activation": "press",
+      "simultaneousOpen": 1,
+      "layer": "under-corner-control",
+      "motion": "corner-origin morph",
+      "shape": "square"
+    }
+  }
 }

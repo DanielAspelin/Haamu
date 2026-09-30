@@ -31,7 +31,7 @@
       box-shadow:inset 0 1px 0 rgba(255,255,255,.42),inset 0 -1px 0 rgba(0,0,0,.18);
       backdrop-filter:blur(14px) saturate(150%);
       -webkit-backdrop-filter:blur(14px) saturate(150%);
-      transition:background-color .16s ease,box-shadow .16s ease,filter .16s ease,transform .12s ease;
+      z-index:3;transition:background-color .16s ease,box-shadow .16s ease,filter .16s ease,transform .12s ease;
     }
     .corner:hover,.corner:focus-visible{
       background-color:rgba(var(--corner-rgb),.82);
@@ -44,6 +44,23 @@
     .lemon-yellow{grid-area:tr;--corner-rgb:255,244,79}
     .purple{grid-area:bl;--corner-rgb:157,53,255}
     .orange{grid-area:br;--corner-rgb:255,140,26}
+    .corner-menu{
+      --menu-size:clamp(150px,22vw,240px);
+      position:absolute;width:var(--menu-size);height:var(--menu-size);
+      z-index:2;pointer-events:none;opacity:0;
+      background:linear-gradient(135deg,rgba(255,255,255,.105),rgba(255,255,255,.035));
+      box-shadow:0 18px 50px rgba(0,0,0,.32),inset 0 1px 0 rgba(255,255,255,.16);
+      backdrop-filter:blur(18px) saturate(145%);
+      -webkit-backdrop-filter:blur(18px) saturate(145%);
+      transform:scale(.12);transition:transform .28s cubic-bezier(.2,.85,.2,1),opacity .18s ease,border-radius .28s ease;
+      border-radius:42%;
+    }
+    .corner-menu[data-corner="top-left"]{top:0;left:0;transform-origin:top left}
+    .corner-menu[data-corner="top-right"]{top:0;right:0;transform-origin:top right}
+    .corner-menu[data-corner="bottom-left"]{bottom:0;left:0;transform-origin:bottom left}
+    .corner-menu[data-corner="bottom-right"]{bottom:0;right:0;transform-origin:bottom right}
+    .corner-menu.open{opacity:1;pointer-events:auto;transform:scale(1);border-radius:10px}
+    @media(max-width:600px){.corner-menu{--menu-size:min(42vw,180px)}}
     .pane{
       position:relative;border:0;background:transparent;
       box-shadow:inset 0 0 0 0 rgba(255,255,255,0);
@@ -61,7 +78,7 @@
     .bottom-pane{grid-area:bottom}
     .center{grid-area:center;background:#07090c;min-width:0;min-height:0}
     @media(max-width:600px){.haamu-interface{--corner:48px}}
-    @media(prefers-reduced-motion:reduce){.corner,.pane{transition:none}}
+    @media(prefers-reduced-motion:reduce){.corner,.pane,.corner-menu{transition:none}}
   </style>
 </head>
 <body>

@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.4.0',
+  version: '0.5.0',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -16,7 +16,7 @@ globalThis.HaamuIngress ??= [];
 globalThis.HaamuIngress.push('browser');
 
 const HaamuLayout = Object.freeze({
-  version: '0.1.0',
+  version: '0.2.0',
   center: 'empty',
   corners: Object.freeze({
     topLeft: Object.freeze({ role: 'start', color: 'neon-green' }),
@@ -61,6 +61,32 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
     shell.appendChild(element);
   }
 
+  const menus = new Map();
+  for (const button of shell.querySelectorAll('.corner.start')) {
+    const menu = document.createElement('section');
+    menu.className = 'corner-menu';
+    menu.dataset.corner = button.dataset.position;
+    menu.setAttribute('aria-hidden', 'true');
+    shell.appendChild(menu);
+    menus.set(button.dataset.position, menu);
+
+    button.setAttribute('aria-expanded', 'false');
+    button.addEventListener('click', () => {
+      const opening = !menu.classList.contains('open');
+      for (const [position, candidate] of menus) {
+        candidate.classList.remove('open');
+        candidate.setAttribute('aria-hidden', 'true');
+        const owner = shell.querySelector('.corner.start[data-position="' + position + '"]');
+        owner?.setAttribute('aria-expanded', 'false');
+      }
+      if (opening) {
+        menu.classList.add('open');
+        menu.setAttribute('aria-hidden', 'false');
+        button.setAttribute('aria-expanded', 'true');
+      }
+    });
+  }
+
   root.appendChild(shell);
   document.documentElement.dataset.haamu = 'ready';
   return Object.freeze({
@@ -69,6 +95,7 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
     corners: 4,
     panes: 4,
     center: 'empty',
+    cornerMenus: 4,
   });
 }
 
