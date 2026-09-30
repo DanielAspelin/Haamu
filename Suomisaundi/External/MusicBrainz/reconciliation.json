@@ -1,0 +1,82 @@
+{
+  "schema": "haamu.suomisaundi.external.musicbrainz",
+  "version": "0.1.0",
+  "observed": "2026-09-30",
+  "policy": "Attach external identifiers only when identity is corroborated by release, label, country, relationship, or other discriminating evidence. Name-only matches are insufficient.",
+  "reconciled": [
+    {
+      "entity": "Texas Faggott",
+      "kind": "release",
+      "title": "Texas Faggott",
+      "year": 1999,
+      "country": "Australia",
+      "label": "Psy-Harmonics",
+      "catalogue_number": "PSY-042",
+      "barcode": "9399603195529",
+      "format": "CD",
+      "status": "Official",
+      "source": "https://musicbrainz.org/release/da0d9b59-1863-4cc4-b531-2cd224e1ac91/cover-art"
+    },
+    {
+      "entity": "Texas Faggott",
+      "kind": "release",
+      "title": "Back to Mad",
+      "year": 2000,
+      "country": "Finland",
+      "label": "Exogenic Records",
+      "type": "EP",
+      "status": "Withdrawn",
+      "source": "https://musicbrainz.org/release/1bed3d46-b312-4f14-a1c3-fa20abe4df6b/cover-art"
+    },
+    {
+      "entity": "Texas Faggott",
+      "kind": "release",
+      "title": "Tranz Toiletté",
+      "year": 2013,
+      "country": "Finland",
+      "label": "Rytmimystiikka",
+      "type": "Album",
+      "format": "Digital Media",
+      "mbid": "b8d9cf6a-9d2b-4a0f-b7ae-d768c278572f",
+      "status": "Official",
+      "source": "https://musicbrainz.org/release/b8d9cf6a-9d2b-4a0f-b7ae-d768c278572f/details"
+    },
+    {
+      "entity": "Texas Faggott",
+      "kind": "release-group",
+      "title": "Uncle Mikael's Pickels",
+      "year": 2016,
+      "territory": "Worldwide",
+      "label": "Rytmimystiikka",
+      "type": "Album",
+      "release_group_mbid": "5124faa9-718d-4f74-aaaf-88203b5857f8",
+      "source": "https://musicbrainz.org/release-group/5124faa9-718d-4f74-aaaf-88203b5857f8"
+    },
+    {
+      "entity": "Luomuhappo",
+      "kind": "release",
+      "title": "Pallit ja sielu",
+      "date": "2012-02-25",
+      "territory": "Worldwide",
+      "label": "Freakdance Records",
+      "type": "Album",
+      "format": "Digital Media",
+      "barcode": "9008798076055",
+      "status": "Official",
+      "source": "https://musicbrainz.org/release/8993b3cc-b0de-43fb-a949-cebc8285a5fd"
+    }
+  ],
+  "rejected_name_matches": [
+    {
+      "name": "FAGGOT",
+      "area": "United Kingdom",
+      "reason": "Unrelated group; name similarity only."
+    },
+    {
+      "name": "FAGGOT",
+      "area": "Chile",
+      "reason": "Unrelated artist; name similarity only."
+    }
+  ],
+  "qualification": "source-supported"
+}

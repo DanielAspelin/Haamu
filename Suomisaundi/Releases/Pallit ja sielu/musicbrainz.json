@@ -1,0 +1,27 @@
+{
+  "title": "Pallit ja sielu",
+  "artist": "Luomuhappo",
+  "date": "2012-02-25",
+  "territory": "Worldwide",
+  "label": "Freakdance Records",
+  "format": "Digital Media",
+  "type": "Album",
+  "status": "Official",
+  "language": "Finnish",
+  "barcode": "9008798076055",
+  "length": "1:14:23",
+  "track_count": 14,
+  "featured_relationships": [
+    {
+      "track": "Sputnik",
+      "credit": "Luomuhappo feat. Pyhimys"
+    },
+    {
+      "track": "Kappahalli (Luomuhappo remix)",
+      "primary_artist": "Trio Tetris",
+      "role": "remix"
+    }
+  ],
+  "qualification": "externally-corroborated",
+  "source": "https://musicbrainz.org/release/8993b3cc-b0de-43fb-a949-cebc8285a5fd"
+}
