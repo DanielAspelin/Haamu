@@ -1,0 +1,18 @@
+{
+  "id": "artist.suomies",
+  "name": "Suomies",
+  "type": "artist",
+  "discography_seed": [
+    "Takamatsu Nightlife (2017)",
+    "Jokin Tie (2017)",
+    "Human Spectrum Volume 1 (2019)",
+    "Suomisaundi 7.0 (2020)",
+    "Finski Disco (2022)",
+    "Wänkenstein 2D (2023)",
+    "Fusions Of Confusions (2026)"
+  ],
+  "qualification": "source-supported",
+  "sources": [
+    "https://suomisaundi.fi/artists/suomies/"
+  ]
+}

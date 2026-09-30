@@ -1,0 +1,17 @@
+{
+  "schema": "haamu.suomisaundi.membership",
+  "version": "0.1.0",
+  "rule": "Presence in a Suomisaundi-oriented catalogue is evidence of relevance, not sufficient evidence that a work or entity is itself Suomisaundi.",
+  "statuses": [
+    "core",
+    "associated",
+    "contextual",
+    "uncertain"
+  ],
+  "requirements": {
+    "core": "Explicit reliable source characterization as Suomisaundi/Suomisoundi or strong corroborated scene evidence.",
+    "associated": "Documented direct relationship to Suomisaundi artists, labels, organizations or releases.",
+    "contextual": "Relevant Goa/psytrance or scene-history material indexed for context.",
+    "uncertain": "Insufficient evidence for stronger classification."
+  }
+}

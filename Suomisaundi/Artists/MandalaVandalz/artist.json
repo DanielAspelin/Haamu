@@ -1,0 +1,24 @@
+{
+  "id": "artist.mandalavandalz",
+  "name": "MandalaVandalz",
+  "type": "artist",
+  "country": "Finland",
+  "led_by": "Tim Thick",
+  "aliases": [
+    "Tomo Tomatoeyes"
+  ],
+  "description": "Finnish Suomisaundi project led by Tim Thick.",
+  "discography_seed": [
+    "Hong Kong Knightlife (2002)",
+    "Kamakaze (2003)",
+    "Chapora Nightlife (2004)",
+    "Poisonmachine (2005)",
+    "King Of The Bad Trips (2008)",
+    "Off The Road EP (2009)",
+    "Shöganai EP (2016)"
+  ],
+  "qualification": "source-supported",
+  "sources": [
+    "https://suomisaundi.fi/artists/mandalavandalz/"
+  ]
+}

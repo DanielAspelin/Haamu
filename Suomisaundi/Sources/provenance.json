@@ -1,0 +1,56 @@
+{
+  "schema": "haamu.suomisaundi.provenance",
+  "version": "0.1.0",
+  "evidence_classes": {
+    "academic": {
+      "weight": "high",
+      "examples": [
+        "University repositories",
+        "peer-reviewed/contextual scholarship"
+      ]
+    },
+    "first_party": {
+      "weight": "high-for-self-claims",
+      "examples": [
+        "artist",
+        "label",
+        "organization"
+      ]
+    },
+    "community_catalogue": {
+      "weight": "medium",
+      "examples": [
+        "Suomisaundi.fi"
+      ]
+    },
+    "database": {
+      "weight": "medium",
+      "examples": [
+        "Discogs",
+        "MusicBrainz"
+      ]
+    },
+    "secondary": {
+      "weight": "variable",
+      "examples": [
+        "Wikipedia",
+        "press"
+      ]
+    },
+    "social": {
+      "weight": "low-unless-first-party",
+      "examples": [
+        "Facebook",
+        "Telegram",
+        "forum posts"
+      ]
+    }
+  },
+  "rules": [
+    "Store source URL with promoted facts.",
+    "Do not infer genre membership solely from catalogue inclusion.",
+    "Retain conflicting claims and qualification state.",
+    "Normalize aliases without deleting original names.",
+    "Separate release authorship from compilation appearance."
+  ]
+}

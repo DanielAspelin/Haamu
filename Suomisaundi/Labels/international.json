@@ -1,0 +1,50 @@
+{
+  "schema": "haamu.suomisaundi.labels.international",
+  "version": "0.1.0",
+  "qualification": "source-supported",
+  "records": [
+    {
+      "name": "Adama Records",
+      "location": "Brisbane, Australia",
+      "founded": 2008
+    },
+    {
+      "name": "Demon Tea Recordings",
+      "country": "Australia"
+    },
+    {
+      "name": "Feeless Records",
+      "country": "Russia"
+    },
+    {
+      "name": "Gi'iwa Productions",
+      "location": "east coast, Australia"
+    },
+    {
+      "name": "Hippie Killer Productions",
+      "location": "Moscow, Russia",
+      "also": "event producer"
+    },
+    {
+      "name": "Nullzone",
+      "country": "Japan",
+      "founded": 2007,
+      "also": "party organization"
+    },
+    {
+      "name": "Psy-Harmonics",
+      "country": "Australia"
+    },
+    {
+      "name": "Random Records",
+      "country": "Spain",
+      "organization": "non-profit"
+    },
+    {
+      "name": "Rikka Saundi",
+      "country": "Japan",
+      "founded": 2015
+    }
+  ],
+  "source": "https://suomisaundi.fi/labels/"
+}

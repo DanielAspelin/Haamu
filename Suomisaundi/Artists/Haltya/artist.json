@@ -1,0 +1,19 @@
+{
+  "id": "artist.haltya",
+  "name": "Haltya",
+  "type": "artist",
+  "country": "Finland",
+  "description": "Suomisaundi project combining psychedelic electronic music with funky and organic elements.",
+  "discography_seed": [
+    "Forest Flavour (2001)",
+    "Hero (2003)",
+    "Electric Help Elves (2004)",
+    "Book Of Nature (2008)",
+    "Japan Anime Punk Sessions (2012)",
+    "Space Travellers (2025)"
+  ],
+  "qualification": "source-supported",
+  "sources": [
+    "https://suomisaundi.fi/artists/haltya/"
+  ]
+}
