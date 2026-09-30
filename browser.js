@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.8.0',
+  version: '0.9.0',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -16,7 +16,7 @@ globalThis.HaamuIngress ??= [];
 globalThis.HaamuIngress.push('browser');
 
 const HaamuLayout = Object.freeze({
-  version: '0.5.0',
+  version: '0.6.0',
   center: 'empty',
   corners: Object.freeze({
     topLeft: Object.freeze({ role: 'start', color: 'neon-green' }),
@@ -72,39 +72,21 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
 
     button.setAttribute('aria-expanded', 'false');
     button.addEventListener('click', () => {
-      if (shell.dataset.menuTransition === 'true') return;
       const current = [...menus.entries()].find(([, candidate]) => candidate.classList.contains('open'));
-      const openingSame = current && current[0] === button.dataset.position;
+      const same = current && current[0] === button.dataset.position;
 
-      const openMenu = () => {
-        menu.classList.remove('closing');
-        menu.classList.add('open');
-        menu.setAttribute('aria-hidden', 'false');
-        button.setAttribute('aria-expanded', 'true');
-        shell.dataset.menuTransition = 'false';
-      };
-
-      if (!current) {
-        shell.dataset.menuTransition = 'true';
-        requestAnimationFrame(openMenu);
-        return;
+      if (current) {
+        const [position, active] = current;
+        active.classList.remove('open');
+        active.setAttribute('aria-hidden', 'true');
+        shell.querySelector('.corner.start[data-position="' + position + '"]')?.setAttribute('aria-expanded', 'false');
       }
 
-      shell.dataset.menuTransition = 'true';
-      const [position, active] = current;
-      active.classList.add('closing');
-      active.classList.remove('open');
-      active.setAttribute('aria-hidden', 'true');
-      shell.querySelector('.corner.start[data-position="' + position + '"]')?.setAttribute('aria-expanded', 'false');
-
-      window.setTimeout(() => {
-        active.classList.remove('closing');
-        if (openingSame) {
-          shell.dataset.menuTransition = 'false';
-        } else {
-          requestAnimationFrame(openMenu);
-        }
-      }, 560);
+      if (!same) {
+        menu.setAttribute('aria-hidden', 'false');
+        button.setAttribute('aria-expanded', 'true');
+        requestAnimationFrame(() => menu.classList.add('open'));
+      }
     });
   }
 
