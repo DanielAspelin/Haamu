@@ -1,0 +1,19 @@
+{
+  "id": "festival.lost-theory",
+  "name": "Lost Theory Festival",
+  "type": "festival",
+  "relationship_evidence": {
+    "release": "5 Years Of Lost Theory Festival",
+    "year": 2015,
+    "country": "Belgium",
+    "artists": [
+      "Salakavala",
+      "Texas Faggott"
+    ]
+  },
+  "qualification": "associated-evidence-only",
+  "note": "Compilation establishes association; complete festival history and artist performance claims require separate event evidence.",
+  "sources": [
+    "https://suomisaundi.fi/releases/5-years-of-lost-theory-festival-7283356/"
+  ]
+}
