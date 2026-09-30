@@ -1,0 +1,15 @@
+{
+  "id": "label.human-spectrum-records",
+  "name": "Human Spectrum Records",
+  "type": "label",
+  "country": "Finland",
+  "scope": "Full spectrum of psytrance varieties from Finland",
+  "discography_observed_range": {
+    "from": 2018,
+    "to": 2026
+  },
+  "qualification": "source-supported",
+  "sources": [
+    "https://suomisaundi.fi/labels/human-spectrum-records/"
+  ]
+}

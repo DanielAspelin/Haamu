@@ -1,0 +1,24 @@
+{
+  "id": "artist.flying-scorpions",
+  "name": "Flying Scorpions",
+  "type": "artist-collective",
+  "country": "Finland",
+  "core_members": [
+    {
+      "name": "Pepe Kosminen",
+      "associated_project": "Squaremeat"
+    },
+    {
+      "name": "Tim Thick",
+      "associated_project": "Texas Faggott"
+    }
+  ],
+  "occasional_members": [
+    "Francoise Faggott",
+    "Pentti Slayer"
+  ],
+  "qualification": "source-supported",
+  "sources": [
+    "https://suomisaundi.fi/artists/flying-scorpions/"
+  ]
+}

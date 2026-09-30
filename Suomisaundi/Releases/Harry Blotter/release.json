@@ -1,0 +1,30 @@
+{
+  "id": "release.harry-blotter",
+  "name": "Harry Blotter",
+  "type": "track-release",
+  "year": 2008,
+  "country": "Finland",
+  "artists": [
+    "Mullet Mohawk",
+    "Texas Faggott"
+  ],
+  "label": "Exogenic Records",
+  "catalogue_number": "EXOD05",
+  "genre": "Psy-Trance",
+  "tracks": [
+    {
+      "title": "Harry Blotter (Original Mix)",
+      "duration": "6:42"
+    },
+    {
+      "title": "Uniaika (Texas Faggott Remix)",
+      "duration": "6:04",
+      "role": "remix"
+    }
+  ],
+  "membership": "associated",
+  "qualification": "source-supported",
+  "sources": [
+    "https://suomisaundi.fi/releases/harry-blotter-1833660/"
+  ]
+}
