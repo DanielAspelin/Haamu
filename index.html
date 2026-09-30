@@ -110,10 +110,10 @@
       }
     }
     /* Grid-area ownership snaps each full-size control to its corner cell. */
-    .neon-green{grid-area:tl;align-self:start;justify-self:start;margin:0;--corner-rgb:212,175,55}
-    .lemon-yellow{grid-area:tr;align-self:start;justify-self:end;margin:0;--corner-rgb:212,175,55}
-    .purple{grid-area:bl;align-self:end;justify-self:start;margin:0;--corner-rgb:212,175,55}
-    .orange{grid-area:br;align-self:end;justify-self:end;margin:0;--corner-rgb:212,175,55}
+    .neon-green{grid-area:tl;align-self:start;justify-self:start;margin:0;border-radius:0 10px 10px 10px;--corner-rgb:212,175,55}
+    .lemon-yellow{grid-area:tr;align-self:start;justify-self:end;margin:0;border-radius:10px 0 10px 10px;--corner-rgb:212,175,55}
+    .purple{grid-area:bl;align-self:end;justify-self:start;margin:0;border-radius:10px 10px 10px 0;--corner-rgb:212,175,55}
+    .orange{grid-area:br;align-self:end;justify-self:end;margin:0;border-radius:10px 10px 0 10px;--corner-rgb:212,175,55}
     .plate-layer{
       position:absolute;
       inset:0;
@@ -200,7 +200,7 @@
   <script src="default.js"></script>
   <script src="haamu.js"></script>
   <script src="browser.entry.js"></script>
-  <script src="browser.js?v=0.27.0"></script>
+  <script src="browser.js?v=0.28.0"></script>
   <script src="web.entry.js"></script>
   <script src="web.js"></script>
 </body>
