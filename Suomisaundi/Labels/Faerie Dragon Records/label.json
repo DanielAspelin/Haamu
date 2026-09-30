@@ -1,0 +1,10 @@
+{
+  "id": "label.faerie-dragon-records",
+  "name": "Faerie Dragon Records",
+  "type": "label",
+  "focus": "Psychedelic Trance Underground (Suomisaundi)",
+  "qualification": "source-supported",
+  "sources": [
+    "https://suomisaundi.fi/labels/"
+  ]
+}

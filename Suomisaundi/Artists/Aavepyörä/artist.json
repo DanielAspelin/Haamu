@@ -1,0 +1,10 @@
+{
+  "id": "artist.aavepyora",
+  "name": "Aavepyörä",
+  "type": "artist",
+  "classification": "Suomisaundi",
+  "qualification": "source-supported",
+  "sources": [
+    "https://suomisaundi.fi/artists/"
+  ]
+}
