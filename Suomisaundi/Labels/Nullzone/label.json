@@ -1,0 +1,14 @@
+{
+  "id": "label.nullzone",
+  "name": "Nullzone",
+  "type": "label-and-party-organization",
+  "country": "Japan",
+  "founded": 2007,
+  "focus": [
+    "psychedelic Suomi trance"
+  ],
+  "qualification": "source-supported",
+  "sources": [
+    "https://suomisaundi.fi/labels/page/2/"
+  ]
+}

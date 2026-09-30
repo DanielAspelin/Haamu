@@ -1,0 +1,46 @@
+{
+  "schema": "haamu.suomisaundi.community",
+  "version": "0.1.0",
+  "communities": [
+    {
+      "platform": "Telegram",
+      "scope": "Suomisaundi group chat"
+    },
+    {
+      "platform": "Facebook",
+      "scope": "Suomisaundi"
+    },
+    {
+      "platform": "Facebook",
+      "scope": "Suomisaundi / Spugedelic trance"
+    },
+    {
+      "platform": "Facebook",
+      "scope": "Suomi Trance (suomisaundi)"
+    },
+    {
+      "platform": "Facebook",
+      "scope": "Belgium"
+    },
+    {
+      "platform": "Facebook",
+      "scope": "Brazil"
+    },
+    {
+      "platform": "Facebook",
+      "scope": "Mexico"
+    },
+    {
+      "platform": "Facebook",
+      "scope": "United States"
+    },
+    {
+      "platform": "Facebook",
+      "scope": "Romania"
+    }
+  ],
+  "qualification": "source-supported",
+  "sources": [
+    "https://suomisaundi.fi/links/"
+  ]
+}

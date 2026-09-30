@@ -1,0 +1,36 @@
+{
+  "id": "artist.squaremeat",
+  "name": "Squaremeat",
+  "type": "artist",
+  "country": "Finland",
+  "characteristics": [
+    "house",
+    "trance",
+    "funk",
+    "disco",
+    "techno",
+    "ethnic elements"
+  ],
+  "albums_seed": [
+    {
+      "title": "Squarebeat",
+      "year": 1998
+    },
+    {
+      "title": "Wave Soup",
+      "year": 2000
+    },
+    {
+      "title": "Jungle Boogie Party Line",
+      "year": 2003
+    },
+    {
+      "title": "Astronomical Coffee Break",
+      "year": 2005
+    }
+  ],
+  "qualification": "source-supported",
+  "sources": [
+    "https://suomisaundi.fi/artists/squaremeat/"
+  ]
+}

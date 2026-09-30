@@ -1,0 +1,15 @@
+{
+  "id": "label.random-records",
+  "name": "Random Records",
+  "type": "nonprofit-label",
+  "country": "Spain",
+  "focus": [
+    "freestyle psy-trance",
+    "Suomisaundi"
+  ],
+  "mission": "Supports projects serving indigenous communities.",
+  "qualification": "source-supported",
+  "sources": [
+    "https://suomisaundi.fi/labels/page/2/"
+  ]
+}

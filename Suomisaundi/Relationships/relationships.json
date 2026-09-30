@@ -1,0 +1,47 @@
+{
+  "schema": "haamu.suomisaundi.relationships",
+  "version": "0.1.0",
+  "relationships": [
+    {
+      "subject": "Ruskababa",
+      "relation": "historical-predecessor",
+      "object": "Smooth Underground"
+    },
+    {
+      "subject": "Smooth Underground",
+      "relation": "historical-predecessor",
+      "object": "Löyhä"
+    },
+    {
+      "subject": "Löyhä",
+      "relation": "promoted",
+      "object": "locally made psychedelic trance"
+    },
+    {
+      "subject": "Tim Thick",
+      "relation": "member-of",
+      "object": "Texas Faggott"
+    },
+    {
+      "subject": "Tim Thick",
+      "relation": "member-of",
+      "object": "Shiwa 2000"
+    },
+    {
+      "subject": "Tim Thick",
+      "relation": "operated",
+      "object": "Thixx'n'Dixx"
+    },
+    {
+      "subject": "Midiliitto",
+      "relation": "included-members-associated-with",
+      "object": "Texas Faggott"
+    },
+    {
+      "subject": "Midiliitto",
+      "relation": "included-members-associated-with",
+      "object": "Squaremeat"
+    }
+  ],
+  "qualification": "pre-informative"
+}

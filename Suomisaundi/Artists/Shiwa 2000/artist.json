@@ -1,0 +1,41 @@
+{
+  "id": "artist.shiwa-2000",
+  "name": "Shiwa 2000",
+  "type": "artist",
+  "kind": "group",
+  "country": "Finland",
+  "members": [
+    "Rick Timebees",
+    "Tim Thick"
+  ],
+  "albums": [
+    {
+      "title": "Final Truth 2020",
+      "year": 2000
+    },
+    {
+      "title": "Runkmeditation & Perstantra",
+      "year": 2006
+    },
+    {
+      "title": "Portinfarttijan Hyppypiertari",
+      "year": 2010
+    }
+  ],
+  "relationships": [
+    {
+      "subject": "Tim Thick",
+      "relation": "member-of",
+      "object": "Texas Faggott"
+    },
+    {
+      "subject": "Tim Thick",
+      "relation": "member-of",
+      "object": "Mandalavandalz"
+    }
+  ],
+  "qualification": "source-supported",
+  "sources": [
+    "https://suomisaundi.fi/artists/shiwa-2000/"
+  ]
+}
