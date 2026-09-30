@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.9.0',
+  version: '0.10.0',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -71,7 +71,12 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
     menus.set(button.dataset.position, menu);
 
     button.setAttribute('aria-expanded', 'false');
+    button.addEventListener('animationend', () => button.classList.remove('morphing'));
     button.addEventListener('click', () => {
+      button.classList.remove('morphing');
+      void button.offsetWidth;
+      button.classList.add('morphing');
+
       const current = [...menus.entries()].find(([, candidate]) => candidate.classList.contains('open'));
       const same = current && current[0] === button.dataset.position;
 
