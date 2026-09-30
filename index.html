@@ -45,8 +45,8 @@
     .purple{grid-area:bl;--corner-rgb:157,53,255}
     .orange{grid-area:br;--corner-rgb:255,140,26}
     .corner-menu{
-      --plate-inline:calc(100% - (var(--corner) * 1.15));
-      --plate-block:calc(100% - (var(--corner) * 1.15));
+      --plate-inline:calc(100% - (var(--corner) * .82));
+      --plate-block:calc(100% - (var(--corner) * .82));
       position:absolute;
       width:var(--plate-inline);height:var(--plate-block);
       z-index:2;pointer-events:none;opacity:0;border-radius:12px;
@@ -63,8 +63,8 @@
     .corner-menu.open{opacity:1;pointer-events:auto;transform:scale(1)}
     @media(max-width:600px){
       .corner-menu{
-        --plate-inline:calc(100% - (var(--corner) * 1.15));
-        --plate-block:calc(100% - (var(--corner) * 1.15));
+        --plate-inline:calc(100% - (var(--corner) * .82));
+        --plate-block:calc(100% - (var(--corner) * .82));
       }
     }
     .pane{
