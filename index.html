@@ -3,23 +3,31 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Haamu — open community, technology and culture">
   <title>Haamu</title>
-  <meta name="description" content="Haamu — haamu.space">
   <style>
-    :root { color-scheme: dark; font-family: system-ui, sans-serif; }
-    * { box-sizing: border-box; }
-    body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #0b0d10; color: #f4f7fb; }
-    main { width: min(720px, 90vw); padding: 48px; border: 1px solid #2a3038; border-radius: 24px; background: #11151a; }
-    h1 { margin: 0 0 12px; font-size: clamp(3rem, 10vw, 6rem); letter-spacing: -0.05em; }
-    p { margin: 0; color: #b9c1cc; font-size: 1.1rem; line-height: 1.6; }
-    .domain { margin-top: 28px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; color: #fff; }
+    :root{color-scheme:dark;font-family:Inter,ui-sans-serif,system-ui,sans-serif;background:#080a0d;color:#f5f7fa}
+    *{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(circle at 70% 0,#1c2530 0,transparent 36rem),#080a0d}
+    #haamu-root{min-height:100vh}.haamu-shell{width:min(1180px,92vw);margin:auto;padding:28px 0 44px}
+    .haamu-header,footer{display:flex;justify-content:space-between;gap:16px;align-items:center;font:12px ui-monospace,monospace;letter-spacing:.08em;color:#9ba7b5}
+    .haamu-header{border-bottom:1px solid #27303a;padding:0 0 18px}.haamu-header strong{color:#fff;letter-spacing:.2em}.haamu-header output{color:#c7ffd8}
+    .haamu-hero{padding:clamp(70px,12vw,150px) 0 70px;max-width:850px}.eyebrow{font:12px ui-monospace,monospace;letter-spacing:.16em;color:#9ba7b5}
+    h1{font-size:clamp(72px,16vw,180px);line-height:.78;letter-spacing:-.075em;margin:28px 0 38px} .haamu-hero>p:last-child{font-size:clamp(18px,2.5vw,28px);line-height:1.4;color:#bac3ce;max-width:720px}
+    .haamu-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-bottom:72px}.haamu-card{min-height:210px;padding:24px;border:1px solid #27303a;border-radius:18px;color:inherit;text-decoration:none;background:#0e1217;transition:.15s ease}
+    .haamu-card:hover,.haamu-card:focus-visible{transform:translateY(-2px);border-color:#687787;background:#121820;outline:none}.card-kind,.card-path{font:11px ui-monospace,monospace;color:#83909e}.haamu-card h2{font-size:28px;margin:35px 0 8px}.haamu-card p{color:#aab4c0}.card-path{display:block;margin-top:28px}
+    footer{border-top:1px solid #27303a;padding-top:18px}@media(max-width:650px){.haamu-grid{grid-template-columns:1fr}.haamu-header,footer{align-items:flex-start;flex-direction:column}}
   </style>
 </head>
 <body>
-  <main>
-    <h1>Haamu</h1>
-    <p>GitHub Pages deployment surface for the Haamu project.</p>
-    <p class="domain">haamu.space</p>
-  </main>
+  <div id="haamu-root"><noscript>Haamu requires JavaScript for its runtime projection.</noscript></div>
+  <script src="entry.pre.js"></script>
+  <script src="entry.post.js"></script>
+  <script src="index.js"></script>
+  <script src="default.js"></script>
+  <script src="haamu.js"></script>
+  <script src="web.entry.js"></script>
+  <script src="web.js"></script>
+  <script src="browser.js"></script>
+  <script src="browser.entry.js"></script>
 </body>
 </html>
