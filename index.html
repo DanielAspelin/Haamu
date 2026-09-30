@@ -6,10 +6,10 @@
   <meta name="description" content="Haamu — open community, technology and culture">
   <title>Haamu</title>
   <style>
-    :root{--haamu-sky:#0b5f61;color-scheme:dark;background:var(--haamu-sky);color:#f5f7fa}
+    :root{--haamu-sky:#071019;--haamu-sky-gradient:radial-gradient(circle at 50% 38%,#203349 0,#0c1723 35%,#050b12 78%);color-scheme:dark;background:var(--haamu-sky);color:#f5f7fa}
     *{box-sizing:border-box}
     html,body,#haamu-root{margin:0;width:100%;min-height:100%;height:100%}
-    body{overflow:hidden;background:var(--haamu-sky)}
+    body{overflow:hidden;background:var(--haamu-sky-gradient),var(--haamu-sky)}
     button{font:inherit}
     .haamu-interface{
       --corner:clamp(52px,5.5vw,76px);
@@ -22,10 +22,10 @@
         "tl top tr"
         "left center right"
         "bl bottom br";
-      gap:0;background:var(--haamu-sky);
+      gap:0;background:var(--haamu-sky-gradient),var(--haamu-sky);
     }
     .corner{
-      --corner-rgb:212,175,55;
+      --corner-rgb:0,0,0;
       width:calc(100% - 1mm);height:calc(100% - 1mm);
       opacity:.85;
       border:0;margin:0;cursor:pointer;position:relative;
@@ -110,10 +110,10 @@
       }
     }
     /* Grid-area ownership snaps each full-size control to its corner cell. */
-    .neon-green{grid-area:tl;align-self:start;justify-self:start;margin:0;border-radius:0 10px 10px 10px;--corner-rgb:212,175,55}
-    .lemon-yellow{grid-area:tr;align-self:start;justify-self:end;margin:0;border-radius:10px 0 10px 10px;--corner-rgb:212,175,55}
-    .purple{grid-area:bl;align-self:end;justify-self:start;margin:0;border-radius:10px 10px 10px 0;--corner-rgb:212,175,55}
-    .orange{grid-area:br;align-self:end;justify-self:end;margin:0;border-radius:10px 10px 0 10px;--corner-rgb:212,175,55}
+    .neon-green{grid-area:tl;align-self:start;justify-self:start;margin:0;border-radius:0 10px 10px 10px;--corner-rgb:0,0,0}
+    .lemon-yellow{grid-area:tr;align-self:start;justify-self:end;margin:0;border-radius:10px 0 10px 10px;--corner-rgb:0,0,0}
+    .purple{grid-area:bl;align-self:end;justify-self:start;margin:0;border-radius:10px 10px 10px 0;--corner-rgb:0,0,0}
+    .orange{grid-area:br;align-self:end;justify-self:end;margin:0;border-radius:10px 10px 0 10px;--corner-rgb:0,0,0}
     .plate-layer{
       position:absolute;
       inset:0;
@@ -161,7 +161,7 @@
     .left-pane{grid-area:left}
     .right-pane{grid-area:right}
     .bottom-pane{grid-area:bottom}
-    .center{grid-area:center;background:var(--haamu-sky);min-width:0;min-height:0}
+    .center{grid-area:center;background:transparent;min-width:0;min-height:0}
     @media(max-width:600px){.haamu-interface{--corner:48px}}
     /* Invisible structural viewport lattice: composition only, never rendered. */
     .haamu-interface{
@@ -200,7 +200,7 @@
   <script src="default.js"></script>
   <script src="haamu.js"></script>
   <script src="browser.entry.js"></script>
-  <script src="browser.js?v=0.39.0"></script>
+  <script src="browser.js?v=0.40.0"></script>
   <script src="web.entry.js"></script>
   <script src="web.js"></script>
 </body>
