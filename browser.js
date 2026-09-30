@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.10.0',
+  version: '0.11.0',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -71,11 +71,42 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
     menus.set(button.dataset.position, menu);
 
     button.setAttribute('aria-expanded', 'false');
-    button.addEventListener('animationend', () => button.classList.remove('morphing'));
+    let buttonMorph = null;
     button.addEventListener('click', () => {
-      button.classList.remove('morphing');
-      void button.offsetWidth;
-      button.classList.add('morphing');
+      buttonMorph?.cancel();
+      const rgb = getComputedStyle(button).getPropertyValue('--corner-rgb').trim();
+      buttonMorph = button.animate([
+        {
+          transform: 'scale(1)',
+          borderRadius: '0%',
+          backgroundColor: 'rgba(' + rgb + ', .68)',
+          filter: 'brightness(1)'
+        },
+        {
+          transform: 'scale(.88)',
+          borderRadius: '24%',
+          backgroundColor: 'rgba(' + rgb + ', .28)',
+          filter: 'brightness(.48)',
+          offset: .34
+        },
+        {
+          transform: 'scale(1.06)',
+          borderRadius: '8%',
+          backgroundColor: 'rgba(' + rgb + ', 1)',
+          filter: 'brightness(1.65)',
+          offset: .72
+        },
+        {
+          transform: 'scale(1)',
+          borderRadius: '0%',
+          backgroundColor: 'rgba(' + rgb + ', .68)',
+          filter: 'brightness(1)'
+        }
+      ], {
+        duration: 720,
+        easing: 'cubic-bezier(.16,1,.3,1)',
+        iterations: 1
+      });
 
       const current = [...menus.entries()].find(([, candidate]) => candidate.classList.contains('open'));
       const same = current && current[0] === button.dataset.position;
