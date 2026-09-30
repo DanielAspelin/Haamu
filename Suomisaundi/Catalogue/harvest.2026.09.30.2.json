@@ -1,0 +1,23 @@
+{
+  "schema": "haamu.suomisaundi.harvest-checkpoint",
+  "version": "0.2.0",
+  "date": "2026-09-30",
+  "baseline": "df6bbe8828ab12ca00b30a4880849b4644d292c0",
+  "promoted": [
+    "Human Spectrum Records label/discography observations",
+    "Exogenic Records historical label/discography observations",
+    "Thixx'n'Dixx archive lineage"
+  ],
+  "boundaries": [
+    "Label catalogue inclusion does not prove a release is itself Suomisaundi.",
+    "Archive described as nearly all; no completeness claim promoted.",
+    "Discography entries remain observations until release identity and artist roles are normalized."
+  ],
+  "next": [
+    "enumerate remaining label directory",
+    "normalize Exogenic release identities against artist observations",
+    "enumerate release catalogue pages",
+    "recover archive item-level metadata",
+    "build sourced event chronology"
+  ]
+}

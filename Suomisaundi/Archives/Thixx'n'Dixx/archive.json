@@ -1,17 +1,19 @@
 {
-  "id": "archive.thixx-n-dixx",
-  "name": "Thixx'n'Dixx",
-  "type": "historical-web-music-archive",
-  "active_period": "2001-2002",
-  "people": [
+  "schema": "haamu.suomisaundi.archive",
+  "id": "archive.thixxndixx",
+  "display_name": "Thixx'n'Dixx archive",
+  "qualification": "source-supported",
+  "period": "2001-2002",
+  "creators": [
     "Tim Thick",
     "M. Mutation",
     "Walter Dick"
   ],
-  "content": "Suomisaundi and related genres distributed/hosted as free MP3 files.",
-  "preservation": "Internet Archive copy described by Suomisaundi.fi as containing nearly all original discography.",
-  "qualification": "source-supported",
+  "description": "Archive described by Suomisaundi.fi as containing nearly all of the original Thixx'n'Dixx discography from 2001-2002. The site released and hosted Suomisaundi and related genres as free MP3 files.",
   "sources": [
-    "https://suomisaundi.fi/links/"
-  ]
+    "https://suomisaundi.fi/links/",
+    "https://archive.org/details/thixxndixx"
+  ],
+  "completeness_claim": false,
+  "completeness_wording": "nearly all, per Suomisaundi.fi"
 }

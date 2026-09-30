@@ -1,0 +1,158 @@
+{
+  "schema": "haamu.suomisaundi.label-discography-observations",
+  "label": "Exogenic Records",
+  "source": "https://suomisaundi.fi/labels/exogenic-records/",
+  "qualification": "source-observed",
+  "notes": [
+    "Source states Exogenic began as a Finnish psychedelic Goa trance label, later expanded into a broader label group.",
+    "Source states releases stopped in 2012 and the label group was sold to Playground Music Scandinavia AB in November 2018.",
+    "Entries are label-discography observations; artist/release genre membership is not inferred."
+  ],
+  "observations": [
+    {
+      "title": "Apollo 3D",
+      "year": 1996,
+      "role": "label-discography-observation"
+    },
+    {
+      "title": "Bliss Point",
+      "year": 1997,
+      "role": "label-discography-observation"
+    },
+    {
+      "title": "Bliss Point: Sampler",
+      "year": 1997,
+      "role": "label-discography-observation"
+    },
+    {
+      "title": "Fresh Tracks",
+      "year": 1998,
+      "role": "label-discography-observation"
+    },
+    {
+      "title": "Fusion vs. Confusion",
+      "year": 1999,
+      "role": "label-discography-observation"
+    },
+    {
+      "title": "Upcoming Vinyl Releases",
+      "year": 1999,
+      "role": "label-discography-observation"
+    },
+    {
+      "title": "All Human Substitutes",
+      "year": 2000,
+      "role": "label-discography-observation"
+    },
+    {
+      "title": "Back To Mad EP",
+      "year": 2000,
+      "role": "label-discography-observation"
+    },
+    {
+      "title": "Brothers In Machine",
+      "year": 2000,
+      "role": "label-discography-observation"
+    },
+    {
+      "title": "Brothom States EP",
+      "year": 2000,
+      "role": "label-discography-observation"
+    },
+    {
+      "title": "Helium - Electromental Collection",
+      "year": 2000,
+      "role": "label-discography-observation"
+    },
+    {
+      "title": "Petoman's Peflett",
+      "year": 2000,
+      "role": "label-discography-observation"
+    },
+    {
+      "title": "Squaremeat",
+      "year": 2000,
+      "role": "label-discography-observation"
+    },
+    {
+      "title": "Wave Soup",
+      "year": 2000,
+      "role": "label-discography-observation"
+    },
+    {
+      "title": "Custom File",
+      "year": 2001,
+      "role": "label-discography-observation"
+    },
+    {
+      "title": "Forest Flavour",
+      "year": 2001,
+      "role": "label-discography-observation"
+    },
+    {
+      "title": "Sense Melter",
+      "year": 2001,
+      "role": "label-discography-observation"
+    },
+    {
+      "title": "Exogenous Sampler 2002",
+      "year": 2002,
+      "role": "label-discography-observation"
+    },
+    {
+      "title": "Illegal Operation",
+      "year": 2002,
+      "role": "label-discography-observation"
+    },
+    {
+      "title": "Round 1",
+      "year": 2002,
+      "role": "label-discography-observation"
+    },
+    {
+      "title": "Gatefinder",
+      "year": 2003,
+      "role": "label-discography-observation"
+    },
+    {
+      "title": "Hero",
+      "year": 2003,
+      "role": "label-discography-observation"
+    },
+    {
+      "title": "Jungle Boogie Party Line",
+      "year": 2003,
+      "role": "label-discography-observation"
+    },
+    {
+      "title": "Tarinat",
+      "year": 2003,
+      "role": "label-discography-observation"
+    },
+    {
+      "title": "Finnish Music At SXSW",
+      "year": 2003,
+      "role": "label-discography-observation"
+    },
+    {
+      "title": "Pilluminati Cunt Roll",
+      "year": 2004,
+      "role": "label-discography-observation"
+    },
+    {
+      "title": "Project / Haltya",
+      "year": 2010,
+      "role": "label-discography-observation"
+    },
+    {
+      "title": "Super Mic",
+      "year": 2010,
+      "role": "label-discography-observation"
+    },
+    {
+      "title": "23",
+      "year": 2012,
+      "role": "label-discography-observation"
+    }
+  ]
+}
