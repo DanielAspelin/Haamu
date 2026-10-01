@@ -8,16 +8,18 @@ globalThis.HaamuFamilies ??= Object.create(null);
 const channels=new Map();
 
 const HaamuCommandChannel=Object.freeze({
- family:'command',role:'command.channel',type:'isolated-command-channel',version:'0.2.1',
+ family:'command',role:'command.channel',type:'isolated-command-channel',version:'0.3.0',
  create(id,definition={}){
   const channelId=String(id??'').trim();
   if(!channelId)throw new RangeError('Command channel identity required.');
   if(channels.has(channelId))throw new Error('Command channel already exists: '+channelId);
   const shell=String(definition.shell??'client');
   let inputOwner=null,outputOwner=null;
+ const inputSocket=Object.freeze({type:'input-socket',id:channelId+':input',channelId,direction:'input',owner:()=>inputOwner});
+ const outputSocket=Object.freeze({type:'output-socket',id:channelId+':output',channelId,direction:'output',owner:()=>outputOwner});
 
   const channel=Object.freeze({
-   type:'command-channel',channelId,shell,
+   type:'command-channel',channelId,shell,inputSocket,outputSocket,
    binding:()=>Object.freeze({input:inputOwner,output:outputOwner}),
    bindInput(promptId){
     const next=String(promptId??'').trim();if(!next)throw new RangeError('Prompt identity required.');
