@@ -21,6 +21,12 @@ jobs:
           node --check html.button.js
           node --check html.prompt.js
           node --check html.plate.js
+      - name: Install browser qualification dependency
+        run: npm install --no-save --no-package-lock playwright@1.55.0
+      - name: Run browser structural and presentation integrity
+        run: |
+          npx playwright install --with-deps chromium
+          node test/html-modularization.browser.test.js
       - name: Verify isolated ownership boundaries
         shell: bash
         run: |
