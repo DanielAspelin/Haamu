@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Haamu Projection Test</title>
+<style>
+html,body{margin:0;min-height:100%;background:#0b111b;color:#dce8f5;font:14px/1.45 system-ui,sans-serif}
+main{max-width:960px;margin:auto;padding:24px}
+h1{font-size:20px}
+#surface{position:relative;aspect-ratio:16/9;border:1px solid #567;overflow:hidden;background:#101b2b}
+.node{position:absolute;box-sizing:border-box;border:1px solid currentColor;padding:8px;overflow:hidden}
+pre{white-space:pre-wrap;overflow-wrap:anywhere}
+small{opacity:.75}
+</style>
+</head>
+<body>
+<main>
+<h1>Haamu Projection Space — isolated test</h1>
+<p><small>This page does not load or modify the production Haamu Plate runtime.</small></p>
+<div id="surface" aria-label="Experimental projection surface"></div>
+<pre id="evidence"></pre>
+</main>
+<script src="../projection.space.js"></script>
+<script>
+'use strict';
+const surface=document.getElementById('surface');
+const evidence=document.getElementById('evidence');
+const P=globalThis.HaamuProjectionSpace;
+const space=P.create({id:'test-space',plate:{id:'test-only',x:0,y:0,width:surface.clientWidth,height:surface.clientHeight}});
+const nodes=[
+ P.node(space,{id:'text',projectionType:'text',bounds:{x:.05,y:.08,width:.42,height:.22},data:'Text projection',grid:{columns:32,rows:8}}),
+ P.node(space,{id:'plot',projectionType:'plot',bounds:{x:.52,y:.08,width:.43,height:.38},data:[1,4,2,7,5],interactive:true}),
+ P.node(space,{id:'tree',projectionType:'tree',bounds:{x:.05,y:.55,width:.42,height:.35},mesh:{topology:'tree',nodes:['root','a','b'],edges:[['root','a'],['root','b']]}}),
+ P.node(space,{id:'mind',projectionType:'mind-map',bounds:{x:.52,y:.55,width:.43,height:.35},mesh:{topology:'graph',nodes:['Haamu','Matrix','Mesh'],edges:[['Haamu','Matrix'],['Haamu','Mesh']]},interactive:true})
+];
+for(const node of nodes){
+ const el=document.createElement('div');
+ el.className='node';
+ el.dataset.projectionType=node.projectionType;
+ el.style.left=(node.bounds.x*100)+'%';
+ el.style.top=(node.bounds.y*100)+'%';
+ el.style.width=(node.bounds.width*100)+'%';
+ el.style.height=(node.bounds.height*100)+'%';
+ el.textContent=node.projectionType+' — '+node.id;
+ surface.appendChild(el);
+}
+evidence.textContent=JSON.stringify({
+ test:true,
+ productionPlateLoaded:false,
+ projectionVersion:P.version,
+ renderer:'test-adapter-only',
+ space:{id:space.id,resolution:space.resolution,plateAuthority:space.plate.authority},
+ nodes:nodes.map(n=>({id:n.id,type:n.projectionType,bounds:n.bounds,rendererConnected:n.rendererConnected}))
+},null,2);
+</script>
+</body>
+</html>
