@@ -1,4 +1,7 @@
 'use strict';
+
+/* module-private execution scope */
+(() => {
 globalThis.HaamuFamilies ??= Object.create(null);
 let sequence=0;
 const HaamuTerminalInput=Object.freeze({
@@ -9,3 +12,4 @@ const HaamuTerminalInput=Object.freeze({
 });
 globalThis.HaamuFamilies['terminal.input']=Object.freeze({family:'terminal',role:'terminal.input',type:'terminal-input-normalizer',version:'0.2.0'});
 globalThis.HaamuTerminalInput=HaamuTerminalInput;
+})();
