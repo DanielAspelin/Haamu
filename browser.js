@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.121.6',
+  version: '0.121.7',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -258,6 +258,12 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
           }else lineNode.textContent=text.slice(line.start,line.end).replace(/\n$/,'');
           field.appendChild(lineNode);
         }
+        /* Projection owns its paint explicitly. Do not rely on inherited
+           transparency from the native editor or historical Prompt rules. */
+        field.style.setProperty('color','rgba(235,247,255,.96)','important');
+        field.style.setProperty('-webkit-text-fill-color','rgba(235,247,255,.96)','important');
+        field.style.setProperty('opacity','1','important');
+        field.style.setProperty('visibility','visible','important');
         const visibleCount=Math.min(maxLines,Math.max(1,lines.length));
         const height=Math.max(oneLine,Math.ceil(paddingTop+paddingBottom+visibleCount*lineHeight));
         const threeLineHeight=Math.max(oneLine,Math.ceil(paddingTop+paddingBottom+maxLines*lineHeight));
