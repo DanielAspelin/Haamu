@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.120.9',
+  version: '0.121.0',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -203,41 +203,58 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
         const menu = target.closest('.corner-menu');
         const wrap = target.closest('.plate-prompt-wrap');
         const row = target.closest('.plate-prompt-row');
+        const projection = wrap?.querySelector('.plate-prompt-projection');
+        const mirror = wrap?.querySelector('.plate-prompt-measure');
         const style = getComputedStyle(target);
         const lineHeight = parseFloat(style.lineHeight) || 17;
         const paddingY = (parseFloat(style.paddingTop) || 0) + (parseFloat(style.paddingBottom) || 0);
         const oneLine = 44;
         const maxHeight = Math.ceil(paddingY + lineHeight * 3);
-        target.style.height = '0px';
-        const measured = target.scrollHeight;
+
+        /* Native textarea is IME/caret authority only. A separate invisible
+           mirror measures wrapping; Haamu renders a bounded three-line window
+           instead of translating a second full-text scroll surface. */
+        if (mirror) {
+          mirror.style.width = target.clientWidth + 'px';
+          mirror.textContent = target.value || '\u200b';
+        }
+        const measured = mirror ? mirror.scrollHeight : target.scrollHeight;
         const height = Math.min(maxHeight, Math.max(oneLine, measured));
         target.style.height = height + 'px';
-        /* Prompt is a three-line viewport, never a scrolling control.
-           Once input wraps beyond line three, keep the newest three lines
-           visible by shifting the native editor and Haamu projection upward. */
         target.style.overflowY = 'hidden';
-        /* Three visible lines are a fixed viewport. Input may continue
-           indefinitely, but the visible Haamu projection is clipped to the
-           first three rendered lines. The native editor remains independent
-           for caret/IME state and must not enlarge the visible projection. */
-        const overflow = Math.max(0, measured - maxHeight);
-        /* The native textarea is only the invisible IME/caret boundary.
-           Never scroll it programmatically: Android already keeps its caret
-           visible and a second scroll creates the apparent fourth blank line.
-           Only Haamu's visible projection rolls upward inside its 3-line clip. */
-        const projectionOffset = overflow;
         if (wrap) wrap.style.height = height + 'px';
         if (row) {
           row.style.height = height + 'px';
           row.style.minHeight = height + 'px';
         }
-        if (menu) {
-          menu.style.setProperty('--prompt-track-height', height + 'px');
-          const projection = target.closest('.plate-prompt-wrap')?.querySelector('.plate-prompt-projection');
-          if (projection) {
-            projection.style.height = height + 'px';
-            projection.style.transform = 'translateY(-' + projectionOffset + 'px)';
+        if (menu) menu.style.setProperty('--prompt-track-height', height + 'px');
+
+        if (projection) {
+          const text = target.value;
+          if (!text) {
+            projection.textContent = '';
+          } else if (!mirror || measured <= maxHeight) {
+            projection.textContent = text;
+          } else {
+            /* Find the shortest suffix whose mirrored rendering fits the
+               three-line viewport. This keeps only the newest visible window;
+               there is no projection scroll position to synchronize. */
+            let low = 0;
+            let high = text.length;
+            while (low < high) {
+              const mid = Math.floor((low + high) / 2);
+              mirror.textContent = text.slice(mid) || '\u200b';
+              if (mirror.scrollHeight <= maxHeight) high = mid;
+              else low = mid + 1;
+            }
+            let visible = text.slice(low);
+            /* Avoid beginning the rolling window in the middle of a surrogate
+               pair. */
+            if (visible && /[\uDC00-\uDFFF]/.test(visible[0])) visible = text.slice(Math.max(0, low - 1));
+            projection.textContent = visible;
           }
+          projection.style.height = height + 'px';
+          projection.style.transform = 'none';
         }
       };
       prompt.addEventListener('input', () => {
@@ -259,6 +276,9 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       const promptProjection = document.createElement('div');
       promptProjection.className = 'plate-prompt-projection';
       promptProjection.setAttribute('aria-hidden', 'true');
+      const promptMeasure = document.createElement('div');
+      promptMeasure.className = 'plate-prompt-measure';
+      promptMeasure.setAttribute('aria-hidden', 'true');
       const promptLabel = document.createElement('span');
       promptLabel.className = 'plate-prompt-label';
       promptLabel.textContent = plateTitles[corner];
@@ -270,6 +290,7 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
         '-webkit-text-stroke:0','text-shadow:0 1px 0 rgba(255,255,255,.32)',
         'mix-blend-mode:normal'
       ].join(';');
+      promptWrap.appendChild(promptMeasure);
       promptWrap.appendChild(promptProjection);
       promptWrap.appendChild(prompt);
       promptWrap.appendChild(promptLabel);
