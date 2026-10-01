@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.137.0',
+  version: '0.138.0',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -128,14 +128,17 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
     const off=document.createElement('canvas'),oc=off.getContext('2d',{willReadFrequently:true});
     off.width=Math.max(1,Math.floor(wr.width));off.height=Math.max(1,Math.floor(wr.height));
     oc.font='600 14px Rajdhani,sans-serif';oc.textBaseline='alphabetic';oc.fillStyle='#fff';
-    /* Exact isolated v8.3 geometry is evaluated in its own canonical
-       44px Plate-local raster. Production contributes only width + native
-       text/caret state; production Prompt row geometry does not participate. */
-    const localWidth=Math.max(1,Math.floor(wr.width)),localHeight=44;
+    /* Prompt input authority remains a 44px anchor track, but particle
+       history is projected in a Plate-local field extending upward from it.
+       The field does not participate in Plate/shell layout. */
+    const plateRect=client.getBoundingClientRect();
+    const localWidth=Math.max(1,Math.floor(wr.width));
+    const localHeight=Math.max(44,Math.floor(wr.bottom-plateRect.top));
+    const promptTop=Math.max(0,Math.floor(wr.top-plateRect.top));
     off.width=localWidth;off.height=localHeight;
     const text=prompt.value,leftInset=12,rightInset=leftInset,
       wrapWidth=Math.max(1,localWidth-leftInset-rightInset),
-      anchorBaseline=Math.round(localHeight/2+5),lineHeight=17,lines=[''];
+      anchorBaseline=promptTop+Math.round(44/2+5),lineHeight=17,lines=[''];
     for(const ch of text){if(ch==='\n'){lines.push('');continue;}const current=lines[lines.length-1];
       if(current&&oc.measureText(current+ch).width>wrapWidth)lines.push(ch);else lines[lines.length-1]=current+ch;}
     const caretIndex=Math.max(0,Math.min(text.length,prompt.selectionStart??text.length));
@@ -163,7 +166,8 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
     /* The substrate is viewport-fixed and outside the shell context.
        Project with viewport coordinates only; never feed its geometry back
        into shell, button, split or Plate layout. */
-    const data=oc.getImageData(0,0,off.width,off.height).data,ox=wr.left,oy=wr.top;
+    const data=oc.getImageData(0,0,off.width,off.height).data,
+      ox=wr.left,oy=plateRect.top;
     pc.fillStyle='#dce8f5';let n=0;
     for(let y=0;y<off.height;y++)for(let x=0;x<off.width;x++){const a=data[(y*off.width+x)*4+3];
       if(a>8){const z=.76;pc.globalAlpha=Math.max(.18,a/255);pc.beginPath();pc.moveTo(ox+x,oy+y-z);pc.lineTo(ox+x+z,oy+y);
