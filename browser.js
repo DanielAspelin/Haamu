@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.126.6',
+  version: '0.126.7',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -571,9 +571,22 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
     let buttonMorph = null;
     let buttonMorphTimers = [];
     button.addEventListener('click', () => {
+      /* Button morphing is exclusive. A newly selected corner immediately
+         retires every previous corner's pending glow/morph timers so only the
+         button that was actually pressed can animate. */
+      for (const peer of shell.querySelectorAll('.corner.start')) {
+        for (const timer of (peer._haamuMorphTimers ?? [])) clearTimeout(timer);
+        peer._haamuMorphTimers = [];
+        if (peer !== button) {
+          peer.style.backgroundColor = '';
+          peer.style.filter = '';
+          peer.style.transform = '';
+        }
+      }
       buttonMorph?.cancel();
       buttonMorphTimers.forEach(clearTimeout);
       buttonMorphTimers = [];
+      button._haamuMorphTimers = buttonMorphTimers;
 
       const rgb = getComputedStyle(button).getPropertyValue('--corner-rgb').trim();
       const paint = (background, brightness, scale) => {
@@ -590,7 +603,9 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
         button.style.backgroundColor = '';
         button.style.filter = '';
         button.style.transform = '';
+        button._haamuMorphTimers = [];
       }, 620));
+      button._haamuMorphTimers = buttonMorphTimers;
 
       const activePlatform = mobilePlatform ? 'mobile' : 'desktop';
       const targetPosition = button.dataset.position;
