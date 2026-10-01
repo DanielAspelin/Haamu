@@ -48,3 +48,13 @@ The current successful copy-test qualification is the recovery baseline. The sea
 ## Next pass
 
 The first implementation pass is Browser/Web ownership analysis. It will classify each `browser.*` and `web.*` root file as retained implementation, duplicate responsibility, registry/declarative data, test, bootstrap/composition, or unresolved. Physical movement follows only after that classification passes dependency analysis.
+
+## Browser/Web classification checkpoint
+
+Root inventory now identifies **83 Browser-family files** (81 JavaScript, 2 JSON) and **52 Web-family files** (51 JavaScript, 1 JSON).
+
+Browser has one explicit test (`browser.plate.text.test.js`) and a distinct composition/bootstrap/declarative group: animation/bar/desktop/menu/mobile/windowing composition, defaults, entry, index, and composition/entry JSON. Web has one explicit test (`web.text.topology.test.js`) and distinct defaults/entry/index plus entry JSON.
+
+This establishes that neither prefix is a single homogeneous implementation family. Before physical movement, reconciliation must preserve at least these roles separately: runtime implementation, bootstrap/entry, composition/defaults, declarative registry, and tests. Tests must not become runtime ownership merely because they share a prefix.
+
+The first physical migration should therefore be a narrowly bounded family whose dependency/load references can be changed atomically and then subjected to the complete zero-error qualification. The main `browser.js`, `web.js`, Plate/Prompt transition path, and sealed particle path remain protected until smaller migrations prove the relocation mechanism.
