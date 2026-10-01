@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.104.0',
+  version: '0.105.0',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -137,8 +137,8 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
 
       promptRow.appendChild(prompt);
       table.appendChild(promptRow);
-      matrix.appendChild(table);
       matrix.appendChild(title);
+      matrix.appendChild(table);
       menu.appendChild(matrix);
       plateLayer.appendChild(menu);
       projections[platform] = menu;
