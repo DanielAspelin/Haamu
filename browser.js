@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.126.1',
+  version: '0.126.2',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -628,13 +628,15 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       const wasMaximized = activePlatform === 'desktop'
         && pair.desktop?.dataset.plateState === 'maximized';
 
-      /* Same-turn concurrent handoff. There is deliberately no rAF or delay
-         between starting the outgoing contraction and incoming expansion. */
+      /* Ordered handoff: retract the currently open Plate completely first.
+         Only after that Plate has returned to its button does the selected
+         Plate begin its outward slide. This preserves one moving Plate at a
+         time and prevents the replacement from taking position prematurely. */
       closingState?.restore('desktop');
       if (wasMaximized) activeCurrent?.classList.add('plate-restoring');
       activeCurrent?.classList.add('plate-transition-out');
-      if (!same) openTargetNow();
 
+      const handoffDelay = wasMaximized ? 500 : 360;
       setTimeout(() => {
         for (const active of [pair.mobile, pair.desktop]) {
           active?.classList.remove('open', 'plate-restoring', 'plate-transition-out');
@@ -642,7 +644,8 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
         }
         shell.querySelector('.corner.start[data-position="' + position + '"]')
           ?.setAttribute('aria-expanded', 'false');
-      }, wasMaximized ? 500 : 360);
+        if (!same) openTargetNow();
+      }, handoffDelay);
     });
   }
 
