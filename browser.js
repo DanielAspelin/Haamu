@@ -313,19 +313,19 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       const wasMaximized = activePlatform === 'desktop'
         && pair.desktop?.dataset.plateState === 'maximized';
 
-      /* Concurrent Plate handoff: both Plate projections participate in the
-         same animation frame. The source restores/morphs inward while the
-         destination opens/morphs outward. Neither waits for the other. */
+      /* Independent concurrent lifecycles. Start the destination immediately.
+         The source restores/closes on its own timer; neither Plate gates,
+         waits for, or schedules the other Plate's animation. */
       closingState?.restore('desktop');
       if (wasMaximized) activeCurrent?.classList.add('plate-restoring');
+      activeCurrent?.classList.add('plate-transition-out');
+      if (!same) {
+        openTarget();
+        projections[activePlatform]?.classList.add('plate-transition-in');
+        setTimeout(() => projections[activePlatform]?.classList.remove('plate-transition-in'), 520);
+      }
 
-      if (!same) openTarget();
-
-      requestAnimationFrame(() => {
-        activeCurrent?.classList.add('plate-transition-out');
-        if (!same) projections[activePlatform]?.classList.add('plate-transition-in');
-      });
-
+      /* Source-only completion. This timer owns only the outgoing Plate. */
       setTimeout(() => {
         for (const active of [pair.mobile, pair.desktop]) {
           active?.classList.remove('open', 'plate-restoring', 'plate-transition-out');
@@ -333,7 +333,6 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
         }
         shell.querySelector('.corner.start[data-position="' + position + '"]')
           ?.setAttribute('aria-expanded', 'false');
-        if (!same) projections[activePlatform]?.classList.remove('plate-transition-in');
       }, wasMaximized ? 500 : 360);
     });
   }
