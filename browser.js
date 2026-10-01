@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.133.0',
+  version: '0.134.0',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -121,10 +121,10 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
     const sr=shell.getBoundingClientRect(),wr=wrap.getBoundingClientRect();
     if(!sr.width||!sr.height||!wr.width||!wr.height)return;
     const d=Math.min(2,devicePixelRatio||1);
-    substrateCanvas.width=Math.max(1,Math.round(sr.width*d));
-    substrateCanvas.height=Math.max(1,Math.round(sr.height*d));
+    substrateCanvas.width=Math.max(1,Math.round(innerWidth*d));
+    substrateCanvas.height=Math.max(1,Math.round(innerHeight*d));
     const pc=substrateCanvas.getContext('2d');
-    pc.setTransform(d,0,0,d,0,0);pc.clearRect(0,0,sr.width,sr.height);
+    pc.setTransform(d,0,0,d,0,0);pc.clearRect(0,0,innerWidth,innerHeight);
     const off=document.createElement('canvas'),oc=off.getContext('2d',{willReadFrequently:true});
     off.width=Math.max(1,Math.floor(wr.width));off.height=Math.max(1,Math.floor(wr.height));
     oc.font='600 14px Rajdhani,sans-serif';oc.textBaseline='alphabetic';oc.fillStyle='#fff';
@@ -153,7 +153,10 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       caretCenter=(textTop+textBottom)/2-1,caretTop=caretCenter-caretHeight/2,
       caretX=Math.min(wr.width-rightInset-1,leftInset+oc.measureText((lines[caretLine]||'').slice(0,caretColumn)).width+2);
     if(document.activeElement===prompt&&caretLine>=visibleStart)oc.fillRect(caretX,caretTop,1,caretHeight);
-    const data=oc.getImageData(0,0,off.width,off.height).data,ox=wr.left-sr.left,oy=wr.top-sr.top;
+    /* The substrate is viewport-fixed and outside the shell context.
+       Project with viewport coordinates only; never feed its geometry back
+       into shell, button, split or Plate layout. */
+    const data=oc.getImageData(0,0,off.width,off.height).data,ox=wr.left,oy=wr.top;
     pc.fillStyle='#dce8f5';let n=0;
     for(let y=0;y<off.height;y++)for(let x=0;x<off.width;x++){const a=data[(y*off.width+x)*4+3];
       if(a>8){const z=.76;pc.globalAlpha=Math.max(.18,a/255);pc.beginPath();pc.moveTo(ox+x,oy+y-z);pc.lineTo(ox+x+z,oy+y);
