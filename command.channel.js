@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 const channels=new Map();
 
 const HaamuCommandChannel=Object.freeze({
- family:'command',role:'command.channel',type:'isolated-command-channel',version:'0.2.0',
+ family:'command',role:'command.channel',type:'isolated-command-channel',version:'0.2.1',
  create(id,definition={}){
   const channelId=String(id??'').trim();
   if(!channelId)throw new RangeError('Command channel identity required.');
@@ -34,15 +34,15 @@ const HaamuCommandChannel=Object.freeze({
    }),
    terminal:Object.freeze({
     input:(value,options={})=>HaamuTerminalInput.create(value,{...options,shell,source:options.source??inputOwner??channelId,channelId}),
-    output:(stream,payload,state='completed',options={})=>HaamuTerminalOutput.create(shell,options.command??'',stream,payload,state,{...options,channelId})
+    output:(stream,payload,state='completed',options={})=>HaamuTerminalOutput.create(options.shell??shell,options.command??'',stream,payload,state,{...options,channelId})
    }),
    search:Object.freeze({
     input:(query,options={})=>HaamuSearchInput.create(query,{...options,source:options.source??inputOwner??channelId,channelId}),
     output:(query,results,state='completed',options={})=>HaamuSearchOutput.create(query,results,state,{...options,channelId})
    }),
    shell:Object.freeze({
-    input:(command,options={})=>HaamuShellInput.create(command,{...options,shell,source:options.source??inputOwner??channelId,channelId}),
-    output:(command,payload,state='completed',options={})=>HaamuShellOutput.create(shell,command,payload,state,{...options,channelId})
+    input:(command,options={})=>HaamuShellInput.create(command,{...options,shell:options.shell??shell,source:options.source??inputOwner??channelId,channelId}),
+    output:(command,payload,state='completed',options={})=>HaamuShellOutput.create(options.shell??shell,command,payload,state,{...options,channelId})
    })
   });
   channels.set(channelId,channel);
@@ -53,5 +53,5 @@ const HaamuCommandChannel=Object.freeze({
  list(){return Object.freeze(Array.from(channels.values()));},
  remove(id){return channels.delete(String(id));}
 });
-globalThis.HaamuFamilies['command.channel']=Object.freeze({family:'command',role:'command.channel',type:'isolated-command-channel',version:'0.2.0'});
+globalThis.HaamuFamilies['command.channel']=Object.freeze({family:'command',role:'command.channel',type:'isolated-command-channel',version:'0.2.1'});
 globalThis.HaamuCommandChannel=HaamuCommandChannel;
