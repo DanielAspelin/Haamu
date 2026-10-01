@@ -15,7 +15,7 @@ const HaamuWebText = Object.freeze({
   family: 'web',
   role: 'web.text',
   type: 'text-input-output-processor-allocator-symbolizer-parser-mutator-deparser-font-renderer',
-  version: '1.6.0',
+  version: '1.7.0',
 
   key(event = {}) {
     const key = event.key ?? null;
@@ -259,6 +259,68 @@ const HaamuWebText = Object.freeze({
       line:Math.max(0,Math.trunc(finite(options.line,0))),
       column:Math.max(0,Math.trunc(finite(options.column,0))),
       preferredColumn:Math.max(0,Math.trunc(finite(options.preferredColumn ?? options.column,0))),
+      shape:options.shape ?? 'bar',
+      blink:options.blink !== false,
+    });
+  },
+
+  wrapper(options = {}) {
+    return Object.freeze({
+      type:'web-text-wrapper',
+      width:Math.max(0,finite(options.width,0)),
+      height:Math.max(0,finite(options.height,0)),
+      maxLines:Math.max(1,Math.trunc(finite(options.maxLines,3))),
+      direction:options.direction ?? 'inward',
+    });
+  },
+
+  area(options = {}) {
+    return Object.freeze({
+      type:'web-text-area',
+      x:finite(options.x,0), y:finite(options.y,0),
+      width:Math.max(0,finite(options.width,0)),
+      height:Math.max(0,finite(options.height,0)),
+      overflow:options.overflow ?? 'hidden',
+    });
+  },
+
+  field(value = '', options = {}) {
+    const text=this.normalize(value);
+    return Object.freeze({
+      type:'web-text-field', text,
+      lines:Object.freeze(this.lines(text)),
+      editable:options.editable !== false,
+      maxLines:Math.max(1,Math.trunc(finite(options.maxLines,3))),
+    });
+  },
+
+  line(value = '', options = {}) {
+    return Object.freeze({
+      type:'web-text-line',
+      number:Math.max(0,Math.trunc(finite(options.number,0))),
+      value:this.normalize(value),
+      softBreak:!!options.softBreak,
+      hardBreak:!!options.hardBreak,
+    });
+  },
+
+  selection(options = {}) {
+    const anchor=Math.max(0,Math.trunc(finite(options.anchor ?? options.start,0)));
+    const focus=Math.max(0,Math.trunc(finite(options.focus ?? options.end,anchor)));
+    return Object.freeze({
+      type:'web-text-selection', anchor, focus,
+      start:Math.min(anchor,focus), end:Math.max(anchor,focus),
+      collapsed:anchor===focus,
+      direction:focus<anchor?'backward':focus>anchor?'forward':'none',
+    });
+  },
+
+  caret(options = {}) {
+    const position=Math.max(0,Math.trunc(finite(options.position,0)));
+    return Object.freeze({
+      type:'web-text-caret', position,
+      visible:options.visible !== false,
+      active:options.active !== false,
       shape:options.shape ?? 'bar',
       blink:options.blink !== false,
     });
