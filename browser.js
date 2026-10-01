@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.121.3',
+  version: '0.121.4',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -240,8 +240,12 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
           if(lines[i].start<=selection)caretLine=i;
           else break;
         }
-        const firstVisible=Math.max(0,Math.min(caretLine,lines.length-maxLines));
-        const visible=lines.slice(firstVisible,firstVisible+maxLines);
+        /* The viewport is a line queue, not a caret-relative window.
+           Once overflow begins it advances exactly one complete source line
+           for every new wrapped line: 1-3, 2-4, 3-5, ... . This prevents
+           cumulative fifth-line-and-later drift. */
+        const firstVisible=Math.max(0,lines.length-maxLines);
+        const visible=lines.slice(firstVisible);
         field.replaceChildren();
         for(const line of visible){
           const lineNode=document.createElement('div');
