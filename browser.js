@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.127.0',
+  version: '0.128.0',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -345,7 +345,7 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       };
       prompt.addEventListener('focus', () => {
         prompt.closest('.plate-prompt-wrap')?.classList.add('is-focused');
-        resizePrompt(prompt);
+        resizePrompt(prompt); renderParticlePrompt();
       });
       prompt.addEventListener('blur', () => {
         prompt.closest('.plate-prompt-wrap')?.classList.remove('is-focused');
@@ -388,7 +388,70 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
           prompt.dataset.keyPhase=key.phase;
         }
       });
-      prompt.addEventListener('input', () => synchronizePrompt(prompt));
+      /* Conditional production experiment: CLIENT/mobile only.
+         Native textarea remains the sole Input/IME authority. The canvas is
+         visual projection only and is clipped by the existing Plate Prompt. */
+      const particleExperiment = consoleScope === 'client' && platform === 'mobile';
+      let particleCanvas=null, particleContext=null, particlePhase=0, particleRaf=0;
+      const renderParticlePrompt=()=>{
+        if(!particleExperiment||!particleCanvas||!particleContext)return;
+        const r=particleCanvas.getBoundingClientRect();
+        if(!r.width||!r.height)return;
+        const d=Math.min(2,devicePixelRatio||1);
+        particleCanvas.width=Math.max(1,Math.round(r.width*d));
+        particleCanvas.height=Math.max(1,Math.round(r.height*d));
+        particleContext.setTransform(d,0,0,d,0,0);
+        particleContext.clearRect(0,0,r.width,r.height);
+        const off=document.createElement('canvas'), oc=off.getContext('2d',{willReadFrequently:true});
+        off.width=Math.max(1,Math.floor(r.width)); off.height=Math.max(1,Math.floor(r.height));
+        oc.font='600 14px Rajdhani,sans-serif'; oc.textBaseline='alphabetic'; oc.fillStyle='#fff';
+        const text=prompt.value,leftInset=12,rightInset=12,wrapWidth=Math.max(1,r.width-leftInset-rightInset),
+          anchorBaseline=Math.round(44/2+5),lineHeight=17,lines=[''];
+        for(const ch of text){
+          if(ch==='\n'){lines.push('');continue;}
+          const current=lines[lines.length-1];
+          if(current&&oc.measureText(current+ch).width>wrapWidth)lines.push(ch);
+          else lines[lines.length-1]=current+ch;
+        }
+        const caretIndex=Math.max(0,Math.min(text.length,prompt.selectionStart??text.length));
+        let consumed=0,caretLine=0,caretColumn=0;
+        for(let li=0;li<lines.length;li++){
+          const len=lines[li].length;
+          if(caretIndex<=consumed+len){caretLine=li;caretColumn=Math.max(0,caretIndex-consumed);break;}
+          consumed+=len;if(text[consumed]==='\n')consumed++;
+          caretLine=Math.min(li+1,lines.length-1);caretColumn=lines[caretLine]?.length||0;
+        }
+        const activeLine=Math.max(0,lines.length-1),visibleStart=Math.max(0,activeLine-2),baselineShift=activeLine*lineHeight;
+        for(let li=visibleStart;li<lines.length;li++)oc.fillText(lines[li],leftInset,anchorBaseline+(li*lineHeight)-baselineShift);
+        const metrics=oc.measureText(lines[caretLine]||text||'Hg'),ascent=metrics.actualBoundingBoxAscent||11,
+          descent=metrics.actualBoundingBoxDescent||3,caretBaseline=anchorBaseline+(caretLine*lineHeight)-baselineShift,
+          textTop=caretBaseline-ascent,textBottom=caretBaseline+descent,textHeight=textBottom-textTop,
+          caretHeight=textHeight*1.025*(.75+.275*((Math.sin(particlePhase)+1)/2)),
+          caretCenter=(textTop+textBottom)/2-1,caretTop=caretCenter-caretHeight/2,
+          caretX=Math.min(r.width-rightInset-1,leftInset+oc.measureText((lines[caretLine]||'').slice(0,caretColumn)).width+2);
+        if(document.activeElement===prompt&&caretLine>=visibleStart)oc.fillRect(caretX,caretTop,1,caretHeight);
+        const data=oc.getImageData(0,0,off.width,off.height).data;
+        particleContext.fillStyle='#dce8f5';let n=0;
+        for(let y=0;y<off.height;y++)for(let x=0;x<off.width;x++){
+          const a=data[(y*off.width+x)*4+3];
+          if(a>8){const z=.76;particleContext.globalAlpha=Math.max(.18,a/255);particleContext.beginPath();
+            particleContext.moveTo(x,y-z);particleContext.lineTo(x+z,y);particleContext.lineTo(x,y+z);particleContext.lineTo(x-z,y);
+            particleContext.closePath();particleContext.fill();if(++n>=12000)break;}
+          if(n>=12000)break;
+        }
+        particleContext.globalAlpha=1;
+      };
+      const animateParticlePrompt=()=>{
+        if(!particleExperiment||!particleCanvas?.isConnected)return;
+        particlePhase+=.045;renderParticlePrompt();particleRaf=requestAnimationFrame(animateParticlePrompt);
+      };
+      if(particleExperiment){
+        particleCanvas=document.createElement('canvas');
+        particleCanvas.className='plate-prompt-particle-experiment';
+        particleCanvas.setAttribute('aria-hidden','true');
+        particleContext=particleCanvas.getContext('2d');
+      }
+      prompt.addEventListener('input', () => { synchronizePrompt(prompt); renderParticlePrompt(); });
       /* Selection is independent from value mutation. Re-project on native
          caret/selection movement so the visual Text Field can subsequently
          consume the browser's authoritative insertion index without changing
@@ -433,6 +496,7 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       ].join(';');
       promptWrap.appendChild(promptMeasure);
       promptWrap.appendChild(promptProjection);
+      if(particleExperiment && particleCanvas) promptWrap.appendChild(particleCanvas);
       promptWrap.appendChild(prompt);
       promptWrap.appendChild(promptLabel);
       /* Prompt activation belongs to the Prompt track, not to whichever
@@ -557,6 +621,13 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       matrix.appendChild(table);
       menu.appendChild(matrix);
       plateLayer.appendChild(menu);
+      if(particleExperiment){
+        menu.dataset.particlePrompt='conditional-v8.3';
+        requestAnimationFrame(()=>document.fonts.ready.then(()=>{
+          renderParticlePrompt();
+          if(!particleRaf) particleRaf=requestAnimationFrame(animateParticlePrompt);
+        }));
+      }
       projections[platform] = menu;
     }
 
