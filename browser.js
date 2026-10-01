@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.117.0',
+  version: '0.118.0',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -129,7 +129,8 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       menu.setAttribute('aria-hidden', 'true');
       menu.dataset.plateState = platform === 'mobile' ? 'automatic' : (plateState?.state('desktop') ?? 'normal');
 
-      if (platform === 'desktop' && plateState) {
+      if (platform === 'desktop') {
+        const stateSystem = plateState ?? globalThis.HaamuBrowserPlateState?.forPlate(plateId);
         const control = document.createElement('button');
         control.type = 'button';
         control.className = 'plate-state-toggle';
@@ -139,7 +140,7 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
         control.textContent = '□';
         control.addEventListener('click', event => {
           event.stopPropagation();
-          plateState.toggle('desktop');
+          stateSystem?.toggle('desktop');
         });
         menu.appendChild(control);
       }
@@ -245,8 +246,9 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       projections[platform] = menu;
     }
 
-    if (plateState) {
-      plateState.subscribe(snapshot => {
+    const activePlateState = plateState ?? globalThis.HaamuBrowserPlateState?.forPlate(plateId);
+    if (activePlateState) {
+      activePlateState.subscribe(snapshot => {
         projections.mobile.dataset.plateState = 'automatic';
         projections.desktop.dataset.plateState = snapshot.desktop;
         const toggle = projections.desktop.querySelector('.plate-state-toggle');
