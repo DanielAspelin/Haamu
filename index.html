@@ -228,7 +228,11 @@
       unicode-bidi:plaintext;
       margin:0 8px;width:calc(100% - 16px);padding:9px 12px
     }
-    .plate-prompt::placeholder{color:rgba(225,242,255,.72);opacity:1}
+    .plate-prompt::placeholder{
+      color:#fff !important;
+      -webkit-text-fill-color:#fff;
+      opacity:1 !important;
+    }
     .corner-menu[data-platform="mobile"]{display:none}
     .corner-menu[data-platform="desktop"]{display:block}
     .haamu-mobile .corner-menu[data-platform="desktop"]{display:none}
