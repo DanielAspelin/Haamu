@@ -38,14 +38,20 @@ const create=(plateId,definition={})=>{
    area=Object.freeze({type:'plate-area',mode,snap:'plate',live:mode==='live',plateId,inputSocket:channel?.inputSocket??null,inputPromptId,inputChannelId,promptOutputSocket:inputSocket});
    return area;
   },
+  text:Object.freeze({accept:output=>accept('text',output)}),
+  command:Object.freeze({accept:output=>accept('command',output)}),
+  prompt:Object.freeze({accept:output=>accept('prompt',output)}),
   terminal:Object.freeze({accept:output=>accept('terminal',output)}),
   search:Object.freeze({accept:output=>accept('search',output)}),
   shell:Object.freeze({accept:output=>accept('shell',output)}),
   accept(output){
+   if(output?.type==='web-text-output'||output?.type==='text-output')return this.text.accept(output);
+   if(output?.type==='command-output')return this.command.accept(output);
+   if(output?.type==='prompt-output')return this.prompt.accept(output);
    if(output?.type==='terminal-output')return this.terminal.accept(output);
    if(output?.type==='search-output')return this.search.accept(output);
    if(output?.type==='shell-output')return this.shell.accept(output);
-   throw new TypeError('Terminal, search or shell output required.');
+   throw new TypeError('Text, command, prompt, terminal, search or shell output required.');
   },
   history:()=>Object.freeze(Array.from(outputs)),
   latest:()=>outputs.at(-1)??null
@@ -53,7 +59,7 @@ const create=(plateId,definition={})=>{
 };
 
 const HaamuBrowserPlateSystems=Object.freeze({
- family:'browser',role:'browser.plate.systems',type:'per-plate-output-systems',version:'0.5.1',
+ family:'browser',role:'browser.plate.systems',type:'per-plate-output-systems',version:'0.6.0',
  forPlate(plate,definition={}){
   const plateId=String(typeof plate==='string'?plate:(plate?.id??plate?.dataset?.plate??'')).trim();
   if(!plateId)throw new RangeError('Plate identity required.');
