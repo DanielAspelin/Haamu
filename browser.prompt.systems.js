@@ -8,6 +8,7 @@
 globalThis.HaamuFamilies ??= Object.create(null);
 const systems=new Map();
 const promptStates=new Map();
+const promptHistories=new Map();
 const PROMPT_STATES=Object.freeze(['ready','primary','continuation','submitted','executing']);
 
 const create=(promptId,definition={})=>{
@@ -30,6 +31,38 @@ const create=(promptId,definition={})=>{
  transition('ready',{reason:'created'});
  if(!commandLine)throw new Error('HaamuCommandLine unavailable.');
 
+ const history=()=>{
+  if(!promptHistories.has(promptId))promptHistories.set(promptId,[]);
+  return promptHistories.get(promptId);
+ };
+ const remember=(value,metadata={})=>{
+  const source=String(value??'');
+  if(!source.trim())return null;
+  const entries=history();
+  const entry=Object.freeze({
+   type:'prompt-history-entry',promptId,value:source,
+   mode:metadata.mode ?? interpret(source).mode,
+   sequence:entries.length+1,
+  });
+  entries.push(entry);
+  return entry;
+ };
+ const recall=(offset=1)=>{
+  const entries=history();
+  const index=Math.max(0,entries.length-Math.max(1,Math.trunc(Number(offset)||1)));
+  return entries[index] ?? null;
+ };
+ const complete=(value,candidates=[])=>{
+  const source=String(value??'');
+  const matches=Array.from(new Set(candidates.map(String))).filter(candidate=>candidate.startsWith(source));
+  return Object.freeze({type:'prompt-completion',source,matches:Object.freeze(matches),exact:matches.includes(source)});
+ };
+ const suggest=(value,candidates=[])=>{
+  const source=String(value??'').toLowerCase();
+  const matches=Array.from(new Set(candidates.map(String))).filter(candidate=>candidate.toLowerCase().includes(source));
+  return Object.freeze({type:'prompt-suggestion',source:String(value??''),matches:Object.freeze(matches)});
+ };
+
  const interpret=value=>{
   const source=String(value??'');
   const trimmed=source.trim();
@@ -38,6 +71,11 @@ const create=(promptId,definition={})=>{
   state(){return promptStates.get(promptId);},
   transition,
   interpret,
+  remember,
+  recall,
+  history(){return Object.freeze([...history()]);},
+  complete,
+  suggest,
   command:Object.freeze({input:value=>channel.command.input(value,{promptId,source:'prompt'})}),
   terminal:Object.freeze({input:value=>channel.terminal.input(value,{source:promptId})}),
   search:Object.freeze({input:query=>channel.search.input(query,{source:promptId})}),
@@ -50,14 +88,14 @@ const create=(promptId,definition={})=>{
 };
 
 const HaamuBrowserPromptSystems=Object.freeze({
- family:'browser',role:'browser.prompt.systems',type:'per-prompt-input-systems',version:'0.4.0',
+ family:'browser',role:'browser.prompt.systems',type:'per-prompt-input-systems',version:'0.5.0',
  forPrompt(prompt,definition={}){
   const promptId=String(typeof prompt==='string'?prompt:(prompt?.dataset?.logicalPrompt??prompt?.id??'')).trim();
   if(!promptId)throw new RangeError('Prompt identity required.');
   if(!systems.has(promptId))systems.set(promptId,create(promptId,definition));
   return systems.get(promptId);
  },
- remove(id){id=String(id);promptStates.delete(id);return systems.delete(id);},
+ remove(id){id=String(id);promptStates.delete(id);promptHistories.delete(id);return systems.delete(id);},
  prompts(){return Object.freeze(Array.from(systems.keys()));}
 });
 globalThis.HaamuFamilies['browser.prompt.systems']=Object.freeze({family:'browser',role:'browser.prompt.systems',type:'per-prompt-input-systems',version:'0.4.0'});
