@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.120.7',
+  version: '0.120.8',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -221,11 +221,11 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
            first three rendered lines. The native editor remains independent
            for caret/IME state and must not enlarge the visible projection. */
         const overflow = Math.max(0, measured - maxHeight);
-        /* Use the browser's real textarea scroll offset as the single source
-           of truth. The native editor and visible projection must move by
-           exactly the same pixels; rounding to wrapped lines causes drift. */
-        target.scrollTop = target.scrollHeight;
-        const projectionOffset = Math.max(0, target.scrollTop);
+        /* Three-line rolling viewport: once full, advance continuously
+           only by the overflow amount. This pushes existing text upward as
+           wrapping occurs instead of jumping an entire native scroll step. */
+        const projectionOffset = overflow;
+        target.scrollTop = overflow;
         if (wrap) wrap.style.height = height + 'px';
         if (row) {
           row.style.height = height + 'px';
