@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.122.4',
+  version: '0.123.0',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -430,6 +430,24 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       prompt.addEventListener('keydown', (event) => {
         if (event.key !== 'Enter' || event.isComposing) return;
         event.preventDefault();
+
+        const inspection=shellRouter?.inspect?.(prompt.value) ?? globalThis.HaamuShell?.inspect?.(prompt.value);
+        const continuation=event.shiftKey || inspection?.continuation;
+        if(continuation){
+          const start=prompt.selectionStart ?? prompt.value.length;
+          const end=prompt.selectionEnd ?? start;
+          const edit=globalThis.HaamuWebText?.newLine?.(prompt.value,{position:start});
+          prompt.value=start===end ? (edit?.after ?? prompt.value.slice(0,start)+'\n'+prompt.value.slice(end))
+            : prompt.value.slice(0,start)+'\n'+prompt.value.slice(end);
+          const next=start+1;
+          prompt.setSelectionRange(next,next);
+          prompt.dataset.promptMode='continuation';
+          prompt.dataset.continuationReason=event.shiftKey?'explicit':(inspection?.reason ?? 'incomplete');
+          synchronizePrompt(prompt);
+          return;
+        }
+        prompt.dataset.promptMode='primary';
+        delete prompt.dataset.continuationReason;
 
         if (!promptSystems || !plateSystems) return;
         const transaction = promptSystems.submit(prompt.value, {
