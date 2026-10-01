@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.120.2',
+  version: '0.120.3',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -218,6 +218,11 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
         target.style.overflowY = 'hidden';
         const overflow = Math.max(0, measured - maxHeight);
         target.scrollTop = overflow;
+        /* Keep Haamu's visible projection aligned to the native textarea's
+           actual scroll position. The browser already scrolls the caret into
+           view; duplicating the full scrollHeight delta over-shifts text and
+           creates an empty trailing line. */
+        const projectionOffset = Math.max(0, target.scrollTop);
         if (wrap) wrap.style.height = height + 'px';
         if (row) {
           row.style.height = height + 'px';
@@ -228,7 +233,7 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
           const projection = target.closest('.plate-prompt-wrap')?.querySelector('.plate-prompt-projection');
           if (projection) {
             projection.style.height = height + 'px';
-            projection.style.transform = 'translateY(-' + overflow + 'px)';
+            projection.style.transform = 'translateY(-' + projectionOffset + 'px)';
           }
         }
       };
