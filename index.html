@@ -228,11 +228,15 @@
       unicode-bidi:plaintext;
       margin:0 8px;width:calc(100% - 16px);padding:9px 12px
     }
-    .plate-prompt::placeholder{
-      color:#fff !important;
-      -webkit-text-fill-color:#fff;
-      opacity:1 !important;
+    .plate-prompt::placeholder{color:transparent!important;-webkit-text-fill-color:transparent;opacity:0!important}
+    .plate-prompt-wrap{position:relative;display:block;width:100%;height:44px}
+    .plate-prompt-label{
+      position:absolute;left:20px;top:50%;transform:translateY(-50%);
+      z-index:4;color:#fff;-webkit-text-fill-color:#fff;
+      font:600 14px/1.2 'Rajdhani',sans-serif;letter-spacing:.04em;
+      pointer-events:none;white-space:nowrap;
     }
+    .plate-prompt-wrap.has-value .plate-prompt-label{display:none}
     .corner-menu[data-platform="mobile"]{display:none}
     .corner-menu[data-platform="desktop"]{display:block}
     .haamu-mobile .corner-menu[data-platform="desktop"]{display:none}
