@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.126.2',
+  version: '0.126.3',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -628,24 +628,32 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       const wasMaximized = activePlatform === 'desktop'
         && pair.desktop?.dataset.plateState === 'maximized';
 
-      /* Ordered handoff: retract the currently open Plate completely first.
-         Only after that Plate has returned to its button does the selected
-         Plate begin its outward slide. This preserves one moving Plate at a
-         time and prevents the replacement from taking position prematurely. */
       closingState?.restore('desktop');
       if (wasMaximized) activeCurrent?.classList.add('plate-restoring');
       activeCurrent?.classList.add('plate-transition-out');
 
-      const handoffDelay = wasMaximized ? 500 : 360;
-      setTimeout(() => {
+      const closeCurrent = () => {
         for (const active of [pair.mobile, pair.desktop]) {
           active?.classList.remove('open', 'plate-restoring', 'plate-transition-out');
           active?.setAttribute('aria-hidden', 'true');
         }
         shell.querySelector('.corner.start[data-position="' + position + '"]')
           ?.setAttribute('aria-expanded', 'false');
+      };
+
+      if (activePlatform === 'mobile') {
+        /* Mobile is deliberately sequential: the current Plate must finish
+           retracting into its button before the selected Plate slides out. */
+        setTimeout(() => {
+          closeCurrent();
+          if (!same) openTargetNow();
+        }, 360);
+      } else {
+        /* Desktop retains the established concurrent handoff. Its window-like
+           Plate transition is independent from the mobile corner-slide rule. */
         if (!same) openTargetNow();
-      }, handoffDelay);
+        setTimeout(closeCurrent, wasMaximized ? 500 : 360);
+      }
     });
   }
 
