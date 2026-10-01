@@ -29,7 +29,7 @@ const snapshot=(element,event,phase)=>{
 };
 
 const HaamuBrowserPromptInput=Object.freeze({
- family:'browser',role:'browser.prompt.input',type:'prompt-native-ime-input',version:'0.2.0',
+ family:'browser',role:'browser.prompt.input',type:'prompt-native-ime-input',version:'0.3.0',
  bind(element,options={}){
   if(!(element instanceof HTMLTextAreaElement||element instanceof HTMLInputElement))
    throw new TypeError('Prompt native input element required.');
@@ -40,10 +40,12 @@ const HaamuBrowserPromptInput=Object.freeze({
   const reconcile=event=>{
    const after=snapshot(element,event,'input');
    const expected=before?.input&&webTextEdit(before.value,before.input);
+   const composing=!!(before?.composing||after.composing||event?.isComposing);
    reconciliation=Object.freeze({
     type:'prompt-input-reconciliation',promptId,before,after,
-    expected:expected?.after??null,actual:after.value,
-    matches:expected?.after==null?null:expected.after===after.value,
+    status:composing?'deferred':expected?.after==null?'indeterminate':expected.after===after.value?'matched':'mismatch',
+    expected:composing?null:(expected?.after??null),actual:after.value,
+    matches:composing||expected?.after==null?null:expected.after===after.value,
    });
    before=null;current=after;
   };
@@ -60,6 +62,7 @@ const HaamuBrowserPromptInput=Object.freeze({
    keydown:event=>{current=snapshot(element,event,'keydown');},
    keyup:event=>{current=snapshot(element,event,'keyup');},
    select:event=>{current=snapshot(element,event,'selection');},
+   selectionchange:event=>{if(document.activeElement===element)current=snapshot(element,event,'selectionchange');},
   };
   for(const [name,listener] of Object.entries(listeners))element.addEventListener(name,listener);
   const binding=Object.freeze({
@@ -70,5 +73,5 @@ const HaamuBrowserPromptInput=Object.freeze({
   bindings.set(element,binding);return binding;
  }
 });
-globalThis.HaamuFamilies['browser.prompt.input']=Object.freeze({family:'browser',role:'browser.prompt.input',type:'prompt-native-ime-input',version:'0.2.0'});
+globalThis.HaamuFamilies['browser.prompt.input']=Object.freeze({family:'browser',role:'browser.prompt.input',type:'prompt-native-ime-input',version:'0.3.0'});
 globalThis.HaamuBrowserPromptInput=HaamuBrowserPromptInput;
