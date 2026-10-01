@@ -229,6 +229,18 @@
     .corner-menu[data-platform="desktop"]{display:block}
     .haamu-mobile .corner-menu[data-platform="desktop"]{display:none}
     .haamu-mobile .corner-menu[data-platform="mobile"]{display:block}
+    /* Active prompt is an outward-facing plate skin strip, not a floating field. */
+    .corner-menu.open .plate-prompt-row{
+      position:absolute;left:0;right:0;display:grid;min-height:44px;
+      visibility:visible;opacity:1;
+    }
+    .corner-menu.open[data-corner^="top-"] .plate-prompt-row{top:0;bottom:auto}
+    .corner-menu.open[data-corner^="bottom-"] .plate-prompt-row{bottom:0;top:auto}
+    .corner-menu.open .plate-prompt{
+      display:block;visibility:visible;opacity:1;height:44px;
+      background:linear-gradient(135deg,rgba(255,255,255,.18),rgba(255,255,255,.055));
+      border:1px solid rgba(210,235,255,.22);
+    }
 
     @media(max-width:600px){
       /* Qualified mobile geometry recovered from eef48b6d...:
