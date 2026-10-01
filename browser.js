@@ -345,14 +345,13 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
           }));
         }
         prompt.value = '';
-        promptProjection.textContent = '';
+        prompt.setSelectionRange(0,0);
         resizePrompt(prompt);
         logicalPrompts.set(promptId, '');
         promptWrap.classList.remove('has-value');
         for (const peer of plateLayer.querySelectorAll('[data-logical-prompt="' + promptId + '"]')) {
           peer.value = '';
-          const peerProjection = peer.closest('.plate-prompt-wrap')?.querySelector('.plate-prompt-projection');
-          if (peerProjection) peerProjection.textContent = '';
+          peer.setSelectionRange?.(0,0);
           resizePrompt(peer);
           peer.closest('.plate-prompt-wrap')?.classList.remove('has-value');
         }
