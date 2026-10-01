@@ -3,9 +3,21 @@
 /**
  * Haamu V1 monolith.
  *
- * Classes are constructed in ascending version order from top to bottom.
+ * Classes are constructed in descending version order from top to bottom.
  * Classes remain parallel unless an explicit relationship is established.
  */
+class V2 {
+  static NAME = 'Haamu V2';
+  static VERSION = '2';
+  static STATE = 'under-construction';
+}
+
+class V1 {
+  static NAME = 'Haamu V1';
+  static VERSION = '1.0.0';
+  static STATE = 'under-construction';
+}
+
 class V0 {
   static NAME = 'Haamu V0';
   static VERSION = '0';
@@ -19,18 +31,6 @@ class V0 {
   }
 }
 
-class V1 {
-  static NAME = 'Haamu V1';
-  static VERSION = '1.0.0';
-  static STATE = 'under-construction';
-}
-
-class V2 {
-  static NAME = 'Haamu V2';
-  static VERSION = '2';
-  static STATE = 'under-construction';
-}
-
-globalThis.V0 = V0;
-globalThis.V1 = V1;
 globalThis.V2 = V2;
+globalThis.V1 = V1;
+globalThis.V0 = V0;
