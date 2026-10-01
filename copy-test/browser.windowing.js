@@ -1,5 +1,8 @@
 'use strict';
 
+
+/* module-private execution scope */
+(() => {
 /**
  * Haamu Browser Windowing — one isolated hidden windowing system per Plate.
  *
@@ -73,3 +76,4 @@ globalThis.HaamuFamilies['browser.windowing']=Object.freeze({
  type:HaamuBrowserWindowing.type,version:HaamuBrowserWindowing.version,
 });
 globalThis.HaamuBrowserWindowing=HaamuBrowserWindowing;
+})();
