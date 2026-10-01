@@ -21,11 +21,11 @@ const create=(id,definition={})=>{
  const channel=prompt.channel;
  const route=(value,context={})=>{
   const interpretation=prompt.interpret(value);
-  const source=interpretation.body;
-  if(interpretation.mode==='search') return Object.freeze({type:'console-route',consoleId,mode:'search',interpretation,input:channel.search.input(source,{source:prompt.promptId}),target:plate.inputSocket});
-  if(interpretation.mode==='shell') return Object.freeze({type:'console-route',consoleId,mode:'shell',interpretation,input:channel.shell.input(source,{source:prompt.promptId}),target:plate.inputSocket});
-  if(interpretation.mode==='prompt') return Object.freeze({type:'console-route',consoleId,mode:'prompt',interpretation,input:channel.command.input(source,{promptId:prompt.promptId,source:'prompt'}),target:plate.inputSocket});
-  return Object.freeze({type:'console-route',consoleId,mode:'command',interpretation,input:channel.command.input(source,{promptId:prompt.promptId,source:'prompt'}),target:plate.inputSocket});
+  return Object.freeze({
+   type:'console-route',consoleId,mode:interpretation.mode,interpretation,
+   input:prompt.submit(value,{...context,consoleId}),
+   target:plate.inputSocket,
+  });
  };
  return Object.freeze({
   type:'console',consoleId,role,channelId,
@@ -45,7 +45,7 @@ const create=(id,definition={})=>{
 };
 
 const HaamuConsole=Object.freeze({
- family:'console',role:'console',type:'interactive-io-console',version:'0.3.0',
+ family:'console',role:'console',type:'interactive-io-console',version:'0.4.0',
  create(id,definition={}){
   const key=String(id??'').trim();
   if(consoles.has(key))throw new Error('Console already exists: '+key);
@@ -55,5 +55,5 @@ const HaamuConsole=Object.freeze({
  get:id=>consoles.get(String(id))??null,
  list:()=>Object.freeze(Array.from(consoles.values())),
 });
-globalThis.HaamuFamilies['console']=Object.freeze({family:'console',role:'console',type:'interactive-io-console',version:'0.3.0'});
+globalThis.HaamuFamilies['console']=Object.freeze({family:'console',role:'console',type:'interactive-io-console',version:'0.4.0'});
 globalThis.HaamuConsole=HaamuConsole;
