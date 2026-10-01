@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.120.4',
+  version: '0.120.5',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -217,8 +217,9 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
            visible by shifting the native editor and Haamu projection upward. */
         target.style.overflowY = 'hidden';
         /* Three visible lines are a fixed viewport. Input may continue
-           indefinitely, but once the viewport is full its visible projection
-           stays fixed instead of revealing line four or later. */
+           indefinitely, but the visible Haamu projection is clipped to the
+           first three rendered lines. The native editor remains independent
+           for caret/IME state and must not enlarge the visible projection. */
         const overflow = Math.max(0, measured - maxHeight);
         target.scrollTop = 0;
         const projectionOffset = 0;
