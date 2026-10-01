@@ -313,25 +313,28 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       const wasMaximized = activePlatform === 'desktop'
         && pair.desktop?.dataset.plateState === 'maximized';
 
-      /* A button-to-button change is one continuous transition. Normalize the
-         logical state immediately, while the old Plate visually morphs home.
-         The destination Plate begins opening during that same morph rather
-         than waiting for a serial restore -> close -> open sequence. */
+      /* Concurrent Plate handoff: both Plate projections participate in the
+         same animation frame. The source restores/morphs inward while the
+         destination opens/morphs outward. Neither waits for the other. */
       closingState?.restore('desktop');
       if (wasMaximized) activeCurrent?.classList.add('plate-restoring');
 
-      if (!same) {
-        setTimeout(openTarget, wasMaximized ? 170 : 40);
-      }
+      if (!same) openTarget();
+
+      requestAnimationFrame(() => {
+        activeCurrent?.classList.add('plate-transition-out');
+        if (!same) projections[activePlatform]?.classList.add('plate-transition-in');
+      });
 
       setTimeout(() => {
         for (const active of [pair.mobile, pair.desktop]) {
-          active?.classList.remove('open', 'plate-restoring');
+          active?.classList.remove('open', 'plate-restoring', 'plate-transition-out');
           active?.setAttribute('aria-hidden', 'true');
         }
         shell.querySelector('.corner.start[data-position="' + position + '"]')
           ?.setAttribute('aria-expanded', 'false');
-      }, wasMaximized ? 500 : 260);
+        if (!same) projections[activePlatform]?.classList.remove('plate-transition-in');
+      }, wasMaximized ? 500 : 360);
     });
   }
 
