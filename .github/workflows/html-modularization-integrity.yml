@@ -33,6 +33,9 @@ jobs:
       - name: Attribute legacy browser script collisions
         if: always()
         run: node copy-test/test/script-collision.browser.test.js
+      - name: Attribute full-page browser errors
+        if: always()
+        run: node copy-test/test/page-error-attribution.browser.test.js
       - name: Upload copy-test screenshots
         if: always()
         uses: actions/upload-artifact@v4
