@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.120.3',
+  version: '0.120.4',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -216,13 +216,12 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
            Once input wraps beyond line three, keep the newest three lines
            visible by shifting the native editor and Haamu projection upward. */
         target.style.overflowY = 'hidden';
+        /* Three visible lines are a fixed viewport. Input may continue
+           indefinitely, but once the viewport is full its visible projection
+           stays fixed instead of revealing line four or later. */
         const overflow = Math.max(0, measured - maxHeight);
-        target.scrollTop = overflow;
-        /* Keep Haamu's visible projection aligned to the native textarea's
-           actual scroll position. The browser already scrolls the caret into
-           view; duplicating the full scrollHeight delta over-shifts text and
-           creates an empty trailing line. */
-        const projectionOffset = Math.max(0, target.scrollTop);
+        target.scrollTop = 0;
+        const projectionOffset = 0;
         if (wrap) wrap.style.height = height + 'px';
         if (row) {
           row.style.height = height + 'px';
