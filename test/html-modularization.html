@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Haamu HTML modularization qualification</title>
+</head>
+<body>
+  <main id="fixture"></main>
+  <pre id="result">RUNNING</pre>
+  <script src="../html.js"></script>
+  <script src="../html.button.js"></script>
+  <script src="../html.prompt.js"></script>
+  <script src="../html.plate.js"></script>
+  <script>
+    'use strict';
+    const assertions = [];
+    const assert = (name, condition) => {
+      assertions.push({ name, pass: Boolean(condition) });
+      if (!condition) throw new Error(name);
+    };
+
+    try {
+      const prompt = HaamuHTMLPrompt.create({ id: 'prompt-client', label: 'Client prompt' });
+      const plate = HaamuHTMLPlate.create({
+        id: 'plate-client-desktop',
+        corner: 'bottom-right',
+        platform: 'desktop',
+        prompt
+      });
+      const button = HaamuHTMLButton.create({
+        position: 'bottom-right',
+        label: 'CLIENT',
+        controls: plate.root.id
+      });
+      document.querySelector('#fixture').append(button, plate.root);
+
+      assert('button is semantic BUTTON', button.tagName === 'BUTTON');
+      assert('button starts collapsed', button.getAttribute('aria-expanded') === 'false');
+      assert('button controls Plate', button.getAttribute('aria-controls') === plate.root.id);
+      assert('Plate is semantic SECTION', plate.root.tagName === 'SECTION');
+      assert('Plate starts hidden', plate.root.getAttribute('aria-hidden') === 'true');
+      assert('Plate corner retained', plate.root.dataset.corner === 'bottom-right');
+      assert('Plate platform retained', plate.root.dataset.platform === 'desktop');
+      assert('Plate matrix generated', plate.root.querySelector('.plate-matrix') === plate.matrix);
+      assert('content row generated', plate.root.querySelector('.plate-content-row') === plate.content);
+      assert('prompt row generated', plate.root.querySelector('.plate-prompt-row') === plate.promptRow);
+      assert('native textarea is input authority', prompt.input.tagName === 'TEXTAREA');
+      assert('projection is non-semantic', prompt.projection.getAttribute('aria-hidden') === 'true');
+      assert('no open state invented', !plate.root.classList.contains('open'));
+
+      document.querySelector('#result').textContent =
+        'PASS ' + assertions.length + '/' + assertions.length + '\n' +
+        assertions.map(item => 'PASS ' + item.name).join('\n');
+    } catch (error) {
+      document.querySelector('#result').textContent =
+        'FAIL\n' + error.stack + '\n\n' +
+        assertions.map(item => (item.pass ? 'PASS ' : 'FAIL ') + item.name).join('\n');
+      throw error;
+    }
+  </script>
+</body>
+</html>
