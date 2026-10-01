@@ -15,7 +15,7 @@ const HaamuWebText = Object.freeze({
   family: 'web',
   role: 'web.text',
   type: 'text-input-output-processor-allocator-symbolizer-parser-mutator-deparser-font-renderer',
-  version: '1.12.0',
+  version: '1.13.0',
 
   key(event = {}) {
     const key = event.key ?? null;
@@ -62,6 +62,21 @@ const HaamuWebText = Object.freeze({
     });
   },
 
+  graphemes(value) {
+    const text=this.normalize(value);
+    if(typeof Intl!=='undefined'&&Intl.Segmenter){
+      const segmenter=new Intl.Segmenter(undefined,{granularity:'grapheme'});
+      return Object.freeze(Array.from(segmenter.segment(text),part=>Object.freeze({
+        type:'grapheme',value:part.segment,start:part.index,end:part.index+part.segment.length,
+      })));
+    }
+    let offset=0;
+    return Object.freeze(Array.from(text,character=>{
+      const start=offset;offset+=character.length;
+      return Object.freeze({type:'grapheme',value:character,start,end:offset});
+    }));
+  },
+
   symbolize(value) {
     let utf16Offset = 0;
     return Object.freeze(this.characters(value).map((character, index) => {
@@ -86,7 +101,7 @@ const HaamuWebText = Object.freeze({
     const end=Math.max(start,Math.min(text.length,Math.trunc(finite(input.selectionEnd,start))));
     const inputType=input.inputType ?? null;
     if(inputType==='insertText' && input.data===' ') return start===end ? this.space(text,{position:start}) : this.mutate(text,{operation:'replace',start,end,value:' '});
-    if(inputType==='deleteContentBackward') return this.backspace(text,{position:end,start,end});
+    if(inputType==='deleteContentBackward') return this.backspace(text,{position:end,start,end,unit:'grapheme'});
     if(inputType==='insertLineBreak' || inputType==='insertParagraph') {
       if(start!==end) {
         const replaced=this.mutate(text,{operation:'replace',start,end,value:'\n'});
