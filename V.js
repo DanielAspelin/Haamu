@@ -17,6 +17,7 @@ class V1 {
   static VERSION = '1.0.0';
   static STATE = 'under-construction';
 
+  static RUNTIME = class RUNTIME {};
   static IO = class IO {};
   static PLATFORM = class PLATFORM {};
   static BROWSER = class BROWSER {};
