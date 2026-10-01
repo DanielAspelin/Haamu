@@ -6,7 +6,7 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<meta name="haamu-build" content="0.138.34">
+<meta name="haamu-build" content="0.138.35">
   <meta name="description" content="Haamu — open community, technology and culture">
   <title>Haamu</title>
   <style>
@@ -209,6 +209,16 @@
     .corner-menu.open{opacity:1;pointer-events:auto;transform:scale(1)}
     .corner-menu.plate-restoring{
       filter:brightness(.98);
+    }
+    /* Concurrent handoff: outgoing and incoming Plates animate during the
+       same interval, preserving each Plate's own corner transform origin. */
+    .corner-menu.plate-transition-out{
+      opacity:.22;
+      filter:brightness(.94);
+    }
+    .corner-menu.plate-transition-in{
+      opacity:1;
+      filter:brightness(1);
     }
     /* Plate size remains automatic. Desktop gets one maximize/restore toggle
        on the Plate corner that faces the center of the screen. */
