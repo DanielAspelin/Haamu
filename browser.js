@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.119.2',
+  version: '0.119.3',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -179,6 +179,24 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       prompt.setAttribute('spellcheck', 'false');
       prompt.setAttribute('autocorrect', 'off');
       prompt.setAttribute('autocapitalize', 'off');
+      prompt.setAttribute('data-gramm', 'false');
+      prompt.setAttribute('data-gramm_editor', 'false');
+      prompt.setAttribute('data-enable-grammarly', 'false');
+      /* Android/Chrome IMEs may render composition decoration independently
+         of CSS. Keep composition native for caret correctness, but force the
+         editable surface to reassert undecorated text after composition. */
+      prompt.addEventListener('compositionstart', () => {
+        prompt.dataset.composing = 'true';
+      });
+      prompt.addEventListener('compositionend', () => {
+        delete prompt.dataset.composing;
+        const start = prompt.selectionStart;
+        const end = prompt.selectionEnd;
+        const value = prompt.value;
+        prompt.value = value;
+        if (start !== null && end !== null) prompt.setSelectionRange(start, end);
+        prompt.dispatchEvent(new Event('input', { bubbles:true }));
+      });
       prompt.setAttribute('aria-label', plateTitles[corner] + ' prompt');
       prompt.dataset.logicalPrompt = promptId;
       const resizePrompt = target => {
