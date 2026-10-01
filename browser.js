@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.126.8',
+  version: '0.126.9',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -648,8 +648,13 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
          that publication changes width/height and creates a visible restored
          stop before opacity begins. The logical state is restored only after
          the outgoing Plate has completed its visual retirement. */
+      /* Establish the outgoing transition declaration first, then cross the
+         open -> closed geometry boundary on the next animation frame. This
+         prevents the browser from coalescing both class mutations into one
+         style calculation, which can produce a restored-looking dwell before
+         opacity/transform interpolation actually begins. */
       activeCurrent?.classList.add('plate-transition-out');
-      activeCurrent?.classList.remove('open');
+      void activeCurrent?.offsetWidth;
 
       let closeFinished = false;
       let closeFallback = 0;
@@ -671,7 +676,10 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
         if (event.target === activeCurrent && event.propertyName === 'transform') closeCurrent();
       };
       activeCurrent?.addEventListener('transitionend', onCloseTransitionEnd);
-      closeFallback = setTimeout(closeCurrent, wasMaximized ? 560 : 540);
+      requestAnimationFrame(() => {
+        activeCurrent?.classList.remove('open');
+      });
+      closeFallback = setTimeout(closeCurrent, wasMaximized ? 620 : 600);
 
       if (activePlatform === 'desktop' && !same) {
         /* Desktop is also ordered: start retracting the old Plate immediately,
