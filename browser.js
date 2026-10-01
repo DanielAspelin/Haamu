@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.108.0',
+  version: '0.109.0',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -134,7 +134,17 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
         }
       });
 
-      promptRow.appendChild(prompt);
+      const promptWrap = document.createElement('div');
+      promptWrap.className = 'plate-prompt-wrap';
+      const promptLabel = document.createElement('span');
+      promptLabel.className = 'plate-prompt-label';
+      promptLabel.textContent = plateTitles[corner] + ' — Prompt';
+      promptWrap.appendChild(prompt);
+      promptWrap.appendChild(promptLabel);
+      prompt.addEventListener('input', () => {
+        promptWrap.classList.toggle('has-value', prompt.value.length > 0);
+      });
+      promptRow.appendChild(promptWrap);
       table.appendChild(promptRow);
       matrix.appendChild(table);
       menu.appendChild(matrix);
