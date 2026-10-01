@@ -16,7 +16,7 @@ const create=(promptId,definition={})=>{
  const shell=String(definition.shell??'client');
  const channel=globalThis.HaamuCommandChannel?.ensure?.(channelId,{shell});
  if(!channel)throw new Error('HaamuCommandChannel unavailable.');
- channel.bindInput(promptId);
+ channel.bindOutput(promptId);
  const commandLine=globalThis.HaamuCommandLine?.forChannel?.(channelId,{channel,shell});
  if(!commandLine)throw new Error('HaamuCommandLine unavailable.');
 
@@ -83,7 +83,7 @@ const create=(promptId,definition={})=>{
 
  return Object.freeze({
   type:'prompt-input-systems',promptId,channelId,shell,channel,commandLine,
-  inputSocket:Object.freeze({type:'prompt-input-socket',promptId,channelId,socket:channel.inputSocket}),
+  outputSocket:Object.freeze({type:'prompt-output-socket',promptId,channelId,socket:channel.outputSocket}),
   state:()=>promptStates.get(promptId),transition,interpret,remember,recall,
   history:()=>Object.freeze([...history()]),complete,suggest,
   command:Object.freeze({input:value=>channel.command.input(value,{promptId,source:'prompt'})}),
@@ -98,7 +98,7 @@ const create=(promptId,definition={})=>{
 };
 
 const HaamuBrowserPromptSystems=Object.freeze({
- family:'browser',role:'browser.prompt.systems',type:'per-prompt-input-systems',version:'0.6.0',
+ family:'browser',role:'browser.prompt.systems',type:'per-prompt-input-systems',version:'0.7.0',
  forPrompt(prompt,definition={}){
   const promptId=String(typeof prompt==='string'?prompt:(prompt?.dataset?.logicalPrompt??prompt?.id??'')).trim();
   if(!promptId)throw new RangeError('Prompt identity required.');
@@ -109,6 +109,6 @@ const HaamuBrowserPromptSystems=Object.freeze({
  prompts:()=>Object.freeze(Array.from(systems.keys())),
 });
 globalThis.HaamuFamilies['browser.prompt.systems']=Object.freeze({
- family:'browser',role:'browser.prompt.systems',type:'per-prompt-input-systems',version:'0.5.1'
+ family:'browser',role:'browser.prompt.systems',type:'per-prompt-input-systems',version:'0.7.0'
 });
 globalThis.HaamuBrowserPromptSystems=HaamuBrowserPromptSystems;
