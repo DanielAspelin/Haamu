@@ -6,7 +6,7 @@ const mime={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=u
 const server=http.createServer((req,res)=>{const p=decodeURIComponent(new URL(req.url,'http://x').pathname);let file=path.resolve(root,'.'+p);if(p==='/')file=path.join(root,'index.html');if(!file.startsWith(root)){res.writeHead(403).end();return;}fs.readFile(file,(e,d)=>{if(e){res.writeHead(404).end();return;}res.writeHead(200,{'content-type':mime[path.extname(file)]||'application/octet-stream'});res.end(d);});});
 const positions=['top-left','top-right','bottom-left','bottom-right'];
 async function qualify(browser,name,viewport,isMobile){
- const page=await browser.newPage({viewport,isMobile,hasTouch:isMobile}); const errors=[]; page.on('pageerror',e=>errors.push(String(e)));
+ const page=await browser.newPage({viewport,isMobile,hasTouch:isMobile,userAgent:isMobile?'Mozilla/5.0 (Linux; Android 16; Mobile) AppleWebKit/537.36 Chrome/140.0.0.0 Mobile Safari/537.36':undefined}); const errors=[]; page.on('pageerror',e=>errors.push(String(e)));
  await page.goto(base,{waitUntil:'load'}); await page.waitForFunction(()=>document.documentElement.dataset.haamu==='ready');
  const initial=await page.locator('.corner.start').count(); if(initial!==4)throw Error(name+' expected 4 buttons got '+initial);
  if(await page.locator('.corner-menu').count()!==8)throw Error(name+' expected 8 plates');
