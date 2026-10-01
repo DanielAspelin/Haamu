@@ -289,7 +289,7 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
 
       const activePlatform = mobilePlatform ? 'mobile' : 'desktop';
       const current = [...menus.entries()].find(([, pair]) =>
-        Object.values(pair).some(candidate => candidate.classList.contains('open')));
+        [pair.mobile, pair.desktop].some(candidate => candidate?.classList.contains('open')));
       const same = current && current[0] === button.dataset.position;
 
       const openTarget = () => {
@@ -341,7 +341,7 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
     if (event.target.closest('.corner.start') || event.target.closest('.corner-menu')) return;
 
     for (const [position, pair] of menus.entries()) {
-      const open = Object.values(pair).filter(active => active.classList.contains('open'));
+      const open = [pair.mobile, pair.desktop].filter(active => active?.classList.contains('open'));
       if (!open.length) continue;
       const desktop = pair.desktop;
       const plateState = pair.stateSystem ?? null;
