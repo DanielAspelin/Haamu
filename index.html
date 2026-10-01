@@ -230,15 +230,17 @@
     }
     .plate-prompt::placeholder{color:rgba(225,242,255,.72);opacity:1}
     .plate-title{
-      position:absolute;left:8px;right:8px;
-      color:#fff;font:600 13px/1 'Rajdhani',sans-serif;
+      position:absolute;left:8px;right:8px;z-index:3;
+      display:block;visibility:visible;opacity:1;
+      color:#fff;font:600 13px/16px 'Rajdhani',sans-serif;
       letter-spacing:.08em;text-transform:uppercase;
       pointer-events:none;user-select:none;
       text-shadow:0 0 6px rgba(190,225,255,.42);
     }
-    /* Title is the table row immediately inward from its prompt row. */
-    .corner-menu[data-corner^="top-"] .plate-title{bottom:60px}
-    .corner-menu[data-corner^="bottom-"] .plate-title{top:60px}
+    /* Title is immediately inward from the prompt skin and remains inside
+       the same plate-sized matrix. */
+    .corner-menu.open[data-corner^="top-"] .plate-title{bottom:60px;top:auto}
+    .corner-menu.open[data-corner^="bottom-"] .plate-title{top:60px;bottom:auto}
     .corner-menu[data-corner$="-right"] .plate-title{text-align:right}
     .corner-menu[data-corner$="-left"] .plate-title{text-align:left}
     .corner-menu[data-platform="mobile"]{display:none}
