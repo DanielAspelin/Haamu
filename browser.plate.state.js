@@ -2,13 +2,13 @@
 
 /**
  * Haamu Browser Plate State — logical Plate presentation state.
- * Plate dimensions remain automatic. Desktop may minimize/maximize/restore;
- * mobile is permanently automatic and exposes no manual state controls.
+ * Plate dimensions remain automatic. The owning corner button opens/closes
+ * the Plate. Desktop alone may toggle normal <-> maximized.
  */
 globalThis.HaamuFamilies ??= Object.create(null);
 
 const systems=new Map();
-const DESKTOP_STATES=Object.freeze(['normal','minimized','maximized']);
+const DESKTOP_STATES=Object.freeze(['normal','maximized']);
 
 const createSystem=plateId=>{
  let desktopState='normal';
@@ -22,11 +22,12 @@ const createSystem=plateId=>{
   type:'browser-plate-state-system',plateId,
   sizing:'automatic',
   mobile:Object.freeze({sizing:'automatic',controls:Object.freeze([])}),
-  desktop:Object.freeze({sizing:'automatic',controls:Object.freeze(['minimize','maximize','restore'])}),
+  desktop:Object.freeze({sizing:'automatic',controls:Object.freeze(['toggle-maximize'])}),
   state(platform='desktop'){return platform==='mobile'?'automatic':desktopState;},
-  minimize(platform='desktop'){
+  toggle(platform='desktop'){
    if(platform==='mobile')return publish();
-   desktopState='minimized';return publish();
+   desktopState=desktopState==='maximized'?'normal':'maximized';
+   return publish();
   },
   maximize(platform='desktop'){
    if(platform==='mobile')return publish();
@@ -45,7 +46,7 @@ const createSystem=plateId=>{
 };
 
 const HaamuBrowserPlateState=Object.freeze({
- family:'browser',role:'browser.plate.state',type:'automatic-plate-state',version:'0.1.0',
+ family:'browser',role:'browser.plate.state',type:'automatic-plate-state',version:'0.2.0',
  states:DESKTOP_STATES,
  forPlate(plate){
   const id=String(typeof plate==='string'?plate:(plate?.id??plate?.plateId??'')).trim();
@@ -55,5 +56,5 @@ const HaamuBrowserPlateState=Object.freeze({
  },
  plates:()=>Object.freeze(Array.from(systems.keys()))
 });
-globalThis.HaamuFamilies['browser.plate.state']=Object.freeze({family:'browser',role:'browser.plate.state',type:'automatic-plate-state',version:'0.1.0'});
+globalThis.HaamuFamilies['browser.plate.state']=Object.freeze({family:'browser',role:'browser.plate.state',type:'automatic-plate-state',version:'0.2.0'});
 globalThis.HaamuBrowserPlateState=HaamuBrowserPlateState;
