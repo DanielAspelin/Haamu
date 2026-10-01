@@ -19,8 +19,9 @@ class V0 {
   }
 }
 
-class B2 {
-  static NAME = 'Haamu B2';
+class V2 {
+  static NAME = 'Haamu V2';
+  static VERSION = '2';
   static STATE = 'under-construction';
 }
 
@@ -31,5 +32,5 @@ class V1 {
 }
 
 globalThis.V0 = V0;
-globalThis.B2 = B2;
+globalThis.V2 = V2;
 globalThis.V1 = V1;
