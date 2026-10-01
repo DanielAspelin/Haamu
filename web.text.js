@@ -15,7 +15,7 @@ const HaamuWebText = Object.freeze({
   family: 'web',
   role: 'web.text',
   type: 'text-input-output-processor-allocator-symbolizer-parser-mutator-deparser-font-renderer',
-  version: '1.15.0',
+  version: '1.16.0',
 
   key(event = {}) {
     const key = event.key ?? null;
@@ -408,14 +408,34 @@ const HaamuWebText = Object.freeze({
     const area=this.area(options.area ?? {});
     const alignment=this.alignment(options.alignment ?? {});
     const lines=this.lines(text);
-    const lineAdvance=Math.max(0,finite(options.lineAdvance,1));
-    const columnAdvance=Math.max(0,finite(options.columnAdvance,1));
-    const capacity=Math.max(1,Math.trunc(finite(options.capacity,lines.length||1)));
+    const padding=Object.freeze({
+      top:Math.max(0,finite(options.padding?.top,0)),
+      right:Math.max(0,finite(options.padding?.right,0)),
+      bottom:Math.max(0,finite(options.padding?.bottom,0)),
+      left:Math.max(0,finite(options.padding?.left,0)),
+    });
+    const spacing=Object.freeze({
+      line:Math.max(0,finite(options.spacing?.line,0)),
+      symbol:Math.max(0,finite(options.spacing?.symbol,0)),
+    });
+    const contentArea=Object.freeze({
+      type:'web-text-content-area',
+      x:area.x+padding.left,
+      y:area.y+padding.top,
+      width:Math.max(0,area.width-padding.left-padding.right),
+      height:Math.max(0,area.height-padding.top-padding.bottom),
+    });
+    const lineAdvance=Math.max(0,finite(options.lineAdvance,1))+spacing.line;
+    const columnAdvance=Math.max(0,finite(options.columnAdvance,1))+spacing.symbol;
+    const derivedCapacity=lineAdvance>0&&contentArea.height>0
+      ? Math.max(1,Math.floor((contentArea.height+spacing.line)/lineAdvance))
+      : (lines.length||1);
+    const capacity=Math.max(1,Math.trunc(finite(options.capacity,derivedCapacity)));
     const first=Math.max(0,lines.length-capacity);
     const visible=lines.slice(first);
     const origin=Object.freeze({
-      x:finite(options.origin?.x,area.x),
-      y:finite(options.origin?.y,area.y),
+      x:finite(options.origin?.x,contentArea.x),
+      y:finite(options.origin?.y,contentArea.y),
       anchor:options.origin?.anchor??alignment.anchor,
     });
     const placements=visible.map((line,index)=>Object.freeze({
@@ -435,6 +455,15 @@ const HaamuWebText = Object.freeze({
       role:options.role??'output',
       stream:options.stream??'text',
       area,
+      contentArea,
+      padding,
+      spacing,
+      placementTopology:Object.freeze({
+        matrix:'detached',
+        grid:'detached',
+        mesh:'detached',
+        authority:'area-allocation',
+      }),
       alignment,
       origin,
       lineAdvance,
