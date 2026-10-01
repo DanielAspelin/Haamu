@@ -196,10 +196,40 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
         '-webkit-text-stroke:0','text-shadow:0 1px 0 rgba(255,255,255,.32)',
         'mix-blend-mode:normal'
       ].join(';');
+      const promptCursor = document.createElement('span');
+      promptCursor.className = 'plate-prompt-cursor';
+      promptCursor.setAttribute('aria-hidden', 'true');
+
+      const positionPromptCursor = () => {
+        const style = getComputedStyle(prompt);
+        const probe = document.createElement('span');
+        probe.style.cssText = [
+          'position:absolute','visibility:hidden','white-space:pre',
+          'font:' + style.font,
+          'letter-spacing:' + style.letterSpacing
+        ].join(';');
+        const caretIndex = typeof prompt.selectionStart === 'number' ? prompt.selectionStart : prompt.value.length;
+        probe.textContent = prompt.value.slice(0, caretIndex) || '';
+        document.body.appendChild(probe);
+        const textWidth = probe.getBoundingClientRect().width;
+        probe.remove();
+
+        const leftPadding = parseFloat(style.paddingLeft) || 0;
+        const maxLeft = Math.max(leftPadding, prompt.clientWidth - (parseFloat(style.paddingRight) || 0) - 2);
+        promptCursor.style.left = Math.min(leftPadding + textWidth, maxLeft) + 'px';
+        promptCursor.style.top = '50%';
+      };
+
       promptWrap.appendChild(prompt);
       promptWrap.appendChild(promptLabel);
+      promptWrap.appendChild(promptCursor);
+      prompt.addEventListener('focus', positionPromptCursor);
+      prompt.addEventListener('click', positionPromptCursor);
+      prompt.addEventListener('keyup', positionPromptCursor);
+      prompt.addEventListener('select', positionPromptCursor);
       prompt.addEventListener('input', () => {
         promptWrap.classList.toggle('has-value', prompt.value.length > 0);
+        requestAnimationFrame(positionPromptCursor);
       });
       prompt.addEventListener('keydown', (event) => {
         if (event.key !== 'Enter' || event.isComposing) return;
