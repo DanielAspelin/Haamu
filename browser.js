@@ -198,44 +198,6 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       ].join(';');
       promptWrap.appendChild(prompt);
       promptWrap.appendChild(promptLabel);
-
-      {
-        const desktopCursor = document.createElement('span');
-        desktopCursor.className = 'prompt-block-cursor';
-        desktopCursor.setAttribute('aria-hidden', 'true');
-        promptWrap.appendChild(desktopCursor);
-
-        const positionDesktopCursor = () => {
-          const style = getComputedStyle(prompt);
-          const probe = document.createElement('span');
-          probe.style.cssText = [
-            'position:absolute','visibility:hidden','white-space:pre',
-            'font:' + style.font,'letter-spacing:' + style.letterSpacing
-          ].join(';');
-          const caretIndex = typeof prompt.selectionStart === 'number'
-            ? prompt.selectionStart : prompt.value.length;
-          probe.textContent = prompt.value.slice(0, caretIndex);
-          document.body.appendChild(probe);
-          const textWidth = probe.getBoundingClientRect().width;
-          probe.remove();
-          const leftPadding = parseFloat(style.paddingLeft) || 0;
-          const rightPadding = parseFloat(style.paddingRight) || 0;
-          const maxLeft = Math.max(leftPadding, prompt.clientWidth - rightPadding - 5);
-          desktopCursor.style.left = Math.min(leftPadding + textWidth - prompt.scrollLeft, maxLeft) + 'px';
-          desktopCursor.style.top = '50%';
-        };
-
-        const showDesktopCursor = () => {
-          promptWrap.classList.add('cursor-active');
-          positionDesktopCursor();
-        };
-        prompt.addEventListener('focus', showDesktopCursor);
-        prompt.addEventListener('blur', () => { promptWrap.classList.remove('cursor-active'); });
-        prompt.addEventListener('click', positionDesktopCursor);
-        prompt.addEventListener('keyup', positionDesktopCursor);
-        prompt.addEventListener('select', positionDesktopCursor);
-        prompt.addEventListener('input', () => requestAnimationFrame(positionDesktopCursor));
-      }
       prompt.addEventListener('input', () => {
         promptWrap.classList.toggle('has-value', prompt.value.length > 0);
       });
