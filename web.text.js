@@ -15,7 +15,7 @@ const HaamuWebText = Object.freeze({
   family: 'web',
   role: 'web.text',
   type: 'text-input-output-processor-allocator-symbolizer-parser-mutator-deparser-font-renderer',
-  version: '1.20.0',
+  version: '1.21.0',
 
   key(event = {}) {
     const key = event.key ?? null;
@@ -494,6 +494,43 @@ const HaamuWebText = Object.freeze({
       ...options,
       sequence:output?.sequence??index,
     })));
+  },
+
+  context(scope, options = {}) {
+    const normalized=String(scope??'').trim().toLowerCase();
+    const scopes=new Set(['server','local','global','client']);
+    if(!scopes.has(normalized))throw new RangeError('Unknown textual context.');
+    const contextId=String(options.contextId??normalized);
+    const channelId=String(options.channelId??normalized);
+    const sessionId=String(options.sessionId??('haamu:'+normalized));
+    const promptId=String(options.promptId??(normalized+':prompt'));
+    const plateId=String(options.plateId??(normalized+':plate'));
+    const reservation=this.reserveField({
+      ...options,
+      role:normalized,
+      streams:options.streams??['text','shell','terminal','search','command','status','error'],
+    });
+    return Object.freeze({
+      type:'web-text-context',
+      scope:normalized,
+      contextId,channelId,sessionId,promptId,plateId,
+      console:Object.freeze({type:'web-text-console-binding',contextId,channelId,sessionId}),
+      prompt:Object.freeze({type:'web-text-prompt-binding',promptId,channelId,direction:'output'}),
+      plate:Object.freeze({type:'web-text-plate-binding',plateId,channelId,direction:'input'}),
+      field:reservation.field,
+      promptBoundary:reservation.promptBoundary,
+      topology:'prompt-output -> channel -> plate-input',
+      placementAuthority:'area-allocation',
+      rendererConnected:false,
+      changesGeometry:false,
+    });
+  },
+
+  contexts(options = {}) {
+    const definitions=options.definitions??{};
+    return Object.freeze(['server','local','global','client'].map(scope=>
+      this.context(scope,{...options,...(definitions[scope]??{})})
+    ));
   },
 
   session(outputs = [], options = {}) {
