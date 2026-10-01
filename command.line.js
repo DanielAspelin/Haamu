@@ -44,13 +44,13 @@ const create=(id,definition={})=>{
    const invocation=globalThis.HaamuCommand?.parse?.(input.value,{channelId});
    if(invocation?.command){
     const result=HaamuCommand.execute(invocation,{...context,commandLine:this,channel});
-    const output=channel.terminal.output(result.state==='completed'?'stdout':'system',result.payload,result.state,{command:input.value});
+    const output=channel.terminal.output(result.state==='completed'?'stdout':'system',result.payload,result.state,{command:input.value,shell});
     return asTransaction(input,'command',invocation,output);
    }
 
    const changed=control(input);
    if(changed){
-    const output=channel.terminal.output('system',mode==='shell'?shell:mode,'selected',{command:input.value});
+    const output=channel.terminal.output('system',mode==='shell'?shell:mode,'selected',{command:input.value,shell});
     return asTransaction(input,'control',input,output);
    }
 
@@ -81,13 +81,13 @@ const create=(id,definition={})=>{
    const router=context.router;
    let output;
    if(!globalThis.HaamuTerminalShell?.execute||!router){
-    output=channel.terminal.output('system','Terminal shell is not connected.','unavailable',{command:input.value});
+    output=channel.terminal.output('system','Terminal shell is not connected.','unavailable',{command:input.value,shell});
    }else{
     const result=HaamuTerminalShell.execute(typed,router,{...context,channelId});
     output=result?.type==='terminal-output'&&result.channelId===channelId
       ? result
       : channel.terminal.output(result?.stream??'stdout',result?.payload??result,result?.state??'completed',{
-          command:input.value,commandId:result?.commandId,sessionId:result?.sessionId
+          command:input.value,commandId:result?.commandId,sessionId:result?.sessionId,shell
         });
    }
    return asTransaction(input,'terminal',typed,output);
@@ -99,7 +99,7 @@ const create=(id,definition={})=>{
 };
 
 const HaamuCommandLine=Object.freeze({
- family:'command',role:'command.line',type:'terminal-shell-search-command-line',version:'0.2.1',
+ family:'command',role:'command.line',type:'terminal-shell-search-command-line',version:'0.2.2',
  modes:MODES,shells:SHELLS,create,
  forChannel(id,definition={}){
   const key=String(id??'').trim();if(!key)throw new RangeError('Command channel identity required.');
@@ -109,5 +109,5 @@ const HaamuCommandLine=Object.freeze({
  remove(id){return systems.delete(String(id));},
  channels(){return Object.freeze(Array.from(systems.keys()));}
 });
-globalThis.HaamuFamilies['command.line']=Object.freeze({family:'command',role:'command.line',type:'terminal-shell-search-command-line',version:'0.2.1'});
+globalThis.HaamuFamilies['command.line']=Object.freeze({family:'command',role:'command.line',type:'terminal-shell-search-command-line',version:'0.2.2'});
 globalThis.HaamuCommandLine=HaamuCommandLine;
