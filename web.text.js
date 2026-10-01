@@ -14,8 +14,72 @@ const finite = (value, fallback) => Number.isFinite(Number(value)) ? Number(valu
 const HaamuWebText = Object.freeze({
   family: 'web',
   role: 'web.text',
-  type: 'text-processor-allocator-parser-renderer',
-  version: '0.9.0',
+  type: 'text-input-output-processor-allocator-symbolizer-parser-mutator-deparser-font-renderer',
+  version: '1.0.0',
+
+  input(event = {}) {
+    const key = event.key ?? null;
+    const code = event.code ?? null;
+    const inputType = event.inputType ?? null;
+    const data = event.data ?? null;
+    return Object.freeze({
+      type: 'web-text-input',
+      key, code, inputType, data,
+      modifiers: Object.freeze({
+        alt: !!event.altKey, control: !!event.ctrlKey,
+        meta: !!event.metaKey, shift: !!event.shiftKey,
+      }),
+      composing: !!event.isComposing,
+    });
+  },
+
+  symbolize(value) {
+    return Object.freeze(this.characters(value).map((character, index) => Object.freeze({
+      type: 'symbol',
+      index,
+      value: character,
+      codePoint: character.codePointAt(0),
+      class: /^\p{N}$/u.test(character) ? 'number'
+        : /^[\p{L}\p{M}]$/u.test(character) ? 'character'
+        : 'special-character',
+    })));
+  },
+
+  mutate(value, mutation = {}) {
+    const source = this.normalize(value);
+    const start = Math.max(0, Math.min(source.length, Math.trunc(finite(mutation.start, source.length))));
+    const end = Math.max(start, Math.min(source.length, Math.trunc(finite(mutation.end, start))));
+    const insert = mutation.value == null ? '' : String(mutation.value);
+    return source.slice(0, start) + insert + source.slice(end);
+  },
+
+  deparse(parsed) {
+    if (!parsed || parsed.type !== 'parsed-text') throw new TypeError('WebText deparser requires parsed-text.');
+    return parsed.tokens.map(token => token.value).join('');
+  },
+
+  font(options = {}) {
+    return Object.freeze({
+      type: 'web-text-font',
+      family: options.family ?? 'inherit',
+      weight: options.weight ?? 'inherit',
+      style: options.style ?? 'normal',
+      size: options.size ?? 'inherit',
+      lineHeight: options.lineHeight ?? 'normal',
+      letterSpacing: options.letterSpacing ?? 'normal',
+      wordSpacing: options.wordSpacing ?? 'normal',
+      fallback: Object.freeze([...(options.fallback ?? [])]),
+    });
+  },
+
+  output(value, options = {}) {
+    return Object.freeze({
+      type: 'web-text-output',
+      symbols: this.symbolize(value),
+      font: this.font(options.font ?? {}),
+      render: this.render(value, options),
+    });
+  },
 
   normalize(value, form = 'NFC') {
     const text = value == null ? '' : String(value);
