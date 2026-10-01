@@ -1,0 +1,8 @@
+{
+  "schema": "TERRAFORMER-CELLS/1",
+  "systemId": "system.cell",
+  "structural": true,
+  "storageAuthority": false,
+  "persistenceAuthority": false,
+  "records": []
+}

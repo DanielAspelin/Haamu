@@ -1,0 +1,22 @@
+{
+  "schema": "TERRAFORMER-COMPLETIONS/1",
+  "systemId": "system.completion",
+  "declarativeRegistry": true,
+  "membershipGrantsApproval": false,
+  "membershipGrantsExecution": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": [],
+  "needCompletionClosure": {
+    "schema": "TERRAFORMER-NEED-COMPLETION/1",
+    "scope": "inner-reconstruction-closure",
+    "completionRequiresZeroMissing": true,
+    "completionRequiresInternalReconstruction": true,
+    "additionByNeedOnly": true,
+    "absenceDoesNotImplyNeed": true,
+    "externalAssemblyAllowed": false,
+    "completionEvidenceDoesNotGrantApproval": true,
+    "completionEvidenceDoesNotGrantExecution": true,
+    "authorityAmplification": false
+  }
+}

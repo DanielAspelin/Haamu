@@ -1,0 +1,128 @@
+{
+  "$schema": "terraformer.registry/lockings/1",
+  "version": "0.47.21",
+  "governedBy": "terraformer.locking.js",
+  "kind": "LOCKING_REGISTRY",
+  "owner": "system.locking",
+  "dimension": "LOCKING",
+  "position": {
+    "after": "MODE",
+    "before": "CONDITION"
+  },
+  "mechanism": "system.lock",
+  "selectionModel": "DEFINE_CENTRALLY_SELECT_LOCALLY",
+  "eligibleConsumers": [
+    "SYSTEM",
+    "PROJECT",
+    "PROGRAM",
+    "APPLICATION",
+    "PLATFORM",
+    "COMMON",
+    "INTERNET",
+    "FILE",
+    "USER",
+    "MACHINE",
+    "GROUP",
+    "DIMENSION"
+  ],
+  "authority": false,
+  "locksAppliedByRegistry": false,
+  "entries": [
+    {
+      "id": "UNLOCKED",
+      "definition": "Mutation is not blocked by the Locking dimension.",
+      "applicability": [
+        "SYSTEM",
+        "PROJECT",
+        "PROGRAM",
+        "APPLICATION",
+        "PLATFORM",
+        "COMMON",
+        "INTERNET",
+        "FILE",
+        "USER",
+        "MACHINE",
+        "GROUP",
+        "DIMENSION"
+      ],
+      "constraints": {
+        "explicitSelection": true,
+        "scoped": true,
+        "noAuthority": true
+      },
+      "authority": false
+    },
+    {
+      "id": "LOCK_CANDIDATE",
+      "definition": "Entity is identified as a candidate for a future governed lock.",
+      "applicability": [
+        "SYSTEM",
+        "PROJECT",
+        "PROGRAM",
+        "APPLICATION",
+        "PLATFORM",
+        "COMMON",
+        "INTERNET",
+        "FILE",
+        "USER",
+        "MACHINE",
+        "GROUP",
+        "DIMENSION"
+      ],
+      "constraints": {
+        "explicitSelection": true,
+        "scoped": true,
+        "noAuthority": true
+      },
+      "authority": false
+    },
+    {
+      "id": "LOCKED",
+      "definition": "Mutation is blocked by an applicable governed lock boundary.",
+      "applicability": [
+        "SYSTEM",
+        "PROJECT",
+        "PROGRAM",
+        "APPLICATION",
+        "PLATFORM",
+        "COMMON",
+        "INTERNET",
+        "FILE",
+        "USER",
+        "MACHINE",
+        "GROUP",
+        "DIMENSION"
+      ],
+      "constraints": {
+        "explicitSelection": true,
+        "scoped": true,
+        "noAuthority": true
+      },
+      "authority": false
+    },
+    {
+      "id": "REOPENED",
+      "definition": "A previously locked entity has been reopened through a governed transition.",
+      "applicability": [
+        "SYSTEM",
+        "PROJECT",
+        "PROGRAM",
+        "APPLICATION",
+        "PLATFORM",
+        "COMMON",
+        "INTERNET",
+        "FILE",
+        "USER",
+        "MACHINE",
+        "GROUP",
+        "DIMENSION"
+      ],
+      "constraints": {
+        "explicitSelection": true,
+        "scoped": true,
+        "noAuthority": true
+      },
+      "authority": false
+    }
+  ]
+}

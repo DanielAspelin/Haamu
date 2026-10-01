@@ -1,0 +1,911 @@
+{
+  "schema": "TERRAFORMER-LEGACY-SEMANTIC-EVIDENCE/1",
+  "version": "0.47.96",
+  "owner": "system.naturalization",
+  "source": "terraformer.temporary.js",
+  "records": [
+    {
+      "system": "system.agency",
+      "stage": "Classification",
+      "status": "OBSERVED",
+      "source": "terraformer.temporary.js",
+      "evidence": [
+        {
+          "field": "type",
+          "value": "agency-type-space"
+        }
+      ],
+      "legacyProvenance": true,
+      "automaticAuthority": false
+    },
+    {
+      "system": "system.alarmer",
+      "stage": "Classification",
+      "status": "OBSERVED",
+      "source": "terraformer.temporary.js",
+      "evidence": [
+        {
+          "field": "kind",
+          "value": "alert"
+        },
+        {
+          "field": "kind",
+          "value": "alarm"
+        },
+        {
+          "field": "kind",
+          "value": "notification"
+        },
+        {
+          "field": "kind",
+          "value": "information"
+        }
+      ],
+      "legacyProvenance": true,
+      "automaticAuthority": false
+    },
+    {
+      "system": "system.alerter",
+      "stage": "Classification",
+      "status": "OBSERVED",
+      "source": "terraformer.temporary.js",
+      "evidence": [
+        {
+          "field": "kind",
+          "value": "alert"
+        },
+        {
+          "field": "kind",
+          "value": "alarm"
+        },
+        {
+          "field": "kind",
+          "value": "notification"
+        },
+        {
+          "field": "kind",
+          "value": "information"
+        }
+      ],
+      "legacyProvenance": true,
+      "automaticAuthority": false
+    },
+    {
+      "system": "system.atcc",
+      "stage": "Classification",
+      "status": "OBSERVED",
+      "source": "terraformer.temporary.js",
+      "evidence": [
+        {
+          "field": "classification",
+          "value": "system.space-agency"
+        },
+        {
+          "field": "type",
+          "value": "contextual-spatial-scope"
+        }
+      ],
+      "legacyProvenance": true,
+      "automaticAuthority": false
+    },
+    {
+      "system": "system.code",
+      "stage": "Classification",
+      "status": "OBSERVED",
+      "source": "terraformer.temporary.js",
+      "evidence": [
+        {
+          "field": "type",
+          "value": "source-construction-system"
+        },
+        {
+          "field": "type",
+          "value": "source-construction-actor-system"
+        }
+      ],
+      "legacyProvenance": true,
+      "automaticAuthority": false
+    },
+    {
+      "system": "system.guest",
+      "stage": "Classification",
+      "status": "OBSERVED",
+      "source": "terraformer.temporary.js",
+      "evidence": [
+        {
+          "field": "family",
+          "value": "service"
+        },
+        {
+          "field": "type",
+          "value": "relationship-system"
+        },
+        {
+          "field": "type",
+          "value": "commercial-system"
+        }
+      ],
+      "legacyProvenance": true,
+      "automaticAuthority": false
+    },
+    {
+      "system": "system.keyboard",
+      "stage": "Classification",
+      "status": "OBSERVED",
+      "source": "terraformer.temporary.js",
+      "evidence": [
+        {
+          "field": "family",
+          "value": "device"
+        },
+        {
+          "field": "type",
+          "value": "input-device-system"
+        },
+        {
+          "field": "type",
+          "value": "pointer-input-system"
+        }
+      ],
+      "legacyProvenance": true,
+      "automaticAuthority": false
+    },
+    {
+      "system": "system.link",
+      "stage": "Classification",
+      "status": "OBSERVED",
+      "source": "terraformer.temporary.js",
+      "evidence": [
+        {
+          "field": "classification",
+          "value": "system.space-agency"
+        },
+        {
+          "field": "type",
+          "value": "contextual-spatial-scope"
+        }
+      ],
+      "legacyProvenance": true,
+      "automaticAuthority": false
+    },
+    {
+      "system": "system.microphone",
+      "stage": "Classification",
+      "status": "OBSERVED",
+      "source": "terraformer.temporary.js",
+      "evidence": [
+        {
+          "field": "type",
+          "value": "CAPTURES_ACOUSTIC_INPUT"
+        },
+        {
+          "field": "type",
+          "value": "PRODUCES_CAPTURED_AUDIO_REPRESENTATION"
+        },
+        {
+          "field": "type",
+          "value": "VOICE_MAY_MANIFEST_AS_SOUND"
+        },
+        {
+          "field": "type",
+          "value": "VOICE_MAY_BE_REPRESENTED_AS_AUDIO"
+        },
+        {
+          "field": "type",
+          "value": "MAY_BE_INTERPRETED_FOR_VOCAL_INFORMATION"
+        },
+        {
+          "field": "type",
+          "value": "VOICE_MAY_CARRY_MUSICAL_INFORMATION"
+        },
+        {
+          "field": "type",
+          "value": "MUSICAL_STRUCTURE_MAY_BE_VOCALLY_RENDERED"
+        },
+        {
+          "field": "type",
+          "value": "CAPTURE_MAY_CONTAIN_VOICE"
+        },
+        {
+          "field": "type",
+          "value": "CAPTURE_MAY_CONTAIN_MUSICAL_INFORMATION"
+        }
+      ],
+      "legacyProvenance": true,
+      "automaticAuthority": false
+    },
+    {
+      "system": "system.mission",
+      "stage": "Classification",
+      "status": "OBSERVED",
+      "source": "terraformer.temporary.js",
+      "evidence": [
+        {
+          "field": "type",
+          "value": "spatial-scope-system"
+        },
+        {
+          "field": "type",
+          "value": "contextual-spatial-scope"
+        }
+      ],
+      "legacyProvenance": true,
+      "automaticAuthority": false
+    },
+    {
+      "system": "system.nfc",
+      "stage": "Classification",
+      "status": "OBSERVED",
+      "source": "terraformer.temporary.js",
+      "evidence": [
+        {
+          "field": "kind",
+          "value": "NFC_ACQUISITION"
+        }
+      ],
+      "legacyProvenance": true,
+      "automaticAuthority": false
+    },
+    {
+      "system": "system.node",
+      "stage": "Classification",
+      "status": "OBSERVED",
+      "source": "terraformer.temporary.js",
+      "evidence": [
+        {
+          "field": "family",
+          "value": "information-network"
+        },
+        {
+          "field": "family",
+          "value": "network"
+        },
+        {
+          "field": "type",
+          "value": "api-router"
+        }
+      ],
+      "legacyProvenance": true,
+      "automaticAuthority": false
+    },
+    {
+      "system": "system.object",
+      "stage": "Classification",
+      "status": "OBSERVED",
+      "source": "terraformer.temporary.js",
+      "evidence": [
+        {
+          "field": "family",
+          "value": "packaging"
+        },
+        {
+          "field": "type",
+          "value": "packaging-system"
+        },
+        {
+          "field": "type",
+          "value": "package-manager-system"
+        },
+        {
+          "field": "family",
+          "value": "logistics"
+        },
+        {
+          "field": "type",
+          "value": "parcel-system"
+        },
+        {
+          "field": "type",
+          "value": "postal-system"
+        }
+      ],
+      "legacyProvenance": true,
+      "automaticAuthority": false
+    },
+    {
+      "system": "system.occupation",
+      "stage": "Classification",
+      "status": "OBSERVED",
+      "source": "terraformer.temporary.js",
+      "evidence": [
+        {
+          "field": "type",
+          "value": "has-actor-boundary"
+        },
+        {
+          "field": "type",
+          "value": "follows"
+        },
+        {
+          "field": "type",
+          "value": "contributes-to-measurement"
+        },
+        {
+          "field": "type",
+          "value": "informs-state"
+        },
+        {
+          "field": "type",
+          "value": "may-initiate-admitted-use"
+        }
+      ],
+      "legacyProvenance": true,
+      "automaticAuthority": false
+    },
+    {
+      "system": "system.origin",
+      "stage": "Classification",
+      "status": "OBSERVED",
+      "source": "terraformer.temporary.js",
+      "evidence": [
+        {
+          "field": "type",
+          "value": "terraformer-native"
+        }
+      ],
+      "legacyProvenance": true,
+      "automaticAuthority": false
+    },
+    {
+      "system": "system.payment",
+      "stage": "Classification",
+      "status": "OBSERVED",
+      "source": "terraformer.temporary.js",
+      "evidence": [
+        {
+          "field": "kind",
+          "value": "CARD_NETWORK_REFERENCE_ADAPTER"
+        },
+        {
+          "field": "kind",
+          "value": "PROTOCOL_NETWORK_ASSET_BOUNDARY"
+        },
+        {
+          "field": "kind",
+          "value": "EXTERNAL_PAYMENT_PROVIDER"
+        }
+      ],
+      "legacyProvenance": true,
+      "automaticAuthority": false
+    },
+    {
+      "system": "system.project",
+      "stage": "Classification",
+      "status": "OBSERVED",
+      "source": "terraformer.temporary.js",
+      "evidence": [
+        {
+          "field": "family",
+          "value": "control"
+        },
+        {
+          "field": "type",
+          "value": "scopeable-organizational-system"
+        },
+        {
+          "field": "type",
+          "value": "organizational-role-system"
+        },
+        {
+          "field": "family",
+          "value": "service"
+        },
+        {
+          "field": "type",
+          "value": "organizational-system"
+        },
+        {
+          "field": "type",
+          "value": "organizational-identity-system"
+        },
+        {
+          "field": "type",
+          "value": "identity-system"
+        }
+      ],
+      "legacyProvenance": true,
+      "automaticAuthority": false
+    },
+    {
+      "system": "system.registrar",
+      "stage": "Classification",
+      "status": "OBSERVED",
+      "source": "terraformer.temporary.js",
+      "evidence": [
+        {
+          "field": "family",
+          "value": "information"
+        },
+        {
+          "field": "type",
+          "value": "registry-infrastructure-system"
+        },
+        {
+          "field": "type",
+          "value": "registry-container-system"
+        },
+        {
+          "field": "family",
+          "value": "service"
+        },
+        {
+          "field": "type",
+          "value": "bounded-actor-role-system"
+        }
+      ],
+      "legacyProvenance": true,
+      "automaticAuthority": false
+    },
+    {
+      "system": "system.registration",
+      "stage": "Classification",
+      "status": "OBSERVED",
+      "source": "terraformer.temporary.js",
+      "evidence": [
+        {
+          "field": "family",
+          "value": "information"
+        },
+        {
+          "field": "type",
+          "value": "registration-lifecycle-system"
+        },
+        {
+          "field": "type",
+          "value": "registry-container-system"
+        },
+        {
+          "field": "family",
+          "value": "service"
+        },
+        {
+          "field": "type",
+          "value": "bounded-actor-role-system"
+        }
+      ],
+      "legacyProvenance": true,
+      "automaticAuthority": false
+    },
+    {
+      "system": "system.render",
+      "stage": "Classification",
+      "status": "OBSERVED",
+      "source": "terraformer.temporary.js",
+      "evidence": [
+        {
+          "field": "type",
+          "value": "result-system"
+        },
+        {
+          "field": "type",
+          "value": "carrier-result-system"
+        },
+        {
+          "field": "type",
+          "value": "process-system"
+        },
+        {
+          "field": "type",
+          "value": "actor-system"
+        },
+        {
+          "field": "type",
+          "value": "governance-system"
+        }
+      ],
+      "legacyProvenance": true,
+      "automaticAuthority": false
+    },
+    {
+      "system": "system.socket",
+      "stage": "Classification",
+      "status": "OBSERVED",
+      "source": "terraformer.temporary.js",
+      "evidence": [
+        {
+          "field": "family",
+          "value": "network"
+        },
+        {
+          "field": "family",
+          "value": "storage"
+        },
+        {
+          "field": "type",
+          "value": "network-integration-system"
+        },
+        {
+          "field": "type",
+          "value": "storage-system"
+        },
+        {
+          "field": "family",
+          "value": "service"
+        },
+        {
+          "field": "type",
+          "value": "external-provider-system"
+        }
+      ],
+      "legacyProvenance": true,
+      "automaticAuthority": false
+    },
+    {
+      "system": "system.status",
+      "stage": "Classification",
+      "status": "OBSERVED",
+      "source": "terraformer.temporary.js",
+      "evidence": [
+        {
+          "field": "kind",
+          "value": "health-status"
+        },
+        {
+          "field": "kind",
+          "value": "health"
+        }
+      ],
+      "legacyProvenance": true,
+      "automaticAuthority": false
+    },
+    {
+      "system": "system.touch",
+      "stage": "Classification",
+      "status": "OBSERVED",
+      "source": "terraformer.temporary.js",
+      "evidence": [
+        {
+          "field": "family",
+          "value": "device"
+        },
+        {
+          "field": "type",
+          "value": "pointer-input-system"
+        }
+      ],
+      "legacyProvenance": true,
+      "automaticAuthority": false
+    },
+    {
+      "system": "system.register",
+      "stage": "Typing",
+      "status": "OBSERVED",
+      "source": "terraformer.temporary.js",
+      "evidence": [
+        {
+          "field": "parent",
+          "value": "system.register"
+        }
+      ],
+      "legacyProvenance": true,
+      "automaticAuthority": false
+    },
+    {
+      "system": "system.serial",
+      "stage": "Typing",
+      "status": "OBSERVED",
+      "source": "terraformer.temporary.js",
+      "evidence": [
+        {
+          "field": "parent",
+          "value": "system.numbering"
+        }
+      ],
+      "legacyProvenance": true,
+      "automaticAuthority": false
+    },
+    {
+      "system": "system.alarmer",
+      "stage": "Relationships",
+      "status": "OBSERVED",
+      "source": "terraformer.temporary.js",
+      "evidence": [
+        {
+          "field": "owner",
+          "value": "system.data"
+        }
+      ],
+      "legacyProvenance": true,
+      "automaticAuthority": false
+    },
+    {
+      "system": "system.gps",
+      "stage": "Relationships",
+      "status": "OBSERVED",
+      "source": "terraformer.temporary.js",
+      "evidence": [
+        {
+          "field": "bridge",
+          "value": "system.bridge"
+        }
+      ],
+      "legacyProvenance": true,
+      "automaticAuthority": false
+    },
+    {
+      "system": "system.gsm",
+      "stage": "Relationships",
+      "status": "OBSERVED",
+      "source": "terraformer.temporary.js",
+      "evidence": [
+        {
+          "field": "bridge",
+          "value": "system.bridge"
+        },
+        {
+          "field": "target",
+          "value": "system.io"
+        }
+      ],
+      "legacyProvenance": true,
+      "automaticAuthority": false
+    },
+    {
+      "system": "system.inventory",
+      "stage": "Relationships",
+      "status": "OBSERVED",
+      "source": "terraformer.temporary.js",
+      "evidence": [
+        {
+          "field": "owner",
+          "value": "system.compaction"
+        },
+        {
+          "field": "target",
+          "value": "TF_EXECUTABLE_SOURCE_INVENTORY_V4180"
+        },
+        {
+          "field": "target",
+          "value": "TF_JS_SURFACE_INVENTORY_V4181"
+        }
+      ],
+      "legacyProvenance": true,
+      "automaticAuthority": false
+    },
+    {
+      "system": "system.mission",
+      "stage": "Relationships",
+      "status": "OBSERVED",
+      "source": "terraformer.temporary.js",
+      "evidence": [
+        {
+          "field": "source",
+          "value": "system.source"
+        },
+        {
+          "field": "target",
+          "value": "system.target"
+        }
+      ],
+      "legacyProvenance": true,
+      "automaticAuthority": false
+    },
+    {
+      "system": "system.nfc",
+      "stage": "Relationships",
+      "status": "OBSERVED",
+      "source": "terraformer.temporary.js",
+      "evidence": [
+        {
+          "field": "adapter",
+          "value": "NFC Adapter"
+        }
+      ],
+      "legacyProvenance": true,
+      "automaticAuthority": false
+    },
+    {
+      "system": "system.payment",
+      "stage": "Relationships",
+      "status": "OBSERVED",
+      "source": "terraformer.temporary.js",
+      "evidence": [
+        {
+          "field": "adapter",
+          "value": "Visa Provider Adapter"
+        },
+        {
+          "field": "adapter",
+          "value": "Mastercard Provider Adapter"
+        }
+      ],
+      "legacyProvenance": true,
+      "automaticAuthority": false
+    },
+    {
+      "system": "system.register",
+      "stage": "Relationships",
+      "status": "OBSERVED",
+      "source": "terraformer.temporary.js",
+      "evidence": [
+        {
+          "field": "parent",
+          "value": "system.register"
+        }
+      ],
+      "legacyProvenance": true,
+      "automaticAuthority": false
+    },
+    {
+      "system": "system.rfid",
+      "stage": "Relationships",
+      "status": "OBSERVED",
+      "source": "terraformer.temporary.js",
+      "evidence": [
+        {
+          "field": "bridge",
+          "value": "system.bridge"
+        },
+        {
+          "field": "target",
+          "value": "system.io"
+        }
+      ],
+      "legacyProvenance": true,
+      "automaticAuthority": false
+    },
+    {
+      "system": "system.serial",
+      "stage": "Relationships",
+      "status": "OBSERVED",
+      "source": "terraformer.temporary.js",
+      "evidence": [
+        {
+          "field": "parent",
+          "value": "system.numbering"
+        }
+      ],
+      "legacyProvenance": true,
+      "automaticAuthority": false
+    },
+    {
+      "system": "system.agency",
+      "stage": "Responsibility",
+      "status": "OBSERVED",
+      "source": "terraformer.temporary.js",
+      "evidence": [
+        {
+          "field": "purpose",
+          "value": "bounded civil/commercial space-agency data, documentation, simulation and mission-support readiness"
+        }
+      ],
+      "legacyProvenance": true,
+      "automaticAuthority": false
+    },
+    {
+      "system": "system.gps",
+      "stage": "Responsibility",
+      "status": "OBSERVED",
+      "source": "terraformer.temporary.js",
+      "evidence": [
+        {
+          "field": "role",
+          "value": "render-navigate-select"
+        },
+        {
+          "field": "role",
+          "value": "normalize-contextualize-project"
+        },
+        {
+          "field": "role",
+          "value": "observe-position"
+        },
+        {
+          "field": "role",
+          "value": "PRIMARY_HOST"
+        },
+        {
+          "field": "role",
+          "value": "EXTERNAL_PLATFORM_BOUNDARY"
+        }
+      ],
+      "legacyProvenance": true,
+      "automaticAuthority": false
+    },
+    {
+      "system": "system.gsm",
+      "stage": "Responsibility",
+      "status": "OBSERVED",
+      "source": "terraformer.temporary.js",
+      "evidence": [
+        {
+          "field": "role",
+          "value": "PRIMARY_HOST"
+        },
+        {
+          "field": "role",
+          "value": "EXTERNAL_PLATFORM_BOUNDARY"
+        }
+      ],
+      "legacyProvenance": true,
+      "automaticAuthority": false
+    },
+    {
+      "system": "system.inventory",
+      "stage": "Responsibility",
+      "status": "OBSERVED",
+      "source": "terraformer.temporary.js",
+      "evidence": [
+        {
+          "field": "responsibility",
+          "value": "retain attributable evidence sufficient to support or reject a claim"
+        },
+        {
+          "field": "responsibility",
+          "value": "enumerate governed material, identity, quantity, location and disposition without manufacturing existence"
+        },
+        {
+          "field": "responsibility",
+          "value": "prove bounded semantic or reconstruction equivalence between representations without asserting identity where only equivalence is shown"
+        },
+        {
+          "field": "responsibility",
+          "value": "replace an eligible representation with a smaller qualified representation only after admitted equivalence evidence"
+        }
+      ],
+      "legacyProvenance": true,
+      "automaticAuthority": false
+    },
+    {
+      "system": "system.map",
+      "stage": "Responsibility",
+      "status": "OBSERVED",
+      "source": "terraformer.temporary.js",
+      "evidence": [
+        {
+          "field": "role",
+          "value": "render-navigate-select"
+        },
+        {
+          "field": "role",
+          "value": "normalize-contextualize-project"
+        },
+        {
+          "field": "role",
+          "value": "observe-position"
+        }
+      ],
+      "legacyProvenance": true,
+      "automaticAuthority": false
+    },
+    {
+      "system": "system.origin",
+      "stage": "Responsibility",
+      "status": "OBSERVED",
+      "source": "terraformer.temporary.js",
+      "evidence": [
+        {
+          "field": "purpose",
+          "value": "Provide every canonical system with an explicit, preserved source of origin."
+        }
+      ],
+      "legacyProvenance": true,
+      "automaticAuthority": false
+    },
+    {
+      "system": "system.rfid",
+      "stage": "Responsibility",
+      "status": "OBSERVED",
+      "source": "terraformer.temporary.js",
+      "evidence": [
+        {
+          "field": "role",
+          "value": "PRIMARY_HOST"
+        },
+        {
+          "field": "role",
+          "value": "EXTERNAL_PLATFORM_BOUNDARY"
+        }
+      ],
+      "legacyProvenance": true,
+      "automaticAuthority": false
+    }
+  ],
+  "rules": {
+    "legacyEvidenceRetainedAsProvenance": true,
+    "directStructuredEvidenceRequired": true,
+    "mereMentionInsufficient": true,
+    "automaticAuthority": false,
+    "automaticExecution": false
+  }
+}

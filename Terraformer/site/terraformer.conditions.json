@@ -1,0 +1,190 @@
+{
+  "$schema": "terraformer.registry/conditions/1",
+  "version": "0.44.21",
+  "governedBy": "terraformer.condition.js",
+  "kind": "CONDITION_REGISTRY",
+  "owner": "system.condition",
+  "dimension": "CONDITION",
+  "selectionModel": "DEFINE_CENTRALLY_SELECT_LOCALLY",
+  "eligibleConsumers": [
+    "SYSTEM",
+    "PROJECT",
+    "PROGRAM",
+    "APPLICATION",
+    "PLATFORM",
+    "COMMON",
+    "INTERNET",
+    "FILE",
+    "USER",
+    "MACHINE",
+    "GROUP",
+    "DIMENSION"
+  ],
+  "authority": false,
+  "entries": [
+    {
+      "id": "NORMAL",
+      "definition": "Normal condition",
+      "aliases": [],
+      "applicability": [
+        "SYSTEM",
+        "PROJECT",
+        "PROGRAM",
+        "APPLICATION",
+        "PLATFORM",
+        "COMMON",
+        "INTERNET",
+        "FILE",
+        "USER",
+        "MACHINE",
+        "GROUP",
+        "DIMENSION"
+      ],
+      "constraints": {
+        "explicitSelection": true,
+        "scoped": true,
+        "noAuthority": true
+      },
+      "version": "0.44.15",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "DEGRADED",
+      "definition": "Degraded condition",
+      "aliases": [],
+      "applicability": [
+        "SYSTEM",
+        "PROJECT",
+        "PROGRAM",
+        "APPLICATION",
+        "PLATFORM",
+        "COMMON",
+        "INTERNET",
+        "FILE",
+        "USER",
+        "MACHINE",
+        "GROUP",
+        "DIMENSION"
+      ],
+      "constraints": {
+        "explicitSelection": true,
+        "scoped": true,
+        "noAuthority": true
+      },
+      "version": "0.44.15",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "BLOCKED",
+      "definition": "Blocked condition",
+      "aliases": [],
+      "applicability": [
+        "SYSTEM",
+        "PROJECT",
+        "PROGRAM",
+        "APPLICATION",
+        "PLATFORM",
+        "COMMON",
+        "INTERNET",
+        "FILE",
+        "USER",
+        "MACHINE",
+        "GROUP",
+        "DIMENSION"
+      ],
+      "constraints": {
+        "explicitSelection": true,
+        "scoped": true,
+        "noAuthority": true
+      },
+      "version": "0.44.15",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "FAILED",
+      "definition": "Failed condition",
+      "aliases": [],
+      "applicability": [
+        "SYSTEM",
+        "PROJECT",
+        "PROGRAM",
+        "APPLICATION",
+        "PLATFORM",
+        "COMMON",
+        "INTERNET",
+        "FILE",
+        "USER",
+        "MACHINE",
+        "GROUP",
+        "DIMENSION"
+      ],
+      "constraints": {
+        "explicitSelection": true,
+        "scoped": true,
+        "noAuthority": true
+      },
+      "version": "0.44.15",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "RECOVERING",
+      "definition": "Recovering condition",
+      "aliases": [],
+      "applicability": [
+        "SYSTEM",
+        "PROJECT",
+        "PROGRAM",
+        "APPLICATION",
+        "PLATFORM",
+        "COMMON",
+        "INTERNET",
+        "FILE",
+        "USER",
+        "MACHINE",
+        "GROUP",
+        "DIMENSION"
+      ],
+      "constraints": {
+        "explicitSelection": true,
+        "scoped": true,
+        "noAuthority": true
+      },
+      "version": "0.44.15",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "UNKNOWN",
+      "definition": "Unknown condition",
+      "aliases": [],
+      "applicability": [
+        "SYSTEM",
+        "PROJECT",
+        "PROGRAM",
+        "APPLICATION",
+        "PLATFORM",
+        "COMMON",
+        "INTERNET",
+        "FILE",
+        "USER",
+        "MACHINE",
+        "GROUP",
+        "DIMENSION"
+      ],
+      "constraints": {
+        "explicitSelection": true,
+        "scoped": true,
+        "noAuthority": true
+      },
+      "version": "0.44.15",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    }
+  ],
+  "logicalPredecessor": "system.prediction",
+  "orderingRule": "Prediction precedes Condition; ordering grants no authority or automatic state transition."
+}

@@ -1,0 +1,9 @@
+{
+  "schema": "TERRAFORMER-SWITCHES/1",
+  "purpose": "governed switch definitions, scoped plans, identities and evidence",
+  "authorityGranted": false,
+  "membershipGrantsNetworkAuthority": false,
+  "automaticExecution": false,
+  "automaticForwarding": false,
+  "records": []
+}

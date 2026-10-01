@@ -1,0 +1,13 @@
+{
+  "schema": "terraformer.registry/centrals/1",
+  "owner": "system.central",
+  "kind": "CENTRAL_REGISTRY",
+  "entries": [
+    {
+      "id": "system.central",
+      "role": "SYSTEM_CENTER",
+      "authorityEscalation": "NONE"
+    }
+  ],
+  "authority": false
+}

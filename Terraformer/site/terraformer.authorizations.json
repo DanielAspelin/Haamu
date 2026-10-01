@@ -1,0 +1,11 @@
+{
+  "schema": "TERRAFORMER-AUTHORIZATIONS/1",
+  "purpose": "governed authorization definitions, instances, configuration and evidence",
+  "authorityGranted": false,
+  "membershipGrantsAuthority": false,
+  "automaticExecution": false,
+  "records": [],
+  "owner": "system.authorization",
+  "ownerBindingVersion": "0.48.16",
+  "ownerBindingAuthorityGranted": false
+}

@@ -1,0 +1,8 @@
+{
+  "schema": "TERRAFORMER-INITIALIZATIONS/1",
+  "systemId": "system.initialization",
+  "membershipGrantsExecution": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

@@ -1,0 +1,11 @@
+{
+  "schema": "TERRAFORMER-NULLS/1",
+  "systemId": "system.null",
+  "membershipGrantsAllocation": false,
+  "membershipGrantsConversion": false,
+  "membershipGrantsValidation": false,
+  "membershipGrantsExecution": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

@@ -1,0 +1,11 @@
+{
+  "schema": "TERRAFORMER-PRIVILEGES/1",
+  "systemId": "system.privilege",
+  "readOnlyDetection": true,
+  "identityAuthority": false,
+  "authenticationAuthority": false,
+  "authorizationAuthority": false,
+  "elevationAllowedByRegistry": false,
+  "credentialCapture": false,
+  "records": []
+}

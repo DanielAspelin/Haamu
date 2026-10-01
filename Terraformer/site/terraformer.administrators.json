@@ -1,0 +1,7 @@
+{
+  "schema": "TERRAFORMER-ADMINISTRATORS/1",
+  "owner": "terraformer.administrator.js",
+  "records": [],
+  "membershipGrantsAuthority": false,
+  "qualificationInheritance": false
+}

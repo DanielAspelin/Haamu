@@ -1,0 +1,3 @@
+"use strict";
+const TERRAFORMER_EXAMINATION_SYSTEM=Object.freeze({schema:'TERRAFORMER-EXAMINATION-SYSTEM/1',id:'system.examination',name:'Examination System',family:'forensic',type:'examination-system',state:'integrated',canonicalPath:'terraformer://forensic/examination/',dependsOn:Object.freeze(['system.forensic', 'system.inspection']),governs:Object.freeze(['scope','evidence','state','relation','result']),rule:'Examination System performs bounded analytical examination of admitted evidence or objects; findings remain evidence subject to qualification and do not become legal or factual conclusions automatically.'});
+module.exports=Object.freeze({TERRAFORMER_EXAMINATION_SYSTEM});

@@ -1,0 +1,12 @@
+{
+  "schema": "TERRAFORMER-WORKINGS/1",
+  "systemId": "system.working",
+  "workerHierarchy": [
+    "system.working",
+    "system.worker",
+    "system.work"
+  ],
+  "membershipGrantsExecution": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

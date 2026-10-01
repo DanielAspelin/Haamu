@@ -1,0 +1,10 @@
+{
+  "schema": "TERRAFORMER-BANKINGS-REGISTRY/1",
+  "owner": "terraformer.banking.js",
+  "system": "system.banking",
+  "actor": "agent.banker",
+  "entries": [],
+  "persistentByDefault": false,
+  "authorityGranted": false,
+  "rule": "Banking records describe admitted banking instances/results/history only; records do not independently execute, persist, authorize, or create external effects."
+}

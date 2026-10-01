@@ -1,0 +1,92 @@
+{
+  "$schema": "terraformer.registry/capacities/1",
+  "version": "0.48.31",
+  "kind": "CAPACITY_REGISTRY",
+  "owner": "system.capacity",
+  "boundary": "DIMENSION_BOUNDARY",
+  "authority": false,
+  "qualificationGranted": false,
+  "allocationGranted": false,
+  "accessGranted": false,
+  "entries": [
+    {
+      "id": "EMPTY",
+      "aliases": [
+        "NONE",
+        "ZERO"
+      ],
+      "known": true,
+      "authority": false
+    },
+    {
+      "id": "AVAILABLE",
+      "aliases": [
+        "READY"
+      ],
+      "known": true,
+      "authority": false
+    },
+    {
+      "id": "PARTIAL",
+      "aliases": [
+        "LIMITED"
+      ],
+      "known": true,
+      "authority": false
+    },
+    {
+      "id": "FULL",
+      "aliases": [
+        "AT_CAPACITY"
+      ],
+      "known": true,
+      "authority": false
+    },
+    {
+      "id": "EXCEEDED",
+      "aliases": [
+        "OVER_CAPACITY"
+      ],
+      "known": true,
+      "authority": false
+    },
+    {
+      "id": "UNKNOWN",
+      "aliases": [
+        "UNDETERMINED"
+      ],
+      "known": true,
+      "authority": false
+    }
+  ],
+  "types": [
+    {
+      "id": "PHYSICAL",
+      "kind": "CAPACITY_TYPE",
+      "appliesTo": "uncompressed-physical-distribution",
+      "hardLimitBytes": 209715200,
+      "hardLimitMiB": 200,
+      "semantics": "maximum-not-target",
+      "rules": [
+        "Uncompressed physical distribution must remain at or below 200 MiB.",
+        "Measure physical size at every material checkpoint.",
+        "Size compliance does not imply functional qualification."
+      ],
+      "authority": false
+    },
+    {
+      "id": "DISTRIBUTION",
+      "kind": "CAPACITY_TYPE",
+      "appliesTo": "compressed-release-zip",
+      "hardLimitBytes": 104857600,
+      "hardLimitMiB": 100,
+      "semantics": "maximum-not-target",
+      "rules": [
+        "Release ZIP must remain at or below 100 MiB.",
+        "Measure compressed release size at every material checkpoint.",
+        "Size compliance does not imply functional qualification."
+      ],
+      "authority": false
+    }
+  ]
+}

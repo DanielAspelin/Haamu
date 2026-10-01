@@ -1,0 +1,11 @@
+{
+  "schema": "TERRAFORMER-INTEGERS/1",
+  "systemId": "system.integer",
+  "membershipGrantsAllocation": false,
+  "membershipGrantsConversion": false,
+  "membershipGrantsValidation": false,
+  "membershipGrantsExecution": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

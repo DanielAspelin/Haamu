@@ -1,0 +1,13 @@
+{
+  "schema": "TERRAFORMER-BINARIES/1",
+  "version": "0.47.54",
+  "kind": "BINARIES_REGISTRY",
+  "owner": "system.binary",
+  "governedBy": "terraformer.binary.js",
+  "family": "arity",
+  "arity": 2,
+  "records": [],
+  "authorityGranted": false,
+  "automaticExecution": false,
+  "automaticPersistence": false
+}

@@ -1,0 +1,9 @@
+'use strict';
+const fs=require('fs'),path=require('path');
+const ID='system.test',VERSION='0.44.13',BOUNDARY='SYSTEM_BOUNDARY',REGISTRY='terraformer.tests.json';
+function registry(){const x=JSON.parse(fs.readFileSync(path.join(__dirname,REGISTRY),'utf8'));if(x.kind!=='TEST_REGISTRY'||x.owner!==ID||x.authority!==false||!Array.isArray(x.tests))throw Error('TEST_REGISTRY_INVALID');return Object.freeze(x)}
+function normalizeResult(r){if(!r||typeof r!=='object')throw Error('TEST_RESULT_INVALID');if(typeof r.id!=='string'||!r.id)throw Error('TEST_ID_INVALID');if(!['PASS','FAIL','ERROR','SKIP'].includes(r.status))throw Error('TEST_STATUS_INVALID');return Object.freeze({id:r.id,status:r.status,expected:r.expected??null,observed:r.observed??null,evidence:r.evidence??null,qualificationGranted:false,authority:false})}
+function execute(def,fn){if(!def||typeof def.id!=='string'||typeof fn!=='function')throw Error('TEST_DEFINITION_INVALID');try{const observed=fn();const pass=Object.is(observed,def.expected);return normalizeResult({id:def.id,status:pass?'PASS':'FAIL',expected:def.expected,observed,evidence:{executed:true}})}catch(e){return normalizeResult({id:def.id,status:'ERROR',expected:def.expected,observed:null,evidence:{executed:true,errorName:e&&e.name||'Error',errorMessage:String(e&&e.message||e)}})}}
+function resolve(id){const x=registry(),v=x.tests.find(t=>t.id===id);if(!v)throw Error('TEST_UNKNOWN:'+id);return Object.freeze({...v,authority:false})}
+function descriptor(){return Object.freeze({id:ID,version:VERSION,boundary:BOUNDARY,controller:ID+'.controller',adapter:ID+'.adapter',bridge:ID+'.bridge',authority:false,qualification:'UNDER_CONDITIONAL_EXPERIMENT'})}
+module.exports=Object.freeze({ID,VERSION,BOUNDARY,REGISTRY,registry,normalizeResult,execute,resolve,descriptor});

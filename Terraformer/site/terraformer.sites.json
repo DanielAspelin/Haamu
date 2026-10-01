@@ -1,0 +1,16 @@
+{
+  "schema": "TERRAFORMER-SITES/1",
+  "authorityGranted": false,
+  "records": [
+    {
+      "id": "site.terraformer.github-pages",
+      "provider": "GitHub Pages",
+      "directory": "site/",
+      "repository": "repository.terraformer.github",
+      "canonicalSource": false,
+      "presentationSurface": true,
+      "authorityGranted": false
+    }
+  ],
+  "version": "0.48.48"
+}

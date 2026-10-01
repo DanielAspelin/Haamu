@@ -1,0 +1,7 @@
+{
+  "schema": "TERRAFORMER-CITIES/1",
+  "systemId": "system.city",
+  "descriptive": true,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

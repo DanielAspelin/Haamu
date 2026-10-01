@@ -1,0 +1,17 @@
+{
+  "$schema": "terraformer.registry/object_registry/1",
+  "version": "0.44.24",
+  "kind": "OBJECT_REGISTRY",
+  "governedBy": "system.object",
+  "governanceEvidence": "PREDECESSOR_CANONICAL_SOURCE_IDENTITY",
+  "authority": false,
+  "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+  "validation": "EXPLICIT_SCHEMA_AND_IDENTITY_REQUIRED",
+  "failureSemantics": "INVALID_OR_UNAUTHORIZED_INPUT_FAILS_CLOSED",
+  "provenance": {
+    "predecessor": "v0.44.21",
+    "checkpoint": "v0.44.22"
+  },
+  "semantics": "Object identity/metadata/provenance/lifecycle; registration does not establish persistence, ownership, materialization, correctness or authority.",
+  "objects": []
+}

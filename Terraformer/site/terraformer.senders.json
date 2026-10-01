@@ -1,0 +1,12 @@
+{
+  "schema": "TERRAFORMER-SENDERS/1",
+  "purpose": "governed sender definitions, identities, capabilities and evidence",
+  "workerRoleEstablished": false,
+  "authorityGranted": false,
+  "membershipGrantsAuthority": false,
+  "automaticExecution": false,
+  "records": [],
+  "owner": "system.sender",
+  "ownerBindingVersion": "0.48.16",
+  "ownerBindingAuthorityGranted": false
+}

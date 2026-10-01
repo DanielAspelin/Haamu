@@ -1,0 +1,7 @@
+{
+  "schema": "TERRAFORMER-REGULATORS/1",
+  "systemId": "system.regulator",
+  "authorityGranted": false,
+  "automaticExecution": false,
+  "records": []
+}

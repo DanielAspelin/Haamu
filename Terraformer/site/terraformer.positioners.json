@@ -1,0 +1,7 @@
+{
+  "schema": "TERRAFORMER-POSITIONERS/1",
+  "systemId": "system.positioner",
+  "authorityGranted": false,
+  "automaticExecution": false,
+  "records": []
+}

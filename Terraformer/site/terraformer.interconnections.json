@@ -1,0 +1,8 @@
+{
+  "schema": "TERRAFORMER-INTERCONNECTIONS/1",
+  "systemId": "system.interconnection",
+  "physicalConnectionAuthority": false,
+  "transmissionAuthority": false,
+  "executionAuthority": false,
+  "records": []
+}

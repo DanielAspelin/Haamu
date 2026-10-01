@@ -1,0 +1,7 @@
+{
+  "schema": "terraformer.registry/monies/1",
+  "owner": "system.money",
+  "entries": [],
+  "authority": false,
+  "qualificationGranted": false
+}

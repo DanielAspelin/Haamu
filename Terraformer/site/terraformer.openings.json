@@ -1,0 +1,10 @@
+{
+  "schema": "TERRAFORMER-OPENINGS-REGISTRY/1",
+  "owner": "terraformer.opening.js",
+  "system": "system.opening",
+  "actor": "agent.opener",
+  "entries": [],
+  "persistentByDefault": false,
+  "authorityGranted": false,
+  "rule": "Opening records describe admitted opening instances/results/history only; records do not independently execute, persist, authorize, or create external effects."
+}

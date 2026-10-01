@@ -1,0 +1,181 @@
+{
+  "schema": "TERRAFORMER-CANONICALIZATIONS/1",
+  "kind": "canonicalization",
+  "authorityGranted": false,
+  "records": [
+    {
+      "id": "system.terraformer.canonicalization",
+      "source": "terraformer.js",
+      "executable": "terraformer.canonicalization.js",
+      "status": "registered",
+      "authorityGranted": false
+    },
+    {
+      "id": "canonicalization.reconciliation.v0.48.36",
+      "kind": "CANONICAL_RECONCILIATION_PASS_I",
+      "entityCount": 2142,
+      "duplicateIdentityCount": 0,
+      "duplicateUriCount": 3,
+      "compatibilityAliasesResolved": [
+        {
+          "alias": "system.language-ir",
+          "canonical": "system.language.ir",
+          "uri": "terraformer://system/language/ir/"
+        },
+        {
+          "alias": "system.network-discovery",
+          "canonical": "system.network.discovery",
+          "uri": "terraformer://system/network/discovery/"
+        }
+      ],
+      "unresolvedUriConflicts": [
+        {
+          "uri": "terraformer://language/machine/high/",
+          "identities": [
+            "system.language.machine.high",
+            "system.language.programming"
+          ],
+          "reason": "URI collision joins semantically distinct identities; requires URI/topology reconciliation."
+        }
+      ],
+      "physicalizedMissingOwnerCount": 0,
+      "malformedOrNonSimpleIdentityCount": 156,
+      "sharedOwnerCount": 173,
+      "rejectedDeferredPluralCanonicalLeaks": 0,
+      "canonicalityGrantsAuthority": false,
+      "canonicalityGrantsNaturalization": false,
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT"
+    },
+    {
+      "id": "canonicalization.reconciliation.v0.48.37",
+      "kind": "CANONICAL_RECONCILIATION_PASS_II",
+      "semanticUriConflictResolved": {
+        "system.language.machine.high": "terraformer://language/machine/high/",
+        "system.language.programming": "terraformer://language/programming/"
+      },
+      "identitySyntax": {
+        "simple": 1390,
+        "hierarchicalDotted": 153,
+        "hyphenated": 594,
+        "camelOrUpper": 3,
+        "compatibilityAlias": 2
+      },
+      "dottedHierarchy": {
+        "exact": 140,
+        "segmentMismatchReview": 13
+      },
+      "sharedOwners": {
+        "canonicalOwnerWithProjections": 151,
+        "sharedImplementationReview": 21,
+        "temporaryMigrationDebt": 1
+      },
+      "principles": [
+        "Dotted hierarchy is not intrinsically malformed.",
+        "Hyphenation requires semantic lexical-vs-compound review.",
+        "Shared physical ownership is valid only when projections do not duplicate canonical responsibility.",
+        "Canonical identity does not grant authority, execution, persistence, qualification, or naturalization."
+      ],
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT"
+    },
+    {
+      "id": "canonicalization.reconciliation.v0.48.38",
+      "kind": "CANONICAL_RECONCILIATION_PASS_III",
+      "dottedUriSegmentationCorrected": 13,
+      "camelCaseLegacyIdentityDebt": [
+        {
+          "id": "system.canonicalPath",
+          "normalizedCandidate": "canonical-path"
+        },
+        {
+          "id": "system.dependsOn",
+          "normalizedCandidate": "depends-on"
+        },
+        {
+          "id": "system.integratesWith",
+          "normalizedCandidate": "integrates-with"
+        }
+      ],
+      "hyphenatedClassification": {
+        "UNRESOLVED_OR_SPECIALIZED": 154,
+        "COMPOSED_ATTESTED_PARTS": 442
+      },
+      "sharedProjectionOwnerEntityGaps": 21,
+      "sharedProjectionOwnerFiles": [
+        "terraformer.controller.js",
+        "terraformer.transport.js",
+        "terraformer.registrar.js",
+        "terraformer.registry.js",
+        "terraformer.lifecycle.js",
+        "terraformer.lane.js",
+        "terraformer.message.js",
+        "terraformer.window.js",
+        "terraformer.entity.js",
+        "terraformer.user.js",
+        "terraformer.network.js",
+        "terraformer.adapter.js",
+        "terraformer.tool.js",
+        "terraformer.language.js",
+        "terraformer.gate.js",
+        "terraformer.desktop.js",
+        "terraformer.platform.js",
+        "terraformer.server.js",
+        "terraformer.management.js",
+        "terraformer.api.js",
+        "terraformer.connection.js"
+      ],
+      "temporaryOwnerMigrationDebt": true,
+      "rule": "Hyphen is retained within a concept segment; dot denotes explicit identity hierarchy. No compound System is invented by URI splitting.",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT"
+    },
+    {
+      "id": "canonicalization.reconciliation.v0.48.39",
+      "kind": "CANONICAL_RECONCILIATION_PASS_IV",
+      "ownerEntitiesAdded": [
+        "system.transport",
+        "system.lane",
+        "system.message",
+        "system.gate"
+      ],
+      "ownerEntityGapsRemaining": 0,
+      "legacyRelationshipProjections": [
+        "system.dependsOn",
+        "system.integratesWith"
+      ],
+      "legacyIdentityProjection": [
+        "system.canonicalPath"
+      ],
+      "hyphenatedSimpleBodyReviewed": 596,
+      "hyphenatedReclassifiedNoncanonicalProjection": 594,
+      "canonicalHyphenatedSimpleBodyRemaining": 0,
+      "rule": "Canonical System concepts obey the established one-word concept rule. Composite/hyphenated historical identities remain inspectable projections and do not become canonical Systems merely through prior registration.",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT"
+    },
+    {
+      "id": "canonicalization.reconciliation.v0.48.40",
+      "kind": "CANONICAL_RECONCILIATION_PASS_V_CLOSURE",
+      "canonicalEntityCount": 1257,
+      "duplicateCanonicalIds": 0,
+      "duplicateCanonicalUris": 0,
+      "missingCanonicalPhysicalOwners": 0,
+      "dottedSegmentationErrors": 0,
+      "uriNamespaceCorrections": 2,
+      "hierarchicalParentsNotYetRepresented": 66,
+      "hierarchicalParentDisposition": "TOPOLOGY_DEPENDENCY_NOT_CANONICAL_IDENTITY_FAILURE",
+      "temporaryOwnedCanonicalIdentities": 76,
+      "temporaryOwnershipDisposition": "MIGRATION_DEBT_SEPARATE_FROM_CANONICAL_IDENTITY",
+      "status": "CONSTRUCTIVELY_RESOLVED",
+      "seal": "CONSTRUCTIVE",
+      "canonicalityGrantsAuthority": false,
+      "canonicalityGrantsNaturalization": false
+    }
+  ],
+  "orthogonalComplement": {
+    "system": "system.terraformer.orthogonalization",
+    "executable": "terraformer.orthogonalization.js",
+    "registry": "terraformer.orthogonals.json",
+    "crossings": "terraformer.orthogonalcrossings.json",
+    "relationship": "COMPLEMENTARY_DISTINCT",
+    "authorityGranted": false
+  },
+  "version": "0.48.40"
+}

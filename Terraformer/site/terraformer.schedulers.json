@@ -1,0 +1,7 @@
+{
+  "schema": "terraformer.registry/schedulers/1",
+  "owner": "system.scheduler",
+  "entries": [],
+  "authority": false,
+  "qualificationGranted": false
+}

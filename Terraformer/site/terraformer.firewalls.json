@@ -1,0 +1,10 @@
+{
+  "schema": "TERRAFORMER-FIREWALLS/1",
+  "owner": "system.firewall",
+  "executable": "terraformer.firewall.js",
+  "purpose": "governed firewall policies and evidence",
+  "authorityGranted": false,
+  "membershipGrantsAuthority": false,
+  "executionAuthorityGranted": false,
+  "records": []
+}

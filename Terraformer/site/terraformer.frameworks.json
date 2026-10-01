@@ -1,0 +1,15 @@
+{
+  "$schema": "terraformer.registry/framework_registry/1",
+  "version": "0.44.21",
+  "kind": "FRAMEWORK_REGISTRY",
+  "owner": "system.framework",
+  "items": [
+    {
+      "id": "framework.core",
+      "status": "DECLARED",
+      "authority": false
+    }
+  ],
+  "authority": false,
+  "governedBy": "terraformer.framework.js"
+}

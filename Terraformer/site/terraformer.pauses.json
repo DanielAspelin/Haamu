@@ -1,0 +1,9 @@
+{
+  "schema": "TERRAFORMER-PAUSES/1",
+  "systemId": "system.pause",
+  "declarativeRegistry": true,
+  "membershipGrantsThreadCreation": false,
+  "membershipGrantsExternalEffect": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

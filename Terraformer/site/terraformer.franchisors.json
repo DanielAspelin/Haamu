@@ -1,0 +1,12 @@
+{
+  "schema": "TERRAFORMER-FRANCHISORS/1",
+  "systemId": "system.franchisor",
+  "membershipGrantsOwnership": false,
+  "membershipGrantsSale": false,
+  "membershipGrantsLicense": false,
+  "membershipGrantsContractExecution": false,
+  "membershipGrantsLegalAuthority": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

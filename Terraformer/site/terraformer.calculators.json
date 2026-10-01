@@ -1,0 +1,8 @@
+{
+  "schema": "TERRAFORMER-CALCULATORS/1",
+  "systemId": "system.calculator",
+  "membershipGrantsExecution": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

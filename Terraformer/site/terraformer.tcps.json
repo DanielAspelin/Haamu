@@ -1,0 +1,8 @@
+{
+  "schema": "TERRAFORMER-TCPS/1",
+  "purpose": "governed tcp definitions, instances, configuration and evidence",
+  "authorityGranted": false,
+  "membershipGrantsAuthority": false,
+  "automaticExecution": false,
+  "records": []
+}

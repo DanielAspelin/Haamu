@@ -1,0 +1,7 @@
+{
+  "schema": "terraformer.registry/markets/1",
+  "owner": "system.market",
+  "entries": [],
+  "authority": false,
+  "qualificationGranted": false
+}

@@ -1,0 +1,60 @@
+{
+  "schema": "TERRAFORMER-RENDERERS/1",
+  "systemId": "system.renderer",
+  "declarativeRegistry": true,
+  "membershipGrantsExecution": false,
+  "membershipGrantsRender": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": [],
+  "specializationTypes": [
+    {
+      "kind": "video",
+      "systemId": "system.video-renderer",
+      "mediaSystem": "system.video"
+    },
+    {
+      "kind": "photo",
+      "systemId": "system.photo-renderer",
+      "mediaSystem": "system.photo",
+      "compatibleMedia": "system.image"
+    },
+    {
+      "kind": "audio",
+      "systemId": "system.audio-renderer",
+      "mediaSystem": "system.audio"
+    }
+  ],
+  "classificationSystem": "system.renderer-type",
+  "rendererTypes": {
+    "audio": {
+      "id": "renderer-type.audio",
+      "renderer": "system.audio-renderer",
+      "media": "system.audio"
+    },
+    "photo": {
+      "id": "renderer-type.photo",
+      "renderer": "system.photo-renderer",
+      "media": "system.photo",
+      "compatibleMedia": "system.image"
+    },
+    "video": {
+      "id": "renderer-type.video",
+      "renderer": "system.video-renderer",
+      "media": "system.video"
+    }
+  },
+  "classificationBoundary": {
+    "descriptive": true,
+    "automaticExecution": false,
+    "automaticRender": false,
+    "automaticPersistence": false,
+    "authorityGranted": false
+  },
+  "reconstructibleRelationships": true,
+  "relationshipRules": [
+    "rule.renderer.audio",
+    "rule.renderer.photo",
+    "rule.renderer.video"
+  ]
+}

@@ -1,0 +1,151 @@
+{
+  "schema": "TERRAFORMER-ADJECTIVES/1",
+  "version": "0.47.63",
+  "owner": "system.adjective",
+  "governedBy": "terraformer.adjective.js",
+  "applicableTo": [
+    "system.mode",
+    "system.state",
+    "system.condition",
+    "system.type",
+    "system.system",
+    "system.functionality",
+    "system.process",
+    "system.result",
+    "system.objective",
+    "system.prediction",
+    "system.information",
+    "system.science"
+  ],
+  "entries": [
+    {
+      "adjective": "Technological",
+      "domain": "technology",
+      "descriptive": true
+    },
+    {
+      "adjective": "Statistical",
+      "domain": "statistics",
+      "descriptive": true
+    },
+    {
+      "adjective": "Nanotechnological",
+      "domain": "nanotechnology",
+      "descriptive": true
+    },
+    {
+      "adjective": "Scientific",
+      "domain": "science",
+      "descriptive": true
+    },
+    {
+      "adjective": "Architectural",
+      "domain": "architecture",
+      "descriptive": true
+    },
+    {
+      "adjective": "Computational",
+      "domain": "computation",
+      "descriptive": true
+    },
+    {
+      "adjective": "Informational",
+      "domain": "information",
+      "descriptive": true
+    },
+    {
+      "adjective": "Mathematical",
+      "domain": "mathematics",
+      "descriptive": true
+    },
+    {
+      "adjective": "Physical",
+      "domain": "physics",
+      "descriptive": true
+    },
+    {
+      "adjective": "Chemical",
+      "domain": "chemistry",
+      "descriptive": true
+    },
+    {
+      "adjective": "Biological",
+      "domain": "biology",
+      "descriptive": true
+    },
+    {
+      "adjective": "Astronomical",
+      "domain": "astronomy",
+      "descriptive": true
+    },
+    {
+      "adjective": "Geological",
+      "domain": "geology",
+      "descriptive": true
+    },
+    {
+      "adjective": "Ecological",
+      "domain": "ecology",
+      "descriptive": true
+    },
+    {
+      "adjective": "Engineering",
+      "domain": "engineering",
+      "descriptive": true
+    },
+    {
+      "adjective": "Experimental",
+      "domain": "experiment",
+      "descriptive": true
+    },
+    {
+      "adjective": "Theoretical",
+      "domain": "theory",
+      "descriptive": true
+    },
+    {
+      "adjective": "Empirical",
+      "domain": "evidence",
+      "descriptive": true
+    },
+    {
+      "adjective": "Algorithmic",
+      "domain": "algorithm",
+      "descriptive": true
+    },
+    {
+      "adjective": "Logical",
+      "domain": "logic",
+      "descriptive": true
+    },
+    {
+      "adjective": "Digital",
+      "domain": "digital",
+      "descriptive": true
+    },
+    {
+      "adjective": "Quantum",
+      "domain": "quantum",
+      "descriptive": true
+    },
+    {
+      "adjective": "Data",
+      "domain": "data",
+      "descriptive": true
+    },
+    {
+      "adjective": "Analytical",
+      "domain": "analysis",
+      "descriptive": true
+    }
+  ],
+  "rules": [
+    "Adjectives describe subjects without changing canonical identity or Type.",
+    "Scientific and computational qualifiers do not manufacture scientific validity, evidence, computation, prediction, or authority."
+  ],
+  "authorityGranted": false,
+  "canonicalDomains": {
+    "Scientific": "system.science",
+    "Technological": "system.technology"
+  }
+}

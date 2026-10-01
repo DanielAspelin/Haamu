@@ -1,0 +1,7 @@
+{
+  "schema": "TERRAFORMER-INSTALLERS/1",
+  "systemId": "system.installer",
+  "authorityGranted": false,
+  "automaticExecution": false,
+  "records": []
+}

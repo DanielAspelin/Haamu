@@ -1,0 +1,12 @@
+{
+  "schema": "TERRAFORMER-INPUTS/1",
+  "systemId": "system.input",
+  "logicalByDefault": true,
+  "membershipGrantsRead": false,
+  "membershipGrantsWrite": false,
+  "membershipGrantsTransfer": false,
+  "membershipGrantsNetworkBinding": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

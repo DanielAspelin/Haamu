@@ -1,0 +1,599 @@
+{
+  "schema": "terraformer.registry/audits/1",
+  "owner": "system.audit",
+  "entries": [
+    {
+      "id": "audit.morphology.v0.48.16",
+      "kind": "MORPHOLOGY_PHYSICALIZATION_AUDIT",
+      "sourceCheckpoint": "0.48.16",
+      "summary": {
+        "systemMorphologyCandidates": 337,
+        "systemCandidatesWithSingularJsOwner": 337,
+        "workerMorphologyCandidates": 285,
+        "workerCandidatesWithSingularJsOwner": 285,
+        "existingPluralRegistriesOwnerBoundThisPass": 66,
+        "newPluralRegistriesCreatedThisPass": 2,
+        "unresolvedPluralRegistryGaps": 0
+      },
+      "finding": "The audited morphology candidate corpus was already fully singular-owner physicalized; expansion value is semantic qualification and registry ownership, not duplicate JS creation.",
+      "rules": {
+        "morphologyDoesNotAutomaticallyAdmitSystem": true,
+        "morphologyDoesNotAutomaticallyAdmitWorker": true,
+        "noDuplicateOwnerCreation": true
+      },
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "sharedResult": true,
+      "canonicalDataContexts": [
+        "system.audit",
+        "system.morphology"
+      ]
+    },
+    {
+      "id": "audit.naming.v0.48.17",
+      "kind": "PHYSICAL_NAMING_AUDIT",
+      "rule": "SINGLE_WORD_CONCEPT_FILENAME_ONLY",
+      "retired": [
+        "terraformer.morphologyaudits.json"
+      ],
+      "legacyCompoundCandidates": [
+        "terraformer.processingarchitecture.json",
+        "terraformer.graphicsrepresentations.json"
+      ],
+      "status": "REQUIRES_SUCCESSOR_RECONCILIATION",
+      "silentRenameAuthorized": false
+    },
+    {
+      "id": "audit.sets.v0.48.18",
+      "kind": "SINGLE_WORD_SET_RECONCILIATION",
+      "retired": [
+        "terraformer.processingarchitecture.json",
+        "terraformer.graphicsrepresentations.json"
+      ],
+      "projected": {
+        "result.processing.architecture.v0.48.18": [
+          "terraformer.processings.json",
+          "terraformer.architectures.json"
+        ],
+        "result.graphics.representation.v0.48.18": [
+          "terraformer.graphics.json",
+          "terraformer.representations.json"
+        ]
+      },
+      "rule": "Each concept keeps its own one-word set; shared context and results are projected into every applicable canonical set.",
+      "dataLoss": false,
+      "authorityGranted": false
+    },
+    {
+      "id": "audit.repository.v0.48.19",
+      "kind": "REPOSITORY_IDENTITY_BINDING",
+      "repository": "DanielAspelin/Terraformer",
+      "visibility": "PRIVATE",
+      "hardcodedLocally": true,
+      "connectorVerified": false,
+      "reason": "GitHub connector returned NOT_FOUND and no installed repository match.",
+      "credentialEmbedded": false,
+      "authorizationGranted": false
+    },
+    {
+      "id": "audit.telegram.v0.48.20",
+      "kind": "TELEGRAM_IDENTITY_BINDING",
+      "user": "@DanielAspelinTG",
+      "supergroup": "@TerraformerTG",
+      "bot": "@TerraformerTGBot",
+      "hardcoded": true,
+      "credentialEmbedded": false,
+      "authenticationGranted": false,
+      "authorizationGranted": false
+    },
+    {
+      "id": "audit.account.v0.48.21",
+      "kind": "ACCOUNT_SET_RECONCILIATION",
+      "retired": "terraformer.telegrams.json",
+      "canonicalSet": "terraformer.accounts.json",
+      "providerContext": "system.telegram",
+      "records": [
+        "@DanielAspelinTG",
+        "@TerraformerTG",
+        "@TerraformerTGBot"
+      ],
+      "dataLoss": false,
+      "rule": "Provider identity remains context; account instances belong to Accounts.",
+      "authorityGranted": false
+    },
+    {
+      "id": "audit.spread.v0.48.22",
+      "kind": "PHYSICAL_SPREAD",
+      "createdPluralSets": 35,
+      "deferredAmbiguousPluralForms": 50,
+      "oneWordSetsOnly": true,
+      "ghostSystemsCreated": 0,
+      "authorityGranted": false
+    },
+    {
+      "id": "audit.spread.v0.48.23",
+      "kind": "PHYSICAL_SPREAD",
+      "pluralSetsCreated": 14,
+      "singularOwnersCreated": 0,
+      "entityCorpusReviewed": 2142,
+      "malformedOrSymbolicEntityCandidatesDeferred": 7,
+      "ghostSystemsCreated": 0,
+      "oneWordSetsOnly": true
+    },
+    {
+      "id": "audit.morphology.v0.48.24",
+      "kind": "MORPHOLOGICAL_ARCHITECTURE_TRANSITION",
+      "ionIngSystems": 337,
+      "finalRApplications": 293,
+      "newPhysicalJsRequired": 0,
+      "existingPhysicalFilesPreserved": true,
+      "applicationRegistryUpdated": true,
+      "authorityGranted": false
+    },
+    {
+      "id": "audit.tokens.v0.48.25",
+      "kind": "FULL_TOKEN_PHYSICALIZATION",
+      "corpusCount": 76226,
+      "tokenFiles": 76226,
+      "bijectionRequired": true,
+      "systemCandidates": 4006,
+      "applicationCandidates": 5776,
+      "authorityGranted": false
+    },
+    {
+      "id": "audit.files.v0.48.26",
+      "kind": "SINGULAR_PLURAL_FILE_RECONCILIATION",
+      "incorrectIndividualTokenJsonFilesRetired": 76226,
+      "tokenRecordsPreserved": 76226,
+      "canonicalSingular": "terraformer.token.js",
+      "canonicalPlural": "terraformer.tokens.json",
+      "dataLoss": false,
+      "authorityGranted": false
+    },
+    {
+      "id": "audit.plurals.v0.48.27",
+      "kind": "PLURAL_MORPHOLOGY",
+      "englishTokens": 76226,
+      "finalSTokens": 7551,
+      "resolvedMorphologyPairs": 1020,
+      "ambiguousOrUnresolvedFinalS": 6531,
+      "qualifiedPhysicalizedPairs": 52,
+      "newPluralJsonFiles": 25,
+      "existingPluralJsonFiles": 27,
+      "rule": "Plural/set => JSON; suffix alone is insufficient.",
+      "authorityGranted": false
+    },
+    {
+      "id": "audit.plurals.v0.48.28",
+      "kind": "LOGICAL_PLURAL_EXPANSION",
+      "corpusLogicalPairs": 1021,
+      "pairsWithExistingSingularJs": 142,
+      "newPluralJsonFiles": 27,
+      "ambiguousMorphologyPairs": 7,
+      "deferredExistingOwnerPairs": 30,
+      "policy": "Create JSON only for semantically defensible plural sets; do not convert lexicalized/proper/symbolic final-s forms merely by spelling.",
+      "authorityGranted": false
+    },
+    {
+      "id": "audit.capacity.v0.48.29",
+      "kind": "CAPACITY_TRANSITION",
+      "physicalLimitMiB": {
+        "from": 100,
+        "to": 150
+      },
+      "zipLimitMiB": {
+        "from": 50,
+        "to": 75
+      },
+      "semantics": "MAXIMUM_NOT_TARGET",
+      "authorityGranted": false
+    },
+    {
+      "id": "audit.plurals.v0.48.29",
+      "kind": "PLURAL_PARITY_EXPANSION",
+      "singularJsConcepts": 10889,
+      "pluralJsonConceptsAfter": 10889,
+      "newPluralJsonFiles": 9224,
+      "corpusAttestedNew": 27,
+      "inferredNew": 9197,
+      "scope": "ion/ing System and final-r Application owners",
+      "note": "Inferred plural spelling creates a pre-informative collection registry; it does not assert corpus attestation or semantic naturalization.",
+      "authorityGranted": false
+    },
+    {
+      "id": "audit.global.v0.48.30",
+      "kind": "GLOBAL_PHYSICAL_SEMANTIC_RECONCILIATION_BASELINE",
+      "retiredCompoundFiles": [
+        "terraformer.perimeterline.json",
+        "terraformer.naturalizationaudit.json",
+        "terraformer.naturalizationposition.json"
+      ],
+      "pluralSets": {
+        "total": 9276,
+        "attested": 27,
+        "inferred": 9249
+      },
+      "ownerBindings": {
+        "bound": 10285,
+        "bad": 2,
+        "missingOwnerField": 603
+      },
+      "applications": {
+        "strongErOr": 4887,
+        "weakBareR": 1015
+      },
+      "temporary": {
+        "bytes": 2708840,
+        "simpleNamedFunctions": 1504,
+        "topDeclarations": 3471
+      },
+      "naturalization": "BLOCKED_UNTIL_QUEUE_REQUIREMENTS_SATISFIED",
+      "authorityGranted": false
+    },
+    {
+      "id": "audit.capacity.v0.48.31",
+      "kind": "CAPACITY_TRANSITION",
+      "physicalLimitMiB": {
+        "from": 150,
+        "to": 200
+      },
+      "zipLimitMiB": {
+        "from": 75,
+        "to": 100
+      },
+      "semantics": "ABSOLUTE_MAXIMUM_NOT_TARGET",
+      "effectOnQualification": "NONE",
+      "effectOnAuthority": "NONE",
+      "authorityGranted": false
+    },
+    {
+      "id": "audit.plural-normalization.v0.48.32",
+      "kind": "PLURAL_SEMANTIC_NORMALIZATION_PASS_I",
+      "pluralSets": 9276,
+      "normalizedAttestedRegular": 78,
+      "normalizedAttestedIrregular": 1,
+      "newlyUpgraded": 52,
+      "unresolvedInferred": 9197,
+      "invalidOwnerPairs": 0,
+      "naturalizationGranted": false,
+      "next": "Resolve inferred-only sets using stronger lexical/semantic evidence; do not naturalize from spelling alone."
+    },
+    {
+      "id": "audit.plural-normalization.v0.48.33",
+      "kind": "PLURAL_SEMANTIC_NORMALIZATION_PASS_II",
+      "startingUnresolved": 9197,
+      "multiSourceCandidates": 21,
+      "normalizedInternal": 15,
+      "deferredCountability": 6,
+      "remainingUnresolved": 9182,
+      "naturalizationGranted": false
+    },
+    {
+      "id": "audit.plural-normalization.v0.48.34",
+      "kind": "PLURAL_SEMANTIC_NORMALIZATION_PASS_III",
+      "startingUnresolved": 9182,
+      "oneSourceCandidates": 5468,
+      "normalized": 10,
+      "deferredProcessNouns": 3,
+      "applicationOnlyEvidence": 5455,
+      "applicationAgentiveCandidatesRejectedAsIndependentProof": 4487,
+      "remainingUnresolved": 9172,
+      "correction": "Final-r and even -er/-or Application morphology must not be treated as semantic proof of Application identity or countable plurality.",
+      "naturalizationGranted": false
+    },
+    {
+      "id": "audit.plural-normalization.v0.48.35",
+      "kind": "PLURAL_SEMANTIC_NORMALIZATION_PASS_IV_CLOSURE",
+      "startingUnresolved": 9172,
+      "rejectedCanonicalUnsupported": 9163,
+      "deferred": 9,
+      "undispositioned": 0,
+      "status": "CONSTRUCTIVELY_RESOLVED",
+      "nextArchitecturalSequence": [
+        "CANONICALS",
+        "TOPOLOGIES",
+        "ORTHOGONALS",
+        "TAXONOMIES",
+        "BOUNDARIES",
+        "DIMENSIONS"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "audit.canonical.v0.48.36",
+      "kind": "CANONICAL_RECONCILIATION_PASS_I",
+      "entities": 2142,
+      "duplicateIds": 0,
+      "duplicateUrisBefore": 3,
+      "structuralAliasCollisionsResolved": 2,
+      "semanticUriConflictsRemaining": 1,
+      "missingPhysicalOwners": 0,
+      "nonSimpleIdentityCandidates": 156,
+      "sharedOwnerGroups": 173,
+      "rejectedDeferredPluralLeaks": 0,
+      "status": "ACTIVE_NOT_RESOLVED",
+      "authorityGranted": false
+    },
+    {
+      "id": "audit.canonical.v0.48.37",
+      "kind": "CANONICAL_RECONCILIATION_PASS_II",
+      "semanticUriConflictRemaining": 0,
+      "intentionalAliasUriShares": 2,
+      "dottedHierarchiesValid": 140,
+      "dottedSegmentationReview": 13,
+      "camelCaseReview": 3,
+      "hyphenatedReview": 594,
+      "sharedImplementationReview": 21,
+      "status": "ACTIVE_NOT_RESOLVED",
+      "authorityGranted": false
+    },
+    {
+      "id": "audit.canonical.v0.48.38",
+      "kind": "CANONICAL_RECONCILIATION_PASS_III",
+      "dottedSegmentationRemaining": 0,
+      "camelLegacyDebt": 3,
+      "hyphenatedComposed": 442,
+      "hyphenatedSpecialized": 154,
+      "ownerEntityGaps": 21,
+      "status": "ACTIVE_NOT_RESOLVED",
+      "authorityGranted": false
+    },
+    {
+      "id": "audit.canonical.v0.48.39",
+      "kind": "CANONICAL_RECONCILIATION_PASS_IV",
+      "ownerEntityGapsBefore": 4,
+      "ownerEntityGapsAfter": 0,
+      "ownerEntitiesAdded": 4,
+      "hyphenatedCanonicalCandidatesReclassified": 594,
+      "legacyCamelSystemCandidatesRemaining": 0,
+      "temporaryMigrationDebt": true,
+      "status": "ACTIVE_NEAR_CLOSURE",
+      "authorityGranted": false
+    },
+    {
+      "id": "audit.canonical.v0.48.40",
+      "kind": "CANONICAL_RECONCILIATION_CLOSURE",
+      "canonicalEntities": 1257,
+      "duplicateIds": 0,
+      "duplicateUris": 0,
+      "missingOwners": 0,
+      "dottedSegmentationErrors": 0,
+      "parentDependenciesForTopology": 66,
+      "temporaryMigrationDebt": 76,
+      "status": "CONSTRUCTIVELY_RESOLVED",
+      "seal": "CONSTRUCTIVE",
+      "authorityGranted": false
+    },
+    {
+      "id": "audit.topology.v0.48.41",
+      "kind": "TOPOLOGY_RECONCILIATION_PASS_I",
+      "passageMembers": 15,
+      "passageOrderVerified": true,
+      "passageRegistryDuplicates": 0,
+      "passageSingularOwnerCreated": true,
+      "passagePluralRegistryCreated": true,
+      "missingHierarchyParentReferences": 66,
+      "uniqueMissingParents": 15,
+      "status": "ACTIVE_NOT_RESOLVED",
+      "authorityGranted": false
+    },
+    {
+      "id": "audit.topology.v0.48.42",
+      "kind": "TOPOLOGY_RECONCILIATION_PASS_II",
+      "canonicalParentUrisNormalized": 10,
+      "passageForwardInverseConsistent": true,
+      "remainingHierarchyReferences": 14,
+      "remainingUniqueNamespaces": 6,
+      "nestedNamespaceProjections": 2,
+      "compositeNamespaceProjections": 3,
+      "unresolvedStructuralNamespaces": 1,
+      "status": "ACTIVE_NOT_RESOLVED",
+      "authorityGranted": false
+    },
+    {
+      "id": "audit.topology.v0.48.43",
+      "kind": "TOPOLOGY_RECONCILIATION_PASS_III",
+      "typeOfEdges": 743,
+      "missingTypeInverse": 0,
+      "declaredNonTypeEdges": 167,
+      "explicitRoundTripRecords": 1,
+      "staleSystemGraphCheckpoint": "v0.46.77",
+      "namespaceOnlyDeferred": 4,
+      "status": "ACTIVE_NOT_RESOLVED",
+      "authorityGranted": false
+    },
+    {
+      "id": "audit.graph.v0.48.44",
+      "kind": "GRAPH_SYSTEM_PHYSICALIZATION",
+      "singularOwner": true,
+      "pluralRegistry": true,
+      "canonicalEntity": true,
+      "typeRelationship": true,
+      "inverseRelationship": true,
+      "status": "VERIFIED_STRUCTURE",
+      "authorityGranted": false
+    },
+    {
+      "id": "audit.plotting.v0.48.45",
+      "kind": "PLOTTING_ARCHITECTURE",
+      "plotOwner": true,
+      "plotsRegistry": true,
+      "plottingOwnerPromoted": true,
+      "plotterApplicationPromoted": true,
+      "graphPlotRelationships": 6,
+      "status": "VERIFIED_STRUCTURE",
+      "authorityGranted": false
+    },
+    {
+      "id": "audit.distribution.v0.48.46",
+      "kind": "TOKEN_PHYSICAL_SPREAD",
+      "tokenCount": 76226,
+      "dispositionTotal": 76226,
+      "allTokensDispositioned": true,
+      "status": "VERIFIED_STRUCTURE",
+      "authorityGranted": false
+    },
+    {
+      "id": "audit.distributed-interconnection.v0.48.47",
+      "kind": "TOKEN_ARCHITECTURE_CROSSLINK",
+      "tokenCount": 76226,
+      "crosslinkCount": 76226,
+      "tokenOnly": 65772,
+      "tokenWithArchitectureEvidence": 13,
+      "physicalOwnerOnly": 9418,
+      "physicalWithArchitectureEvidence": 1023,
+      "status": "VERIFIED_STRUCTURE",
+      "authorityGranted": false
+    },
+    {
+      "id": "audit.github-pages.v0.48.48",
+      "kind": "DELIVERY_PRESENTATION_RECONCILIATION",
+      "repositoryBound": true,
+      "manifestBound": true,
+      "distributionBound": true,
+      "deploymentBound": true,
+      "siteBound": true,
+      "pageBound": true,
+      "protectedFileGoverned": true,
+      "singleFlightGoverned": true,
+      "failClosedGoverned": true,
+      "remoteDeploymentExecuted": false,
+      "status": "VERIFIED_STRUCTURE_REMOTE_OPERATION_UNVERIFIED",
+      "authorityGranted": false
+    }
+  ],
+  "authority": false,
+  "qualificationGranted": false,
+  "version": "0.48.48",
+  "reconciledProjections": [
+    {
+      "source": "terraformer.naturalizationaudit.json",
+      "context": "NATURALIZATION_AUDIT",
+      "data": {
+        "schema": "TERRAFORMER-NATURALIZATION-AUDIT/2",
+        "version": "0.48.15",
+        "sourceCheckpoint": "0.47.86",
+        "canonicalPhysicalSystemOwners": 1368,
+        "candidateCount": 454,
+        "unresolvedStageObservations": 5226,
+        "evidenceCompleteNaturalizationTokens": 1,
+        "qualification": {
+          "resolvedThisPass": 104,
+          "remaining": 665,
+          "evidenceRegistry": "terraformer.qualificationevidences.json",
+          "passInference": false
+        },
+        "authorityGranted": false,
+        "automaticPromotion": false,
+        "responsibility": {
+          "pass1Resolved": 567,
+          "pass2Resolved": 317,
+          "remaining": 226,
+          "functionalityCrossResolved": 186
+        },
+        "functionality": {
+          "resolvedThisPass": 320,
+          "remaining": 844
+        },
+        "typing": {
+          "resolvedThisPass": 163,
+          "remaining": 616,
+          "relationshipProjectionsAdded": 326
+        },
+        "relationships": {
+          "resolvedThisPass": 15,
+          "remaining": 501,
+          "recordsAdded": 18
+        },
+        "classification": {
+          "resolvedThisPass": 4,
+          "remaining": 234,
+          "evidenceRegistry": "terraformer.classificationevidences.json"
+        },
+        "partialStageObservations": 3261,
+        "crossDimensionalReconciliation": {
+          "partialReconciliations": 1894,
+          "directPromotions": 0,
+          "evidenceRegistry": "terraformer.semanticevidences.json"
+        },
+        "legacyReconciliation": {
+          "directObservations": 42,
+          "evidenceRegistry": "terraformer.legacyevidences.json",
+          "canonicalGraphMutationDeferred": true
+        },
+        "temporaryMigration": {
+          "objective": "zero legitimate residuals before retirement",
+          "inventory": "terraformer.temporaryinventory.json",
+          "legacyTypeRelationshipsMigrated": 1,
+          "legacyRelationshipRecordsMigrated": 12,
+          "conflicts": 0,
+          "retirementReady": false,
+          "functionsMigratedThisPass": 24,
+          "residualNamedFunctions": 1419,
+          "clustersMigratedThisPass": 17,
+          "crossOwnerDependencyEdges": 1183,
+          "crossOwnerBridgesQualified": 118,
+          "crossDependencyEdgesCovered": 464,
+          "fullyBridgeCoveredCallers": 156,
+          "declarationsAudited": 1160,
+          "declarationsMigratedThisPass": 24,
+          "residualTopLevelDeclarations": 1025,
+          "redundantDeclarationsRemovedThisPass": 5,
+          "dependencyRegistry": "terraformer.dependencies.json",
+          "newlyExposedFormerDepth1": 3,
+          "currentlyDependencyFreeFormerDependents": 1
+        },
+        "processingArchitecture": {
+          "registry": "terraformer.processingarchitecture.json",
+          "foregroundBackgroundPeers": true,
+          "bothParallelismAndConcurrency": true,
+          "directConnectionIsShortestAdmittedPath": true,
+          "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+          "foregroundRenderingDefault": "system.vector",
+          "foregroundRenderingFallback": "system.raster",
+          "fallbackCapabilityDriven": true
+        },
+        "graphicsRepresentations": {
+          "registry": "terraformer.graphicsrepresentations.json",
+          "vectorPairQualified": true,
+          "rasterPairQualified": true
+        },
+        "foregroundVisualArchitecture": {
+          "registry": "terraformer.layouts.json",
+          "planes": 2,
+          "nestedLayers": true,
+          "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+          "html": "system.html",
+          "css": "system.css",
+          "webPresentationOwnership": true,
+          "cad": "system.cad",
+          "cadOwnedByForegroundPresentation": true
+        },
+        "perimeterArchitecture": {
+          "registry": "terraformer.perimeterline.json",
+          "preLaunchIndex": -1,
+          "launchIndex": 0,
+          "postLaunchIndex": 1,
+          "sameLine": true,
+          "reportable": true
+        },
+        "cFinalizationSidecar": {
+          "status": "PARALLEL_PREPARATORY",
+          "primaryWorkstream": "JAVASCRIPT_JSON_MIGRATION",
+          "modifiedThisCheckpoint": false
+        },
+        "physicalExpansion": {
+          "strategy": "terraformer.expansions.json",
+          "queue": "terraformer.expansionqueue.json",
+          "plannedAdditionalFilesRange": [
+            2000,
+            3000
+          ],
+          "createdThisCheckpoint": 0,
+          "reason": "No currently missing single-word canonical System/Worker owner passed evidence/non-overlap gates; semantic admission required first."
+        }
+      },
+      "migrationVersion": "0.48.30",
+      "dataLoss": false
+    }
+  ]
+}

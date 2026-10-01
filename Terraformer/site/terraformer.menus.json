@@ -1,0 +1,18 @@
+{
+  "schema": "TERRAFORMER-MENUS/1",
+  "systemId": "system.menu",
+  "membershipGrantsNavigation": false,
+  "membershipGrantsSelection": false,
+  "membershipGrantsMutation": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": [],
+  "types": [
+    {
+      "id": "system.sub-menu",
+      "concept": "Sub-menu",
+      "isA": "system.menu",
+      "partOf": "system.menu"
+    }
+  ]
+}

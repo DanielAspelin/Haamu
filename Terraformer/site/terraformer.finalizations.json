@@ -1,0 +1,42 @@
+{
+  "schema": "TERRAFORMER-FINALIZATION-CONTAINER/1",
+  "version": "0.48.12",
+  "sideProject": true,
+  "producerSource": "terraformer.c",
+  "executable": "terraformer.exec",
+  "futureImage": "terraformer.bin",
+  "binaryPresent": false,
+  "purpose": "At finalization, package qualified Terraformer artifacts as individually bounded records in a controlled object image.",
+  "containerModel": {
+    "oneContainerPerFile": true,
+    "proposedRecordFields": [
+      "path",
+      "type",
+      "length",
+      "sha256",
+      "qualification",
+      "payload"
+    ],
+    "deterministicOrdering": "lexicographic path",
+    "integrity": "SHA-256 per file plus future image manifest",
+    "formatStatus": "PRE_INFORMATIVE"
+  },
+  "launcher": {
+    "menuDriven": true,
+    "nodeEntry": "terraformer.js",
+    "temporaryCompatibility": "--temporary",
+    "automaticExecution": false
+  },
+  "boundaries": {
+    "jsJsonPrimaryWorkstream": true,
+    "cSidecarParallel": true,
+    "noBinGenerationAtThisCheckpoint": true,
+    "noPrivilegeGrant": true,
+    "noPersistenceGrant": true,
+    "noAuthorityGrant": true
+  },
+  "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+  "owner": "system.finalization",
+  "ownerBindingVersion": "0.48.16",
+  "ownerBindingAuthorityGranted": false
+}

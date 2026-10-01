@@ -1,0 +1,13 @@
+{
+  "schema": "TERRAFORMER-QUARANARIES/1",
+  "version": "0.47.54",
+  "kind": "QUARANARIES_REGISTRY",
+  "owner": "system.quarnary",
+  "governedBy": "terraformer.quarnary.js",
+  "family": "arity",
+  "arity": 4,
+  "records": [],
+  "authorityGranted": false,
+  "automaticExecution": false,
+  "automaticPersistence": false
+}

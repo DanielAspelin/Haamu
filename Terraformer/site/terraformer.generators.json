@@ -1,0 +1,44 @@
+{
+  "$schema": "terraformer.registry/generator_registry/1",
+  "version": "0.44.30",
+  "kind": "GENERATOR_REGISTRY",
+  "governedBy": "terraformer.generation.js",
+  "executableGovernor": "terraformer.generation.js",
+  "semantics": "Generator identities/capabilities; declaration does not grant execution or generation authority.",
+  "generators": [
+    {
+      "id": "generator.number",
+      "kind": "number",
+      "capabilities": [
+        "number.sequence",
+        "number.integer",
+        "number.deterministic"
+      ],
+      "uuidScheme": "UUID_V5_STABLE_IDENTITY",
+      "authority": false,
+      "executes": false,
+      "persists": false
+    },
+    {
+      "id": "generator.uuid",
+      "kind": "uuid",
+      "capabilities": [
+        "uuid.stable-v5",
+        "uuid.runtime-v4",
+        "uuid.assign",
+        "uuid.reconcile"
+      ],
+      "uuidScheme": "UUID_V5_STABLE_IDENTITY",
+      "authority": false,
+      "executes": false,
+      "persists": false
+    }
+  ],
+  "authority": false,
+  "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+  "failureSemantics": "INVALID_OR_UNAUTHORIZED_INPUT_FAILS_CLOSED",
+  "provenance": {
+    "predecessor": "v0.44.29",
+    "checkpoint": "v0.44.30"
+  }
+}

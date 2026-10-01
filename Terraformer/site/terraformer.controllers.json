@@ -1,0 +1,14 @@
+{
+  "schema": "TERRAFORMER-CONTROLLERS/1",
+  "systemId": "system.controller",
+  "membershipGrantsControlAuthority": false,
+  "records": [],
+  "types": [
+    {
+      "id": "system.mission-controller",
+      "concept": "Mission Controller",
+      "isA": "system.controller",
+      "controls": "system.mission"
+    }
+  ]
+}

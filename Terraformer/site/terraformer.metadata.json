@@ -1,0 +1,46 @@
+{
+  "schema": "TERRAFORMER-METADATA-REGISTRY/1",
+  "version": "0.44.39",
+  "executable": "terraformer.metadata.js",
+  "authorityGranted": false,
+  "persistence": false,
+  "entityKinds": {
+    "system": {
+      "required": [
+        "type",
+        "mode",
+        "condition",
+        "state"
+      ]
+    },
+    "worker": {
+      "required": [
+        "type",
+        "mode",
+        "condition",
+        "state"
+      ]
+    },
+    "generator": {
+      "required": [
+        "type",
+        "mode",
+        "condition",
+        "state"
+      ]
+    },
+    "automator": {
+      "required": [
+        "type",
+        "mode",
+        "condition",
+        "state"
+      ]
+    }
+  },
+  "nativeRuntimeIndependence": {
+    "predecessorRuntimeRequired": false,
+    "predecessorRole": "lineage-evidence-only"
+  },
+  "rule": "Declarative metadata evidence does not create identity, execution, authentication, authorization, generation, automation, or runtime authority."
+}

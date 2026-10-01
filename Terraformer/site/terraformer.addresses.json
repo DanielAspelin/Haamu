@@ -1,0 +1,9 @@
+{
+  "schema": "TERRAFORMER-ADDRESSES/1",
+  "owner": "system.address",
+  "executable": "terraformer.address.js",
+  "purpose": "governed address definitions, allocations and evidence",
+  "authorityGranted": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

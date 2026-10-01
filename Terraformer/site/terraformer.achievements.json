@@ -1,0 +1,11 @@
+{
+  "schema": "TERRAFORMER-ACHIEVEMENTS/1",
+  "version": "0.47.61",
+  "owner": "system.achievement",
+  "governedBy": "terraformer.achievement.js",
+  "family": "outcome",
+  "records": [],
+  "authorityGranted": false,
+  "qualificationGranted": false,
+  "automaticPersistence": false
+}

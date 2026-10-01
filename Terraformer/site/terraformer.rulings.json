@@ -1,0 +1,10 @@
+{
+  "schema": "TERRAFORMER-RULINGS/1",
+  "systemId": "system.ruling",
+  "declarativeRegistry": true,
+  "membershipGrantsExecution": false,
+  "membershipGrantsInstantiation": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

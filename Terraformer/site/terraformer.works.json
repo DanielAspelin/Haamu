@@ -1,0 +1,11 @@
+{
+  "schema": "TERRAFORMER-WORKS/1",
+  "systemId": "system.work",
+  "owner": "terraformer.work.js",
+  "workingSystem": "system.working",
+  "workerSystem": "system.worker",
+  "membershipGrantsExecution": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

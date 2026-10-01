@@ -1,0 +1,10 @@
+{
+  "schema": "TERRAFORMER-BRIDGES/1",
+  "purpose": "governed bridge definitions, scoped bridge plans, identities and evidence",
+  "authorityGranted": false,
+  "membershipGrantsNetworkAuthority": false,
+  "automaticExecution": false,
+  "automaticForwarding": false,
+  "automaticInterfaceMutation": false,
+  "records": []
+}

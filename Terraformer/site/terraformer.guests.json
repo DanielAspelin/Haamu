@@ -1,0 +1,8 @@
+{
+  "schema": "TERRAFORMER-GUESTS/1",
+  "purpose": "governed guest identities, definitions and evidence",
+  "authorityGranted": false,
+  "membershipGrantsAuthority": false,
+  "automaticExecution": false,
+  "records": []
+}

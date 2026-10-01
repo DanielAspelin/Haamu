@@ -1,0 +1,12 @@
+{
+  "schema": "TERRAFORMER-CREDITS/1",
+  "systemId": "system.credit",
+  "creditIsMoney": false,
+  "creditIsPayment": false,
+  "membershipImpliesDebt": false,
+  "membershipImpliesLoan": false,
+  "creditworthinessAuthority": false,
+  "lendingDecisionAuthority": false,
+  "transactionAuthority": false,
+  "records": []
+}

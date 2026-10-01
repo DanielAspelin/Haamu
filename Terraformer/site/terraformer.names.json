@@ -1,0 +1,13 @@
+{
+  "schema": "TERRAFORMER-NAMES/1",
+  "systemId": "system.name",
+  "membershipGrantsIdentity": false,
+  "membershipGrantsAuthentication": false,
+  "membershipGrantsAuthorization": false,
+  "membershipGrantsExternalRegistration": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": [],
+  "declarativeRegistry": true,
+  "membershipGrantsIssuanceAuthority": false
+}

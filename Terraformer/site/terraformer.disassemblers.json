@@ -1,0 +1,7 @@
+{
+  "schema": "TERRAFORMER-DISASSEMBLERS/1",
+  "systemId": "system.disassembler",
+  "authorityGranted": false,
+  "automaticExecution": false,
+  "records": []
+}

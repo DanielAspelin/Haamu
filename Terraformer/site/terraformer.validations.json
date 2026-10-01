@@ -1,0 +1,187 @@
+{
+  "$schema": "terraformer.registry/validations/1",
+  "version": "0.47.17",
+  "governedBy": "terraformer.validation.js",
+  "kind": "VALIDATION_REGISTRY",
+  "owner": "system.validation",
+  "dimension": "VALIDATION",
+  "position": {
+    "after": "CONDITION",
+    "before": "VERIFICATION"
+  },
+  "selectionModel": "DEFINE_CENTRALLY_SELECT_LOCALLY",
+  "eligibleConsumers": [
+    "SYSTEM",
+    "PROJECT",
+    "PROGRAM",
+    "APPLICATION",
+    "PLATFORM",
+    "COMMON",
+    "INTERNET",
+    "FILE",
+    "USER",
+    "MACHINE",
+    "GROUP",
+    "DIMENSION"
+  ],
+  "authority": false,
+  "approvalGranted": false,
+  "entries": [
+    {
+      "id": "UNVALIDATED",
+      "definition": "No applicable validation result is established.",
+      "aliases": [],
+      "applicability": [
+        "SYSTEM",
+        "PROJECT",
+        "PROGRAM",
+        "APPLICATION",
+        "PLATFORM",
+        "COMMON",
+        "INTERNET",
+        "FILE",
+        "USER",
+        "MACHINE",
+        "GROUP",
+        "DIMENSION"
+      ],
+      "constraints": {
+        "explicitSelection": true,
+        "scoped": true,
+        "noAuthority": true
+      },
+      "version": "0.47.17",
+      "authority": false
+    },
+    {
+      "id": "PENDING",
+      "definition": "Validation is admitted but incomplete.",
+      "aliases": [],
+      "applicability": [
+        "SYSTEM",
+        "PROJECT",
+        "PROGRAM",
+        "APPLICATION",
+        "PLATFORM",
+        "COMMON",
+        "INTERNET",
+        "FILE",
+        "USER",
+        "MACHINE",
+        "GROUP",
+        "DIMENSION"
+      ],
+      "constraints": {
+        "explicitSelection": true,
+        "scoped": true,
+        "noAuthority": true
+      },
+      "version": "0.47.17",
+      "authority": false
+    },
+    {
+      "id": "VALID",
+      "definition": "Applicable schema, rule, and constraint checks passed for the stated scope.",
+      "aliases": [],
+      "applicability": [
+        "SYSTEM",
+        "PROJECT",
+        "PROGRAM",
+        "APPLICATION",
+        "PLATFORM",
+        "COMMON",
+        "INTERNET",
+        "FILE",
+        "USER",
+        "MACHINE",
+        "GROUP",
+        "DIMENSION"
+      ],
+      "constraints": {
+        "explicitSelection": true,
+        "scoped": true,
+        "noAuthority": true
+      },
+      "version": "0.47.17",
+      "authority": false
+    },
+    {
+      "id": "INVALID",
+      "definition": "At least one applicable schema, rule, or constraint check failed.",
+      "aliases": [],
+      "applicability": [
+        "SYSTEM",
+        "PROJECT",
+        "PROGRAM",
+        "APPLICATION",
+        "PLATFORM",
+        "COMMON",
+        "INTERNET",
+        "FILE",
+        "USER",
+        "MACHINE",
+        "GROUP",
+        "DIMENSION"
+      ],
+      "constraints": {
+        "explicitSelection": true,
+        "scoped": true,
+        "noAuthority": true
+      },
+      "version": "0.47.17",
+      "authority": false
+    },
+    {
+      "id": "INCONCLUSIVE",
+      "definition": "Validation ran but cannot establish valid or invalid.",
+      "aliases": [],
+      "applicability": [
+        "SYSTEM",
+        "PROJECT",
+        "PROGRAM",
+        "APPLICATION",
+        "PLATFORM",
+        "COMMON",
+        "INTERNET",
+        "FILE",
+        "USER",
+        "MACHINE",
+        "GROUP",
+        "DIMENSION"
+      ],
+      "constraints": {
+        "explicitSelection": true,
+        "scoped": true,
+        "noAuthority": true
+      },
+      "version": "0.47.17",
+      "authority": false
+    },
+    {
+      "id": "STALE",
+      "definition": "Prior validation no longer satisfies freshness or governing-condition requirements.",
+      "aliases": [],
+      "applicability": [
+        "SYSTEM",
+        "PROJECT",
+        "PROGRAM",
+        "APPLICATION",
+        "PLATFORM",
+        "COMMON",
+        "INTERNET",
+        "FILE",
+        "USER",
+        "MACHINE",
+        "GROUP",
+        "DIMENSION"
+      ],
+      "constraints": {
+        "explicitSelection": true,
+        "scoped": true,
+        "noAuthority": true
+      },
+      "version": "0.47.17",
+      "authority": false
+    }
+  ]
+}

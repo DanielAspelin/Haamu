@@ -1,0 +1,348 @@
+{
+  "schema": "TERRAFORMER-NATURALIZATIONS/1",
+  "systemId": "system.naturalization",
+  "membershipGrantsMutation": false,
+  "membershipGrantsQualification": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": [
+    {
+      "schema": "TERRAFORMER-FUNCTIONAL-LOGICAL-NATURALIZATION/1",
+      "version": "0.47.44",
+      "id": "naturalization.window.adjustment",
+      "consumer": "system.window",
+      "logicalOrder": [
+        "SYSTEM",
+        "TYPE",
+        "CANONICAL",
+        "ORTHOGONALS",
+        "RELATIONSHIPS",
+        "FUNCTIONALITY",
+        "FEATURES",
+        "CAPABILITIES",
+        "STATE_MODE",
+        "OPERATION",
+        "QUALIFICATION",
+        "NATURALIZATION"
+      ],
+      "functionalPath": {
+        "system": "system.window",
+        "functionality": "system.adjustment",
+        "capabilities": [
+          "system.sizing",
+          "system.resizing"
+        ],
+        "adjustableFeatures": [
+          "geometry",
+          "width",
+          "height",
+          "position",
+          "layout",
+          "snap",
+          "scaling",
+          "content-area",
+          "bars",
+          "panels"
+        ],
+        "modes": [
+          "DEFAULT",
+          "CUSTOMIZED"
+        ],
+        "transitions": [
+          {
+            "from": "CUSTOMIZED",
+            "operation": "AUTO_ADJUST",
+            "to": "DEFAULT"
+          },
+          {
+            "from": "DEFAULT",
+            "operation": "AUTO_READJUST",
+            "to": "CUSTOMIZED"
+          }
+        ]
+      },
+      "rules": [
+        "Window consumes Adjustment; it does not redefine Adjustment.",
+        "Adjustment remains reusable by other eligible Systems.",
+        "A feature is adjustable only when its governing System admits the capability.",
+        "DEFAULT resolves admitted defaults; CUSTOMIZED resolves admitted user customization.",
+        "Mode transitions are user-controllable and do not themselves grant persistence or authority.",
+        "Naturalization records established logical integration; it does not grant approval or authority."
+      ],
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "automaticExecution": false,
+      "automaticPersistence": false
+    }
+  ],
+  "predecessorClosureAudit": {
+    "checkpoint": "v0.36.405",
+    "ix": {
+      "classification": "compatibility-or-provenance-review",
+      "activeAuthority": false
+    },
+    "ox": {
+      "classification": "historical-provenance",
+      "activeAuthority": false
+    },
+    "openAudio": {
+      "classification": "historical-provenance",
+      "activeAuthority": false
+    },
+    "destructiveRemovalPerformed": false
+  },
+  "ioV01280": {
+    "owner": "system.io",
+    "source": "IO v0.128.0",
+    "archiveSha256": "ab932e2f9baca19f67880d58aad753f817a2b2fa1cc260773a9225b6b8a7ee49",
+    "artifactCount": 2044,
+    "mode": "predecessor-evidence",
+    "parallelOntology": false,
+    "nativeRole": "subordinate-native-implementation",
+    "automaticExecution": false,
+    "qualificationInheritance": false,
+    "authorityTransfer": false
+  },
+  "ixV0357V0358": {
+    "project": "IX",
+    "role": "exchange-integration-plane",
+    "state": "NATURALIZED",
+    "owner": "system.naturalization",
+    "baseVersion": "0.35.7",
+    "patchVersion": "0.35.8-acp-afs-patch",
+    "automaticExecution": false,
+    "authorityTransfer": false,
+    "qualificationInheritance": false,
+    "parallelOntology": false
+  },
+  "oxV090": {
+    "project": "OX",
+    "role": "object-exchange-plane",
+    "state": "NATURALIZED",
+    "owner": "system.naturalization",
+    "version": "0.9.0",
+    "prerequisite": "IX:NATURALIZED",
+    "automaticExecution": false,
+    "persistentWrites": false,
+    "rawDeviceWrites": false,
+    "authorityTransfer": false,
+    "qualificationInheritance": false,
+    "parallelOntology": false
+  },
+  "reconciledProjections": [
+    {
+      "source": "terraformer.naturalizationaudit.json",
+      "context": "NATURALIZATION_AUDIT",
+      "data": {
+        "schema": "TERRAFORMER-NATURALIZATION-AUDIT/2",
+        "version": "0.48.15",
+        "sourceCheckpoint": "0.47.86",
+        "canonicalPhysicalSystemOwners": 1368,
+        "candidateCount": 454,
+        "unresolvedStageObservations": 5226,
+        "evidenceCompleteNaturalizationTokens": 1,
+        "qualification": {
+          "resolvedThisPass": 104,
+          "remaining": 665,
+          "evidenceRegistry": "terraformer.qualificationevidences.json",
+          "passInference": false
+        },
+        "authorityGranted": false,
+        "automaticPromotion": false,
+        "responsibility": {
+          "pass1Resolved": 567,
+          "pass2Resolved": 317,
+          "remaining": 226,
+          "functionalityCrossResolved": 186
+        },
+        "functionality": {
+          "resolvedThisPass": 320,
+          "remaining": 844
+        },
+        "typing": {
+          "resolvedThisPass": 163,
+          "remaining": 616,
+          "relationshipProjectionsAdded": 326
+        },
+        "relationships": {
+          "resolvedThisPass": 15,
+          "remaining": 501,
+          "recordsAdded": 18
+        },
+        "classification": {
+          "resolvedThisPass": 4,
+          "remaining": 234,
+          "evidenceRegistry": "terraformer.classificationevidences.json"
+        },
+        "partialStageObservations": 3261,
+        "crossDimensionalReconciliation": {
+          "partialReconciliations": 1894,
+          "directPromotions": 0,
+          "evidenceRegistry": "terraformer.semanticevidences.json"
+        },
+        "legacyReconciliation": {
+          "directObservations": 42,
+          "evidenceRegistry": "terraformer.legacyevidences.json",
+          "canonicalGraphMutationDeferred": true
+        },
+        "temporaryMigration": {
+          "objective": "zero legitimate residuals before retirement",
+          "inventory": "terraformer.temporaryinventory.json",
+          "legacyTypeRelationshipsMigrated": 1,
+          "legacyRelationshipRecordsMigrated": 12,
+          "conflicts": 0,
+          "retirementReady": false,
+          "functionsMigratedThisPass": 24,
+          "residualNamedFunctions": 1419,
+          "clustersMigratedThisPass": 17,
+          "crossOwnerDependencyEdges": 1183,
+          "crossOwnerBridgesQualified": 118,
+          "crossDependencyEdgesCovered": 464,
+          "fullyBridgeCoveredCallers": 156,
+          "declarationsAudited": 1160,
+          "declarationsMigratedThisPass": 24,
+          "residualTopLevelDeclarations": 1025,
+          "redundantDeclarationsRemovedThisPass": 5,
+          "dependencyRegistry": "terraformer.dependencies.json",
+          "newlyExposedFormerDepth1": 3,
+          "currentlyDependencyFreeFormerDependents": 1
+        },
+        "processingArchitecture": {
+          "registry": "terraformer.processingarchitecture.json",
+          "foregroundBackgroundPeers": true,
+          "bothParallelismAndConcurrency": true,
+          "directConnectionIsShortestAdmittedPath": true,
+          "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+          "foregroundRenderingDefault": "system.vector",
+          "foregroundRenderingFallback": "system.raster",
+          "fallbackCapabilityDriven": true
+        },
+        "graphicsRepresentations": {
+          "registry": "terraformer.graphicsrepresentations.json",
+          "vectorPairQualified": true,
+          "rasterPairQualified": true
+        },
+        "foregroundVisualArchitecture": {
+          "registry": "terraformer.layouts.json",
+          "planes": 2,
+          "nestedLayers": true,
+          "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+          "html": "system.html",
+          "css": "system.css",
+          "webPresentationOwnership": true,
+          "cad": "system.cad",
+          "cadOwnedByForegroundPresentation": true
+        },
+        "perimeterArchitecture": {
+          "registry": "terraformer.perimeterline.json",
+          "preLaunchIndex": -1,
+          "launchIndex": 0,
+          "postLaunchIndex": 1,
+          "sameLine": true,
+          "reportable": true
+        },
+        "cFinalizationSidecar": {
+          "status": "PARALLEL_PREPARATORY",
+          "primaryWorkstream": "JAVASCRIPT_JSON_MIGRATION",
+          "modifiedThisCheckpoint": false
+        },
+        "physicalExpansion": {
+          "strategy": "terraformer.expansions.json",
+          "queue": "terraformer.expansionqueue.json",
+          "plannedAdditionalFilesRange": [
+            2000,
+            3000
+          ],
+          "createdThisCheckpoint": 0,
+          "reason": "No currently missing single-word canonical System/Worker owner passed evidence/non-overlap gates; semantic admission required first."
+        }
+      },
+      "migrationVersion": "0.48.30",
+      "dataLoss": false
+    },
+    {
+      "source": "terraformer.naturalizationposition.json",
+      "context": "NATURALIZATION_POSITION",
+      "data": {
+        "schema": "TERRAFORMER-NATURALIZATION-POSITION/1",
+        "version": "0.47.69",
+        "counts": {
+          "evidencedSingleWordSystemIdentities": 1580,
+          "explicitlyDefinedSystemIdentities": 1450,
+          "physicalBeforeThisPass": 1197,
+          "newCandidatePhysicalizations": 233,
+          "physicalDefinedAfterThisPass": 1425,
+          "candidateAfterThisPass": 473,
+          "referenceOnlyIdentities": 130,
+          "definedDeferredExternalOrMalformed": 25
+        },
+        "definedDeferred": [
+          "a",
+          "ad",
+          "addres",
+          "addressin",
+          "ag",
+          "android",
+          "aws",
+          "b",
+          "bitcoin",
+          "c",
+          "chatgpt",
+          "cloudflare",
+          "codeberg",
+          "conf",
+          "dependson",
+          "facebook",
+          "gcp",
+          "github",
+          "gitlab",
+          "godaddy",
+          "ios",
+          "npm",
+          "openai",
+          "paypal",
+          "proton"
+        ],
+        "rule": "Explicit definition is sufficient for Candidate physicalization, not for canonical naturalization.",
+        "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+        "authorityGranted": false,
+        "flow": {
+          "candidateBefore": 473,
+          "evidenceNaturalized": 18,
+          "candidateAfter": 455,
+          "normalizationSystem": true,
+          "naturalizationSystem": true,
+          "tokenSystem": true,
+          "tokenizationSystem": true,
+          "establishedFunctionPhysicalProjections": 1
+        }
+      },
+      "migrationVersion": "0.48.30",
+      "dataLoss": false
+    }
+  ],
+  "queue": [
+    {
+      "id": "naturalization.queue.v0.48.30",
+      "requirements": [
+        "semantic evidence",
+        "normalized identity",
+        "classification",
+        "typing",
+        "relationships",
+        "responsibility",
+        "functionality",
+        "physical ownership",
+        "runtime linkage where executable",
+        "qualification"
+      ],
+      "blockedBy": [
+        "inferred plural semantics",
+        "weak final-r classifications",
+        "unresolved owner bindings",
+        "temporary/runtime debt"
+      ],
+      "automaticNaturalization": false
+    }
+  ]
+}

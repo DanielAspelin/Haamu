@@ -1,0 +1,8 @@
+{
+  "schema": "TERRAFORMER-BATTERIES/1",
+  "systemId": "system.battery",
+  "readOnlyDiscovery": true,
+  "automaticInvocation": false,
+  "authorityGranted": false,
+  "records": []
+}

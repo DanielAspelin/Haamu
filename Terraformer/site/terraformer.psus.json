@@ -1,0 +1,7 @@
+{
+  "schema": "terraformer.registry/psus/1",
+  "owner": "system.psu",
+  "entries": [],
+  "authority": false,
+  "qualificationGranted": false
+}

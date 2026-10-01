@@ -1,0 +1,188 @@
+{
+  "schema": "TERRAFORMER-DATATYPES/1",
+  "systemId": "system.type",
+  "canonicalTypes": [
+    {
+      "id": "system.character",
+      "concept": "Character",
+      "family": "scalar-text"
+    },
+    {
+      "id": "system.integer",
+      "concept": "Integer",
+      "family": "scalar-numeric"
+    },
+    {
+      "id": "system.boolean",
+      "concept": "Boolean",
+      "family": "scalar-logical"
+    },
+    {
+      "id": "system.void",
+      "concept": "Void",
+      "family": "absence"
+    },
+    {
+      "id": "system.string",
+      "concept": "String",
+      "family": "text"
+    },
+    {
+      "id": "system.float",
+      "concept": "Float",
+      "family": "scalar-numeric"
+    },
+    {
+      "id": "system.double",
+      "concept": "Double",
+      "family": "scalar-numeric"
+    },
+    {
+      "id": "system.decimal",
+      "concept": "Decimal",
+      "family": "scalar-numeric"
+    },
+    {
+      "id": "system.byte",
+      "concept": "Byte",
+      "family": "scalar-numeric"
+    },
+    {
+      "id": "system.short",
+      "concept": "Short",
+      "family": "scalar-numeric"
+    },
+    {
+      "id": "system.long",
+      "concept": "Long",
+      "family": "scalar-numeric"
+    },
+    {
+      "id": "system.unsigned",
+      "concept": "Unsigned",
+      "family": "numeric-modifier"
+    },
+    {
+      "id": "system.signed",
+      "concept": "Signed",
+      "family": "numeric-modifier"
+    },
+    {
+      "id": "system.bigint",
+      "concept": "BigInt",
+      "family": "scalar-numeric"
+    },
+    {
+      "id": "system.complex",
+      "concept": "Complex",
+      "family": "scalar-numeric"
+    },
+    {
+      "id": "system.null",
+      "concept": "Null",
+      "family": "absence"
+    },
+    {
+      "id": "system.undefined",
+      "concept": "Undefined",
+      "family": "absence"
+    },
+    {
+      "id": "system.set",
+      "concept": "Set",
+      "family": "aggregate"
+    },
+    {
+      "id": "system.enum",
+      "concept": "Enumeration Type",
+      "family": "aggregate"
+    },
+    {
+      "id": "system.union",
+      "concept": "Union",
+      "family": "aggregate"
+    },
+    {
+      "id": "system.struct",
+      "concept": "Structure",
+      "family": "aggregate"
+    },
+    {
+      "id": "system.generic",
+      "concept": "Generic",
+      "family": "meta"
+    },
+    {
+      "id": "system.any",
+      "concept": "Any",
+      "family": "meta"
+    },
+    {
+      "id": "system.unknown",
+      "concept": "Unknown",
+      "family": "meta"
+    },
+    {
+      "id": "system.never",
+      "concept": "Never",
+      "family": "absence"
+    },
+    {
+      "id": "system.scalar",
+      "concept": "Scalar",
+      "family": "category"
+    },
+    {
+      "id": "system.numeric",
+      "concept": "Numeric",
+      "family": "category"
+    },
+    {
+      "id": "system.logical",
+      "concept": "Logical",
+      "family": "category"
+    },
+    {
+      "id": "system.textual",
+      "concept": "Textual",
+      "family": "category"
+    },
+    {
+      "id": "system.aggregate",
+      "concept": "Aggregate",
+      "family": "category"
+    },
+    {
+      "id": "system.callable",
+      "concept": "Callable",
+      "family": "category"
+    },
+    {
+      "id": "system.absence",
+      "concept": "Absence",
+      "family": "category"
+    },
+    {
+      "id": "system.meta-type",
+      "concept": "Meta Type",
+      "family": "category"
+    }
+  ],
+  "reusedSystems": [
+    "system.type",
+    "system.number",
+    "system.array",
+    "system.object",
+    "system.class",
+    "system.function",
+    "system.symbol",
+    "system.pointer",
+    "system.reference",
+    "system.tuple",
+    "system.record",
+    "system.map",
+    "system.interface"
+  ],
+  "membershipGrantsExecution": false,
+  "membershipGrantsAuthority": false
+}

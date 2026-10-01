@@ -1,0 +1,5 @@
+'use strict';
+const TERRAFORMER_FORUM_SYSTEM=Object.freeze({schema:'TERRAFORMER-FORUM-SYSTEM/1',id:'system.forum',name:'Forum System',family:'communication',type:'forum-system',state:'integrated',canonicalPath:'terraformer://communication/forum/',dependsOn:Object.freeze(['system.community','system.communication','system.conversation']),governs:Object.freeze(['forum','topic','thread','post','reply','member-reference','moderation-reference']),rule:'Forum System models admitted threaded community communication; registration does not publish content, grant moderation authority, or expose a forum externally.'});
+function tfSecurityAdmission(input={}){const authenticated=input.authenticated===true,authorized=authenticated&&input.authorized===true,approved=authorized&&input.approved===true;return Object.freeze({schema:'TERRAFORMER-SECURITY-ADMISSION/1',authenticated,authorized,approved,admitted:approved,authorityAmplification:false,persisted:false})}
+
+module.exports=Object.freeze({TERRAFORMER_FORUM_SYSTEM,tfSecurityAdmission});

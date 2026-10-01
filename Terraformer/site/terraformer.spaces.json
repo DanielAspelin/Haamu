@@ -1,0 +1,9 @@
+{
+  "schema": "TERRAFORMER-SPACES/1",
+  "owner": "system.space",
+  "executable": "terraformer.space.js",
+  "purpose": "governed space definitions and evidence",
+  "authorityGranted": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

@@ -1,0 +1,16 @@
+{
+  "schema": "TERRAFORMER-DETECTORS-REGISTRY/1",
+  "owner": "terraformer.detector.js",
+  "role": "role.detector",
+  "memberships": [
+    {
+      "class": "Worker",
+      "domain": "tool",
+      "identity": "tool.worker.detector",
+      "parent": "system.tool"
+    }
+  ],
+  "entries": [],
+  "authorityGranted": false,
+  "rule": "Registry records identities/evidence only; membership grants no execution, authentication, authorization, persistence, or approval authority."
+}

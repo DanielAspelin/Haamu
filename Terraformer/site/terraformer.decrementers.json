@@ -1,0 +1,14 @@
+{
+  "schema": "TERRAFORMER-DECREMENTERS-REGISTRY/1",
+  "owner": "terraformer.decrementer.js",
+  "entries": [
+    {
+      "id": "worker.decrementer",
+      "system": "system.arithmetic",
+      "state": "integrated",
+      "authorityGranted": false,
+      "persistencePerformed": false
+    }
+  ],
+  "rule": "Registry membership records worker identity/capability only; it grants no execution, authentication, authorization, persistence, or approval authority."
+}

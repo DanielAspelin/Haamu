@@ -1,0 +1,8 @@
+{
+  "schema": "TERRAFORMER-PHYLA/1",
+  "purpose": "governed phylum rank definitions, memberships and evidence",
+  "authorityGranted": false,
+  "membershipGrantsAuthority": false,
+  "subjectMutation": false,
+  "records": []
+}

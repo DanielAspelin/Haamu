@@ -1,0 +1,14 @@
+{
+  "schema": "TERRAFORMER-MAILS/1",
+  "systemId": "system.mail",
+  "webTypes": [
+    "system.webmail"
+  ],
+  "membershipGrantsAuthentication": false,
+  "membershipGrantsConnection": false,
+  "membershipGrantsSendOrWrite": false,
+  "membershipGrantsSynchronization": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

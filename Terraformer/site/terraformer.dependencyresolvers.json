@@ -1,0 +1,7 @@
+{
+  "schema": "TERRAFORMER-DEPENDENCYRESOLVERS/1",
+  "systemId": "system.dependency-resolver",
+  "authorityGranted": false,
+  "automaticExecution": false,
+  "records": []
+}

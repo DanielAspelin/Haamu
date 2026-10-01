@@ -1,0 +1,7 @@
+{
+  "schema": "terraformer.registry/occupations/1",
+  "owner": "system.occupation",
+  "implementationOwner": "system.state",
+  "authority": false,
+  "entries": []
+}

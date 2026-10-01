@@ -1,0 +1,3 @@
+"use strict";
+const TERRAFORMER_ENGINEER=Object.freeze({schema:'TERRAFORMER-ENGINEER/1',id:'agent.engineer',name:'Engineer',family:'agent',type:'bounded-agent',state:'integrated',canonicalPath:'terraformer://engineering/engineer/',system:'system.engineering',authorityInherited:false,capabilities:Object.freeze(['receive-scope','observe','act-admitted','report','verify']),rule:'Engineer performs bounded engineering work under admitted authority; the role itself does not authorize deployment, production, physical modification, or administration.'});
+module.exports=Object.freeze({TERRAFORMER_ENGINEER});

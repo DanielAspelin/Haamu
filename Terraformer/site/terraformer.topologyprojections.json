@@ -1,0 +1,41 @@
+{
+  "schema": "TERRAFORMER-TOPOLOGY-PROJECTIONS/1",
+  "version": "0.48.42",
+  "kind": "topology-namespace-projection-set",
+  "owner": "terraformer.topology.js",
+  "records": [
+    {
+      "parentUri": "terraformer://system/chat/bridge/",
+      "canonicalConcept": "system.bridge",
+      "status": "NESTED_NAMESPACE_PROJECTION"
+    },
+    {
+      "parentUri": "terraformer://system/language/machine/",
+      "canonicalConcept": "system.machine",
+      "status": "NESTED_NAMESPACE_PROJECTION"
+    },
+    {
+      "parentUri": "terraformer://system/red-hat/",
+      "status": "NONCANONICAL_COMPOSITE_NAMESPACE",
+      "childReferences": 4
+    },
+    {
+      "parentUri": "terraformer://system/space-agency/",
+      "status": "NONCANONICAL_COMPOSITE_NAMESPACE",
+      "childReferences": 5
+    },
+    {
+      "parentUri": "terraformer://system/space-provider/",
+      "status": "NONCANONICAL_COMPOSITE_NAMESPACE",
+      "childReferences": 1
+    },
+    {
+      "parentUri": "terraformer://system/astronomical/",
+      "status": "UNRESOLVED_STRUCTURAL_NAMESPACE",
+      "childReferences": 1
+    }
+  ],
+  "rule": "Namespace projection does not create a System, type relationship, operational topology edge, authority, execution, traversal, transmission, or persistence.",
+  "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+  "authorityGranted": false
+}

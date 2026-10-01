@@ -1,0 +1,8 @@
+{
+  "schema": "TERRAFORMER-WRAPPERS/1",
+  "systemId": "system.wrapper",
+  "membershipGrantsExecution": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

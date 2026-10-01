@@ -1,0 +1,8 @@
+{
+  "schema": "TERRAFORMER-EVIDENCES/1",
+  "owner": "terraformer.evidence.js",
+  "canonical": "system.evidence",
+  "records": [],
+  "membershipGrantsAuthority": false,
+  "qualificationInheritance": false
+}

@@ -1,0 +1,215 @@
+{
+  "$schema": "terraformer.registry/states/1",
+  "version": "0.47.18",
+  "governedBy": "terraformer.state.js",
+  "kind": "STATE_REGISTRY",
+  "owner": "system.state",
+  "dimension": "STATE",
+  "selectionModel": "DEFINE_CENTRALLY_SELECT_LOCALLY",
+  "eligibleConsumers": [
+    "SYSTEM",
+    "PROJECT",
+    "PROGRAM",
+    "APPLICATION",
+    "PLATFORM",
+    "COMMON",
+    "INTERNET",
+    "FILE",
+    "USER",
+    "MACHINE",
+    "GROUP",
+    "DIMENSION"
+  ],
+  "authority": false,
+  "entries": [
+    {
+      "id": "DEFINED",
+      "definition": "Defined state",
+      "aliases": [],
+      "applicability": [
+        "SYSTEM",
+        "PROJECT",
+        "PROGRAM",
+        "APPLICATION",
+        "PLATFORM",
+        "COMMON",
+        "INTERNET",
+        "FILE",
+        "USER",
+        "MACHINE",
+        "GROUP",
+        "DIMENSION"
+      ],
+      "constraints": {
+        "explicitSelection": true,
+        "scoped": true,
+        "noAuthority": true
+      },
+      "version": "0.44.15",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "READY",
+      "definition": "Ready state",
+      "aliases": [],
+      "applicability": [
+        "SYSTEM",
+        "PROJECT",
+        "PROGRAM",
+        "APPLICATION",
+        "PLATFORM",
+        "COMMON",
+        "INTERNET",
+        "FILE",
+        "USER",
+        "MACHINE",
+        "GROUP",
+        "DIMENSION"
+      ],
+      "constraints": {
+        "explicitSelection": true,
+        "scoped": true,
+        "noAuthority": true
+      },
+      "version": "0.44.15",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "ACTIVE",
+      "definition": "Active state: the scoped entity is presently active within its admitted lifecycle or operation.",
+      "aliases": [],
+      "applicability": [
+        "SYSTEM",
+        "PROJECT",
+        "PROGRAM",
+        "APPLICATION",
+        "PLATFORM",
+        "COMMON",
+        "INTERNET",
+        "FILE",
+        "USER",
+        "MACHINE",
+        "GROUP",
+        "DIMENSION"
+      ],
+      "constraints": {
+        "explicitSelection": true,
+        "scoped": true,
+        "noAuthority": true
+      },
+      "version": "0.47.18",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "RUNNING",
+      "definition": "Running state",
+      "aliases": [],
+      "applicability": [
+        "SYSTEM",
+        "PROJECT",
+        "PROGRAM",
+        "APPLICATION",
+        "PLATFORM",
+        "COMMON",
+        "INTERNET",
+        "FILE",
+        "USER",
+        "MACHINE",
+        "GROUP",
+        "DIMENSION"
+      ],
+      "constraints": {
+        "explicitSelection": true,
+        "scoped": true,
+        "noAuthority": true
+      },
+      "version": "0.44.15",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "STOPPED",
+      "definition": "Stopped state",
+      "aliases": [],
+      "applicability": [
+        "SYSTEM",
+        "PROJECT",
+        "PROGRAM",
+        "APPLICATION",
+        "PLATFORM",
+        "COMMON",
+        "INTERNET",
+        "FILE",
+        "USER",
+        "MACHINE",
+        "GROUP",
+        "DIMENSION"
+      ],
+      "constraints": {
+        "explicitSelection": true,
+        "scoped": true,
+        "noAuthority": true
+      },
+      "version": "0.44.15",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "SUSPENDED",
+      "definition": "Suspended state",
+      "aliases": [],
+      "applicability": [
+        "SYSTEM",
+        "PROJECT",
+        "PROGRAM",
+        "APPLICATION",
+        "PLATFORM",
+        "COMMON",
+        "INTERNET",
+        "FILE",
+        "USER",
+        "MACHINE",
+        "GROUP",
+        "DIMENSION"
+      ],
+      "constraints": {
+        "explicitSelection": true,
+        "scoped": true,
+        "noAuthority": true
+      },
+      "version": "0.44.15",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "QUARANTINED",
+      "definition": "Quarantined state",
+      "aliases": [],
+      "applicability": [
+        "SYSTEM",
+        "PROJECT",
+        "PROGRAM",
+        "APPLICATION",
+        "PLATFORM",
+        "COMMON",
+        "INTERNET",
+        "FILE",
+        "USER",
+        "MACHINE",
+        "GROUP",
+        "DIMENSION"
+      ],
+      "constraints": {
+        "explicitSelection": true,
+        "scoped": true,
+        "noAuthority": true
+      },
+      "version": "0.44.15",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    }
+  ]
+}

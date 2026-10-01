@@ -1,0 +1,13 @@
+{
+  "schema": "TERRAFORMER-RECONSTRUCTIONS/1",
+  "systemId": "system.reconstruction",
+  "declarativeRegistry": true,
+  "innerCapabilitiesOnly": true,
+  "deterministic": true,
+  "volatileByDefault": true,
+  "membershipGrantsExecution": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsExternalEffect": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

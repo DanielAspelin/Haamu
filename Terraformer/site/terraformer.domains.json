@@ -1,0 +1,15 @@
+{
+  "$schema": "terraformer.registry/domain_registry/1",
+  "version": "0.44.21",
+  "kind": "DOMAIN_REGISTRY",
+  "owner": "system.domain",
+  "items": [
+    {
+      "id": "domain.terraformer.local",
+      "synthetic": true,
+      "authority": false
+    }
+  ],
+  "authority": false,
+  "governedBy": "terraformer.domain.js"
+}

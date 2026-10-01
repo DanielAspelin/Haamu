@@ -1,0 +1,12 @@
+{
+  "schema": "TERRAFORMER-PREDICTIONS/1",
+  "systemId": "system.prediction",
+  "authorityGranted": false,
+  "automaticExecution": false,
+  "records": [],
+  "version": "0.47.62",
+  "logicalSuccessor": "system.condition",
+  "uncertaintyRequired": true,
+  "factImplied": false,
+  "rule": "Prediction precedes Condition in the admitted logical sequence; predictions remain uncertain evidence-bounded representations."
+}

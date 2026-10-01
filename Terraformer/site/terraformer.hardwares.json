@@ -1,0 +1,13 @@
+{
+  "schema": "TERRAFORMER-HARDWARES-REGISTRY/1",
+  "owner": "terraformer.hardware.js",
+  "records": [
+    {
+      "id": "system.hardware",
+      "type": "hardware-system",
+      "state": "integrated",
+      "authorityGranted": false
+    }
+  ],
+  "registryMembershipGrantsAuthority": false
+}

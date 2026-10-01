@@ -1,0 +1,8 @@
+{
+  "schema": "TERRAFORMER-BOTS/1",
+  "purpose": "governed bot identities, capabilities, plans, results and evidence",
+  "authorityGranted": false,
+  "membershipGrantsAuthority": false,
+  "automaticExecution": false,
+  "records": []
+}

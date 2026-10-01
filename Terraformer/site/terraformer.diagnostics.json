@@ -1,0 +1,7 @@
+{
+  "schema": "TERRAFORMER-DIAGNOSTICS/1",
+  "systemId": "system.diagnostic",
+  "authorityGranted": false,
+  "automaticExecution": false,
+  "records": []
+}

@@ -1,0 +1,21 @@
+{
+  "schema": "TERRAFORMER-SERVERS/1",
+  "systemId": "system.server",
+  "derivedPerSystem": true,
+  "privateByDefault": true,
+  "inertByDefault": true,
+  "admissionRequired": true,
+  "membershipGrantsNetworkActivity": false,
+  "membershipGrantsPortBinding": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": [],
+  "typeListing": {
+    "derived": true,
+    "deterministic": true,
+    "role": "server",
+    "perCanonicalSystem": true,
+    "networkExposure": false,
+    "authorityAmplification": false
+  }
+}

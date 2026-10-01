@@ -1,0 +1,8 @@
+{
+  "schema": "TERRAFORMER-SEEDERS/1",
+  "systemId": "system.seeder",
+  "membershipGrantsExecution": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

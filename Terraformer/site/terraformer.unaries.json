@@ -1,0 +1,13 @@
+{
+  "schema": "TERRAFORMER-UNARIES/1",
+  "version": "0.47.54",
+  "kind": "UNARIES_REGISTRY",
+  "owner": "system.unary",
+  "governedBy": "terraformer.unary.js",
+  "family": "arity",
+  "arity": 1,
+  "records": [],
+  "authorityGranted": false,
+  "automaticExecution": false,
+  "automaticPersistence": false
+}

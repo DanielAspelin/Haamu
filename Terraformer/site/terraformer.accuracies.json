@@ -1,0 +1,161 @@
+{
+  "$schema": "terraformer.registry/accuracys/1",
+  "version": "0.47.17",
+  "governedBy": "terraformer.accuracy.js",
+  "kind": "ACCURACY_REGISTRY",
+  "owner": "system.accuracy",
+  "dimension": "ACCURACY",
+  "position": {
+    "after": "CONSISTENCY",
+    "before": null
+  },
+  "selectionModel": "DEFINE_CENTRALLY_SELECT_LOCALLY",
+  "eligibleConsumers": [
+    "SYSTEM",
+    "PROJECT",
+    "PROGRAM",
+    "APPLICATION",
+    "PLATFORM",
+    "COMMON",
+    "INTERNET",
+    "FILE",
+    "USER",
+    "MACHINE",
+    "GROUP",
+    "DIMENSION"
+  ],
+  "authority": false,
+  "approvalGranted": false,
+  "entries": [
+    {
+      "id": "UNKNOWN",
+      "definition": "Accuracy has not been established against an applicable reference.",
+      "aliases": [],
+      "applicability": [
+        "SYSTEM",
+        "PROJECT",
+        "PROGRAM",
+        "APPLICATION",
+        "PLATFORM",
+        "COMMON",
+        "INTERNET",
+        "FILE",
+        "USER",
+        "MACHINE",
+        "GROUP",
+        "DIMENSION"
+      ],
+      "constraints": {
+        "explicitSelection": true,
+        "scoped": true,
+        "noAuthority": true
+      },
+      "version": "0.47.17",
+      "authority": false
+    },
+    {
+      "id": "EXACT",
+      "definition": "Observed value/result matches the applicable reference exactly within its representation.",
+      "aliases": [],
+      "applicability": [
+        "SYSTEM",
+        "PROJECT",
+        "PROGRAM",
+        "APPLICATION",
+        "PLATFORM",
+        "COMMON",
+        "INTERNET",
+        "FILE",
+        "USER",
+        "MACHINE",
+        "GROUP",
+        "DIMENSION"
+      ],
+      "constraints": {
+        "explicitSelection": true,
+        "scoped": true,
+        "noAuthority": true
+      },
+      "version": "0.47.17",
+      "authority": false
+    },
+    {
+      "id": "WITHIN_TOLERANCE",
+      "definition": "Observed value/result is within the explicitly applicable tolerance.",
+      "aliases": [],
+      "applicability": [
+        "SYSTEM",
+        "PROJECT",
+        "PROGRAM",
+        "APPLICATION",
+        "PLATFORM",
+        "COMMON",
+        "INTERNET",
+        "FILE",
+        "USER",
+        "MACHINE",
+        "GROUP",
+        "DIMENSION"
+      ],
+      "constraints": {
+        "explicitSelection": true,
+        "scoped": true,
+        "noAuthority": true
+      },
+      "version": "0.47.17",
+      "authority": false
+    },
+    {
+      "id": "OUTSIDE_TOLERANCE",
+      "definition": "Observed value/result exceeds the explicitly applicable tolerance.",
+      "aliases": [],
+      "applicability": [
+        "SYSTEM",
+        "PROJECT",
+        "PROGRAM",
+        "APPLICATION",
+        "PLATFORM",
+        "COMMON",
+        "INTERNET",
+        "FILE",
+        "USER",
+        "MACHINE",
+        "GROUP",
+        "DIMENSION"
+      ],
+      "constraints": {
+        "explicitSelection": true,
+        "scoped": true,
+        "noAuthority": true
+      },
+      "version": "0.47.17",
+      "authority": false
+    },
+    {
+      "id": "INDETERMINATE",
+      "definition": "Available reference/evidence cannot establish accuracy.",
+      "aliases": [],
+      "applicability": [
+        "SYSTEM",
+        "PROJECT",
+        "PROGRAM",
+        "APPLICATION",
+        "PLATFORM",
+        "COMMON",
+        "INTERNET",
+        "FILE",
+        "USER",
+        "MACHINE",
+        "GROUP",
+        "DIMENSION"
+      ],
+      "constraints": {
+        "explicitSelection": true,
+        "scoped": true,
+        "noAuthority": true
+      },
+      "version": "0.47.17",
+      "authority": false
+    }
+  ]
+}

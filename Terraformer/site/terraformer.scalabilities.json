@@ -1,0 +1,15 @@
+{
+  "schema": "TERRAFORMER-SCALABILITIES/1",
+  "version": "0.47.85",
+  "kind": "SCALABILITY_REGISTRY",
+  "owner": "system.scalability",
+  "boundary": "DIMENSION_BOUNDARY",
+  "authority": false,
+  "records": [],
+  "scalarOwner": "system.scalar",
+  "rules": [
+    "Scalability is an independent descriptive dimension.",
+    "A scalar measures magnitude/change and does not grant scaling authority.",
+    "Assessment does not perform scaling or imply capacity, qualification, allocation, execution, or persistence."
+  ]
+}

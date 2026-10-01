@@ -1,0 +1,12 @@
+{
+  "schema": "TERRAFORMER-RECEIVERS/1",
+  "purpose": "governed receiver definitions, identities, capabilities and evidence",
+  "workerRoleEstablished": false,
+  "authorityGranted": false,
+  "membershipGrantsAuthority": false,
+  "automaticExecution": false,
+  "records": [],
+  "owner": "system.receiver",
+  "ownerBindingVersion": "0.48.16",
+  "ownerBindingAuthorityGranted": false
+}

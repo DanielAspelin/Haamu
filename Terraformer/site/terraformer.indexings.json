@@ -1,0 +1,10 @@
+{
+  "schema": "TERRAFORMER-INDEXINGS/1",
+  "systemId": "system.indexing",
+  "membershipGrantsNavigation": false,
+  "membershipGrantsSelection": false,
+  "membershipGrantsMutation": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

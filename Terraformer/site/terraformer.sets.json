@@ -1,0 +1,11 @@
+{
+  "schema": "TERRAFORMER-SETS/1",
+  "systemId": "system.set",
+  "membershipGrantsAllocation": false,
+  "membershipGrantsConversion": false,
+  "membershipGrantsValidation": false,
+  "membershipGrantsExecution": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

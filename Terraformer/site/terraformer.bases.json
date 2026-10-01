@@ -1,0 +1,7 @@
+{
+  "schema": "TERRAFORMER-BASES/1",
+  "systemId": "system.base",
+  "storageAuthority": false,
+  "persistenceAuthority": false,
+  "records": []
+}

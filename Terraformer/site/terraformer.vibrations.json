@@ -1,0 +1,9 @@
+{
+  "schema": "TERRAFORMER-VIBRATIONS/1",
+  "systemId": "system.vibration",
+  "featureDetected": true,
+  "permissionDoesNotFollowFromPresence": true,
+  "invokeAutomatically": false,
+  "authorityGranted": false,
+  "records": []
+}

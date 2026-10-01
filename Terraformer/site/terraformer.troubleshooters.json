@@ -1,0 +1,7 @@
+{
+  "schema": "TERRAFORMER-TROUBLESHOOTERS/1",
+  "systemId": "system.troubleshooter",
+  "membershipGrantsExecution": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

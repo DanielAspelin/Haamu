@@ -1,0 +1,12 @@
+{
+  "schema": "TERRAFORMER-VOLATILITIES/1",
+  "version": "0.47.55",
+  "kind": "VOLATILITIES_REGISTRY",
+  "owner": "system.volatility",
+  "governedBy": "terraformer.volatility.js",
+  "family": "runtime-retention",
+  "records": [],
+  "authorityGranted": false,
+  "automaticExecution": false,
+  "automaticPersistence": false
+}

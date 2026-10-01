@@ -1,0 +1,30 @@
+{
+  "schema": "TERRAFORMER-HANDBOOKS/1",
+  "systemId": "system.handbook",
+  "membershipGrantsMutation": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsPublication": false,
+  "membershipGrantsAuthority": false,
+  "records": [],
+  "canonicalCoverage": {
+    "generatedFromCanonicalRegistry": true,
+    "coversEachSystem": true,
+    "chapterIncludes": [
+      "reference",
+      "definition",
+      "description",
+      "specification",
+      "process",
+      "layer",
+      "service",
+      "engine"
+    ]
+  },
+  "historyPolicy": {
+    "sourceDeletion": false,
+    "historicalRewrite": false,
+    "readOnly": true,
+    "automaticPersistence": false,
+    "authorityGranted": false
+  }
+}

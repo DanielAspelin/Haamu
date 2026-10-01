@@ -1,0 +1,9 @@
+{
+  "schema": "TERRAFORMER-IMPORTINGS/1",
+  "systemId": "system.importing",
+  "declarativeRegistry": true,
+  "membershipGrantsExecution": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

@@ -1,0 +1,11 @@
+{
+  "schema": "TERRAFORMER-LONGS/1",
+  "systemId": "system.long",
+  "membershipGrantsAllocation": false,
+  "membershipGrantsConversion": false,
+  "membershipGrantsValidation": false,
+  "membershipGrantsExecution": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

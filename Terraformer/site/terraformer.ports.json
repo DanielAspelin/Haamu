@@ -1,0 +1,48 @@
+{
+  "schema": "TERRAFORMER-PORTS/1",
+  "systemId": "system.port",
+  "hostBinding": false,
+  "externalExposure": false,
+  "authorityGranted": false,
+  "records": [],
+  "protocolMembership": [
+    "tcp",
+    "udp"
+  ],
+  "udpRegistryConsolidated": true,
+  "families": {
+    "9966": [
+      9966,
+      19966,
+      29966,
+      39966,
+      49966,
+      59966
+    ],
+    "6699": [
+      6699,
+      16699,
+      26699,
+      36699,
+      46699,
+      56699
+    ]
+  },
+  "protocols": [
+    "tcp",
+    "udp"
+  ],
+  "locked": true,
+  "canonicalConfiguration": true,
+  "membersPerFamily": 6,
+  "totalPorts": 12,
+  "reservedFamily8888": [
+    8888,
+    18888,
+    28888,
+    38888,
+    48888,
+    58888
+  ],
+  "reservedFamily8888Status": "existing-later-source; reservation-only; not yet extracted at v0.45.31"
+}

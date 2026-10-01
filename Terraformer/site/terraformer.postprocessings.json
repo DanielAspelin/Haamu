@@ -1,0 +1,10 @@
+{
+  "schema": "TERRAFORMER-POSTPROCESSINGS/1",
+  "systemId": "system.post-processing",
+  "declarativeRegistry": true,
+  "pidIsOsProcessId": false,
+  "membershipGrantsExecution": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

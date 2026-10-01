@@ -1,0 +1,11 @@
+{
+  "schema": "TERRAFORMER-DOUBLES/1",
+  "systemId": "system.double",
+  "membershipGrantsAllocation": false,
+  "membershipGrantsConversion": false,
+  "membershipGrantsValidation": false,
+  "membershipGrantsExecution": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

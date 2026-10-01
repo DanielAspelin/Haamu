@@ -1,0 +1,11 @@
+{
+  "schema": "TERRAFORMER-AGGREGATES/1",
+  "systemId": "system.aggregate",
+  "membershipGrantsAllocation": false,
+  "membershipGrantsConversion": false,
+  "membershipGrantsValidation": false,
+  "membershipGrantsExecution": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

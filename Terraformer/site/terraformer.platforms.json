@@ -1,0 +1,87 @@
+{
+  "schema": "TERRAFORMER-PLATFORMS/1",
+  "systemId": "system.platform",
+  "types": [
+    {
+      "id": "system.meta-platform",
+      "kind": "meta"
+    },
+    {
+      "id": "system.virtual-platform",
+      "kind": "virtual"
+    },
+    {
+      "id": "platform.windows",
+      "name": "windows",
+      "kind": "desktop-operating-system",
+      "parent": null,
+      "physicalOwner": "terraformer.platform.js",
+      "authority": false
+    },
+    {
+      "id": "platform.macos",
+      "name": "macos",
+      "kind": "desktop-operating-system",
+      "parent": null,
+      "physicalOwner": "terraformer.platform.js",
+      "authority": false
+    },
+    {
+      "id": "platform.ios",
+      "name": "ios",
+      "kind": "smartphone-operating-system",
+      "parent": null,
+      "physicalOwner": "terraformer.platform.js",
+      "authority": false
+    },
+    {
+      "id": "platform.android",
+      "name": "android",
+      "kind": "smartphone-operating-system",
+      "parent": null,
+      "physicalOwner": "terraformer.platform.js",
+      "authority": false
+    },
+    {
+      "id": "platform.debian",
+      "name": "debian",
+      "kind": "linux-distribution",
+      "parent": "platform.linux",
+      "physicalOwner": "terraformer.platform.js",
+      "authority": false
+    },
+    {
+      "id": "platform.fedora",
+      "name": "fedora",
+      "kind": "linux-distribution",
+      "parent": "platform.linux",
+      "physicalOwner": "terraformer.platform.js",
+      "authority": false
+    }
+  ],
+  "membershipGrantsHostMutation": false,
+  "membershipGrantsVMLaunch": false,
+  "membershipGrantsHypervisorLaunch": false,
+  "membershipGrantsExecution": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": [],
+  "canonicalTypePolicy": "Named operating systems and smartphone operating environments are Platform types; type membership does not create independent System authority.",
+  "retainedPhysicalContexts": [
+    "terraformer.linux.js",
+    "terraformer.common.js"
+  ],
+  "windowNamingBoundary": {
+    "terraformer.window.js": "UI Window executable owner",
+    "terraformer.windows.json": "UI Window declarative registry",
+    "platform.windows": "Windows operating-system Platform type"
+  },
+  "version": "0.47.84",
+  "projectionPolicy": {
+    "construction": "PRIVATE_INTERNAL",
+    "delivery": "EXPLICIT_TARGET",
+    "privacyPublicityOrthogonal": true,
+    "membershipGrantsDelivery": false,
+    "membershipGrantsPublication": false
+  }
+}

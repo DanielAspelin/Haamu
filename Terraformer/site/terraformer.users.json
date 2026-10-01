@@ -1,0 +1,17 @@
+{
+  "$schema": "terraformer.registry/user_registry/1",
+  "version": "0.44.21",
+  "kind": "USER_REGISTRY",
+  "owner": "system.system",
+  "items": [
+    {
+      "id": "user.unresolved",
+      "boundary": "USER_BOUNDARY",
+      "authenticated": false,
+      "authorized": false,
+      "authority": false
+    }
+  ],
+  "authority": false,
+  "governedBy": "terraformer.system.js"
+}

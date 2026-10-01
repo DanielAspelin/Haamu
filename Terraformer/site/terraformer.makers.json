@@ -1,0 +1,10 @@
+{
+  "schema": "TERRAFORMER-MAKERS/1",
+  "systemId": "system.maker",
+  "membershipGrantsCreation": false,
+  "membershipGrantsExecution": false,
+  "membershipGrantsMutation": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

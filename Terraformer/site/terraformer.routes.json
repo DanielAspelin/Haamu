@@ -1,0 +1,9 @@
+{
+  "schema": "TERRAFORMER-ROUTES/1",
+  "systemId": "system.route",
+  "membershipGrantsExecution": false,
+  "membershipGrantsTransmission": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "terraformer.registry/tests/1",
+  "version": "0.44.21",
+  "kind": "TEST_REGISTRY",
+  "owner": "system.test",
+  "tests": [
+    {
+      "id": "test.registry.self",
+      "type": "STRUCTURAL",
+      "expected": true,
+      "qualificationAuthority": false
+    },
+    {
+      "id": "test.error.preservation",
+      "type": "REGRESSION",
+      "expected": true,
+      "qualificationAuthority": false
+    }
+  ],
+  "passDoesNotQualify": true,
+  "authority": false,
+  "governedBy": "terraformer.test.js"
+}

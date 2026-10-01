@@ -1,0 +1,13 @@
+{
+  "schema": "TERRAFORMER-ROLES/1",
+  "purpose": "governed roles definitions, instances and evidence",
+  "authorityGranted": false,
+  "automaticExecution": false,
+  "records": [],
+  "roleSeparation": {
+    "systemId": "system.role-separation",
+    "owner": "terraformer.role.js",
+    "associationGrantsAuthority": false,
+    "associationGrantsExecution": false
+  }
+}

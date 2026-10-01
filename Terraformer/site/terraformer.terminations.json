@@ -1,0 +1,8 @@
+{
+  "schema": "TERRAFORMER-TERMINATIONS/1",
+  "systemId": "system.termination",
+  "membershipGrantsExecution": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

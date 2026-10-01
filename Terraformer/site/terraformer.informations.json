@@ -1,0 +1,10 @@
+{
+  "schema": "TERRAFORMER-INFORMATIONS/1",
+  "owner": "terraformer.information.js",
+  "canonical": "system.information",
+  "kind": "system",
+  "records": [],
+  "membershipGrantsAuthority": false,
+  "membershipGrantsExecution": false,
+  "qualificationInheritance": false
+}

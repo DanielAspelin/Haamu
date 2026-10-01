@@ -1,0 +1,7 @@
+{
+  "schema": "TERRAFORMER-VALIDATORS/1",
+  "systemId": "system.validator",
+  "membershipGrantsExecution": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

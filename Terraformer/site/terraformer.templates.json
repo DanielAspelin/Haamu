@@ -1,0 +1,10 @@
+{
+  "schema": "TERRAFORMER-TEMPLATES/1",
+  "systemId": "system.template",
+  "membershipGrantsCreation": false,
+  "membershipGrantsExecution": false,
+  "membershipGrantsMutation": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

@@ -1,0 +1,7 @@
+{
+  "schema": "TERRAFORMER-PORTINGS/1",
+  "systemId": "system.porting",
+  "membershipGrantsAuthority": false,
+  "activeByDefault": false,
+  "records": []
+}

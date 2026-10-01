@@ -1,0 +1,684 @@
+{
+  "schema": "TERRAFORMER-CONSTRUCTION-STATE/1",
+  "checkpoint": "v0.47.30",
+  "files": {
+    "terraformer.temporary.js": {
+      "status": "TEMPORARY_DECOMPOSING",
+      "purpose": "DECOMPOSITION_SOURCE",
+      "mutable": true,
+      "canonicalEntryPoint": false,
+      "targetDisposition": "FULLY_RESOLVED_OR_ARCHIVED",
+      "locked": false,
+      "bytes": 2834508,
+      "resolvedBytesThisCheckpoint": 32999,
+      "sourceBytesRoutedThisCheckpoint": 361
+    },
+    "terraformer.js": {
+      "status": "CANONICAL_ENTRY",
+      "purpose": [
+        "NODE_INVOCATION",
+        "HTTP_HTTPS_ACCESS"
+      ],
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.root.js": {
+      "status": "ROOT_OWNER",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.roots.json": {
+      "status": "ROOT_REGISTRY",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.rooting.js": {
+      "status": "ROOTING_PROCESS_OWNER",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.rooter.js": {
+      "status": "ROOTER_WORKER_OWNER",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.rooters.json": {
+      "status": "ROOTER_REGISTRY",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.package.js": {
+      "status": "PACKAGE_OWNER",
+      "mutable": true,
+      "locked": false,
+      "embeddedPackageCorpusOwned": true
+    },
+    "terraformer.documentation.js": {
+      "status": "DOCUMENTATION_OWNER",
+      "mutable": true,
+      "locked": false,
+      "embeddedDocumentationCorpusOwned": true,
+      "corpusVerification": "68/69",
+      "integrityMismatch": "docs/INVOCATION.md"
+    },
+    "terraformer.operations.js": {
+      "status": "OPERATIONS_OWNER",
+      "mutable": true,
+      "locked": false,
+      "controlPlaneOwned": true
+    },
+    "terraformer.incrementer.js": {
+      "status": "WORKER_OWNER",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.decrementer.js": {
+      "status": "WORKER_OWNER",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.incrementers.json": {
+      "status": "WORKER_REGISTRY",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.decrementers.json": {
+      "status": "WORKER_REGISTRY",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.increment.js": {
+      "status": "PROCESS_OWNER",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.decrement.js": {
+      "status": "PROCESS_OWNER",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.increments.json": {
+      "status": "RESULT_REGISTRY",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.decrements.json": {
+      "status": "RESULT_REGISTRY",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.localhost.js": {
+      "status": "APPLICATION_LINEAGE_OWNER",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.localhosts.json": {
+      "status": "APPLICATION_LINEAGE_REGISTRY",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.collector.js": {
+      "status": "CANONICAL_ENTITY_OWNER",
+      "classes": [
+        "Worker"
+      ],
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.detector.js": {
+      "status": "CANONICAL_ENTITY_OWNER",
+      "classes": [
+        "Worker"
+      ],
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.interpreter.js": {
+      "status": "CANONICAL_ENTITY_OWNER",
+      "classes": [
+        "Worker"
+      ],
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.invoker.js": {
+      "status": "CANONICAL_ENTITY_OWNER",
+      "classes": [
+        "Worker"
+      ],
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.lexer.js": {
+      "status": "CANONICAL_ENTITY_OWNER",
+      "classes": [
+        "Worker"
+      ],
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.parser.js": {
+      "status": "CANONICAL_ENTITY_OWNER",
+      "classes": [
+        "Worker"
+      ],
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.runner.js": {
+      "status": "CANONICAL_ENTITY_OWNER",
+      "classes": [
+        "Worker"
+      ],
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.serializer.js": {
+      "status": "CANONICAL_ENTITY_OWNER",
+      "classes": [
+        "Worker"
+      ],
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.tokenizer.js": {
+      "status": "CANONICAL_ENTITY_OWNER",
+      "classes": [
+        "Worker"
+      ],
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.transpiler.js": {
+      "status": "CANONICAL_ENTITY_OWNER",
+      "classes": [
+        "Worker"
+      ],
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.generator.js": {
+      "status": "CANONICAL_ENTITY_OWNER",
+      "classes": [
+        "Generator"
+      ],
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.automator.js": {
+      "status": "CANONICAL_ENTITY_OWNER",
+      "classes": [
+        "Worker"
+      ],
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.collectors.json": {
+      "status": "ENTITY_REGISTRY",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.detectors.json": {
+      "status": "ENTITY_REGISTRY",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.interpreters.json": {
+      "status": "ENTITY_REGISTRY",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.invokers.json": {
+      "status": "ENTITY_REGISTRY",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.lexers.json": {
+      "status": "ENTITY_REGISTRY",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.parsers.json": {
+      "status": "ENTITY_REGISTRY",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.runners.json": {
+      "status": "ENTITY_REGISTRY",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.serializers.json": {
+      "status": "ENTITY_REGISTRY",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.tokenizers.json": {
+      "status": "ENTITY_REGISTRY",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.transpilers.json": {
+      "status": "ENTITY_REGISTRY",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.banker.js": {
+      "status": "CANONICAL_ENTITY_OWNER",
+      "classes": [
+        "Worker"
+      ],
+      "sourceIdentity": "agent.banker",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.bankers.json": {
+      "status": "ENTITY_REGISTRY",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.binder.js": {
+      "status": "CANONICAL_ENTITY_OWNER",
+      "classes": [
+        "Worker"
+      ],
+      "sourceIdentity": "agent.binder",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.binders.json": {
+      "status": "ENTITY_REGISTRY",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.closer.js": {
+      "status": "CANONICAL_ENTITY_OWNER",
+      "classes": [
+        "Worker"
+      ],
+      "sourceIdentity": "agent.closer",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.closers.json": {
+      "status": "ENTITY_REGISTRY",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.concatenator.js": {
+      "status": "CANONICAL_ENTITY_OWNER",
+      "classes": [
+        "Worker"
+      ],
+      "sourceIdentity": "agent.concatenator",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.concatenators.json": {
+      "status": "ENTITY_REGISTRY",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.opener.js": {
+      "status": "CANONICAL_ENTITY_OWNER",
+      "classes": [
+        "Worker"
+      ],
+      "sourceIdentity": "agent.opener",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.openers.json": {
+      "status": "ENTITY_REGISTRY",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.planner.js": {
+      "status": "CANONICAL_ENTITY_OWNER",
+      "classes": [
+        "Worker"
+      ],
+      "sourceIdentity": "agent.planner",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.planners.json": {
+      "status": "ENTITY_REGISTRY",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.shopper.js": {
+      "status": "CANONICAL_ENTITY_OWNER",
+      "classes": [
+        "Worker"
+      ],
+      "sourceIdentity": "agent.shopper",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.shoppers.json": {
+      "status": "ENTITY_REGISTRY",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.planning.js": {
+      "status": "SYSTEM_PROCESS_OWNER",
+      "classes": [
+        "System",
+        "Process"
+      ],
+      "actor": "terraformer.planner.js",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.plannings.json": {
+      "status": "PROCESS_RESULT_REGISTRY",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.banking.js": {
+      "status": "SYSTEM_PROCESS_OWNER",
+      "classes": [
+        "System",
+        "Process"
+      ],
+      "actor": "terraformer.banker.js",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.bankings.json": {
+      "status": "PROCESS_RESULT_REGISTRY",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.binding.js": {
+      "status": "SYSTEM_PROCESS_OWNER",
+      "classes": [
+        "System",
+        "Process"
+      ],
+      "actor": "terraformer.binder.js",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.bindings.json": {
+      "status": "PROCESS_RESULT_REGISTRY",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.closing.js": {
+      "status": "SYSTEM_PROCESS_OWNER",
+      "classes": [
+        "System",
+        "Process"
+      ],
+      "actor": "terraformer.closer.js",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.closings.json": {
+      "status": "PROCESS_RESULT_REGISTRY",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.concatenation.js": {
+      "status": "SYSTEM_PROCESS_OWNER",
+      "classes": [
+        "System",
+        "Process"
+      ],
+      "actor": "terraformer.concatenator.js",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.concatenations.json": {
+      "status": "PROCESS_RESULT_REGISTRY",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.opening.js": {
+      "status": "SYSTEM_PROCESS_OWNER",
+      "classes": [
+        "System",
+        "Process"
+      ],
+      "actor": "terraformer.opener.js",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.openings.json": {
+      "status": "PROCESS_RESULT_REGISTRY",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.shop.js": {
+      "status": "SYSTEM_PROCESS_OWNER",
+      "classes": [
+        "System",
+        "Process"
+      ],
+      "actor": "terraformer.shopper.js",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.shops.json": {
+      "status": "PROCESS_RESULT_REGISTRY",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.entity.js": {
+      "status": "ENTITY_SYSTEM_OWNER",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.entities.json": {
+      "status": "CANONICAL_SYSTEM_ENTITY_INVENTORY",
+      "systems": 2139,
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.entitytopology.json": {
+      "status": "CANONICAL_ENTITY_TOPOLOGY",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.orthogonalcrossings.json": {
+      "status": "ORTHOGONAL_REFERENCE_MAP",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.qualification.js": {
+      "status": "DIMENSION_OWNER",
+      "position": "AFTER_CONDITION_BEFORE_STATE",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.qualifications.json": {
+      "status": "DIMENSION_VALUE_REGISTRY",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.verification.js": {
+      "status": "DIMENSION_OWNER",
+      "position": "AFTER_CONDITION_BEFORE_QUALIFICATION",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.verifications.json": {
+      "status": "DIMENSION_VALUE_REGISTRY",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.validation.js": {
+      "status": "DIMENSION_OWNER",
+      "position": "AFTER_CONDITION_BEFORE_VERIFICATION",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.validations.json": {
+      "status": "DIMENSION_VALUE_REGISTRY",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.accuracy.js": {
+      "status": "DIMENSION_OWNER",
+      "position": "AFTER_CONSISTENCY",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.accuracies.json": {
+      "status": "DIMENSION_VALUE_REGISTRY",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.lookup.js": {
+      "status": "SYSTEM_OWNER",
+      "stateDimension": "system.state",
+      "activeState": "ACTIVE",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.lookups.json": {
+      "status": "LOOKUP_REGISTRY",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.dictionary.js": {
+      "status": "ENGLISH_DICTIONARY_TOKEN_OWNER",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.englishtokens.json": {
+      "status": "LEXICAL_DISCOVERY_CORPUS",
+      "tokens": 76226,
+      "automaticSystemAdmission": false,
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.reservation.js": {
+      "status": "NAMESPACE_RESERVATION_OWNER",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.reserved.json": {
+      "status": "RESERVED_URI_TOKEN_SPACE",
+      "tokens": 76226,
+      "automaticAdmission": false,
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.instance.js": {
+      "status": "INSTANCE_ZERO_POINT_DIMENSION_OWNER",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.instances.json": {
+      "status": "INSTANCE_DIMENSION_REGISTRY",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.locking.js": {
+      "status": "LOCKING_DIMENSION_OWNER",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.lockings.json": {
+      "status": "LOCKING_DIMENSION_REGISTRY",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.instancetype.js": {
+      "status": "INSTANCE_TYPE_CLASSIFICATION_OWNER",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.instancetypes.json": {
+      "status": "INSTANCE_TYPE_REGISTRY",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.statetype.js": {
+      "status": "STATE_TYPE_CLASSIFICATION_OWNER",
+      "mutable": true,
+      "locked": false
+    },
+    "terraformer.statetypes.json": {
+      "status": "STATE_TYPE_REGISTRY",
+      "mutable": true,
+      "locked": false
+    }
+  },
+  "bindingStatusApplied": false,
+  "instanceCoordinateUpdate": {
+    "EXECUTION": -1,
+    "INSTANCE": 0,
+    "SUPER": 1,
+    "HYPER": 2,
+    "coordinateGrantsExecution": false,
+    "coordinateGrantsAuthority": false
+  },
+  "instanceCoordinateCorrection": {
+    "EXECUTION": -1,
+    "LAUNCH": 0,
+    "INSTANCE": 1,
+    "SUPER": "DEFERRED_INSTANCE_TYPE",
+    "HYPER": "DEFERRED_INSTANCE_TYPE",
+    "coordinateGrantsExecution": false,
+    "coordinateGrantsLaunch": false,
+    "authorityGranted": false
+  },
+  "instanceCoordinateAxis": {
+    "coordinates": {
+      "PRE_LAUNCH": -7,
+      "LOGGING": -6,
+      "AUDITING": -5,
+      "REPORTING": -4,
+      "INITIALIZATION": -3,
+      "LOADING": -2,
+      "EXECUTION": -1,
+      "POST_LAUNCH": 0,
+      "INSTANCE": 1
+    },
+    "launchBoundary": "BETWEEN_EXECUTION_AND_POST_LAUNCH",
+    "zeroPoint": "POST_LAUNCH",
+    "coordinatesInvokeMechanisms": false,
+    "authorityGranted": false
+  },
+  "runtimeInstanceZero": {
+    "dimensionCoordinate": 1,
+    "instanceOrdinal": 0,
+    "instanceType": "RUNTIME",
+    "coordinateIsNotOrdinal": true,
+    "typeIsNotDimensionValue": true
+  },
+  "instanceTypeModel": {
+    "instanceZero": {
+      "dimensionCoordinate": 1,
+      "instanceOrdinal": 0,
+      "instanceType": "RUNTIME"
+    },
+    "instanceTypes": [
+      "RUNTIME",
+      "SUPER_INSTANCE",
+      "HYPER_INSTANCE"
+    ],
+    "superHyperAreStates": false,
+    "superHyperAreDimensionValues": false,
+    "higherTypeEligibility": "CONDITION_DEPENDENT",
+    "conditionContracts": "DEFERRED",
+    "automaticPromotion": false,
+    "authorityGranted": false
+  },
+  "conditionalInstanceTypeModel": {
+    "stateType": "CONDITIONAL",
+    "stateTypeIsStateValue": false,
+    "instanceTypes": [
+      "SUPER_INSTANCE",
+      "HYPER_INSTANCE"
+    ],
+    "eligibilityFlow": "CONDITION -> CONDITIONAL_STATE -> INSTANCE_TYPE_ELIGIBILITY",
+    "concretePredicates": "DEFERRED",
+    "automaticPromotion": false,
+    "authorityGranted": false
+  }
+}

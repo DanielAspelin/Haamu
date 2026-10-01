@@ -1,0 +1,10 @@
+{
+  "schema": "TERRAFORMER-GLOBALS/1",
+  "systemId": "system.global",
+  "declarativeRegistry": true,
+  "logicalScope": true,
+  "geolocationInference": false,
+  "membershipGrantsExposure": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

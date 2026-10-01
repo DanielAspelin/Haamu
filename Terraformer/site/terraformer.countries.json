@@ -1,0 +1,7 @@
+{
+  "schema": "TERRAFORMER-COUNTRIES/1",
+  "systemId": "system.country",
+  "descriptive": true,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

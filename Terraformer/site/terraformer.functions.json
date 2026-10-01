@@ -1,0 +1,20 @@
+{
+  "schema": "TERRAFORMER-FUNCTIONS/1",
+  "authorityGranted": false,
+  "records": [
+    {
+      "id": "function.window.adjustment",
+      "system": "system.window",
+      "functionality": "system.adjustment",
+      "capabilities": [
+        "system.sizing",
+        "system.resizing"
+      ],
+      "status": "INTEGRATED",
+      "authorityGranted": false
+    }
+  ],
+  "owner": "system.function",
+  "ownerBindingVersion": "0.48.16",
+  "ownerBindingAuthorityGranted": false
+}

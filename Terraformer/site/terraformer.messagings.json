@@ -1,0 +1,13 @@
+{
+  "schema": "TERRAFORMER-MESSAGINGS/1",
+  "systemId": "system.messaging",
+  "authorityGranted": false,
+  "automaticTransmission": false,
+  "automaticPublication": false,
+  "records": [],
+  "logicalPredecessor": "system.reporting",
+  "signalSystem": "system.signal",
+  "orderingRule": "Reporting precedes Messaging; this is logical ordering only.",
+  "roundTrip": "roundtrip.communication",
+  "roundTripRegistry": "terraformer.roundtrips.json"
+}

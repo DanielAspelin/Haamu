@@ -1,0 +1,10 @@
+{
+  "schema": "TERRAFORMER-INSTRUCTORS/1",
+  "owner": "terraformer.instructor.js",
+  "canonical": "agent.instructor",
+  "kind": "agent-role",
+  "records": [],
+  "membershipGrantsAuthority": false,
+  "membershipGrantsExecution": false,
+  "qualificationInheritance": false
+}

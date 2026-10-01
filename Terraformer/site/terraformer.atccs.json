@@ -1,0 +1,9 @@
+{
+  "schema": "TERRAFORMER-ATCCS/1",
+  "systemId": "system.atcc",
+  "declarativeRegistry": true,
+  "membershipGrantsExecution": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

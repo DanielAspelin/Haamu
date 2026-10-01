@@ -1,0 +1,12 @@
+"use strict";
+const SYSTEM=Object.freeze({id:"system.file",fundamentalTypeOwner:true,authorityGranted:false,scaffold:true});
+const TERRAFORMER_FILE_SYSTEM=Object.freeze({schema:'TERRAFORMER-FILE-SYSTEM/1',id:'system.filesystem',name:'File System',family:'storage',type:'bounded-filesystem',mode:'Node.js-negotiated',condition:'operational',state:'registered',input:'authorized path + operation + options',output:'metadata/data/result',uses:Object.freeze(['system.reader','system.writer','system.file','system.storage','system.security','system.persistence']),operations:Object.freeze({read:Object.freeze(['stat','list','read','exists']),mutate:Object.freeze(['create','mkdir','copy','move','rename','write','remove','chmod'])}),boundary:Object.freeze({rootConfinement:true,symlinkEscape:'reject',read:'bounded/read-only by default',mutation:'explicit effect authorization required',persistence:'explicit authorization required',destructive:'explicit authorization required'}),qualification:'Under Conditional Experiment'});
+
+const TERRAFORMER_FILE_MANAGER=Object.freeze({schema:'TERRAFORMER-FILE-MANAGER/1',id:'system.file-manager',name:'File Manager',family:'desktop',type:'filesystem-manager',mode:'client-surface',condition:'operational',state:'registered',input:'user file-management intent',output:'bounded filesystem view/result',uses:Object.freeze(['system.filesystem','system.reader','system.writer']),authority:'presentation/orchestration only; does not manufacture filesystem mutation authority',operations:Object.freeze(['browse','inspect','open','copy','move','rename','mkdir','write','remove','properties']),qualification:'Under Conditional Experiment'});
+
+function tfFsResolve(root,candidate){const r=path.resolve(String(root)),p=path.resolve(r,String(candidate||'.'));if(p!==r&&!p.startsWith(r+path.sep))throw new Error('File System boundary escape rejected');return p;}
+
+function tfFsRead(root,candidate){const p=tfFsResolve(root,candidate),st=fs.lstatSync(p);if(st.isSymbolicLink())throw new Error('File System symbolic-link traversal rejected');if(st.isDirectory())return {path:p,type:'directory',entries:fs.readdirSync(p,{withFileTypes:true}).map(x=>({name:x.name,type:x.isDirectory()?'directory':x.isFile()?'file':'other'}))};if(!st.isFile())throw new Error('Unsupported File System object');return {path:p,type:'file',bytes:st.size,data:fs.readFileSync(p)};}
+
+
+module.exports=Object.freeze({SYSTEM,TERRAFORMER_FILE_SYSTEM,TERRAFORMER_FILE_MANAGER,tfFsResolve,tfFsRead});

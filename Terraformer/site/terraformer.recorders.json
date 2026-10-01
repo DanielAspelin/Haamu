@@ -1,0 +1,9 @@
+{
+  "schema": "TERRAFORMER-RECORDERS/1",
+  "systemId": "system.recorder",
+  "membershipGrantsCapture": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsHistoryRewrite": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

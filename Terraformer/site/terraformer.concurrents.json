@@ -1,0 +1,9 @@
+{
+  "schema": "TERRAFORMER-CONCURRENTS/1",
+  "systemId": "system.concurrent",
+  "declarativeRegistry": true,
+  "membershipGrantsThreadCreation": false,
+  "membershipGrantsExternalEffect": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

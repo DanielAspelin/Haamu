@@ -1,0 +1,6 @@
+{
+  "schema": "TERRAFORMER-CRYPTOCURRENCIES/1",
+  "systemId": "system.cryptocurrency",
+  "membershipGrantsAuthority": false,
+  "records": []
+}

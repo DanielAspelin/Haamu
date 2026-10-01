@@ -1,0 +1,25 @@
+{
+  "schema": "TERRAFORMER-SEARCHES/1",
+  "system": {
+    "id": "system.search",
+    "name": "Search System",
+    "family": "knowledge",
+    "type": "search-system",
+    "canonicalPath": "terraformer://search/",
+    "dependsOn": [
+      "system.indexing",
+      "system.information"
+    ],
+    "integratesWith": [
+      "system.discovery",
+      "system.exploration"
+    ],
+    "authorityGranted": false
+  },
+  "boundaries": {
+    "matchGrantsAccess": false,
+    "matchEstablishesTruth": false,
+    "matchExecutesTarget": false,
+    "matchImpliesQualification": false
+  }
+}

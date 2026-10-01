@@ -1,0 +1,9 @@
+{
+  "schema": "TERRAFORMER-SUMMARIZATIONS/1",
+  "systemId": "system.summarization",
+  "membershipGrantsMutation": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsPublication": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

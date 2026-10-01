@@ -1,0 +1,13 @@
+{
+  "schema": "TERRAFORMER-TRACKS/1",
+  "version": "0.47.50",
+  "kind": "TRACK_REGISTRY",
+  "owner": "system.track",
+  "governedBy": "terraformer.track.js",
+  "topologyType": "Passage",
+  "records": [],
+  "authorityGranted": false,
+  "automaticTraversal": false,
+  "automaticExecution": false,
+  "automaticPersistence": false
+}

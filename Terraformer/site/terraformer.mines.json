@@ -1,0 +1,8 @@
+{
+  "schema": "TERRAFORMER-MINES/1",
+  "purpose": "governed mining definitions, runs, results and evidence",
+  "authorityGranted": false,
+  "membershipGrantsAuthority": false,
+  "automaticExecution": false,
+  "records": []
+}

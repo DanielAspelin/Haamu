@@ -1,0 +1,14 @@
+{
+  "schema": "TERRAFORMER-CONCEPT-REGISTRY/1",
+  "version": "0.47.84",
+  "kind": "CONCEPT_REGISTRY",
+  "owner": "system.delivery",
+  "concept": "delivery",
+  "singularOwner": "terraformer.delivery.js",
+  "records": [],
+  "membershipGrantsAuthority": false,
+  "membershipGrantsExecution": false,
+  "membershipGrantsPersistence": false,
+  "automaticPopulation": false,
+  "qualification": "UNDER_CONDITIONAL_EXPERIMENT"
+}

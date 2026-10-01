@@ -1,0 +1,11 @@
+{
+  "schema": "TERRAFORMER-CHECKERS/1",
+  "systemId": "system.checker",
+  "declarativeRegistry": true,
+  "membershipGrantsMutation": false,
+  "membershipGrantsRepair": false,
+  "membershipGrantsQualification": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

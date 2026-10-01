@@ -1,0 +1,12 @@
+{
+  "schema": "TERRAFORMER-MESHS/1",
+  "version": "0.47.49",
+  "kind": "MESH_REGISTRY",
+  "owner": "system.mesh",
+  "governedBy": "terraformer.mesh.js",
+  "topologyType": "Passage",
+  "records": [],
+  "authorityGranted": false,
+  "automaticExecution": false,
+  "automaticPersistence": false
+}

@@ -1,0 +1,10 @@
+{
+  "schema": "TERRAFORMER-REVIEWINGS/1",
+  "systemId": "system.reviewing",
+  "membershipGrantsMutation": false,
+  "membershipGrantsApproval": false,
+  "membershipGrantsPublication": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

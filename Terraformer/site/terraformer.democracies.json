@@ -1,0 +1,7 @@
+{
+  "schema": "TERRAFORMER-DEMOCRACIES/1",
+  "systemId": "system.democracy",
+  "referenceOnly": true,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

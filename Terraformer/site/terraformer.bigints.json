@@ -1,0 +1,11 @@
+{
+  "schema": "TERRAFORMER-BIGINTS/1",
+  "systemId": "system.bigint",
+  "membershipGrantsAllocation": false,
+  "membershipGrantsConversion": false,
+  "membershipGrantsValidation": false,
+  "membershipGrantsExecution": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

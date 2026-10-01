@@ -1,0 +1,9 @@
+{
+  "schema": "TERRAFORMER-POOLS/1",
+  "systemId": "system.pool",
+  "membershipGrantsAuthority": false,
+  "activeByDefault": false,
+  "records": [],
+  "hostingSupport": "system.hosting",
+  "authorityGranted": false
+}

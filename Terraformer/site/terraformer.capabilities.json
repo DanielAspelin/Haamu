@@ -1,0 +1,8 @@
+{
+  "schema": "TERRAFORMER-CAPABILITIES/1",
+  "systemId": "system.capability",
+  "owner": "terraformer.capability.js",
+  "membershipGrantsAuthority": false,
+  "membershipGrantsExecution": false,
+  "records": []
+}

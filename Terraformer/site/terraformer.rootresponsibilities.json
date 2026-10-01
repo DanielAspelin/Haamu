@@ -1,0 +1,1082 @@
+{
+  "schema": "TERRAFORMER-ROOT-RESPONSIBILITY-RECONCILIATION/1",
+  "checkpoint": "v0.47.32",
+  "root": {
+    "bytes": 26183176,
+    "lines": 28922,
+    "topLevelDeclarations": 3248,
+    "functions": 0,
+    "consts": 0
+  },
+  "physicalOwners": {
+    "jsModules": 750,
+    "jsonRegistries": 691
+  },
+  "evidence": {
+    "remainingCheckpointMarkers": 1150,
+    "largestResidualRegion": {
+      "marker": "Terraformer v0.36.220: Canonical Structural Compaction",
+      "approxBytes": 14170692
+    }
+  },
+  "classification": {
+    "rootUnresolvedDeclarations": 297,
+    "heuristicallyModuleAssociatedDeclarations": 2951
+  },
+  "policy": {
+    "rootEndState": "bootstrap + composition + root lifecycle + compatibility glue",
+    "destructiveExtractionPerformed": false,
+    "automaticOwnershipTransfer": false,
+    "authorityAmplification": false
+  },
+  "nextExtractionCandidate": {
+    "region": "v0.36.220 Canonical Structural Compaction",
+    "strategy": "split by already-established fundamental owner boundaries before removal from root",
+    "qualificationRequired": true
+  },
+  "decomposition": {
+    "campaign": "Identity/Reconstruction Decomposition II",
+    "externalCandidates": 481,
+    "provenanceUnresolvedCandidates": 450,
+    "owners": [
+      "terraformer.identity.js",
+      "terraformer.boundary.js",
+      "terraformer.provenance.js",
+      "terraformer.reconstruction.js"
+    ],
+    "directQualification": "PASS",
+    "externalBoundariesResolved": 0,
+    "provenanceResolved": 0,
+    "authorityCreated": false,
+    "rootRuntimeQualification": "returned status 1 without stderr, consistent with predecessor presentation-readiness limitation",
+    "ghosts": []
+  },
+  "ownershipCorrection": {
+    "from": "terraformer.block.js",
+    "to": "terraformer.device.js",
+    "declarative": "terraformer.devices.json",
+    "reason": "Device is the fundamental System; Volatile Block Device is a Device type composed with Block and volatile Memory semantics.",
+    "blockOwnerRestored": true
+  },
+  "platformTypeCanonicalization": {
+    "canonicalOwner": "terraformer.platform.js",
+    "registry": "terraformer.platforms.json",
+    "types": [
+      "windows",
+      "macos",
+      "ios",
+      "android",
+      "debian",
+      "fedora"
+    ],
+    "removedPhysicalOwners": [
+      "terraformer.windows.js",
+      "terraformer.macos.js",
+      "terraformer.ios.js",
+      "terraformer.android.js",
+      "terraformer.debian.js",
+      "terraformer.fedora.js"
+    ],
+    "retainedPhysicalContexts": [
+      "terraformer.linux.js",
+      "terraformer.common.js"
+    ],
+    "uiWindowRegistryPreserved": "terraformer.windows.json"
+  },
+  "systemGraphCoverage": {
+    "declaredSystems": 1501,
+    "resolvedDirectedEdges": 1468,
+    "linkedSystems": 914,
+    "isolatedSystems": 587,
+    "linkCoverage": 60.89,
+    "stronglyConnectedComponents": 1442,
+    "roundTripComponents": 17,
+    "roundTripSystems": 76,
+    "roundTripCoverage": 5.06,
+    "largestRoundTripComponent": 11,
+    "weakComponents": 618,
+    "largestWeakComponent": 827,
+    "measurementOnly": true
+  },
+  "linguistProgramTransition": {
+    "program": "program.linguist",
+    "owner": "terraformer.linguist.js",
+    "mode": "transition",
+    "projectLineage": "project.linguist",
+    "projectOwner": "terraformer.project.js",
+    "capabilityRoots": [
+      "system.language",
+      "system.tool"
+    ],
+    "authorityGranted": false
+  },
+  "hostHostingCrossSupport": {
+    "host": "system.host-capability-discovery",
+    "hosting": "system.hosting",
+    "pool": "system.pool",
+    "farming": "system.farming",
+    "farmer": "system.farmer",
+    "bidirectionalRelationshipEvidence": true,
+    "resourceSharingDefault": false,
+    "backgroundFarmingDefault": false,
+    "authorityGranted": false
+  },
+  "dimensionAmendment": {
+    "added": "CAPACITY",
+    "orderAfter": "HEALTH",
+    "orderBefore": "CONSISTENCY",
+    "owner": "terraformer.capacity.js",
+    "registry": "terraformer.capacities.json",
+    "dimensionQualification": "PASS",
+    "capacityQualification": "PASS",
+    "authorityGranted": false,
+    "qualificationGrantedByValue": false,
+    "allocationGrantedByValue": false,
+    "accessGrantedByValue": false,
+    "predecessorAmendment": {
+      "added": "CONSISTENCY",
+      "orderAfter": "HEALTH",
+      "owner": "terraformer.consistency.js",
+      "registry": "terraformer.consistencies.json",
+      "checkpoint": "v0.47.30"
+    }
+  },
+  "ownershipCoverageAudit": {
+    "map": "terraformer.ownershipcoverage.json",
+    "physicalOwners": 774,
+    "declarativeFiles": 723,
+    "rootTopLevelDeclarations": 3093,
+    "rootDirectOwnerRequires": 321,
+    "moved": [
+      "Residual 132 Ownership Resolution -> terraformer.ownership.js",
+      "Subordinate Ownership Reconstruction I -> terraformer.ownership.js",
+      "Historical Registry Differential -> terraformer.registry.js"
+    ],
+    "embeddedHistoricalMarkerRetained": "v0.41.68 Registry Generation Reconstruction marker is inside historical source-context evidence and is not an executable standalone block",
+    "directQualifications": "PASS",
+    "authorityCreated": false,
+    "ghosts": []
+  },
+  "ownershipCoverageAuditII": {
+    "map": "terraformer.ownershipcoverage.json",
+    "extracted": {
+      "Universal Usage-Designed System Contract": "terraformer.usage.js"
+    },
+    "directQualification": "PASS",
+    "rootBytesRemoved": 41618,
+    "largeResidualRegions": 24,
+    "triageRule": "extract only when canonical owner is unambiguous; otherwise retain REVIEW_REQUIRED",
+    "rootRuntimeQualification": "status 1/no stderr consistent with predecessor presentation-readiness limitation",
+    "ghosts": []
+  },
+  "fundamentalControlOwnershipI": {
+    "settings": "terraformer.settings.js",
+    "central": "terraformer.central.js",
+    "discovery": "terraformer.discovery.js",
+    "registries": [
+      "terraformer.settings.json",
+      "terraformer.centrals.json",
+      "terraformer.discoveries.json"
+    ],
+    "directQualifications": "PASS",
+    "rootBytesRemoved": 148232,
+    "authorityEscalation": "NONE",
+    "productionRuntimeQualified": false,
+    "desktopConstraintRecorded": {
+      "upper": "LOCAL_CLIENT",
+      "lower": "GLOBAL_SERVER",
+      "startButtons": "EVERY_EDGE"
+    },
+    "ghosts": []
+  },
+  "fundamentalControlOwnershipII": {
+    "featuring": "terraformer.featuring.js",
+    "stateContract": "terraformer.state.js",
+    "captureLock": "terraformer.lock.js",
+    "semanticOwnersAdded": [
+      "terraformer.feature.js",
+      "terraformer.featurer.js",
+      "terraformer.occupation.js",
+      "terraformer.capture.js"
+    ],
+    "registriesAdded": [
+      "terraformer.features.json",
+      "terraformer.featurers.json",
+      "terraformer.occupations.json",
+      "terraformer.captures.json"
+    ],
+    "directQualifications": "PASS",
+    "rootBytesRemoved": 132582,
+    "largeResidualRegions": 18,
+    "authorityCreated": false,
+    "ghosts": []
+  },
+  "registryHistoricalIdentityPrecisionPass": {
+    "identityOwnersMoved": [
+      "Alias/Supersession Candidate Historical Identity Reconstruction",
+      "Unresolved Integrated-Origin Historical Identity Reconstruction"
+    ],
+    "provenanceOwnersMoved": [
+      "Integrated-Origin Provenance Reconstruction",
+      "Historical Reconstruction Propagation Ledger"
+    ],
+    "directQualifications": "PASS",
+    "rootBytesRemoved": 136985,
+    "largeResidualRegions": 14,
+    "canonicalMembershipChanged": false,
+    "authorityCreated": false,
+    "ghosts": []
+  },
+  "naturalizedPhysicalDistributionI": {
+    "blocksDistributed": 12,
+    "rootBytesRemoved": 401108,
+    "fundamentalOwnersAdded": [
+      "control",
+      "composition",
+      "glossary"
+    ],
+    "largeResidualRegions": 5,
+    "explicitDependencyBinder": "registry v0.41.4 -> tfSystemSerialRegistryV4098",
+    "authorityCreated": false,
+    "productionQualificationPromoted": false,
+    "ghosts": []
+  },
+  "naturalizedPhysicalDistributionII": {
+    "blocksDistributed": 12,
+    "rootBytesRemoved": 218590,
+    "auditThresholdLoweredTo": 7000,
+    "residualRegionsAtThreshold": 50,
+    "runtime": "status 1/no stderr; predecessor limitation unchanged",
+    "ghosts": []
+  },
+  "deepRootNormalizationI": {
+    "declarationsDistributed": 72,
+    "newOwners": [
+      "element",
+      "substance",
+      "product",
+      "solution",
+      "ware",
+      "pcb",
+      "bios",
+      "uefi",
+      "boot",
+      "psu",
+      "dashboard",
+      "netware",
+      "request",
+      "response",
+      "team",
+      "flag",
+      "forest",
+      "chassis",
+      "mainboard",
+      "chipset",
+      "science",
+      "research",
+      "university",
+      "laboratory",
+      "chemistry",
+      "compound",
+      "molecule",
+      "production",
+      "development",
+      "capsule",
+      "facility",
+      "hall",
+      "facilitation",
+      "markup",
+      "markdown",
+      "community",
+      "webinar",
+      "seminar",
+      "commerce",
+      "money",
+      "login",
+      "authentication",
+      "approval",
+      "training",
+      "forum",
+      "term",
+      "agreement",
+      "business",
+      "office",
+      "home",
+      "job",
+      "market"
+    ],
+    "rootBytesRemoved": 31777,
+    "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+    "runtime": "status 1/no stderr; predecessor limitation unchanged",
+    "nextLayersAfterNormalization": [
+      "PER_JS_FILE_LOCK_POINTS",
+      "PER_JS_FILE_BINDING_STATUS"
+    ],
+    "ghosts": []
+  },
+  "deepRootNormalizationII": {
+    "declarationsDistributed": 68,
+    "newOwners": [
+      "infrastructure",
+      "eco",
+      "www",
+      "page",
+      "smart",
+      "disk",
+      "cluster",
+      "blockdevice",
+      "command",
+      "operations",
+      "procedure",
+      "algorithm",
+      "task",
+      "scheduler",
+      "scheduling",
+      "resource",
+      "sharing",
+      "operating",
+      "root",
+      "photo",
+      "record",
+      "activity",
+      "compression",
+      "decompression",
+      "archive",
+      "zip",
+      "driverless",
+      "voice",
+      "speech",
+      "audit",
+      "graphics",
+      "nano",
+      "micro",
+      "clock",
+      "time",
+      "mind",
+      "brain",
+      "lobe",
+      "map",
+      "gps",
+      "gsm",
+      "rfid"
+    ],
+    "rootBytesRemoved": 49938,
+    "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+    "runtime": "status 1/no stderr; predecessor limitation unchanged",
+    "nextLayersAfterNormalization": [
+      "PER_JS_FILE_LOCK_POINTS",
+      "PER_JS_FILE_BINDING_STATUS"
+    ],
+    "ghosts": []
+  },
+  "deepRootNormalizationIII": {
+    "declarationsDistributed": 24,
+    "newOwners": [
+      "microsoft",
+      "apple",
+      "google",
+      "app",
+      "orientation",
+      "customization",
+      "button",
+      "border",
+      "dialog",
+      "theme",
+      "color",
+      "visualization",
+      "field",
+      "form",
+      "snap",
+      "browser",
+      "html",
+      "css",
+      "knowledge",
+      "dom",
+      "javascript",
+      "bash"
+    ],
+    "rootBytesRemoved": 13712,
+    "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+    "runtime": "status 1/no stderr; predecessor limitation unchanged",
+    "locksApplied": false,
+    "bindingStatusApplied": false,
+    "ghosts": []
+  },
+  "deepRootNormalizationIV": {
+    "declarationsDistributed": 8,
+    "newOwners": [
+      "conversation",
+      "conference",
+      "correspondence"
+    ],
+    "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+    "runtime": "status 1/no stderr; predecessor limitation unchanged",
+    "failedAttemptDiscarded": true,
+    "locksApplied": false,
+    "bindingStatusApplied": false,
+    "ghosts": []
+  },
+  "deepRootNormalizationV": {
+    "declarationsDistributed": 30,
+    "newOwners": [
+      "grid"
+    ],
+    "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+    "runtime": "status 1/no stderr; predecessor limitation unchanged",
+    "locksApplied": false,
+    "bindingStatusApplied": false,
+    "ghosts": []
+  },
+  "deepRootNormalizationVI": {
+    "helpersDistributed": 12,
+    "architect": {
+      "file": "terraformer.architect.js",
+      "registry": "terraformer.architects.json",
+      "attribution": "Daniel Alexander Aspelin",
+      "genericLowLevelOperation": true,
+      "rootControlDelivery": true,
+      "authenticationGranted": false,
+      "authorizationGranted": false,
+      "machineRootGranted": false
+    },
+    "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+    "runtime": "status 1/no stderr; predecessor limitation unchanged",
+    "locksApplied": false,
+    "bindingStatusApplied": false,
+    "ghosts": []
+  },
+  "deepRootNormalizationVII": {
+    "architectAttribution": {
+      "name": "Daniel Alexander Aspelin",
+      "roles": [
+        "Founder",
+        "Architect",
+        "Designer",
+        "Engineer",
+        "Developer"
+      ]
+    },
+    "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+    "runtime": "status 1/no stderr; predecessor limitation unchanged",
+    "ghosts": [],
+    "locksApplied": false,
+    "bindingStatusApplied": false
+  },
+  "deepRootNormalizationVIII": {
+    "packageOwner": "substantive",
+    "uriOwner": "not created; attempted move reverted",
+    "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+    "runtime": "status 1/no stderr; predecessor limitation unchanged",
+    "ghosts": [],
+    "locksApplied": false,
+    "bindingStatusApplied": false
+  },
+  "transversion": {
+    "from": "v0.46.105",
+    "type": "canonical-root-entry-separation",
+    "legacyRootMovedTo": "terraformer.temporary.js",
+    "legacyRootByteExact": true,
+    "canonicalEntry": "terraformer.js",
+    "rootOwner": "terraformer.root.js",
+    "rootRegistry": "terraformer.roots.json",
+    "locksApplied": false,
+    "bindingStatusApplied": false,
+    "qualification": "UNDER_CONDITIONAL_EXPERIMENT"
+  },
+  "rootingArchitecture": {
+    "root": "terraformer.root.js",
+    "roots": "terraformer.roots.json",
+    "rooting": "terraformer.rooting.js",
+    "rooter": "terraformer.rooter.js",
+    "rooters": "terraformer.rooters.json",
+    "rootingProcessExecutesByItself": false,
+    "rooterSelfAuthorizes": false,
+    "osRootPrivilege": false,
+    "locksApplied": false,
+    "qualification": "UNDER_CONDITIONAL_EXPERIMENT"
+  },
+  "temporaryRootDecompositionI": {
+    "source": "terraformer.temporary.js",
+    "owner": "terraformer.package.js",
+    "responsibility": "embedded-package-corpus",
+    "bytesResolved": 641224,
+    "packageEntriesVerified": 114,
+    "packageVerification": "PASS",
+    "temporaryBytesRemaining": 2976485,
+    "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+    "locksApplied": false
+  },
+  "temporaryRootDecompositionII": {
+    "source": "terraformer.temporary.js",
+    "owner": "terraformer.documentation.js",
+    "responsibility": "embedded-documentation-corpus",
+    "bytesResolved": 102588,
+    "documentationEntries": 69,
+    "verified": 68,
+    "integrityMismatch": {
+      "path": "docs/INVOCATION.md",
+      "expected": "02c790603d3c8592eaa7e735ca01c65b22830ecfc2be7b91a4acf1e7d3f43739",
+      "actual": "5e5ae4f668124b54b2864a785afc31063f0e905b9f20f3dce33e2c9c8a9ab56",
+      "preExistingInV0472": true
+    },
+    "temporaryBytesRemaining": 2873441,
+    "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+    "locksApplied": false
+  },
+  "temporaryRootDecompositionIII": {
+    "source": "terraformer.temporary.js",
+    "owner": "terraformer.operations.js",
+    "responsibility": "operations-control-plane",
+    "declarationsMoved": 10,
+    "sourceBytesMoved": 2404,
+    "temporaryBytesRemaining": 2872252,
+    "schedulerCapacity": 5,
+    "canonicalEntryTest": "PASS",
+    "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+    "locksApplied": false
+  },
+  "temporaryRootDecompositionIV": {
+    "source": "terraformer.temporary.js",
+    "responsibility": "resource-infrastructure-separation",
+    "routing": {
+      "TOPOLOGY_SCHEMA": "terraformer.topology.js",
+      "FACILITY_SCHEMA": "terraformer.facility.js",
+      "ASSET_SCHEMA": "terraformer.resource.js",
+      "ASSET_STATES": "terraformer.resource.js",
+      "ALLOCATION_SCHEMA": "terraformer.allocation.js",
+      "SECURITY_SCHEMA": "terraformer.security.js"
+    },
+    "assetDecision": "No system.asset evidence found; Asset vocabulary remains Resource-owned rather than inventing asset.js.",
+    "sourceBytesRouted": 361,
+    "temporaryBytesRemaining": 2872517,
+    "canonicalEntryTest": "PASS",
+    "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+    "locksApplied": false
+  },
+  "incrementerDecrementerWorkers": {
+    "incrementer": {
+      "owner": "terraformer.incrementer.js",
+      "registry": "terraformer.incrementers.json",
+      "system": "system.arithmetic"
+    },
+    "decrementer": {
+      "owner": "terraformer.decrementer.js",
+      "registry": "terraformer.decrementers.json",
+      "system": "system.arithmetic"
+    },
+    "authorityGranted": false,
+    "automaticMutation": false,
+    "persistencePerformed": false,
+    "selfTests": "PASS",
+    "qualification": "UNDER_CONDITIONAL_EXPERIMENT"
+  },
+  "incrementDecrementFamily": {
+    "increment": {
+      "process": "terraformer.increment.js",
+      "results": "terraformer.increments.json",
+      "actor": "terraformer.incrementer.js",
+      "actors": "terraformer.incrementers.json"
+    },
+    "decrement": {
+      "process": "terraformer.decrement.js",
+      "results": "terraformer.decrements.json",
+      "actor": "terraformer.decrementer.js",
+      "actors": "terraformer.decrementers.json"
+    },
+    "system": "system.arithmetic",
+    "workerProcessAgreement": "PASS",
+    "authorityGranted": false,
+    "automaticMutation": false,
+    "persistentByDefault": false,
+    "qualification": "UNDER_CONDITIONAL_EXPERIMENT"
+  },
+  "temporaryRootDecompositionV": {
+    "source": "terraformer.temporary.js",
+    "owner": "terraformer.localhost.js",
+    "registry": "terraformer.localhosts.json",
+    "responsibility": "localhost-v0.68.0-imported-lineage",
+    "sourceBytesMoved": 32999,
+    "importedSystems": 40,
+    "importedWorkers": 160,
+    "canonicalTerraformerAuthority": false,
+    "temporaryBytesRemaining": 2839923,
+    "selfTest": "PASS",
+    "canonicalEntryTest": "PASS",
+    "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+    "locksApplied": false
+  },
+  "physicalEntityOwnershipI": {
+    "classes": [
+      "System",
+      "Program",
+      "Application",
+      "Worker",
+      "Generator",
+      "Tool"
+    ],
+    "explicitWorkerToolOwnersCreated": [
+      "collector",
+      "detector",
+      "interpreter",
+      "invoker",
+      "lexer",
+      "parser",
+      "runner",
+      "serializer",
+      "tokenizer",
+      "transpiler"
+    ],
+    "generatorSplit": "terraformer.generator.js",
+    "automatorSplit": "terraformer.automator.js",
+    "sourceEvidence": {
+      "languageWorkers": [
+        "lexer",
+        "parser",
+        "tokenizer",
+        "validator",
+        "serializer",
+        "interpreter",
+        "compiler",
+        "transpiler"
+      ],
+      "toolWorkers": [
+        "detector",
+        "invoker",
+        "adapter",
+        "validator",
+        "runner",
+        "collector",
+        "reporter",
+        "qualifier"
+      ]
+    },
+    "inventedOpposites": [],
+    "selfTests": "PASS",
+    "canonicalEntryTest": "PASS",
+    "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+    "locksApplied": false
+  },
+  "physicalEntityOwnershipII": {
+    "classes": [
+      "System",
+      "Program",
+      "Application",
+      "Worker",
+      "Generator",
+      "Tool"
+    ],
+    "agentWorkerOwnersMoved": [
+      "banker",
+      "binder",
+      "closer",
+      "concatenator",
+      "opener",
+      "planner",
+      "shopper"
+    ],
+    "sourceBytesMoved": 3266,
+    "inventedEntities": [],
+    "systemIdInventoryDeferred": "Requires classification before physicalization; IDs may denote types/subsystems rather than independent owners.",
+    "selfTests": "PASS",
+    "canonicalEntryTest": "PASS",
+    "legacyTemporaryRuntime": {
+      "exit": 1,
+      "stderr": ""
+    },
+    "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+    "locksApplied": false
+  },
+  "planningFamily": {
+    "systemProcess": "terraformer.planning.js",
+    "processResults": "terraformer.plannings.json",
+    "actor": "terraformer.planner.js",
+    "actors": "terraformer.planners.json",
+    "sourceBytesMoved": 545,
+    "compatibilityBinder": "bindPlanningV04462 preserved",
+    "selfTests": "PASS",
+    "authorityGranted": false,
+    "planningExecutesSteps": false,
+    "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+    "locksApplied": false
+  },
+  "physicalEntityOwnershipIII": {
+    "families": {
+      "banking": {
+        "systemProcess": "terraformer.banking.js",
+        "results": "terraformer.bankings.json",
+        "actor": "terraformer.banker.js",
+        "actors": "terraformer.bankers.json"
+      },
+      "binding": {
+        "systemProcess": "terraformer.binding.js",
+        "results": "terraformer.bindings.json",
+        "actor": "terraformer.binder.js",
+        "actors": "terraformer.binders.json"
+      },
+      "closing": {
+        "systemProcess": "terraformer.closing.js",
+        "results": "terraformer.closings.json",
+        "actor": "terraformer.closer.js",
+        "actors": "terraformer.closers.json"
+      },
+      "concatenation": {
+        "systemProcess": "terraformer.concatenation.js",
+        "results": "terraformer.concatenations.json",
+        "actor": "terraformer.concatenator.js",
+        "actors": "terraformer.concatenators.json"
+      },
+      "opening": {
+        "systemProcess": "terraformer.opening.js",
+        "results": "terraformer.openings.json",
+        "actor": "terraformer.opener.js",
+        "actors": "terraformer.openers.json"
+      },
+      "shop": {
+        "systemProcess": "terraformer.shop.js",
+        "results": "terraformer.shops.json",
+        "actor": "terraformer.shopper.js",
+        "actors": "terraformer.shoppers.json"
+      }
+    },
+    "sourceBytesMoved": 3535,
+    "concatenationOwnerUpgraded": true,
+    "inventedEntities": [],
+    "selfTests": "PASS",
+    "canonicalEntryTest": "PASS",
+    "legacyTemporaryRuntime": {
+      "exit": 1,
+      "stderr": ""
+    },
+    "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+    "locksApplied": false
+  },
+  "entityInventoryUriAlignment": {
+    "inventory": "terraformer.entities.json",
+    "owner": "terraformer.entity.js",
+    "classes": [
+      "System",
+      "Program",
+      "Application",
+      "Worker",
+      "Generator",
+      "Tool"
+    ],
+    "coverage": {
+      "physicalOwners": 252,
+      "entities": 493,
+      "uriCanonical": 268,
+      "uriProjected": 223,
+      "uriUnresolved": 2
+    },
+    "uriScheme": "terraformer",
+    "uriSystem": "system.uri",
+    "uriValidation": "PASS",
+    "unresolvedProjectionCollision": [
+      "system.platform.debian.desktop",
+      "system.desktop"
+    ],
+    "authorityGranted": false,
+    "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+    "locksApplied": false
+  },
+  "canonicalSystemEntityTopology": {
+    "systems": 2139,
+    "physicalized": 1530,
+    "unphysicalized": 609,
+    "oneWordUriSegmentValidation": "PASS",
+    "uriCollisionSystems": 6,
+    "diagnosticExcluded": [
+      "system.__malformed__"
+    ],
+    "topology": "terraformer.entitytopology.json",
+    "orthogonalCrossings": "terraformer.orthogonalcrossings.json",
+    "identityDuplication": false,
+    "authorityGranted": false,
+    "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+    "locksApplied": false
+  },
+  "qualificationDimension": {
+    "canonicalOrder": [
+      "TYPE",
+      "MODE",
+      "CONDITION",
+      "QUALIFICATION",
+      "STATE",
+      "BEHAVIOR",
+      "HEALTH",
+      "CONSISTENCY"
+    ],
+    "owner": "terraformer.qualification.js",
+    "registry": "terraformer.qualifications.json",
+    "values": [
+      "PRE_INFORMATIVE",
+      "UNVERIFIED",
+      "UNDER_CONDITIONAL_EXPERIMENT",
+      "VERIFIED",
+      "NATURALIZED",
+      "DE_NATURALIZED"
+    ],
+    "dimensionTest": "PASS",
+    "authorityGranted": false,
+    "approvalGranted": false,
+    "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+    "locksApplied": false
+  },
+  "verificationDimension": {
+    "canonicalOrder": [
+      "TYPE",
+      "MODE",
+      "CONDITION",
+      "VERIFICATION",
+      "QUALIFICATION",
+      "STATE",
+      "BEHAVIOR",
+      "HEALTH",
+      "CONSISTENCY"
+    ],
+    "owner": "terraformer.verification.js",
+    "registry": "terraformer.verifications.json",
+    "values": [
+      "UNVERIFIED",
+      "PENDING",
+      "PASS",
+      "FAIL",
+      "INCONCLUSIVE",
+      "STALE"
+    ],
+    "verifier": "system.verifier",
+    "verificationGrantsQualification": false,
+    "authorityGranted": false,
+    "approvalGranted": false,
+    "dimensionTest": "PASS",
+    "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+    "locksApplied": false
+  },
+  "dimensionExpansionValidationAccuracy": {
+    "canonicalOrder": [
+      "TYPE",
+      "MODE",
+      "CONDITION",
+      "VALIDATION",
+      "VERIFICATION",
+      "QUALIFICATION",
+      "STATE",
+      "BEHAVIOR",
+      "HEALTH",
+      "CONSISTENCY",
+      "ACCURACY"
+    ],
+    "validation": {
+      "owner": "terraformer.validation.js",
+      "registry": "terraformer.validations.json",
+      "actor": "system.validator",
+      "values": [
+        "UNVALIDATED",
+        "PENDING",
+        "VALID",
+        "INVALID",
+        "INCONCLUSIVE",
+        "STALE"
+      ]
+    },
+    "accuracy": {
+      "owner": "terraformer.accuracy.js",
+      "registry": "terraformer.accuracies.json",
+      "values": [
+        "UNKNOWN",
+        "EXACT",
+        "WITHIN_TOLERANCE",
+        "OUTSIDE_TOLERANCE",
+        "INDETERMINATE"
+      ]
+    },
+    "dimensionTest": "PASS",
+    "authorityGranted": false,
+    "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+    "locksApplied": false
+  },
+  "lookupStateNormalization": {
+    "canonicalSystem": "system.lookup",
+    "owner": "terraformer.lookup.js",
+    "registry": "terraformer.lookups.json",
+    "uri": "terraformer://lookup/",
+    "state": "ACTIVE",
+    "legacyIdentity": "system.active-lookup",
+    "legacyTreatment": "COMPATIBILITY_ALIAS",
+    "activeIsSeparateSystem": false,
+    "tests": "PASS",
+    "authorityGranted": false,
+    "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+    "locksApplied": false
+  },
+  "englishDictionaryTokenDiscovery": {
+    "owner": "terraformer.dictionary.js",
+    "corpus": "terraformer.englishtokens.json",
+    "hostSource": "/usr/share/hunspell/en_US.dic",
+    "sourceDeclaredEntries": 79013,
+    "normalizedOneWordTokens": 76226,
+    "entityUriTokenOverlap": 1129,
+    "entityUriTokensAbsentFromHostDictionary": 446,
+    "automaticSystemAdmission": false,
+    "automaticEntityAdmission": false,
+    "authorityGranted": false,
+    "selfTest": "PASS",
+    "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+    "locksApplied": false
+  },
+  "reservedUriTokenSpace": {
+    "owner": "terraformer.reservation.js",
+    "declarativeObject": "terraformer.reserved.json",
+    "tokens": 76226,
+    "lifecycle": [
+      "AVAILABLE",
+      "RESERVED",
+      "ADMITTED",
+      "CANONICAL"
+    ],
+    "reservationCreatesSystem": false,
+    "reservationCreatesEntity": false,
+    "reservationGrantsAuthority": false,
+    "collisionProtection": true,
+    "selfTest": "PASS",
+    "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+    "locksApplied": false
+  },
+  "instanceLockingDimensions": {
+    "canonicalOrder": [
+      "INSTANCE",
+      "TYPE",
+      "MODE",
+      "LOCKING",
+      "CONDITION",
+      "VALIDATION",
+      "VERIFICATION",
+      "QUALIFICATION",
+      "STATE",
+      "BEHAVIOR",
+      "HEALTH",
+      "CONSISTENCY",
+      "ACCURACY"
+    ],
+    "instance": {
+      "zeroPoint": "INSTANCE",
+      "coordinate": 0,
+      "positive": [
+        {
+          "type": "SUPER",
+          "coordinate": 1
+        },
+        {
+          "type": "HYPER",
+          "coordinate": 2
+        }
+      ],
+      "negative": "RESERVED_EXTENSIBLE",
+      "relative": true
+    },
+    "locking": {
+      "position": "AFTER_MODE_BEFORE_CONDITION",
+      "values": [
+        "UNLOCKED",
+        "LOCK_CANDIDATE",
+        "LOCKED",
+        "REOPENED"
+      ],
+      "mechanism": "system.lock",
+      "locksApplied": false
+    },
+    "dimensionTest": "PASS",
+    "authorityGranted": false,
+    "qualification": "UNDER_CONDITIONAL_EXPERIMENT"
+  },
+  "instanceCoordinateAxis": {
+    "coordinates": {
+      "PRE_LAUNCH": -7,
+      "LOGGING": -6,
+      "AUDITING": -5,
+      "REPORTING": -4,
+      "INITIALIZATION": -3,
+      "LOADING": -2,
+      "EXECUTION": -1,
+      "POST_LAUNCH": 0,
+      "INSTANCE": 1
+    },
+    "launchBoundary": "BETWEEN_EXECUTION_AND_POST_LAUNCH",
+    "zeroPoint": "POST_LAUNCH",
+    "mechanisms": {
+      "LOGGING": "system.logging",
+      "AUDITING": "system.audit",
+      "REPORTING": "system.reporting"
+    },
+    "deferredInstanceTypes": [
+      "SUPER",
+      "HYPER"
+    ],
+    "coordinatesInvokeMechanisms": false,
+    "authorityGranted": false,
+    "test": "PASS",
+    "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+    "locksApplied": false
+  },
+  "runtimeInstanceZero": {
+    "dimensionCoordinate": 1,
+    "instanceOrdinal": 0,
+    "instanceType": "RUNTIME",
+    "coordinateIsNotOrdinal": true,
+    "typeIsNotDimensionValue": true,
+    "authorityGranted": false,
+    "test": "PASS",
+    "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+    "locksApplied": false
+  },
+  "instanceTypeModel": {
+    "instanceZero": {
+      "dimensionCoordinate": 1,
+      "instanceOrdinal": 0,
+      "instanceType": "RUNTIME"
+    },
+    "instanceTypes": [
+      "RUNTIME",
+      "SUPER_INSTANCE",
+      "HYPER_INSTANCE"
+    ],
+    "superHyperAreStates": false,
+    "superHyperAreDimensionValues": false,
+    "higherTypeEligibility": "CONDITION_DEPENDENT",
+    "conditionContracts": "DEFERRED",
+    "automaticPromotion": false,
+    "authorityGranted": false,
+    "test": "PASS",
+    "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+    "locksApplied": false
+  },
+  "conditionalInstanceTypeModel": {
+    "stateType": "CONDITIONAL",
+    "stateTypeIsStateValue": false,
+    "instanceTypes": [
+      "SUPER_INSTANCE",
+      "HYPER_INSTANCE"
+    ],
+    "eligibilityFlow": "CONDITION -> CONDITIONAL_STATE -> INSTANCE_TYPE_ELIGIBILITY",
+    "concretePredicates": "DEFERRED",
+    "automaticPromotion": false,
+    "authorityGranted": false,
+    "test": "PASS",
+    "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+    "locksApplied": false
+  },
+  "selfRuntimeLifecycle": {
+    "subject": "Terraformer",
+    "sequence": [
+      "INVOCATION",
+      "VOLATILITY",
+      "PERSISTENCE"
+    ],
+    "afterInvocation": "VOLATILE",
+    "persistenceTransition": "SET_TO_PERSISTENCE",
+    "executionLifecycle": false,
+    "terminationLifecycle": false,
+    "externalProgramExecutionTerminationUnchanged": true,
+    "authorityCreated": false
+  }
+}

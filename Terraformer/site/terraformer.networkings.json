@@ -1,0 +1,11 @@
+{
+  "schema": "TERRAFORMER-NETWORKINGS/1",
+  "systemId": "system.networking",
+  "membershipGrantsTraining": false,
+  "membershipGrantsInference": false,
+  "membershipGrantsNetworkMutation": false,
+  "membershipGrantsExecution": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

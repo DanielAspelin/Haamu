@@ -1,0 +1,1686 @@
+{
+  "schema": "TERRAFORMER-TOPOLOGY-EDGES/1",
+  "version": "0.48.43",
+  "kind": "topology-edge-audit-set",
+  "owner": "terraformer.topology.js",
+  "records": [
+    {
+      "relationshipId": "relationship.parent.border.customization",
+      "from": "system.border",
+      "relation": "parent",
+      "to": "system.customization",
+      "source": "terraformer.border.js",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.parent.button.customization",
+      "from": "system.button",
+      "relation": "parent",
+      "to": "system.customization",
+      "source": "terraformer.button.js",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.parent.color.customization",
+      "from": "system.color",
+      "relation": "parent",
+      "to": "system.customization",
+      "source": "terraformer.color.js",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.parent.dialog.customization",
+      "from": "system.dialog",
+      "relation": "parent",
+      "to": "system.customization",
+      "source": "terraformer.dialog.js",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.parent.field.customization",
+      "from": "system.field",
+      "relation": "parent",
+      "to": "system.customization",
+      "source": "terraformer.field.js",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.parent.ftp.protocol",
+      "from": "system.ftp",
+      "relation": "parent",
+      "to": "system.protocol",
+      "source": "terraformer.ftp.js",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.source.interconnection.protocol",
+      "from": "system.interconnection",
+      "relation": "source",
+      "to": "system.protocol",
+      "source": "terraformer.interconnection.js",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.target.interconnection.port",
+      "from": "system.interconnection",
+      "relation": "target",
+      "to": "system.port",
+      "source": "terraformer.interconnection.js",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.parent.platform.microsoft",
+      "from": "system.platform",
+      "relation": "parent",
+      "to": "system.microsoft",
+      "source": "terraformer.platform.js",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.parent.platform.apple",
+      "from": "system.platform",
+      "relation": "parent",
+      "to": "system.apple",
+      "source": "terraformer.platform.js",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.parent.platform.linux",
+      "from": "system.platform",
+      "relation": "parent",
+      "to": "system.linux",
+      "source": "terraformer.platform.js",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.position.prediction",
+      "from": "system.position",
+      "relation": "bridge",
+      "to": "system.prediction",
+      "source": "terraformer.position.js",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.owner.rooting.root",
+      "from": "system.rooting",
+      "relation": "owner",
+      "to": "system.root",
+      "source": "terraformer.rooting.js",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.source.seeding.seed",
+      "from": "system.seeding",
+      "relation": "source",
+      "to": "system.seed",
+      "source": "terraformer.seeding.js",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.parent.sftp.protocol",
+      "from": "system.sftp",
+      "relation": "parent",
+      "to": "system.protocol",
+      "source": "terraformer.sftp.js",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.parent.ssh.protocol",
+      "from": "system.ssh",
+      "relation": "parent",
+      "to": "system.protocol",
+      "source": "terraformer.ssh.js",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.parent.theme.customization",
+      "from": "system.theme",
+      "relation": "parent",
+      "to": "system.customization",
+      "source": "terraformer.theme.js",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.parent.visualization.customization",
+      "from": "system.visualization",
+      "relation": "parent",
+      "to": "system.customization",
+      "source": "terraformer.visualization.js",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.owner.alarmer.data",
+      "from": "system.alarmer",
+      "relation": "owner",
+      "to": "system.data",
+      "source": "terraformer.temporary.js",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.gps.bridge",
+      "from": "system.gps",
+      "relation": "bridge",
+      "to": "system.bridge",
+      "source": "terraformer.temporary.js",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.gsm.bridge",
+      "from": "system.gsm",
+      "relation": "bridge",
+      "to": "system.bridge",
+      "source": "terraformer.temporary.js",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.target.gsm.io",
+      "from": "system.gsm",
+      "relation": "target",
+      "to": "system.io",
+      "source": "terraformer.temporary.js",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.owner.inventory.compaction",
+      "from": "system.inventory",
+      "relation": "owner",
+      "to": "system.compaction",
+      "source": "terraformer.temporary.js",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.source.mission.source",
+      "from": "system.mission",
+      "relation": "source",
+      "to": "system.source",
+      "source": "terraformer.temporary.js",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.target.mission.target",
+      "from": "system.mission",
+      "relation": "target",
+      "to": "system.target",
+      "source": "terraformer.temporary.js",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.rfid.bridge",
+      "from": "system.rfid",
+      "relation": "bridge",
+      "to": "system.bridge",
+      "source": "terraformer.temporary.js",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.target.rfid.io",
+      "from": "system.rfid",
+      "relation": "target",
+      "to": "system.io",
+      "source": "terraformer.temporary.js",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.parent.serial.numbering",
+      "from": "system.serial",
+      "relation": "parent",
+      "to": "system.numbering",
+      "source": "terraformer.temporary.js",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.acquisition.command",
+      "from": "system.acquisition",
+      "relation": "bridge",
+      "to": "system.command",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.admission.canonical",
+      "from": "system.admission",
+      "relation": "bridge",
+      "to": "system.canonical",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.admission.content",
+      "from": "system.admission",
+      "relation": "bridge",
+      "to": "system.content",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.admission.identity",
+      "from": "system.admission",
+      "relation": "bridge",
+      "to": "system.identity",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.admission.privilege",
+      "from": "system.admission",
+      "relation": "bridge",
+      "to": "system.privilege",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.admission.sandbox",
+      "from": "system.admission",
+      "relation": "bridge",
+      "to": "system.sandbox",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.admission.script",
+      "from": "system.admission",
+      "relation": "bridge",
+      "to": "system.script",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.admission.session",
+      "from": "system.admission",
+      "relation": "bridge",
+      "to": "system.session",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.admission.token",
+      "from": "system.admission",
+      "relation": "bridge",
+      "to": "system.token",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.admission.transaction",
+      "from": "system.admission",
+      "relation": "bridge",
+      "to": "system.transaction",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.audit.reconciliation",
+      "from": "system.audit",
+      "relation": "bridge",
+      "to": "system.reconciliation",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.audit.terraformer",
+      "from": "system.audit",
+      "relation": "bridge",
+      "to": "system.terraformer",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.audit.universal",
+      "from": "system.audit",
+      "relation": "bridge",
+      "to": "system.universal",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.block.power",
+      "from": "system.block",
+      "relation": "bridge",
+      "to": "system.power",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.block.sha256",
+      "from": "system.block",
+      "relation": "bridge",
+      "to": "system.sha256",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.candidate.token",
+      "from": "system.candidate",
+      "relation": "bridge",
+      "to": "system.token",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.canonical.identity",
+      "from": "system.canonical",
+      "relation": "bridge",
+      "to": "system.identity",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.center.canonical",
+      "from": "system.center",
+      "relation": "bridge",
+      "to": "system.canonical",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.center.record",
+      "from": "system.center",
+      "relation": "bridge",
+      "to": "system.record",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.change.universal",
+      "from": "system.change",
+      "relation": "bridge",
+      "to": "system.universal",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.checkpoint.reconstruction",
+      "from": "system.checkpoint",
+      "relation": "bridge",
+      "to": "system.reconstruction",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.command.acquisition",
+      "from": "system.command",
+      "relation": "bridge",
+      "to": "system.acquisition",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.construct.power",
+      "from": "system.construct",
+      "relation": "bridge",
+      "to": "system.power",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.construct.query",
+      "from": "system.construct",
+      "relation": "bridge",
+      "to": "system.query",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.construct.sha256",
+      "from": "system.construct",
+      "relation": "bridge",
+      "to": "system.sha256",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.construction.construct",
+      "from": "system.construction",
+      "relation": "bridge",
+      "to": "system.construct",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.content.admission",
+      "from": "system.content",
+      "relation": "bridge",
+      "to": "system.admission",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.identity.canonical",
+      "from": "system.identity",
+      "relation": "bridge",
+      "to": "system.canonical",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.inventory.worker",
+      "from": "system.inventory",
+      "relation": "bridge",
+      "to": "system.worker",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.linguist.qualification",
+      "from": "system.linguist",
+      "relation": "bridge",
+      "to": "system.qualification",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.materialization.native",
+      "from": "system.materialization",
+      "relation": "bridge",
+      "to": "system.native",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.model.universal",
+      "from": "system.model",
+      "relation": "bridge",
+      "to": "system.universal",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.native.materialization",
+      "from": "system.native",
+      "relation": "bridge",
+      "to": "system.materialization",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.native.qualification",
+      "from": "system.native",
+      "relation": "bridge",
+      "to": "system.qualification",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.naturalization.qualification",
+      "from": "system.naturalization",
+      "relation": "bridge",
+      "to": "system.qualification",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.placement.canonical",
+      "from": "system.placement",
+      "relation": "bridge",
+      "to": "system.canonical",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.policy.universal",
+      "from": "system.policy",
+      "relation": "bridge",
+      "to": "system.universal",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.position.block",
+      "from": "system.position",
+      "relation": "bridge",
+      "to": "system.block",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.presentation.identity",
+      "from": "system.presentation",
+      "relation": "bridge",
+      "to": "system.identity",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.project.inventory",
+      "from": "system.project",
+      "relation": "bridge",
+      "to": "system.inventory",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.qualification.admission",
+      "from": "system.qualification",
+      "relation": "bridge",
+      "to": "system.admission",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.qualification.architecture",
+      "from": "system.qualification",
+      "relation": "bridge",
+      "to": "system.architecture",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.qualification.authority",
+      "from": "system.qualification",
+      "relation": "bridge",
+      "to": "system.authority",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.qualification.availability",
+      "from": "system.qualification",
+      "relation": "bridge",
+      "to": "system.availability",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.qualification.block",
+      "from": "system.qualification",
+      "relation": "bridge",
+      "to": "system.block",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.qualification.blockdevice",
+      "from": "system.qualification",
+      "relation": "bridge",
+      "to": "system.blockdevice",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.qualification.boundary",
+      "from": "system.qualification",
+      "relation": "bridge",
+      "to": "system.boundary",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.qualification.candidate",
+      "from": "system.qualification",
+      "relation": "bridge",
+      "to": "system.candidate",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.qualification.canonical",
+      "from": "system.qualification",
+      "relation": "bridge",
+      "to": "system.canonical",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.qualification.capability",
+      "from": "system.qualification",
+      "relation": "bridge",
+      "to": "system.capability",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.qualification.center",
+      "from": "system.qualification",
+      "relation": "bridge",
+      "to": "system.center",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.qualification.construct",
+      "from": "system.qualification",
+      "relation": "bridge",
+      "to": "system.construct",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.qualification.contract",
+      "from": "system.qualification",
+      "relation": "bridge",
+      "to": "system.contract",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.qualification.controller",
+      "from": "system.qualification",
+      "relation": "bridge",
+      "to": "system.controller",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.qualification.domain",
+      "from": "system.qualification",
+      "relation": "bridge",
+      "to": "system.domain",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.qualification.estate",
+      "from": "system.qualification",
+      "relation": "bridge",
+      "to": "system.estate",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.qualification.evidence",
+      "from": "system.qualification",
+      "relation": "bridge",
+      "to": "system.evidence",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.qualification.execution",
+      "from": "system.qualification",
+      "relation": "bridge",
+      "to": "system.execution",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.qualification.identity",
+      "from": "system.qualification",
+      "relation": "bridge",
+      "to": "system.identity",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.qualification.image",
+      "from": "system.qualification",
+      "relation": "bridge",
+      "to": "system.image",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.qualification.immunity",
+      "from": "system.qualification",
+      "relation": "bridge",
+      "to": "system.immunity",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.qualification.invocation",
+      "from": "system.qualification",
+      "relation": "bridge",
+      "to": "system.invocation",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.qualification.language",
+      "from": "system.qualification",
+      "relation": "bridge",
+      "to": "system.language",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.qualification.lifecycle",
+      "from": "system.qualification",
+      "relation": "bridge",
+      "to": "system.lifecycle",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.qualification.linguist",
+      "from": "system.qualification",
+      "relation": "bridge",
+      "to": "system.linguist",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.qualification.mobility",
+      "from": "system.qualification",
+      "relation": "bridge",
+      "to": "system.mobility",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.qualification.naturalization",
+      "from": "system.qualification",
+      "relation": "bridge",
+      "to": "system.naturalization",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.qualification.occupation",
+      "from": "system.qualification",
+      "relation": "bridge",
+      "to": "system.occupation",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.qualification.origin",
+      "from": "system.qualification",
+      "relation": "bridge",
+      "to": "system.origin",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.qualification.ownership",
+      "from": "system.qualification",
+      "relation": "bridge",
+      "to": "system.ownership",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.qualification.passport",
+      "from": "system.qualification",
+      "relation": "bridge",
+      "to": "system.passport",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.qualification.personalization",
+      "from": "system.qualification",
+      "relation": "bridge",
+      "to": "system.personalization",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.qualification.platform",
+      "from": "system.qualification",
+      "relation": "bridge",
+      "to": "system.platform",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.qualification.reconciliation",
+      "from": "system.qualification",
+      "relation": "bridge",
+      "to": "system.reconciliation",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.qualification.record",
+      "from": "system.qualification",
+      "relation": "bridge",
+      "to": "system.record",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.qualification.registry",
+      "from": "system.qualification",
+      "relation": "bridge",
+      "to": "system.registry",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.qualification.relationship",
+      "from": "system.qualification",
+      "relation": "bridge",
+      "to": "system.relationship",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.qualification.request",
+      "from": "system.qualification",
+      "relation": "bridge",
+      "to": "system.request",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.qualification.runtime",
+      "from": "system.qualification",
+      "relation": "bridge",
+      "to": "system.runtime",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.qualification.session",
+      "from": "system.qualification",
+      "relation": "bridge",
+      "to": "system.session",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.qualification.subsidiary",
+      "from": "system.qualification",
+      "relation": "bridge",
+      "to": "system.subsidiary",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.qualification.terraformer",
+      "from": "system.qualification",
+      "relation": "bridge",
+      "to": "system.terraformer",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.qualification.transaction",
+      "from": "system.qualification",
+      "relation": "bridge",
+      "to": "system.transaction",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.qualification.universal",
+      "from": "system.qualification",
+      "relation": "bridge",
+      "to": "system.universal",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.qualification.usage",
+      "from": "system.qualification",
+      "relation": "bridge",
+      "to": "system.usage",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.qualification.window",
+      "from": "system.qualification",
+      "relation": "bridge",
+      "to": "system.window",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.query.admission",
+      "from": "system.query",
+      "relation": "bridge",
+      "to": "system.admission",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.query.universal",
+      "from": "system.query",
+      "relation": "bridge",
+      "to": "system.universal",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.reconciliation.audit",
+      "from": "system.reconciliation",
+      "relation": "bridge",
+      "to": "system.audit",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.reconciliation.capability",
+      "from": "system.reconciliation",
+      "relation": "bridge",
+      "to": "system.capability",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.reconciliation.record",
+      "from": "system.reconciliation",
+      "relation": "bridge",
+      "to": "system.record",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.reconciliation.registry",
+      "from": "system.reconciliation",
+      "relation": "bridge",
+      "to": "system.registry",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.reconciliation.relationship",
+      "from": "system.reconciliation",
+      "relation": "bridge",
+      "to": "system.relationship",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.reconstruction.capability",
+      "from": "system.reconstruction",
+      "relation": "bridge",
+      "to": "system.capability",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.reconstruction.checkpoint",
+      "from": "system.reconstruction",
+      "relation": "bridge",
+      "to": "system.checkpoint",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.reconstruction.relationship",
+      "from": "system.reconstruction",
+      "relation": "bridge",
+      "to": "system.relationship",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.record.canonical",
+      "from": "system.record",
+      "relation": "bridge",
+      "to": "system.canonical",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.reference.canonical",
+      "from": "system.reference",
+      "relation": "bridge",
+      "to": "system.canonical",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.sandbox.admission",
+      "from": "system.sandbox",
+      "relation": "bridge",
+      "to": "system.admission",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.sandbox.universal",
+      "from": "system.sandbox",
+      "relation": "bridge",
+      "to": "system.universal",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.session.admission",
+      "from": "system.session",
+      "relation": "bridge",
+      "to": "system.admission",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.session.qualification",
+      "from": "system.session",
+      "relation": "bridge",
+      "to": "system.qualification",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.signal.universal",
+      "from": "system.signal",
+      "relation": "bridge",
+      "to": "system.universal",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.terraformer.audit",
+      "from": "system.terraformer",
+      "relation": "bridge",
+      "to": "system.audit",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.terraformer.composition",
+      "from": "system.terraformer",
+      "relation": "bridge",
+      "to": "system.composition",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.terraformer.construct",
+      "from": "system.terraformer",
+      "relation": "bridge",
+      "to": "system.construct",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.terraformer.interconnection",
+      "from": "system.terraformer",
+      "relation": "bridge",
+      "to": "system.interconnection",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.terraformer.qualification",
+      "from": "system.terraformer",
+      "relation": "bridge",
+      "to": "system.qualification",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.terraformer.reconciliation",
+      "from": "system.terraformer",
+      "relation": "bridge",
+      "to": "system.reconciliation",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.terraformer.universal",
+      "from": "system.terraformer",
+      "relation": "bridge",
+      "to": "system.universal",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.token.candidate",
+      "from": "system.token",
+      "relation": "bridge",
+      "to": "system.candidate",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.universal.change",
+      "from": "system.universal",
+      "relation": "bridge",
+      "to": "system.change",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.universal.model",
+      "from": "system.universal",
+      "relation": "bridge",
+      "to": "system.model",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.universal.policy",
+      "from": "system.universal",
+      "relation": "bridge",
+      "to": "system.policy",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.universal.sandbox",
+      "from": "system.universal",
+      "relation": "bridge",
+      "to": "system.sandbox",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.universal.script",
+      "from": "system.universal",
+      "relation": "bridge",
+      "to": "system.script",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.universal.signal",
+      "from": "system.universal",
+      "relation": "bridge",
+      "to": "system.signal",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.bridge.worker.inventory",
+      "from": "system.worker",
+      "relation": "bridge",
+      "to": "system.inventory",
+      "source": "terraformer.crossbridges.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.adaptswith.foreground.background",
+      "from": "system.foreground",
+      "relation": "adaptsWith",
+      "to": "system.background",
+      "source": "terraformer.processingarchitecture.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.supports.foreground.parallelism",
+      "from": "system.foreground",
+      "relation": "supports",
+      "to": "system.parallelism",
+      "source": "terraformer.processingarchitecture.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.supports.foreground.concurrency",
+      "from": "system.foreground",
+      "relation": "supports",
+      "to": "system.concurrency",
+      "source": "terraformer.processingarchitecture.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.connection.foreground.connection",
+      "from": "system.foreground",
+      "relation": "connection",
+      "to": "system.connection",
+      "source": "terraformer.processingarchitecture.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.sustainment.foreground.sustainment",
+      "from": "system.foreground",
+      "relation": "sustainment",
+      "to": "system.sustainment",
+      "source": "terraformer.processingarchitecture.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.adaptswith.background.foreground",
+      "from": "system.background",
+      "relation": "adaptsWith",
+      "to": "system.foreground",
+      "source": "terraformer.processingarchitecture.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.supports.background.parallelism",
+      "from": "system.background",
+      "relation": "supports",
+      "to": "system.parallelism",
+      "source": "terraformer.processingarchitecture.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.supports.background.concurrency",
+      "from": "system.background",
+      "relation": "supports",
+      "to": "system.concurrency",
+      "source": "terraformer.processingarchitecture.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.connection.background.connection",
+      "from": "system.background",
+      "relation": "connection",
+      "to": "system.connection",
+      "source": "terraformer.processingarchitecture.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.sustainment.background.sustainment",
+      "from": "system.background",
+      "relation": "sustainment",
+      "to": "system.sustainment",
+      "source": "terraformer.processingarchitecture.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.ownspresentation.foreground.graphics",
+      "from": "system.foreground",
+      "relation": "ownsPresentation",
+      "to": "system.graphics",
+      "source": "terraformer.layouts.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.ownspresentation.foreground.visualization",
+      "from": "system.foreground",
+      "relation": "ownsPresentation",
+      "to": "system.visualization",
+      "source": "terraformer.layouts.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.ownspresentation.foreground.layout",
+      "from": "system.foreground",
+      "relation": "ownsPresentation",
+      "to": "system.layout",
+      "source": "terraformer.layouts.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.ownspresentation.foreground.layer",
+      "from": "system.foreground",
+      "relation": "ownsPresentation",
+      "to": "system.layer",
+      "source": "terraformer.layouts.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.uses.foreground.vector",
+      "from": "system.foreground",
+      "relation": "uses",
+      "to": "system.vector",
+      "source": "terraformer.layouts.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.fallbackuses.foreground.raster",
+      "from": "system.foreground",
+      "relation": "fallbackUses",
+      "to": "system.raster",
+      "source": "terraformer.layouts.json",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.ownspresentation.foreground.html",
+      "from": "system.foreground",
+      "relation": "ownsPresentation",
+      "to": "system.html",
+      "source": "terraformer.foreground.js",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.ownspresentation.foreground.css",
+      "from": "system.foreground",
+      "relation": "ownsPresentation",
+      "to": "system.css",
+      "source": "terraformer.foreground.js",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.ownspresentation.foreground.cad",
+      "from": "system.foreground",
+      "relation": "ownsPresentation",
+      "to": "system.cad",
+      "source": "v0.48.9",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.reportsthrough.perimeter.reporting",
+      "from": "system.perimeter",
+      "relation": "reportsThrough",
+      "to": "system.reporting",
+      "source": "v0.48.9",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    },
+    {
+      "relationshipId": "relationship.projectsacross.perimeter.launch",
+      "from": "system.perimeter",
+      "relation": "projectsAcross",
+      "to": "system.launch",
+      "source": "v0.48.9",
+      "inverseRequired": false,
+      "classification": "DECLARED_RELATIONSHIP_NOT_AUTOMATIC_ROUNDTRIP",
+      "authorityGranted": false
+    }
+  ],
+  "counts": {
+    "declaredNonTypeEdges": 167,
+    "typeOfEdges": 743,
+    "missingTypeInverse": 0
+  },
+  "rule": "A directed relationship is not a verified operational round trip merely because it is registered. Round-trip status requires explicit return-path evidence.",
+  "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+  "authorityGranted": false
+}

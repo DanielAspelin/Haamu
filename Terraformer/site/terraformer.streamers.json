@@ -1,0 +1,11 @@
+{
+  "schema": "TERRAFORMER-STREAMERS/1",
+  "purpose": "governed streamer worker identities, capabilities and evidence",
+  "authorityGranted": false,
+  "membershipGrantsAuthority": false,
+  "automaticExecution": false,
+  "records": [],
+  "owner": "system.streamer",
+  "ownerBindingVersion": "0.48.16",
+  "ownerBindingAuthorityGranted": false
+}

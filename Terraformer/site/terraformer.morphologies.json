@@ -1,0 +1,105 @@
+{
+  "schema": "TERRAFORMER-MORPHOLOGIES/1",
+  "version": "0.48.27",
+  "owner": "system.morphology",
+  "kind": "plural-registry",
+  "records": [
+    {
+      "id": "morphology.system-suffix",
+      "suffixes": [
+        "ion",
+        "ing"
+      ],
+      "candidateKind": "SYSTEM",
+      "strength": "CANDIDATE",
+      "automaticAdmission": false,
+      "automaticPrecreation": true,
+      "precreationQualification": "UNDER_CONDITIONAL_EXPERIMENT"
+    },
+    {
+      "id": "morphology.worker-agentive",
+      "suffixes": [
+        "er",
+        "or"
+      ],
+      "candidateKind": "APPLICATION",
+      "strength": "STRONG_CANDIDATE",
+      "automaticAdmission": false,
+      "legacyCandidateKind": "WORKER",
+      "automaticPrecreation": true,
+      "applicationLevel": true,
+      "precreationQualification": "UNDER_CONDITIONAL_EXPERIMENT"
+    },
+    {
+      "id": "morphology.worker-final-r",
+      "suffixes": [
+        "r"
+      ],
+      "candidateKind": "APPLICATION",
+      "strength": "WEAK_CANDIDATE",
+      "automaticAdmission": false,
+      "legacyCandidateKind": "WORKER",
+      "automaticPrecreation": true,
+      "applicationLevel": true,
+      "precreationQualification": "UNDER_CONDITIONAL_EXPERIMENT"
+    },
+    {
+      "id": "morphology.plural-final-s",
+      "suffixes": [
+        "s"
+      ],
+      "candidateKind": "PLURAL_SET",
+      "strength": "CANDIDATE",
+      "automaticPrecreation": false,
+      "rule": "Final-s is plural evidence only; singular counterpart and semantic validation are required."
+    }
+  ],
+  "rules": {
+    "suffixIsNotSemanticProof": true,
+    "contextRequired": true,
+    "nonOverlapRequired": true,
+    "responsibilityRequired": true,
+    "qualificationRequired": true,
+    "sharedAuditResultsMayBeReportedByAuditAndMorphology": true,
+    "ionIngPrecreateMinimalSystemFile": true,
+    "finalRPrecreateMinimalApplicationFile": true,
+    "precreationDoesNotProveSemantics": true,
+    "precreationDoesNotGrantAuthority": true,
+    "pluralSetOnlyWhenSemanticallySensible": true,
+    "singularConceptPhysicalForm": "JAVASCRIPT",
+    "pluralSetPhysicalForm": "JSON",
+    "singularJsonConceptFilesProhibited": true,
+    "validPluralPhysicalForm": "JSON",
+    "pluralRequiresSemanticValidation": true
+  },
+  "authorityGranted": false,
+  "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+  "results": [
+    {
+      "id": "audit.morphology.v0.48.16",
+      "kind": "MORPHOLOGY_PHYSICALIZATION_AUDIT",
+      "sourceCheckpoint": "0.48.16",
+      "summary": {
+        "systemMorphologyCandidates": 337,
+        "systemCandidatesWithSingularJsOwner": 337,
+        "workerMorphologyCandidates": 285,
+        "workerCandidatesWithSingularJsOwner": 285,
+        "existingPluralRegistriesOwnerBoundThisPass": 66,
+        "newPluralRegistriesCreatedThisPass": 2,
+        "unresolvedPluralRegistryGaps": 0
+      },
+      "finding": "The audited morphology candidate corpus was already fully singular-owner physicalized; expansion value is semantic qualification and registry ownership, not duplicate JS creation.",
+      "rules": {
+        "morphologyDoesNotAutomaticallyAdmitSystem": true,
+        "morphologyDoesNotAutomaticallyAdmitWorker": true,
+        "noDuplicateOwnerCreation": true
+      },
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "sharedResult": true,
+      "canonicalDataContexts": [
+        "system.audit",
+        "system.morphology"
+      ]
+    }
+  ]
+}

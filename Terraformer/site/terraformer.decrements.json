@@ -1,0 +1,11 @@
+{
+  "schema": "TERRAFORMER-DECREMENTS-REGISTRY/1",
+  "owner": "terraformer.decrement.js",
+  "process": "process.decrement",
+  "actor": "worker.decrementer",
+  "entries": [],
+  "entryType": "decrement-result",
+  "persistentByDefault": false,
+  "authorityGranted": false,
+  "rule": "Declarative result/history registry only. Entries do not execute operations, grant authority, or imply persistence."
+}

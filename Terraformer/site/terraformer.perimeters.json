@@ -1,0 +1,54 @@
+{
+  "schema": "TERRAFORMER-CONCEPT-REGISTRY/1",
+  "version": "0.48.9",
+  "kind": "CONCEPT_REGISTRY",
+  "owner": "system.perimeter",
+  "concept": "Perimeter",
+  "singularOwner": "terraformer.perimeter.js",
+  "records": [],
+  "membershipGrantsAuthority": false,
+  "membershipGrantsExecution": false,
+  "membershipGrantsPersistence": false,
+  "automaticPopulation": false,
+  "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+  "reconciledProjections": [
+    {
+      "source": "terraformer.perimeterline.json",
+      "context": "PERIMETER_LINE",
+      "data": {
+        "schema": "TERRAFORMER-PERIMETER-LINE/1",
+        "version": "0.48.9",
+        "owner": "system.perimeter",
+        "line": "perimeter.launch",
+        "orderedProjections": [
+          {
+            "index": -1,
+            "phase": "PRE_LAUNCH",
+            "samePerimeterIdentity": true
+          },
+          {
+            "index": 1,
+            "phase": "POST_LAUNCH",
+            "samePerimeterIdentity": true
+          }
+        ],
+        "zeroPoint": {
+          "index": 0,
+          "event": "LAUNCH_TRANSITION",
+          "isPerimeterReplacement": false
+        },
+        "reporting": {
+          "system": "system.reporting",
+          "compareSameLine": true,
+          "preserveIdentity": true
+        },
+        "rules": {
+          "projectionDoesNotGrantLaunchAuthority": true,
+          "postLaunchDoesNotErasePreLaunchEvidence": true
+        }
+      },
+      "migrationVersion": "0.48.30",
+      "dataLoss": false
+    }
+  ]
+}

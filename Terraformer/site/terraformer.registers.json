@@ -1,0 +1,15 @@
+{
+  "schema": "TERRAFORMER-REGISTERS/1",
+  "owner": "system.register",
+  "executable": "terraformer.register.js",
+  "role": "performs bounded register operations only when admitted by caller authority",
+  "authorityGranted": false,
+  "membershipGrantsAuthority": false,
+  "records": [
+    {
+      "id": "register.canonical",
+      "status": "registered",
+      "authorityGranted": false
+    }
+  ]
+}

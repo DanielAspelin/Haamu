@@ -1,0 +1,42 @@
+{
+  "schema": "TERRAFORMER-PROTOCOLS/1",
+  "systemId": "system.protocol",
+  "authorityGranted": false,
+  "automaticExecution": false,
+  "records": [],
+  "sshSftpFtpTypes": [
+    {
+      "id": "system.ssh",
+      "kind": "secure-remote-session"
+    },
+    {
+      "id": "system.sftp",
+      "kind": "ssh-file-transfer"
+    },
+    {
+      "id": "system.ftp",
+      "kind": "file-transfer"
+    }
+  ],
+  "registrationGrantsConnection": false,
+  "registrationGrantsTransfer": false,
+  "registrationGrantsRemoteExecution": false,
+  "registrationGrantsAuthority": false,
+  "directOwners": {
+    "system.ssh": "terraformer.ssh.js",
+    "system.sftp": "terraformer.sftp.js",
+    "system.ftp": "terraformer.ftp.js"
+  },
+  "httpHttpsTypes": [
+    {
+      "id": "system.http"
+    },
+    {
+      "id": "system.https",
+      "uses": [
+        "system.http",
+        "system.tls"
+      ]
+    }
+  ]
+}

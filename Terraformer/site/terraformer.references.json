@@ -1,0 +1,51 @@
+{
+  "schema": "TERRAFORMER-REFERENCES/1",
+  "systemId": "system.reference",
+  "authorityMode": "external-reference-only",
+  "records": [
+    {
+      "id": "reference.iso",
+      "organization": "ISO",
+      "referenceType": true,
+      "standardType": true,
+      "kind": "external-standards-reference",
+      "authorityTransferred": false
+    },
+    {
+      "id": "reference.iec",
+      "organization": "IEC",
+      "referenceType": true,
+      "standardType": true,
+      "kind": "external-standards-reference",
+      "authorityTransferred": false
+    },
+    {
+      "id": "reference.isoiec",
+      "subject": "system.iso-iec",
+      "organization": "ISO/IEC",
+      "referenceType": true,
+      "standardType": true,
+      "kind": "external-standards-reference",
+      "standardRegistry": "terraformer.standards.json",
+      "authorityTransferred": false
+    },
+    {
+      "id": "reference.rfc",
+      "subject": "system.rfc",
+      "series": "RFC",
+      "referenceType": true,
+      "standardType": false,
+      "standardStatus": "per-record-explicit-evidence-required",
+      "kind": "external-rfc-reference",
+      "authorityTransferred": false
+    }
+  ],
+  "spaceAgencyCatalogueV36411": {
+    "id": "reference.space-agencies.isecg-2026-09-27",
+    "publisher": "NASA",
+    "retrieved": "2026-09-27",
+    "entries": 27,
+    "exhaustiveWorldwideClaim": false,
+    "authority": "external-public-documentation"
+  }
+}

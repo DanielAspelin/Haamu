@@ -1,0 +1,7 @@
+{
+  "schema": "terraformer.registry/disks/1",
+  "owner": "system.disk",
+  "entries": [],
+  "authority": false,
+  "qualificationGranted": false
+}

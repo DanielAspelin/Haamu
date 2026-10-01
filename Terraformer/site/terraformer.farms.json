@@ -1,0 +1,9 @@
+{
+  "schema": "TERRAFORMER-FARMS/1",
+  "systemId": "system.farming",
+  "membershipGrantsAuthority": false,
+  "activeByDefault": false,
+  "records": [],
+  "hostingSupport": "system.hosting",
+  "authorityGranted": false
+}

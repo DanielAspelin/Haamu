@@ -1,0 +1,8 @@
+{
+  "schema": "TERRAFORMER-RETURNS/1",
+  "version": "0.47.48",
+  "owner": "system.return",
+  "governedBy": "terraformer.return.js",
+  "records": [],
+  "authorityGranted": false
+}

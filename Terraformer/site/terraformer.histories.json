@@ -1,0 +1,9 @@
+{
+  "schema": "TERRAFORMER-HISTORIES/1",
+  "systemId": "system.history",
+  "membershipGrantsCapture": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsHistoryRewrite": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

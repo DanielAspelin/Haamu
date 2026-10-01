@@ -1,0 +1,22 @@
+{
+  "schema": "TERRAFORMER-PLURAL-SET/1",
+  "version": "0.48.33",
+  "kind": "PLURAL_SET",
+  "concept": "brokers",
+  "singular": "broker",
+  "owner": "terraformer.broker.js",
+  "records": [],
+  "pluralEvidence": {
+    "rule": "ENGLISH_INFLECTION",
+    "corpusAttested": false,
+    "status": "INTERNALLY_SUPPORTED",
+    "normalization": "INTERNAL_MULTI_SOURCE_CONCEPT_EVIDENCE_PLUS_REGULAR_INFLECTION",
+    "internalEvidenceSources": [
+      "terraformer.entities.json",
+      "terraformer.applications.json"
+    ]
+  },
+  "membershipGrantsAuthority": false,
+  "membershipGrantsExecution": false,
+  "qualification": "UNDER_CONDITIONAL_EXPERIMENT"
+}

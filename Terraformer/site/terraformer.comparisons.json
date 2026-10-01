@@ -1,0 +1,8 @@
+{
+  "schema": "TERRAFORMER-COMPARISONS/1",
+  "systemId": "system.comparison",
+  "membershipGrantsExecution": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

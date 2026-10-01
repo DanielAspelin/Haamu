@@ -1,0 +1,6 @@
+{
+  "schema": "TERRAFORMER-STATUSES/1",
+  "systemId": "system.status",
+  "membershipGrantsAuthority": false,
+  "records": []
+}

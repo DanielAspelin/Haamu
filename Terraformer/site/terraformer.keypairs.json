@@ -1,0 +1,8 @@
+{
+  "schema": "TERRAFORMER-KEYPAIRS/1",
+  "purpose": "governed key-pair plans/evidence; never private key material",
+  "authorityGranted": false,
+  "automaticExecution": false,
+  "secretMaterial": false,
+  "records": []
+}

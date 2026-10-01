@@ -1,0 +1,20 @@
+{
+  "$schema": "terraformer.registry/recording_registry/1",
+  "version": "0.44.24",
+  "kind": "RECORDING_REGISTRY",
+  "governedBy": "system.recording",
+  "governanceEvidence": "PREDECESSOR_CANONICAL_SOURCE_IDENTITY",
+  "authority": false,
+  "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+  "validation": "EXPLICIT_SCHEMA_AND_IDENTITY_REQUIRED",
+  "failureSemantics": "INVALID_OR_UNAUTHORIZED_INPUT_FAILS_CLOSED",
+  "provenance": {
+    "predecessor": "v0.44.21",
+    "checkpoint": "v0.44.22"
+  },
+  "semantics": "Recording metadata/evidence; registry membership does not imply capture consent, device access, correctness or authority.",
+  "recordings": [],
+  "owner": "system.recording",
+  "ownerBindingVersion": "0.48.16",
+  "ownerBindingAuthorityGranted": false
+}

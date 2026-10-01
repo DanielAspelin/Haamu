@@ -1,0 +1,11 @@
+{
+  "schema": "TERRAFORMER-SALTERS/1",
+  "purpose": "governed salter worker identities/capabilities",
+  "authorityGranted": false,
+  "automaticExecution": false,
+  "secretMaterial": false,
+  "records": [],
+  "owner": "system.salter",
+  "ownerBindingVersion": "0.48.16",
+  "ownerBindingAuthorityGranted": false
+}

@@ -1,0 +1,2840 @@
+{
+  "schema": "TERRAFORMER-TEMPORARY-MIGRATION/1",
+  "version": "0.48.14",
+  "source": "terraformer.temporary.js",
+  "records": [
+    {
+      "function": "tfCanonicalClassificationSlug",
+      "destination": "terraformer.classification.js",
+      "ownerConcept": "classification",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "LEAF",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfEnsureInternalSessionLane",
+      "destination": "terraformer.session.js",
+      "ownerConcept": "session",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "LEAF",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfStopInternalSessionLane",
+      "destination": "terraformer.session.js",
+      "ownerConcept": "session",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "LEAF",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfInstallationId",
+      "destination": "terraformer.installation.js",
+      "ownerConcept": "installation",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "LEAF",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfTokenBytes",
+      "destination": "terraformer.token.js",
+      "ownerConcept": "token",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "LEAF",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfHomeLookup",
+      "destination": "terraformer.lookup.js",
+      "ownerConcept": "lookup",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "LEAF",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfSha256File",
+      "destination": "terraformer.sha256.js",
+      "ownerConcept": "sha256",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "LEAF",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfRecoveryPlan",
+      "destination": "terraformer.recovery.js",
+      "ownerConcept": "recovery",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "LEAF",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfRecoveryRecord",
+      "destination": "terraformer.recovery.js",
+      "ownerConcept": "recovery",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "LEAF",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfSustainmentRecord",
+      "destination": "terraformer.sustainment.js",
+      "ownerConcept": "sustainment",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "LEAF",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfSustainmentEvidence",
+      "destination": "terraformer.sustainment.js",
+      "ownerConcept": "sustainment",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "LEAF",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfWakeCondition",
+      "destination": "terraformer.condition.js",
+      "ownerConcept": "condition",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "LEAF",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfNeuralRegister",
+      "destination": "terraformer.register.js",
+      "ownerConcept": "register",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "LEAF",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfNeuralConnect",
+      "destination": "terraformer.neural.js",
+      "ownerConcept": "neural",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "LEAF",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfPropagateSignal",
+      "destination": "terraformer.signal.js",
+      "ownerConcept": "signal",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "LEAF",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfCoverageFunctions",
+      "destination": "terraformer.functions.js",
+      "ownerConcept": "functions",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "LEAF",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfCrossCoverage",
+      "destination": "terraformer.coverage.js",
+      "ownerConcept": "coverage",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "LEAF",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfReferenceClass",
+      "destination": "terraformer.reference.js",
+      "ownerConcept": "reference",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "LEAF",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfDerivedInnerFunctions",
+      "destination": "terraformer.functions.js",
+      "ownerConcept": "functions",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "LEAF",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfImplementationEvidence",
+      "destination": "terraformer.implementation.js",
+      "ownerConcept": "implementation",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "LEAF",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfImplementationQualification",
+      "destination": "terraformer.implementation.js",
+      "ownerConcept": "implementation",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "LEAF",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfPackageParcelFlow",
+      "destination": "terraformer.package.js",
+      "ownerConcept": "package",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "LEAF",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfStructuralAgents",
+      "destination": "terraformer.struct.js",
+      "ownerConcept": "struct",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "LEAF",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfInteractionFlow",
+      "destination": "terraformer.action.js",
+      "ownerConcept": "action",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "LEAF",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfReportingStatus",
+      "destination": "terraformer.reporting.js",
+      "ownerConcept": "reporting",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "LEAF",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfSelectionClear",
+      "destination": "terraformer.selection.js",
+      "ownerConcept": "selection",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "LEAF",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfIconRegister",
+      "destination": "terraformer.register.js",
+      "ownerConcept": "register",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "LEAF",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfOrganizationalRecord",
+      "destination": "terraformer.organization.js",
+      "ownerConcept": "organization",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "LEAF",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfCommerceRecord",
+      "destination": "terraformer.commerce.js",
+      "ownerConcept": "commerce",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "LEAF",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfRegistryCatalog",
+      "destination": "terraformer.registry.js",
+      "ownerConcept": "registry",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "LEAF",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfTransferRecord",
+      "destination": "terraformer.transfer.js",
+      "ownerConcept": "transfer",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "LEAF",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfConnection",
+      "destination": "terraformer.connection.js",
+      "ownerConcept": "connection",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "LEAF",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfAdmissionDecisionV4034",
+      "destination": "terraformer.admission.js",
+      "ownerConcept": "admission",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfAdmissionSelfTestV4034",
+      "destination": "terraformer.admission.js",
+      "ownerConcept": "admission",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [
+        "tfAdmissionDecisionV4034",
+        "tfExternalResourceAdmissionV4034"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfAssessSustainment",
+      "destination": "terraformer.sustainment.js",
+      "ownerConcept": "sustainment",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfAvailabilityV4057",
+      "destination": "terraformer.availability.js",
+      "ownerConcept": "availability",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfBankRegistryPlanV4028",
+      "destination": "terraformer.registry.js",
+      "ownerConcept": "registry",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfCanonicalHasV4035",
+      "destination": "terraformer.canonical.js",
+      "ownerConcept": "canonical",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [
+        "tfCanonicalIdsV4035"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfCanonicalIdsV4035",
+      "destination": "terraformer.canonical.js",
+      "ownerConcept": "canonical",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfCanonicalLabelCoverageV4051",
+      "destination": "terraformer.canonical.js",
+      "ownerConcept": "canonical",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [
+        "tfDefaultCanonicalLabelV4051"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfClearPresentationSession",
+      "destination": "terraformer.presentation.js",
+      "ownerConcept": "presentation",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [
+        "tfPresentationRecordPath"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfDefaultCanonicalLabelV4051",
+      "destination": "terraformer.canonical.js",
+      "ownerConcept": "canonical",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfExternalResourceAdmissionV4034",
+      "destination": "terraformer.admission.js",
+      "ownerConcept": "admission",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [
+        "tfAdmissionDecisionV4034"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfIOReconstructionInventoryV4045",
+      "destination": "terraformer.reconstruction.js",
+      "ownerConcept": "reconstruction",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfIOReconstructionReportV4045",
+      "destination": "terraformer.reconstruction.js",
+      "ownerConcept": "reconstruction",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [
+        "tfIOReconstructionInventoryV4045"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfIORecordV419",
+      "destination": "terraformer.record.js",
+      "ownerConcept": "record",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfIntegratedGovernanceQualificationV4146",
+      "destination": "terraformer.qualification.js",
+      "ownerConcept": "qualification",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfPersonAvailabilityV4057",
+      "destination": "terraformer.availability.js",
+      "ownerConcept": "availability",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [
+        "tfAvailabilityV4057"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfPresentationRecordPath",
+      "destination": "terraformer.presentation.js",
+      "ownerConcept": "presentation",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfProviderRegistrySelfTestV4028",
+      "destination": "terraformer.registry.js",
+      "ownerConcept": "registry",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [
+        "tfBankRegistryPlanV4028"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfQualificationOrchestratorV4147",
+      "destination": "terraformer.qualification.js",
+      "ownerConcept": "qualification",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [
+        "tfIntegratedGovernanceQualificationV4146"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfReconstructionClosureSelfTestV36416",
+      "destination": "terraformer.reconstruction.js",
+      "ownerConcept": "reconstruction",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [
+        "tfUniversalReconstructionManifestV36416"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfStableIORecordV419",
+      "destination": "terraformer.record.js",
+      "ownerConcept": "record",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [
+        "tfIORecordV419"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfTransitionSustainment",
+      "destination": "terraformer.sustainment.js",
+      "ownerConcept": "sustainment",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [
+        "tfAssessSustainment"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfUniversalReconstructionManifestV36416",
+      "destination": "terraformer.reconstruction.js",
+      "ownerConcept": "reconstruction",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfVerifiedIORecordV419",
+      "destination": "terraformer.record.js",
+      "ownerConcept": "record",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [
+        "tfIORecordV419"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfWorkerGroupsV4065",
+      "destination": "terraformer.worker.js",
+      "ownerConcept": "worker",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [
+        "tfWorkerRoleNameV4065"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfWorkerRoleNameV4065",
+      "destination": "terraformer.worker.js",
+      "ownerConcept": "worker",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfWorkerRoleV4065",
+      "destination": "terraformer.worker.js",
+      "ownerConcept": "worker",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [
+        "tfWorkerGroupsV4065",
+        "tfWorkerRoleNameV4065"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfBlockIORequestV417",
+      "destination": "terraformer.request.js",
+      "ownerConcept": "request",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfCertificationProfileV4041",
+      "destination": "terraformer.certification.js",
+      "ownerConcept": "certification",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfCertificationRecordV4041",
+      "destination": "terraformer.certification.js",
+      "ownerConcept": "certification",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfCertificationSelfTestV4041",
+      "destination": "terraformer.certification.js",
+      "ownerConcept": "certification",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [
+        "tfCertificationProfileV4041",
+        "tfCertificationRecordV4041",
+        "tfCertificationTransitionV4041",
+        "tfWorldMapCertificationGateV4041"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfCertificationTransitionV4041",
+      "destination": "terraformer.certification.js",
+      "ownerConcept": "certification",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfCommitPersistenceV383",
+      "destination": "terraformer.persistence.js",
+      "ownerConcept": "persistence",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [
+        "tfPersistenceStateV383"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfEntityV4063",
+      "destination": "terraformer.entity.js",
+      "ownerConcept": "entity",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfFinalizationStatusV36441",
+      "destination": "terraformer.finalization.js",
+      "ownerConcept": "finalization",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfGenerateMobilePortraitCSSV4014",
+      "destination": "terraformer.mobile.js",
+      "ownerConcept": "mobile",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfGenerateMobilePortraitFrameV4014",
+      "destination": "terraformer.mobile.js",
+      "ownerConcept": "mobile",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfImageDeviceRequestsV418",
+      "destination": "terraformer.request.js",
+      "ownerConcept": "request",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [
+        "tfBlockIORequestV417"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfMobilePortraitFrameSelfTestV4014",
+      "destination": "terraformer.mobile.js",
+      "ownerConcept": "mobile",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [
+        "tfGenerateMobilePortraitCSSV4014",
+        "tfGenerateMobilePortraitFrameV4014"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfNumberV4097",
+      "destination": "terraformer.number.js",
+      "ownerConcept": "number",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [
+        "tfRandomNumberV4097"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfPersistenceStateV383",
+      "destination": "terraformer.persistence.js",
+      "ownerConcept": "persistence",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfPersonalizationBoundaryV4064",
+      "destination": "terraformer.personalization.js",
+      "ownerConcept": "personalization",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [
+        "tfPersonalizationV4063"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfPersonalizationV4063",
+      "destination": "terraformer.personalization.js",
+      "ownerConcept": "personalization",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfProgramStateV4069",
+      "destination": "terraformer.program.js",
+      "ownerConcept": "program",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfRandomNumberV4097",
+      "destination": "terraformer.number.js",
+      "ownerConcept": "number",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfReservedTransportPortPlanV36419",
+      "destination": "terraformer.transport.js",
+      "ownerConcept": "transport",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfReservedTransportPortSelfTestV36419",
+      "destination": "terraformer.transport.js",
+      "ownerConcept": "transport",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [
+        "tfReservedTransportPortPlanV36419"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfResolveSurfaceV413",
+      "destination": "terraformer.surface.js",
+      "ownerConcept": "surface",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [
+        "tfSurfaceV413"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfServiceProbePlanV4032",
+      "destination": "terraformer.service.js",
+      "ownerConcept": "service",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfServiceReadinessBatchV4032",
+      "destination": "terraformer.service.js",
+      "ownerConcept": "service",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [
+        "tfServiceProbePlanV4032"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfSurfaceV413",
+      "destination": "terraformer.surface.js",
+      "ownerConcept": "surface",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfSwitchProgramV4069",
+      "destination": "terraformer.program.js",
+      "ownerConcept": "program",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [
+        "tfProgramStateV4069"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfSystemCompositionV36433",
+      "destination": "terraformer.composition.js",
+      "ownerConcept": "composition",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfSystemPermissionV36420",
+      "destination": "terraformer.permission.js",
+      "ownerConcept": "permission",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [
+        "tfUniversalPermissionFabricV36420"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfTransversionV36448",
+      "destination": "terraformer.version.js",
+      "ownerConcept": "version",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [
+        "tfVersionV36448"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfTypedEntityV4064",
+      "destination": "terraformer.entity.js",
+      "ownerConcept": "entity",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [
+        "tfEntityV4063"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfUnificationDescriptorV36440",
+      "destination": "terraformer.unification.js",
+      "ownerConcept": "unification",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfUniversalCompositionFabricV36433",
+      "destination": "terraformer.composition.js",
+      "ownerConcept": "composition",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [
+        "tfSystemCompositionV36433"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfUniversalFinalizationFabricV36441",
+      "destination": "terraformer.finalization.js",
+      "ownerConcept": "finalization",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [
+        "tfFinalizationStatusV36441"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfUniversalPermissionFabricV36420",
+      "destination": "terraformer.permission.js",
+      "ownerConcept": "permission",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfUniversalPermissionSelfTestV36420",
+      "destination": "terraformer.permission.js",
+      "ownerConcept": "permission",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [
+        "tfUniversalPermissionFabricV36420"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfUniversalUnificationFabricV36440",
+      "destination": "terraformer.unification.js",
+      "ownerConcept": "unification",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [
+        "tfUnificationDescriptorV36440"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfVersionV36448",
+      "destination": "terraformer.version.js",
+      "ownerConcept": "version",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfVisualizationFabricV4013",
+      "destination": "terraformer.visualization.js",
+      "ownerConcept": "visualization",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [
+        "tfVisualizationSystemV4013"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfVisualizationSystemV4013",
+      "destination": "terraformer.visualization.js",
+      "ownerConcept": "visualization",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfWorldMapCertificationGateV4041",
+      "destination": "terraformer.certification.js",
+      "ownerConcept": "certification",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "OWNER_CONSISTENT_CLOSED_CLUSTER",
+      "clusterDependencies": [],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfWorkerUriInventory",
+      "destination": "terraformer.inventory.js",
+      "ownerConcept": "inventory",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.inventory.worker"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfWorkerUriGet",
+      "destination": "terraformer.worker.js",
+      "ownerConcept": "worker",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.worker.inventory"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfDirectWorkerUriRoots",
+      "destination": "terraformer.worker.js",
+      "ownerConcept": "worker",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.worker.inventory"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfDiscoverTokens",
+      "destination": "terraformer.token.js",
+      "ownerConcept": "token",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.token.candidate"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfAutoAdmitPermanentToken",
+      "destination": "terraformer.token.js",
+      "ownerConcept": "token",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.token.candidate"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfAdmitDiscoveredToken",
+      "destination": "terraformer.token.js",
+      "ownerConcept": "token",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.token.candidate"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfSelfPlacementStatus",
+      "destination": "terraformer.placement.js",
+      "ownerConcept": "placement",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.placement.canonical"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfSystemIdentityPath",
+      "destination": "terraformer.identity.js",
+      "ownerConcept": "identity",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.identity.canonical"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfUriProjectionAudit",
+      "destination": "terraformer.project.js",
+      "ownerConcept": "project",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.project.inventory"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfUriProjectionFind",
+      "destination": "terraformer.project.js",
+      "ownerConcept": "project",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.project.inventory"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfCanonicalReconstructionSnapshot",
+      "destination": "terraformer.reconstruction.js",
+      "ownerConcept": "reconstruction",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.reconstruction.capability",
+        "bridge.reconstruction.relationship"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfCheckpoint",
+      "destination": "terraformer.checkpoint.js",
+      "ownerConcept": "checkpoint",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.checkpoint.reconstruction"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfReadPresentationSession",
+      "destination": "terraformer.presentation.js",
+      "ownerConcept": "presentation",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.presentation.identity"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfWritePresentationSession",
+      "destination": "terraformer.presentation.js",
+      "ownerConcept": "presentation",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.presentation.identity"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfUniversalModelFabricV36432",
+      "destination": "terraformer.universal.js",
+      "ownerConcept": "universal",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.universal.model"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfUniversalSandboxFabricV36451",
+      "destination": "terraformer.universal.js",
+      "ownerConcept": "universal",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.universal.sandbox"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfUniversalLoggingFabricV375",
+      "destination": "terraformer.universal.js",
+      "ownerConcept": "universal",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.universal.change"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfUniversalReadWriteFabricV378",
+      "destination": "terraformer.universal.js",
+      "ownerConcept": "universal",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.universal.script"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfUniversalPolicyFabricV379",
+      "destination": "terraformer.universal.js",
+      "ownerConcept": "universal",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.universal.policy"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfCanonicalIdentityAuditV381",
+      "destination": "terraformer.canonical.js",
+      "ownerConcept": "canonical",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.canonical.identity"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfCompleteOsAdmission",
+      "destination": "terraformer.admission.js",
+      "ownerConcept": "admission",
+      "migration": "EXACT_BODY_ASYNC_CONTEXT_PRESERVED",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfSandboxAdmissionV36451",
+      "destination": "terraformer.admission.js",
+      "ownerConcept": "admission",
+      "migration": "EXACT_BODY_ASYNC_CONTEXT_PRESERVED",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfContentAdmissionV377",
+      "destination": "terraformer.admission.js",
+      "ownerConcept": "admission",
+      "migration": "EXACT_BODY_ASYNC_CONTEXT_PRESERVED",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfReadWriteAdmissionV378",
+      "destination": "terraformer.admission.js",
+      "ownerConcept": "admission",
+      "migration": "EXACT_BODY_ASYNC_CONTEXT_PRESERVED",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfFinalClosureAuditV384",
+      "destination": "terraformer.audit.js",
+      "ownerConcept": "audit",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.audit.reconciliation",
+        "bridge.audit.universal"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfReconciliationStatusV384",
+      "destination": "terraformer.reconciliation.js",
+      "ownerConcept": "reconciliation",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.reconciliation.audit"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfUniversalQueryFabricV390",
+      "destination": "terraformer.universal.js",
+      "ownerConcept": "universal",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.universal.script"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfConstructiveClosureV391",
+      "destination": "terraformer.construct.js",
+      "ownerConcept": "construct",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.construct.query"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfCanonicalStabilityContractV394",
+      "destination": "terraformer.canonical.js",
+      "ownerConcept": "canonical",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.canonical.identity"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfUniversalSignalFabricV406",
+      "destination": "terraformer.universal.js",
+      "ownerConcept": "universal",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.universal.signal"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfPageConstructionLifecycleV4021",
+      "destination": "terraformer.construction.js",
+      "ownerConcept": "construction",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.construction.construct"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfIONativeMergeMaterializationV4046",
+      "destination": "terraformer.materialization.js",
+      "ownerConcept": "materialization",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.materialization.native"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfCanonicalLabelQualificationV4051",
+      "destination": "terraformer.qualification.js",
+      "ownerConcept": "qualification",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.qualification.canonical"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfNativeSourceQualificationV4053",
+      "destination": "terraformer.qualification.js",
+      "ownerConcept": "qualification",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.qualification.relationship"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfLanguageQualificationV4054",
+      "destination": "terraformer.qualification.js",
+      "ownerConcept": "qualification",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.qualification.language",
+        "bridge.qualification.naturalization"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfLinguistNaturalizedSuccessorV4055",
+      "destination": "terraformer.linguist.js",
+      "ownerConcept": "linguist",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.linguist.qualification"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfAvailabilityQualificationV4057",
+      "destination": "terraformer.qualification.js",
+      "ownerConcept": "qualification",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.qualification.availability"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfUsageStateQualificationV4060",
+      "destination": "terraformer.qualification.js",
+      "ownerConcept": "qualification",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.qualification.boundary",
+        "bridge.qualification.estate",
+        "bridge.qualification.usage"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfLockingQualificationV4062",
+      "destination": "terraformer.qualification.js",
+      "ownerConcept": "qualification",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.qualification.occupation",
+        "bridge.qualification.request"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfUnylifeResolutionQualificationV4070",
+      "destination": "terraformer.qualification.js",
+      "ownerConcept": "qualification",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.qualification.naturalization"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfUnyResourceJsQualificationV4074",
+      "destination": "terraformer.qualification.js",
+      "ownerConcept": "qualification",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.qualification.naturalization"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfFingerprintQualificationV4086",
+      "destination": "terraformer.qualification.js",
+      "ownerConcept": "qualification",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.qualification.boundary"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfFingerScanningQualificationV4087",
+      "destination": "terraformer.qualification.js",
+      "ownerConcept": "qualification",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.qualification.boundary"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfControlQualificationV4090",
+      "destination": "terraformer.qualification.js",
+      "ownerConcept": "qualification",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.qualification.admission",
+        "bridge.qualification.controller"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfDataQueryAdmissionV391",
+      "destination": "terraformer.admission.js",
+      "ownerConcept": "admission",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.admission.script"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfGitActionAdmissionV393",
+      "destination": "terraformer.admission.js",
+      "ownerConcept": "admission",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.admission.script",
+        "bridge.admission.transaction"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfVarianceAdmissionV394",
+      "destination": "terraformer.admission.js",
+      "ownerConcept": "admission",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.admission.identity",
+        "bridge.admission.transaction"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfInvariantAdmissionV394",
+      "destination": "terraformer.admission.js",
+      "ownerConcept": "admission",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.admission.identity"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfAddressSpacingAdmissionV401",
+      "destination": "terraformer.admission.js",
+      "ownerConcept": "admission",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.admission.transaction"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfLocatorMutationAdmissionV403",
+      "destination": "terraformer.admission.js",
+      "ownerConcept": "admission",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.admission.transaction"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfHealthActionAdmissionV404",
+      "destination": "terraformer.admission.js",
+      "ownerConcept": "admission",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.admission.transaction"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfSignalActionAdmissionV406",
+      "destination": "terraformer.admission.js",
+      "ownerConcept": "admission",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.admission.transaction"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfOXConstructBlockV4093",
+      "destination": "terraformer.construct.js",
+      "ownerConcept": "construct",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.construct.power",
+        "bridge.construct.sha256"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfOXValidateBlockV4093",
+      "destination": "terraformer.block.js",
+      "ownerConcept": "block",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.block.power",
+        "bridge.block.sha256"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfOXBlockQualificationV4093",
+      "destination": "terraformer.qualification.js",
+      "ownerConcept": "qualification",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.qualification.block",
+        "bridge.qualification.construct"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfOXBlockDispositionV4094",
+      "destination": "terraformer.position.js",
+      "ownerConcept": "position",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.position.block"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfConstructBlockV4095",
+      "destination": "terraformer.construct.js",
+      "ownerConcept": "construct",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.construct.power",
+        "bridge.construct.sha256"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfValidateBlockV4095",
+      "destination": "terraformer.block.js",
+      "ownerConcept": "block",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.block.power",
+        "bridge.block.sha256"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfBlockDispositionV4095",
+      "destination": "terraformer.position.js",
+      "ownerConcept": "position",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.position.block"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfConstructBlockPageV4096",
+      "destination": "terraformer.construct.js",
+      "ownerConcept": "construct",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.construct.sha256"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfValidateBlockPageV4096",
+      "destination": "terraformer.block.js",
+      "ownerConcept": "block",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.block.sha256"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfSystemAboutQualificationV4099",
+      "destination": "terraformer.qualification.js",
+      "ownerConcept": "qualification",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.qualification.registry",
+        "bridge.qualification.window"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfQRQualificationV410",
+      "destination": "terraformer.qualification.js",
+      "ownerConcept": "qualification",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.qualification.registry"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfMobilityQualificationV411",
+      "destination": "terraformer.qualification.js",
+      "ownerConcept": "qualification",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.qualification.mobility",
+        "bridge.qualification.session"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfUniversalContractQualificationV415",
+      "destination": "terraformer.qualification.js",
+      "ownerConcept": "qualification",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.qualification.universal"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfBlockDeviceIOQualificationV417",
+      "destination": "terraformer.qualification.js",
+      "ownerConcept": "qualification",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.qualification.block",
+        "bridge.qualification.blockdevice",
+        "bridge.qualification.request"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfFileImageBlockBindingQualificationV418",
+      "destination": "terraformer.qualification.js",
+      "ownerConcept": "qualification",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.qualification.blockdevice",
+        "bridge.qualification.image",
+        "bridge.qualification.request"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "function": "tfCrossPlatformIOQualificationV4111",
+      "destination": "terraformer.qualification.js",
+      "ownerConcept": "qualification",
+      "migration": "EXACT_BODY",
+      "dependencyClass": "CROSS_OWNER_BRIDGE_COVERED",
+      "bridges": [
+        "bridge.qualification.boundary",
+        "bridge.qualification.platform"
+      ],
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "VOLATILE_BOUNDARY_SCHEMA",
+      "destination": "terraformer.boundary.js",
+      "ownerConcept": "boundary",
+      "migration": "EXACT_STATIC_DECLARATION",
+      "dependencyClass": "LITERAL_ONLY",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "PID_SYSTEM_SCHEMA",
+      "destination": "terraformer.schema.js",
+      "ownerConcept": "schema",
+      "migration": "EXACT_STATIC_DECLARATION",
+      "dependencyClass": "LITERAL_ONLY",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "VOLATILE_PID_SYSTEM_INSTANCE",
+      "destination": "terraformer.instance.js",
+      "ownerConcept": "instance",
+      "migration": "EXACT_STATIC_DECLARATION",
+      "dependencyClass": "LITERAL_ONLY",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "NODE_SYSTEM_SCHEMA",
+      "destination": "terraformer.schema.js",
+      "ownerConcept": "schema",
+      "migration": "EXACT_STATIC_DECLARATION",
+      "dependencyClass": "LITERAL_ONLY",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "PROJECT_RUNTIME_INTEGRATION_SCHEMA",
+      "destination": "terraformer.integration.js",
+      "ownerConcept": "integration",
+      "migration": "EXACT_STATIC_DECLARATION",
+      "dependencyClass": "LITERAL_ONLY",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "VOLATILE_NODE_SYSTEM_INSTANCE",
+      "destination": "terraformer.instance.js",
+      "ownerConcept": "instance",
+      "migration": "EXACT_STATIC_DECLARATION",
+      "dependencyClass": "LITERAL_ONLY",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "RESTART_HANDOFF_SCHEMA",
+      "destination": "terraformer.handoff.js",
+      "ownerConcept": "handoff",
+      "migration": "EXACT_STATIC_DECLARATION",
+      "dependencyClass": "LITERAL_ONLY",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "LIFECYCLE_SCHEMA",
+      "destination": "terraformer.lifecycle.js",
+      "ownerConcept": "lifecycle",
+      "migration": "EXACT_STATIC_DECLARATION",
+      "dependencyClass": "LITERAL_ONLY",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_PRIVILEGE_TTL_MS",
+      "destination": "terraformer.privilege.js",
+      "ownerConcept": "privilege",
+      "migration": "EXACT_STATIC_DECLARATION",
+      "dependencyClass": "LITERAL_ONLY",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "CONTROL_BOUNDARY_SCHEMA",
+      "destination": "terraformer.boundary.js",
+      "ownerConcept": "boundary",
+      "migration": "EXACT_STATIC_DECLARATION",
+      "dependencyClass": "LITERAL_ONLY",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "INFORMATION_OBJECT_SCHEMA",
+      "destination": "terraformer.information.js",
+      "ownerConcept": "information",
+      "migration": "EXACT_STATIC_DECLARATION",
+      "dependencyClass": "LITERAL_ONLY",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "INFORMATION_FLOW_SCHEMA",
+      "destination": "terraformer.information.js",
+      "ownerConcept": "information",
+      "migration": "EXACT_STATIC_DECLARATION",
+      "dependencyClass": "LITERAL_ONLY",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "IDENTITY_SCHEMA",
+      "destination": "terraformer.identity.js",
+      "migration": "EXACT_ISOLATED_PRIMITIVE_DECLARATION",
+      "dependencyClass": "ISOLATED",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "GOALS_SCHEMA",
+      "destination": "terraformer.schema.js",
+      "migration": "EXACT_ISOLATED_PRIMITIVE_DECLARATION",
+      "dependencyClass": "ISOLATED",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "RUNTIME_FABRIC_SCHEMA",
+      "destination": "terraformer.runtime.js",
+      "migration": "EXACT_ISOLATED_PRIMITIVE_DECLARATION",
+      "dependencyClass": "ISOLATED",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "THREAD_EXECUTION_SCHEMA",
+      "destination": "terraformer.execution.js",
+      "migration": "EXACT_ISOLATED_PRIMITIVE_DECLARATION",
+      "dependencyClass": "ISOLATED",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "SUPERVISOR_SCHEMA",
+      "destination": "terraformer.schema.js",
+      "migration": "EXACT_ISOLATED_PRIMITIVE_DECLARATION",
+      "dependencyClass": "ISOLATED",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "RUNTIME_SUPERVISOR",
+      "destination": "terraformer.runtime.js",
+      "migration": "EXACT_ISOLATED_PRIMITIVE_DECLARATION",
+      "dependencyClass": "ISOLATED",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "SHARED_WORKER_POOL",
+      "destination": "terraformer.worker.js",
+      "migration": "EXACT_ISOLATED_PRIMITIVE_DECLARATION",
+      "dependencyClass": "ISOLATED",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TERRAFORMER_CONSTITUTIONS_V0312_INSTANCE",
+      "destination": "terraformer.constitution.js",
+      "migration": "EXACT_ISOLATED_PRIMITIVE_DECLARATION",
+      "dependencyClass": "ISOLATED",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TERRAFORMER_COORDINATION_V0321_INSTANCE",
+      "destination": "terraformer.coordination.js",
+      "migration": "EXACT_ISOLATED_PRIMITIVE_DECLARATION",
+      "dependencyClass": "ISOLATED",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TERRAFORMER_OBSERVATION_QUALIFICATION_V0324_INSTANCE",
+      "destination": "terraformer.qualification.js",
+      "migration": "EXACT_ISOLATED_PRIMITIVE_DECLARATION",
+      "dependencyClass": "ISOLATED",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TERRAFORMER_INFRASTRUCTURE_V0328_INSTANCE",
+      "destination": "terraformer.infrastructure.js",
+      "migration": "EXACT_ISOLATED_PRIMITIVE_DECLARATION",
+      "dependencyClass": "ISOLATED",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_REPRESENTATION_SYSTEMS_V0362",
+      "destination": "terraformer.representation.js",
+      "migration": "EXACT_ISOLATED_PRIMITIVE_DECLARATION",
+      "dependencyClass": "ISOLATED",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "UPDATE_HANDOFF_SCHEMA",
+      "destination": "terraformer.handoff.js",
+      "migration": "EXACT_ISOLATED_PRIMITIVE_DECLARATION",
+      "dependencyClass": "ISOLATED",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_REGISTRY_CATALOG_SCHEMA",
+      "destination": "terraformer.registry.js",
+      "migration": "DEPENDENCY_ORDERED_STATIC_DECLARATION",
+      "dependencyClass": "DEPTH_0",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TERRAFORMER_TOOL_COMPATIBILITY",
+      "destination": "terraformer.compatibility.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "dependencyClass": "DEPTH_0_SELF_CONTAINED",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_INTERNAL_SESSION_STATE",
+      "destination": "terraformer.session.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "dependencyClass": "DEPTH_0_SELF_CONTAINED",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_HOME_DISCOVERY_STATE",
+      "destination": "terraformer.discovery.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "dependencyClass": "DEPTH_0_SELF_CONTAINED",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_ERROR_RECOVERY_STATE",
+      "destination": "terraformer.recovery.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "dependencyClass": "DEPTH_0_SELF_CONTAINED",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TERRAFORMER_PACIFICATION",
+      "destination": "terraformer.pacification.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "dependencyClass": "DEPTH_0_SELF_CONTAINED",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TERRAFORMER_CONSCIOUSNESS",
+      "destination": "terraformer.consciousness.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "dependencyClass": "DEPTH_0_SELF_CONTAINED",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TERRAFORMER_INTELLIGENCE",
+      "destination": "terraformer.intelligence.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "dependencyClass": "DEPTH_0_SELF_CONTAINED",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TERRAFORMER_CANONICALIZATION",
+      "destination": "terraformer.canonicalization.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "dependencyClass": "DEPTH_0_SELF_CONTAINED",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TERRAFORMER_RELATIONSHIP_SYSTEM",
+      "destination": "terraformer.relationship.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "dependencyClass": "DEPTH_0_SELF_CONTAINED",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TERRAFORMER_CUSTOMIZATION_EXTENSION_SYSTEMS",
+      "destination": "terraformer.customization.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "dependencyClass": "DEPTH_0_SELF_CONTAINED",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "STAGES",
+      "destination": "terraformer.stage.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "dependencyClass": "DEPTH_0_SELF_CONTAINED",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "RESOURCE_ACTIONS",
+      "destination": "terraformer.resource.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "dependencyClass": "DEPTH_0_SELF_CONTAINED",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "CONTROL_CROSSING_TYPES",
+      "destination": "terraformer.control.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "dependencyClass": "DEPTH_0_SELF_CONTAINED",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "FLOW_POLICY_MODES",
+      "destination": "terraformer.policy.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "dependencyClass": "DEPTH_0_SELF_CONTAINED",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "IDENTITY_TYPES",
+      "destination": "terraformer.identity.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "dependencyClass": "DEPTH_0_SELF_CONTAINED",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "CLASSIFICATION_LEVELS",
+      "destination": "terraformer.classification.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "dependencyClass": "DEPTH_0_SELF_CONTAINED",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TERRAFORMER_CHAT_SYSTEM_RELATIONSHIPS",
+      "destination": "terraformer.relationship.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "dependencyClass": "DEPTH_0_SELF_CONTAINED",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_QUALIFICATION_STATES",
+      "destination": "terraformer.qualification.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "dependencyClass": "DEPTH_0_SELF_CONTAINED",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_RUNTIME_COMPLETENESS_STATES",
+      "destination": "terraformer.runtime.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "dependencyClass": "DEPTH_0_SELF_CONTAINED",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_RELATION_TYPES",
+      "destination": "terraformer.relation.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "dependencyClass": "DEPTH_0_SELF_CONTAINED",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_CONNECTION_KINDS",
+      "destination": "terraformer.connection.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "dependencyClass": "DEPTH_0_SELF_CONTAINED",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_PRELAUNCH_KEY_STATE",
+      "destination": "terraformer.prelaunch.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "dependencyClass": "DEPTH_0_SELF_CONTAINED",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "EXTERNAL_EFFECT_TYPES_V03012",
+      "destination": "terraformer.external.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "dependencyClass": "DEPTH_0_SELF_CONTAINED",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_EVIDENCE_STATES_V0311",
+      "destination": "terraformer.evidence.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "dependencyClass": "DEPTH_0_SELF_CONTAINED",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_PROGRESSIVE_CAPABILITY_TYPES_V04557",
+      "destination": "terraformer.capability.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_CROSS_CONTEXT_TYPES_V04558",
+      "destination": "terraformer.context.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_MACHINE_READABLE_CODE_TYPES_V04559",
+      "destination": "terraformer.machine.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_SIGNER_TYPES_V04561",
+      "destination": "terraformer.signer.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_ORDERING_TYPES_V04565",
+      "destination": "terraformer.ordering.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_QUEUE_ORDERING_TYPES_V04566",
+      "destination": "terraformer.ordering.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_WEB_MEDIA_TYPES_V04569",
+      "destination": "terraformer.media.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_FILING_TYPES_V04571",
+      "destination": "terraformer.filing.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_PORTABLE_DOMAIN_TYPES_V04572",
+      "destination": "terraformer.portable.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_ANTI_CORRUPTION_TYPE_V04580",
+      "destination": "terraformer.corruption.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_LEGAL_REGISTER_TYPE_V04583",
+      "destination": "terraformer.register.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_SPATIAL_SCOPE_RULE_V36412",
+      "destination": "terraformer.scope.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_BEAM_REFLECTION_BOUNDARY_V36413",
+      "destination": "terraformer.reflection.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_GAP_BOUNDARY_V36415",
+      "destination": "terraformer.boundary.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_RECONSTRUCTION_DOMAINS_V36416",
+      "destination": "terraformer.reconstruction.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_DIRECTIVE_COMPOSITION_V36417",
+      "destination": "terraformer.composition.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_REFLECT_OPERATION_SYSTEM_V36418",
+      "destination": "terraformer.operation.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_REFLECT_OPERATION_RELATIONSHIPS_V36418",
+      "destination": "terraformer.relationship.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_RESERVED_TRANSPORT_PORT_FAMILY_8888_V36419",
+      "destination": "terraformer.transport.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_RESERVED_TRANSPORT_PROTOCOLS_8888_V36419",
+      "destination": "terraformer.transport.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_PERMISSION_DEFAULTS_V36420",
+      "destination": "terraformer.permission.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_GUARD_DEFAULTS_V36421",
+      "destination": "terraformer.defaults.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_MULTI_GEO_BOUNDARY_V36423",
+      "destination": "terraformer.boundary.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_SYSTEMS_OPERATIONS_BOUNDARY_V36424",
+      "destination": "terraformer.operations.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_SEARCH_DISCOVERY_BOUNDARY_V36425",
+      "destination": "terraformer.discovery.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_ENABLE_FRAME_BOUNDARY_V36426",
+      "destination": "terraformer.boundary.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_TIME_COUNT_BOUNDARY_V36427",
+      "destination": "terraformer.boundary.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_CHOICE_CONTROL_BOUNDARY_V36428",
+      "destination": "terraformer.boundary.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_HIGHLIGHT_CONFIRM_APPLY_CANCEL_BOUNDARY_V36429",
+      "destination": "terraformer.boundary.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_PROTOTYPE_MODEL_BOUNDARY_V36431",
+      "destination": "terraformer.prototype.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_MODEL_BOUNDARY_V36432",
+      "destination": "terraformer.boundary.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_CAD_CAPABILITY_CANDIDATES_V36432",
+      "destination": "terraformer.capability.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_COMPOSITION_BOUNDARY_V36433",
+      "destination": "terraformer.composition.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_HISTORY_PREPARATION_BOUNDARY_V36434",
+      "destination": "terraformer.preparation.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_LIFECYCLE_LOG_CHANNELS_V36434",
+      "destination": "terraformer.lifecycle.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_GLOBAL_LOCAL_DECLARATION_BOUNDARY_V36435",
+      "destination": "terraformer.declaration.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_REPRESENTATION_DECLARATION_BOUNDARY_V36436",
+      "destination": "terraformer.representation.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_THEORY_AUDIT_FABRICATION_BOUNDARY_V36437",
+      "destination": "terraformer.fabrication.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_SYSTEM_THEORY_FORMS_V36437",
+      "destination": "terraformer.theory.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_TBUILD_BOUNDARY_V36439",
+      "destination": "terraformer.boundary.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_UNIFICATION_BOUNDARY_V36440",
+      "destination": "terraformer.unification.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_FINALIZATION_STATES_V36441",
+      "destination": "terraformer.finalization.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_FINALIZATION_BOUNDARY_V36441",
+      "destination": "terraformer.finalization.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_MATERIALIZATION_REQUIRED_GATES_V36444",
+      "destination": "terraformer.materialization.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_UTILIZATION_REQUIRED_GATES_V36445",
+      "destination": "terraformer.utilization.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_RANKING_BOUNDARY_V36446",
+      "destination": "terraformer.boundary.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_CODING_BOUNDARY_V36447",
+      "destination": "terraformer.boundary.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_CODING_REQUIRED_GATES_V36447",
+      "destination": "terraformer.coding.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_VERSIONING_BOUNDARY_V36448",
+      "destination": "terraformer.versioning.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_SAVING_BOUNDARY_V36449",
+      "destination": "terraformer.boundary.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_CHANGE_BOUNDARY_V36450",
+      "destination": "terraformer.boundary.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_SANDBOX_BOUNDARY_V36451",
+      "destination": "terraformer.boundary.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_FONT_BOUNDARY_V376",
+      "destination": "terraformer.boundary.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_CONTENT_BOUNDARY_V377",
+      "destination": "terraformer.boundary.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_QUERIER_V390",
+      "destination": "terraformer.querier.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_ATTRIBUTE_SYSTEM_V392",
+      "destination": "terraformer.attribute.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_CANONICALIZATION_MODULE_V04442",
+      "destination": "terraformer.canonicalization.js",
+      "migration": "PROMOTED_DEPENDENCY_CLOSED",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_CONNECTION_SYSTEMS",
+      "destination": "terraformer.connection.js",
+      "migration": "PROMOTED_DEPENDENCY_CLOSED",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_RESERVED_TRANSPORT_PAIRS_8888_V36419",
+      "destination": "terraformer.transport.js",
+      "migration": "PROMOTED_DEPENDENCY_CLOSED",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_ATTRIBUTER_V392",
+      "destination": "terraformer.attributer.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_DATA_WORKER_V392",
+      "destination": "terraformer.worker.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_VARIANCER_V394",
+      "destination": "terraformer.variancer.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_INVARIANCER_V394",
+      "destination": "terraformer.invariancer.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_SPACER_V401",
+      "destination": "terraformer.spacer.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_ADDRESSER_V401",
+      "destination": "terraformer.addresser.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_NAMESPACER_V402",
+      "destination": "terraformer.namespacer.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_RESOLVER_V402",
+      "destination": "terraformer.resolver.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_REFERENCER_V403",
+      "destination": "terraformer.referencer.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_LOCATOR_WORKER_V403",
+      "destination": "terraformer.locator.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_RESCUER_V405",
+      "destination": "terraformer.rescuer.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_HOSPITALIZER_V405",
+      "destination": "terraformer.hospitalizer.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_INSTRUCTOR_V407",
+      "destination": "terraformer.instructor.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_COMMENCER_V407",
+      "destination": "terraformer.commencer.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_MOBILE_SYSTEM_V408",
+      "destination": "terraformer.mobile.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_ANDROID_MOBILE_RUNTIME_V408",
+      "destination": "terraformer.runtime.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_ANDROID_LOCAL_TEST_TAP_V409",
+      "destination": "terraformer.local.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_PRELOAD_STATES_V4019",
+      "destination": "terraformer.preload.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_WORKER_DISCOVERY_V4065",
+      "destination": "terraformer.discovery.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_END_NODE_DISPOSITIONS_V4069",
+      "destination": "terraformer.position.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    },
+    {
+      "declaration": "TF_COMPACTION_V04296",
+      "destination": "terraformer.compaction.js",
+      "migration": "IMMUTABLE_DEPTH_0_DECLARATION",
+      "sourceRemoved": true,
+      "syntaxQualified": true
+    }
+  ],
+  "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+  "behavioralEquivalenceFullyProven": false,
+  "rules": {
+    "exactBodyPreserved": true,
+    "sourceRemovedOnlyAfterDestinationInsertion": true,
+    "syntaxCheckRequired": true,
+    "dependencyClosureRequired": true,
+    "authorityGranted": false
+  },
+  "lastPass": {
+    "pass": 13,
+    "declarationsMigrated": 24,
+    "promoted": 3,
+    "immutableDepth0": 21,
+    "behavioralEquivalenceFullyProven": false
+  }
+}

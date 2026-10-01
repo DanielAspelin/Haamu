@@ -1,0 +1,14 @@
+{
+  "schema": "TERRAFORMER-WORKSPACES/1",
+  "systemId": "system.workspace",
+  "authorityGranted": false,
+  "automaticExecution": false,
+  "records": [],
+  "systemWorkspace": {
+    "owner": "system.workspace",
+    "identity": "naturalized-window-workspace",
+    "ideIdentity": false,
+    "editPersistence": "volatile-unless-separately-authorized",
+    "executionAuthority": false
+  }
+}

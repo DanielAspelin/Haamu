@@ -1,0 +1,31 @@
+{
+  "schema": "TERRAFORMER-PROVENANCES-REGISTRY/1",
+  "owner": "terraformer.provenance.js",
+  "checkpoint": "v0.46.87",
+  "records": [],
+  "registryMembershipGrantsAuthority": false,
+  "note": "Executable historical evidence remains in owner; registry does not duplicate the large evidence ledger.",
+  "version": "0.48.21",
+  "repositories": [
+    {
+      "project": "Terraformer",
+      "repository": "repository.terraformer.github",
+      "fullName": "DanielAspelin/Terraformer",
+      "visibility": "PRIVATE",
+      "hardcoded": true,
+      "authorityGranted": false
+    }
+  ],
+  "accounts": [
+    {
+      "project": "Terraformer",
+      "provider": "Telegram",
+      "user": "@DanielAspelinTG",
+      "supergroup": "@TerraformerTG",
+      "bot": "@TerraformerTGBot",
+      "registry": "terraformer.accounts.json",
+      "hardcoded": true,
+      "authorityGranted": false
+    }
+  ]
+}

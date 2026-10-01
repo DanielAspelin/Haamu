@@ -1,0 +1,10 @@
+{
+  "schema": "TERRAFORMER-HALTERS/1",
+  "systemId": "system.halter",
+  "declarativeRegistry": true,
+  "membershipGrantsExecution": false,
+  "membershipGrantsMutation": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

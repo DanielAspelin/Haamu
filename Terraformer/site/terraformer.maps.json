@@ -1,0 +1,15 @@
+{
+  "$schema": "terraformer.registry/map_registry/1",
+  "version": "0.44.21",
+  "kind": "MAP_REGISTRY",
+  "owner": "system.mapping",
+  "items": [
+    {
+      "id": "map.default",
+      "materialized": false,
+      "authority": false
+    }
+  ],
+  "authority": false,
+  "governedBy": "terraformer.js#system.mapping"
+}

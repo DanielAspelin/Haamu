@@ -1,0 +1,18 @@
+{
+  "$schema": "terraformer.registry/log_registry/1",
+  "version": "0.44.24",
+  "kind": "LOG_REGISTRY",
+  "governedBy": "system.logging",
+  "governanceEvidence": "MIGRATED_EXECUTABLE_OWNER_V0.44.23",
+  "authority": false,
+  "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+  "validation": "EXPLICIT_SCHEMA_AND_IDENTITY_REQUIRED",
+  "failureSemantics": "INVALID_OR_UNAUTHORIZED_INPUT_FAILS_CLOSED",
+  "provenance": {
+    "predecessor": "v0.44.21",
+    "checkpoint": "v0.44.22"
+  },
+  "semantics": "Append-oriented event/audit evidence; entries do not establish truth, authority, qualification or successful execution.",
+  "logs": [],
+  "executableGovernor": "terraformer.reporting.js"
+}

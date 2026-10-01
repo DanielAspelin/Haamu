@@ -1,0 +1,15 @@
+{
+  "schema": "TERRAFORMER-REGISTRATIONS/1",
+  "owner": "system.registration",
+  "executable": "terraformer.registration.js",
+  "role": "governs registration lifecycle and policy; does not itself grant authority",
+  "authorityGranted": false,
+  "membershipGrantsAuthority": false,
+  "records": [
+    {
+      "id": "registration.canonical",
+      "status": "registered",
+      "authorityGranted": false
+    }
+  ]
+}

@@ -1,0 +1,261 @@
+{
+  "$schema": "terraformer.registry/systems/1",
+  "version": "0.44.29",
+  "governedBy": "terraformer.system.js",
+  "kind": "SYSTEM_REGISTRY",
+  "keySystems": [
+    "system.terraformer",
+    "system.central",
+    "system.api"
+  ],
+  "canonicalCount": null,
+  "admission": "EVIDENCE_REQUIRED",
+  "closedCurrentBoundary": true,
+  "externalSystemsAdmitted": 0,
+  "authority": false,
+  "systems": [
+    {
+      "id": "system.json",
+      "boundary": "SYSTEM_BOUNDARY",
+      "authority": false,
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT"
+    },
+    {
+      "id": "system.csv",
+      "boundary": "SYSTEM_BOUNDARY",
+      "authority": false,
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT"
+    },
+    {
+      "id": "system.framework",
+      "boundary": "SYSTEM_BOUNDARY",
+      "authority": false,
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT"
+    },
+    {
+      "id": "system.library",
+      "boundary": "SYSTEM_BOUNDARY",
+      "authority": false,
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT"
+    },
+    {
+      "id": "system.telegram.api",
+      "boundary": "SYSTEM_BOUNDARY",
+      "authority": false,
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT"
+    },
+    {
+      "id": "system.whatsapp.api",
+      "boundary": "SYSTEM_BOUNDARY",
+      "authority": false,
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT"
+    },
+    {
+      "id": "system.type",
+      "role": "TYPE_DIMENSION_SYSTEM",
+      "boundary": "DIMENSION_BOUNDARY",
+      "authority": false
+    },
+    {
+      "id": "system.mode",
+      "role": "MODE_DIMENSION_SYSTEM",
+      "boundary": "DIMENSION_BOUNDARY",
+      "authority": false
+    },
+    {
+      "id": "system.condition",
+      "role": "CONDITION_DIMENSION_SYSTEM",
+      "boundary": "DIMENSION_BOUNDARY",
+      "authority": false
+    },
+    {
+      "id": "system.state",
+      "role": "STATE_DIMENSION_SYSTEM",
+      "boundary": "DIMENSION_BOUNDARY",
+      "authority": false
+    },
+    {
+      "id": "system.behaviour",
+      "role": "BEHAVIOR_DIMENSION_SYSTEM",
+      "boundary": "DIMENSION_BOUNDARY",
+      "authority": false
+    },
+    {
+      "id": "system.health",
+      "role": "HEALTH_DIMENSION_SYSTEM",
+      "boundary": "DIMENSION_BOUNDARY",
+      "authority": false
+    },
+    {
+      "id": "system.boundary",
+      "role": "BOUNDARY_SYSTEM",
+      "boundary": "SYSTEM_BOUNDARY",
+      "authority": false
+    },
+    {
+      "id": "system.dimension",
+      "role": "DIMENSION_SYSTEM",
+      "boundary": "DIMENSION_BOUNDARY",
+      "authority": false
+    },
+    {
+      "id": "system.socket",
+      "role": "SOCKET_SYSTEM",
+      "boundary": "SYSTEM_BOUNDARY",
+      "owner": "terraformer.socket.js",
+      "authority": false,
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT"
+    },
+    {
+      "id": "system.logging",
+      "boundary": "SYSTEM_BOUNDARY",
+      "authority": false,
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "provenance": "terraformer.js:v0.44.21",
+      "executableOwner": "terraformer.reporting.js",
+      "ownershipEvidence": "MIGRATED_COHORT_V0.44.23"
+    },
+    {
+      "id": "system.reporting",
+      "boundary": "SYSTEM_BOUNDARY",
+      "authority": false,
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "provenance": "terraformer.js:v0.44.21",
+      "executableOwner": "terraformer.reporting.js",
+      "ownershipEvidence": "MIGRATED_COHORT_V0.44.23"
+    },
+    {
+      "id": "system.transaction",
+      "boundary": "SYSTEM_BOUNDARY",
+      "authority": false,
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "provenance": "terraformer.js:v0.44.21",
+      "executableOwner": "terraformer.reporting.js",
+      "ownershipEvidence": "MIGRATED_COHORT_V0.44.23"
+    },
+    {
+      "id": "system.record",
+      "boundary": "SYSTEM_BOUNDARY",
+      "authority": false,
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "provenance": "terraformer.js:v0.44.21"
+    },
+    {
+      "id": "system.recording",
+      "boundary": "SYSTEM_BOUNDARY",
+      "authority": false,
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "provenance": "terraformer.js:v0.44.21"
+    },
+    {
+      "id": "system.document",
+      "boundary": "SYSTEM_BOUNDARY",
+      "authority": false,
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "provenance": "terraformer.js:v0.44.21"
+    },
+    {
+      "id": "system.audio",
+      "boundary": "SYSTEM_BOUNDARY",
+      "authority": false,
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "provenance": "terraformer.js:v0.44.21"
+    },
+    {
+      "id": "system.video",
+      "boundary": "SYSTEM_BOUNDARY",
+      "authority": false,
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "provenance": "terraformer.js:v0.44.21"
+    },
+    {
+      "id": "system.text",
+      "boundary": "SYSTEM_BOUNDARY",
+      "authority": false,
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "provenance": "terraformer.js:v0.44.21"
+    },
+    {
+      "id": "system.image",
+      "boundary": "SYSTEM_BOUNDARY",
+      "authority": false,
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "provenance": "terraformer.js:v0.44.21"
+    },
+    {
+      "id": "system.object",
+      "boundary": "SYSTEM_BOUNDARY",
+      "authority": false,
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "provenance": "terraformer.js:v0.44.21"
+    },
+    {
+      "id": "system.node",
+      "boundary": "SYSTEM_BOUNDARY",
+      "authority": false,
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "provenance": "terraformer.js:v0.44.21"
+    },
+    {
+      "id": "system.generation",
+      "role": "GENERATION_SYSTEM",
+      "owner": "terraformer.generation.js",
+      "boundary": "SYSTEM_BOUNDARY",
+      "authority": false,
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "executableOwner": "terraformer.generation.js",
+      "ownershipEvidence": "GENERATOR_FABRIC_EXTRACTION_V0.44.28"
+    },
+    {
+      "id": "system.automation",
+      "role": "AUTOMATION_SYSTEM",
+      "owner": "terraformer.automation.js",
+      "boundary": "SYSTEM_BOUNDARY",
+      "authority": false,
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "executableOwner": "terraformer.automation.js",
+      "ownershipEvidence": "AUTOMATOR_FABRIC_EXTRACTION_V0.44.28"
+    },
+    {
+      "id": "system.uuid",
+      "role": "UUID_IDENTITY_SYSTEM",
+      "boundary": "SYSTEM_BOUNDARY",
+      "authority": false,
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "executableOwner": "terraformer.uuid.js",
+      "ownershipEvidence": "UUID_V4_V5_RECONCILIATION_EXTRACTION_V0.44.29",
+      "standaloneModule": true
+    }
+  ],
+  "dimensionContract": {
+    "governedBy": "terraformer.dimension.js",
+    "dimensions": [
+      "TYPE",
+      "MODE",
+      "CONDITION",
+      "STATE",
+      "BEHAVIOR",
+      "HEALTH"
+    ],
+    "defaultValue": "UNSET",
+    "selection": "EXPLICIT_SCOPED",
+    "inheritance": "DENY_UNLESS_EXPLICITLY_PERMITTED",
+    "authority": false
+  },
+  "reconciliation": {
+    "checkpoint": "0.44.22",
+    "method": "EVIDENCE_BOUNDED_PREDECESSOR_IDENTITY_RECONCILIATION",
+    "authoritativeCurrentCount": "UNRESOLVED",
+    "authority": false,
+    "v04426": {
+      "status": "EVIDENCE_BOUNDED_ADMISSION",
+      "subject": "system.uuid",
+      "evidence": [
+        "terraformer.uuids.json",
+        "terraformer.js#crypto.randomUUID"
+      ],
+      "canonicalPopulation": "UNRESOLVED",
+      "authority": false
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "schema": "TERRAFORMER-RADIOS/1",
+  "systemId": "system.radio",
+  "authorityGranted": false,
+  "automaticPublication": false,
+  "automaticStreaming": false,
+  "records": []
+}

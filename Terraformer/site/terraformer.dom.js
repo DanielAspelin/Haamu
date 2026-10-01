@@ -1,0 +1,4 @@
+'use strict';
+const TERRAFORMER_DOM_SYSTEM=Object.freeze({schema:'TERRAFORMER-DOM-SYSTEM/1',id:'system.dom',name:'Document Object Model System',shortName:'DOM System',family:'document',type:'document-object-model',mode:'presentation-integrated',condition:'operational',state:'integrated',input:'document structure + admitted mutation/event operation',output:'validated document object structure / serialized presentation',authority:'Terraformer Boundary -> DOM System',subsections:Object.freeze(['system.html','system.css','system.javascript']),capabilities:Object.freeze(['document','node','element','attribute','text','tree','traversal','query','mutation','event','validation','serialization','presentation-integration']),browserBoundary:'Browser presentation supplies live DOM implementation; Node.js does not claim a native browser DOM.',persistence:false});
+
+module.exports=Object.freeze({TERRAFORMER_DOM_SYSTEM});

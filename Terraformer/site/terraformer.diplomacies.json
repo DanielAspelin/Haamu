@@ -1,0 +1,7 @@
+{
+  "schema": "TERRAFORMER-DIPLOMACIES/1",
+  "systemId": "system.diplomacy",
+  "referenceOnly": true,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

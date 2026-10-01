@@ -1,0 +1,3 @@
+"use strict";
+const TERRAFORMER_INSPECTION_SYSTEM=Object.freeze({schema:'TERRAFORMER-INSPECTION-SYSTEM/1',id:'system.inspection',name:'Inspection System',family:'forensic',type:'inspection-system',state:'integrated',canonicalPath:'terraformer://forensic/inspection/',dependsOn:Object.freeze(['system.forensic', 'system.audit']),governs:Object.freeze(['scope','evidence','state','relation','result']),rule:'Inspection System performs bounded observation and conformity inspection over admitted scope; inspection does not authorize entry, mutation, interception, or enforcement.'});
+module.exports=Object.freeze({TERRAFORMER_INSPECTION_SYSTEM});

@@ -1,0 +1,11 @@
+{
+  "schema": "TERRAFORMER-PRACTICES/1",
+  "systemId": "system.practice",
+  "membershipGrantsTruth": false,
+  "membershipGrantsQualification": false,
+  "membershipGrantsExecution": false,
+  "membershipGrantsExternalEffect": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

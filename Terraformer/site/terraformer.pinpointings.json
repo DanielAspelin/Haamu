@@ -1,0 +1,9 @@
+{
+  "schema": "TERRAFORMER-PINPOINTINGS/1",
+  "systemId": "system.pinpointing",
+  "declarativeRegistry": true,
+  "membershipGrantsMutation": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

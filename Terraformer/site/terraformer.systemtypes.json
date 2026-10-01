@@ -1,0 +1,6295 @@
+{
+  "schema": "TERRAFORMER-SYSTEM-TYPE-RELATIONSHIPS/1",
+  "checkpoint": "0.48.47",
+  "kind": "SYSTEM_TYPE_RELATIONSHIP_REGISTRY",
+  "invariant": {
+    "statement": "Every admitted System must resolve through an explicit typeOf relationship to another System.",
+    "rootClosure": {
+      "system": "System",
+      "typeOf": "System",
+      "selfReferential": true,
+      "intentional": true
+    },
+    "inverseRequired": true,
+    "roundTripRequired": true,
+    "cyclePolicy": "ONLY_EXPLICITLY_ADMITTED",
+    "authorityGranted": false
+  },
+  "discovery": {
+    "operations": [
+      "typeOf",
+      "types",
+      "ancestors",
+      "descendants",
+      "siblings",
+      "roundTripVerify"
+    ],
+    "roundTrip": "child -> typeOf -> parent -> types -> child",
+    "failure": "UNRESOLVED relationships remain unqualified and must not be fabricated"
+  },
+  "relationships": [
+    {
+      "child": "System",
+      "typeOf": "System",
+      "status": "ROOT_CLOSURE",
+      "evidence": "architectural invariant"
+    },
+    {
+      "child": "Topology",
+      "typeOf": "System",
+      "status": "CANONICAL"
+    },
+    {
+      "child": "Passage",
+      "typeOf": "Topology",
+      "status": "CANONICAL",
+      "typeIndex": 0,
+      "zeroPoint": true
+    },
+    {
+      "child": "Busline",
+      "typeOf": "Passage",
+      "status": "CANONICAL_TOPOLOGY_CLASSIFICATION"
+    },
+    {
+      "child": "Chain",
+      "typeOf": "Passage",
+      "status": "CANONICAL_TOPOLOGY_CLASSIFICATION"
+    },
+    {
+      "child": "Ring",
+      "typeOf": "Passage",
+      "status": "CANONICAL_TOPOLOGY_CLASSIFICATION"
+    },
+    {
+      "child": "Grid",
+      "typeOf": "Passage",
+      "status": "CANONICAL_TOPOLOGY_CLASSIFICATION"
+    },
+    {
+      "child": "Mesh",
+      "typeOf": "Passage",
+      "status": "CANONICAL_TOPOLOGY_CLASSIFICATION"
+    },
+    {
+      "child": "Matrix",
+      "typeOf": "Passage",
+      "status": "CANONICAL_TOPOLOGY_CLASSIFICATION"
+    },
+    {
+      "child": "Bridge",
+      "typeOf": "Passage",
+      "status": "CANONICAL_TOPOLOGY_CLASSIFICATION"
+    },
+    {
+      "child": "Path",
+      "typeOf": "Passage",
+      "status": "CANONICAL_TOPOLOGY_CLASSIFICATION"
+    },
+    {
+      "child": "Lane",
+      "typeOf": "Passage",
+      "status": "CANONICAL_TOPOLOGY_CLASSIFICATION"
+    },
+    {
+      "child": "Track",
+      "typeOf": "Passage",
+      "status": "CANONICAL_TOPOLOGY_CLASSIFICATION"
+    },
+    {
+      "child": "Route",
+      "typeOf": "Passage",
+      "status": "CANONICAL_TOPOLOGY_CLASSIFICATION"
+    },
+    {
+      "child": "Rail",
+      "typeOf": "Passage",
+      "status": "CANONICAL_TOPOLOGY_CLASSIFICATION"
+    },
+    {
+      "child": "Pattern",
+      "typeOf": "Passage",
+      "status": "CANONICAL_TOPOLOGY_CLASSIFICATION"
+    },
+    {
+      "child": "Transmission",
+      "typeOf": "Passage",
+      "status": "CANONICAL_TOPOLOGY_CLASSIFICATION"
+    },
+    {
+      "child": "Connection",
+      "typeOf": "Passage",
+      "status": "CANONICAL_TOPOLOGY_CLASSIFICATION"
+    },
+    {
+      "child": "Adjustment",
+      "typeOf": "System",
+      "status": "CANONICAL"
+    },
+    {
+      "child": "Sizing",
+      "typeOf": "Adjustment",
+      "status": "CANONICAL"
+    },
+    {
+      "child": "Resizing",
+      "typeOf": "Adjustment",
+      "status": "CANONICAL"
+    },
+    {
+      "child": "Size",
+      "typeOf": "Sizing",
+      "status": "CANONICAL"
+    },
+    {
+      "child": "Value",
+      "typeOf": "System",
+      "status": "CANONICAL"
+    },
+    {
+      "child": "Valuing",
+      "typeOf": "System",
+      "status": "CANONICAL"
+    },
+    {
+      "child": "Valuable",
+      "typeOf": "System",
+      "status": "CANONICAL"
+    },
+    {
+      "child": "Call",
+      "typeOf": "System",
+      "status": "CANONICAL"
+    },
+    {
+      "child": "Calling",
+      "typeOf": "System",
+      "status": "CANONICAL"
+    },
+    {
+      "child": "Caller",
+      "typeOf": "System",
+      "status": "CANONICAL"
+    },
+    {
+      "child": "Callable",
+      "typeOf": "System",
+      "status": "CANONICAL"
+    },
+    {
+      "child": "Return",
+      "typeOf": "System",
+      "status": "CANONICAL"
+    },
+    {
+      "child": "Returning",
+      "typeOf": "System",
+      "status": "CANONICAL"
+    },
+    {
+      "child": "Returner",
+      "typeOf": "System",
+      "status": "CANONICAL"
+    },
+    {
+      "child": "Returnable",
+      "typeOf": "System",
+      "status": "CANONICAL"
+    },
+    {
+      "child": "Team",
+      "typeOf": "System",
+      "status": "CANONICAL"
+    },
+    {
+      "child": "Arity",
+      "typeOf": "System",
+      "status": "CANONICAL",
+      "family": "arity"
+    },
+    {
+      "child": "Unary",
+      "typeOf": "Arity",
+      "status": "CANONICAL",
+      "family": "arity",
+      "arity": 1
+    },
+    {
+      "child": "Binary",
+      "typeOf": "Arity",
+      "status": "CANONICAL",
+      "family": "arity",
+      "arity": 2
+    },
+    {
+      "child": "Trinary",
+      "typeOf": "Arity",
+      "status": "CANONICAL",
+      "family": "arity",
+      "arity": 3
+    },
+    {
+      "child": "Quarnary",
+      "typeOf": "Arity",
+      "status": "CANONICAL",
+      "family": "arity",
+      "arity": 4
+    },
+    {
+      "child": "Bit",
+      "typeOf": "System",
+      "status": "CANONICAL"
+    },
+    {
+      "child": "Dump",
+      "typeOf": "System",
+      "status": "CANONICAL"
+    },
+    {
+      "child": "Caching",
+      "typeOf": "System",
+      "status": "CANONICAL"
+    },
+    {
+      "child": "Cache",
+      "typeOf": "System",
+      "status": "CANONICAL"
+    },
+    {
+      "child": "Volatility",
+      "typeOf": "System",
+      "status": "CANONICAL"
+    },
+    {
+      "child": "Byte",
+      "typeOf": "System",
+      "status": "CANONICAL"
+    },
+    {
+      "child": "Capacity",
+      "typeOf": "System",
+      "status": "CANONICAL"
+    },
+    {
+      "child": "Signal",
+      "typeOf": "System",
+      "status": "CANONICAL"
+    },
+    {
+      "child": "RoundTrip",
+      "typeOf": "System",
+      "status": "CANONICAL"
+    },
+    {
+      "child": "Disagreement",
+      "typeOf": "System",
+      "status": "CANONICAL",
+      "family": "negotiation-outcome"
+    },
+    {
+      "child": "Responsibility",
+      "typeOf": "System",
+      "status": "CANONICAL",
+      "family": "governance"
+    },
+    {
+      "child": "Result",
+      "typeOf": "System",
+      "status": "CANONICAL",
+      "family": "outcome"
+    },
+    {
+      "child": "Achievement",
+      "typeOf": "System",
+      "status": "CANONICAL",
+      "family": "outcome"
+    },
+    {
+      "child": "Objective",
+      "typeOf": "System",
+      "status": "CANONICAL",
+      "family": "goal"
+    },
+    {
+      "child": "Request",
+      "typeOf": "System",
+      "status": "CANONICAL",
+      "family": "interaction"
+    },
+    {
+      "child": "Response",
+      "typeOf": "System",
+      "status": "CANONICAL",
+      "family": "interaction"
+    },
+    {
+      "child": "Statistics",
+      "typeOf": "System",
+      "status": "CANONICAL",
+      "family": "measurement"
+    },
+    {
+      "child": "Adjective",
+      "typeOf": "System",
+      "status": "CANONICAL",
+      "family": "classification"
+    },
+    {
+      "child": "Prediction",
+      "typeOf": "System",
+      "status": "CANONICAL",
+      "family": "forecast-inference"
+    },
+    {
+      "child": "Science",
+      "typeOf": "System",
+      "status": "CANONICAL",
+      "family": "science"
+    },
+    {
+      "child": "Technology",
+      "typeOf": "System",
+      "status": "CANONICAL",
+      "family": "technology"
+    },
+    {
+      "child": "Identification",
+      "typeOf": "System",
+      "status": "CANONICAL",
+      "family": "identity"
+    },
+    {
+      "child": "Transaction",
+      "typeOf": "System",
+      "status": "CANONICAL",
+      "family": "control"
+    },
+    {
+      "child": "Reader",
+      "typeOf": "System",
+      "status": "CANONICAL",
+      "family": "information"
+    },
+    {
+      "child": "Writer",
+      "typeOf": "System",
+      "status": "CANONICAL",
+      "family": "information"
+    },
+    {
+      "child": "Uri",
+      "typeOf": "System",
+      "status": "CANONICAL",
+      "family": "information-network"
+    },
+    {
+      "child": "Packet",
+      "typeOf": "System",
+      "status": "CANONICAL",
+      "family": "transmission"
+    },
+    {
+      "child": "Session",
+      "typeOf": "System",
+      "status": "CANONICAL",
+      "family": "infrastructure"
+    },
+    {
+      "child": "Help",
+      "typeOf": "System",
+      "status": "CANONICAL",
+      "family": "documentation"
+    },
+    {
+      "child": "Support",
+      "typeOf": "System",
+      "status": "CANONICAL",
+      "family": "documentation"
+    },
+    {
+      "child": "Identifier",
+      "typeOf": "Worker",
+      "status": "CANONICAL",
+      "family": "identity",
+      "process": "system.identification"
+    },
+    {
+      "child": "Logist",
+      "typeOf": "Worker",
+      "status": "CANONICAL",
+      "family": "logic",
+      "process": "system.logic"
+    },
+    {
+      "child": "Materializer",
+      "typeOf": "Worker",
+      "status": "CANONICAL",
+      "family": "realization",
+      "process": "system.materialization"
+    },
+    {
+      "child": "Fabricator",
+      "typeOf": "Worker",
+      "status": "CANONICAL",
+      "family": "construction",
+      "process": "system.fabrication"
+    },
+    {
+      "child": "Finalizer",
+      "typeOf": "Worker",
+      "status": "CANONICAL",
+      "family": "lifecycle",
+      "process": "system.finalization"
+    },
+    {
+      "child": "Coder",
+      "typeOf": "Worker",
+      "status": "CANONICAL",
+      "family": "source-construction",
+      "process": "system.coding"
+    },
+    {
+      "child": "Auditor",
+      "typeOf": "Worker",
+      "status": "CANONICAL",
+      "family": "assurance",
+      "process": "system.auditing"
+    },
+    {
+      "child": "Implementer",
+      "typeOf": "Worker",
+      "status": "CANONICAL",
+      "family": "realization",
+      "process": "system.implementation"
+    },
+    {
+      "child": "Deployer",
+      "typeOf": "Worker",
+      "status": "CANONICAL",
+      "family": "deployment",
+      "process": "system.deployment"
+    },
+    {
+      "child": "Auditing",
+      "typeOf": "System",
+      "status": "CANONICAL",
+      "family": "system"
+    },
+    {
+      "child": "Coding",
+      "typeOf": "System",
+      "status": "CANONICAL",
+      "family": "system"
+    },
+    {
+      "child": "Fabrication",
+      "typeOf": "System",
+      "status": "CANONICAL",
+      "family": "system"
+    },
+    {
+      "child": "Finalization",
+      "typeOf": "System",
+      "status": "CANONICAL",
+      "family": "system"
+    },
+    {
+      "child": "Implementation",
+      "typeOf": "System",
+      "status": "CANONICAL",
+      "family": "system"
+    },
+    {
+      "child": "Materialization",
+      "typeOf": "System",
+      "status": "CANONICAL",
+      "family": "system"
+    },
+    {
+      "child": "Preparation",
+      "typeOf": "System",
+      "status": "CANONICAL",
+      "family": "system"
+    },
+    {
+      "child": "Protection",
+      "typeOf": "System",
+      "status": "CANONICAL",
+      "family": "system"
+    },
+    {
+      "child": "Containment",
+      "typeOf": "System",
+      "status": "CANONICAL",
+      "family": "system"
+    },
+    {
+      "child": "Isolation",
+      "typeOf": "System",
+      "status": "CANONICAL",
+      "family": "system"
+    },
+    {
+      "child": "Quarantine",
+      "typeOf": "System",
+      "status": "CANONICAL",
+      "family": "system"
+    },
+    {
+      "child": "Observation",
+      "typeOf": "System",
+      "status": "CANONICAL",
+      "family": "lifecycle"
+    },
+    {
+      "child": "Operation",
+      "typeOf": "System",
+      "status": "CANONICAL",
+      "family": "system"
+    },
+    {
+      "child": "Migration",
+      "typeOf": "System",
+      "status": "CANONICAL",
+      "family": "system"
+    },
+    {
+      "child": "Formalization",
+      "typeOf": "System",
+      "status": "CANONICAL",
+      "family": "system"
+    },
+    {
+      "child": "Generalization",
+      "typeOf": "System",
+      "status": "CANONICAL",
+      "family": "system"
+    },
+    {
+      "child": "Localization",
+      "typeOf": "System",
+      "status": "CANONICAL",
+      "family": "system"
+    },
+    {
+      "child": "Globalization",
+      "typeOf": "System",
+      "status": "CANONICAL",
+      "family": "system"
+    },
+    {
+      "child": "Reflection",
+      "typeOf": "System",
+      "status": "CANONICAL",
+      "family": "system"
+    },
+    {
+      "child": "Mirroring",
+      "typeOf": "System",
+      "status": "CANONICAL",
+      "family": "system"
+    },
+    {
+      "child": "Encoding",
+      "typeOf": "System",
+      "status": "CANONICAL",
+      "family": "service"
+    },
+    {
+      "child": "Encryption",
+      "typeOf": "System",
+      "status": "CANONICAL",
+      "family": "infrastructure"
+    },
+    {
+      "child": "Manufacturing",
+      "typeOf": "System",
+      "status": "CANONICAL",
+      "family": "system"
+    },
+    {
+      "child": "Delivery",
+      "typeOf": "System",
+      "status": "CANONICAL",
+      "family": "industry"
+    },
+    {
+      "child": "Candidate",
+      "typeOf": "System",
+      "status": "CANONICAL",
+      "family": "classification"
+    },
+    {
+      "child": "Abstraction",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Access",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Addressing",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Appliance",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Array",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Atom",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Atomic",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Attribute",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Attributer",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Awareness",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Bank",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Base64",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Beam",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Beaming",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Cancellation",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Checkbox",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Checkpointing",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Child",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Choice",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Classified",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Classifying",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Clause",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Commandline",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Commencing",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Commission",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Confirmation",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Consciousness",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Constant",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Cookie",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Corpora",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Corruption",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Counter",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Counting",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Crypt",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Datacenter",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Declaration",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Design",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Designing",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Detection",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Dhcp",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Directing",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Direction",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Directive",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Disabling",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Discovering",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Discussion",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Dispatch",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Display",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Div",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Electron",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Emergency",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Enabling",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Existence",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Fifo",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Filesystem",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Filming",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Filo",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Finding",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Font",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Footage",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Footer",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Founder",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Frame",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Framing",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Geographic",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Governer",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Governing",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Guarded",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Guarding",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Gui",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Hdmi",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Heading",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Healthcare",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Hibernator",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Highlighting",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Hospitalization",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Hospitalizer",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Hpp",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Intelligence",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Invariancer",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Invariancy",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Ip",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Key",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Knob",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Lifo",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Lilo",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Lingual",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Location",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Locator",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Locker",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Logic",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Mainframe",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Manual",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Medical",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Medicine",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Member",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Membership",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Mirror",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Model",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Modeling",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Morphing",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Mouse",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Movie",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Multidimension",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Multiparameter",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Nameserver",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Namespace",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Namespacer",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Native",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Nav",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Nosql",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Obtainment",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Option",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Pacification",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Pacifier",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Parallelizer",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Parcel",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Parent",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Passport",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "People",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Permission",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Persister",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Persisting",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Person",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Personalization",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Pgsql",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Picture",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Positron",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Postal",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Prelaunch",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Preload",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Preloading",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Private",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Propagation",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Protected",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Protecting",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Protector",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Public",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Purchase",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Querier",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Query",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Quiescence",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Ranking",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Reflect",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Reflecting",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Relation",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Reloading",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Replacement",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Rescue",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Rescuer",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Resolution",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Resumption",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Safety",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Sandbox",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Sandboxing",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Satellite",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Saving",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Searching",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Section",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Selfhosting",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Sha256",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Shine",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Shopping",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Sibling",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Simulation",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Sleeper",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Snapshot",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Sound",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Spacecraft",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Spacer",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Spacing",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Sql",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Starter",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Stopper",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Storage",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Subject",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Subjecter",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Suspension",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Sustainment",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Symbol",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Symbolic",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Symbolizer",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Synchronizer",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Syntaxing",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Tbuild",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Telemedicine",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Terminal",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Terraformer",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Timeout",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Timer",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Timing",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Title",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Tld",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Topic",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Topicer",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Touchpad",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Transferring",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Transformation",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Transversioning",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Unification",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Updating",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Url",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Usb",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Usbc",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Utilization",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Variable",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Variancer",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Variancy",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Vault",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Versioning",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Vip",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Visibility",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Vpn",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Wallet",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Wasm",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Watermarking",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Wcpu",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Webassembly",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Webgpu",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Wgpu",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Workstation",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Wram",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Abstractor",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Acceptance",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Acceptor",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Account",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Accounting",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Activation",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Acts",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Add",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Addresser",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Admission",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Admitter",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Aes256",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Amount",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Analytics",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Answerer",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Answering",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Applier",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Arp",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Asm",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Authority",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Awakener",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Balance",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Baseline",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Beamer",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Behaver",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Behavior",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Canceler",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Canonicalpath",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Capabilities",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Centralizer",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Certifier",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Change",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Chat",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Checkpointer",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Checksum",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Classifier",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Clearing",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Cloud",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Cognitive",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Commencer",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Commissioner",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Commit",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Compaction",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Compatibility",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Compiling",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Concurrencer",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Confirmer",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Console",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Constitution",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Constructing",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Continuity",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Courtesy",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Cpp",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Crop",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Deactivation",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Deallocator",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Debit",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Decentralizer",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Declarer",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Delimitation",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Delimiter",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Designer",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Destructor",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Director",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Disabler",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Discoverer",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Discusser",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Dispatcher",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Downloader",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Enabler",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Endpoint",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Equivalence",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Erp",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Euro",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Example",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Explorer",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Extranet",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Extraneter",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Factory",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Fallback",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Fallbacker",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Family",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Finance",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Finder",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Fingerprinter",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Fingerprinting",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Fixture",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Footager",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Framer",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Functions",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Gateway",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Germination",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Git",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Globalizer",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Glossarist",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Governs",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Gravitation",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Gravitator",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "H",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Handoff",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Highlighter",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Http2",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Iana",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Icann",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Id",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Idle",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Ietf",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Immunity",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Immunizer",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Index",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Informing",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Initializer",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Institution",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Instrumentation",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Integrateswith",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Integrity",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Interpreting",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Intranet",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Intraneter",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Ipify",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Iss",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Ix",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Js",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Justification",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Kvm",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Labeler",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Labeling",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Learner",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Legitimation",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Lexeme",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Lexing",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Licensing",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Licensor",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Limitation",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Limiter",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Loader",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Localizer",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Logout",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Loopbacker",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Mac",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Main",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Manager",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Mastercard",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Method",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Mobilizer",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Modeler",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Monitoring",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Morpher",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Neighbor",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Neuralyzer",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Oauth2",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Originator",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Other",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Ox",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Parsing",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Peer",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Personalizer",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Placement",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Pollination",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Pooler",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Preloader",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Pricing",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Privacy",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Probabilist",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Probability",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Prompt",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Publicity",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Qemu",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Quantifier",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Questioner",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Questioning",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Randomization",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Randomizer",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Re",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Reallocator",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Reconstructing",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Reconstructor",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Recovery",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Rejection",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Rejector",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Reloader",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Replicator",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Resizer",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Rest",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Retry",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Rollback",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Rollout",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Routing",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Rpc",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Rsa2048",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "S",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Scope",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Script",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Scripting",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Secure",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Self",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Semantics",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Sensor",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Settlement",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Sizer",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Skip",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Slice",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Slogan",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Subsidiary",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Summarizer",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Surface",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Swap",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Tagger",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Tagging",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Terraformation",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Terramorphing",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Timestamping",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Translation",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Transmorphing",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Unclassified",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Unlocker",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Unlocking",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Unregistered",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Uploader",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Viewporter",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Visa",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Vlan",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Webmail",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Websocket",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Wifi",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Word",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Yielding",
+      "typeOf": "Candidate",
+      "status": "TRANSITIONAL",
+      "family": "candidate"
+    },
+    {
+      "child": "Preparator",
+      "typeOf": "Worker",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "performed-by-actor-evidence"
+    },
+    {
+      "child": "Ranker",
+      "typeOf": "Worker",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "performed-by-actor-evidence"
+    },
+    {
+      "child": "Reflector",
+      "typeOf": "Worker",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "performed-by-actor-evidence"
+    },
+    {
+      "child": "Representer",
+      "typeOf": "Worker",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "performed-by-actor-evidence"
+    },
+    {
+      "child": "Sandboxer",
+      "typeOf": "Worker",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "performed-by-actor-evidence"
+    },
+    {
+      "child": "Saver",
+      "typeOf": "Worker",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "performed-by-actor-evidence"
+    },
+    {
+      "child": "Searcher",
+      "typeOf": "Worker",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "performed-by-actor-evidence"
+    },
+    {
+      "child": "Shiner",
+      "typeOf": "Worker",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "performed-by-actor-evidence"
+    },
+    {
+      "child": "Syntaxer",
+      "typeOf": "Worker",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "performed-by-actor-evidence"
+    },
+    {
+      "child": "Transactor",
+      "typeOf": "Worker",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "explicit-parent-evidence"
+    },
+    {
+      "child": "Transformer",
+      "typeOf": "Worker",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "performed-by-actor-evidence"
+    },
+    {
+      "child": "Transversioner",
+      "typeOf": "Worker",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "performed-by-actor-evidence"
+    },
+    {
+      "child": "Unifier",
+      "typeOf": "Worker",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "performed-by-actor-evidence"
+    },
+    {
+      "child": "Updater",
+      "typeOf": "Worker",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "performed-by-actor-evidence"
+    },
+    {
+      "child": "Utilizer",
+      "typeOf": "Worker",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "performed-by-actor-evidence"
+    },
+    {
+      "child": "Versioner",
+      "typeOf": "Worker",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "performed-by-actor-evidence"
+    },
+    {
+      "child": "Watermarker",
+      "typeOf": "Worker",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "performed-by-actor-evidence"
+    },
+    {
+      "child": "Normalization",
+      "typeOf": "System",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT"
+    },
+    {
+      "child": "Naturalization",
+      "typeOf": "System",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT"
+    },
+    {
+      "child": "Tokenization",
+      "typeOf": "System",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT"
+    },
+    {
+      "child": "Relationship",
+      "typeOf": "System",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "family": "graph"
+    },
+    {
+      "child": "Token",
+      "typeOf": "System",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "family": "representation"
+    },
+    {
+      "child": "Physicalization",
+      "typeOf": "System",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "family": "naturalization-flow"
+    },
+    {
+      "child": "Functionality",
+      "typeOf": "System",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "family": "naturalization-flow"
+    },
+    {
+      "child": "Criticality",
+      "typeOf": "System",
+      "authority": false
+    },
+    {
+      "child": "TokenAudit",
+      "typeOf": "System",
+      "authority": false
+    },
+    {
+      "child": "Priority",
+      "typeOf": "System",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT"
+    },
+    {
+      "child": "Prioritization",
+      "typeOf": "System",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT"
+    },
+    {
+      "child": "Importance",
+      "typeOf": "System",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT"
+    },
+    {
+      "child": "accuracy",
+      "typeOf": "dimension",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.accuracy.js",
+      "descriptorEvidence": [
+        "accuracy-dimension",
+        "dimension"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "algorithm",
+      "typeOf": "computation",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.algorithm.js",
+      "descriptorEvidence": [
+        "algorithm-system",
+        "computation"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "allocator",
+      "typeOf": "resource",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.allocator.js",
+      "descriptorEvidence": [
+        "allocation-actor-system",
+        "allocator-system",
+        "resource"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "any",
+      "typeOf": "meta",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.any.js",
+      "descriptorEvidence": [
+        "canonical-data-type-system",
+        "meta"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "app",
+      "typeOf": "application",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.app.js",
+      "descriptorEvidence": [
+        "mobile-application-boundary",
+        "application"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "application",
+      "typeOf": "software",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.application.js",
+      "descriptorEvidence": [
+        "application-system",
+        "software"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "archive",
+      "typeOf": "storage",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.archive.js",
+      "descriptorEvidence": [
+        "archive-system",
+        "storage"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "arithmetic",
+      "typeOf": "computation",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.arithmetic.js",
+      "descriptorEvidence": [
+        "arithmetic-process-system",
+        "computation-system",
+        "compute"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "audio",
+      "typeOf": "system",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.audio.js",
+      "descriptorEvidence": [
+        "system",
+        "browser-api-boundary",
+        "audio",
+        "audio"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "audit",
+      "typeOf": "system",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.audit.js",
+      "descriptorEvidence": [
+        "system",
+        "evidence"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "banking",
+      "typeOf": "finance",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.banking.js",
+      "descriptorEvidence": [
+        "banking-system",
+        "finance"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "bash",
+      "typeOf": "runtime",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.bash.js",
+      "descriptorEvidence": [
+        "generated-shell-plane",
+        "runtime"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "bios",
+      "typeOf": "firmware",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.bios.js",
+      "descriptorEvidence": [
+        "bios-system",
+        "firmware"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "blockdevice",
+      "typeOf": "storage",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.blockdevice.js",
+      "descriptorEvidence": [
+        "block-device-system",
+        "storage"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "brain",
+      "typeOf": "system",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.brain.js",
+      "descriptorEvidence": [
+        "system",
+        "cognitive-technical"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "broadcaster",
+      "typeOf": "communication",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.broadcaster.js",
+      "descriptorEvidence": [
+        "broadcaster-system",
+        "communication"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "broadcasting",
+      "typeOf": "communication",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.broadcasting.js",
+      "descriptorEvidence": [
+        "broadcasting-system",
+        "communication"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "business",
+      "typeOf": "organization",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.business.js",
+      "descriptorEvidence": [
+        "business-system",
+        "organization"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "capability",
+      "typeOf": "systemization",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.capability.js",
+      "descriptorEvidence": [
+        "capability-system",
+        "systemization"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "capsule",
+      "typeOf": "containment",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.capsule.js",
+      "descriptorEvidence": [
+        "capsule-system",
+        "containment"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "chassis",
+      "typeOf": "hardware",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.chassis.js",
+      "descriptorEvidence": [
+        "chassis-system",
+        "hardware"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "chemistry",
+      "typeOf": "science",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.chemistry.js",
+      "descriptorEvidence": [
+        "chemistry-system",
+        "science"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "chipset",
+      "typeOf": "hardware",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.chipset.js",
+      "descriptorEvidence": [
+        "chipset-system",
+        "hardware"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "clock",
+      "typeOf": "system",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.clock.js",
+      "descriptorEvidence": [
+        "system",
+        "temporal"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "closing",
+      "typeOf": "lifecycle",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.closing.js",
+      "descriptorEvidence": [
+        "closing-system",
+        "lifecycle"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "cluster",
+      "typeOf": "resource",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.cluster.js",
+      "descriptorEvidence": [
+        "cluster-system",
+        "resource"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "command",
+      "typeOf": "computation",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.command.js",
+      "descriptorEvidence": [
+        "command-system",
+        "computation"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "common",
+      "typeOf": "platform",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.common.js",
+      "descriptorEvidence": [
+        "cross-platform-common-capability",
+        "platform"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "compound",
+      "typeOf": "science",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.compound.js",
+      "descriptorEvidence": [
+        "compound-system",
+        "science"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "computation",
+      "typeOf": "runtime",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.computation.js",
+      "descriptorEvidence": [
+        "computation-process-system",
+        "computation-system",
+        "runtime"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "condition",
+      "typeOf": "logic",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.condition.js",
+      "descriptorEvidence": [
+        "condition-system",
+        "logic"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "connector",
+      "typeOf": "communication",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.connector.js",
+      "descriptorEvidence": [
+        "connector-system",
+        "communication"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "container",
+      "typeOf": "containment",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.container.js",
+      "descriptorEvidence": [
+        "container-system",
+        "containment"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "core",
+      "typeOf": "terraformer",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.core.js",
+      "descriptorEvidence": [
+        "foundational-integration-system",
+        "terraformer"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "cryptocurrency",
+      "typeOf": "value",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.cryptocurrency.js",
+      "descriptorEvidence": [
+        "cryptocurrency-system",
+        "value"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "css",
+      "typeOf": "control",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.css.js",
+      "descriptorEvidence": [
+        "style-cascade-layout",
+        "boundary-aware-system-discovery",
+        "presentation",
+        "control"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "database",
+      "typeOf": "data",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.database.js",
+      "descriptorEvidence": [
+        "data"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "discovery",
+      "typeOf": "knowledge",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.discovery.js",
+      "descriptorEvidence": [
+        "discovery-system",
+        "knowledge"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "disk",
+      "typeOf": "storage",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.disk.js",
+      "descriptorEvidence": [
+        "disk-system",
+        "volume-system",
+        "storage",
+        "storage"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "dom",
+      "typeOf": "document",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.dom.js",
+      "descriptorEvidence": [
+        "document-object-model",
+        "document"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "element",
+      "typeOf": "science",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.element.js",
+      "descriptorEvidence": [
+        "element-system",
+        "science"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "enum",
+      "typeOf": "aggregate",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.enum.js",
+      "descriptorEvidence": [
+        "canonical-data-type-system",
+        "aggregate"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "establishment",
+      "typeOf": "requirement",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.establishment.js",
+      "descriptorEvidence": [
+        "structural-process-system",
+        "structural-process-system",
+        "requirement-system",
+        "lifecycle-process-system",
+        "testing-representation-system",
+        "testing-stimulus-system"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "examination",
+      "typeOf": "forensic",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.examination.js",
+      "descriptorEvidence": [
+        "examination-system",
+        "forensic"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "examiner",
+      "typeOf": "agent",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.examiner.js",
+      "descriptorEvidence": [
+        "bounded-agent",
+        "agent"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "exploration",
+      "typeOf": "knowledge",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.exploration.js",
+      "descriptorEvidence": [
+        "exploration-system",
+        "knowledge"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "facilitation",
+      "typeOf": "facility",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.facilitation.js",
+      "descriptorEvidence": [
+        "facilitation-system",
+        "facility"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "file",
+      "typeOf": "storage",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.file.js",
+      "descriptorEvidence": [
+        "bounded-filesystem",
+        "filesystem-manager",
+        "directory",
+        "file",
+        "storage",
+        "desktop"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "firmware",
+      "typeOf": "boot",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.firmware.js",
+      "descriptorEvidence": [
+        "firmware-system",
+        "firmware-system",
+        "boot",
+        "firmware"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "flag",
+      "typeOf": "state",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.flag.js",
+      "descriptorEvidence": [
+        "flag-system",
+        "state"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "forum",
+      "typeOf": "communication",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.forum.js",
+      "descriptorEvidence": [
+        "forum-system",
+        "communication"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "framework",
+      "typeOf": "software",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.framework.js",
+      "descriptorEvidence": [
+        "framework-system",
+        "software"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "generic",
+      "typeOf": "meta",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.generic.js",
+      "descriptorEvidence": [
+        "canonical-data-type-system",
+        "meta"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "graphics",
+      "typeOf": "system",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.graphics.js",
+      "descriptorEvidence": [
+        "system",
+        "presentation"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "grouping",
+      "typeOf": "scope",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.grouping.js",
+      "descriptorEvidence": [
+        "system-organization-process-system",
+        "group-specialization-system",
+        "group-specialization-system",
+        "group-specialization-system",
+        "group-specialization-system",
+        "group-specialization-system",
+        "scope-system",
+        "scope-group-system"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "hall",
+      "typeOf": "facility",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.hall.js",
+      "descriptorEvidence": [
+        "hall-system",
+        "facility"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "hasher",
+      "typeOf": "cryptography",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.hasher.js",
+      "descriptorEvidence": [
+        "hashing-actor-system",
+        "cryptography"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "hashing",
+      "typeOf": "cryptography",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.hashing.js",
+      "descriptorEvidence": [
+        "hashing-system",
+        "cryptography"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "home",
+      "typeOf": "workspace",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.home.js",
+      "descriptorEvidence": [
+        "home-system",
+        "workspace"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "html",
+      "typeOf": "document",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.html.js",
+      "descriptorEvidence": [
+        "markup-structure",
+        "document"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "image",
+      "typeOf": "media",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.image.js",
+      "descriptorEvidence": [
+        "application/x-terraformer-data-image",
+        "still-image-system",
+        "binary-image-system",
+        "media",
+        "media"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "import",
+      "typeOf": "integration",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.import.js",
+      "descriptorEvidence": [
+        "import-system",
+        "integration"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "inspection",
+      "typeOf": "forensic",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.inspection.js",
+      "descriptorEvidence": [
+        "inspection-system",
+        "forensic"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "inspector",
+      "typeOf": "agent",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.inspector.js",
+      "descriptorEvidence": [
+        "bounded-agent",
+        "agent"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "instance",
+      "typeOf": "runtime",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.instance.js",
+      "descriptorEvidence": [
+        "RESERVED",
+        "RUNTIME"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "integration",
+      "typeOf": "communication",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.integration.js",
+      "descriptorEvidence": [
+        "integration-system",
+        "integration",
+        "integration",
+        "communication"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "interface",
+      "typeOf": "feature",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.interface.js",
+      "descriptorEvidence": [
+        "interface-system",
+        "feature-system",
+        "intrinsic-kit",
+        "interaction",
+        "capability-description"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "javascript",
+      "typeOf": "runtime",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.javascript.js",
+      "descriptorEvidence": [
+        "javascript-runtime-plane",
+        "runtime"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "job",
+      "typeOf": "work",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.job.js",
+      "descriptorEvidence": [
+        "job-system",
+        "work"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "kit",
+      "typeOf": "composition",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.kit.js",
+      "descriptorEvidence": [
+        "kit-composition-system",
+        "kit",
+        "intrinsic-kit-system",
+        "intrinsic-kit",
+        "intrinsic-computational-kit-fabric",
+        "kit-member-system",
+        "intrinsic-computational-kit",
+        "composition"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "knowledge",
+      "typeOf": "system",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.knowledge.js",
+      "descriptorEvidence": [
+        "system",
+        "knowledge"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "laboratory",
+      "typeOf": "science",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.laboratory.js",
+      "descriptorEvidence": [
+        "laboratory-system",
+        "science"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "layer",
+      "typeOf": "system",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.layer.js",
+      "descriptorEvidence": [
+        "logical-layer-system",
+        "system",
+        "presentation"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "layout",
+      "typeOf": "system",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.layout.js",
+      "descriptorEvidence": [
+        "center-cross-layout-system",
+        "desktop-boundary-banner-system",
+        "desktop-boundary-bar-system",
+        "geometric-center-system",
+        "spatial-geometry-system",
+        "horizontal-center-axis-system",
+        "system",
+        "presentation"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "learning",
+      "typeOf": "education",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.learning.js",
+      "descriptorEvidence": [
+        "learning-system",
+        "learning-system",
+        "education"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "linking",
+      "typeOf": "association",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.linking.js",
+      "descriptorEvidence": [
+        "association",
+        "system.link",
+        "linking-rule",
+        "linking-boundary-rule"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "lobe",
+      "typeOf": "system",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.lobe.js",
+      "descriptorEvidence": [
+        "system",
+        "cognitive-technical"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "lookup",
+      "typeOf": "information",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.lookup.js",
+      "descriptorEvidence": [
+        "lookup-system",
+        "information"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "mainboard",
+      "typeOf": "hardware",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.mainboard.js",
+      "descriptorEvidence": [
+        "mainboard-system",
+        "hardware"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "markdown",
+      "typeOf": "document",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.markdown.js",
+      "descriptorEvidence": [
+        "markdown-system",
+        "document"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "markup",
+      "typeOf": "document",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.markup.js",
+      "descriptorEvidence": [
+        "markup-system",
+        "document"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "memory",
+      "typeOf": "resource",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.memory.js",
+      "descriptorEvidence": [
+        "volatile-source-image-system",
+        "memory-system",
+        "resource",
+        "resource"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "messenger",
+      "typeOf": "number",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.messenger.js",
+      "descriptorEvidence": [
+        "number"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "micro",
+      "typeOf": "system",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.micro.js",
+      "descriptorEvidence": [
+        "system",
+        "scale"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "mind",
+      "typeOf": "system",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.mind.js",
+      "descriptorEvidence": [
+        "system",
+        "cognitive-technical"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "mode",
+      "typeOf": "state",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.mode.js",
+      "descriptorEvidence": [
+        "mode-system",
+        "state"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "module",
+      "typeOf": "integration",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.module.js",
+      "descriptorEvidence": [
+        "module-system",
+        "terraformer-module",
+        "integration"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "molecule",
+      "typeOf": "science",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.molecule.js",
+      "descriptorEvidence": [
+        "molecule-system",
+        "science"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "money",
+      "typeOf": "value",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.money.js",
+      "descriptorEvidence": [
+        "money-system",
+        "value"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "nano",
+      "typeOf": "system",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.nano.js",
+      "descriptorEvidence": [
+        "system",
+        "scale"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "negotiation",
+      "typeOf": "event",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.negotiation.js",
+      "descriptorEvidence": [
+        "interaction-process-system",
+        "selection-context-system",
+        "prospective-information-system",
+        "role-system",
+        "lifecycle-process-system",
+        "lifecycle-process-system",
+        "lifecycle-process-system",
+        "uncertainty-system"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "never",
+      "typeOf": "absence",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.never.js",
+      "descriptorEvidence": [
+        "canonical-data-type-system",
+        "absence"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "notification",
+      "typeOf": "communication",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.notification.js",
+      "descriptorEvidence": [
+        "notification-system",
+        "communication"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "null",
+      "typeOf": "absence",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.null.js",
+      "descriptorEvidence": [
+        "canonical-data-type-system",
+        "absence"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "office",
+      "typeOf": "workspace",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.office.js",
+      "descriptorEvidence": [
+        "office-system",
+        "workspace"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "opening",
+      "typeOf": "lifecycle",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.opening.js",
+      "descriptorEvidence": [
+        "opening-system",
+        "lifecycle"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "operating",
+      "typeOf": "platform",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.operating.js",
+      "descriptorEvidence": [
+        "operating-system-boundary",
+        "platform"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "order",
+      "typeOf": "classification",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.order.js",
+      "descriptorEvidence": [
+        "classification-rank-system",
+        "classification"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "pcb",
+      "typeOf": "hardware",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.pcb.js",
+      "descriptorEvidence": [
+        "pcb-system",
+        "hardware"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "pdf",
+      "typeOf": "document",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.pdf.js",
+      "descriptorEvidence": [
+        "pdf-system",
+        "document"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "photo",
+      "typeOf": "media",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.photo.js",
+      "descriptorEvidence": [
+        "photographic-image-system",
+        "media"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "phylum",
+      "typeOf": "classification",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.phylum.js",
+      "descriptorEvidence": [
+        "classification-rank-system",
+        "classification"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "pipeline",
+      "typeOf": "composition",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.pipeline.js",
+      "descriptorEvidence": [
+        "pipeline-system",
+        "composition"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "planning",
+      "typeOf": "work",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.planning.js",
+      "descriptorEvidence": [
+        "planning-system",
+        "work"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "power",
+      "typeOf": "hardware",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.power.js",
+      "descriptorEvidence": [
+        "physical-system-domain",
+        "power-system",
+        "hardware"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "procedure",
+      "typeOf": "computation",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.procedure.js",
+      "descriptorEvidence": [
+        "procedure-system",
+        "computation"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "processing",
+      "typeOf": "computation",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.processing.js",
+      "descriptorEvidence": [
+        "echo",
+        "processing-system",
+        "computation"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "processor",
+      "typeOf": "computation",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.processor.js",
+      "descriptorEvidence": [
+        "processing-actor-system",
+        "processor-system",
+        "computation"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "product",
+      "typeOf": "business",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.product.js",
+      "descriptorEvidence": [
+        "product-system",
+        "business"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "program",
+      "typeOf": "software",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.program.js",
+      "descriptorEvidence": [
+        "program-type-rule",
+        "program-type.audio",
+        "program-type-rule",
+        "program-type.music",
+        "program-type-rule",
+        "program-type.mixing",
+        "program-type-rule",
+        "program-type.synthesizer"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "psu",
+      "typeOf": "hardware",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.psu.js",
+      "descriptorEvidence": [
+        "psu-system",
+        "hardware"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "qualification",
+      "typeOf": "dimension",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.qualification.js",
+      "descriptorEvidence": [
+        "qualification-dimension",
+        "dimension"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "receiver",
+      "typeOf": "communication",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.receiver.js",
+      "descriptorEvidence": [
+        "receiver-system",
+        "communication"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "receiving",
+      "typeOf": "communication",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.receiving.js",
+      "descriptorEvidence": [
+        "receiving-system",
+        "communication"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "record",
+      "typeOf": "information",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.record.js",
+      "descriptorEvidence": [
+        "record-system",
+        "information"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "registry",
+      "typeOf": "tool",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.registry.js",
+      "descriptorEvidence": [
+        "tool-domain",
+        "language-foundation",
+        "programming-language",
+        "tool",
+        "tool-class",
+        "tool-worker",
+        "presentation"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "renderer",
+      "typeOf": "classification",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.renderer.js",
+      "descriptorEvidence": [
+        "rendering-actor-system",
+        "classification-system",
+        "system.renderer-type",
+        "+k);}\n const n=ids.size;\n if(tfUniversalEngineFabricV36349(sourceText).engines.length!==n||tfCompactSystemSeedV36353(sourceText).entries.length!==n||tfUniversalSystemLayerFabricV36389(sourceText).layers!==n||tfUniversalSystemDefaultsFabricV36388(sourceText).defaults!==n||tfUniversalSpecificationFabricV36397(sourceText).specifications!==n||tfUniversalReferenceFabricV36396(sourceText).references!==n||tfUniversalProcessCycleFabricV36395(sourceText).processes!==n)missing.push(",
+        "renderer-relationship-rule",
+        "renderer-type.audio",
+        "renderer-relationship-rule",
+        "renderer-type.photo"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "rendering",
+      "typeOf": "actor",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.rendering.js",
+      "descriptorEvidence": [
+        "process-system",
+        "editing-specialization-system",
+        "editing-specialization-system",
+        "process-system",
+        "actor-system",
+        "renderer-specialization-system",
+        "renderer-specialization-system",
+        "renderer-specialization-system"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "research",
+      "typeOf": "science",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.research.js",
+      "descriptorEvidence": [
+        "research-system",
+        "science"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "resolver",
+      "typeOf": "resolution",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.resolver.js",
+      "descriptorEvidence": [
+        "resolution-system"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "runtime",
+      "typeOf": "system",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.runtime.js",
+      "descriptorEvidence": [
+        "runtime-scheduling-mode-system",
+        "runtime-scheduling-mode-system",
+        "runtime-layer-lifecycle-process-system",
+        "runtime-layer-lifecycle-process-system",
+        "runtime-layer-lifecycle-process-system",
+        "runtime-layer-lifecycle-state-system",
+        "runtime-yield-process-system",
+        "runtime-yield-actor-system"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "salter",
+      "typeOf": "cryptography",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.salter.js",
+      "descriptorEvidence": [
+        "salting-actor-system",
+        "cryptography"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "salting",
+      "typeOf": "cryptography",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.salting.js",
+      "descriptorEvidence": [
+        "salting-system",
+        "cryptography"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "scheduler",
+      "typeOf": "computation",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.scheduler.js",
+      "descriptorEvidence": [
+        "scheduler-system",
+        "computation"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "scheduling",
+      "typeOf": "computation",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.scheduling.js",
+      "descriptorEvidence": [
+        "scheduling-system",
+        "computation"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "search",
+      "typeOf": "knowledge",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.search.js",
+      "descriptorEvidence": [
+        "search-system",
+        "knowledge"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "seminar",
+      "typeOf": "education",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.seminar.js",
+      "descriptorEvidence": [
+        "seminar-system",
+        "education"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "sender",
+      "typeOf": "communication",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.sender.js",
+      "descriptorEvidence": [
+        "sender-system",
+        "communication"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "sending",
+      "typeOf": "communication",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.sending.js",
+      "descriptorEvidence": [
+        "sending-system",
+        "communication"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "service",
+      "typeOf": "business",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.service.js",
+      "descriptorEvidence": [
+        "system-capability-system",
+        "service-system",
+        "business"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "set",
+      "typeOf": "aggregate",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.set.js",
+      "descriptorEvidence": [
+        "canonical-data-type-system",
+        "aggregate"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "sharing",
+      "typeOf": "exchange",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.sharing.js",
+      "descriptorEvidence": [
+        "sharing-system",
+        "sharing-agent",
+        "exchange",
+        "exchange"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "shop",
+      "typeOf": "commerce",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.shop.js",
+      "descriptorEvidence": [
+        "shop-system",
+        "commerce"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "smart",
+      "typeOf": "cognitive",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.smart.js",
+      "descriptorEvidence": [
+        "bounded-adaptive-system",
+        "cognitive"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "solution",
+      "typeOf": "business",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.solution.js",
+      "descriptorEvidence": [
+        "solution-system",
+        "business"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "space",
+      "typeOf": "system",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.space.js",
+      "descriptorEvidence": [
+        "system",
+        "spatial"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "speech",
+      "typeOf": "system",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.speech.js",
+      "descriptorEvidence": [
+        "system",
+        "speech"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "string",
+      "typeOf": "text",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.string.js",
+      "descriptorEvidence": [
+        "canonical-data-type-system",
+        "text"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "struct",
+      "typeOf": "aggregate",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.struct.js",
+      "descriptorEvidence": [
+        "canonical-data-type-system",
+        "aggregate"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "substance",
+      "typeOf": "science",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.substance.js",
+      "descriptorEvidence": [
+        "substance-system",
+        "science"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "subsystem",
+      "typeOf": "system",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.subsystem.js",
+      "descriptorEvidence": [
+        "system-structural-entity",
+        "system",
+        "shell-structural-entity"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "systemization",
+      "typeOf": "architecture",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.systemization.js",
+      "descriptorEvidence": [
+        "systemization-system",
+        "architecture"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "task",
+      "typeOf": "computation",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.task.js",
+      "descriptorEvidence": [
+        "task-system",
+        "computation"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "term",
+      "typeOf": "language",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.term.js",
+      "descriptorEvidence": [
+        "term-system",
+        "language"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "time",
+      "typeOf": "system",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.time.js",
+      "descriptorEvidence": [
+        "system",
+        "temporal"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "training",
+      "typeOf": "education",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.training.js",
+      "descriptorEvidence": [
+        "training-system",
+        "education"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "transceiver",
+      "typeOf": "communication",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.transceiver.js",
+      "descriptorEvidence": [
+        "transceiver-system",
+        "communication"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "transmitter",
+      "typeOf": "communication",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.transmitter.js",
+      "descriptorEvidence": [
+        "transmitter-system",
+        "communication"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "tree",
+      "typeOf": "system",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.tree.js",
+      "descriptorEvidence": [
+        "system",
+        "rooted-hierarchy-system",
+        "structure"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "uefi",
+      "typeOf": "firmware",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.uefi.js",
+      "descriptorEvidence": [
+        "uefi-system",
+        "firmware"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "undefined",
+      "typeOf": "absence",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.undefined.js",
+      "descriptorEvidence": [
+        "canonical-data-type-system",
+        "absence"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "union",
+      "typeOf": "aggregate",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.union.js",
+      "descriptorEvidence": [
+        "canonical-data-type-system",
+        "aggregate"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "university",
+      "typeOf": "education",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.university.js",
+      "descriptorEvidence": [
+        "university-system",
+        "education"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "unknown",
+      "typeOf": "meta",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.unknown.js",
+      "descriptorEvidence": [
+        "canonical-data-type-system",
+        "meta"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "validation",
+      "typeOf": "dimension",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.validation.js",
+      "descriptorEvidence": [
+        "validation-dimension",
+        "dimension"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "verification",
+      "typeOf": "dimension",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.verification.js",
+      "descriptorEvidence": [
+        "verification-dimension",
+        "dimension"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "video",
+      "typeOf": "media",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.video.js",
+      "descriptorEvidence": [
+        "time-based-visual-system",
+        "media"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "voice",
+      "typeOf": "system",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.voice.js",
+      "descriptorEvidence": [
+        "system",
+        "voice"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "void",
+      "typeOf": "absence",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.void.js",
+      "descriptorEvidence": [
+        "canonical-data-type-system",
+        "absence"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "ware",
+      "typeOf": "technology",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.ware.js",
+      "descriptorEvidence": [
+        "ware-system",
+        "technology"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "webinar",
+      "typeOf": "education",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.webinar.js",
+      "descriptorEvidence": [
+        "webinar-system",
+        "education"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "www",
+      "typeOf": "web",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.www.js",
+      "descriptorEvidence": [
+        "world-wide-web-system",
+        "web"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "zip",
+      "typeOf": "archive",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "exact owner descriptor resolves to existing canonical System",
+      "source": "terraformer.zip.js",
+      "descriptorEvidence": [
+        "zip-format-system",
+        "archive"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "child": "serial",
+      "typeOf": "numbering",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "migrated direct legacy structured evidence",
+      "source": "terraformer.temporary.js",
+      "authorityGranted": false
+    },
+    {
+      "child": "gpu",
+      "typeOf": "processor",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "v0.48.2 explicit Processing Type architecture",
+      "source": "terraformer.gpu.js",
+      "authorityGranted": false
+    },
+    {
+      "child": "cpu",
+      "typeOf": "processor",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "v0.48.2 explicit Processing Type architecture",
+      "source": "terraformer.cpu.js",
+      "authorityGranted": false
+    },
+    {
+      "child": "parallelism",
+      "typeOf": "processing",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "v0.48.2 explicit Processing Type architecture",
+      "source": "terraformer.parallelism.js",
+      "authorityGranted": false
+    },
+    {
+      "child": "affinity",
+      "typeOf": "processing",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "v0.48.2 explicit Processing Type architecture",
+      "source": "terraformer.affinity.js",
+      "authorityGranted": false
+    },
+    {
+      "child": "conformity",
+      "typeOf": "processing",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "v0.48.2 explicit Processing Type architecture",
+      "source": "terraformer.conformity.js",
+      "authorityGranted": false
+    },
+    {
+      "child": "vector",
+      "typeOf": "graphics",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "v0.48.2 explicit Processing Type architecture",
+      "source": "terraformer.vector.js",
+      "authorityGranted": false
+    },
+    {
+      "child": "visual",
+      "typeOf": "graphics",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "v0.48.2 explicit Processing Type architecture",
+      "source": "terraformer.visual.js",
+      "authorityGranted": false
+    },
+    {
+      "child": "concurrency",
+      "typeOf": "processing",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "v0.48.2 explicit Processing Type architecture",
+      "source": "terraformer.concurrency.js",
+      "authorityGranted": false
+    },
+    {
+      "child": "foreground",
+      "typeOf": "processing",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "v0.48.3 explicit processing-context architecture",
+      "source": "terraformer.foreground.js",
+      "authorityGranted": false
+    },
+    {
+      "child": "background",
+      "typeOf": "processing",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "v0.48.3 explicit processing-context architecture",
+      "source": "terraformer.background.js",
+      "authorityGranted": false
+    },
+    {
+      "child": "raster",
+      "typeOf": "graphics",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "v0.48.4 explicit raster fallback architecture",
+      "source": "terraformer.raster.js",
+      "authorityGranted": false
+    },
+    {
+      "child": "cad",
+      "typeOf": "graphics",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "v0.48.9 explicit architecture",
+      "source": "terraformer.cad.js",
+      "authorityGranted": false
+    },
+    {
+      "child": "perimeter",
+      "typeOf": "system",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "v0.48.9 explicit architecture",
+      "source": "terraformer.perimeter.js",
+      "authorityGranted": false
+    },
+    {
+      "child": "morphology",
+      "typeOf": "language",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "v0.48.16 explicit Morphology architecture",
+      "source": "terraformer.morphology.js",
+      "authorityGranted": false
+    },
+    {
+      "child": "Graph",
+      "typeOf": "System",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "explicit Graph System physicalization v0.48.44",
+      "source": "terraformer.graph.js",
+      "authorityGranted": false
+    },
+    {
+      "child": "Plot",
+      "typeOf": "System",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "v0.48.45 explicit architecture",
+      "authorityGranted": false
+    },
+    {
+      "child": "Plotting",
+      "typeOf": "System",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "v0.48.45 explicit architecture",
+      "authorityGranted": false
+    },
+    {
+      "child": "Crosslink",
+      "typeOf": "System",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": "v0.48.47 crosslink architecture",
+      "authorityGranted": false
+    }
+  ],
+  "inverse": {
+    "System": [
+      "System",
+      "Topology",
+      "Adjustment",
+      "Value",
+      "Valuing",
+      "Valuable",
+      "Call",
+      "Calling",
+      "Caller",
+      "Callable",
+      "Return",
+      "Returning",
+      "Returner",
+      "Returnable",
+      "Team",
+      "Arity",
+      "Bit",
+      "Dump",
+      "Caching",
+      "Cache",
+      "Volatility",
+      "Byte",
+      "Capacity",
+      "Signal",
+      "RoundTrip",
+      "Disagreement",
+      "Responsibility",
+      "Result",
+      "Achievement",
+      "Objective",
+      "Request",
+      "Response",
+      "Statistics",
+      "Adjective",
+      "Prediction",
+      "Science",
+      "Technology",
+      "Identification",
+      "Transaction",
+      "Reader",
+      "Writer",
+      "Uri",
+      "Packet",
+      "Session",
+      "Help",
+      "Support",
+      "Auditing",
+      "Coding",
+      "Fabrication",
+      "Finalization",
+      "Implementation",
+      "Materialization",
+      "Preparation",
+      "Protection",
+      "Containment",
+      "Isolation",
+      "Quarantine",
+      "Observation",
+      "Operation",
+      "Migration",
+      "Formalization",
+      "Generalization",
+      "Localization",
+      "Globalization",
+      "Reflection",
+      "Mirroring",
+      "Encoding",
+      "Encryption",
+      "Manufacturing",
+      "Delivery",
+      "Candidate",
+      "Normalization",
+      "Naturalization",
+      "Tokenization",
+      "Relationship",
+      "Token",
+      "Physicalization",
+      "Functionality",
+      "Criticality",
+      "TokenAudit",
+      "Graph",
+      "Plot",
+      "Plotting",
+      "Crosslink"
+    ],
+    "Topology": [
+      "Passage"
+    ],
+    "Passage": [
+      "Busline",
+      "Chain",
+      "Ring",
+      "Grid",
+      "Mesh",
+      "Matrix",
+      "Bridge",
+      "Path",
+      "Lane",
+      "Track",
+      "Route",
+      "Rail",
+      "Pattern",
+      "Transmission",
+      "Connection"
+    ],
+    "Adjustment": [
+      "Sizing",
+      "Resizing"
+    ],
+    "Sizing": [
+      "Size"
+    ],
+    "Arity": [
+      "Unary",
+      "Binary",
+      "Trinary",
+      "Quarnary"
+    ],
+    "Worker": [
+      "Identifier",
+      "Logist",
+      "Materializer",
+      "Fabricator",
+      "Finalizer",
+      "Coder",
+      "Auditor",
+      "Implementer",
+      "Deployer",
+      "Preparator",
+      "Ranker",
+      "Reflector",
+      "Representer",
+      "Sandboxer",
+      "Saver",
+      "Searcher",
+      "Shiner",
+      "Syntaxer",
+      "Transactor",
+      "Transformer",
+      "Transversioner",
+      "Unifier",
+      "Updater",
+      "Utilizer",
+      "Versioner",
+      "Watermarker"
+    ],
+    "Candidate": [
+      "Abstraction",
+      "Access",
+      "Addressing",
+      "Appliance",
+      "Array",
+      "Atom",
+      "Atomic",
+      "Attribute",
+      "Attributer",
+      "Awareness",
+      "Bank",
+      "Base64",
+      "Beam",
+      "Beaming",
+      "Cad",
+      "Cancellation",
+      "Checkbox",
+      "Checkpointing",
+      "Child",
+      "Choice",
+      "Classified",
+      "Classifying",
+      "Clause",
+      "Commandline",
+      "Commencing",
+      "Commission",
+      "Confirmation",
+      "Consciousness",
+      "Constant",
+      "Cookie",
+      "Corpora",
+      "Corruption",
+      "Counter",
+      "Counting",
+      "Crypt",
+      "Datacenter",
+      "Declaration",
+      "Design",
+      "Designing",
+      "Detection",
+      "Dhcp",
+      "Directing",
+      "Direction",
+      "Directive",
+      "Disabling",
+      "Discovering",
+      "Discussion",
+      "Dispatch",
+      "Display",
+      "Div",
+      "Electron",
+      "Emergency",
+      "Enabling",
+      "Existence",
+      "Fifo",
+      "Filesystem",
+      "Filming",
+      "Filo",
+      "Finding",
+      "Font",
+      "Footage",
+      "Footer",
+      "Founder",
+      "Frame",
+      "Framing",
+      "Geographic",
+      "Governer",
+      "Governing",
+      "Guarded",
+      "Guarding",
+      "Gui",
+      "Hdmi",
+      "Heading",
+      "Healthcare",
+      "Hibernator",
+      "Highlighting",
+      "Hospitalization",
+      "Hospitalizer",
+      "Hpp",
+      "Intelligence",
+      "Invariancer",
+      "Invariancy",
+      "Ip",
+      "Key",
+      "Knob",
+      "Lifo",
+      "Lilo",
+      "Lingual",
+      "Location",
+      "Locator",
+      "Locker",
+      "Logic",
+      "Mainframe",
+      "Manual",
+      "Medical",
+      "Medicine",
+      "Member",
+      "Membership",
+      "Mirror",
+      "Model",
+      "Modeling",
+      "Morphing",
+      "Mouse",
+      "Movie",
+      "Multidimension",
+      "Multiparameter",
+      "Nameserver",
+      "Namespace",
+      "Namespacer",
+      "Native",
+      "Nav",
+      "Nosql",
+      "Obtainment",
+      "Option",
+      "Pacification",
+      "Pacifier",
+      "Parallelizer",
+      "Parcel",
+      "Parent",
+      "Passport",
+      "People",
+      "Permission",
+      "Persister",
+      "Persisting",
+      "Person",
+      "Personalization",
+      "Pgsql",
+      "Picture",
+      "Positron",
+      "Postal",
+      "Prelaunch",
+      "Preload",
+      "Preloading",
+      "Private",
+      "Propagation",
+      "Protected",
+      "Protecting",
+      "Protector",
+      "Public",
+      "Purchase",
+      "Querier",
+      "Query",
+      "Quiescence",
+      "Ranking",
+      "Reflect",
+      "Reflecting",
+      "Relation",
+      "Reloading",
+      "Replacement",
+      "Rescue",
+      "Rescuer",
+      "Resolution",
+      "Resumption",
+      "Safety",
+      "Sandbox",
+      "Sandboxing",
+      "Satellite",
+      "Saving",
+      "Searching",
+      "Section",
+      "Selfhosting",
+      "Sha256",
+      "Shine",
+      "Shopping",
+      "Sibling",
+      "Simulation",
+      "Sleeper",
+      "Snapshot",
+      "Sound",
+      "Spacecraft",
+      "Spacer",
+      "Spacing",
+      "Sql",
+      "Starter",
+      "Stopper",
+      "Storage",
+      "Subject",
+      "Subjecter",
+      "Suspension",
+      "Sustainment",
+      "Symbol",
+      "Symbolic",
+      "Symbolizer",
+      "Synchronizer",
+      "Syntaxing",
+      "Tbuild",
+      "Telemedicine",
+      "Terminal",
+      "Terraformer",
+      "Timeout",
+      "Timer",
+      "Timing",
+      "Title",
+      "Tld",
+      "Topic",
+      "Topicer",
+      "Touchpad",
+      "Transferring",
+      "Transformation",
+      "Transversioning",
+      "Unification",
+      "Updating",
+      "Url",
+      "Usb",
+      "Usbc",
+      "Utilization",
+      "Variable",
+      "Variancer",
+      "Variancy",
+      "Vault",
+      "Versioning",
+      "Vip",
+      "Visibility",
+      "Vpn",
+      "Wallet",
+      "Wasm",
+      "Watermarking",
+      "Wcpu",
+      "Webassembly",
+      "Webgpu",
+      "Wgpu",
+      "Workstation",
+      "Wram",
+      "Abstractor",
+      "Acceptance",
+      "Acceptor",
+      "Account",
+      "Accounting",
+      "Activation",
+      "Acts",
+      "Add",
+      "Addresser",
+      "Admission",
+      "Admitter",
+      "Aes256",
+      "Amount",
+      "Analytics",
+      "Answerer",
+      "Answering",
+      "Applier",
+      "Arp",
+      "Asm",
+      "Authority",
+      "Awakener",
+      "Balance",
+      "Baseline",
+      "Beamer",
+      "Behaver",
+      "Behavior",
+      "Canceler",
+      "Canonicalpath",
+      "Capabilities",
+      "Centralizer",
+      "Certifier",
+      "Change",
+      "Chat",
+      "Checkpointer",
+      "Checksum",
+      "Classifier",
+      "Clearing",
+      "Cloud",
+      "Cognitive",
+      "Commencer",
+      "Commissioner",
+      "Commit",
+      "Compaction",
+      "Compatibility",
+      "Compiling",
+      "Concurrencer",
+      "Concurrency",
+      "Confirmer",
+      "Console",
+      "Constitution",
+      "Constructing",
+      "Continuity",
+      "Courtesy",
+      "Cpp",
+      "Crop",
+      "Deactivation",
+      "Deallocator",
+      "Debit",
+      "Decentralizer",
+      "Declarer",
+      "Delimitation",
+      "Delimiter",
+      "Designer",
+      "Destructor",
+      "Director",
+      "Disabler",
+      "Discoverer",
+      "Discusser",
+      "Dispatcher",
+      "Downloader",
+      "Enabler",
+      "Endpoint",
+      "Equivalence",
+      "Erp",
+      "Euro",
+      "Example",
+      "Explorer",
+      "Extranet",
+      "Extraneter",
+      "Factory",
+      "Fallback",
+      "Fallbacker",
+      "Family",
+      "Finance",
+      "Finder",
+      "Fingerprinter",
+      "Fingerprinting",
+      "Fixture",
+      "Footager",
+      "Framer",
+      "Functions",
+      "Gateway",
+      "Germination",
+      "Git",
+      "Globalizer",
+      "Glossarist",
+      "Governs",
+      "Gravitation",
+      "Gravitator",
+      "H",
+      "Handoff",
+      "Highlighter",
+      "Http2",
+      "Iana",
+      "Icann",
+      "Id",
+      "Idle",
+      "Ietf",
+      "Immunity",
+      "Immunizer",
+      "Index",
+      "Informing",
+      "Initializer",
+      "Institution",
+      "Instrumentation",
+      "Integrateswith",
+      "Integrity",
+      "Interpreting",
+      "Intranet",
+      "Intraneter",
+      "Ipify",
+      "Iss",
+      "Ix",
+      "Js",
+      "Justification",
+      "Kvm",
+      "Labeler",
+      "Labeling",
+      "Learner",
+      "Legitimation",
+      "Lexeme",
+      "Lexing",
+      "Licensing",
+      "Licensor",
+      "Limitation",
+      "Limiter",
+      "Loader",
+      "Localizer",
+      "Logout",
+      "Loopbacker",
+      "Mac",
+      "Main",
+      "Manager",
+      "Mastercard",
+      "Method",
+      "Mobilizer",
+      "Modeler",
+      "Monitoring",
+      "Morpher",
+      "Neighbor",
+      "Neuralyzer",
+      "Oauth2",
+      "Originator",
+      "Other",
+      "Ox",
+      "Parsing",
+      "Peer",
+      "Perimeter",
+      "Personalizer",
+      "Placement",
+      "Pollination",
+      "Pooler",
+      "Preloader",
+      "Pricing",
+      "Privacy",
+      "Probabilist",
+      "Probability",
+      "Prompt",
+      "Publicity",
+      "Qemu",
+      "Quantifier",
+      "Questioner",
+      "Questioning",
+      "Randomization",
+      "Randomizer",
+      "Re",
+      "Reallocator",
+      "Reconstructing",
+      "Reconstructor",
+      "Recovery",
+      "Rejection",
+      "Rejector",
+      "Reloader",
+      "Replicator",
+      "Resizer",
+      "Rest",
+      "Retry",
+      "Rollback",
+      "Rollout",
+      "Routing",
+      "Rpc",
+      "Rsa2048",
+      "S",
+      "Scope",
+      "Script",
+      "Scripting",
+      "Secure",
+      "Self",
+      "Semantics",
+      "Sensor",
+      "Settlement",
+      "Sizer",
+      "Skip",
+      "Slice",
+      "Slogan",
+      "Subsidiary",
+      "Summarizer",
+      "Surface",
+      "Swap",
+      "Tagger",
+      "Tagging",
+      "Terraformation",
+      "Terramorphing",
+      "Timestamping",
+      "Translation",
+      "Transmorphing",
+      "Unclassified",
+      "Unlocker",
+      "Unlocking",
+      "Unregistered",
+      "Uploader",
+      "Vector",
+      "Viewporter",
+      "Visa",
+      "Visual",
+      "Vlan",
+      "Webmail",
+      "Websocket",
+      "Wifi",
+      "Word",
+      "Yielding"
+    ]
+  },
+  "lastTypingPass": {
+    "resolved": 163,
+    "method": "unique exact descriptor-to-existing-System resolution",
+    "defaultToSystem": false,
+    "ambiguousRemainUnresolved": true
+  },
+  "legacyMigration": {
+    "typeRelationshipsAdded": 1,
+    "conflicts": 0
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "schema": "TERRAFORMER-ASSEMBLERS/1",
+  "systemId": "system.assembler",
+  "authorityGranted": false,
+  "automaticExecution": false,
+  "records": []
+}

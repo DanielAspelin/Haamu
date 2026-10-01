@@ -1,0 +1,11 @@
+{
+  "schema": "TERRAFORMER-TEXTUALS/1",
+  "systemId": "system.textual",
+  "membershipGrantsAllocation": false,
+  "membershipGrantsConversion": false,
+  "membershipGrantsValidation": false,
+  "membershipGrantsExecution": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

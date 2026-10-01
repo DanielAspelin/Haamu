@@ -1,0 +1,20 @@
+{
+  "schema": "TERRAFORMER-PAYLOADS/1",
+  "owner": "terraformer.payload.js",
+  "payloadFamily": "canonical-structural-compaction",
+  "storage": "embedded-in-payload-owner",
+  "lazyDecode": true,
+  "integrity": "sha-256",
+  "rootCarriesPayloadBytes": false,
+  "authorityGranted": false,
+  "payloadFamilies": [
+    "canonical-structural-compaction-v36202",
+    "canonical-ix-ox-archive-v36203"
+  ],
+  "v36203": {
+    "role": "IX/OX naturalization archive payloads",
+    "deviceOwner": false,
+    "owner": "terraformer.payload.js",
+    "authorityGranted": false
+  }
+}

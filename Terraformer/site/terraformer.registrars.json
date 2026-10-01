@@ -1,0 +1,15 @@
+{
+  "schema": "TERRAFORMER-REGISTRARS/1",
+  "owner": "system.registrar",
+  "executable": "terraformer.registrar.js",
+  "role": "describes the registrar actor/worker role without conferring authority",
+  "authorityGranted": false,
+  "membershipGrantsAuthority": false,
+  "records": [
+    {
+      "id": "registrar.canonical",
+      "status": "registered",
+      "authorityGranted": false
+    }
+  ]
+}

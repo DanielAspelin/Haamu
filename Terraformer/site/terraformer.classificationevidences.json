@@ -1,0 +1,128 @@
+{
+  "schema": "TERRAFORMER-CLASSIFICATION-EVIDENCE/1",
+  "version": "0.47.94",
+  "owner": "system.classification",
+  "records": [
+    {
+      "system": "system.central",
+      "ownerFile": "terraformer.central.js",
+      "evidence": [
+        {
+          "field": "kind",
+          "value": "CODE"
+        }
+      ],
+      "classificationStatus": "EVIDENCED",
+      "authorityGranted": false
+    },
+    {
+      "system": "system.database",
+      "ownerFile": "terraformer.database.js",
+      "evidence": [
+        {
+          "field": "type",
+          "value": "data"
+        }
+      ],
+      "classificationStatus": "EVIDENCED",
+      "authorityGranted": false
+    },
+    {
+      "system": "system.glossary",
+      "ownerFile": "terraformer.glossary.js",
+      "evidence": [
+        {
+          "field": "category",
+          "value": "governance"
+        },
+        {
+          "field": "category",
+          "value": "architecture"
+        },
+        {
+          "field": "category",
+          "value": "state"
+        },
+        {
+          "field": "category",
+          "value": "registry"
+        },
+        {
+          "field": "category",
+          "value": "versioning"
+        },
+        {
+          "field": "category",
+          "value": "qualification"
+        },
+        {
+          "field": "category",
+          "value": "role"
+        },
+        {
+          "field": "category",
+          "value": "documentation"
+        },
+        {
+          "field": "category",
+          "value": "ontology"
+        },
+        {
+          "field": "category",
+          "value": "runtime"
+        },
+        {
+          "field": "category",
+          "value": "lifecycle"
+        },
+        {
+          "field": "category",
+          "value": "provenance"
+        }
+      ],
+      "classificationStatus": "EVIDENCED",
+      "authorityGranted": false
+    },
+    {
+      "system": "system.loop",
+      "ownerFile": "terraformer.loop.js",
+      "evidence": [
+        {
+          "field": "type",
+          "value": "while-loop-process-system"
+        },
+        {
+          "field": "type",
+          "value": "for-loop-process-system"
+        },
+        {
+          "field": "type",
+          "value": "for-each-loop-process-system"
+        },
+        {
+          "field": "type",
+          "value": "while-loop-actor-system"
+        },
+        {
+          "field": "type",
+          "value": "for-loop-actor-system"
+        },
+        {
+          "field": "type",
+          "value": "for-each-loop-actor-system"
+        },
+        {
+          "field": "type",
+          "value": "rule-application-process-system"
+        }
+      ],
+      "classificationStatus": "EVIDENCED",
+      "authorityGranted": false
+    }
+  ],
+  "rules": [
+    "Classification evidence does not automatically establish canonical typeOf.",
+    "Tautological own-name descriptors and bare System are insufficient."
+  ],
+  "authorityGranted": false
+}

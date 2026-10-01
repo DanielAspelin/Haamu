@@ -1,0 +1,7 @@
+{
+  "schema": "TERRAFORMER-ACTIONS/1",
+  "systemId": "system.action",
+  "records": [],
+  "membershipGrantsExecution": false,
+  "membershipGrantsAuthority": false
+}

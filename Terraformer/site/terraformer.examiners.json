@@ -1,0 +1,7 @@
+{
+  "schema": "TERRAFORMER-EXAMINERS/1",
+  "systemId": "system.examiner",
+  "membershipGrantsExecution": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

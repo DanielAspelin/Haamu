@@ -1,0 +1,8 @@
+{
+  "schema": "TERRAFORMER-BLUETOOTHS/1",
+  "systemId": "system.bluetooth",
+  "readOnlyDiscovery": true,
+  "automaticInvocation": false,
+  "authorityGranted": false,
+  "records": []
+}

@@ -1,0 +1,14 @@
+{
+  "schema": "TERRAFORMER-CONCEPT-REGISTRY/1",
+  "version": "0.47.86",
+  "kind": "CONCEPT_REGISTRY",
+  "owner": "system.prioritization",
+  "concept": "prioritization",
+  "singularOwner": "terraformer.prioritization.js",
+  "records": [],
+  "membershipGrantsAuthority": false,
+  "membershipGrantsExecution": false,
+  "membershipGrantsPersistence": false,
+  "automaticPopulation": false,
+  "qualification": "UNDER_CONDITIONAL_EXPERIMENT"
+}

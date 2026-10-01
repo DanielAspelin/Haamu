@@ -1,0 +1,88 @@
+{
+  "schema": "terraformer.registry/features/1",
+  "owner": "system.feature",
+  "implementationOwner": "system.featuring",
+  "authority": false,
+  "entries": [
+    {
+      "id": "feature.window.geometry",
+      "consumer": "system.window",
+      "feature": "geometry",
+      "adjustableBy": "system.adjustment",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "feature.window.width",
+      "consumer": "system.window",
+      "feature": "width",
+      "adjustableBy": "system.adjustment",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "feature.window.height",
+      "consumer": "system.window",
+      "feature": "height",
+      "adjustableBy": "system.adjustment",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "feature.window.position",
+      "consumer": "system.window",
+      "feature": "position",
+      "adjustableBy": "system.adjustment",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "feature.window.layout",
+      "consumer": "system.window",
+      "feature": "layout",
+      "adjustableBy": "system.adjustment",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "feature.window.snap",
+      "consumer": "system.window",
+      "feature": "snap",
+      "adjustableBy": "system.adjustment",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "feature.window.scaling",
+      "consumer": "system.window",
+      "feature": "scaling",
+      "adjustableBy": "system.adjustment",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "feature.window.content-area",
+      "consumer": "system.window",
+      "feature": "content-area",
+      "adjustableBy": "system.adjustment",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "feature.window.bars",
+      "consumer": "system.window",
+      "feature": "bars",
+      "adjustableBy": "system.adjustment",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "feature.window.panels",
+      "consumer": "system.window",
+      "feature": "panels",
+      "adjustableBy": "system.adjustment",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "schema": "TERRAFORMER-BOOKS/1",
+  "systemId": "system.book",
+  "membershipGrantsMutation": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsPublication": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

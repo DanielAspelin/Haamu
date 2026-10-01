@@ -1,0 +1,10 @@
+{
+  "schema": "TERRAFORMER-SYNTHESIZINGS/1",
+  "systemId": "system.synthesizing",
+  "declarativeRegistry": true,
+  "membershipGrantsExecution": false,
+  "membershipGrantsDeviceAccess": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

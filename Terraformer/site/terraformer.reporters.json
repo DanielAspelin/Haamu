@@ -1,0 +1,8 @@
+{
+  "schema": "TERRAFORMER-REPORTERS/1",
+  "systemId": "system.reporter",
+  "membershipGrantsExecution": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

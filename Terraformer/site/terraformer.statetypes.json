@@ -1,0 +1,25 @@
+{
+  "$schema": "terraformer.registry/statetypes/1",
+  "version": "0.47.30",
+  "governedBy": "terraformer.statetype.js",
+  "kind": "STATE_TYPE_REGISTRY",
+  "owner": "system.statetype",
+  "classification": "STATE_TYPE",
+  "isDimension": false,
+  "isStateValue": false,
+  "authority": false,
+  "entries": [
+    {
+      "id": "CONDITIONAL",
+      "definition": "A State type whose satisfaction is derived from an explicit Condition contract and evidence.",
+      "conditionDependent": true,
+      "automaticTransition": false,
+      "authority": false
+    }
+  ],
+  "rules": [
+    "State Type classifies how a State is established; it is not itself a STATE dimension value.",
+    "CONDITIONAL satisfaction may establish eligibility for a governed Instance Type but does not promote it.",
+    "Condition, Conditional State, Instance-Type eligibility, qualification, and transition remain separate responsibilities."
+  ]
+}

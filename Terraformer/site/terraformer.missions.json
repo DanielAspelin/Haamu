@@ -1,0 +1,16 @@
+{
+  "schema": "TERRAFORMER-MISSIONS/1",
+  "systemId": "system.mission",
+  "declarativeRegistry": true,
+  "membershipGrantsExecution": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": [],
+  "controlType": {
+    "id": "system.mission-control",
+    "concept": "Mission Control",
+    "controlType": "system.control",
+    "controls": "system.mission",
+    "performedBy": "system.mission-controller"
+  }
+}

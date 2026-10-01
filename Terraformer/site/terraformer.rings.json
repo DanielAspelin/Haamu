@@ -1,0 +1,12 @@
+{
+  "schema": "TERRAFORMER-RINGS/1",
+  "version": "0.47.49",
+  "kind": "RING_REGISTRY",
+  "owner": "system.ring",
+  "governedBy": "terraformer.ring.js",
+  "topologyType": "Passage",
+  "records": [],
+  "authorityGranted": false,
+  "automaticExecution": false,
+  "automaticPersistence": false
+}

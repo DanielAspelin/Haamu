@@ -1,0 +1,7 @@
+{
+  "schema": "TERRAFORMER-WEATHERS/1",
+  "systemId": "system.weather",
+  "authorityGranted": false,
+  "automaticExecution": false,
+  "records": []
+}

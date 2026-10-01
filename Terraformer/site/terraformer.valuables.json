@@ -1,0 +1,17 @@
+{
+  "schema": "TERRAFORMER-VALUABLES/1",
+  "version": "0.47.46",
+  "kind": "VALUABLE_REGISTRY",
+  "owner": "system.valuable",
+  "governedBy": "terraformer.valuable.js",
+  "records": [],
+  "rules": [
+    "Valuable is an evidence-bounded classification of a subject under explicit criteria.",
+    "Valuable is distinct from Value: Value represents content; Valuable represents an admitted classification concerning value.",
+    "Valuable does not by itself imply monetary worth, ownership, priority, authority, approval, persistence, or execution.",
+    "Valuable classifications retain criteria, evidence, provenance and qualification where applicable."
+  ],
+  "authorityGranted": false,
+  "ownershipGranted": false,
+  "financialWorthImplied": false
+}

@@ -1,0 +1,8 @@
+{
+  "schema": "TERRAFORMER-TEXTS/1",
+  "systemId": "system.text",
+  "membershipGrantsExecution": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

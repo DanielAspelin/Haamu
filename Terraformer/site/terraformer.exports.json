@@ -1,0 +1,15 @@
+{
+  "$schema": "terraformer.registry/export_registry/1",
+  "version": "0.44.21",
+  "kind": "EXPORT_REGISTRY",
+  "owner": "system.io",
+  "items": [
+    {
+      "id": "export.default",
+      "mode": "GOVERNED",
+      "authority": false
+    }
+  ],
+  "authority": false,
+  "governedBy": "terraformer.io.js"
+}

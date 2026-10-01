@@ -1,0 +1,8 @@
+{
+  "schema": "TERRAFORMER-OWNERSHIPS-REGISTRY/1",
+  "owner": "terraformer.ownership.js",
+  "checkpoint": "v0.46.87",
+  "records": [],
+  "registryMembershipGrantsAuthority": false,
+  "note": "Executable historical evidence remains in owner; registry does not duplicate the large evidence ledger."
+}

@@ -1,0 +1,87 @@
+{
+  "$schema": "terraformer.registry/programs/1",
+  "version": "0.47.83",
+  "governedBy": "terraformer.program.js",
+  "kind": "PROGRAM_REGISTRY",
+  "order": [
+    "program.main",
+    "program.terraformer",
+    "program.uny-life"
+  ],
+  "foregroundCardinality": 1,
+  "authority": false,
+  "dimensionContract": {
+    "governedBy": "terraformer.dimension.js",
+    "dimensions": [
+      "TYPE",
+      "MODE",
+      "CONDITION",
+      "STATE",
+      "BEHAVIOR",
+      "HEALTH"
+    ],
+    "defaultValue": "UNSET",
+    "selection": "EXPLICIT_SCOPED",
+    "inheritance": "DENY_UNLESS_EXPLICITLY_PERMITTED",
+    "authority": false
+  },
+  "audioProgramTypes": [
+    {
+      "systemId": "system.audio-program",
+      "kind": "audio",
+      "domain": "system.audio"
+    },
+    {
+      "systemId": "system.music-program",
+      "kind": "music",
+      "domain": "system.music"
+    },
+    {
+      "systemId": "system.mixing-program",
+      "kind": "mixing",
+      "domain": "system.mixing"
+    },
+    {
+      "systemId": "system.synthesizer-program",
+      "kind": "synthesizer",
+      "domain": "system.synthesizer"
+    }
+  ],
+  "reconstructibleTypeRelationships": true,
+  "programTypeRules": [
+    "rule.program-type.audio",
+    "rule.program-type.music",
+    "rule.program-type.mixing",
+    "rule.program-type.synthesizer"
+  ],
+  "photoProgramDeferred": true,
+  "videoProgramDeferred": true,
+  "relationshipClosure": {
+    "rule": "rule.program.relationship-closure",
+    "requiresExplicitProgramRequirement": true,
+    "implicitProgramCreation": false,
+    "closedWhenNoMissingEndpoints": true
+  },
+  "records": [
+    {
+      "id": "program.linguist",
+      "name": "Linguist",
+      "type": "program",
+      "mode": "transition",
+      "physicalOwner": "terraformer.linguist.js",
+      "projectLineage": "project.linguist",
+      "capabilityRoots": [
+        "system.language",
+        "system.tool"
+      ],
+      "authority": false,
+      "automaticExecution": false,
+      "qualificationInheritance": false
+    }
+  ],
+  "architectureV04783": {
+    "role": "usage-interaction-visualization-boundary",
+    "contains": "system.application",
+    "directSystemInteractionByDefault": false
+  }
+}

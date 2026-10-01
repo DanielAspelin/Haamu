@@ -1,0 +1,4 @@
+"use strict";
+const TERRAFORMER_ADMINISTRATION_SYSTEM=Object.freeze({schema:'TERRAFORMER-ADMINISTRATION-SYSTEM/1',id:'system.administration',name:'Administration System',family:'administration',type:'administration-system',state:'integrated',canonicalPath:'terraformer://administration/',dependsOn:Object.freeze(['system.authorization', 'system.approval']),governs:Object.freeze(['scope','evidence','state','relation','result']),rule:'Administration System coordinates admitted administrative functions; administrative role or capability does not imply root, owner, organizational, or external authority.'});
+const SYSTEM=Object.freeze({id:"system.administration",concept:"Administration",type:"administration-system",automaticExternalSend:false,automaticRepair:false,persistencePerformed:false,externalEffect:false,authorityGranted:false,scaffold:true});
+module.exports=Object.freeze({TERRAFORMER_ADMINISTRATION_SYSTEM,SYSTEM});

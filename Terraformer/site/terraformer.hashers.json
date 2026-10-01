@@ -1,0 +1,11 @@
+{
+  "schema": "TERRAFORMER-HASHERS/1",
+  "purpose": "governed hasher worker identities/capabilities",
+  "authorityGranted": false,
+  "automaticExecution": false,
+  "secretMaterial": false,
+  "records": [],
+  "owner": "system.hasher",
+  "ownerBindingVersion": "0.48.16",
+  "ownerBindingAuthorityGranted": false
+}

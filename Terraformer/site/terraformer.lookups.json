@@ -1,0 +1,28 @@
+{
+  "schema": "TERRAFORMER-LOOKUPS-REGISTRY/1",
+  "version": "0.47.18",
+  "owner": "system.lookup",
+  "executable": "terraformer.lookup.js",
+  "stateDimension": "system.state",
+  "states": {
+    "active": "ACTIVE"
+  },
+  "compatibilityAliases": [
+    {
+      "legacyIdentity": "system.active-lookup",
+      "canonicalIdentity": "system.lookup",
+      "dimension": "STATE",
+      "value": "ACTIVE"
+    }
+  ],
+  "sources": [
+    "terraformer.entities.json",
+    "terraformer.registry.js",
+    "terraformer.entitytopology.json",
+    "terraformer.orthogonalcrossings.json"
+  ],
+  "authority": false,
+  "persistence": false,
+  "entries": [],
+  "rule": "Active Lookup is represented as Lookup in State ACTIVE. Compatibility aliasing does not create a second System identity."
+}

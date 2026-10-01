@@ -1,0 +1,10 @@
+{
+  "schema": "TERRAFORMER-RENDERINGS/1",
+  "systemId": "system.rendering",
+  "declarativeRegistry": true,
+  "membershipGrantsExecution": false,
+  "membershipGrantsRender": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "terraformer.registry/import_registry/1",
+  "version": "0.44.21",
+  "kind": "IMPORT_REGISTRY",
+  "owner": "system.io",
+  "items": [
+    {
+      "id": "import.default",
+      "mode": "GOVERNED",
+      "authority": false
+    }
+  ],
+  "authority": false,
+  "governedBy": "terraformer.io.js",
+  "architecturalSystem": "system.import",
+  "architecturalOwner": "terraformer.import.js",
+  "ioGovernancePreserved": true,
+  "registryMembershipGrantsExecution": false,
+  "registryMembershipGrantsAuthority": false
+}

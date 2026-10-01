@@ -1,0 +1,11 @@
+{
+  "schema": "TERRAFORMER-GROUPINGS/1",
+  "systemId": "system.grouping",
+  "declarativeRegistry": true,
+  "membershipGrantsConnection": false,
+  "membershipGrantsNetworkBinding": false,
+  "membershipGrantsIdentityMutation": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

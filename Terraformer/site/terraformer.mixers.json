@@ -1,0 +1,10 @@
+{
+  "schema": "TERRAFORMER-MIXERS/1",
+  "systemId": "system.mixer",
+  "declarativeRegistry": true,
+  "membershipGrantsExecution": false,
+  "membershipGrantsDeviceAccess": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

@@ -1,0 +1,32 @@
+{
+  "schema": "TERRAFORMER-SHININGS/1",
+  "version": "0.47.33",
+  "authority": false,
+  "systems": [
+    "system.shine",
+    "system.shining",
+    "system.shiner"
+  ],
+  "targetKinds": [
+    "system",
+    "application"
+  ],
+  "methods": [
+    "logical",
+    "in-space",
+    "on-ground"
+  ],
+  "reuses": [
+    "system.reflection",
+    "system.reflecting",
+    "system.reflector",
+    "system.mirroring",
+    "system.mirror",
+    "system.in-space",
+    "system.on-ground"
+  ],
+  "rule": "SHINE commences bounded Shining for admitted System or Application targets. Spatial methods classify context only and do not claim physical presence, geolocation, transmission, hardware actuation, persistence, external effect, or authority.",
+  "owner": "system.shining",
+  "ownerBindingVersion": "0.48.16",
+  "ownerBindingAuthorityGranted": false
+}

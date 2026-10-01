@@ -1,0 +1,10 @@
+{
+  "schema": "TERRAFORMER-ADMINISTRATIONS/1",
+  "systemId": "system.administration",
+  "membershipGrantsExecution": false,
+  "membershipGrantsRepair": false,
+  "membershipGrantsExternalSend": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

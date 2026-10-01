@@ -1,0 +1,12 @@
+{
+  "schema": "TERRAFORMER-INSTRUCTIONS/1",
+  "owner": "terraformer.instruction.js",
+  "canonical": "system.instruction",
+  "kind": "system",
+  "records": [],
+  "membershipGrantsAuthority": false,
+  "membershipGrantsExecution": false,
+  "qualificationInheritance": false,
+  "roundTrip": "roundtrip.communication",
+  "roundTripRegistry": "terraformer.roundtrips.json"
+}

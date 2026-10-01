@@ -1,0 +1,4328 @@
+{
+  "schema": "TERRAFORMER-FUNCTIONALITIES/1",
+  "version": "0.47.90",
+  "records": [
+    {
+      "system": "system.window",
+      "function": "function.window.adjustment",
+      "functionality": "system.adjustment",
+      "capabilities": [
+        "system.sizing",
+        "system.resizing"
+      ],
+      "source": "terraformer.functions.json",
+      "authorityGranted": false
+    },
+    {
+      "system": "system.accuracy",
+      "ownerFile": "terraformer.accuracy.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "normalize",
+        "resolve",
+        "validate",
+        "select"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.achievement",
+      "ownerFile": "terraformer.achievement.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "define"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.acquisition",
+      "ownerFile": "terraformer.acquisition.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindAcquisitionV04538"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.acting",
+      "ownerFile": "terraformer.acting.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindActingV04576",
+        "tfActingFabricV36335",
+        "tfActingSelfTestV36335"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.adaptation",
+      "ownerFile": "terraformer.adaptation.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindAdaptationV04538"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.adapter",
+      "ownerFile": "terraformer.adapter.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindAdapterV04481"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.address",
+      "ownerFile": "terraformer.address.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindAddressV04462"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.analysis",
+      "ownerFile": "terraformer.analysis.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindAnalysisInventoryContentV04564",
+        "tfAnalysisStatisticsV36323",
+        "tfStatusProgressV36323",
+        "tfInventoryContentV36323",
+        "tfAnalysisInventoryContentSelfTestV36323"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.analyzer",
+      "ownerFile": "terraformer.analyzer.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindAnalyzerV04508"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.architect",
+      "ownerFile": "terraformer.architect.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "tfArchitectDescriptor",
+        "tfArchitectRootControlDelivery"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.artifact",
+      "ownerFile": "terraformer.artifact.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindArtifactV04508"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.assembler",
+      "ownerFile": "terraformer.assembler.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindAssemblerV04508"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.assembly",
+      "ownerFile": "terraformer.assembly.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindAssemblyV04508"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.availability",
+      "ownerFile": "terraformer.availability.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindAvailabilityV04538",
+        "bindAvailabilityGeoSocialV04584",
+        "tfAvailabilityGeoSocialContextV36344",
+        "tfAvailabilityGeoSocialSelfTestV36344"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.barcode",
+      "ownerFile": "terraformer.barcode.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindMachineReadableCodeV04559",
+        "tfEANCheckDigitV36318",
+        "tfEANBarcodeV36318",
+        "tfQRCodePlanV36318",
+        "tfMachineReadableCodeSelfTestV36318"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.base",
+      "ownerFile": "terraformer.base.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindBaseCompositionV04544",
+        "tfBaseCompositionV36305",
+        "tfBaseCompositionSelfTestV36305"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.behaviour",
+      "ownerFile": "terraformer.behaviour.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "normalize",
+        "validate"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.block",
+      "ownerFile": "terraformer.block.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindBlockV04500"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.bluetooth",
+      "ownerFile": "terraformer.bluetooth.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindProgressiveMobileWebV04557",
+        "tfResolveBrowserPathV36316",
+        "tfProgressiveMobileWebDiscoveryV36316",
+        "tfMobileWebAdmissionV36316",
+        "tfProgressiveMobileWebSelfTestV36316"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.bootstrap",
+      "ownerFile": "terraformer.bootstrap.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindBootstrapV04519",
+        "tfBootstrapPlanV36286",
+        "tfBootstrapSystemSelfTestV36286"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.boundary",
+      "ownerFile": "terraformer.boundary.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "normalize",
+        "validate",
+        "resolve",
+        "externalIdentityBoundaryEvidenceV04690"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.breakpoint",
+      "ownerFile": "terraformer.breakpoint.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindBreakpointV04508"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.broadcaster",
+      "ownerFile": "terraformer.broadcaster.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindBroadcasterV04477"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.broadcasting",
+      "ownerFile": "terraformer.broadcasting.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindBroadcastingV04477"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.build",
+      "ownerFile": "terraformer.build.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindBuildV04508"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.builder",
+      "ownerFile": "terraformer.builder.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindBuilderV04504"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.building",
+      "ownerFile": "terraformer.building.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindBuildingV04504"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.call",
+      "ownerFile": "terraformer.call.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "create",
+        "bindCallV04504"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.caller",
+      "ownerFile": "terraformer.caller.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "identify",
+        "bindCallerV04507"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.calling",
+      "ownerFile": "terraformer.calling.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "prepare",
+        "bindCallingV04507"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.camera",
+      "ownerFile": "terraformer.camera.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindWebMediaSupportV04569",
+        "tfWebMediaSupportPlanV36328",
+        "tfWebMediaSelfTestV36328"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.candidate",
+      "ownerFile": "terraformer.candidate.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "classify"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.capacity",
+      "ownerFile": "terraformer.capacity.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "dimensionRegistry",
+        "normalize",
+        "resolve",
+        "validate",
+        "capacityType",
+        "checkDistribution"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.carrier",
+      "ownerFile": "terraformer.carrier.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindIoCarrierSocketV04613",
+        "tfSystemIoCarrierSocketV36369",
+        "tfUniversalIoCarrierSocketFabricV36369",
+        "tfIoCarrierSocketSelfTestV36369"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.central",
+      "ownerFile": "terraformer.central.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "resolve",
+        "setIntegrity",
+        "preflight",
+        "route",
+        "tfCentralQualificationV04226"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.certification",
+      "ownerFile": "terraformer.certification.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "plan"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.checking",
+      "ownerFile": "terraformer.checking.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindCheckingV04638",
+        "tfCheckV36392",
+        "tfCheckingSelfTestV36392"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.checkpoint",
+      "ownerFile": "terraformer.checkpoint.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindProjectCheckpointV04448",
+        "tfProjectCheckpointV36218",
+        "tfProjectCheckpointsV36218",
+        "tfProjectCheckpointDescriptorV36218",
+        "tfProjectCheckpointSelfTestV36218"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.checkup",
+      "ownerFile": "terraformer.checkup.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "checkup"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.comment",
+      "ownerFile": "terraformer.comment.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindCommentV04528"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.comparison",
+      "ownerFile": "terraformer.comparison.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindCalcCompareComputeV04587",
+        "tfCalculatorPlanV36346",
+        "tfComparisonPlanV36346",
+        "tfComputerPlanV36346",
+        "tfCalcCompareComputeSelfTestV36346"
+      ],
+      "descriptors": [
+        "add"
+      ],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.compilation",
+      "ownerFile": "terraformer.compilation.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindCompilationV04508"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.compiler",
+      "ownerFile": "terraformer.compiler.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindCompilerV04508"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.composition",
+      "ownerFile": "terraformer.composition.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "tfCompositionSystemV4012",
+        "tfBarDescriptorV4012",
+        "tfSizingDescriptorV4012",
+        "tfViewportDescriptorV4012",
+        "tfHTMLFractionV4012",
+        "tfCSSFractionV4012",
+        "tfGenerateHTMLV4012",
+        "tfGenerateCSSV4012",
+        "tfMobileCompositionFabricV4012",
+        "tfMobileCompositionSelfTestV4012"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.conclusion",
+      "ownerFile": "terraformer.conclusion.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindDecisionConclusionV04595",
+        "tfDecisionConclusionPlanV36354",
+        "tfDecisionConclusionSelfTestV36354"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.confidentiality",
+      "ownerFile": "terraformer.confidentiality.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindConfidentialityV04538"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.configuration",
+      "ownerFile": "terraformer.configuration.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindConfigurationV04509"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.configure",
+      "ownerFile": "terraformer.configure.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindConfigureV04508"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.connection",
+      "ownerFile": "terraformer.connection.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "describeConnection",
+        "bindConnectionV04536"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.connector",
+      "ownerFile": "terraformer.connector.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindConnectorV04477"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.consistency",
+      "ownerFile": "terraformer.consistency.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "dimensionRegistry",
+        "normalize",
+        "resolve",
+        "validate"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.construct",
+      "ownerFile": "terraformer.construct.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindConstructV04504"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.construction",
+      "ownerFile": "terraformer.construction.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindConstructionV04504"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.consumer",
+      "ownerFile": "terraformer.consumer.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindConsumerV04477"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.containerization",
+      "ownerFile": "terraformer.containerization.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindContainerizationV04514",
+        "bindContainerizationFabricV04514",
+        "tfSystemContainerPlanV36281",
+        "tfContainerizationSelfTestV36281"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.control",
+      "ownerFile": "terraformer.control.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "tfComputationInformationControlV4091",
+        "tfRegisterControlCandidateV4091",
+        "tfControlConsequentialityV4091",
+        "tfControlCoverageV4091",
+        "tfComputationInformationControlQualificationV4091"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.corpus",
+      "ownerFile": "terraformer.corpus.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindCorpusV04579",
+        "tfCorpusFabricV36339",
+        "tfCorpusSelfTestV36339"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.coverage",
+      "ownerFile": "terraformer.coverage.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "analyzeSystemGraphV04677",
+        "visit"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.creation",
+      "ownerFile": "terraformer.creation.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindCreationV04512"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.credit",
+      "ownerFile": "terraformer.credit.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindCreditV04563",
+        "tfCreditContextV36322",
+        "tfCreditSelfTestV36322"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.criticality",
+      "ownerFile": "terraformer.criticality.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "normalize",
+        "resolve",
+        "assess"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.csv",
+      "ownerFile": "terraformer.csv.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "validate",
+        "parse",
+        "stringify"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.customer",
+      "ownerFile": "terraformer.customer.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindCustomerV04477"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.cycle",
+      "ownerFile": "terraformer.cycle.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindCycleV04472"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.debugger",
+      "ownerFile": "terraformer.debugger.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindDebuggerV04508"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.debugging",
+      "ownerFile": "terraformer.debugging.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindDebuggingV04508"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.defaults",
+      "ownerFile": "terraformer.defaults.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindSchemaDefaultsV04633",
+        "tfApplySchemaDefaultsV36387",
+        "tfSchemaDrivenReconstructionV36387",
+        "tfDefaultsSchemaReconstructionSelfTestV36387",
+        "bindUniversalDefaultsV04634",
+        "tfSystemDefaultsV36388",
+        "tfUniversalSystemDefaultsFabricV36388"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.definition",
+      "ownerFile": "terraformer.definition.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindDefinitionV04508"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.delivery",
+      "ownerFile": "terraformer.delivery.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "plan"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.dependency",
+      "ownerFile": "terraformer.dependency.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindDependencyV04472"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.deployment",
+      "ownerFile": "terraformer.deployment.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindDeploymentV04508"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.destruct",
+      "ownerFile": "terraformer.destruct.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindDestructV04504"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.destruction",
+      "ownerFile": "terraformer.destruction.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindDestructionV04504"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.diagnostic",
+      "ownerFile": "terraformer.diagnostic.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindDiagnosticV04508"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.dictionary",
+      "ownerFile": "terraformer.dictionary.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "corpus",
+        "normalize",
+        "has",
+        "lookup"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.dimension",
+      "ownerFile": "terraformer.dimension.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "normalize",
+        "resolve",
+        "load",
+        "consumer",
+        "unset",
+        "select",
+        "spread",
+        "legacyModules",
+        "legacyBoundaryDimension"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.dios",
+      "ownerFile": "terraformer.dios.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindDiosV04445",
+        "tfDiosChannelV36215",
+        "tfDiosRouteV36215",
+        "tfDiosDescriptorV36215",
+        "tfDiosSelfTestV36215",
+        "bindDiosCommunicationStreamV04446",
+        "tfDiosStreamEnvelopeV36248",
+        "tfDiosPointToPointStreamV36248",
+        "tfDiosBidirectionalStreamV36248",
+        "tfDiosBroadcastStreamV36248",
+        "tfDiosCommunicationStreamSelfTestV36248"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.diplomacy",
+      "ownerFile": "terraformer.diplomacy.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindCivicLegalV04583",
+        "tfCivicLegalContextV36343",
+        "tfCivicLegalSelfTestV36343"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.disagreement",
+      "ownerFile": "terraformer.disagreement.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "record"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.disassembler",
+      "ownerFile": "terraformer.disassembler.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindDisassemblerV04508"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.disassembly",
+      "ownerFile": "terraformer.disassembly.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindDisassemblyV04508"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.disposal",
+      "ownerFile": "terraformer.disposal.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindDisposalV04538"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.distribution",
+      "ownerFile": "terraformer.distribution.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindDistributionV04508"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.dnssec",
+      "ownerFile": "terraformer.dnssec.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindDNSSECV04533"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.documentary",
+      "ownerFile": "terraformer.documentary.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindTextCorruptionDocumentaryV04580",
+        "tfCorruptionTestV36340",
+        "tfTextDocumentarySelfTestV36340"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.documentator",
+      "ownerFile": "terraformer.documentator.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindDocumentatorV04581",
+        "tfPrewrittenLifecycleObservabilityV36341",
+        "tfUniversalLifecycleObservabilityV36341",
+        "tfLifecycleObservabilitySelfTestV36341"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.driverless",
+      "ownerFile": "terraformer.driverless.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "tfDriverlessParse",
+        "tfDriverlessSeekHost"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.editor",
+      "ownerFile": "terraformer.editor.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindEditorV04508"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.edns",
+      "ownerFile": "terraformer.edns.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindEDNSV04533"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.electric",
+      "ownerFile": "terraformer.electric.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindPhysicalSystemDomainsV04640",
+        "tfPhysicalSystemDomainContextV36393",
+        "tfPhysicalSystemDomainSelfTestV36393"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.emulation",
+      "ownerFile": "terraformer.emulation.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindEmulationV04513"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.engine",
+      "ownerFile": "terraformer.engine.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindEngineV04590",
+        "tfSystemEngineV36349",
+        "tfUniversalEngineFabricV36349",
+        "tfEngineSelfTestV36349"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.error",
+      "ownerFile": "terraformer.error.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "normalize",
+        "propagate",
+        "resolve"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.establishment",
+      "ownerFile": "terraformer.establishment.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindStructuralAssuranceV04551",
+        "tfStructuralAssuranceContextV36311",
+        "tfStructuralAssuranceSelfTestV36311"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.executor",
+      "ownerFile": "terraformer.executor.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindExecutorV04507"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.external",
+      "ownerFile": "terraformer.external.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindExternalV04515"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.file",
+      "ownerFile": "terraformer.file.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "tfFsResolve",
+        "tfFsRead"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.filing",
+      "ownerFile": "terraformer.filing.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindFilingV04571",
+        "tfFilingPlanV36330",
+        "tfFilingSelfTestV36330"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.forecast",
+      "ownerFile": "terraformer.forecast.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindForecastV04525"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.forking",
+      "ownerFile": "terraformer.forking.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindForkWrapV04585",
+        "tfForkPlanV36345",
+        "tfWrapPlanV36345",
+        "tfForkWrapSelfTestV36345"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.formatter",
+      "ownerFile": "terraformer.formatter.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindFormatterV04508"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.formatting",
+      "ownerFile": "terraformer.formatting.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindFormattingV04508"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.function",
+      "ownerFile": "terraformer.function.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindFunctionV04505"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.gate",
+      "ownerFile": "terraformer.gate.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindGateV04474"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.glossary",
+      "ownerFile": "terraformer.glossary.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "tfGlossaryNormalizeV4068",
+        "tfGlossaryLookupV4068",
+        "tfGlossarySearchV4068",
+        "tfGlossaryCategoriesV4068",
+        "tfGlossaryQualificationV4068"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.goal",
+      "ownerFile": "terraformer.goal.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindGoalV04524"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.grouping",
+      "ownerFile": "terraformer.grouping.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindGroupingSpecializationV04649",
+        "tfSpecializedGroupV36399",
+        "tfGroupingSpecializationFabricV36399",
+        "tfGroupingSpecializationSelfTestV36399",
+        "bindScopeGroupingV04650",
+        "tfScopeGroupV36400",
+        "tfScopeGroupingFabricV36400",
+        "tfScopeGroupingSelfTestV36400"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.handbook",
+      "ownerFile": "terraformer.handbook.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindNetworkHandbookV04651",
+        "tfNetworkGroupV36401",
+        "tfTerraformerHandbookV36401",
+        "tfNetworkHandbookSelfTestV36401"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.hasher",
+      "ownerFile": "terraformer.hasher.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindHasherV04491"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.hashing",
+      "ownerFile": "terraformer.hashing.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindHashingV04491",
+        "tfHashV36259"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.header",
+      "ownerFile": "terraformer.header.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindHeaderStructuralV04547",
+        "tfHeaderContextV36307",
+        "tfHeaderSystemSelfTestV36307"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.health",
+      "ownerFile": "terraformer.health.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "normalize",
+        "validate"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.hover",
+      "ownerFile": "terraformer.hover.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindHoverV04508"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.identity",
+      "ownerFile": "terraformer.identity.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "tfSubordinateIdentityRecordV04217",
+        "subordinateHistoricalIdentityEvidenceV04217",
+        "tfExternalCandidateIdentityV04218",
+        "tfProvenanceUnresolvedIdentityV04216",
+        "tfAliasSupersessionIdentityV04219",
+        "tfAliasSupersessionIdentityQualificationV04219",
+        "tfUnresolvedOriginIdentityV04214",
+        "tfUnresolvedOriginIdentityQualificationV04214"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.importance",
+      "ownerFile": "terraformer.importance.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "resolve",
+        "assign"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.importing",
+      "ownerFile": "terraformer.importing.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindIntegrationCoverageMissionV04661",
+        "tfImportV36411",
+        "tfExportV36411",
+        "tfMissionControlV36411",
+        "tfIntegrationCoverageMissionSelfTestV36411",
+        "tfTerraformerHandbookV36411"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.incident",
+      "ownerFile": "terraformer.incident.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindIncidentV04538"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.industry",
+      "ownerFile": "terraformer.industry.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindIndustryV04443",
+        "tfIndustrialSystemDescriptorV36213",
+        "tfIndustrialFlowV36213",
+        "tfIndustrialTransitionV36213",
+        "tfIndustrialFabricSelfTestV36213"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.installation",
+      "ownerFile": "terraformer.installation.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindInstallationV04508"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.installer",
+      "ownerFile": "terraformer.installer.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindInstallerV04508"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.instance",
+      "ownerFile": "terraformer.instance.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "resolve",
+        "select"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.instancetype",
+      "ownerFile": "terraformer.instancetype.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "resolve",
+        "eligibility"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.intercommunication",
+      "ownerFile": "terraformer.intercommunication.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindIntercommunicationFabricV04537",
+        "tfIntercommunicationPlanV36301",
+        "tfNegotiationPlanV36301",
+        "tfMetaContextV36301",
+        "tfIntercommunicationNegotiationMetaSelfTestV36301"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.interconnection",
+      "ownerFile": "terraformer.interconnection.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindInterconnectionV04535",
+        "tfInterconnectionPlanV36300",
+        "tfInterconnectionSelfTestV36300"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.interface",
+      "ownerFile": "terraformer.interface.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindInterfaceV04444",
+        "tfInterfaceFeatureDescriptorV36214",
+        "tfInterfaceFeatureSelfTestV36214"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.internet",
+      "ownerFile": "terraformer.internet.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "admitIntent"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.interpretation",
+      "ownerFile": "terraformer.interpretation.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindInterpretationV04446",
+        "tfInterpretV36216",
+        "tfInterpretationDescriptorV36216",
+        "tfInterpretationSelfTestV36216"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.interrupt",
+      "ownerFile": "terraformer.interrupt.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindInterruptV04496"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.interrupter",
+      "ownerFile": "terraformer.interrupter.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindInterrupterV04496",
+        "tfConcurrentDiscoveryScanV36264",
+        "lane"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.json",
+      "ownerFile": "terraformer.json.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "validate",
+        "parse",
+        "stringify"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.kit",
+      "ownerFile": "terraformer.kit.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindKitV04442",
+        "tfKitDescriptorV36210",
+        "tfKitInventoryV36210",
+        "tfKitSelfTestV36210",
+        "tfIntrinsicKitMembersV36211",
+        "tfIntrinsicKitDescriptorV36211",
+        "tfIntrinsicKitInventoryV36211",
+        "tfIntrinsicKitSelfTestV36211",
+        "tfComputationalKitMembersV36212",
+        "tfComputationalKitDescriptorV36212",
+        "tfComputationalKitInventoryV36212",
+        "tfComputationalKitSelfTestV36212"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.lan",
+      "ownerFile": "terraformer.lan.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindLanV04482",
+        "tfIpv4IntV36250",
+        "tfCidrV36250",
+        "tfCidrOverlapV36250",
+        "tfPrivatePoolAdmissionV36250",
+        "tfObservedLanInterfacesV36250",
+        "tfLanBindingPlanV36250",
+        "tfLanAdmissionSelfTestV36250",
+        "bindLanTransportV04483",
+        "tfLanExecutionEndpointV36251",
+        "tfLanTcpExchangeV36251"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.lane",
+      "ownerFile": "terraformer.lane.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindLaneV04504"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.language",
+      "ownerFile": "terraformer.language.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindLanguageV04597",
+        "tfGeneratedLanguageCataloguesV36356",
+        "tfLanguageCatalogueSelfTestV36356"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.launch",
+      "ownerFile": "terraformer.launch.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindLaunchV04462"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.law",
+      "ownerFile": "terraformer.law.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindLawV04516",
+        "bindNormativeFabricV04516",
+        "tfNormativePlanV36283",
+        "tfNormativeFabricSelfTestV36283"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.lawyer",
+      "ownerFile": "terraformer.lawyer.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindLawyerV04516"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.layering",
+      "ownerFile": "terraformer.layering.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindUniversalLayeringV04635",
+        "tfSystemLayerV36389",
+        "tfUniversalSystemLayerFabricV36389",
+        "tfLayeringSelfTestV36389"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.library",
+      "ownerFile": "terraformer.library.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "load",
+        "resolve"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.lifecycle",
+      "ownerFile": "terraformer.lifecycle.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindLifecycleV04451",
+        "transition",
+        "bindSystemLifecycleControlV04511",
+        "tfSystemCreationPlanV36279",
+        "tfSystemDestructionPlanV36279",
+        "tfSystemLifecycleControlSelfTestV36279"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.lineage",
+      "ownerFile": "terraformer.lineage.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindLineageV04509"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.linker",
+      "ownerFile": "terraformer.linker.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindLinkerV04508"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.linking",
+      "ownerFile": "terraformer.linking.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindLinkingV04508",
+        "bindLinkingFabricV04659",
+        "tfLinkV36409",
+        "tfLinkingSelfTestV36409",
+        "tfTerraformerHandbookV36409",
+        "bindLinkingReconstructionV04660",
+        "tfReconstructLinkingV36410",
+        "tfLinkingReconstructionSelfTestV36410",
+        "tfTerraformerHandbookV36410"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.linux",
+      "ownerFile": "terraformer.linux.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "admit",
+        "authorize"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.lock",
+      "ownerFile": "terraformer.lock.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "place",
+        "project",
+        "lockPreflight",
+        "tfUniversalCaptureLockQualificationV04225"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.locking",
+      "ownerFile": "terraformer.locking.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "resolve",
+        "select"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.lookup",
+      "ownerFile": "terraformer.lookup.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "lookup"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.loopback",
+      "ownerFile": "terraformer.loopback.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindLoopbackV04481"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.looper",
+      "ownerFile": "terraformer.looper.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindLooperV04507"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.looping",
+      "ownerFile": "terraformer.looping.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindLoopingV04507"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.maintenance",
+      "ownerFile": "terraformer.maintenance.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindMaintenanceV04513"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.making",
+      "ownerFile": "terraformer.making.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindMakingV04596",
+        "tfMakingPlanV36355",
+        "tfMakingMakerSelfTestV36355"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.management",
+      "ownerFile": "terraformer.management.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindManagementV04513"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.manifest",
+      "ownerFile": "terraformer.manifest.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindManifestV04508"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.media",
+      "ownerFile": "terraformer.media.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindMediaV04526",
+        "bindMediaNewsBroadcastV04526",
+        "tfMediaContextV36292",
+        "tfMediaFabricSelfTestV36292"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.menu",
+      "ownerFile": "terraformer.menu.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindMenuCatalogV04614",
+        "tfMenuCatalogPlanV36370",
+        "tfMenuCatalogSelfTestV36370"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.messaging",
+      "ownerFile": "terraformer.messaging.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindMessagingV04528",
+        "bindMessagingAnnotationFabricV04528",
+        "tfMessagingAnnotationContextV36294",
+        "tfMessagingAnnotationSelfTestV36294"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.meta",
+      "ownerFile": "terraformer.meta.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindMetaV04537"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.multimedia",
+      "ownerFile": "terraformer.multimedia.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindMultimediaV04526"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.multithreading",
+      "ownerFile": "terraformer.multithreading.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindMultithreadingV04510"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.mutation",
+      "ownerFile": "terraformer.mutation.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindMutationV04447",
+        "tfMutationCloneV36217",
+        "tfMutationV36217",
+        "tfMutationDescriptorV36217",
+        "tfMutationSelfTestV36217"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.naturalization",
+      "ownerFile": "terraformer.naturalization.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "naturalize"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.navigation",
+      "ownerFile": "terraformer.navigation.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "normalizeEnvironment",
+        "plan"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.news",
+      "ownerFile": "terraformer.news.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindNewsV04526"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.node",
+      "ownerFile": "terraformer.node.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "validate",
+        "admit",
+        "transition"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.normalization",
+      "ownerFile": "terraformer.normalization.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "normalize"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.notation",
+      "ownerFile": "terraformer.notation.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindNotationV04528"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.numeration",
+      "ownerFile": "terraformer.numeration.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindNumerationEnumerationNumberingV04589",
+        "tfNumerationPlanV36348",
+        "tfEnumerationPlanV36348",
+        "tfNumberingPlanV36348",
+        "tfNumerationEnumerationNumberingSelfTestV36348"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.object",
+      "ownerFile": "terraformer.object.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "validate",
+        "admit",
+        "transition",
+        "bindNaturalizationV04438",
+        "tfNativeObjectArchitectureBytesV36205",
+        "tfNativeObjectVolumePrepareV36205",
+        "tfNativeObjectVolumeReadV36205",
+        "tfNativeObjectActivateV36205",
+        "tfNativeObjectLinkV36205",
+        "tfNativeObjectNaturalizationSelfTestV36205"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.objective",
+      "ownerFile": "terraformer.objective.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "define"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.optimization",
+      "ownerFile": "terraformer.optimization.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindOptimizationV04508"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.optimizer",
+      "ownerFile": "terraformer.optimizer.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindOptimizerV04508"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.ordering",
+      "ownerFile": "terraformer.ordering.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindOrderingV04565",
+        "tfSystemOrderingProfileV36324",
+        "tfOrderingSelfTestV36324"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.organization",
+      "ownerFile": "terraformer.organization.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindOrganizationDimensionV04550",
+        "tfOrganizationContextV36310",
+        "tfDimensionContextV36310",
+        "tfOrganizationDimensionSelfTestV36310"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.orientation",
+      "ownerFile": "terraformer.orientation.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "tfPageGenerationDescribe"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.packager",
+      "ownerFile": "terraformer.packager.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindPackagerV04508"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.packaging",
+      "ownerFile": "terraformer.packaging.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindPackagingV04509"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.page",
+      "ownerFile": "terraformer.page.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "tfSystemTopology"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.parameter",
+      "ownerFile": "terraformer.parameter.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindParameterV04505"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.path",
+      "ownerFile": "terraformer.path.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindPathV04504"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.physical",
+      "ownerFile": "terraformer.physical.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindPhysicalV04460"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.physicalization",
+      "ownerFile": "terraformer.physicalization.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bind"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.pipeline",
+      "ownerFile": "terraformer.pipeline.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindPipelineV04495",
+        "describeNetworkDiscoveryPipeline"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.platform",
+      "ownerFile": "terraformer.platform.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindMetaVirtualPlatformV0462",
+        "tfPlatformContextPlanV36361",
+        "tfMetaVirtualPlatformSelfTestV36361",
+        "platformType",
+        "describePlatformType",
+        "admitPlatformType",
+        "authorizePlatformType",
+        "planTargetDeliveryV04784"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.podcast",
+      "ownerFile": "terraformer.podcast.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindPodcastV04526"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.policy",
+      "ownerFile": "terraformer.policy.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindPolicyV04516"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.port",
+      "ownerFile": "terraformer.port.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindPortV04529",
+        "bindTransportPortFabricV04529",
+        "tfTransportPortPlanV36295",
+        "tfTransportPortSelfTestV36295",
+        "bindLockedDualPortFamiliesV04530",
+        "tfLockedTransportPortPlanV36296",
+        "tfLockedTransportPortSelfTestV36296",
+        "bindSymmetricSixPortFamiliesV04531",
+        "tfCanonicalTransportPortPlanV36297",
+        "tfCanonicalTransportPortSelfTestV36297",
+        "bindProtocolPortCompositionV04532",
+        "tfProtocolPortResolveV36298",
+        "tfPortMechanismV36298",
+        "tfProtocolPortCompositionSelfTestV36298"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.porting",
+      "ownerFile": "terraformer.porting.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindPortingV04573",
+        "tfPortingPlanV36332",
+        "tfPortingSelfTestV36332"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.position",
+      "ownerFile": "terraformer.position.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindPositionV04525",
+        "bindPositionWeatherForecastV04525",
+        "tfPositioningPlanV36291",
+        "tfForecastContextV36291",
+        "tfPositionWeatherSelfTestV36291"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.positioner",
+      "ownerFile": "terraformer.positioner.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindPositionerV04525"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.positioning",
+      "ownerFile": "terraformer.positioning.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindPositioningV04525"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.prediction",
+      "ownerFile": "terraformer.prediction.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "predict"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.preference",
+      "ownerFile": "terraformer.preference.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindPreferenceV04538"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.preprocessing",
+      "ownerFile": "terraformer.preprocessing.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindPreprocessingV04508"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.preprocessor",
+      "ownerFile": "terraformer.preprocessor.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindPreprocessorV04508"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.printing",
+      "ownerFile": "terraformer.printing.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindDocumentIOSignatureV04560",
+        "tfDocumentIOPlanV36319",
+        "tfDigitalSignaturePlanV36319",
+        "tfDocumentIOSignatureSelfTestV36319"
+      ],
+      "descriptors": [
+        "print",
+        "scan",
+        "verify"
+      ],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.prioritization",
+      "ownerFile": "terraformer.prioritization.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "compare",
+        "order"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.priority",
+      "ownerFile": "terraformer.priority.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "normalize",
+        "assign"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.privilege",
+      "ownerFile": "terraformer.privilege.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindHostPrivilegeV04552",
+        "tfHostPrivilegeV36312",
+        "tfCredentiallessLoginBoundaryV36312",
+        "tfHostPrivilegeSelfTestV36312",
+        "tfWindowsPrivilegeProbeV36313",
+        "tfCrossPlatformPrivilegeV36313",
+        "tfCrossPlatformPrivilegeSelfTestV36313"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.processing",
+      "ownerFile": "terraformer.processing.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "dispatch",
+        "legacyRuntimeModules"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.profile",
+      "ownerFile": "terraformer.profile.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindProfileV04538"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.profiler",
+      "ownerFile": "terraformer.profiler.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindProfilerV04508"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.profiling",
+      "ownerFile": "terraformer.profiling.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindProfilingV04508"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.project",
+      "ownerFile": "terraformer.project.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindProjectV04509",
+        "bindLinguistProjectV04679"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.prophecy",
+      "ownerFile": "terraformer.prophecy.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindProphecyV04524"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.proposal",
+      "ownerFile": "terraformer.proposal.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindProposalV04538"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.publication",
+      "ownerFile": "terraformer.publication.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindPublicationV04508"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.publisher",
+      "ownerFile": "terraformer.publisher.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindPublisherV04508"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.pwa",
+      "ownerFile": "terraformer.pwa.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindMobileBrowserInvocationV04554",
+        "tfExecutionSurfaceV36314",
+        "tfBrowserInvocationPlanV36314",
+        "tfMobileBrowserInvocationSelfTestV36314"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.queue",
+      "ownerFile": "terraformer.queue.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindQueueOrderingV04566",
+        "tfSystemQueueProfileV36325",
+        "tfQueueOrderingSelfTestV36325"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.radio",
+      "ownerFile": "terraformer.radio.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindRadioV04526"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.rebuilder",
+      "ownerFile": "terraformer.rebuilder.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindRebuilderV04504"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.receiver",
+      "ownerFile": "terraformer.receiver.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindReceiverV04477"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.receiving",
+      "ownerFile": "terraformer.receiving.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindReceivingV04477"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.refactorer",
+      "ownerFile": "terraformer.refactorer.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindRefactorerV04508"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.refactoring",
+      "ownerFile": "terraformer.refactoring.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindRefactoringV04508"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.referencing",
+      "ownerFile": "terraformer.referencing.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindReferencingV04645",
+        "tfSystemReferenceV36396",
+        "tfUniversalReferenceFabricV36396",
+        "tfReferencingSelfTestV36396"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.register",
+      "ownerFile": "terraformer.register.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindRegisterV04450",
+        "record",
+        "lookup",
+        "inventory"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.registrar",
+      "ownerFile": "terraformer.registrar.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindRegistrarV04450",
+        "record",
+        "lookup",
+        "inventory"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.registration",
+      "ownerFile": "terraformer.registration.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindRegistrationV04450",
+        "record",
+        "lookup",
+        "inventory"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.regulation",
+      "ownerFile": "terraformer.regulation.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindRegulationV04516"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.regulator",
+      "ownerFile": "terraformer.regulator.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindRegulatorV04516"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.relationship",
+      "ownerFile": "terraformer.relationship.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "edge"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.release",
+      "ownerFile": "terraformer.release.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindReleaseV04508"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.renderer",
+      "ownerFile": "terraformer.renderer.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindRendererTypeV04655",
+        "tfRendererTypeV36405",
+        "tfPredecessorNaturalizationClosureAuditV36405",
+        "tfRendererTypeSelfTestV36405",
+        "tfTerraformerHandbookV36405",
+        "bindRendererRelationshipsV04656",
+        "tfRendererRelationshipRuleV36406",
+        "tfReconstructRendererRelationshipsV36406",
+        "tfRendererRelationshipSelfTestV36406",
+        "tfTerraformerHandbookV36406"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.reporting",
+      "ownerFile": "terraformer.reporting.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "tfIdentify",
+        "tfReportIdentification",
+        "tfReportRecord",
+        "tfLogReport",
+        "tfTransact",
+        "tfReportingCoverage"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.repository",
+      "ownerFile": "terraformer.repository.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindRepositoryV04508"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.representation",
+      "ownerFile": "terraformer.representation.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindRepresentationV04515"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.requirement",
+      "ownerFile": "terraformer.requirement.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindRequirementV04538"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.reservation",
+      "ownerFile": "terraformer.reservation.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "normalize",
+        "isReserved"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.responsibility",
+      "ownerFile": "terraformer.responsibility.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "define"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.result",
+      "ownerFile": "terraformer.result.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "define"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.return",
+      "ownerFile": "terraformer.return.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "create",
+        "bindReturnV04504"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.returnable",
+      "ownerFile": "terraformer.returnable.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "classify"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.returner",
+      "ownerFile": "terraformer.returner.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "identify",
+        "bindReturnerV04507"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.returning",
+      "ownerFile": "terraformer.returning.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindReturningV04507"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.rfc",
+      "ownerFile": "terraformer.rfc.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindRfcV04539"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.risk",
+      "ownerFile": "terraformer.risk.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindRiskV04538"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.rooting",
+      "ownerFile": "terraformer.rooting.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "rootingPlan",
+        "rootingQualify"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.roundtrip",
+      "ownerFile": "terraformer.roundtrip.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "verify"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.rule",
+      "ownerFile": "terraformer.rule.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindRuleV04516"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.ruler",
+      "ownerFile": "terraformer.ruler.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindRulerV04516"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.salter",
+      "ownerFile": "terraformer.salter.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindSalterV04491"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.salting",
+      "ownerFile": "terraformer.salting.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindSaltingV04491",
+        "tfSaltV36259"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.scalability",
+      "ownerFile": "terraformer.scalability.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "assess"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.schema",
+      "ownerFile": "terraformer.schema.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindCanonicalSchemaV04632",
+        "tfSchemaDescriptorV36386",
+        "tfSchemaSystemSelfTestV36386"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.seeding",
+      "ownerFile": "terraformer.seeding.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindSeedingV04594",
+        "tfSeedPlanV36353",
+        "tfCompactSystemSeedV36353",
+        "tfExpandCompactSystemSeedV36353",
+        "tfGenerativeBootstrapSelfTestV36353"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.sender",
+      "ownerFile": "terraformer.sender.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindSenderV04477"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.sending",
+      "ownerFile": "terraformer.sending.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindSendingV04477"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.settings",
+      "ownerFile": "terraformer.settings.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "key",
+        "define",
+        "validate",
+        "classify",
+        "lockPreflight",
+        "set",
+        "get",
+        "reset",
+        "list",
+        "tfSettingsQualificationV04228"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.shell",
+      "ownerFile": "terraformer.shell.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindShellV04518"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.shining",
+      "ownerFile": "terraformer.shining.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "shine"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.shutdown",
+      "ownerFile": "terraformer.shutdown.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindShutdownV04520"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.signal",
+      "ownerFile": "terraformer.signal.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "create"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.signature",
+      "ownerFile": "terraformer.signature.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindSignatureV04508"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.signer",
+      "ownerFile": "terraformer.signer.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindSignerRoleV04561",
+        "tfSignerContextV36320",
+        "tfSignerSelfTestV36320"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.site",
+      "ownerFile": "terraformer.site.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindSiteV04504"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.snippet",
+      "ownerFile": "terraformer.snippet.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindSnippetV04508"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.socket",
+      "ownerFile": "terraformer.socket.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "endpoint",
+        "admit",
+        "transition"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.source",
+      "ownerFile": "terraformer.source.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindSourceV04508"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.specification",
+      "ownerFile": "terraformer.specification.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindSpecificationV04539"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.specifying",
+      "ownerFile": "terraformer.specifying.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindSpecifyingV04646",
+        "tfSystemSpecificationV36397",
+        "tfUniversalSpecificationFabricV36397",
+        "tfSpecifyingSelfTestV36397"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.staging",
+      "ownerFile": "terraformer.staging.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "system",
+        "bind",
+        "coverage",
+        "coordinate",
+        "navigate",
+        "windowOpen"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.stakeholder",
+      "ownerFile": "terraformer.stakeholder.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindStakeholderV04538"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.standard",
+      "ownerFile": "terraformer.standard.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindStandardV04539"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.startup",
+      "ownerFile": "terraformer.startup.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindStartupV04520"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.statetype",
+      "ownerFile": "terraformer.statetype.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "resolve",
+        "evaluate"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.streamer",
+      "ownerFile": "terraformer.streamer.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindStreamerV04476"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.student",
+      "ownerFile": "terraformer.student.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindStudentV04517"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.studio",
+      "ownerFile": "terraformer.studio.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindLanguageCreationStudioV04634",
+        "tfLanguageCreationContextV36388",
+        "tfLanguageCreationStudioSelfTestV36388"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.subshell",
+      "ownerFile": "terraformer.subshell.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindSubshellV04518"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.subsystem",
+      "ownerFile": "terraformer.subsystem.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindSubsystemV04518",
+        "bindSubstructureFabricV04518",
+        "tfSubsystemPlanV36285",
+        "tfSubshellPlanV36285",
+        "tfSubstructureFabricSelfTestV36285"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.supply",
+      "ownerFile": "terraformer.supply.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindSupplyV04538"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.syntax",
+      "ownerFile": "terraformer.syntax.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindSyntaxV04523",
+        "tfSyntaxAdmissionV36452",
+        "tfUniversalSyntaxFabricV36452",
+        "tfSyntaxSelfTestV36452",
+        "tfTerraformerHandbookV36452",
+        "tfCheckpointSystemsV370",
+        "tfCheckpointIdV370",
+        "tfProjectCheckpointPolicyV370",
+        "tfCheckpointAdmissionV370",
+        "tfCreateProjectCheckpointV370",
+        "tfProjectAutoSaveV370",
+        "tfUniversalCheckpointFabricV370",
+        "tfCheckpointSelfTestV370",
+        "tfTerraformerHandbookV370"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.table",
+      "ownerFile": "terraformer.table.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindTabularRelationalV04546",
+        "tfTabularStructureV36306",
+        "tfTabularRelationalSelfTestV36306"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.tabular",
+      "ownerFile": "terraformer.tabular.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindDataOrganizationV04549",
+        "tfDataOrganizationV36309",
+        "tfDataOrganizationSelfTestV36309"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.target",
+      "ownerFile": "terraformer.target.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindTargetV04527"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.tcp",
+      "ownerFile": "terraformer.tcp.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindTcpV04481"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.tcpip",
+      "ownerFile": "terraformer.tcpip.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindTcpipV04481"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.teacher",
+      "ownerFile": "terraformer.teacher.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindTeacherV04517"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.teaching",
+      "ownerFile": "terraformer.teaching.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindTeachingV04517"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.technology",
+      "ownerFile": "terraformer.technology.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "classify"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.telegram.api",
+      "ownerFile": "terraformer.telegram.api.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "admit"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.telemetry",
+      "ownerFile": "terraformer.telemetry.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindTelemetryBiometryContentV04591",
+        "tfTelemetryBiometryContentContextV36350",
+        "tfTelemetryBiometryContentSelfTestV36350"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.templating",
+      "ownerFile": "terraformer.templating.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindTemplatePrototypeBlueprintV04593",
+        "tfConstructionArtifactPlanV36352",
+        "tfTemplatePrototypeBlueprintSelfTestV36352"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.test",
+      "ownerFile": "terraformer.test.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "normalizeResult",
+        "execute",
+        "resolve"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.tester",
+      "ownerFile": "terraformer.tester.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindTesterV04508"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.testing",
+      "ownerFile": "terraformer.testing.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindTestingV04508"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.text",
+      "ownerFile": "terraformer.text.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "validate",
+        "admit",
+        "transition"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.theory",
+      "ownerFile": "terraformer.theory.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindTheoryPracticeV0460",
+        "tfTheoryPracticePlanV36359",
+        "tfTheoryPracticeSelfTestV36359"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.thread",
+      "ownerFile": "terraformer.thread.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindThreadV04510"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.threading",
+      "ownerFile": "terraformer.threading.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindThreadingV04510",
+        "bindThreadingFabricV04510",
+        "tfThreadingPlanV36278",
+        "tfThreadingFabricSelfTestV36278"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.ticketing",
+      "ownerFile": "terraformer.ticketing.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindEventActorsV04577",
+        "tfEventActorFabricV36336",
+        "tfEventActorSelfTestV36336"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.tls",
+      "ownerFile": "terraformer.tls.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindTlsSslV0469",
+        "tfSecureTransportPlanV36366",
+        "tfTlsSslSelfTestV36366"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.token",
+      "ownerFile": "terraformer.token.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "classifyMorphologyV04783"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.tokenaudit",
+      "ownerFile": "terraformer.tokenaudit.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "find",
+        "unresolved",
+        "surface",
+        "coverage"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.tokenization",
+      "ownerFile": "terraformer.tokenization.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "tokenize"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.toolchain",
+      "ownerFile": "terraformer.toolchain.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindToolchainV04508"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.transceiver",
+      "ownerFile": "terraformer.transceiver.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindTransceiverV04477"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.transmission",
+      "ownerFile": "terraformer.transmission.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindTransmissionV04477"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.transmitter",
+      "ownerFile": "terraformer.transmitter.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindTransmitterV04477"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.transport",
+      "ownerFile": "terraformer.transport.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindTransportV04481",
+        "bindAuthorizedLoopbackTransportV04481",
+        "tfAuthorizedNetworkEndpointV36249",
+        "tfRequireNetworkAuthorizationV36249",
+        "tfLoopbackTcpExchangeV36249",
+        "tfAuthorizedNetworkTransportSelfTestV36249"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.troubleshooting",
+      "ownerFile": "terraformer.troubleshooting.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindTroubleshootingV04578",
+        "tfSystemAssuranceRolesV36337",
+        "tfTroubleshooterPassV36337",
+        "tfTroubleshootingAssuranceSelfTestV36337"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.udp",
+      "ownerFile": "terraformer.udp.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindUDPV04529"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.universal",
+      "ownerFile": "terraformer.universal.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindUniversalV04466",
+        "applicability"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.usage",
+      "ownerFile": "terraformer.usage.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindUsageHaltingV04637",
+        "tfUsageV36391",
+        "tfHaltV36391",
+        "tfUsageHaltingSelfTestV36391",
+        "tfUsageDesignV4061",
+        "tfUniversalUsageProjectionV4061",
+        "tfUsageDesignCoverageV4061",
+        "tfUsageAdmissionViewV4061",
+        "tfUsageDesignQualificationV4061"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.validation",
+      "ownerFile": "terraformer.validation.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "normalize",
+        "resolve",
+        "validate",
+        "select"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.valuable",
+      "ownerFile": "terraformer.valuable.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "classify",
+        "validate"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.value",
+      "ownerFile": "terraformer.value.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "value",
+        "validate"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.valuing",
+      "ownerFile": "terraformer.valuing.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "establish",
+        "resolve",
+        "compare"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.version",
+      "ownerFile": "terraformer.version.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindVersionV04509"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.virtual",
+      "ownerFile": "terraformer.virtual.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindVirtualV04460"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.wan",
+      "ownerFile": "terraformer.wan.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindWanV04483",
+        "tfWanPlanV36251"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.weather",
+      "ownerFile": "terraformer.weather.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindWeatherV04525"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.web",
+      "ownerFile": "terraformer.web.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "admitRequest"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.whatsapp.api",
+      "ownerFile": "terraformer.whatsapp.api.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "admit"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.whois",
+      "ownerFile": "terraformer.whois.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindWHOISV04568",
+        "tfWHOISPlanV36327",
+        "tfWHOISSelfTestV36327"
+      ],
+      "descriptors": [
+        "registration-information-query-plan"
+      ],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.worker",
+      "ownerFile": "terraformer.worker.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindWorkerWorkFabricV04574",
+        "tfWorkerWorkFabricV36333",
+        "tfUniversalWorkerWorkFabricV36333",
+        "tfWorkerReconciliationAuditV4066",
+        "tfTerraformerHandbookV4066",
+        "tfWorkerReconciliationQualificationV4066"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.working",
+      "ownerFile": "terraformer.working.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "bindWorkingV04575",
+        "tfWorkingFabricV36334",
+        "tfWorkingSelfTestV36334"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.zip",
+      "ownerFile": "terraformer.zip.js",
+      "evidenceKind": "OWNER_IMPLEMENTATION",
+      "callables": [
+        "tfCompressionTransform"
+      ],
+      "descriptors": [],
+      "functionalityStatus": "EVIDENCED",
+      "executionGranted": false,
+      "authorityGranted": false
+    }
+  ],
+  "rule": "References established functions and capabilities; does not duplicate implementation.",
+  "authorityGranted": false,
+  "evidencePolicy": {
+    "namedNonBoilerplateCallable": "HIGH",
+    "explicitFunctionOperationDescriptor": "HIGH",
+    "describeOnly": "INSUFFICIENT",
+    "nameOnly": "INSUFFICIENT",
+    "automaticExecution": false,
+    "automaticAuthority": false
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "terraformer.registry/generation_registry/1",
+  "version": "0.44.30",
+  "kind": "GENERATION_REGISTRY",
+  "governedBy": "terraformer.generation.js",
+  "executableGovernor": "terraformer.generation.js",
+  "semantics": "Generation instances/results/history; registry membership does not prove execution, persistence, authority or qualification.",
+  "generations": [],
+  "authority": false,
+  "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+  "failureSemantics": "INVALID_OR_UNAUTHORIZED_INPUT_FAILS_CLOSED",
+  "provenance": {
+    "predecessor": "v0.44.29",
+    "checkpoint": "v0.44.30"
+  },
+  "owner": "system.generation",
+  "ownerBindingVersion": "0.48.16",
+  "ownerBindingAuthorityGranted": false
+}

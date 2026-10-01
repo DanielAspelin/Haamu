@@ -1,0 +1,12 @@
+{
+  "schema": "TERRAFORMER-CHAINS/1",
+  "version": "0.47.49",
+  "kind": "CHAIN_REGISTRY",
+  "owner": "system.chain",
+  "governedBy": "terraformer.chain.js",
+  "topologyType": "Passage",
+  "records": [],
+  "authorityGranted": false,
+  "automaticExecution": false,
+  "automaticPersistence": false
+}

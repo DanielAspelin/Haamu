@@ -1,0 +1,16 @@
+{
+  "schema": "TERRAFORMER-COLLECTORS-REGISTRY/1",
+  "owner": "terraformer.collector.js",
+  "role": "role.collector",
+  "memberships": [
+    {
+      "class": "Worker",
+      "domain": "tool",
+      "identity": "tool.worker.collector",
+      "parent": "system.tool"
+    }
+  ],
+  "entries": [],
+  "authorityGranted": false,
+  "rule": "Registry records identities/evidence only; membership grants no execution, authentication, authorization, persistence, or approval authority."
+}

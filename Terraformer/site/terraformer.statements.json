@@ -1,0 +1,10 @@
+{
+  "schema": "TERRAFORMER-STATEMENTS/1",
+  "systemId": "system.statement",
+  "declarativeRegistry": true,
+  "membershipGrantsExecution": false,
+  "membershipGrantsMutation": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

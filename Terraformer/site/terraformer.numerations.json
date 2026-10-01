@@ -1,0 +1,9 @@
+{
+  "schema": "TERRAFORMER-NUMERATIONS/1",
+  "systemId": "system.numeration",
+  "membershipGrantsIdentity": false,
+  "membershipGrantsMutation": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

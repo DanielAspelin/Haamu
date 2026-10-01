@@ -1,0 +1,8 @@
+{
+  "schema": "TERRAFORMER-PUSHES/1",
+  "systemId": "system.push",
+  "readOnlyDiscovery": true,
+  "automaticInvocation": false,
+  "authorityGranted": false,
+  "records": []
+}

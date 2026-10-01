@@ -1,0 +1,15 @@
+{
+  "schema": "TERRAFORMER-LANGUAGES/1",
+  "systemId": "system.language",
+  "catalogueFamilies": [
+    "human",
+    "programming",
+    "machine"
+  ],
+  "membershipGrantsInterpretation": false,
+  "membershipGrantsCompilation": false,
+  "membershipGrantsExecution": false,
+  "membershipGrantsGeneration": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

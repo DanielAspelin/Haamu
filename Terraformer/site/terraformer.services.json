@@ -1,0 +1,14 @@
+{
+  "schema": "TERRAFORMER-SERVICES/1",
+  "systemId": "system.service",
+  "materialization": "derived-shared-schema",
+  "privateByDefault": true,
+  "inertByDefault": true,
+  "admissionRequired": true,
+  "membershipGrantsExecution": false,
+  "membershipGrantsNetworkExposure": false,
+  "membershipGrantsPublication": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

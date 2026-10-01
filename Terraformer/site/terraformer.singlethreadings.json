@@ -1,0 +1,7 @@
+{
+  "schema": "TERRAFORMER-SINGLETHREADINGS/1",
+  "systemId": "system.single-threading",
+  "authorityGranted": false,
+  "automaticExecution": false,
+  "records": []
+}

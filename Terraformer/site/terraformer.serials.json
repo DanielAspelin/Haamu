@@ -1,0 +1,8 @@
+{
+  "schema": "TERRAFORMER-SERIALS/1",
+  "systemId": "system.serial",
+  "readOnlyDiscovery": true,
+  "automaticInvocation": false,
+  "authorityGranted": false,
+  "records": []
+}

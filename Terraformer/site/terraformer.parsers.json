@@ -1,0 +1,16 @@
+{
+  "schema": "TERRAFORMER-PARSERS-REGISTRY/1",
+  "owner": "terraformer.parser.js",
+  "role": "role.parser",
+  "memberships": [
+    {
+      "class": "Worker",
+      "domain": "language",
+      "identity": "language.worker.parser",
+      "parent": "system.language"
+    }
+  ],
+  "entries": [],
+  "authorityGranted": false,
+  "rule": "Registry records identities/evidence only; membership grants no execution, authentication, authorization, persistence, or approval authority."
+}

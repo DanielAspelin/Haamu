@@ -1,0 +1,30 @@
+{
+  "$schema": "terraformer.registry/errors/1",
+  "version": "0.44.21",
+  "kind": "ERROR_REGISTRY",
+  "owner": "system.error",
+  "errors": [
+    {
+      "id": "error.validation",
+      "category": "VALIDATION",
+      "terminal": false,
+      "authority": false
+    },
+    {
+      "id": "error.unknown",
+      "category": "UNKNOWN",
+      "terminal": false,
+      "authority": false
+    },
+    {
+      "id": "error.dependency",
+      "category": "DEPENDENCY",
+      "terminal": false,
+      "authority": false
+    }
+  ],
+  "preserveOrigin": true,
+  "errorCannotBecomeSuccess": true,
+  "authority": false,
+  "governedBy": "terraformer.error.js"
+}

@@ -1,0 +1,387 @@
+{
+  "$schema": "terraformer.registry/coverage/1",
+  "version": "0.44.31",
+  "kind": "COVERAGE_REGISTRY",
+  "owner": "system.coverage",
+  "governedBy": "terraformer.js#system.coverage",
+  "authority": false,
+  "semantics": {
+    "COVERED": "Evidence establishes the declared scope is represented by the referenced implementation or contract; this does not itself prove operation, correctness, authorization, availability, or qualification.",
+    "UNCOVERED": "Applicable scope lacks sufficient admitted coverage evidence.",
+    "NOT_APPLICABLE": "Scope is explicitly outside the applicability contract.",
+    "UNRESOLVED": "Applicability or evidence is insufficient to classify as covered, uncovered, or not applicable."
+  },
+  "states": [
+    "COVERED",
+    "UNCOVERED",
+    "NOT_APPLICABLE",
+    "UNRESOLVED"
+  ],
+  "defaultState": "UNRESOLVED",
+  "inference": "DENY",
+  "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+  "dimensions": [
+    "TYPE",
+    "MODE",
+    "CONDITION",
+    "STATE",
+    "BEHAVIOR",
+    "HEALTH"
+  ],
+  "eligibleConsumers": [
+    "SYSTEM",
+    "PROJECT",
+    "PROGRAM",
+    "APPLICATION",
+    "PLATFORM",
+    "COMMON",
+    "INTERNET",
+    "FILE",
+    "USER",
+    "MACHINE",
+    "GROUP",
+    "DIMENSION"
+  ],
+  "records": [
+    {
+      "id": "coverage.boundary-taxonomy",
+      "subject": "registry.boundaries",
+      "scope": "BOUNDARY_TYPES",
+      "state": "COVERED",
+      "evidence": [
+        "terraformer.boundaries.json",
+        "terraformer.boundary.js"
+      ],
+      "provenance": "v0.44.15-qualified-predecessor",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "coverage.dimension-interface",
+      "subject": "system.dimension",
+      "scope": "SIX_DIMENSION_INTERFACE",
+      "state": "COVERED",
+      "evidence": [
+        "terraformer.dimensions.json",
+        "terraformer.dimension.js",
+        "terraformer.type.js",
+        "terraformer.mode.js",
+        "terraformer.condition.js",
+        "terraformer.state.js",
+        "terraformer.behaviour.js",
+        "terraformer.health.js"
+      ],
+      "provenance": "v0.44.15-qualified-predecessor",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "coverage.generalized-registries",
+      "subject": "system.dimension",
+      "scope": "GENERALIZED_TYPE_MODE_CONDITION_STATE",
+      "state": "COVERED",
+      "evidence": [
+        "terraformer.types.json",
+        "terraformer.modes.json",
+        "terraformer.conditions.json",
+        "terraformer.states.json"
+      ],
+      "provenance": "v0.44.15-qualified-predecessor",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "coverage.behavior-generalized-registry",
+      "subject": "system.behaviour",
+      "scope": "GENERALIZED_BEHAVIOR_REGISTRY",
+      "state": "UNRESOLVED",
+      "evidence": [],
+      "provenance": "v0.44.16-audit",
+      "qualification": "UNVERIFIED",
+      "authority": false
+    },
+    {
+      "id": "coverage.health-generalized-registry",
+      "subject": "system.health",
+      "scope": "GENERALIZED_HEALTH_REGISTRY",
+      "state": "UNRESOLVED",
+      "evidence": [],
+      "provenance": "v0.44.16-audit",
+      "qualification": "UNVERIFIED",
+      "authority": false
+    },
+    {
+      "id": "coverage.canonical-system-population",
+      "subject": "system.systemization",
+      "scope": "AUTHORITATIVE_CONTEMPORARY_SYSTEM_SET",
+      "state": "UNRESOLVED",
+      "evidence": [],
+      "provenance": "v0.44.16-audit",
+      "qualification": "UNVERIFIED",
+      "authority": false
+    },
+    {
+      "id": "coverage.migration.dimension-bootstrap",
+      "subject": "system.dimension",
+      "scope": "RESPONSIBILITY_MIGRATION",
+      "state": "COVERED",
+      "evidence": [
+        "terraformer.js",
+        "terraformer.dimension.js"
+      ],
+      "provenance": "v0.44.17-qualified-candidate",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false,
+      "notes": "Historical compatibility globals retained; object construction migrated to Dimension System."
+    },
+    {
+      "id": "coverage.history-registry",
+      "subject": "system.history",
+      "scope": "HISTORY_PROVENANCE_REGISTRY",
+      "state": "COVERED",
+      "evidence": [
+        "terraformer.history.json",
+        "terraformer.js#TERRAFORMER_HISTORY_SYSTEM"
+      ],
+      "provenance": "v0.44.18-qualified-candidate",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "coverage.migration.runtime-bootstrap",
+      "subject": "terraformer.processing",
+      "scope": "RESPONSIBILITY_MIGRATION",
+      "state": "COVERED",
+      "evidence": [
+        "terraformer.js",
+        "terraformer.processing.js",
+        "terraformer.allocation.js",
+        "terraformer.persistence.js"
+      ],
+      "provenance": "v0.44.18-qualified-candidate",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false,
+      "notes": "v0.44.2 runtime bootstrap construction migrated to processing owner module; compatibility globals retained."
+    },
+    {
+      "id": "coverage.runtime-layer-naturalization",
+      "subject": "system.runtime",
+      "scope": "RUNTIME_AND_LAYER_REGISTRY",
+      "state": "COVERED",
+      "evidence": [
+        "terraformer.runtime.js",
+        "terraformer.layers.json"
+      ],
+      "provenance": "v0.44.19",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "coverage.migration-v0.44.20-core-bootstrap",
+      "subject": "terraformer.js#TF_MODULES_V0431",
+      "scope": "UNIQUE_OWNER_EQUIVALENCE_MIGRATION",
+      "state": "COVERED",
+      "owner": "terraformer.core.js",
+      "layer": "FOUNDATION",
+      "evidence": [
+        "terraformer.core.js#legacyModulesV0431",
+        "terraformer.js#TF_MODULES_V0431"
+      ],
+      "provenance": "v0.44.20-source-qualification",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "coverage.registry-ownership-v0.44.21",
+      "subject": "terraformer.registry-set",
+      "scope": "REGISTRY_OWNERSHIP_CLOSURE",
+      "state": "COVERED",
+      "registryCount": 24,
+      "policy": "EXACTLY_ONE_GOVERNING_EXECUTABLE_RESPONSIBILITY",
+      "owners": {
+        "terraformer.applications.json": "terraformer.application.js",
+        "terraformer.boundaries.json": "terraformer.boundary.js",
+        "terraformer.conditions.json": "terraformer.condition.js",
+        "terraformer.coverage.json": "terraformer.js#system.coverage",
+        "terraformer.dimensions.json": "terraformer.dimension.js",
+        "terraformer.domains.json": "terraformer.domain.js",
+        "terraformer.environments.json": "terraformer.system.js",
+        "terraformer.errors.json": "terraformer.error.js",
+        "terraformer.exports.json": "terraformer.io.js",
+        "terraformer.frameworks.json": "terraformer.framework.js",
+        "terraformer.history.json": "terraformer.js#TERRAFORMER_HISTORY_SYSTEM",
+        "terraformer.imports.json": "terraformer.io.js",
+        "terraformer.layers.json": "terraformer.js#system.layer",
+        "terraformer.libraries.json": "terraformer.library.js",
+        "terraformer.maps.json": "terraformer.js#system.mapping",
+        "terraformer.modes.json": "terraformer.mode.js",
+        "terraformer.networks.json": "terraformer.network.js",
+        "terraformer.programs.json": "terraformer.program.js",
+        "terraformer.sites.json": "terraformer.web.js",
+        "terraformer.states.json": "terraformer.state.js",
+        "terraformer.systems.json": "terraformer.system.js",
+        "terraformer.tests.json": "terraformer.test.js",
+        "terraformer.types.json": "terraformer.type.js",
+        "terraformer.users.json": "terraformer.system.js"
+      },
+      "ghosts": [],
+      "orphans": [],
+      "ambiguities": [],
+      "evidence": [
+        "24 JSON registries",
+        "governedBy/owner metadata",
+        "executable module or integrated System responsibility"
+      ],
+      "provenance": "v0.44.21-source-qualification",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false,
+      "notes": "Ownership records do not create authority, canonical membership, implementation or qualification."
+    },
+    {
+      "id": "coverage.socket-system-v0.44.21",
+      "subject": "system.socket",
+      "scope": "SOCKET_SYSTEM_NATURALIZATION",
+      "state": "COVERED",
+      "owner": "terraformer.socket.js",
+      "evidence": [
+        "terraformer.socket.js",
+        "terraformer.systems.json"
+      ],
+      "provenance": "v0.44.21-source-qualification",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "coverage.uuid-interface-v04427",
+      "subject": "system.uuid",
+      "scope": "UUID_GENERATION_VALIDATION_INTERFACE",
+      "state": "COVERED",
+      "evidence": [
+        "terraformer.uuid.js",
+        "terraformer.uuids.json"
+      ],
+      "provenance": "v0.44.27",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "coverage.generator-automator-extraction-v04428",
+      "subject": "system.generation+system.automation",
+      "scope": "GENERATOR_AUTOMATOR_FABRIC",
+      "state": "COVERED",
+      "evidence": [
+        "terraformer.generation.js",
+        "terraformer.automation.js",
+        "terraformer.js"
+      ],
+      "provenance": "v0.44.28",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "coverage.uuid-v4-v5-reconciliation-v04429",
+      "subject": "system.uuid",
+      "scope": "UUID_V4_V5_IDENTITY_RECONCILIATION",
+      "state": "COVERED",
+      "evidence": [
+        "terraformer.uuid.js",
+        "terraformer.uuids.json"
+      ],
+      "provenance": "v0.44.29",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "coverage.number-uuid-generator-successor-v04430",
+      "subject": "system.generation",
+      "scope": "NUMBER_GENERATOR_UUID_AWARE_GENERATOR_SUCCESSOR_EXTRACTION",
+      "state": "COVERED",
+      "evidence": [
+        "terraformer.generation.js",
+        "terraformer.generators.json",
+        "terraformer.uuid.js",
+        "terraformer.js"
+      ],
+      "provenance": "v0.44.30",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "coverage.completion-extraction",
+      "subject": "system.completion",
+      "scope": "COMPLETION_GENERATOR_AUTOMATOR_COVERAGE",
+      "state": "COVERED",
+      "evidence": [
+        "terraformer.completion.js",
+        "terraformer.generation.js",
+        "terraformer.automation.js",
+        "terraformer.uuid.js"
+      ],
+      "provenance": "v0.44.31-successor-extraction",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    }
+  ],
+  "rules": {
+    "coverageDoesNotImply": [
+      "IMPLEMENTED",
+      "OPERATING",
+      "CORRECT",
+      "AUTHORIZED",
+      "QUALIFIED",
+      "AVAILABLE",
+      "OWNED"
+    ],
+    "explicitApplicabilityRequired": true,
+    "unknownDefaultsTo": "UNRESOLVED",
+    "mutationAuthority": false
+  },
+  "v04422": {
+    "status": "COVERED",
+    "scope": [
+      "logs",
+      "reports",
+      "transactions",
+      "records",
+      "recordings",
+      "documents",
+      "audio",
+      "video",
+      "text",
+      "images",
+      "objects",
+      "nodes"
+    ],
+    "note": "Coverage is evidence only and does not establish authority, implementation correctness, availability or qualification.",
+    "authority": false
+  },
+  "v04423": {
+    "version": "0.44.24",
+    "predecessor": "v0.44.22",
+    "scope": "MONOLITH_RECONSTRUCTION_RESPONSIBILITY_DISTRIBUTION_I",
+    "state": "COVERED",
+    "migrated": [
+      "system.identification",
+      "system.reporting",
+      "system.logging",
+      "system.transaction"
+    ],
+    "destination": "terraformer.reporting.js",
+    "equivalence": "SOURCE_COHORT_MOVED_WITH_EXPORT_IMPORT_ROUTE",
+    "canonicalPopulation": "UNRESOLVED",
+    "authority": false
+  },
+  "v04426": {
+    "version": "0.44.26",
+    "predecessor": "v0.44.25",
+    "scope": "UUID_REGISTRY_IDENTITY_DEPENDENCY_RECONSTRUCTION_I",
+    "state": "COVERED",
+    "subject": "system.uuid",
+    "registry": "terraformer.uuids.json",
+    "governor": "terraformer.js#crypto.randomUUID",
+    "standaloneModule": false,
+    "canonicalPopulation": "UNRESOLVED",
+    "authority": false,
+    "note": "UUID evidence does not establish authentication, authorization, ownership, execution authority, connectivity, qualification or global uniqueness."
+  }
+}

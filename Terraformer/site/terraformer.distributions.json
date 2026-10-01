@@ -1,0 +1,17 @@
+{
+  "schema": "TERRAFORMER-DISTRIBUTIONS/1",
+  "systemId": "system.distribution",
+  "authorityGranted": false,
+  "automaticExecution": false,
+  "records": [
+    {
+      "id": "distribution.terraformer.manifested",
+      "manifest": "terraformer.manifest.json",
+      "tokenSpread": "terraformer.spreads.json",
+      "crosslinks": "terraformer.crosslinks.json",
+      "deliveryEligibleAfterValidation": true,
+      "authorityGranted": false
+    }
+  ],
+  "version": "0.48.48"
+}

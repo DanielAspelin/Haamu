@@ -1,0 +1,11 @@
+{
+  "schema": "TERRAFORMER-CERTIFICATIONS/1",
+  "systemId": "system.certification",
+  "membershipGrantsTrust": false,
+  "membershipGrantsValidation": false,
+  "membershipGrantsIssuance": false,
+  "membershipGrantsSigning": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

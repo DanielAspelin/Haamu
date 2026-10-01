@@ -1,0 +1,16 @@
+{
+  "schema": "TERRAFORMER-INTERPRETERS-REGISTRY/1",
+  "owner": "terraformer.interpreter.js",
+  "role": "role.interpreter",
+  "memberships": [
+    {
+      "class": "Worker",
+      "domain": "language",
+      "identity": "language.worker.interpreter",
+      "parent": "system.language"
+    }
+  ],
+  "entries": [],
+  "authorityGranted": false,
+  "rule": "Registry records identities/evidence only; membership grants no execution, authentication, authorization, persistence, or approval authority."
+}

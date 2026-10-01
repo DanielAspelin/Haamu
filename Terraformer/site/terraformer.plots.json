@@ -1,0 +1,16 @@
+{
+  "schema": "TERRAFORMER-PLOTS/1",
+  "version": "0.48.45",
+  "kind": "plot-set",
+  "owner": "terraformer.plot.js",
+  "records": [],
+  "acceptedInputs": [
+    "system.graph",
+    "admitted-data"
+  ],
+  "producedBy": "system.plotting",
+  "application": "application.plotter",
+  "rule": "A Plot may visualize Graph context but does not alter the Graph or manufacture graph relationships.",
+  "authorityGranted": false,
+  "qualification": "UNDER_CONDITIONAL_EXPERIMENT"
+}

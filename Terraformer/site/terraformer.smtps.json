@@ -1,0 +1,10 @@
+{
+  "schema": "TERRAFORMER-SMTPS/1",
+  "systemId": "system.smtp",
+  "membershipGrantsConnection": false,
+  "membershipGrantsMailOperation": false,
+  "membershipGrantsTunnel": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

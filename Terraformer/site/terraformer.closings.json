@@ -1,0 +1,10 @@
+{
+  "schema": "TERRAFORMER-CLOSINGS-REGISTRY/1",
+  "owner": "terraformer.closing.js",
+  "system": "system.closing",
+  "actor": "agent.closer",
+  "entries": [],
+  "persistentByDefault": false,
+  "authorityGranted": false,
+  "rule": "Closing records describe admitted closing instances/results/history only; records do not independently execute, persist, authorize, or create external effects."
+}

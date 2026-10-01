@@ -1,0 +1,35 @@
+{
+  "$schema": "terraformer.registry/consistencies/1",
+  "version": "0.46.88",
+  "kind": "CONSISTENCY_REGISTRY",
+  "owner": "system.consistency",
+  "boundary": "DIMENSION_BOUNDARY",
+  "authority": false,
+  "qualificationGranted": false,
+  "entries": [
+    {
+      "id": "CONSISTENT",
+      "aliases": [
+        "COHERENT"
+      ],
+      "known": true,
+      "authority": false
+    },
+    {
+      "id": "INCONSISTENT",
+      "aliases": [
+        "CONTRADICTORY"
+      ],
+      "known": true,
+      "authority": false
+    },
+    {
+      "id": "UNKNOWN",
+      "aliases": [
+        "UNDETERMINED"
+      ],
+      "known": true,
+      "authority": false
+    }
+  ]
+}

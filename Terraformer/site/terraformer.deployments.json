@@ -1,0 +1,18 @@
+{
+  "schema": "TERRAFORMER-DEPLOYMENTS/1",
+  "systemId": "system.deployment",
+  "authorityGranted": false,
+  "automaticExecution": false,
+  "records": [
+    {
+      "id": "deployment.terraformer.github-pages",
+      "source": "system.distribution",
+      "target": "site.terraformer.github-pages",
+      "branch": "main",
+      "protectedPersistentFile": "site/terraformer.github.pages.js",
+      "failClosed": true,
+      "authorityGranted": false
+    }
+  ],
+  "version": "0.48.48"
+}

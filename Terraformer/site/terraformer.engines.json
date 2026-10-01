@@ -1,0 +1,11 @@
+{
+  "schema": "TERRAFORMER-ENGINES/1",
+  "systemId": "system.engine",
+  "materialization": "derived-shared-schema",
+  "privateByDefault": true,
+  "inertByDefault": true,
+  "membershipGrantsExecution": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

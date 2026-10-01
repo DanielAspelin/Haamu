@@ -1,0 +1,7 @@
+{
+  "schema": "TERRAFORMER-ALARMERS/1",
+  "systemId": "system.alarmer",
+  "membershipGrantsExecution": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

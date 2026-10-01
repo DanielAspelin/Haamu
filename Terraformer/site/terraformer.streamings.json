@@ -1,0 +1,8 @@
+{
+  "schema": "TERRAFORMER-STREAMINGS/1",
+  "purpose": "governed streaming definitions, inventories, runs and evidence",
+  "authorityGranted": false,
+  "membershipGrantsAuthority": false,
+  "automaticExecution": false,
+  "records": []
+}

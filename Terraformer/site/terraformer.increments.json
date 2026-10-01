@@ -1,0 +1,11 @@
+{
+  "schema": "TERRAFORMER-INCREMENTS-REGISTRY/1",
+  "owner": "terraformer.increment.js",
+  "process": "process.increment",
+  "actor": "worker.incrementer",
+  "entries": [],
+  "entryType": "increment-result",
+  "persistentByDefault": false,
+  "authorityGranted": false,
+  "rule": "Declarative result/history registry only. Entries do not execute operations, grant authority, or imply persistence."
+}

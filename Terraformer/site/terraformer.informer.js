@@ -1,0 +1,3 @@
+"use strict";
+const TERRAFORMER_INFORMER=Object.freeze({schema:'TERRAFORMER-INFORMER/1',id:'agent.informer',name:'Informer',family:'agent',type:'information-agent',state:'integrated',canonicalPath:'terraformer://information/informer/',system:'system.information',authorityInherited:false,capabilities:Object.freeze(['receive-information','contextualize','preserve-provenance','present-admitted']),rule:'Informer presents admitted information and preserves provenance; it cannot manufacture truth, evidence, authority, or disclosure permission.'});
+module.exports=Object.freeze({TERRAFORMER_INFORMER});

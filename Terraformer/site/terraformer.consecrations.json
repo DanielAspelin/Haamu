@@ -1,0 +1,20 @@
+{
+  "schema": "TERRAFORMER-PLURAL-SET/1",
+  "version": "0.48.32",
+  "kind": "PLURAL_SET",
+  "concept": "consecrations",
+  "singular": "consecration",
+  "owner": "terraformer.consecration.js",
+  "records": [],
+  "pluralEvidence": {
+    "englishToken": "consecrations",
+    "singularEnglishToken": "consecration",
+    "rule": "CORPUS_ATTESTED_MORPHOLOGY",
+    "corpusAttested": true,
+    "status": "ATTESTED",
+    "normalization": "CORPUS_ATTESTED_REGULAR_ENGLISH_PLURAL"
+  },
+  "membershipGrantsAuthority": false,
+  "membershipGrantsExecution": false,
+  "qualification": "UNDER_CONDITIONAL_EXPERIMENT"
+}

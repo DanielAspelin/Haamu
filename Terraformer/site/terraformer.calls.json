@@ -1,0 +1,9 @@
+{
+  "schema": "TERRAFORMER-CALLS/1",
+  "version": "0.47.47",
+  "owner": "system.call",
+  "governedBy": "terraformer.call.js",
+  "records": [],
+  "authorityGranted": false,
+  "automaticExecution": false
+}

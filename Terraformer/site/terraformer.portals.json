@@ -1,0 +1,7 @@
+{
+  "schema": "TERRAFORMER-PORTALS/1",
+  "systemId": "system.portal",
+  "membershipGrantsAuthority": false,
+  "activeByDefault": false,
+  "records": []
+}

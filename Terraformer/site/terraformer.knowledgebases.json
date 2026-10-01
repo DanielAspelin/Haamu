@@ -1,0 +1,9 @@
+{
+  "schema": "TERRAFORMER-KNOWLEDGEBASES/1",
+  "systemId": "system.knowledge-base",
+  "storageAuthority": false,
+  "persistenceAuthority": false,
+  "records": [],
+  "baseSystem": "system.base",
+  "baseType": "knowledge"
+}

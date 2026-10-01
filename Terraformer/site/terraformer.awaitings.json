@@ -1,0 +1,10 @@
+{
+  "schema": "TERRAFORMER-AWAITINGS/1",
+  "systemId": "system.awaiting",
+  "declarativeRegistry": true,
+  "pidIsOsProcessId": false,
+  "membershipGrantsExecution": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

@@ -1,0 +1,9 @@
+{
+  "schema": "TERRAFORMER-VIEWPORTS/1",
+  "systemId": "system.viewport",
+  "featureDetected": true,
+  "permissionDoesNotFollowFromPresence": true,
+  "invokeAutomatically": false,
+  "authorityGranted": false,
+  "records": []
+}

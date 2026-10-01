@@ -1,0 +1,7 @@
+{
+  "schema": "terraformer.registry/captures/1",
+  "owner": "system.capture",
+  "implementationOwner": "system.lock",
+  "authority": false,
+  "entries": []
+}

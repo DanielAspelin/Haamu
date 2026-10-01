@@ -1,0 +1,11 @@
+{
+  "schema": "TERRAFORMER-TUNNELERS/1",
+  "systemId": "system.tunneler",
+  "context": "network-tunnel actor",
+  "membershipGrantsConnection": false,
+  "membershipGrantsTunnelOpening": false,
+  "membershipGrantsExecution": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

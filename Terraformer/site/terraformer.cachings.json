@@ -1,0 +1,12 @@
+{
+  "schema": "TERRAFORMER-CACHINGS/1",
+  "version": "0.47.55",
+  "kind": "CACHINGS_REGISTRY",
+  "owner": "system.caching",
+  "governedBy": "terraformer.caching.js",
+  "family": "cache-process",
+  "records": [],
+  "authorityGranted": false,
+  "automaticExecution": false,
+  "automaticPersistence": false
+}

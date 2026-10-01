@@ -1,0 +1,11 @@
+{
+  "schema": "TERRAFORMER-ADAPTERS/1",
+  "purpose": "governed adapter definitions, instances, configuration and evidence",
+  "authorityGranted": false,
+  "membershipGrantsAuthority": false,
+  "automaticExecution": false,
+  "records": [],
+  "owner": "system.adapter",
+  "ownerBindingVersion": "0.48.16",
+  "ownerBindingAuthorityGranted": false
+}

@@ -1,0 +1,9 @@
+{
+  "schema": "TERRAFORMER-PACIFYINGS/1",
+  "systemId": "system.pacifying",
+  "declarativeRegistry": true,
+  "membershipGrantsThreadCreation": false,
+  "membershipGrantsExternalEffect": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

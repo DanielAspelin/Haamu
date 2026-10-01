@@ -1,0 +1,27 @@
+{
+  "schema": "TERRAFORMER-GOALS/1",
+  "systemId": "system.goal",
+  "authorityGranted": false,
+  "automaticExecution": false,
+  "records": [
+    {
+      "id": "goal.life-enability",
+      "name": "Life Enability",
+      "kind": "GOAL",
+      "statement": "Enable, support, sustain, protect and advance conditions for life on Earth through controlled scientific, technological, computational and research capabilities in the interests and long-term benefit of humankind.",
+      "authorityGranted": false,
+      "automaticExecution": false,
+      "doesNotOverride": [
+        "AUTHORITY",
+        "SECURITY",
+        "JURISDICTION",
+        "PRIVACY",
+        "QUALIFICATION",
+        "BACKUP",
+        "RECOVERY",
+        "HUMAN_CONTROL"
+      ]
+    }
+  ],
+  "version": "0.47.75"
+}

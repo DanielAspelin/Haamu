@@ -1,0 +1,3 @@
+"use strict";
+const TERRAFORMER_RECEPTION_SYSTEM=Object.freeze({schema:'TERRAFORMER-RECEPTION-SYSTEM/1',id:'system.reception',name:'Reception System',family:'reception',type:'reception-system',state:'integrated',canonicalPath:'terraformer://reception/',dependsOn:Object.freeze(['system.communication', 'system.request']),governs:Object.freeze(['scope','evidence','state','relation','result']),rule:'Reception System receives, identifies, routes, and records admitted requests or arrivals; reception does not grant access, identity, approval, or organizational authority.'});
+module.exports=Object.freeze({TERRAFORMER_RECEPTION_SYSTEM});

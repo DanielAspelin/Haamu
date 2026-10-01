@@ -1,0 +1,72 @@
+{
+  "schema": "TERRAFORMER-EDITINGS/1",
+  "systemId": "system.editing",
+  "authorityGranted": false,
+  "automaticExecution": false,
+  "records": [],
+  "mediaSpecializationTypes": [
+    {
+      "kind": "photo",
+      "systemId": "system.photo-editing",
+      "mediaSystem": "system.photo",
+      "performedBy": "system.editor"
+    },
+    {
+      "kind": "audio",
+      "systemId": "system.audio-editing",
+      "mediaSystem": "system.audio",
+      "performedBy": "system.editor"
+    },
+    {
+      "kind": "video",
+      "systemId": "system.video-editing",
+      "mediaSystem": "system.video",
+      "performedBy": "system.editor"
+    },
+    {
+      "kind": "text",
+      "systemId": "system.text-editing",
+      "mediaSystem": "system.text",
+      "performedBy": "system.editor"
+    },
+    {
+      "kind": "code",
+      "systemId": "system.code-editing",
+      "mediaSystem": "system.code",
+      "performedBy": "system.editor"
+    }
+  ],
+  "mediaEditingBoundary": {
+    "sourceMutationByDefault": false,
+    "automaticExecution": false,
+    "automaticRender": false,
+    "automaticPersistence": false,
+    "deviceAccess": false,
+    "externalEffect": false,
+    "authorityGranted": false
+  },
+  "systemEditing": {
+    "id": "editing-type.system",
+    "subject": "system.system",
+    "owner": "system.editing",
+    "workspace": "volatile-runtime-overlay",
+    "protectedFields": [
+      "id",
+      "canonicalPath",
+      "authority",
+      "dependsOn",
+      "parent",
+      "schema",
+      "qualification",
+      "qualified",
+      "implementationEvidence",
+      "provenance",
+      "security",
+      "credential",
+      "token",
+      "key"
+    ],
+    "persistentSourceChanged": false,
+    "qualificationInherited": false
+  }
+}

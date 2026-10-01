@@ -1,0 +1,8 @@
+{
+  "schema": "TERRAFORMER-TRANSPORTS/1",
+  "purpose": "governed transport definitions, instances, configuration and evidence",
+  "authorityGranted": false,
+  "membershipGrantsAuthority": false,
+  "automaticExecution": false,
+  "records": []
+}

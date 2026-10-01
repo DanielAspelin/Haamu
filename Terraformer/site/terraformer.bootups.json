@@ -1,0 +1,8 @@
+{
+  "schema": "TERRAFORMER-BOOTUPS/1",
+  "purpose": "governed boot-up definitions, instances, results and evidence",
+  "authorityGranted": false,
+  "membershipGrantsAuthority": false,
+  "automaticExecution": false,
+  "records": []
+}

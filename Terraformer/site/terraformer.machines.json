@@ -1,0 +1,15 @@
+{
+  "schema": "TERRAFORMER-MACHINES/1",
+  "owner": "system.machine",
+  "executable": "terraformer.machine.js",
+  "authorityGranted": false,
+  "membershipGrantsAuthority": false,
+  "records": [
+    {
+      "id": "machine.virtual",
+      "type": "virtual",
+      "status": "registered",
+      "authorityGranted": false
+    }
+  ]
+}

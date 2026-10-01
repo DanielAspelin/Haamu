@@ -1,0 +1,10 @@
+{
+  "schema": "TERRAFORMER-LOCALS/1",
+  "systemId": "system.local",
+  "declarativeRegistry": true,
+  "logicalScope": true,
+  "geolocationInference": false,
+  "membershipGrantsExposure": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

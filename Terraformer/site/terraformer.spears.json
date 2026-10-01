@@ -1,0 +1,20 @@
+{
+  "schema": "TERRAFORMER-PLURAL-SET/1",
+  "version": "0.48.32",
+  "kind": "PLURAL_SET",
+  "concept": "spears",
+  "singular": "spear",
+  "owner": "terraformer.spear.js",
+  "records": [],
+  "pluralEvidence": {
+    "englishToken": "spears",
+    "singularEnglishToken": "spear",
+    "rule": "REGULAR",
+    "corpusAttested": true,
+    "status": "ATTESTED",
+    "normalization": "CORPUS_ATTESTED_REGULAR_ENGLISH_PLURAL"
+  },
+  "membershipGrantsAuthority": false,
+  "membershipGrantsExecution": false,
+  "qualification": "UNDER_CONDITIONAL_EXPERIMENT"
+}

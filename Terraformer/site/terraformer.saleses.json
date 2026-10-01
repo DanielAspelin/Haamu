@@ -1,0 +1,12 @@
+{
+  "schema": "TERRAFORMER-SALESES/1",
+  "systemId": "system.sales",
+  "membershipGrantsOwnership": false,
+  "membershipGrantsSale": false,
+  "membershipGrantsLicense": false,
+  "membershipGrantsContractExecution": false,
+  "membershipGrantsLegalAuthority": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

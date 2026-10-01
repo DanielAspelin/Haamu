@@ -1,0 +1,191 @@
+{
+  "schema": "TERRAFORMER-PHYSICALIZATION-EXPANSION-QUEUE/1",
+  "version": "0.48.17",
+  "owner": "system.physicalization",
+  "summary": {
+    "immediateCreate": 0,
+    "deferredCanonicalMissing": 24,
+    "systemMorphologyCandidatesInAuditedTokens": 337,
+    "workerMorphologyCandidatesInAuditedTokens": 285,
+    "morphologyCandidatesAlreadySingularPhysicalized": 622,
+    "pluralOwnershipReconciled": 68
+  },
+  "deferredCanonicalMissing": [
+    {
+      "concept": "a",
+      "id": "system.a",
+      "reason": "MALFORMED_OR_TRUNCATED_TOKEN",
+      "automaticCreation": false
+    },
+    {
+      "concept": "ad",
+      "id": "system.ad",
+      "reason": "MALFORMED_OR_TRUNCATED_TOKEN",
+      "automaticCreation": false
+    },
+    {
+      "concept": "addres",
+      "id": "system.addres",
+      "reason": "MALFORMED_OR_TRUNCATED_TOKEN",
+      "automaticCreation": false
+    },
+    {
+      "concept": "addressin",
+      "id": "system.addressin",
+      "reason": "MALFORMED_OR_TRUNCATED_TOKEN",
+      "automaticCreation": false
+    },
+    {
+      "concept": "ag",
+      "id": "system.ag",
+      "reason": "MALFORMED_OR_TRUNCATED_TOKEN",
+      "automaticCreation": false
+    },
+    {
+      "concept": "android",
+      "id": "system.android",
+      "reason": "EXTERNAL_IDENTITY",
+      "automaticCreation": false
+    },
+    {
+      "concept": "aws",
+      "id": "system.aws",
+      "reason": "EXTERNAL_IDENTITY",
+      "automaticCreation": false
+    },
+    {
+      "concept": "b",
+      "id": "system.b",
+      "reason": "MALFORMED_OR_TRUNCATED_TOKEN",
+      "automaticCreation": false
+    },
+    {
+      "concept": "bitcoin",
+      "id": "system.bitcoin",
+      "reason": "EXTERNAL_IDENTITY",
+      "automaticCreation": false
+    },
+    {
+      "concept": "c",
+      "id": "system.c",
+      "reason": "MALFORMED_OR_TRUNCATED_TOKEN",
+      "automaticCreation": false
+    },
+    {
+      "concept": "chatgpt",
+      "id": "system.chatgpt",
+      "reason": "EXTERNAL_IDENTITY",
+      "automaticCreation": false
+    },
+    {
+      "concept": "cloudflare",
+      "id": "system.cloudflare",
+      "reason": "EXTERNAL_IDENTITY",
+      "automaticCreation": false
+    },
+    {
+      "concept": "codeberg",
+      "id": "system.codeberg",
+      "reason": "EXTERNAL_IDENTITY",
+      "automaticCreation": false
+    },
+    {
+      "concept": "conf",
+      "id": "system.conf",
+      "reason": "MALFORMED_OR_TRUNCATED_TOKEN",
+      "automaticCreation": false
+    },
+    {
+      "concept": "facebook",
+      "id": "system.facebook",
+      "reason": "EXTERNAL_IDENTITY",
+      "automaticCreation": false
+    },
+    {
+      "concept": "gcp",
+      "id": "system.gcp",
+      "reason": "EXTERNAL_IDENTITY",
+      "automaticCreation": false
+    },
+    {
+      "concept": "github",
+      "id": "system.github",
+      "reason": "EXTERNAL_IDENTITY",
+      "automaticCreation": false
+    },
+    {
+      "concept": "gitlab",
+      "id": "system.gitlab",
+      "reason": "EXTERNAL_IDENTITY",
+      "automaticCreation": false
+    },
+    {
+      "concept": "godaddy",
+      "id": "system.godaddy",
+      "reason": "EXTERNAL_IDENTITY",
+      "automaticCreation": false
+    },
+    {
+      "concept": "ios",
+      "id": "system.ios",
+      "reason": "EXTERNAL_IDENTITY",
+      "automaticCreation": false
+    },
+    {
+      "concept": "npm",
+      "id": "system.npm",
+      "reason": "EXTERNAL_IDENTITY",
+      "automaticCreation": false
+    },
+    {
+      "concept": "openai",
+      "id": "system.openai",
+      "reason": "EXTERNAL_IDENTITY",
+      "automaticCreation": false
+    },
+    {
+      "concept": "paypal",
+      "id": "system.paypal",
+      "reason": "EXTERNAL_IDENTITY",
+      "automaticCreation": false
+    },
+    {
+      "concept": "proton",
+      "id": "system.proton",
+      "reason": "EXTERNAL_IDENTITY",
+      "automaticCreation": false
+    }
+  ],
+  "candidatePasses": [
+    {
+      "pass": "SYSTEM_MORPHOLOGY",
+      "suffixes": [
+        "ion",
+        "ing"
+      ],
+      "candidateCount": 337,
+      "rule": "candidate evidence only; require semantic responsibility and non-overlap"
+    },
+    {
+      "pass": "WORKER_MORPHOLOGY",
+      "suffixes": [
+        "er",
+        "or"
+      ],
+      "candidateCount": 285,
+      "rule": "candidate evidence only; require actor/worker semantics and non-overlap"
+    },
+    {
+      "pass": "SEMANTIC_RELATIONSHIP",
+      "rule": "discover unphysicalized concepts through admitted relationships and responsibilities rather than vocabulary alone"
+    }
+  ],
+  "automaticCreation": false,
+  "authorityGranted": false,
+  "morphologyOwner": "system.morphology",
+  "namingRule": {
+    "singleWordPhysicalConceptFilenamesOnly": true,
+    "compoundConceptFilenameProhibited": true,
+    "sharedResults": "Store/project into each applicable canonical single-word registry rather than creating compound registry filenames."
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "schema": "TERRAFORMER-KEYBOARDS/1",
+  "systemId": "system.keyboard",
+  "typeRegistry": true,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

@@ -1,0 +1,231 @@
+{
+  "$schema": "terraformer.registry/history/1",
+  "version": "0.44.30",
+  "kind": "HISTORY_REGISTRY",
+  "owner": "system.history",
+  "governedBy": "terraformer.js#TERRAFORMER_HISTORY_SYSTEM",
+  "authority": false,
+  "appendOrientation": "APPEND_SUCCESSOR_RECORDS",
+  "persistence": "AUTHORIZED_SEPARATELY",
+  "semantics": {
+    "history": "Evidence and provenance of established checkpoints and transitions; history does not manufacture present truth or authority.",
+    "mutation": "Prior records are preserved; corrections append successor/reconciliation records rather than silently rewriting sealed history."
+  },
+  "records": [
+    {
+      "id": "history.v0.44.15",
+      "version": "0.44.15",
+      "predecessor": "v0.44.14",
+      "event": "UNIVERSAL_DIMENSION_NATURALIZATION_PROPAGATION_I",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": [
+        "terraformer.dimension.js",
+        "terraformer.coverage.json"
+      ],
+      "authority": false
+    },
+    {
+      "id": "history.v0.44.16",
+      "version": "0.44.16",
+      "predecessor": "v0.44.15",
+      "event": "COVERAGE_REGISTRY_NATURALIZATION",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": [
+        "terraformer.coverage.json"
+      ],
+      "authority": false
+    },
+    {
+      "id": "history.v0.44.17",
+      "version": "0.44.17",
+      "predecessor": "v0.44.16",
+      "event": "RESPONSIBILITY_OWNERSHIP_MONOLITH_MIGRATION_II",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": [
+        "terraformer.js",
+        "terraformer.dimension.js",
+        "terraformer.coverage.json"
+      ],
+      "recovery": "v0.44.16",
+      "authority": false
+    },
+    {
+      "id": "history.v0.44.18",
+      "version": "0.44.18",
+      "predecessor": "v0.44.17",
+      "event": "HISTORY_REGISTRY_NATURALIZATION_AND_RUNTIME_BOOTSTRAP_MIGRATION",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": [
+        "terraformer.history.json",
+        "terraformer.processing.js",
+        "terraformer.js",
+        "terraformer.coverage.json"
+      ],
+      "recovery": "v0.44.17",
+      "authority": false
+    },
+    {
+      "id": "history.v0.44.19",
+      "version": "0.44.19",
+      "predecessor": "v0.44.18",
+      "event": "RUNTIME_SYSTEM_LAYER_REGISTRY_NATURALIZATION",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": [
+        "terraformer.runtime.js",
+        "terraformer.layers.json",
+        "terraformer.coverage.json"
+      ],
+      "recovery": "v0.44.18",
+      "authority": false
+    },
+    {
+      "id": "history.v0.44.20",
+      "version": "0.44.20",
+      "predecessor": "v0.44.19",
+      "event": "LAYERED_RESPONSIBILITY_OWNERSHIP_MIGRATION_V",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": [
+        "terraformer.js",
+        "terraformer.core.js",
+        "terraformer.layers.json",
+        "terraformer.coverage.json"
+      ],
+      "recovery": "v0.44.19",
+      "authority": false
+    },
+    {
+      "id": "history.v0.44.21",
+      "version": "0.44.21",
+      "predecessor": "v0.44.20",
+      "event": "REGISTRY_OWNERSHIP_CLOSURE_AND_SOCKET_SYSTEM_NATURALIZATION",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": [
+        "terraformer.socket.js",
+        "terraformer.systems.json",
+        "terraformer.coverage.json",
+        "terraformer.boundaries.json"
+      ],
+      "recovery": "v0.44.20",
+      "authority": false
+    },
+    {
+      "id": "history.v0.44.26",
+      "version": "0.44.26",
+      "predecessor": "v0.44.25",
+      "event": "UUID_REGISTRY_IDENTITY_DEPENDENCY_RECONSTRUCTION_I",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": [
+        "terraformer.uuids.json",
+        "terraformer.systems.json",
+        "terraformer.coverage.json",
+        "terraformer.boundaries.json"
+      ],
+      "recovery": "v0.44.25",
+      "authority": false
+    },
+    {
+      "id": "history.v0.44.27",
+      "version": "0.44.27",
+      "predecessor": "v0.44.26",
+      "event": "UUID_IDENTITY_INTERFACE_EXTRACTION_AND_GENERATION_AUTOMATION_DEPENDENCY_RECONSTRUCTION_I",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": [
+        "terraformer.uuid.js",
+        "terraformer.uuids.json",
+        "terraformer.generation.js",
+        "terraformer.automation.js",
+        "terraformer.js"
+      ],
+      "recovery": "v0.44.26",
+      "authority": false
+    },
+    {
+      "id": "history.v0.44.28",
+      "version": "0.44.28",
+      "predecessor": "v0.44.27",
+      "event": "GENERATOR_AUTOMATOR_FABRIC_EXTRACTION_I",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": [
+        "terraformer.generation.js",
+        "terraformer.automation.js",
+        "terraformer.js"
+      ],
+      "recovery": "v0.44.27",
+      "authority": false
+    },
+    {
+      "id": "history.v0.44.29",
+      "version": "0.44.29",
+      "predecessor": "v0.44.28",
+      "event": "UUID_IDENTITY_RECONCILIATION_FABRIC_EXTRACTION_II",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": [
+        "terraformer.uuid.js",
+        "terraformer.uuids.json",
+        "terraformer.js"
+      ],
+      "recovery": "v0.44.28",
+      "authority": false
+    },
+    {
+      "id": "history.v0.44.30",
+      "version": "0.44.30",
+      "predecessor": "v0.44.29",
+      "event": "NUMBER_GENERATOR_UUID_AWARE_GENERATOR_SUCCESSOR_EXTRACTION_I",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "evidence": [
+        "terraformer.generation.js",
+        "terraformer.generators.json",
+        "terraformer.uuid.js",
+        "terraformer.js"
+      ],
+      "recovery": "v0.44.29",
+      "authority": false
+    }
+  ],
+  "rules": {
+    "recordDoesNotImply": [
+      "IMPLEMENTED",
+      "QUALIFIED",
+      "OWNED",
+      "AUTHORIZED",
+      "AVAILABLE",
+      "CORRECT"
+    ],
+    "silentRewrite": false,
+    "unknownOrigin": "UNKNOWN",
+    "qualificationFromHistory": false
+  },
+  "v04422": {
+    "version": "0.44.22",
+    "predecessor": "v0.44.21",
+    "change": "Contemporary Canonical System Registry Reconciliation I plus governed content/media/object/node registries and executable Audio/Video/Text/Image/Object/Node modules",
+    "targetManifest": {
+      "total": 87,
+      "javascript": 54,
+      "json": 33
+    },
+    "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+    "authority": false
+  },
+  "v04423": {
+    "version": "0.44.24",
+    "predecessor": "v0.44.22",
+    "change": "Monolith Reconstruction & Responsibility Distribution I: reporting/logging/transaction/identification cohort migrated from terraformer.js to terraformer.reporting.js",
+    "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+    "recovery": "v0.44.22",
+    "authority": false
+  },
+  "v04424": {
+    "version": "0.44.24",
+    "title": "Modular Self-Placement & Distribution Reconstruction I",
+    "predecessor": "0.44.23",
+    "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+    "change": [
+      "Self-placement transports the complete terraformer.* JS/JSON distribution rather than terraformer.js alone",
+      "Staged per-member SHA-256 verification before canonical placement",
+      "Identical canonical main-file reconciliation reconstructs companion distribution"
+    ],
+    "authority": false
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema": "terraformer.registry/roots/1",
+  "owner": "system.root",
+  "entries": [
+    {
+      "id": "root.terraformer.structural",
+      "owner": "system.root",
+      "kind": "structural",
+      "authorityAmplification": false
+    },
+    {
+      "id": "root.terraformer.access",
+      "owner": "system.root",
+      "kind": "access",
+      "entry": "terraformer.js",
+      "channels": [
+        "node",
+        "http",
+        "https"
+      ],
+      "automaticListen": false,
+      "osPrivilege": false
+    }
+  ],
+  "authority": false,
+  "qualificationGranted": false,
+  "relationships": [
+    {
+      "from": "system.rooting",
+      "relation": "operates-on",
+      "to": "system.root"
+    },
+    {
+      "from": "worker.rooter",
+      "relation": "performs",
+      "to": "system.rooting"
+    }
+  ]
+}

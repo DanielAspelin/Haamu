@@ -1,0 +1,7 @@
+{
+  "schema": "TERRAFORMER-SUBSYSTEMS/1",
+  "systemId": "system.subsystem",
+  "authorityGranted": false,
+  "automaticExecution": false,
+  "records": []
+}

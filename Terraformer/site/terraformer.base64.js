@@ -1,0 +1,11 @@
+"use strict";
+/* Candidate physicalization of an already-evidenced identity; not yet canonical responsibility ownership. */
+const SYSTEM=Object.freeze({
+ schema:"TERRAFORMER-CANDIDATE-PHYSICALIZATION/1",id:"system.base64",concept:"Base64",
+ typeOf:"system.candidate",origin:"terraformer.foundation.js",
+ establishedType:null,establishedFamily:null,
+ qualification:"UNVERIFIED",canonicalResponsibility:false,authorityGranted:false,
+ automaticExecution:false,automaticPersistence:false
+});
+function describe(){return SYSTEM;}
+module.exports=Object.freeze({SYSTEM,describe});

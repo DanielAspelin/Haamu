@@ -1,0 +1,11 @@
+{
+  "schema": "TERRAFORMER-ELECTRONICS/1",
+  "systemId": "system.electronic",
+  "declarativeRegistry": true,
+  "descriptiveByDefault": true,
+  "membershipGrantsHardwareControl": false,
+  "membershipGrantsElectricalActuation": false,
+  "membershipGrantsExternalEffect": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

@@ -1,0 +1,9 @@
+{
+  "schema": "TERRAFORMER-FULLSCREENS/1",
+  "systemId": "system.fullscreen",
+  "featureDetected": true,
+  "permissionDoesNotFollowFromPresence": true,
+  "invokeAutomatically": false,
+  "authorityGranted": false,
+  "records": []
+}

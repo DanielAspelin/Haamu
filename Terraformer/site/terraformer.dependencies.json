@@ -1,0 +1,3377 @@
+{
+  "schema": "TERRAFORMER-TEMPORARY-DECLARATION-DEPENDENCIES/1",
+  "version": "0.48.14",
+  "source": "terraformer.temporary.js",
+  "records": [
+    {
+      "name": "TF_ROOT_RESPONSIBILITY_AUDIT_V04662",
+      "canonicalOwner": "terraformer.responsibility.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_ROOT_RESPONSIBILITY_QUALIFICATION_V04662",
+      "canonicalOwner": "terraformer.responsibility.js",
+      "temporaryDependencies": [
+        "TF_ROOT_RESPONSIBILITY_AUDIT_V04662"
+      ],
+      "depth": 1,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TERRAFORMER_TOOL_COMPATIBILITY",
+      "canonicalOwner": "terraformer.compatibility.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_INTERNAL_SESSION_STATE",
+      "canonicalOwner": "terraformer.session.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TERRAFORMER_INSTALLATION_ID_PATH",
+      "canonicalOwner": "terraformer.installation.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_HOME_DISCOVERY_STATE",
+      "canonicalOwner": "terraformer.discovery.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_TOKEN_CANDIDATES",
+      "canonicalOwner": "terraformer.candidate.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "PACKAGE_CORPUS_SCHEMA",
+      "canonicalOwner": "terraformer.package.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "VOLATILE_BOUNDARY",
+      "canonicalOwner": "terraformer.boundary.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_PRIVILEGE_CONTINUATIONS",
+      "canonicalOwner": "terraformer.privilege.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_ERROR_RECOVERY_STATE",
+      "canonicalOwner": "terraformer.recovery.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TERRAFORMER_PACIFICATION",
+      "canonicalOwner": "terraformer.pacification.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_SUSTAINMENT_STATE",
+      "canonicalOwner": "terraformer.sustainment.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_LIFECYCLE_MECHANISMS",
+      "canonicalOwner": "terraformer.lifecycle.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TERRAFORMER_CONSCIOUSNESS",
+      "canonicalOwner": "terraformer.consciousness.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TERRAFORMER_INTELLIGENCE",
+      "canonicalOwner": "terraformer.intelligence.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_COGNITIVE_STATE",
+      "canonicalOwner": "terraformer.cognitive.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TERRAFORMER_CANONICALIZATION",
+      "canonicalOwner": "terraformer.canonicalization.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_CANONICALIZATION_MODULE_V04442",
+      "canonicalOwner": "terraformer.canonicalization.js",
+      "temporaryDependencies": [
+        "TERRAFORMER_CANONICALIZATION"
+      ],
+      "depth": 1,
+      "dependencyClosed": true,
+      "status": "MIGRATED_PROMOTED"
+    },
+    {
+      "name": "TF_TOPOLOGY_MODULE_V04442",
+      "canonicalOwner": "terraformer.topology.js",
+      "temporaryDependencies": [
+        "TERRAFORMER_TOPOLOGY"
+      ],
+      "depth": 999,
+      "dependencyClosed": false,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_TAXONOMY_MODULE_V04442",
+      "canonicalOwner": "terraformer.taxonomy.js",
+      "temporaryDependencies": [
+        "TERRAFORMER_TAXONOMY"
+      ],
+      "depth": 999,
+      "dependencyClosed": false,
+      "status": "PENDING"
+    },
+    {
+      "name": "TERRAFORMER_RELATIONSHIP_SYSTEM",
+      "canonicalOwner": "terraformer.relationship.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_CANONICAL_PAYLOAD_MODULE_V04685",
+      "canonicalOwner": "terraformer.canonical.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_IO_NATURALIZATION_MODULE_V04664",
+      "canonicalOwner": "terraformer.naturalization.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_SYSTEM_EDITING_MODULE_V04666",
+      "canonicalOwner": "terraformer.editing.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_IX_NATURALIZATION_MODULE_V04669",
+      "canonicalOwner": "terraformer.naturalization.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_OX_NATURALIZATION_MODULE_V04670",
+      "canonicalOwner": "terraformer.naturalization.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_SYSTEM_WORKSPACE_MODULE_V04672",
+      "canonicalOwner": "terraformer.workspace.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_CANONICAL_RECONCILIATION_V04675",
+      "canonicalOwner": "terraformer.reconciliation.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_IMPORT_V04676",
+      "canonicalOwner": "terraformer.import.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_INTEGRATION_V04676",
+      "canonicalOwner": "terraformer.integration.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_LINGUIST_PROGRAM_V04679",
+      "canonicalOwner": "terraformer.linguist.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_HOSTING_V04680",
+      "canonicalOwner": "terraformer.hosting.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_SYSTEMIZATION_V04683",
+      "canonicalOwner": "terraformer.systemization.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TERRAFORMER_CUSTOMIZATION_EXTENSION_SYSTEMS",
+      "canonicalOwner": "terraformer.customization.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "STAGES",
+      "canonicalOwner": "terraformer.stage.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "RESOURCE_ACTIONS",
+      "canonicalOwner": "terraformer.resource.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "CONTROL_CROSSING_TYPES",
+      "canonicalOwner": "terraformer.control.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "FLOW_POLICY_MODES",
+      "canonicalOwner": "terraformer.policy.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "IDENTITY_TYPES",
+      "canonicalOwner": "terraformer.identity.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "CLASSIFICATION_LEVELS",
+      "canonicalOwner": "terraformer.classification.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TERRAFORMER_CHAT_SYSTEM_RELATIONSHIPS",
+      "canonicalOwner": "terraformer.relationship.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_ICON_REGISTRY",
+      "canonicalOwner": "terraformer.registry.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_SCOPE_KINDS",
+      "canonicalOwner": "terraformer.scope.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_SCOPE_SYSTEMS",
+      "canonicalOwner": "terraformer.scope.js",
+      "temporaryDependencies": [
+        "TF_SCOPE_KINDS"
+      ],
+      "depth": 1,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_SCOPE_SYSTEM_BY_KIND",
+      "canonicalOwner": "terraformer.scope.js",
+      "temporaryDependencies": [
+        "TF_SCOPE_SYSTEMS"
+      ],
+      "depth": 2,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_ORGANIZATIONAL_SYSTEM_BY_ID",
+      "canonicalOwner": "terraformer.organization.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_RELATIONSHIP_COMMERCE_SYSTEM_BY_ID",
+      "canonicalOwner": "terraformer.relationship.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_COMMERCE_SYSTEM_BY_ID",
+      "canonicalOwner": "terraformer.commerce.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_MARKETING_ERP_SYSTEMS",
+      "canonicalOwner": "terraformer.marketing.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_REGISTRY_CATALOG_SCHEMA",
+      "canonicalOwner": "terraformer.registry.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED"
+    },
+    {
+      "name": "TF_INTEGRITY_SYSTEMS",
+      "canonicalOwner": "terraformer.integrity.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_REFERENCE_DEPENDENCY_SYSTEMS",
+      "canonicalOwner": "terraformer.dependency.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_QUALIFICATION_STATES",
+      "canonicalOwner": "terraformer.qualification.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_RUNTIME_COMPLETENESS_STATES",
+      "canonicalOwner": "terraformer.runtime.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_RELATION_TYPES",
+      "canonicalOwner": "terraformer.relation.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_CONNECTION_KINDS",
+      "canonicalOwner": "terraformer.connection.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_CONNECTION_SYSTEMS",
+      "canonicalOwner": "terraformer.connection.js",
+      "temporaryDependencies": [
+        "TF_CONNECTION_KINDS"
+      ],
+      "depth": 1,
+      "dependencyClosed": true,
+      "status": "MIGRATED_PROMOTED"
+    },
+    {
+      "name": "TF_CONNECTION_SYSTEM_BY_KIND",
+      "canonicalOwner": "terraformer.connection.js",
+      "temporaryDependencies": [
+        "TF_CONNECTION_SYSTEMS"
+      ],
+      "depth": 2,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "POOL_QUEUE_LIMIT",
+      "canonicalOwner": "terraformer.queue.js",
+      "temporaryDependencies": [
+        "POOL_SIZE"
+      ],
+      "depth": 999,
+      "dependencyClosed": false,
+      "status": "PENDING"
+    },
+    {
+      "name": "THREAD_TIMEOUT_MS",
+      "canonicalOwner": "terraformer.timeout.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "CORE_WORKERS",
+      "canonicalOwner": "terraformer.worker.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TERRAFORMER_PRESENTATION_SESSION",
+      "canonicalOwner": "terraformer.presentation.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_PRELAUNCH_KEY_STATE",
+      "canonicalOwner": "terraformer.prelaunch.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "EXTERNAL_EFFECT_TYPES_V03012",
+      "canonicalOwner": "terraformer.external.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_EVIDENCE_STATES_V0311",
+      "canonicalOwner": "terraformer.evidence.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TERRAFORMER_INFRASTRUCTURE_CATALOG_V0328",
+      "canonicalOwner": "terraformer.infrastructure.js",
+      "temporaryDependencies": [
+        "dgram",
+        "http",
+        "net"
+      ],
+      "depth": 999,
+      "dependencyClosed": false,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_GENERATION_MODULE_V04428",
+      "canonicalOwner": "terraformer.generation.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_COMPLETION_MODULE_V04431",
+      "canonicalOwner": "terraformer.completion.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_AUTOMATION_MODULE_V04432",
+      "canonicalOwner": "terraformer.automation.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_STAGING_MODULE_V04432",
+      "canonicalOwner": "terraformer.staging.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_FOUNDATION_MODULE_V04433",
+      "canonicalOwner": "terraformer.foundation.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_SECURITY_MODULE_V04434",
+      "canonicalOwner": "terraformer.security.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_WORK_MODULE_V04435",
+      "canonicalOwner": "terraformer.module.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_ASSURANCE_MODULE_V04436",
+      "canonicalOwner": "terraformer.assurance.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_CANONICAL_MODULE_V04437",
+      "canonicalOwner": "terraformer.canonical.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_OBJECT_NATURALIZATION_V04438",
+      "canonicalOwner": "terraformer.naturalization.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_METADATA_V04439",
+      "canonicalOwner": "terraformer.metadata.js",
+      "temporaryDependencies": [
+        "TERRAFORMER_LANGUAGE_WORKERS"
+      ],
+      "depth": 999,
+      "dependencyClosed": false,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_ENTITY_V04440",
+      "canonicalOwner": "terraformer.entity.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_INDUSTRY_V04443",
+      "canonicalOwner": "terraformer.industry.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_INTERFACE_V04444",
+      "canonicalOwner": "terraformer.interface.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_FEATURES_V04445",
+      "canonicalOwner": "terraformer.feature.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_INTERPRETATION_V04446",
+      "canonicalOwner": "terraformer.interpretation.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_MUTATION_V04447",
+      "canonicalOwner": "terraformer.mutation.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_PROJECT_CHECKPOINT_V04448",
+      "canonicalOwner": "terraformer.checkpoint.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_SELF_UPDATE_V04449",
+      "canonicalOwner": "terraformer.update.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_REGISTRATION_V04450",
+      "canonicalOwner": "terraformer.registration.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_REGISTER_V04450",
+      "canonicalOwner": "terraformer.register.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_REGISTRY_V04450",
+      "canonicalOwner": "terraformer.registry.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_REGISTRAR_V04450",
+      "canonicalOwner": "terraformer.registrar.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_LIFECYCLE_V04451",
+      "canonicalOwner": "terraformer.lifecycle.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_ENTITY_LIFECYCLE_KIT_V04451",
+      "canonicalOwner": "terraformer.lifecycle.js",
+      "temporaryDependencies": [
+        "TF_LIFECYCLE_V04451"
+      ],
+      "depth": 1,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_ENVIRONMENT_V04452",
+      "canonicalOwner": "terraformer.environment.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_IO_ARCHITECTURE_V04453",
+      "canonicalOwner": "terraformer.architecture.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_VIRTUALIZATION_V04454",
+      "canonicalOwner": "terraformer.virtualization.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_HYPERVISOR_V04455",
+      "canonicalOwner": "terraformer.hypervisor.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_MACHINE_V04457",
+      "canonicalOwner": "terraformer.machine.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_HARDWARE_V04457",
+      "canonicalOwner": "terraformer.hardware.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_MACHINE_HARDWARE_V04457",
+      "canonicalOwner": "terraformer.hardware.js",
+      "temporaryDependencies": [
+        "TF_HARDWARE_V04457",
+        "TF_MACHINE_V04457"
+      ],
+      "depth": 1,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_FIRMWARE_V04458",
+      "canonicalOwner": "terraformer.firmware.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_BOOT_FIRMWARE_GUEST_V04458",
+      "canonicalOwner": "terraformer.firmware.js",
+      "temporaryDependencies": [
+        "TF_FIRMWARE_V04458"
+      ],
+      "depth": 1,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_VIRTUAL_V04460",
+      "canonicalOwner": "terraformer.virtual.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_PHYSICAL_V04460",
+      "canonicalOwner": "terraformer.physical.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_LAUNCH_V04462",
+      "canonicalOwner": "terraformer.launch.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_PLANNING_V04462",
+      "canonicalOwner": "terraformer.planning.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_ADDRESS_V04462",
+      "canonicalOwner": "terraformer.address.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_SPACE_V04462",
+      "canonicalOwner": "terraformer.space.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_LAUNCH_PLAN_ADDRESS_SPACE_V04462",
+      "canonicalOwner": "terraformer.address.js",
+      "temporaryDependencies": [
+        "TF_ADDRESS_V04462",
+        "TF_LAUNCH_V04462",
+        "TF_PLANNING_V04462",
+        "TF_SPACE_V04462"
+      ],
+      "depth": 1,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_SUBNET_V04463",
+      "canonicalOwner": "terraformer.subnet.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_SECURITY_EDGE_CORE_V04464",
+      "canonicalOwner": "terraformer.security.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_FIREWALL_V04464",
+      "canonicalOwner": "terraformer.firewall.js",
+      "temporaryDependencies": [
+        "TF_SECURITY_EDGE_CORE_V04464"
+      ],
+      "depth": 1,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_PROXY_V04464",
+      "canonicalOwner": "terraformer.proxy.js",
+      "temporaryDependencies": [
+        "TF_SECURITY_EDGE_CORE_V04464"
+      ],
+      "depth": 1,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_ANTIVIRUS_V04464",
+      "canonicalOwner": "terraformer.antivirus.js",
+      "temporaryDependencies": [
+        "TF_SECURITY_EDGE_CORE_V04464"
+      ],
+      "depth": 1,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_AGENT_V04465",
+      "canonicalOwner": "terraformer.agent.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_FORENSIC_AGENT_V04465",
+      "canonicalOwner": "terraformer.forensic.js",
+      "temporaryDependencies": [
+        "TF_AGENT_V04465"
+      ],
+      "depth": 1,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_UNIVERSAL_V04466",
+      "canonicalOwner": "terraformer.universal.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_WINDOW_MOBILITY_MODULE_V04466",
+      "canonicalOwner": "terraformer.mobility.js",
+      "temporaryDependencies": [
+        "TF_UNIVERSAL_V04466"
+      ],
+      "depth": 1,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_KIT_REGISTRY_RECONCILIATION_V04467",
+      "canonicalOwner": "terraformer.reconciliation.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_WINDOW_RUNTIME_RECONCILIATION_MODULE_V04468",
+      "canonicalOwner": "terraformer.reconciliation.js",
+      "temporaryDependencies": [
+        "TF_WINDOW_MOBILITY_MODULE_V04466"
+      ],
+      "depth": 2,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_RELATIONSHIP_FORENSIC_V04469",
+      "canonicalOwner": "terraformer.relationship.js",
+      "temporaryDependencies": [
+        "TF_FORENSIC_AGENT_V04465"
+      ],
+      "depth": 2,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_DATA_MINING_NETWORK_PLAN_V04470",
+      "canonicalOwner": "terraformer.network.js",
+      "temporaryDependencies": [
+        "TF_PLANNING_V04462"
+      ],
+      "depth": 1,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_DEPENDENCY_CYCLE_MODULE_V04471",
+      "canonicalOwner": "terraformer.dependency.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_DEPENDENCY_V04472",
+      "canonicalOwner": "terraformer.dependency.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_CYCLE_V04472",
+      "canonicalOwner": "terraformer.cycle.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_PHYLUM_V04475",
+      "canonicalOwner": "terraformer.phylum.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_ORDER_V04475",
+      "canonicalOwner": "terraformer.order.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_CLASSIFICATION_V04475",
+      "canonicalOwner": "terraformer.classification.js",
+      "temporaryDependencies": [
+        "TF_ORDER_V04475",
+        "TF_PHYLUM_V04475"
+      ],
+      "depth": 1,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_STREAM_V04476",
+      "canonicalOwner": "terraformer.stream.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_STREAMER_V04476",
+      "canonicalOwner": "terraformer.streamer.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_STREAMING_V04476",
+      "canonicalOwner": "terraformer.streaming.js",
+      "temporaryDependencies": [
+        "TF_STREAMER_V04476",
+        "TF_STREAM_V04476"
+      ],
+      "depth": 1,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_CUSTOMER_V04477",
+      "canonicalOwner": "terraformer.customer.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_CONSUMER_V04477",
+      "canonicalOwner": "terraformer.consumer.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_BROADCASTING_V04477",
+      "canonicalOwner": "terraformer.broadcasting.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_BROADCASTER_V04477",
+      "canonicalOwner": "terraformer.broadcaster.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_CONNECTOR_V04477",
+      "canonicalOwner": "terraformer.connector.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_TRANSMISSION_V04477",
+      "canonicalOwner": "terraformer.transmission.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_TRANSMITTER_V04477",
+      "canonicalOwner": "terraformer.transmitter.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_TRANSCEIVER_V04477",
+      "canonicalOwner": "terraformer.transceiver.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_RECEIVER_V04477",
+      "canonicalOwner": "terraformer.receiver.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_SENDER_V04477",
+      "canonicalOwner": "terraformer.sender.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_SENDING_V04477",
+      "canonicalOwner": "terraformer.sending.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_RECEIVING_V04477",
+      "canonicalOwner": "terraformer.receiving.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_COMMUNICATIONROLES_V04477",
+      "canonicalOwner": "terraformer.communicationroles.js",
+      "temporaryDependencies": [
+        "TF_BROADCASTER_V04477",
+        "TF_BROADCASTING_V04477",
+        "TF_CONNECTOR_V04477",
+        "TF_CONSUMER_V04477",
+        "TF_CUSTOMER_V04477",
+        "TF_RECEIVER_V04477",
+        "TF_RECEIVING_V04477",
+        "TF_SENDER_V04477",
+        "TF_SENDING_V04477",
+        "TF_TRANSCEIVER_V04477",
+        "TF_TRANSMISSION_V04477",
+        "TF_TRANSMITTER_V04477"
+      ],
+      "depth": 1,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_COMMUNICATION_V04478",
+      "canonicalOwner": "terraformer.communication.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_BOUNDED_STREAM_RUNTIME_MODULE_V04479",
+      "canonicalOwner": "terraformer.runtime.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_TCPIP_V04481",
+      "canonicalOwner": "terraformer.tcpip.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_ADAPTER_V04481",
+      "canonicalOwner": "terraformer.adapter.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_AUTHORIZATION_V04481",
+      "canonicalOwner": "terraformer.authorization.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_LOOPBACK_V04481",
+      "canonicalOwner": "terraformer.loopback.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_TRANSPORT_OWNER_V04481",
+      "canonicalOwner": "terraformer.transport.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_TRANSPORT_V04481",
+      "canonicalOwner": "terraformer.transport.js",
+      "temporaryDependencies": [
+        "TF_TRANSPORT_OWNER_V04481"
+      ],
+      "depth": 1,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_AUTHORIZED_TRANSPORT_V04481",
+      "canonicalOwner": "terraformer.transport.js",
+      "temporaryDependencies": [
+        "TF_ADAPTER_V04481",
+        "TF_AUTHORIZATION_V04481",
+        "TF_LOOPBACK_V04481",
+        "TF_TCPIP_V04481",
+        "TF_TCP_V04481",
+        "TF_TRANSPORT_OWNER_V04481"
+      ],
+      "depth": 999,
+      "dependencyClosed": false,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_LAN_TRANSPORT_V04483",
+      "canonicalOwner": "terraformer.transport.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_ROUTER_V04484",
+      "canonicalOwner": "terraformer.router.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_SWITCH_V04484",
+      "canonicalOwner": "terraformer.switch.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_BRIDGE_V04485",
+      "canonicalOwner": "terraformer.bridge.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_NAT_TOPOLOGY_MODULE_V04485",
+      "canonicalOwner": "terraformer.topology.js",
+      "temporaryDependencies": [
+        "TF_BRIDGE_V04485",
+        "TF_ROUTER_V04484",
+        "TF_SWITCH_V04484"
+      ],
+      "depth": 1,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_COORDINATION_V04486",
+      "canonicalOwner": "terraformer.coordination.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_HIERARCHY_V04486",
+      "canonicalOwner": "terraformer.hierarchy.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_INTERNET_COORDINATION_SYSTEMS_V36254",
+      "canonicalOwner": "terraformer.coordination.js",
+      "temporaryDependencies": [
+        "TF_COORDINATION_V04486",
+        "TF_HIERARCHY_V04486"
+      ],
+      "depth": 1,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_INTERNET_SCOPE_COORDINATION_MODULE_V04487",
+      "canonicalOwner": "terraformer.coordination.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_CONTEXTUAL_CANONICALIZATION_MODULE_V04489",
+      "canonicalOwner": "terraformer.canonicalization.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_CORPUS_CANONICAL_CLASSIFICATION_V04490",
+      "canonicalOwner": "terraformer.classification.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_KEYPAIR_V04491",
+      "canonicalOwner": "terraformer.keypair.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_HASHING_V04491",
+      "canonicalOwner": "terraformer.hashing.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_SALTING_V04491",
+      "canonicalOwner": "terraformer.salting.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_HASHER_V04491",
+      "canonicalOwner": "terraformer.hasher.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_SALTER_V04491",
+      "canonicalOwner": "terraformer.salter.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_CRYPTO_OBJECT_SYSTEMS_V36259",
+      "canonicalOwner": "terraformer.object.js",
+      "temporaryDependencies": [
+        "TF_HASHER_V04491",
+        "TF_HASHING_V04491",
+        "TF_KEYPAIR_V04491",
+        "TF_SALTER_V04491",
+        "TF_SALTING_V04491"
+      ],
+      "depth": 1,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_CRYPTO_ONTOLOGY_MODULE_V04492",
+      "canonicalOwner": "terraformer.ontology.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_SCANNER_V04493",
+      "canonicalOwner": "terraformer.scanner.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_MAPPER_V04493",
+      "canonicalOwner": "terraformer.mapper.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_PIPELINE_V04495",
+      "canonicalOwner": "terraformer.pipeline.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_DISCOVERY_V04495",
+      "canonicalOwner": "terraformer.discovery.js",
+      "temporaryDependencies": [
+        "TF_PIPELINE_V04495"
+      ],
+      "depth": 1,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_INTERRUPT_V04496",
+      "canonicalOwner": "terraformer.interrupt.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_INTERRUPTER_V04496",
+      "canonicalOwner": "terraformer.interrupter.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_MAPPING_V04497",
+      "canonicalOwner": "terraformer.mapping.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_UNIVERSAL_SYSTEM_TREE_MODULE_V04498",
+      "canonicalOwner": "terraformer.universal.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_CODE_OWNERSHIP_AUDIT_V04499",
+      "canonicalOwner": "terraformer.ownership.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_BLOCK_V04500",
+      "canonicalOwner": "terraformer.block.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_READING_V04500",
+      "canonicalOwner": "terraformer.reading.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_WRITING_V04500",
+      "canonicalOwner": "terraformer.writing.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_BLOCK_ROLE_DESCRIPTORS_V36268",
+      "canonicalOwner": "terraformer.script.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "getOperationalEntityFabric",
+      "canonicalOwner": "terraformer.operation.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_EXPLICIT_CODE_OWNERSHIP_RECONCILIATION_V04501",
+      "canonicalOwner": "terraformer.reconciliation.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_CODE_OWNERSHIP_CLOSURE_V04502",
+      "canonicalOwner": "terraformer.ownership.js",
+      "temporaryDependencies": [
+        "TF_EXPLICIT_CODE_OWNERSHIP_RECONCILIATION_V04501"
+      ],
+      "depth": 1,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_SEMANTIC_PRIMITIVE_MODULE_V04503",
+      "canonicalOwner": "terraformer.module.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_CONSTRUCTION_CALL_TOPOLOGY_MODULE_V04504",
+      "canonicalOwner": "terraformer.construction.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_CALL_FUNCTION_RETURN_HIERARCHY_MODULE_V04505",
+      "canonicalOwner": "terraformer.hierarchy.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_CALL_EXECUTION_RECONCILIATION_V04506",
+      "canonicalOwner": "terraformer.reconciliation.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_OPERATIONAL_ROLE_MODULE_V04507",
+      "canonicalOwner": "terraformer.operation.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_CANONICAL_DEVELOPMENT_MODULE_V04508",
+      "canonicalOwner": "terraformer.development.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_CANONICAL_RELATIONSHIP_MODULE_V04509",
+      "canonicalOwner": "terraformer.relationship.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_THREADING_MODULE_V04510",
+      "canonicalOwner": "terraformer.threading.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_SYSTEM_LIFECYCLE_MODULE_V04511",
+      "canonicalOwner": "terraformer.lifecycle.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_SYSTEM_SCOPED_CONTROL_MODULE_V04513",
+      "canonicalOwner": "terraformer.control.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_CONTAINERIZATION_MODULE_V04514",
+      "canonicalOwner": "terraformer.containerization.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_EXTERNAL_SYSTEM_READING_MODULE_V04515",
+      "canonicalOwner": "terraformer.external.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_NORMATIVE_MODULE_V04516",
+      "canonicalOwner": "terraformer.module.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_EDUCATION_MODULE_V04517",
+      "canonicalOwner": "terraformer.education.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_BOOTSTRAP_MODULE_V04519",
+      "canonicalOwner": "terraformer.bootstrap.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_SYSTEM_ARCHITECTURE_MODULE_V04520",
+      "canonicalOwner": "terraformer.architecture.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_FUTURE_ORIENTATION_MODULE_V04524",
+      "canonicalOwner": "terraformer.orientation.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_POSITION_WEATHER_MODULE_V04525",
+      "canonicalOwner": "terraformer.position.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_MEDIA_MODULE_V04526",
+      "canonicalOwner": "terraformer.module.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_MESSAGING_ANNOTATION_MODULE_V04528",
+      "canonicalOwner": "terraformer.messaging.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_TRANSPORT_PORT_MODULE_V04529",
+      "canonicalOwner": "terraformer.transport.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_LOCKED_PORT_MODULE_V04530",
+      "canonicalOwner": "terraformer.module.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_CANONICAL_PORT_MODULE_V04531",
+      "canonicalOwner": "terraformer.canonical.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_PROTOCOL_PORT_MODULE_V04532",
+      "canonicalOwner": "terraformer.protocol.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_NETWORK_FABRIC_MODULE_V04533",
+      "canonicalOwner": "terraformer.network.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_CONNECTION_MODULE_V04536",
+      "canonicalOwner": "terraformer.connection.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_INTERCONNECTION_MODULE_V04535",
+      "canonicalOwner": "terraformer.interconnection.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_INTERCOMMUNICATION_META_MODULE_V04537",
+      "canonicalOwner": "terraformer.intercommunication.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_NEGOTIATION_EXPANSION_MODULE_V04538",
+      "canonicalOwner": "terraformer.negotiation.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_STANDARDS_TYPE_MODULE_V04539",
+      "canonicalOwner": "terraformer.standard.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_TYPE_ONTOLOGY_MODULE_V04543",
+      "canonicalOwner": "terraformer.ontology.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_BASE_COMPOSITION_MODULE_V04544",
+      "canonicalOwner": "terraformer.composition.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_TABULAR_RELATIONAL_MODULE_V04546",
+      "canonicalOwner": "terraformer.relation.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_DATA_ORGANIZATION_MODULE_V04549",
+      "canonicalOwner": "terraformer.organization.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_ORGANIZATION_DIMENSION_MODULE_V04550",
+      "canonicalOwner": "terraformer.organization.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_STRUCTURAL_ASSURANCE_MODULE_V04551",
+      "canonicalOwner": "terraformer.assurance.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_HOST_PRIVILEGE_MODULE_V04552",
+      "canonicalOwner": "terraformer.privilege.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_MOBILE_BROWSER_MODULE_V04554",
+      "canonicalOwner": "terraformer.browser.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_SMARTPHONE_BROWSER_MODULE_V04555",
+      "canonicalOwner": "terraformer.browser.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_PROGRESSIVE_MOBILE_WEB_MODULE_V04557",
+      "canonicalOwner": "terraformer.progress.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_PROGRESSIVE_CAPABILITY_TYPES_V04557",
+      "canonicalOwner": "terraformer.capability.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_CROSS_CONTEXT_MODULE_V04558",
+      "canonicalOwner": "terraformer.context.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_CROSS_CONTEXT_TYPES_V04558",
+      "canonicalOwner": "terraformer.context.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_MACHINE_READABLE_CODE_MODULE_V04559",
+      "canonicalOwner": "terraformer.machine.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_MACHINE_READABLE_CODE_TYPES_V04559",
+      "canonicalOwner": "terraformer.machine.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_DOCUMENT_IO_SIGNATURE_MODULE_V04560",
+      "canonicalOwner": "terraformer.signature.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_DOCUMENT_IO_SIGNATURE_TYPES_V04560",
+      "canonicalOwner": "terraformer.signature.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_SIGNER_TYPES_V04561",
+      "canonicalOwner": "terraformer.signer.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_ANALYSIS_INVENTORY_CONTENT_MODULE_V04564",
+      "canonicalOwner": "terraformer.inventory.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_ORDERING_MODULE_V04565",
+      "canonicalOwner": "terraformer.ordering.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_ORDERING_TYPES_V04565",
+      "canonicalOwner": "terraformer.ordering.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_QUEUE_ORDERING_MODULE_V04566",
+      "canonicalOwner": "terraformer.ordering.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_QUEUE_ORDERING_TYPES_V04566",
+      "canonicalOwner": "terraformer.ordering.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_DOMAIN_ICMP_TELEGRAM_MODULE_V04567",
+      "canonicalOwner": "terraformer.telegram.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_WHOIS_MODULE_V04568",
+      "canonicalOwner": "terraformer.module.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_WEB_MEDIA_MODULE_V04569",
+      "canonicalOwner": "terraformer.module.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_WEB_MEDIA_TYPES_V04569",
+      "canonicalOwner": "terraformer.media.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_POOLING_MODULE_V04570",
+      "canonicalOwner": "terraformer.pooling.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_FILING_TYPES_V04571",
+      "canonicalOwner": "terraformer.filing.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_PORTABLE_DOMAIN_PORT_MODULE_V04572",
+      "canonicalOwner": "terraformer.portable.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_PORTABLE_DOMAIN_TYPES_V04572",
+      "canonicalOwner": "terraformer.portable.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_PORTING_MODULE_V04573",
+      "canonicalOwner": "terraformer.porting.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_WORKING_MODULE_V04575",
+      "canonicalOwner": "terraformer.working.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_EVENT_ACTOR_MODULE_V04577",
+      "canonicalOwner": "terraformer.module.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_TROUBLESHOOTING_MODULE_V04578",
+      "canonicalOwner": "terraformer.troubleshooting.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_MESSENGER_ERROR_MODULE_V04579",
+      "canonicalOwner": "terraformer.messenger.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_TEXT_CORRUPTION_DOCUMENTARY_MODULE_V04580",
+      "canonicalOwner": "terraformer.documentary.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_ANTI_CORRUPTION_TYPE_V04580",
+      "canonicalOwner": "terraformer.corruption.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_DOCUMENTATOR_MODULE_V04581",
+      "canonicalOwner": "terraformer.documentator.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_ROUTE_SYSTEM_V04582",
+      "canonicalOwner": "terraformer.route.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_CIVIC_LEGAL_MODULE_V04583",
+      "canonicalOwner": "terraformer.module.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_LEGAL_REGISTER_TYPE_V04583",
+      "canonicalOwner": "terraformer.register.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_AVAILABILITY_GEOSOCIAL_MODULE_V04584",
+      "canonicalOwner": "terraformer.availability.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_FORK_WRAP_MODULE_V04585",
+      "canonicalOwner": "terraformer.module.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_CALC_COMPARE_COMPUTE_MODULE_V04587",
+      "canonicalOwner": "terraformer.module.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_NATURALIZE_NORMALIZE_MODULE_V04588",
+      "canonicalOwner": "terraformer.module.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_NUMERATION_ENUMERATION_NUMBERING_MODULE_V04589",
+      "canonicalOwner": "terraformer.enumeration.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_TELEMETRY_BIOMETRY_CONTENT_MODULE_V04591",
+      "canonicalOwner": "terraformer.telemetry.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_SERVICE_MODULE_V04592",
+      "canonicalOwner": "terraformer.service.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_SEED_MODULE_V04594",
+      "canonicalOwner": "terraformer.module.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_DECISION_CONCLUSION_MODULE_V04595",
+      "canonicalOwner": "terraformer.conclusion.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_LANGUAGE_MODULE_V04597",
+      "canonicalOwner": "terraformer.language.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_DATA_TYPE_MODULE_V04598",
+      "canonicalOwner": "terraformer.module.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_BOOK_SUMMARY_MODULE_V04599",
+      "canonicalOwner": "terraformer.summary.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_THEORY_PRACTICE_MODULE_V0460",
+      "canonicalOwner": "terraformer.practice.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_PRACTICE_ML_NEURAL_MODULE_V0461",
+      "canonicalOwner": "terraformer.practice.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_META_VIRTUAL_PLATFORM_MODULE_V0462",
+      "canonicalOwner": "terraformer.platform.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_META_DESKTOP_MODULE_V0463",
+      "canonicalOwner": "terraformer.desktop.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_MAIL_DRIVE_MODULE_V0464",
+      "canonicalOwner": "terraformer.module.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_SSH_SFTP_FTP_MODULE_V0465",
+      "canonicalOwner": "terraformer.module.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_TUNNEL_MAIL_PROTOCOL_MODULE_V0467",
+      "canonicalOwner": "terraformer.protocol.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_TLS_SSL_MODULE_V0469",
+      "canonicalOwner": "terraformer.module.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_CERTIFICATE_OWNER_V04610",
+      "canonicalOwner": "terraformer.certificate.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_CERTIFICATION_OWNER_V04610",
+      "canonicalOwner": "terraformer.certification.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_IO_CARRIER_SOCKET_MODULE_V04613",
+      "canonicalOwner": "terraformer.carrier.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_MENU_CATALOG_MODULE_V04614",
+      "canonicalOwner": "terraformer.catalog.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_VIEW_REVIEW_PREVIEW_MODULE_V04615",
+      "canonicalOwner": "terraformer.preview.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_UNIVERSAL_VISUAL_MODULE_V04616",
+      "canonicalOwner": "terraformer.universal.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_DESKTOP_PLUS_LAYOUT_MODULE_V04617",
+      "canonicalOwner": "terraformer.desktop.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_TOOLING_MODULE_V04619",
+      "canonicalOwner": "terraformer.tooling.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_RECORDING_TIMELINING_MODULE_V04620",
+      "canonicalOwner": "terraformer.timelining.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_INSTANCE_TICKET_MODULE_V04621",
+      "canonicalOwner": "terraformer.instance.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_UNIVERSAL_CONTEXTS_MODULE_V04622",
+      "canonicalOwner": "terraformer.universal.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_WIRING_GROUPING_MODULE_V04627",
+      "canonicalOwner": "terraformer.grouping.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_STATEMENT_MODULE_V04628",
+      "canonicalOwner": "terraformer.statement.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_RECONSTRUCTION_MODULE_V04630",
+      "canonicalOwner": "terraformer.reconstruction.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_NEED_COMPLETION_MODULE_V04631",
+      "canonicalOwner": "terraformer.completion.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_DEFAULTS_MODULE_V04633",
+      "canonicalOwner": "terraformer.defaults.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_UNIVERSAL_DEFAULTS_MODULE_V04634",
+      "canonicalOwner": "terraformer.universal.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_LAYERING_MODULE_V04635",
+      "canonicalOwner": "terraformer.layering.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_RUNTIME_LAYER_MODULE_V04636",
+      "canonicalOwner": "terraformer.runtime.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_USAGE_HALTING_MODULE_V04637",
+      "canonicalOwner": "terraformer.halting.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_CHECKING_MODULE_V04638",
+      "canonicalOwner": "terraformer.checking.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_CHECKUP_MODULE_V04639",
+      "canonicalOwner": "terraformer.checkup.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_PHYSICAL_DOMAIN_MODULE_V04640",
+      "canonicalOwner": "terraformer.physical.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_TARGET_DEFINITION_MODULE_V04643",
+      "canonicalOwner": "terraformer.definition.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_PROCESS_CYCLE_MODULE_V04644",
+      "canonicalOwner": "terraformer.process.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_REFERENCING_MODULE_V04645",
+      "canonicalOwner": "terraformer.referencing.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_SPECIFYING_MODULE_V04646",
+      "canonicalOwner": "terraformer.specifying.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_ALLOCATION_SYSTEMIZATION_MODULE_V04648",
+      "canonicalOwner": "terraformer.systemization.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_GROUP_SPECIALIZATION_MODULE_V04649",
+      "canonicalOwner": "terraformer.module.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_SCOPE_GROUP_MODULE_V04650",
+      "canonicalOwner": "terraformer.module.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_NETWORK_HANDBOOK_MODULE_V04651",
+      "canonicalOwner": "terraformer.handbook.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_OPEN_AUDIO_NATURALIZATION_MODULE_V04652",
+      "canonicalOwner": "terraformer.naturalization.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_MEDIA_EDITING_MODULE_V04653",
+      "canonicalOwner": "terraformer.editing.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_EDITING_RENDERING_MODULE_V04654",
+      "canonicalOwner": "terraformer.rendering.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_RENDERER_TYPE_MODULE_V04655",
+      "canonicalOwner": "terraformer.renderer.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_RENDERER_RELATIONSHIP_MODULE_V04656",
+      "canonicalOwner": "terraformer.relationship.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_PROGRAM_TYPE_RELATIONSHIP_MODULE_V04657",
+      "canonicalOwner": "terraformer.relationship.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_PROGRAM_RELATIONSHIP_CLOSURE_MODULE_V04658",
+      "canonicalOwner": "terraformer.relationship.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_LINKING_MODULE_V04659",
+      "canonicalOwner": "terraformer.linking.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_LINKING_RECONSTRUCTION_MODULE_V04660",
+      "canonicalOwner": "terraformer.reconstruction.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_INTEGRATION_COVERAGE_MISSION_MODULE_V04661",
+      "canonicalOwner": "terraformer.integration.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_SPATIAL_SCOPE_RULE_V36412",
+      "canonicalOwner": "terraformer.scope.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_BEAM_REFLECTION_BOUNDARY_V36413",
+      "canonicalOwner": "terraformer.reflection.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_GAP_BOUNDARY_V36415",
+      "canonicalOwner": "terraformer.boundary.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_RECONSTRUCTION_DOMAINS_V36416",
+      "canonicalOwner": "terraformer.reconstruction.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_DIRECTIVE_COMPOSITION_V36417",
+      "canonicalOwner": "terraformer.composition.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_REFLECT_OPERATION_SYSTEM_V36418",
+      "canonicalOwner": "terraformer.operation.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_REFLECT_OPERATION_RELATIONSHIPS_V36418",
+      "canonicalOwner": "terraformer.relationship.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_RESERVED_TRANSPORT_PORT_FAMILY_8888_V36419",
+      "canonicalOwner": "terraformer.transport.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_RESERVED_TRANSPORT_PROTOCOLS_8888_V36419",
+      "canonicalOwner": "terraformer.transport.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_RESERVED_TRANSPORT_PAIRS_8888_V36419",
+      "canonicalOwner": "terraformer.transport.js",
+      "temporaryDependencies": [
+        "TF_RESERVED_TRANSPORT_PORT_FAMILY_8888_V36419",
+        "TF_RESERVED_TRANSPORT_PROTOCOLS_8888_V36419"
+      ],
+      "depth": 1,
+      "dependencyClosed": true,
+      "status": "MIGRATED_PROMOTED"
+    },
+    {
+      "name": "TF_PERMISSION_DEFAULTS_V36420",
+      "canonicalOwner": "terraformer.permission.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_GUARD_DEFAULTS_V36421",
+      "canonicalOwner": "terraformer.defaults.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_MULTI_GEO_BOUNDARY_V36423",
+      "canonicalOwner": "terraformer.boundary.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_SYSTEMS_OPERATIONS_BOUNDARY_V36424",
+      "canonicalOwner": "terraformer.operations.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_SEARCH_DISCOVERY_BOUNDARY_V36425",
+      "canonicalOwner": "terraformer.discovery.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_ENABLE_FRAME_BOUNDARY_V36426",
+      "canonicalOwner": "terraformer.boundary.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_TIME_COUNT_BOUNDARY_V36427",
+      "canonicalOwner": "terraformer.boundary.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_CHOICE_CONTROL_BOUNDARY_V36428",
+      "canonicalOwner": "terraformer.boundary.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_HIGHLIGHT_CONFIRM_APPLY_CANCEL_BOUNDARY_V36429",
+      "canonicalOwner": "terraformer.boundary.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_PROTOTYPE_MODEL_BOUNDARY_V36431",
+      "canonicalOwner": "terraformer.prototype.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_MODEL_BOUNDARY_V36432",
+      "canonicalOwner": "terraformer.boundary.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_CAD_CAPABILITY_CANDIDATES_V36432",
+      "canonicalOwner": "terraformer.capability.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_COMPOSITION_BOUNDARY_V36433",
+      "canonicalOwner": "terraformer.composition.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_HISTORY_PREPARATION_BOUNDARY_V36434",
+      "canonicalOwner": "terraformer.preparation.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_LIFECYCLE_LOG_CHANNELS_V36434",
+      "canonicalOwner": "terraformer.lifecycle.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_GLOBAL_LOCAL_DECLARATION_BOUNDARY_V36435",
+      "canonicalOwner": "terraformer.declaration.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_REPRESENTATION_DECLARATION_BOUNDARY_V36436",
+      "canonicalOwner": "terraformer.representation.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_THEORY_AUDIT_FABRICATION_BOUNDARY_V36437",
+      "canonicalOwner": "terraformer.fabrication.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_SYSTEM_THEORY_FORMS_V36437",
+      "canonicalOwner": "terraformer.theory.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_TBUILD_BOUNDARY_V36439",
+      "canonicalOwner": "terraformer.boundary.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_UNIFICATION_BOUNDARY_V36440",
+      "canonicalOwner": "terraformer.unification.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_FINALIZATION_STATES_V36441",
+      "canonicalOwner": "terraformer.finalization.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_FINALIZATION_BOUNDARY_V36441",
+      "canonicalOwner": "terraformer.finalization.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_MATERIALIZATION_REQUIRED_GATES_V36444",
+      "canonicalOwner": "terraformer.materialization.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_UTILIZATION_REQUIRED_GATES_V36445",
+      "canonicalOwner": "terraformer.utilization.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_RANKING_BOUNDARY_V36446",
+      "canonicalOwner": "terraformer.boundary.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_CODING_BOUNDARY_V36447",
+      "canonicalOwner": "terraformer.boundary.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_CODING_REQUIRED_GATES_V36447",
+      "canonicalOwner": "terraformer.coding.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_VERSIONING_BOUNDARY_V36448",
+      "canonicalOwner": "terraformer.versioning.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_SAVING_BOUNDARY_V36449",
+      "canonicalOwner": "terraformer.boundary.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_CHANGE_BOUNDARY_V36450",
+      "canonicalOwner": "terraformer.boundary.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_SANDBOX_BOUNDARY_V36451",
+      "canonicalOwner": "terraformer.boundary.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_FONT_BOUNDARY_V376",
+      "canonicalOwner": "terraformer.boundary.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_CONTENT_BOUNDARY_V377",
+      "canonicalOwner": "terraformer.boundary.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_QUERIER_V390",
+      "canonicalOwner": "terraformer.querier.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_ATTRIBUTE_SYSTEM_V392",
+      "canonicalOwner": "terraformer.attribute.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_ATTRIBUTER_V392",
+      "canonicalOwner": "terraformer.attributer.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_DATA_WORKER_V392",
+      "canonicalOwner": "terraformer.worker.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_VARIANCER_V394",
+      "canonicalOwner": "terraformer.variancer.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_INVARIANCER_V394",
+      "canonicalOwner": "terraformer.invariancer.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_SPACER_V401",
+      "canonicalOwner": "terraformer.spacer.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_ADDRESSER_V401",
+      "canonicalOwner": "terraformer.addresser.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_NAMESPACER_V402",
+      "canonicalOwner": "terraformer.namespacer.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_RESOLVER_V402",
+      "canonicalOwner": "terraformer.resolver.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_REFERENCER_V403",
+      "canonicalOwner": "terraformer.referencer.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_LOCATOR_WORKER_V403",
+      "canonicalOwner": "terraformer.locator.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_RESCUER_V405",
+      "canonicalOwner": "terraformer.rescuer.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_HOSPITALIZER_V405",
+      "canonicalOwner": "terraformer.hospitalizer.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_INSTRUCTOR_V407",
+      "canonicalOwner": "terraformer.instructor.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_COMMENCER_V407",
+      "canonicalOwner": "terraformer.commencer.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_MOBILE_SYSTEM_V408",
+      "canonicalOwner": "terraformer.mobile.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_ANDROID_MOBILE_RUNTIME_V408",
+      "canonicalOwner": "terraformer.runtime.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_ANDROID_LOCAL_TEST_TAP_V409",
+      "canonicalOwner": "terraformer.local.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_MORPHING_SYSTEM_V4016",
+      "canonicalOwner": "terraformer.morphing.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_MOBILE_ORIENTATION_MORPH_V4016",
+      "canonicalOwner": "terraformer.orientation.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_PRELOAD_TYPES_V4019",
+      "canonicalOwner": "terraformer.preload.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_PRELOAD_STATES_V4019",
+      "canonicalOwner": "terraformer.preload.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_WORKER_DISCOVERY_V4065",
+      "canonicalOwner": "terraformer.discovery.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_END_NODE_DISPOSITIONS_V4069",
+      "canonicalOwner": "terraformer.position.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_EXECUTABLE_OWNERSHIP_REGISTRY_V4185",
+      "canonicalOwner": "terraformer.ownership.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_LANGUAGE_ARTIFACT_INVENTORY_V4187",
+      "canonicalOwner": "terraformer.inventory.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_TOOL_REGISTRY_V4190",
+      "canonicalOwner": "terraformer.registry.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_TOOL_RELATIONSHIP_REGISTRY_V4191",
+      "canonicalOwner": "terraformer.relationship.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_TOOL_CAPABILITY_BINDINGS_V4192",
+      "canonicalOwner": "terraformer.capability.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_REGISTRY_LEDGER_V0420",
+      "canonicalOwner": "terraformer.registry.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_REGISTRY_ADMISSIONS_V0421",
+      "canonicalOwner": "terraformer.admission.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_IDENTITY_PROVENANCE_MODULE_V04690",
+      "canonicalOwner": "terraformer.provenance.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_IDENTITY_MODULE_V04689",
+      "canonicalOwner": "terraformer.identity.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_SUBORDINATE_RECONSTRUCTION_MODULE_V04689",
+      "canonicalOwner": "terraformer.reconstruction.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_RELATIONSHIP_RESOLUTION_V04277",
+      "canonicalOwner": "terraformer.relationship.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_POPULATED_OWNERSHIP_V04281",
+      "canonicalOwner": "terraformer.ownership.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_COMPACTION_V04296",
+      "canonicalOwner": "terraformer.compaction.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "MIGRATED_IMMUTABLE_DEPTH_0"
+    },
+    {
+      "name": "TF_MODULES_V0431",
+      "canonicalOwner": "terraformer.module.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_PROCESSING_OWNER_V04418",
+      "canonicalOwner": "terraformer.processing.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_MODULE_FILES_V0448",
+      "canonicalOwner": "terraformer.module.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    },
+    {
+      "name": "TF_DIMENSION_OWNER_V04417",
+      "canonicalOwner": "terraformer.dimension.js",
+      "temporaryDependencies": [],
+      "depth": 0,
+      "dependencyClosed": true,
+      "status": "PENDING"
+    }
+  ],
+  "summary": {
+    "specificOwnerCandidates": 405,
+    "dependencyClosed": 399,
+    "depth0": 371,
+    "depth1": 24,
+    "depth2": 4,
+    "migratedThisPass": 24,
+    "immutableDepth0QualifiedCandidates": 101,
+    "failedThisPass": 0,
+    "remainingSafeImmutableDepth0BeforePass": 53,
+    "newlyExposedFormerDepth1": 3,
+    "promotedMigrated": 3,
+    "immutableDepth0Migrated": 21,
+    "currentlyDependencyFreeFormerDependents": 1
+  },
+  "rules": {
+    "dependenciesBeforeDependents": true,
+    "dependencyClosedDoesNotMeanBehaviorallySafe": true,
+    "destinationCollisionBlocksMigration": true,
+    "initializationOrderPreserved": true,
+    "automaticMigration": false
+  },
+  "newlyExposedFormerDepth1": [
+    "TF_CANONICALIZATION_MODULE_V04442",
+    "TF_CONNECTION_SYSTEMS",
+    "TF_RESERVED_TRANSPORT_PAIRS_8888_V36419"
+  ],
+  "currentlyDependencyFreeFormerDependents": [
+    "TF_CONNECTION_SYSTEM_BY_KIND"
+  ]
+}

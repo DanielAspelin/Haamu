@@ -1,0 +1,7 @@
+{
+  "schema": "TERRAFORMER-ASSOCIATIONS/1",
+  "systemId": "system.association",
+  "referenceOnly": true,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

@@ -1,0 +1,328 @@
+{
+  "$schema": "terraformer.registry/instances/2",
+  "version": "0.47.29",
+  "governedBy": "terraformer.instance.js",
+  "kind": "INSTANCE_DIMENSION_REGISTRY",
+  "owner": "system.instance",
+  "dimension": "INSTANCE",
+  "zeroPoint": {
+    "id": "POST_LAUNCH",
+    "coordinate": 0
+  },
+  "coordinateModel": {
+    "bidirectional": true,
+    "relativeReference": true,
+    "negativeCoordinatesReserved": false,
+    "positiveCoordinatesExtensible": true,
+    "authorityFromCoordinate": false,
+    "negativeCoordinatesExtensible": true,
+    "executionCoordinate": -1,
+    "coordinateDoesNotGrantExecution": true,
+    "instanceTypesAreDimensionValues": false,
+    "launchCoordinate": 0,
+    "instanceCoordinate": 1,
+    "zeroPoint": "POST_LAUNCH",
+    "coordinateDoesNotGrantLaunch": true,
+    "initializationCoordinate": -3,
+    "loadingCoordinate": -2,
+    "coordinatesDoNotInvokeMechanisms": true,
+    "preLaunchCoordinate": -7,
+    "auditingCoordinate": -5,
+    "launchBoundary": "BETWEEN_EXECUTION_AND_POST_LAUNCH",
+    "postLaunchCoordinate": 0,
+    "loggingCoordinate": -6,
+    "reportingCoordinate": -4
+  },
+  "selectionModel": "DEFINE_CENTRALLY_SELECT_LOCALLY",
+  "eligibleConsumers": [
+    "SYSTEM",
+    "PROJECT",
+    "PROGRAM",
+    "APPLICATION",
+    "PLATFORM",
+    "COMMON",
+    "INTERNET",
+    "FILE",
+    "USER",
+    "MACHINE",
+    "GROUP",
+    "DIMENSION"
+  ],
+  "authority": false,
+  "entries": [
+    {
+      "id": "PRE_LAUNCH",
+      "coordinate": -7,
+      "type": "PRE_LAUNCH",
+      "definition": "Pre-launch preparation position before evidence-producing pre-launch stages.",
+      "mechanismSystem": "system.launch",
+      "applicability": [
+        "SYSTEM",
+        "PROJECT",
+        "PROGRAM",
+        "APPLICATION",
+        "PLATFORM",
+        "COMMON",
+        "INTERNET",
+        "FILE",
+        "USER",
+        "MACHINE",
+        "GROUP",
+        "DIMENSION"
+      ],
+      "constraints": {
+        "explicitSelection": true,
+        "scoped": true,
+        "noAuthority": true,
+        "coordinateDoesNotPreLaunch": true
+      },
+      "authority": false
+    },
+    {
+      "id": "LOGGING",
+      "coordinate": -6,
+      "type": "LOGGING",
+      "definition": "Logging position immediately after Pre-launch and before Auditing.",
+      "mechanismSystem": "system.logging",
+      "applicability": [
+        "SYSTEM",
+        "PROJECT",
+        "PROGRAM",
+        "APPLICATION",
+        "PLATFORM",
+        "COMMON",
+        "INTERNET",
+        "FILE",
+        "USER",
+        "MACHINE",
+        "GROUP",
+        "DIMENSION"
+      ],
+      "constraints": {
+        "explicitSelection": true,
+        "scoped": true,
+        "noAuthority": true,
+        "coordinateDoesNotLog": true
+      },
+      "authority": false
+    },
+    {
+      "id": "AUDITING",
+      "coordinate": -5,
+      "type": "AUDITING",
+      "definition": "Auditing position after Logging and before Reporting.",
+      "mechanismSystem": "system.audit",
+      "applicability": [
+        "SYSTEM",
+        "PROJECT",
+        "PROGRAM",
+        "APPLICATION",
+        "PLATFORM",
+        "COMMON",
+        "INTERNET",
+        "FILE",
+        "USER",
+        "MACHINE",
+        "GROUP",
+        "DIMENSION"
+      ],
+      "constraints": {
+        "explicitSelection": true,
+        "scoped": true,
+        "noAuthority": true,
+        "coordinateDoesNotAudit": true
+      },
+      "authority": false
+    },
+    {
+      "id": "REPORTING",
+      "coordinate": -4,
+      "type": "REPORTING",
+      "definition": "Reporting position after Auditing and before Initialization.",
+      "mechanismSystem": "system.reporting",
+      "applicability": [
+        "SYSTEM",
+        "PROJECT",
+        "PROGRAM",
+        "APPLICATION",
+        "PLATFORM",
+        "COMMON",
+        "INTERNET",
+        "FILE",
+        "USER",
+        "MACHINE",
+        "GROUP",
+        "DIMENSION"
+      ],
+      "constraints": {
+        "explicitSelection": true,
+        "scoped": true,
+        "noAuthority": true,
+        "coordinateDoesNotReport": true
+      },
+      "authority": false
+    },
+    {
+      "id": "INITIALIZATION",
+      "coordinate": -3,
+      "type": "INITIALIZATION",
+      "definition": "Initialization position preceding Loading.",
+      "mechanismSystem": "system.initialization",
+      "applicability": [
+        "SYSTEM",
+        "PROJECT",
+        "PROGRAM",
+        "APPLICATION",
+        "PLATFORM",
+        "COMMON",
+        "INTERNET",
+        "FILE",
+        "USER",
+        "MACHINE",
+        "GROUP",
+        "DIMENSION"
+      ],
+      "constraints": {
+        "explicitSelection": true,
+        "scoped": true,
+        "noAuthority": true,
+        "coordinateDoesNotInitialize": true
+      },
+      "authority": false
+    },
+    {
+      "id": "LOADING",
+      "coordinate": -2,
+      "type": "LOADING",
+      "definition": "Loading position preceding Execution.",
+      "mechanismSystem": "system.loading",
+      "applicability": [
+        "SYSTEM",
+        "PROJECT",
+        "PROGRAM",
+        "APPLICATION",
+        "PLATFORM",
+        "COMMON",
+        "INTERNET",
+        "FILE",
+        "USER",
+        "MACHINE",
+        "GROUP",
+        "DIMENSION"
+      ],
+      "constraints": {
+        "explicitSelection": true,
+        "scoped": true,
+        "noAuthority": true,
+        "coordinateDoesNotLoad": true
+      },
+      "authority": false
+    },
+    {
+      "id": "EXECUTION",
+      "coordinate": -1,
+      "type": "EXECUTION",
+      "definition": "Execution position immediately before the Launch transition.",
+      "mechanismSystem": "system.execution",
+      "applicability": [
+        "SYSTEM",
+        "PROJECT",
+        "PROGRAM",
+        "APPLICATION",
+        "PLATFORM",
+        "COMMON",
+        "INTERNET",
+        "FILE",
+        "USER",
+        "MACHINE",
+        "GROUP",
+        "DIMENSION"
+      ],
+      "constraints": {
+        "explicitSelection": true,
+        "scoped": true,
+        "noAuthority": true,
+        "coordinateDoesNotExecute": true
+      },
+      "authority": false
+    },
+    {
+      "id": "POST_LAUNCH",
+      "coordinate": 0,
+      "type": "POST_LAUNCH",
+      "definition": "Zero/reference position immediately after the Launch transition.",
+      "mechanismSystem": "system.launch",
+      "applicability": [
+        "SYSTEM",
+        "PROJECT",
+        "PROGRAM",
+        "APPLICATION",
+        "PLATFORM",
+        "COMMON",
+        "INTERNET",
+        "FILE",
+        "USER",
+        "MACHINE",
+        "GROUP",
+        "DIMENSION"
+      ],
+      "constraints": {
+        "explicitSelection": true,
+        "scoped": true,
+        "noAuthority": true,
+        "coordinateDoesNotPostLaunch": true
+      },
+      "authority": false
+    },
+    {
+      "id": "INSTANCE",
+      "coordinate": 1,
+      "type": "INSTANCE",
+      "definition": "Instance coordinate +1: Instance 0, Type RUNTIME. The dimensional coordinate (+1) and Instance ordinal (0) are distinct numbering domains.",
+      "mechanismSystem": "system.instance",
+      "applicability": [
+        "SYSTEM",
+        "PROJECT",
+        "PROGRAM",
+        "APPLICATION",
+        "PLATFORM",
+        "COMMON",
+        "INTERNET",
+        "FILE",
+        "USER",
+        "MACHINE",
+        "GROUP",
+        "DIMENSION"
+      ],
+      "constraints": {
+        "explicitSelection": true,
+        "scoped": true,
+        "noAuthority": true,
+        "coordinateDoesNotInstantiate": true,
+        "coordinateIsNotInstanceOrdinal": true,
+        "instanceTypeIsNotDimensionValue": true
+      },
+      "authority": false,
+      "instanceOrdinal": 0,
+      "instanceType": "RUNTIME",
+      "instanceTypeSystem": "system.instancetype"
+    }
+  ],
+  "rule": "PRE_LAUNCH (-7) -> LOGGING (-6) -> AUDITING (-5) -> REPORTING (-4) -> INITIALIZATION (-3) -> LOADING (-2) -> EXECUTION (-1) -> LAUNCH boundary -> POST_LAUNCH (0) -> INSTANCE (+1). INSTANCE (+1) is Instance 0 of Type RUNTIME; coordinate, ordinal, and type are distinct.",
+  "instanceEnumeration": {
+    "firstInstance": {
+      "dimensionCoordinate": 1,
+      "instanceOrdinal": 0,
+      "instanceType": "RUNTIME"
+    },
+    "coordinateIsNotOrdinal": true,
+    "typeIsNotDimensionValue": true
+  },
+  "instanceTypeRegistry": "terraformer.instancetypes.json",
+  "instanceTypeSystem": "system.instancetype",
+  "rules": [
+    "Dimension coordinates, instance ordinals, Instance Types, Conditions, and States are independent axes.",
+    "Instance 0 at coordinate +1 initially references Instance Type RUNTIME.",
+    "SUPER_INSTANCE and HYPER_INSTANCE are not dimension values or State values; their eligibility is governed by condition contracts."
+  ]
+}

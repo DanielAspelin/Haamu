@@ -1,0 +1,8 @@
+{
+  "schema": "TERRAFORMER-ARITHMETICS/1",
+  "systemId": "system.arithmetic",
+  "membershipGrantsExecution": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

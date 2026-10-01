@@ -1,0 +1,36 @@
+{
+  "schema": "TERRAFORMER-STANDARDS/1",
+  "systemId": "system.standard",
+  "authorityMode": "external-reference-only",
+  "automaticGovernance": false,
+  "records": [
+    {
+      "id": "standard.iso",
+      "organization": "ISO",
+      "referenceType": true,
+      "standardType": true,
+      "kind": "external-standard-organization",
+      "implemented": false,
+      "governingAuthorityTransferred": false
+    },
+    {
+      "id": "standard.iec",
+      "organization": "IEC",
+      "referenceType": true,
+      "standardType": true,
+      "kind": "external-standard-organization",
+      "implemented": false,
+      "governingAuthorityTransferred": false
+    },
+    {
+      "id": "standard.isoiec",
+      "organization": "ISO/IEC",
+      "referenceSystem": "system.iso-iec",
+      "referenceType": true,
+      "standardType": true,
+      "kind": "external-joint-standard-family",
+      "implemented": false,
+      "governingAuthorityTransferred": false
+    }
+  ]
+}

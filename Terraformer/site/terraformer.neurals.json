@@ -1,0 +1,11 @@
+{
+  "schema": "TERRAFORMER-NEURALS/1",
+  "systemId": "system.neural",
+  "membershipGrantsTraining": false,
+  "membershipGrantsInference": false,
+  "membershipGrantsNetworkMutation": false,
+  "membershipGrantsExecution": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

@@ -1,0 +1,4 @@
+"use strict";
+function bindHashingV04491(){const SYSTEM=Object.freeze({id:"system.hashing",name:"Hashing System",family:"cryptography",type:"hashing-system",mode:"bounded-digest-operation",state:"naturalized",
+  concepts:Object.freeze(["Hashing"]),integrates:Object.freeze(["system.cryptography","system.security","system.validation","system.verification"]),reversible:false,secretLogging:false,grantsAuthority:false});function tfHashV36259(data,algorithm="sha256"){const c=require("node:crypto");const a=String(algorithm).toLowerCase();if(!["sha256","sha384","sha512"].includes(a))throw new Error("hash algorithm not admitted");return c.createHash(a).update(Buffer.isBuffer(data)?data:Buffer.from(String(data))).digest("hex");}return Object.freeze({SYSTEM,tfHashV36259});}
+module.exports={bindHashingV04491};

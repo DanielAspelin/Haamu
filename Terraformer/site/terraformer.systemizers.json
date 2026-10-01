@@ -1,0 +1,11 @@
+{
+  "schema": "TERRAFORMER-SYSTEMIZERS/1",
+  "systemId": "system.systemizer",
+  "declarativeRegistry": true,
+  "membershipGrantsHostAllocation": false,
+  "membershipGrantsGeneration": false,
+  "membershipGrantsSystemization": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

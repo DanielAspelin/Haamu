@@ -1,0 +1,7 @@
+{
+  "schema": "TERRAFORMER-RECEPTIONISTS/1",
+  "owner": "terraformer.receptionist.js",
+  "records": [],
+  "membershipGrantsAuthority": false,
+  "qualificationInheritance": false
+}

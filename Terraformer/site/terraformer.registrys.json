@@ -1,0 +1,15 @@
+{
+  "schema": "TERRAFORMER-REGISTRYS/1",
+  "owner": "system.registry",
+  "executable": "terraformer.registry.js",
+  "role": "organizes and indexes governed records without making membership authoritative",
+  "authorityGranted": false,
+  "membershipGrantsAuthority": false,
+  "records": [
+    {
+      "id": "registry.canonical",
+      "status": "registered",
+      "authorityGranted": false
+    }
+  ]
+}

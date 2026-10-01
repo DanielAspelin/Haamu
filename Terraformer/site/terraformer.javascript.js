@@ -1,0 +1,4 @@
+'use strict';
+const TERRAFORMER_JAVASCRIPT_SYSTEM=Object.freeze({schema:'TERRAFORMER-JAVASCRIPT-SYSTEM/2',id:'system.javascript',name:'JavaScript System',family:'runtime',type:'javascript-runtime-plane',mode:'DOM-subsection / Node.js-negotiated',condition:'operational',state:'native',parent:'system.dom',relationship:'subsection',input:'admitted JavaScript operation / DOM-support operation',output:'DOM-support or Node.js-bounded result',authority:'system.dom -> system.javascript -> system.nodejs',capabilities:Object.freeze(['language','module','buffer','stream','event','timer','url','crypto','http','worker','wasm-bridge','dom-script-support']),domImplementation:'browser-owned live DOM; JavaScript supports DOM operations within the presentation context',persistence:false});
+
+module.exports=Object.freeze({TERRAFORMER_JAVASCRIPT_SYSTEM});

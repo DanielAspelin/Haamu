@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Terraformer</title>
+<style>
+:root{color-scheme:dark;font-family:system-ui,sans-serif;--bar:46px;--line:rgba(255,255,255,.20);--glass:rgba(18,24,32,.72);--local:rgba(198,211,224,.20);--global:rgba(184,132,74,.20);--glow:rgba(139,196,255,.18)}
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#071019;color:#edf4fb}
+#desktop{position:fixed;inset:0;display:grid;grid-template-rows:var(--bar) 1fr var(--bar);background:radial-gradient(circle at 50% 38%,#203349 0,#0c1723 35%,#050b12 78%)}
+.bar{display:flex;align-items:center;gap:8px;padding:5px 9px;border-color:var(--line);background:linear-gradient(180deg,rgba(255,255,255,.10),rgba(255,255,255,.035));backdrop-filter:blur(18px) saturate(135%);z-index:10;box-shadow:0 8px 30px rgba(0,0,0,.24)}
+#topbar{border-bottom:1px solid var(--line)}#bottombar{border-top:1px solid var(--line)}
+.spacer{flex:1}.start,.tool{min-height:32px;border:1px solid var(--line);border-radius:8px;background:linear-gradient(180deg,rgba(255,255,255,.14),rgba(255,255,255,.045));color:#f3f7fb;padding:0 12px;box-shadow:inset 0 1px rgba(255,255,255,.12)}.start{font-weight:650}
+#workspace{position:relative;overflow:hidden;isolation:isolate}#backgroundPlane,#foregroundPlane{position:absolute;inset:0;pointer-events:none}#backgroundPlane{z-index:0}#foregroundPlane{z-index:1}.window{z-index:2}.visual-mark{width:100%;height:100%;opacity:.28;filter:drop-shadow(0 0 8px rgba(139,196,255,.18))}.visual-mark path,.visual-mark circle{vector-effect:non-scaling-stroke}
+#title{position:absolute;inset:12% 0 auto;text-align:center;font-size:clamp(22px,5vw,52px);font-weight:700;opacity:.12;pointer-events:none}.prompt{min-width:110px;max-width:32vw;height:32px;border:1px solid var(--line);border-radius:8px;background:rgba(3,8,13,.45);color:#eef6ff;padding:0 9px}.scope{font:11px ui-monospace,monospace;opacity:.75}.comm{height:32px;min-width:38px;border:1px solid var(--line);border-radius:8px;background:rgba(255,255,255,.07);color:#eaf3fc;padding:0 8px}.locked{font-size:11px;opacity:.65}
+.window{position:absolute;left:5%;top:8%;width:min(720px,90%);height:min(520px,82%);display:grid;grid-template-rows:40px 1fr;border:1px solid var(--line);border-radius:10px;background:var(--glass);backdrop-filter:blur(22px) saturate(140%);box-shadow:0 24px 70px rgba(0,0,0,.48),inset 0 1px rgba(255,255,255,.12);overflow:hidden}
+.window::before{content:'';position:absolute;inset:-1px;border-radius:inherit;pointer-events:none;z-index:20;border:2px solid rgba(160,210,255,.45);box-shadow:0 0 7px rgba(139,196,255,.22),inset 0 0 7px rgba(139,196,255,.12);animation:borderMorph 2.8s ease-in-out infinite}.window.visual-local{background:linear-gradient(145deg,var(--local),var(--glass) 38%);box-shadow:0 24px 70px rgba(0,0,0,.48),0 0 42px var(--glow),inset 0 1px rgba(255,255,255,.14)}.window.visual-global{background:linear-gradient(145deg,var(--global),var(--glass) 38%);border-color:rgba(229,181,119,.42)}.window.visual-global::before{border-color:rgba(229,181,119,.52);box-shadow:0 0 7px rgba(229,181,119,.22),inset 0 0 7px rgba(229,181,119,.12);animation-duration:3.4s}@keyframes borderMorph{0%,100%{opacity:.38;filter:brightness(.8);transform:scale(1)}50%{opacity:1;filter:brightness(1.65);transform:scale(.997)}}@media(prefers-reduced-motion:reduce){.window::before{animation:none}}.windowbar{display:flex;align-items:center;gap:6px;padding:5px 8px;border-bottom:1px solid var(--line)}
+.windowbar strong{font-size:13px}.windowbody{overflow:auto;padding:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:10px}
+.card{border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:11px;background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.025));box-shadow:inset 0 1px rgba(255,255,255,.08)}.card b{display:block;font-size:12px}.card span{font:12px ui-monospace,monospace;opacity:.8}
+pre{white-space:pre-wrap;word-break:break-word;font:11px/1.45 ui-monospace,monospace;margin:0}
+#status{font:11px ui-monospace,monospace}
+@media(max-width:600px){:root{--bar:48px}.window{left:3%;top:3%;width:94%;height:92%}.optional{display:none}.bar{position:relative}.bar>*{position:relative;z-index:1}}
+</style>
+</head>
+<body>
+<div id="desktop">
+ <div id="topbar" class="bar"><span class="scope">LOCAL</span><span id="clockTop"></span><span class="locked optional">LOCKED</span><span class="spacer"></span><span id="status">BOOTSTRAP</span><button class="comm optional" data-comm="telegram">Telegram</button><button class="comm optional" data-comm="whatsapp">WhatsApp</button><input id="localPrompt" class="prompt optional" aria-label="Local prompt" placeholder="Local prompt"><button id="localStart" class="start">Start</button></div>
+ <main id="workspace"><div id="backgroundPlane" aria-hidden="true"><svg class="visual-mark" viewBox="0 0 1000 600" preserveAspectRatio="none"><path d="M0 300H1000 M500 0V600" fill="none" stroke="currentColor" stroke-width=".7"/><circle cx="500" cy="300" r="190" fill="none" stroke="currentColor" stroke-width=".7"/><circle cx="500" cy="300" r="95" fill="none" stroke="currentColor" stroke-width=".7"/></svg></div><div id="title">Operations Center</div><div id="foregroundPlane" aria-hidden="true"></div></main>
+ <div id="bottombar" class="bar"><button id="globalStart" class="start">Start</button><input id="globalPrompt" class="prompt optional" aria-label="Global prompt" placeholder="Global prompt"><button class="comm optional" data-comm="telegram">Telegram</button><button class="comm optional" data-comm="whatsapp">WhatsApp</button><span class="scope">GLOBAL</span><span class="locked optional">LOCKED</span><span class="spacer"></span><span id="sourceState">volatile</span><span id="clockBottom"></span></div>
+</div>
+<script>
+'use strict';
+(()=>{
+ const q=s=>document.querySelector(s), workspace=q('#workspace'), status=q('#status'), sourceState=q('#sourceState');
+ const state={source:null,descriptor:null,windows:new Map(),z:1,visual:null};
+ const freeze=o=>Object.freeze(o);
+ const clock=()=>{const t=new Date().toLocaleTimeString([], {hour:'2-digit',minute:'2-digit',second:'2-digit'});q('#clockTop').textContent=t;q('#clockBottom').textContent=t};
+ clock();setInterval(clock,1000);
+ function applyGeometry(w,g){Object.assign(w.style,{left:g.left+'px',top:g.top+'px',width:g.width+'px',height:g.height+'px'})}
+ function snapWindow(w,zone){const r=workspace.getBoundingClientRect(),gap=8,W=r.width,H=r.height,g={left:gap,top:gap,width:W-2*gap,height:H-2*gap};if(zone==='left')g.width=(W-3*gap)/2;if(zone==='right'){g.width=(W-3*gap)/2;g.left=(W+gap)/2}if(zone==='tl'){g.width=(W-3*gap)/2;g.height=(H-3*gap)/2}if(zone==='tr'){g.width=(W-3*gap)/2;g.height=(H-3*gap)/2;g.left=(W+gap)/2}if(zone==='bl'){g.width=(W-3*gap)/2;g.height=(H-3*gap)/2;g.top=(H+gap)/2}if(zone==='br'){g.width=(W-3*gap)/2;g.height=(H-3*gap)/2;g.left=(W+gap)/2;g.top=(H+gap)/2}applyGeometry(w,g)}
+ function windowOpen(id,title,body,scope='local'){
+   let w=state.windows.get(id);if(w){w.style.zIndex=++state.z;return w}
+   w=document.createElement('section');w.className='window visual-'+scope;w.dataset.id=id;w.style.zIndex=++state.z;
+   w.innerHTML='<div class="windowbar"><button class="tool optional" data-action="config">Config</button><button class="tool optional" data-action="settings">Settings</button><button class="tool optional" data-action="properties">Properties</button><strong></strong><span class="spacer"></span><button class="tool" data-action="toggle">Content</button><button class="tool optional" data-snap="left">L</button><button class="tool optional" data-snap="right">R</button><button class="tool" data-action="pop">Pop</button><button class="tool" data-action="max">Max</button><button class="tool" data-action="close">Close</button></div><div class="windowbody"></div>';
+   w.querySelector('strong').textContent=title;w.querySelector('.windowbody').append(body);
+   w.addEventListener('pointerdown',()=>w.style.zIndex=++state.z);
+   w.querySelector('[data-action=close]').onclick=()=>{w.remove();state.windows.delete(id)};
+   w.querySelector('[data-action=toggle]').onclick=()=>{const b=w.querySelector('.windowbody');b.hidden=!b.hidden};w.querySelector('[data-action=max]').onclick=()=>{w.classList.toggle('maximized');if(w.classList.contains('maximized'))Object.assign(w.style,{left:'1%',top:'1%',width:'98%',height:'98%'});else Object.assign(w.style,{left:'5%',top:'8%',width:'min(720px,90%)',height:'min(520px,82%)'})};w.querySelector('[data-action=pop]').onclick=()=>w.style.zIndex=++state.z;w.querySelectorAll('[data-snap]').forEach(b=>b.onclick=()=>snapWindow(w,b.dataset.snap));
+   workspace.append(w);state.windows.set(id,w);return w;
+ }
+ function detectVisual(){const svg=!!document.createElementNS;const canvas=!!document.createElement('canvas').getContext;const webgl=(()=>{try{return !!document.createElement('canvas').getContext('webgl2')}catch{return false}})();const webgpu=!!navigator.gpu;return freeze({schema:'TERRAFORMER-FOREGROUND-VISUAL/1',foreground:'system.foreground',graphics:'system.graphics',visualization:'system.visualization',layout:'system.layout',layer:'system.layer',html:'system.html',css:'system.css',preferredRepresentation:'system.vector',activeRepresentation:svg?'system.vector':'system.raster',svg,canvas,webgl2:webgl,webgpuCandidate:webgpu,webgpuQualified:false,webassemblyCandidate:typeof WebAssembly==='object',webassemblyQualified:false,automaticHardwareClassification:false,authorityGranted:false})}
+ function visualizationWindow(){const body=document.createElement('div');body.className='grid';for(const [a,b] of Object.entries(state.visual||{})){const card=document.createElement('div');card.className='card';const k=document.createElement('b'),v=document.createElement('span');k.textContent=a;v.textContent=String(b);card.append(k,v);body.append(card)}windowOpen('visualization','Foreground Visualization',body,'local')}
+ function overview(){
+   const body=document.createElement('div');body.className='grid';
+   const data=[
+    ['Runtime','Browser / volatile'],['Canonical source',state.descriptor.source],['Source bytes',String(state.descriptor.bytes)],
+    ['Node execution','false'],['Persistence','false'],['Server activity','false'],['Authority granted','false'],['Delivery','GitHub Pages'],['Projection','Desktop / Window / Presentation'],['Foreground','Graphics / Visualization'],['Representation',state.visual?state.visual.activeRepresentation:'pending'],['Canonical execution','Node service boundary']
+   ];
+   for(const [a,b] of data){const c=document.createElement('div');c.className='card';const x=document.createElement('b'),y=document.createElement('span');x.textContent=a;y.textContent=b;c.append(x,y);body.append(c)}
+   windowOpen('overview','Terraformer — Browser Runtime',body);
+ }
+ function sourceWindow(){
+   const p=document.createElement('pre');p.textContent=state.source||'Source unavailable';windowOpen('source','Canonical Source (read-only)',p,'global');
+ }
+ q('#localStart').onclick=overview;q('#globalStart').onclick=sourceWindow;document.querySelectorAll('[data-comm]').forEach(b=>b.onclick=()=>{const p=document.createElement('div');p.textContent=b.dataset.comm+' projection reserved; no external connection or authority is invoked.';windowOpen('comm-'+b.dataset.comm,b.textContent,p)});
+ async function boot(){
+   const sourceURL='./site/terraformer.js';
+   try{
+    status.textContent='READING';
+    const r=await fetch(sourceURL,{cache:'no-store'});if(!r.ok)throw Error('HTTP '+r.status+' '+r.statusText);
+    const source=await r.text();
+    const descriptor=freeze({schema:'TERRAFORMER-BROWSER-RUNTIME/1',version:'0.48.59',mode:'browser',state:'volatile',source:sourceURL,bytes:new TextEncoder().encode(source).byteLength,nodeExecution:false,persistence:false,serverActivity:false,authorityGranted:false});
+    state.source=source;state.descriptor=descriptor;state.visual=detectVisual();
+    globalThis.TERRAFORMER_BROWSER_RUNTIME=freeze({descriptor,getSource:()=>source,openOverview:overview,openSource:sourceWindow,projection:freeze({desktop:'system.desktop',window:'system.window',presentation:'system.presentation',foreground:'system.foreground',graphics:'system.graphics',visualization:'system.visualization',vector:'system.vector',layout:'system.layout',layer:'system.layer',geometry:'system.geometry',snap:'system.snap'}),visual:state.visual,openVisualization:visualizationWindow,snap:(id,zone)=>{const w=state.windows.get(id);if(w)snapWindow(w,zone)},geometry:freeze({system:'system.geometry',snap:'system.snap',logical:true,persistent:false})});
+    status.textContent='BROWSER READY';sourceState.textContent=(state.visual.activeRepresentation==='system.vector'?'vector':'fallback')+' / volatile';overview();
+   }catch(e){status.textContent='FAILED';sourceState.textContent='failed';const p=document.createElement('pre');p.textContent=String(e&&e.stack||e);windowOpen('failure','Bootstrap Failure',p)}
+ }
+ boot();
+})();
+</script>
+</body>
+</html>

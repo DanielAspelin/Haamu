@@ -1,0 +1,11 @@
+{
+  "schema": "TERRAFORMER-NEVERS/1",
+  "systemId": "system.never",
+  "membershipGrantsAllocation": false,
+  "membershipGrantsConversion": false,
+  "membershipGrantsValidation": false,
+  "membershipGrantsExecution": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

@@ -1,0 +1,8 @@
+{
+  "schema": "TERRAFORMER-CENTERS/1",
+  "systemId": "system.center",
+  "membershipGrantsMutation": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

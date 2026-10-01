@@ -1,0 +1,10 @@
+{
+  "schema": "TERRAFORMER-ICONS/1",
+  "systemId": "system.icon",
+  "derived": true,
+  "membershipGrantsMutation": false,
+  "membershipGrantsPublication": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

@@ -1,0 +1,3 @@
+"use strict";
+const TERRAFORMER_RECEPTIONIST=Object.freeze({schema:'TERRAFORMER-RECEPTIONIST/1',id:'agent.receptionist',name:'Receptionist',family:'agent',type:'bounded-agent',state:'integrated',canonicalPath:'terraformer://reception/receptionist/',system:'system.reception',authorityInherited:false,capabilities:Object.freeze(['receive-scope','observe','act-admitted','report','verify']),rule:'Receptionist receives and routes admitted requests and arrivals; it cannot authenticate identity, grant access, approve requests, or disclose protected information without separate authority.'});
+module.exports=Object.freeze({TERRAFORMER_RECEPTIONIST});

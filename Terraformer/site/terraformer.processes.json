@@ -1,0 +1,10 @@
+{
+  "schema": "TERRAFORMER-PROCESSES/1",
+  "systemId": "system.process",
+  "declarativeRegistry": true,
+  "pidIsOsProcessId": false,
+  "membershipGrantsExecution": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

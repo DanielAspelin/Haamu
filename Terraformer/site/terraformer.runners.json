@@ -1,0 +1,16 @@
+{
+  "schema": "TERRAFORMER-RUNNERS-REGISTRY/1",
+  "owner": "terraformer.runner.js",
+  "role": "role.runner",
+  "memberships": [
+    {
+      "class": "Worker",
+      "domain": "tool",
+      "identity": "tool.worker.runner",
+      "parent": "system.tool"
+    }
+  ],
+  "entries": [],
+  "authorityGranted": false,
+  "rule": "Registry records identities/evidence only; membership grants no execution, authentication, authorization, persistence, or approval authority."
+}

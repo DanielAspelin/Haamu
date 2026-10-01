@@ -1,0 +1,45 @@
+{
+  "schema": "TERRAFORMER-STAGES/1",
+  "systemId": "system.stage",
+  "executionImplied": false,
+  "networkBindingImplied": false,
+  "authorityGranted": false,
+  "records": [
+    {
+      "stage": 1,
+      "tcp": 9966,
+      "udp": 9966,
+      "role": "bootstrap"
+    },
+    {
+      "stage": 2,
+      "tcp": 19966,
+      "udp": 19966,
+      "role": "control"
+    },
+    {
+      "stage": 3,
+      "tcp": 29966,
+      "udp": 29966,
+      "role": "coordination"
+    },
+    {
+      "stage": 4,
+      "tcp": 39966,
+      "udp": 39966,
+      "role": "data"
+    },
+    {
+      "stage": 5,
+      "tcp": 49966,
+      "udp": 49966,
+      "role": "service"
+    },
+    {
+      "stage": 6,
+      "tcp": 59966,
+      "udp": 59966,
+      "role": "extension"
+    }
+  ]
+}

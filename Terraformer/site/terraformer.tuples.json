@@ -1,0 +1,8 @@
+{
+  "schema": "TERRAFORMER-TUPLES/1",
+  "systemId": "system.tuple",
+  "structural": true,
+  "storageAuthority": false,
+  "persistenceAuthority": false,
+  "records": []
+}

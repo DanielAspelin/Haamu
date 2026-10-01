@@ -1,0 +1,9 @@
+{
+  "schema": "TERRAFORMER-CORPORA/1",
+  "systemId": "system.corpora",
+  "singularSystem": "system.corpus",
+  "membershipGrantsExecution": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

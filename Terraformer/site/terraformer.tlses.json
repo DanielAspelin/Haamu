@@ -1,0 +1,10 @@
+{
+  "schema": "TERRAFORMER-TLSES/1",
+  "systemId": "system.tls",
+  "membershipGrantsConnection": false,
+  "membershipGrantsMailOperation": false,
+  "membershipGrantsTunnel": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

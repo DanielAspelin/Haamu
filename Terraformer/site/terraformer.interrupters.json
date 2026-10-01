@@ -1,0 +1,10 @@
+{
+  "schema": "TERRAFORMER-INTERRUPTERS/1",
+  "purpose": "governed interrupter worker identities, capabilities and evidence",
+  "authorityGranted": false,
+  "forceTerminationByMembership": false,
+  "records": [],
+  "owner": "system.interrupter",
+  "ownerBindingVersion": "0.48.16",
+  "ownerBindingAuthorityGranted": false
+}

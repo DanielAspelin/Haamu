@@ -1,0 +1,8 @@
+{
+  "schema": "TERRAFORMER-NFCS/1",
+  "systemId": "system.nfc",
+  "readOnlyDiscovery": true,
+  "automaticInvocation": false,
+  "authorityGranted": false,
+  "records": []
+}

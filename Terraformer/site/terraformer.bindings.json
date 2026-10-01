@@ -1,0 +1,10 @@
+{
+  "schema": "TERRAFORMER-BINDINGS-REGISTRY/1",
+  "owner": "terraformer.binding.js",
+  "system": "system.binding",
+  "actor": "agent.binder",
+  "entries": [],
+  "persistentByDefault": false,
+  "authorityGranted": false,
+  "rule": "Binding records describe admitted binding instances/results/history only; records do not independently execute, persist, authorize, or create external effects."
+}

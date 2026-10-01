@@ -1,0 +1,7 @@
+{
+  "schema": "terraformer.registry/infrastructures/1",
+  "owner": "system.infrastructure",
+  "entries": [],
+  "authority": false,
+  "qualificationGranted": false
+}

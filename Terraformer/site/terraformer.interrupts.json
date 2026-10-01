@@ -1,0 +1,7 @@
+{
+  "schema": "TERRAFORMER-INTERRUPTS/1",
+  "purpose": "governed cooperative interrupt definitions, events and recovery evidence",
+  "authorityGranted": false,
+  "forceTerminationByMembership": false,
+  "records": []
+}

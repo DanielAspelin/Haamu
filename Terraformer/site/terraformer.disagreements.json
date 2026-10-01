@@ -1,0 +1,12 @@
+{
+  "schema": "TERRAFORMER-DISAGREEMENTS/1",
+  "version": "0.47.59",
+  "owner": "system.disagreement",
+  "governedBy": "terraformer.disagreement.js",
+  "records": [],
+  "authorityGranted": false,
+  "consentImplied": false,
+  "legalEffectImplied": false,
+  "roundTrip": "roundtrip.communication",
+  "roundTripRegistry": "terraformer.roundtrips.json"
+}

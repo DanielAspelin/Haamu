@@ -1,0 +1,116 @@
+{
+  "schema": "TERRAFORMER-PLANS/1",
+  "owner": "system.planning",
+  "executable": "terraformer.planning.js",
+  "purpose": "governed plan definitions and evidence",
+  "authorityGranted": false,
+  "membershipGrantsAuthority": false,
+  "records": [
+    {
+      "id": "plan.physicalization.morphology.v0.48.24",
+      "name": "Morphological Physicalization Strategy",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "stages": [
+        {
+          "order": 1,
+          "match": "English Token ends with -ion or -ing",
+          "projection": "SYSTEM",
+          "action": "Pre-create separate minimal singular JavaScript System file when absent."
+        },
+        {
+          "order": 2,
+          "match": "English Token ends with final r",
+          "projection": "APPLICATION",
+          "action": "Pre-create/distinguish separate singular JavaScript Application file; migrate architectural classification from Worker/System level."
+        },
+        {
+          "order": 3,
+          "match": "Each pre-created singular file",
+          "projection": "PLURAL_SET",
+          "action": "Evaluate plural semantics; create one-word plural JSON set only when meaningful."
+        },
+        {
+          "order": 4,
+          "match": "All pre-created artifacts",
+          "projection": "QUALIFICATION",
+          "action": "Resolve semantics, type, relationships, responsibility, functionality and non-overlap before naturalization."
+        }
+      ],
+      "rules": {
+        "oneWordPhysicalNames": true,
+        "minimalCode": true,
+        "suffixAllowsPrecreation": true,
+        "suffixDoesNotProveSemantics": true,
+        "noAuthorityFromMorphology": true,
+        "noExecutionFromMorphology": true,
+        "pluralConditional": true,
+        "preserveExistingImplementationDuringReclassification": true
+      }
+    },
+    {
+      "id": "plan.tokens.v0.48.25",
+      "name": "Full English Token Physicalization",
+      "corpus": "terraformer.englishtokens.json",
+      "tokenCount": 76226,
+      "target": "ONE_PHYSICAL_FILE_PER_ADMITTED_ENGLISH_TOKEN",
+      "tokenNamespace": "tokens/<token>.json",
+      "systemRule": "-ion/-ing => minimal System JS owner",
+      "applicationRule": "final-r => minimal Application JS owner",
+      "pluralRule": "Evaluate after singular physicalization; create only when semantically meaningful.",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false
+    },
+    {
+      "id": "plan.files.v0.48.26",
+      "name": "Singular/Plural Physical File Invariant",
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "rules": {
+        "singular": ".js",
+        "pluralOrSet": ".json",
+        "oneWordConceptNames": true,
+        "individualSingularJsonFiles": false,
+        "tokenCorpusStoredIn": "terraformer.tokens.json",
+        "tokenSingularOwner": "terraformer.token.js"
+      },
+      "migration": {
+        "from": "v0.48.25 tokens/<singular>.json",
+        "action": "CONSOLIDATED_INTO_PLURAL_SET",
+        "dataLoss": false
+      }
+    },
+    {
+      "id": "plan.plurals.v0.48.27",
+      "name": "Plural Physicalization Strategy",
+      "sourceEnglishTokens": 76226,
+      "finalSTokens": 7551,
+      "morphologicallyResolvedPairs": 1020,
+      "qualifiedCurrentOwnerPairs": 52,
+      "newPluralJsonSets": 25,
+      "procedure": [
+        "Analyze final-s Tokens as plural candidates",
+        "Resolve a corpus-attested singular counterpart",
+        "Require an existing singular JavaScript owner",
+        "Validate semantic suitability",
+        "Create one-word plural JSON set",
+        "Retain ambiguous forms unresolved"
+      ],
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false
+    },
+    {
+      "id": "plan.parity.v0.48.29",
+      "name": "JS/JSON Physical Parity",
+      "target": "Approximately one plural JSON set for each applicable singular JS owner",
+      "singularJs": 10889,
+      "pluralJsonConcepts": 10889,
+      "rules": {
+        "singularJs": true,
+        "pluralJson": true,
+        "inferredPluralIsPreInformative": true,
+        "corpusAttestationPreferred": true,
+        "semanticQualificationStillRequired": true
+      },
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT"
+    }
+  ]
+}

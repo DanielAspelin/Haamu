@@ -1,0 +1,9 @@
+{
+  "schema": "terraformer.registry/agreements/1",
+  "owner": "system.agreement",
+  "entries": [],
+  "authority": false,
+  "qualificationGranted": false,
+  "roundTrip": "roundtrip.communication",
+  "roundTripRegistry": "terraformer.roundtrips.json"
+}

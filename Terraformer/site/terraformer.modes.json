@@ -1,0 +1,188 @@
+{
+  "$schema": "terraformer.registry/modes/1",
+  "version": "0.44.21",
+  "governedBy": "terraformer.mode.js",
+  "kind": "MODE_REGISTRY",
+  "owner": "system.mode",
+  "dimension": "MODE",
+  "selectionModel": "DEFINE_CENTRALLY_SELECT_LOCALLY",
+  "eligibleConsumers": [
+    "SYSTEM",
+    "PROJECT",
+    "PROGRAM",
+    "APPLICATION",
+    "PLATFORM",
+    "COMMON",
+    "INTERNET",
+    "FILE",
+    "USER",
+    "MACHINE",
+    "GROUP",
+    "DIMENSION"
+  ],
+  "authority": false,
+  "entries": [
+    {
+      "id": "DEFAULT",
+      "definition": "Default operating mode",
+      "aliases": [],
+      "applicability": [
+        "SYSTEM",
+        "PROJECT",
+        "PROGRAM",
+        "APPLICATION",
+        "PLATFORM",
+        "COMMON",
+        "INTERNET",
+        "FILE",
+        "USER",
+        "MACHINE",
+        "GROUP",
+        "DIMENSION"
+      ],
+      "constraints": {
+        "explicitSelection": true,
+        "scoped": true,
+        "noAuthority": true
+      },
+      "version": "0.44.15",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "ACTIVE",
+      "definition": "Active operating mode",
+      "aliases": [],
+      "applicability": [
+        "SYSTEM",
+        "PROJECT",
+        "PROGRAM",
+        "APPLICATION",
+        "PLATFORM",
+        "COMMON",
+        "INTERNET",
+        "FILE",
+        "USER",
+        "MACHINE",
+        "GROUP",
+        "DIMENSION"
+      ],
+      "constraints": {
+        "explicitSelection": true,
+        "scoped": true,
+        "noAuthority": true
+      },
+      "version": "0.44.15",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "INACTIVE",
+      "definition": "Inactive operating mode",
+      "aliases": [],
+      "applicability": [
+        "SYSTEM",
+        "PROJECT",
+        "PROGRAM",
+        "APPLICATION",
+        "PLATFORM",
+        "COMMON",
+        "INTERNET",
+        "FILE",
+        "USER",
+        "MACHINE",
+        "GROUP",
+        "DIMENSION"
+      ],
+      "constraints": {
+        "explicitSelection": true,
+        "scoped": true,
+        "noAuthority": true
+      },
+      "version": "0.44.15",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "FOREGROUND",
+      "definition": "Foreground operating mode",
+      "aliases": [],
+      "applicability": [
+        "SYSTEM",
+        "PROJECT",
+        "PROGRAM",
+        "APPLICATION",
+        "PLATFORM",
+        "COMMON",
+        "INTERNET",
+        "FILE",
+        "USER",
+        "MACHINE",
+        "GROUP",
+        "DIMENSION"
+      ],
+      "constraints": {
+        "explicitSelection": true,
+        "scoped": true,
+        "noAuthority": true
+      },
+      "version": "0.44.15",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "BACKGROUND",
+      "definition": "Background operating mode",
+      "aliases": [],
+      "applicability": [
+        "SYSTEM",
+        "PROJECT",
+        "PROGRAM",
+        "APPLICATION",
+        "PLATFORM",
+        "COMMON",
+        "INTERNET",
+        "FILE",
+        "USER",
+        "MACHINE",
+        "GROUP",
+        "DIMENSION"
+      ],
+      "constraints": {
+        "explicitSelection": true,
+        "scoped": true,
+        "noAuthority": true
+      },
+      "version": "0.44.15",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "MAINTENANCE",
+      "definition": "Maintenance operating mode",
+      "aliases": [],
+      "applicability": [
+        "SYSTEM",
+        "PROJECT",
+        "PROGRAM",
+        "APPLICATION",
+        "PLATFORM",
+        "COMMON",
+        "INTERNET",
+        "FILE",
+        "USER",
+        "MACHINE",
+        "GROUP",
+        "DIMENSION"
+      ],
+      "constraints": {
+        "explicitSelection": true,
+        "scoped": true,
+        "noAuthority": true
+      },
+      "version": "0.44.15",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    }
+  ]
+}

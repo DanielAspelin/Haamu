@@ -1,0 +1,10 @@
+{
+  "schema": "TERRAFORMER-CORRUPTIONS/1",
+  "systemId": "system.corruption",
+  "antiCorruptionSystem": "system.anti-corruption",
+  "evidenceOnlyByDefault": true,
+  "membershipImpliesCorruption": false,
+  "automaticRepair": false,
+  "authorityGranted": false,
+  "records": []
+}

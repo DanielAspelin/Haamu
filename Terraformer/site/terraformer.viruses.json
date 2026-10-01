@@ -1,0 +1,10 @@
+{
+  "schema": "TERRAFORMER-VIRUSES/1",
+  "owner": "system.antivirus",
+  "executable": "terraformer.antivirus.js",
+  "purpose": "governed virus/threat definitions, indicators and evidence",
+  "authorityGranted": false,
+  "membershipGrantsAuthority": false,
+  "executionAuthorityGranted": false,
+  "records": []
+}

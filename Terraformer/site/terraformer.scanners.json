@@ -1,0 +1,7 @@
+{
+  "schema": "TERRAFORMER-SCANNERS/1",
+  "purpose": "governed scanner identities, bounded plans and evidence",
+  "authorityGranted": false,
+  "activeExecutionByMembership": false,
+  "records": []
+}

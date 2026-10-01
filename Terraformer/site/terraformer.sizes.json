@@ -1,0 +1,13 @@
+{
+  "schema": "TERRAFORMER-SIZES/1",
+  "owner": "system.sizing",
+  "fields": [
+    "size",
+    "unit",
+    "scope",
+    "default",
+    "customized"
+  ],
+  "records": [],
+  "authorityGranted": false
+}

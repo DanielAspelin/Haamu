@@ -1,0 +1,41 @@
+{
+  "schema": "TERRAFORMER-VISUAL-LAYOUT-PLANES/1",
+  "version": "0.48.7",
+  "owner": "system.foreground",
+  "planes": [
+    {
+      "id": "visual.layout.background",
+      "layout": "system.layout",
+      "layer": "system.layer",
+      "role": "BACKGROUND_LAYOUT_LAYER",
+      "zRole": "behind",
+      "createsNestedLayers": true
+    },
+    {
+      "id": "visual.layout.foreground",
+      "layout": "system.layout",
+      "layer": "system.layer",
+      "role": "FOREGROUND_LAYOUT_LAYER",
+      "zRole": "front",
+      "createsNestedLayers": true
+    }
+  ],
+  "composition": {
+    "graphics": "system.graphics",
+    "visualization": "system.visualization",
+    "vectorDefault": "system.vector",
+    "rasterFallback": "system.raster",
+    "surrealCompositionAllowed": true,
+    "depthCompositionAllowed": true,
+    "html": "system.html",
+    "css": "system.css"
+  },
+  "boundaries": {
+    "visualPresentationOnly": true,
+    "doesNotOwnBackgroundComputation": true,
+    "authorityGranted": false,
+    "executionGranted": false,
+    "htmlCssOwnedByForegroundPresentation": true,
+    "htmlCssIdentityPreserved": true
+  }
+}

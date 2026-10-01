@@ -1,0 +1,10 @@
+{
+  "schema": "TERRAFORMER-INVOCATIONS/1",
+  "systemId": "system.invocation",
+  "declarativeRegistry": true,
+  "membershipGrantsExecution": false,
+  "membershipGrantsInstantiation": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

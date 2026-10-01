@@ -1,0 +1,9 @@
+{
+  "schema": "TERRAFORMER-PAUSERS/1",
+  "systemId": "system.pauser",
+  "declarativeRegistry": true,
+  "membershipGrantsThreadCreation": false,
+  "membershipGrantsExternalEffect": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

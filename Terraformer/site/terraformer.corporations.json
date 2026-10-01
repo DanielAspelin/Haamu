@@ -1,0 +1,9 @@
+{
+  "schema": "TERRAFORMER-CORPORATIONS/1",
+  "systemId": "system.corporation",
+  "declarativeRegistry": true,
+  "membershipGrantsExecution": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

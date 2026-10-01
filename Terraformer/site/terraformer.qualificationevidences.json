@@ -1,0 +1,1278 @@
+{
+  "schema": "TERRAFORMER-QUALIFICATION-EVIDENCE/1",
+  "version": "0.47.92",
+  "owner": "system.qualification",
+  "records": [
+    {
+      "system": "system.acting",
+      "ownerFile": "terraformer.acting.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfActingSelfTestV36335"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.analysis",
+      "ownerFile": "terraformer.analysis.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfAnalysisInventoryContentSelfTestV36323"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.architecture",
+      "ownerFile": "terraformer.architecture.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfIoNaturalizationSelfTestV36223"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.availability",
+      "ownerFile": "terraformer.availability.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfAvailabilityGeoSocialSelfTestV36344"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.barcode",
+      "ownerFile": "terraformer.barcode.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfMachineReadableCodeSelfTestV36318"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.base",
+      "ownerFile": "terraformer.base.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfBaseCompositionSelfTestV36305"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.bluetooth",
+      "ownerFile": "terraformer.bluetooth.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfProgressiveMobileWebSelfTestV36316"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.bootstrap",
+      "ownerFile": "terraformer.bootstrap.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfBootstrapSystemSelfTestV36286"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.camera",
+      "ownerFile": "terraformer.camera.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfWebMediaSelfTestV36328"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.carrier",
+      "ownerFile": "terraformer.carrier.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfIoCarrierSocketSelfTestV36369"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.checking",
+      "ownerFile": "terraformer.checking.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfCheckingSelfTestV36392"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.checkpoint",
+      "ownerFile": "terraformer.checkpoint.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfProjectCheckpointSelfTestV36218"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.classification",
+      "ownerFile": "terraformer.classification.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfClassificationSelfTestV36243",
+        "tfCorpusCanonicalClassificationSelfTestV36258",
+        "tfCompositeSemanticTriageSelfTestV36262",
+        "tfSemanticPrimitiveSelfTestV36271"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.communication",
+      "ownerFile": "terraformer.communication.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfFutureOrientationSelfTestV36290"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.comparison",
+      "ownerFile": "terraformer.comparison.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfCalcCompareComputeSelfTestV36346"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.conclusion",
+      "ownerFile": "terraformer.conclusion.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfDecisionConclusionSelfTestV36354"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.containerization",
+      "ownerFile": "terraformer.containerization.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfContainerizationSelfTestV36281"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.control",
+      "ownerFile": "terraformer.control.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfComputationInformationControlQualificationV4091"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.corpus",
+      "ownerFile": "terraformer.corpus.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfCorpusSelfTestV36339"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.credit",
+      "ownerFile": "terraformer.credit.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfCreditSelfTestV36322"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.currency",
+      "ownerFile": "terraformer.currency.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfCurrencyIdentitySocialSelfTestV36321"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.defaults",
+      "ownerFile": "terraformer.defaults.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfDefaultsSchemaReconstructionSelfTestV36387"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.dios",
+      "ownerFile": "terraformer.dios.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfDiosSelfTestV36215",
+        "tfDiosCommunicationStreamSelfTestV36248"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.diplomacy",
+      "ownerFile": "terraformer.diplomacy.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfCivicLegalSelfTestV36343"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.documentary",
+      "ownerFile": "terraformer.documentary.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfTextDocumentarySelfTestV36340"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.documentator",
+      "ownerFile": "terraformer.documentator.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfLifecycleObservabilitySelfTestV36341"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.editing",
+      "ownerFile": "terraformer.editing.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfMediaEditingSelfTestV36403",
+        "tfSystemEditValidate"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.education",
+      "ownerFile": "terraformer.education.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfEducationFabricSelfTestV36284"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.electric",
+      "ownerFile": "terraformer.electric.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfPhysicalSystemDomainSelfTestV36393"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.engine",
+      "ownerFile": "terraformer.engine.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfEngineSelfTestV36349"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.establishment",
+      "ownerFile": "terraformer.establishment.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfStructuralAssuranceSelfTestV36311"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.execution",
+      "ownerFile": "terraformer.execution.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfCrossContextSelfTestV36317"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.filing",
+      "ownerFile": "terraformer.filing.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfFilingSelfTestV36330"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.forking",
+      "ownerFile": "terraformer.forking.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfForkWrapSelfTestV36345"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.glossary",
+      "ownerFile": "terraformer.glossary.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfGlossaryQualificationV4068"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.grouping",
+      "ownerFile": "terraformer.grouping.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfGroupingSpecializationSelfTestV36399",
+        "tfScopeGroupingSelfTestV36400"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.handbook",
+      "ownerFile": "terraformer.handbook.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfNetworkHandbookSelfTestV36401"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.header",
+      "ownerFile": "terraformer.header.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfHeaderSystemSelfTestV36307"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.hypervisor",
+      "ownerFile": "terraformer.hypervisor.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfHypervisorSelfTestV36225"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.identity",
+      "ownerFile": "terraformer.identity.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfAliasSupersessionIdentityQualificationV04219",
+        "tfUnresolvedOriginIdentityQualificationV04214"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.importing",
+      "ownerFile": "terraformer.importing.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfIntegrationCoverageMissionSelfTestV36411"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.industry",
+      "ownerFile": "terraformer.industry.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfIndustrialFabricSelfTestV36213"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.intercommunication",
+      "ownerFile": "terraformer.intercommunication.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfIntercommunicationNegotiationMetaSelfTestV36301"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.interconnection",
+      "ownerFile": "terraformer.interconnection.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfInterconnectionSelfTestV36300"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.interface",
+      "ownerFile": "terraformer.interface.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfInterfaceFeatureSelfTestV36214"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.interpretation",
+      "ownerFile": "terraformer.interpretation.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfInterpretationSelfTestV36216"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.inventory",
+      "ownerFile": "terraformer.inventory.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfExecutableInventoryQualificationV4180",
+        "tfJsSurfaceInventoryQualificationV4181"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.lan",
+      "ownerFile": "terraformer.lan.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfLanAdmissionSelfTestV36250"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.language",
+      "ownerFile": "terraformer.language.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfLanguageCatalogueSelfTestV36356"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.law",
+      "ownerFile": "terraformer.law.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfNormativeFabricSelfTestV36283"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.layering",
+      "ownerFile": "terraformer.layering.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfLayeringSelfTestV36389"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.layout",
+      "ownerFile": "terraformer.layout.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfDesktopPlusLayoutSelfTestV36373"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.lifecycle",
+      "ownerFile": "terraformer.lifecycle.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfSystemLifecycleControlSelfTestV36279"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.linking",
+      "ownerFile": "terraformer.linking.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfLinkingSelfTestV36409",
+        "tfLinkingReconstructionSelfTestV36410"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.loop",
+      "ownerFile": "terraformer.loop.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfLoopRulingSelfTestV36383"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.making",
+      "ownerFile": "terraformer.making.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfMakingMakerSelfTestV36355"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.media",
+      "ownerFile": "terraformer.media.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfMediaFabricSelfTestV36292"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.menu",
+      "ownerFile": "terraformer.menu.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfMenuCatalogSelfTestV36370"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.messaging",
+      "ownerFile": "terraformer.messaging.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfMessagingAnnotationSelfTestV36294"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.mutation",
+      "ownerFile": "terraformer.mutation.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfMutationSelfTestV36217"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.negotiation",
+      "ownerFile": "terraformer.negotiation.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfConceptExpansionSelfTestV36302"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.numeration",
+      "ownerFile": "terraformer.numeration.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfNumerationEnumerationNumberingSelfTestV36348"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.ordering",
+      "ownerFile": "terraformer.ordering.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfOrderingSelfTestV36324"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.organization",
+      "ownerFile": "terraformer.organization.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfOrganizationDimensionSelfTestV36310"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.platform",
+      "ownerFile": "terraformer.platform.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfMetaVirtualPlatformSelfTestV36361"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.port",
+      "ownerFile": "terraformer.port.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfTransportPortSelfTestV36295",
+        "tfLockedTransportPortSelfTestV36296",
+        "tfCanonicalTransportPortSelfTestV36297",
+        "tfProtocolPortCompositionSelfTestV36298"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.portable",
+      "ownerFile": "terraformer.portable.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfPortableDomainPortSelfTestV36331"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.porting",
+      "ownerFile": "terraformer.porting.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfPortingSelfTestV36332"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.position",
+      "ownerFile": "terraformer.position.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfPositionWeatherSelfTestV36291"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.printing",
+      "ownerFile": "terraformer.printing.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfDocumentIOSignatureSelfTestV36319"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.privilege",
+      "ownerFile": "terraformer.privilege.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfHostPrivilegeSelfTestV36312",
+        "tfCrossPlatformPrivilegeSelfTestV36313"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.protocol",
+      "ownerFile": "terraformer.protocol.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfSshSftpFtpSelfTestV36364"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.pwa",
+      "ownerFile": "terraformer.pwa.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfMobileBrowserInvocationSelfTestV36314"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.queue",
+      "ownerFile": "terraformer.queue.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfQueueOrderingSelfTestV36325"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.recording",
+      "ownerFile": "terraformer.recording.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfRecordingTimeliningSelfTestV36376"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.referencing",
+      "ownerFile": "terraformer.referencing.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfReferencingSelfTestV36396"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.renderer",
+      "ownerFile": "terraformer.renderer.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfRendererTypeSelfTestV36405",
+        "tfRendererRelationshipSelfTestV36406"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.rendering",
+      "ownerFile": "terraformer.rendering.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfEditingRenderingSelfTestV36404"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.schema",
+      "ownerFile": "terraformer.schema.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfSchemaSystemSelfTestV36386"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.seeding",
+      "ownerFile": "terraformer.seeding.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfGenerativeBootstrapSelfTestV36353"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.server",
+      "ownerFile": "terraformer.server.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfServerClientAbilitySelfTestV36367",
+        "tfServerClientTypeListingSelfTestV36368"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.service",
+      "ownerFile": "terraformer.service.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfServiceSelfTestV36351"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.signer",
+      "ownerFile": "terraformer.signer.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfSignerSelfTestV36320"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.specifying",
+      "ownerFile": "terraformer.specifying.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfSpecifyingSelfTestV36397"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.studio",
+      "ownerFile": "terraformer.studio.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfLanguageCreationStudioSelfTestV36388"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.subnet",
+      "ownerFile": "terraformer.subnet.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfSubnetSelfTestV36233"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.subsystem",
+      "ownerFile": "terraformer.subsystem.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfSubstructureFabricSelfTestV36285"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.table",
+      "ownerFile": "terraformer.table.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfTabularRelationalSelfTestV36306"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.tabular",
+      "ownerFile": "terraformer.tabular.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfDataOrganizationSelfTestV36309"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.telemetry",
+      "ownerFile": "terraformer.telemetry.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfTelemetryBiometryContentSelfTestV36350"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.templating",
+      "ownerFile": "terraformer.templating.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfTemplatePrototypeBlueprintSelfTestV36352"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.theory",
+      "ownerFile": "terraformer.theory.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfTheoryPracticeSelfTestV36359"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.threading",
+      "ownerFile": "terraformer.threading.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfThreadingFabricSelfTestV36278"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.ticketing",
+      "ownerFile": "terraformer.ticketing.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfEventActorSelfTestV36336"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.tls",
+      "ownerFile": "terraformer.tls.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfTlsSslSelfTestV36366"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.transport",
+      "ownerFile": "terraformer.transport.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfAuthorizedNetworkTransportSelfTestV36249"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.tree",
+      "ownerFile": "terraformer.tree.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfUniversalSystemTreeSelfTestV36266"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.troubleshooting",
+      "ownerFile": "terraformer.troubleshooting.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfTroubleshootingAssuranceSelfTestV36337"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.usage",
+      "ownerFile": "terraformer.usage.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfUsageHaltingSelfTestV36391",
+        "tfUsageDesignQualificationV4061"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.viewport",
+      "ownerFile": "terraformer.viewport.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfSmartphoneBrowserSelfTestV36315"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.virtualization",
+      "ownerFile": "terraformer.virtualization.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfVirtualizationSelfTestV36224"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.whois",
+      "ownerFile": "terraformer.whois.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfWHOISSelfTestV36327"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.worker",
+      "ownerFile": "terraformer.worker.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfWorkerReconciliationQualificationV4066"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    },
+    {
+      "system": "system.working",
+      "ownerFile": "terraformer.working.js",
+      "evidenceKind": "OWNER_QUALIFICATION_MACHINERY",
+      "declaredQualification": [],
+      "qualificationCallables": [
+        "tfWorkingSelfTestV36334"
+      ],
+      "testExecutedByThisPass": false,
+      "passClaimedByThisPass": false,
+      "authorityGranted": false
+    }
+  ],
+  "rules": [
+    "Qualification machinery evidence does not imply PASS.",
+    "Self-test presence does not imply execution.",
+    "Explicit qualification labels are recorded as declarations, not independently verified outcomes."
+  ],
+  "authorityGranted": false,
+  "approvalGranted": false
+}

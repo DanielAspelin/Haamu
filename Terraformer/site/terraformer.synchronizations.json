@@ -1,0 +1,31 @@
+{
+  "schema": "TERRAFORMER-PLURAL-SET/1",
+  "version": "0.48.48",
+  "kind": "PLURAL_SET",
+  "concept": "synchronizations",
+  "singular": "synchronization",
+  "owner": "terraformer.synchronization.js",
+  "records": [
+    {
+      "id": "synchronization.terraformer.github-pages",
+      "source": "latest-valid-terraformer-distribution",
+      "target": "site.terraformer.github-pages",
+      "intervalMinutes": 10,
+      "singleFlight": true,
+      "convergeToNewestAfterCurrentRun": true,
+      "protectedPersistentFileVerification": true,
+      "pushOnlyAfterValidation": true,
+      "authorityGranted": false
+    }
+  ],
+  "pluralEvidence": {
+    "rule": "ENGLISH_INFLECTION",
+    "corpusAttested": false,
+    "status": "REJECTED_CANONICAL",
+    "normalization": "NO_CORPUS_PLURAL_AND_NO_INDEPENDENT_SEMANTIC_EVIDENCE"
+  },
+  "membershipGrantsAuthority": false,
+  "membershipGrantsExecution": false,
+  "qualification": "PRE_INFORMATIVE",
+  "canonical": false
+}

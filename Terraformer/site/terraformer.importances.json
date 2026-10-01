@@ -1,0 +1,37 @@
+{
+  "schema": "TERRAFORMER-CONCEPT-REGISTRY/1",
+  "version": "0.47.86",
+  "kind": "CONCEPT_REGISTRY",
+  "owner": "system.importance",
+  "concept": "importance",
+  "singularOwner": "terraformer.importance.js",
+  "records": [],
+  "membershipGrantsAuthority": false,
+  "membershipGrantsExecution": false,
+  "membershipGrantsPersistence": false,
+  "automaticPopulation": false,
+  "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+  "levels": [
+    {
+      "level": 1,
+      "name": "MINIMAL"
+    },
+    {
+      "level": 2,
+      "name": "LOW"
+    },
+    {
+      "level": 3,
+      "name": "MODERATE"
+    },
+    {
+      "level": 4,
+      "name": "HIGH"
+    },
+    {
+      "level": 5,
+      "name": "CRITICAL"
+    }
+  ],
+  "priorityImplied": false
+}

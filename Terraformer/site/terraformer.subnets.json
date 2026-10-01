@@ -1,0 +1,10 @@
+{
+  "schema": "TERRAFORMER-SUBNETS/1",
+  "owner": "system.subnet",
+  "executable": "terraformer.subnet.js",
+  "purpose": "governed subnet definitions and allocation evidence",
+  "authorityGranted": false,
+  "membershipGrantsAuthority": false,
+  "executionAuthorityGranted": false,
+  "records": []
+}

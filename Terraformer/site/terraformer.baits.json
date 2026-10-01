@@ -1,0 +1,9 @@
+{
+  "schema": "TERRAFORMER-BAITS/1",
+  "systemId": "system.bait",
+  "authorityGranted": false,
+  "records": [],
+  "controlledTestStimulus": true,
+  "externalTargeting": false,
+  "autonomousAction": false
+}

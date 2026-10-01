@@ -1,0 +1,7 @@
+{
+  "schema": "terraformer.registry/approvals/1",
+  "owner": "system.approval",
+  "entries": [],
+  "authority": false,
+  "qualificationGranted": false
+}

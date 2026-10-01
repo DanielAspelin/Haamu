@@ -1,0 +1,7 @@
+{
+  "schema": "TERRAFORMER-DOWNTIMES/1",
+  "systemId": "system.downtime",
+  "descriptive": true,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

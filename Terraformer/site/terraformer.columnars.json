@@ -1,0 +1,8 @@
+{
+  "schema": "TERRAFORMER-COLUMNARS/1",
+  "systemId": "system.columnar",
+  "organizationSystem": true,
+  "storageLayoutImplied": false,
+  "persistenceAuthority": false,
+  "records": []
+}

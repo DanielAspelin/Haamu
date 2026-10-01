@@ -1,0 +1,10 @@
+{
+  "schema": "TERRAFORMER-PLANNERS-REGISTRY/1",
+  "owner": "terraformer.planner.js",
+  "entity": "agent.planner",
+  "class": "Worker",
+  "system": "system.planning",
+  "entries": [],
+  "authorityGranted": false,
+  "rule": "Declarative actor registry only; membership grants no authentication, authorization, execution, persistence, approval, financial, or external-effect authority."
+}

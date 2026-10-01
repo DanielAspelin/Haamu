@@ -1,0 +1,16 @@
+{
+  "schema": "TERRAFORMER-CONCEPT-REGISTRY/1",
+  "version": "0.48.22",
+  "kind": "CONCEPT_REGISTRY",
+  "owner": "system.emergency",
+  "concept": "emergency",
+  "singularOwner": "terraformer.emergency.js",
+  "records": [],
+  "sourceEvidence": "terraformer.tokenaudits.json",
+  "physicalization": "PLURAL_SET",
+  "membershipGrantsAuthority": false,
+  "membershipGrantsExecution": false,
+  "membershipGrantsPersistence": false,
+  "automaticPopulation": false,
+  "qualification": "UNDER_CONDITIONAL_EXPERIMENT"
+}

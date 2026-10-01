@@ -1,0 +1,12 @@
+{
+  "schema": "TERRAFORMER-CUSTOMERS/1",
+  "purpose": "governed customer definitions, identities, capabilities and evidence",
+  "workerRoleEstablished": false,
+  "authorityGranted": false,
+  "membershipGrantsAuthority": false,
+  "automaticExecution": false,
+  "records": [],
+  "owner": "system.customer",
+  "ownerBindingVersion": "0.48.16",
+  "ownerBindingAuthorityGranted": false
+}

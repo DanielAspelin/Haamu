@@ -1,0 +1,8 @@
+{
+  "schema": "TERRAFORMER-TABLES/1",
+  "systemId": "system.table",
+  "structural": true,
+  "storageAuthority": false,
+  "persistenceAuthority": false,
+  "records": []
+}

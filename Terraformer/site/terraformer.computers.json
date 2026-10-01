@@ -1,0 +1,8 @@
+{
+  "schema": "TERRAFORMER-COMPUTERS/1",
+  "systemId": "system.computer",
+  "membershipGrantsExecution": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

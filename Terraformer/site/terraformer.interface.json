@@ -1,0 +1,12 @@
+{
+  "schema": "TERRAFORMER-INTERFACE/1",
+  "id": "system.interface",
+  "name": "Interface System",
+  "executable": "terraformer.interface.js",
+  "type": "interface-system",
+  "mode": "native-boundary",
+  "state": "registered",
+  "grantsAuthority": false,
+  "persists": false,
+  "rule": "Defines the canonical Interface System boundary; declaration does not grant capability, execution, authentication, authorization, or persistence authority."
+}

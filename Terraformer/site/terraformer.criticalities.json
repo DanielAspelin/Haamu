@@ -1,0 +1,46 @@
+{
+  "$schema": "terraformer.registry/criticalities/1",
+  "version": "0.47.75",
+  "kind": "CRITICALITY_REGISTRY",
+  "owner": "system.criticality",
+  "boundary": "DIMENSION_BOUNDARY",
+  "authority": false,
+  "declarationIsQualification": false,
+  "bypassGranted": false,
+  "emergencyPowersGranted": false,
+  "rule": "Higher criticality tightens requirements and controls; it never grants authority or bypasses established boundaries.",
+  "entries": [
+    {
+      "id": "NORMAL",
+      "level": 0
+    },
+    {
+      "id": "PRODUCTION",
+      "level": 1
+    },
+    {
+      "id": "PRODUCTION_CRITICAL",
+      "level": 2
+    },
+    {
+      "id": "MISSION_CRITICAL",
+      "level": 3
+    },
+    {
+      "id": "EMERGENCY",
+      "level": 4
+    }
+  ],
+  "requirements": [
+    "evidence",
+    "verification",
+    "containment",
+    "backup",
+    "recovery",
+    "redundancy",
+    "security",
+    "jurisdiction",
+    "human-control",
+    "auditability"
+  ]
+}

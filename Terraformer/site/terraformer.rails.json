@@ -1,0 +1,13 @@
+{
+  "schema": "TERRAFORMER-RAILS/1",
+  "version": "0.47.51",
+  "kind": "RAIL_REGISTRY",
+  "owner": "system.rail",
+  "governedBy": "terraformer.rail.js",
+  "topologyType": "Passage",
+  "records": [],
+  "authorityGranted": false,
+  "automaticTraversal": false,
+  "automaticExecution": false,
+  "automaticPersistence": false
+}

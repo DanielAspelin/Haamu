@@ -1,0 +1,18 @@
+{
+  "schema": "TERRAFORMER-MEMORIES/1",
+  "systemId": "system.memory",
+  "membershipGrantsAuthority": false,
+  "records": [],
+  "volatileSourceImage": {
+    "id": "system.memory.sourceimage",
+    "type": "volatile-source-image-system",
+    "owner": "system.memory",
+    "dependsOn": [
+      "system.memory",
+      "system.reader"
+    ],
+    "diskSourceImmutable": true,
+    "volatile": true,
+    "persistenceAuthority": false
+  }
+}

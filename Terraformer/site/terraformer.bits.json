@@ -1,0 +1,12 @@
+{
+  "schema": "TERRAFORMER-BITS/1",
+  "version": "0.47.55",
+  "kind": "BITS_REGISTRY",
+  "owner": "system.bit",
+  "governedBy": "terraformer.bit.js",
+  "family": "data-unit",
+  "records": [],
+  "authorityGranted": false,
+  "automaticExecution": false,
+  "automaticPersistence": false
+}

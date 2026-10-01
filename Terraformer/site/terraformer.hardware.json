@@ -1,0 +1,12 @@
+{
+  "schema": "TERRAFORMER-HARDWARE/1",
+  "owner": "system.hardware",
+  "executable": "terraformer.hardware.js",
+  "mode": "canonical-hardware-architecture",
+  "authorityGranted": false,
+  "grantsDeviceAuthority": false,
+  "configuration": {
+    "virtualHardwareAdmitted": true,
+    "physicalDeviceAuthority": false
+  }
+}

@@ -1,0 +1,6 @@
+'use strict';
+const TERRAFORMER_CSS_SYSTEM=Object.freeze({schema:'TERRAFORMER-CSS-SYSTEM/1',id:'system.css',name:'CSS System',family:'presentation',type:'style-cascade-layout',mode:'browser/DOM-integrated',state:'integrated',input:'stylesheet rules / presentation tokens',output:'computed presentation style/layout',authority:'Browser System -> CSS System -> DOM presentation',capabilities:Object.freeze(['selector','cascade','inheritance','custom-property','layout','media-query','animation','transition','style-serialization']),persistence:false});
+const TERRAFORMER_SYSTEM_DETECTION=Object.freeze({schema:'TERRAFORMER-SYSTEM-DETECTION/1',id:'system.detection',name:'System Detection',family:'control',type:'boundary-aware-system-discovery',mode:'registry-classification',state:'integrated',boundaries:Object.freeze(['boundary.local-system','boundary.global-system']),rule:'Local Start detects the current user machine/device boundary; Global Start detects Terraformer-oriented systems; crossing requires an explicit admitted bridge.'});
+
+const FOREGROUND_PRESENTATION=Object.freeze({owner:"system.foreground",scope:"VISUAL_PRESENTATION",role:"STYLE_LAYOUT",identityPreserved:true,authorityGranted:false});
+module.exports=Object.freeze({FOREGROUND_PRESENTATION,TERRAFORMER_CSS_SYSTEM,TERRAFORMER_SYSTEM_DETECTION});

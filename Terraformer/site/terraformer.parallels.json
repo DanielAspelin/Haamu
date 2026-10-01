@@ -1,0 +1,9 @@
+{
+  "schema": "TERRAFORMER-PARALLELS/1",
+  "systemId": "system.parallel",
+  "declarativeRegistry": true,
+  "membershipGrantsThreadCreation": false,
+  "membershipGrantsExternalEffect": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

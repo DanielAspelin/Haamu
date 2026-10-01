@@ -1,0 +1,26 @@
+{
+  "schema": "TERRAFORMER-SYSTEM-GRAPH-COVERAGE-EVIDENCE/1",
+  "checkpoint": "v0.46.77",
+  "definition": {
+    "linkCoverage": "Systems with at least one resolved incoming or outgoing declared cross-link / declared Systems",
+    "roundTripCoverage": "Systems belonging to a strongly connected component of size > 1 / declared Systems",
+    "roundTrip": "Directed traversal can leave a System and return through one or more other Systems."
+  },
+  "measurement": {
+    "declaredSystems": 1501,
+    "resolvedDirectedEdges": 1468,
+    "linkedSystems": 914,
+    "isolatedSystems": 587,
+    "linkCoverage": 60.89,
+    "stronglyConnectedComponents": 1442,
+    "roundTripComponents": 17,
+    "roundTripSystems": 76,
+    "roundTripCoverage": 5.06,
+    "largestRoundTripComponent": 11,
+    "weakComponents": 618,
+    "largestWeakComponent": 827
+  },
+  "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+  "authority": false,
+  "note": "Measured from statically declared system IDs and explicit dependsOn/integratesWith/from-to relationships. Dynamic/runtime-created relationships are not counted; no reverse links were fabricated to improve the score."
+}

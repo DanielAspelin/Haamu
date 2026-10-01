@@ -1,0 +1,57 @@
+{
+  "schema": "TERRAFORMER-KITS/1",
+  "registry": "terraformer.kits.json",
+  "executable": "terraformer.kit.js",
+  "authorityGranted": false,
+  "membershipGrantsAuthority": false,
+  "records": [
+    {
+      "id": "kit.development",
+      "class": "peer-kit",
+      "status": "registered",
+      "authorityGranted": false
+    },
+    {
+      "id": "kit.operations",
+      "class": "peer-kit",
+      "status": "registered",
+      "authorityGranted": false
+    },
+    {
+      "id": "kit.assurance",
+      "class": "peer-kit",
+      "status": "registered",
+      "authorityGranted": false
+    },
+    {
+      "id": "kit.security",
+      "class": "peer-kit",
+      "status": "registered",
+      "authorityGranted": false
+    },
+    {
+      "id": "kit.integration",
+      "class": "peer-kit",
+      "status": "registered",
+      "authorityGranted": false
+    },
+    {
+      "id": "kit.data",
+      "class": "peer-kit",
+      "status": "registered",
+      "authorityGranted": false
+    },
+    {
+      "id": "kit.intrinsic",
+      "class": "intrinsic-kit-fabric",
+      "status": "naturalized",
+      "authorityGranted": false
+    },
+    {
+      "id": "kit.computational",
+      "class": "computational-kit-fabric",
+      "status": "registered",
+      "authorityGranted": false
+    }
+  ]
+}

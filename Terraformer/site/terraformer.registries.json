@@ -1,0 +1,8 @@
+{
+  "schema": "TERRAFORMER-REGISTRIES/1",
+  "purpose": "governed registry definitions, inventories, lineage and evidence",
+  "authorityGranted": false,
+  "membershipGrantsAuthority": false,
+  "automaticRegistration": false,
+  "records": []
+}

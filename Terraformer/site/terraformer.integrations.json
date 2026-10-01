@@ -1,0 +1,9 @@
+{
+  "schema": "TERRAFORMER-INTEGRATIONS/1",
+  "systemId": "system.integration",
+  "owner": "terraformer.integration.js",
+  "membershipGrantsExecution": false,
+  "membershipGrantsAuthority": false,
+  "qualificationInheritance": false,
+  "records": []
+}

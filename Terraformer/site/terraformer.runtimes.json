@@ -1,0 +1,20 @@
+{
+  "schema": "TERRAFORMER-RUNTIMES/1",
+  "purpose": "governed runtime definitions, implementations, instances, lifecycle state and qualification evidence",
+  "authorityGranted": false,
+  "membershipGrantsExecutionAuthority": false,
+  "automaticExecution": false,
+  "automaticPersistence": false,
+  "records": [
+    {
+      "id": "runtime.streaming.bounded",
+      "systems": [
+        "system.streaming",
+        "system.streamer"
+      ],
+      "implementation": "node:stream",
+      "qualification": "under-conditional-experiment",
+      "authorityGranted": false
+    }
+  ]
+}

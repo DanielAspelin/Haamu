@@ -1,0 +1,59 @@
+{
+  "schema": "TERRAFORMER-PHYSICAL-EXPANSION-STRATEGY/1",
+  "version": "0.48.18",
+  "owner": "system.physicalization",
+  "objective": {
+    "additionalFilesPlanningRange": {
+      "minimum": 2000,
+      "maximum": 3000
+    },
+    "countIsTargetNotAuthority": true,
+    "method": "Token semantic audit -> admission -> singular JS owner -> plural JSON registry -> relationships -> qualification"
+  },
+  "currentAudit": {
+    "canonicalEntities": 2142,
+    "auditedTokens": 1368,
+    "existingJsOwners": 1518,
+    "existingJsonConceptFiles": 1558,
+    "singleWordCanonicalSystemsMissingSameNameJs": 24,
+    "safeMissingCanonicalSystemsForImmediatePhysicalization": 0,
+    "missingEstablishedWorkerOwners": 0,
+    "systemMorphologyCandidates": 337,
+    "workerMorphologyCandidates": 285,
+    "morphologyCandidatesAlreadySingularPhysicalized": 622
+  },
+  "gates": [
+    "EVIDENCE",
+    "NORMALIZATION",
+    "CLASSIFICATION",
+    "TYPING",
+    "RELATIONSHIPS",
+    "RESPONSIBILITY",
+    "NON_OVERLAP",
+    "PHYSICALIZATION",
+    "QUALIFICATION"
+  ],
+  "creationRules": {
+    "noGhostSystems": true,
+    "noFilenameFromTokenAlone": true,
+    "morphologyIsCandidateEvidenceOnly": true,
+    "singularOwnerJsWhereApplicable": true,
+    "pluralRegistryJsonWhereApplicable": true,
+    "externalBrandIdentityDoesNotCreateLocalOwnership": true,
+    "malformedOrTruncatedTokensDeferred": true,
+    "oneCanonicalResponsibility": true,
+    "singleWordPhysicalConceptFilenamesOnly": true,
+    "compoundConceptFilenameProhibited": true,
+    "crossContextResultsBelongInCanonicalSingleWordRegistries": true,
+    "oneWordSets": true,
+    "sharedRelationshipResultsProjectedToEachApplicableSet": true,
+    "compoundRegistryAsJoinTableProhibited": true
+  },
+  "capacity": {
+    "physicalMaxMiB": 100,
+    "zipMaxMiB": 50
+  },
+  "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+  "morphologySystem": "system.morphology",
+  "nextExpansionPass": "Mine canonical Entity and relationship/responsibility evidence outside the already-audited 1368-token owner corpus; admit only semantically evidenced non-overlapping concepts."
+}

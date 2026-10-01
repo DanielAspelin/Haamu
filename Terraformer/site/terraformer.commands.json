@@ -1,0 +1,9 @@
+{
+  "schema": "terraformer.registry/commands/1",
+  "owner": "system.command",
+  "entries": [],
+  "authority": false,
+  "qualificationGranted": false,
+  "roundTrip": "roundtrip.communication",
+  "roundTripRegistry": "terraformer.roundtrips.json"
+}

@@ -1,0 +1,8 @@
+{
+  "schema": "TERRAFORMER-EXPLORATIONS/1",
+  "systemId": "system.exploration",
+  "owner": "terraformer.exploration.js",
+  "membershipGrantsAuthority": false,
+  "membershipGrantsExecution": false,
+  "records": []
+}

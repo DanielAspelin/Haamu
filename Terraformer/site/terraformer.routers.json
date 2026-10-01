@@ -1,0 +1,9 @@
+{
+  "schema": "TERRAFORMER-ROUTERS/1",
+  "purpose": "governed router definitions, scoped plans, identities and evidence",
+  "authorityGranted": false,
+  "membershipGrantsNetworkAuthority": false,
+  "automaticExecution": false,
+  "automaticForwarding": false,
+  "records": []
+}

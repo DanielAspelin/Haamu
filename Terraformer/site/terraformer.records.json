@@ -1,0 +1,17 @@
+{
+  "$schema": "terraformer.registry/record_registry/1",
+  "version": "0.44.24",
+  "kind": "RECORD_REGISTRY",
+  "governedBy": "system.record",
+  "governanceEvidence": "PREDECESSOR_CANONICAL_SOURCE_IDENTITY",
+  "authority": false,
+  "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+  "validation": "EXPLICIT_SCHEMA_AND_IDENTITY_REQUIRED",
+  "failureSemantics": "INVALID_OR_UNAUTHORIZED_INPUT_FAILS_CLOSED",
+  "provenance": {
+    "predecessor": "v0.44.21",
+    "checkpoint": "v0.44.22"
+  },
+  "semantics": "Structured record evidence with provenance; registry membership does not create authority, ownership or correctness.",
+  "records": []
+}

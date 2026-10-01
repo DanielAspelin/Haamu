@@ -1,0 +1,7 @@
+{
+  "schema": "TERRAFORMER-TICKETINGS/1",
+  "systemId": "system.ticketing",
+  "membershipGrantsExecution": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

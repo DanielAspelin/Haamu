@@ -1,0 +1,8 @@
+{
+  "schema": "TERRAFORMER-LOGGINGS/1",
+  "systemId": "system.logging",
+  "membershipGrantsExecution": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

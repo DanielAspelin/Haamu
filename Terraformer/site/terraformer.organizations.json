@@ -1,0 +1,9 @@
+{
+  "schema": "TERRAFORMER-ORGANIZATIONS/1",
+  "systemId": "system.organization",
+  "structural": true,
+  "hierarchyImplied": false,
+  "institutionImplied": false,
+  "authorityGranted": false,
+  "records": []
+}

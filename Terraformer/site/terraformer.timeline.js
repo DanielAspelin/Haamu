@@ -1,0 +1,9 @@
+"use strict";
+const SYSTEM=Object.freeze({id:"system.timeline",concept:"Timeline",type:"timeline-system",planOnly:true,persistencePerformed:false,externalCapture:false,historyRewritten:false,externalEffect:false,authorityGranted:false,scaffold:true});
+const TERRAFORMER_TIMELINE_SYSTEM=Object.freeze({schema:'TERRAFORMER-TIMELINE-SYSTEM/1',id:'system.timeline',name:'Timeline System',family:'temporal',type:'timeline-system',state:'integrated',canonicalPath:'terraformer://timeline/',dependsOn:Object.freeze(['system.time','system.event','system.activity']),governs:Object.freeze(['order','project','range','sequence','event','activity','history']),rule:'Timeline System orders and projects events and activities over Time System; ordering is observational and does not execute represented actions.'});
+let TF_TEMPORAL_SEQUENCE=0;
+function tfTemporalEvent(type,data=null,source='terraformer'){return Object.freeze({schema:'TERRAFORMER-EVENT/1',id:`event-${++TF_TEMPORAL_SEQUENCE}`,type:String(type||'event'),source:String(source),time:new Date().toISOString(),sequence:TF_TEMPORAL_SEQUENCE,data,persisted:false})}
+function tfTemporalActivity(name,events=[]){const safe=Array.isArray(events)?events.filter(x=>x&&x.schema==='TERRAFORMER-EVENT/1'):[];return Object.freeze({schema:'TERRAFORMER-ACTIVITY/1',id:`activity-${++TF_TEMPORAL_SEQUENCE}`,name:String(name||'activity'),state:'represented',events:Object.freeze(safe.slice()),start:safe[0]?.time||null,end:safe[safe.length-1]?.time||null,persisted:false})}
+function tfTimelineProject(items=[]){const safe=Array.isArray(items)?items.slice():[];const time=x=>Date.parse(x.time||x.start||'')||0;return {schema:'TERRAFORMER-TIMELINE/1',items:safe.sort((a,b)=>time(a)-time(b)),count:safe.length,executed:false,persisted:false}}
+
+module.exports=Object.freeze({SYSTEM,TERRAFORMER_TIMELINE_SYSTEM,TF_TEMPORAL_SEQUENCE,tfTemporalEvent,tfTemporalActivity,tfTimelineProject});

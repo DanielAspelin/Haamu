@@ -1,0 +1,10 @@
+{
+  "schema": "TERRAFORMER-MUSICS/1",
+  "systemId": "system.music",
+  "declarativeRegistry": true,
+  "membershipGrantsExecution": false,
+  "membershipGrantsDeviceAccess": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

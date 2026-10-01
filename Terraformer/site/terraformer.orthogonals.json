@@ -1,0 +1,400 @@
+{
+  "schema": "TERRAFORMER-ORTHOGONALS/1",
+  "version": "0.47.42",
+  "kind": "orthogonals",
+  "governedBy": "terraformer.orthogonalization.js",
+  "authorityGranted": false,
+  "principles": [
+    "canonicalization establishes recognized identity or representation; orthogonalization preserves admitted distinction",
+    "orthogonal systems may interoperate and remain strongly related",
+    "orthogonality does not imply isolation, incompatibility, authority, ownership, access, execution, persistence, or qualification",
+    "orthogonal relationships are symmetric and must round-trip",
+    "no relationship may be fabricated solely to satisfy coverage"
+  ],
+  "relationshipContract": {
+    "arity": 2,
+    "symmetric": true,
+    "inverseRequired": true,
+    "roundTripRequired": true,
+    "selfOrthogonal": false,
+    "canonicalIdentityRequired": true
+  },
+  "axesSource": "terraformer.orthogonalcrossings.json",
+  "relationships": [
+    {
+      "members": [
+        "system.reader",
+        "system.writer"
+      ],
+      "axis": "operation",
+      "basis": "complementary distinct responsibilities",
+      "confidence": "strong",
+      "symmetric": true,
+      "authorityGranted": false
+    },
+    {
+      "members": [
+        "system.sender",
+        "system.receiver"
+      ],
+      "axis": "communication-role",
+      "basis": "complementary distinct responsibilities",
+      "confidence": "strong",
+      "symmetric": true,
+      "authorityGranted": false
+    },
+    {
+      "members": [
+        "system.parent",
+        "system.child"
+      ],
+      "axis": "relationship-role",
+      "basis": "complementary distinct responsibilities",
+      "confidence": "strong",
+      "symmetric": true,
+      "authorityGranted": false
+    },
+    {
+      "members": [
+        "system.input",
+        "system.output"
+      ],
+      "axis": "io-role",
+      "basis": "complementary distinct responsibilities",
+      "confidence": "strong",
+      "symmetric": true,
+      "authorityGranted": false
+    },
+    {
+      "members": [
+        "system.source",
+        "system.target"
+      ],
+      "axis": "transfer-role",
+      "basis": "complementary distinct responsibilities",
+      "confidence": "strong",
+      "symmetric": true,
+      "authorityGranted": false
+    },
+    {
+      "members": [
+        "system.request",
+        "system.response"
+      ],
+      "axis": "interaction-role",
+      "basis": "complementary distinct responsibilities",
+      "confidence": "strong",
+      "symmetric": true,
+      "authorityGranted": false
+    },
+    {
+      "members": [
+        "system.allocator",
+        "system.deallocator"
+      ],
+      "axis": "resource-lifecycle",
+      "basis": "complementary distinct responsibilities",
+      "confidence": "strong",
+      "symmetric": true,
+      "authorityGranted": false
+    },
+    {
+      "members": [
+        "system.constructor",
+        "system.destructor"
+      ],
+      "axis": "lifecycle-role",
+      "basis": "complementary distinct responsibilities",
+      "confidence": "strong",
+      "symmetric": true,
+      "authorityGranted": false
+    },
+    {
+      "members": [
+        "system.centralizer",
+        "system.decentralizer"
+      ],
+      "axis": "organization-role",
+      "basis": "complementary distinct responsibilities",
+      "confidence": "strong",
+      "symmetric": true,
+      "authorityGranted": false
+    },
+    {
+      "members": [
+        "system.local",
+        "system.global"
+      ],
+      "axis": "scope",
+      "basis": "complementary distinct responsibilities",
+      "confidence": "strong",
+      "symmetric": true,
+      "authorityGranted": false
+    },
+    {
+      "members": [
+        "system.public",
+        "system.private"
+      ],
+      "axis": "exposure",
+      "basis": "complementary distinct responsibilities",
+      "confidence": "strong",
+      "symmetric": true,
+      "authorityGranted": false
+    },
+    {
+      "members": [
+        "system.importer",
+        "system.exporter"
+      ],
+      "axis": "boundary-role",
+      "basis": "complementary distinct responsibilities",
+      "confidence": "strong",
+      "symmetric": true,
+      "authorityGranted": false
+    },
+    {
+      "members": [
+        "system.caller",
+        "system.returner"
+      ],
+      "axis": "invocation-role",
+      "basis": "complementary distinct responsibilities",
+      "confidence": "strong",
+      "symmetric": true,
+      "authorityGranted": false
+    },
+    {
+      "members": [
+        "system.client",
+        "system.server"
+      ],
+      "axis": "service-role",
+      "basis": "complementary distinct responsibilities",
+      "confidence": "strong",
+      "symmetric": true,
+      "authorityGranted": false
+    },
+    {
+      "members": [
+        "system.block-page-reader",
+        "system.block-page-writer"
+      ],
+      "axis": "operation",
+      "basis": "same canonical stem with complementary terminal role",
+      "confidence": "strong",
+      "symmetric": true,
+      "authorityGranted": false
+    },
+    {
+      "members": [
+        "system.block-reader",
+        "system.block-writer"
+      ],
+      "axis": "operation",
+      "basis": "same canonical stem with complementary terminal role",
+      "confidence": "strong",
+      "symmetric": true,
+      "authorityGranted": false
+    },
+    {
+      "members": [
+        "system.pre-constructor",
+        "system.pre-destructor"
+      ],
+      "axis": "lifecycle-role",
+      "basis": "same canonical stem with complementary terminal role",
+      "confidence": "strong",
+      "symmetric": true,
+      "authorityGranted": false
+    },
+    {
+      "members": [
+        "system.call",
+        "system.return"
+      ],
+      "axis": "invocation-return-role",
+      "basis": "complementary invocation responsibilities",
+      "confidence": "strong",
+      "symmetric": true,
+      "authorityGranted": false
+    },
+    {
+      "members": [
+        "system.calling",
+        "system.returning"
+      ],
+      "axis": "invocation-return-role",
+      "basis": "complementary invocation responsibilities",
+      "confidence": "strong",
+      "symmetric": true,
+      "authorityGranted": false
+    },
+    {
+      "members": [
+        "system.callable",
+        "system.returnable"
+      ],
+      "axis": "invocation-return-role",
+      "basis": "complementary invocation responsibilities",
+      "confidence": "strong",
+      "symmetric": true,
+      "authorityGranted": false
+    }
+  ],
+  "status": "FOUNDATION_ESTABLISHED_RELATIONSHIPS_REQUIRE_EVIDENCE",
+  "orthogonalSets": [
+    {
+      "id": "orthogonal-set.topology.passage.members",
+      "type": "MUTUALLY_DISTINCT_RESPONSIBILITIES",
+      "governedType": "Passage",
+      "members": [
+        "Busline",
+        "Chain",
+        "Ring",
+        "Grid",
+        "Mesh",
+        "Matrix",
+        "Bridge",
+        "Path",
+        "Lane",
+        "Route",
+        "Pattern",
+        "Transmission",
+        "Connection"
+      ],
+      "semantics": "Members share Passage ancestry but remain distinct canonical topology responsibilities; set membership does not assert pairwise opposition.",
+      "authorityGranted": false
+    }
+  ],
+  "derivation": {
+    "source": "terraformer.orthogonalcrossings.json",
+    "sourceCrossings": 2142,
+    "method": "evidence-first exact identity and same-stem complementary-role derivation",
+    "strongRelationshipCount": 17,
+    "orthogonalSetCount": 1,
+    "automaticSemanticGuessing": false
+  },
+  "index": {
+    "system.reader": [
+      0
+    ],
+    "system.writer": [
+      0
+    ],
+    "system.sender": [
+      1
+    ],
+    "system.receiver": [
+      1
+    ],
+    "system.parent": [
+      2
+    ],
+    "system.child": [
+      2
+    ],
+    "system.input": [
+      3
+    ],
+    "system.output": [
+      3
+    ],
+    "system.source": [
+      4
+    ],
+    "system.target": [
+      4
+    ],
+    "system.request": [
+      5
+    ],
+    "system.response": [
+      5
+    ],
+    "system.allocator": [
+      6
+    ],
+    "system.deallocator": [
+      6
+    ],
+    "system.constructor": [
+      7
+    ],
+    "system.destructor": [
+      7
+    ],
+    "system.centralizer": [
+      8
+    ],
+    "system.decentralizer": [
+      8
+    ],
+    "system.local": [
+      9
+    ],
+    "system.global": [
+      9
+    ],
+    "system.public": [
+      10
+    ],
+    "system.private": [
+      10
+    ],
+    "system.importer": [
+      11
+    ],
+    "system.exporter": [
+      11
+    ],
+    "system.caller": [
+      12
+    ],
+    "system.returner": [
+      12
+    ],
+    "system.client": [
+      13
+    ],
+    "system.server": [
+      13
+    ],
+    "system.block-page-reader": [
+      14
+    ],
+    "system.block-page-writer": [
+      14
+    ],
+    "system.block-reader": [
+      15
+    ],
+    "system.block-writer": [
+      15
+    ],
+    "system.pre-constructor": [
+      16
+    ],
+    "system.pre-destructor": [
+      16
+    ],
+    "system.call": [
+      17
+    ],
+    "system.return": [
+      17
+    ],
+    "system.calling": [
+      18
+    ],
+    "system.returning": [
+      18
+    ],
+    "system.callable": [
+      19
+    ],
+    "system.returnable": [
+      19
+    ]
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "schema": "TERRAFORMER-SYSTEM-GRAPH/1",
+  "checkpoint": "v0.46.77",
+  "summary": {
+    "declaredSystems": 1501,
+    "resolvedDirectedEdges": 1468,
+    "linkedSystems": 914,
+    "isolatedSystems": 587,
+    "linkCoverage": 60.89,
+    "stronglyConnectedComponents": 1442,
+    "roundTripComponents": 17,
+    "roundTripSystems": 76,
+    "roundTripCoverage": 5.06,
+    "largestRoundTripComponent": 11,
+    "weakComponents": 618,
+    "largestWeakComponent": 827
+  },
+  "largestRoundTripComponents": [
+    [
+      "system.base",
+      "system.columnar",
+      "system.data",
+      "system.database",
+      "system.header",
+      "system.knowledge",
+      "system.knowledge-base",
+      "system.organization",
+      "system.table",
+      "system.tabular",
+      "system.tuple"
+    ],
+    [
+      "system.audio",
+      "system.camera",
+      "system.filming",
+      "system.graphics",
+      "system.microphone",
+      "system.movie",
+      "system.music",
+      "system.sound",
+      "system.voice",
+      "system.web-audio",
+      "system.web-camera"
+    ],
+    [
+      "system.in-space",
+      "system.mission",
+      "system.mission-control",
+      "system.on-earth",
+      "system.on-ground",
+      "system.on-moon",
+      "system.satellite",
+      "system.spacecraft"
+    ],
+    [
+      "system.capability",
+      "system.hierarchy",
+      "system.indexing",
+      "system.reference",
+      "system.root",
+      "system.system"
+    ],
+    [
+      "system.interconnection",
+      "system.network",
+      "system.port",
+      "system.protocol",
+      "system.tcp",
+      "system.udp"
+    ],
+    [
+      "system.computation",
+      "system.electric",
+      "system.electronic",
+      "system.hardware",
+      "system.machine"
+    ],
+    [
+      "system.forecast",
+      "system.goal",
+      "system.prediction",
+      "system.prophecy"
+    ],
+    [
+      "system.legal",
+      "system.policy",
+      "system.regulation",
+      "system.rule"
+    ],
+    [
+      "system.usage",
+      "system.user",
+      "system.utilization"
+    ],
+    [
+      "system.call",
+      "system.execution",
+      "system.return"
+    ]
+  ],
+  "authority": false
+}

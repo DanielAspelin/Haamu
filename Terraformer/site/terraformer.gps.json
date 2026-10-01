@@ -1,0 +1,7 @@
+{
+  "schema": "terraformer.registry/gps/1",
+  "owner": "system.gps",
+  "entries": [],
+  "authority": false,
+  "qualificationGranted": false
+}

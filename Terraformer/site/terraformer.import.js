@@ -1,0 +1,5 @@
+"use strict";
+const TERRAFORMER_IMPORT_SYSTEM=Object.freeze({schema:'TERRAFORMER-SYSTEM/1',id:'system.import',name:'Import System',family:'integration',type:'import-system',state:'integrated',canonicalPath:'terraformer://import/',dependsOn:Object.freeze(['system.systemization','system.packaging']),governs:Object.freeze(['source','provenance','manifest','ownership','overlap','order','reconstruction']),rule:'Import preserves source identity and provenance, reconciles overlaps to one canonical owner, and does not silently merge authority or execute imported code.'});
+const TERRAFORMER_IMPORT_ORDER=Object.freeze(['identity-and-provenance','security-and-admission','primitive-structure','state-and-lifecycle','storage-and-resource','processing-and-work','network-and-communication','language-and-linguistics','presentation-and-interaction','domain-systems','agents-and-workers','modules-and-adapters','evidence-and-qualification']);
+function bindImportSystemV04676(){return Object.freeze({TERRAFORMER_IMPORT_SYSTEM,TERRAFORMER_IMPORT_ORDER});}
+module.exports=Object.freeze({bindImportSystemV04676});

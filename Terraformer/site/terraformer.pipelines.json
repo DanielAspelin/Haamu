@@ -1,0 +1,7 @@
+{
+  "schema": "TERRAFORMER-PIPELINES/1",
+  "purpose": "governed pipeline definitions, instances, runs and evidence",
+  "authorityGranted": false,
+  "automaticExecution": false,
+  "records": []
+}

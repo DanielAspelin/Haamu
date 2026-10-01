@@ -1,0 +1,9 @@
+{
+  "schema": "TERRAFORMER-EXECUTORS/1",
+  "authorityGranted": false,
+  "automaticExecution": false,
+  "records": [],
+  "owner": "system.executor",
+  "ownerBindingVersion": "0.48.16",
+  "ownerBindingAuthorityGranted": false
+}

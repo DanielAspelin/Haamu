@@ -1,0 +1,38 @@
+{
+  "schema": "TERRAFORMER-WINDOWS/1",
+  "authorityGranted": false,
+  "automaticExecution": false,
+  "records": [],
+  "systemWorkspaceWindow": {
+    "owner": "system.window",
+    "oneWindowPerSystem": true,
+    "localSearchBoundary": true,
+    "crossSystemAuthority": false
+  },
+  "adjustmentIntegration": {
+    "functionality": "system.adjustment",
+    "capabilities": [
+      "system.sizing",
+      "system.resizing"
+    ],
+    "features": [
+      "geometry",
+      "width",
+      "height",
+      "position",
+      "layout",
+      "snap",
+      "scaling",
+      "content-area",
+      "bars",
+      "panels"
+    ],
+    "modes": [
+      "DEFAULT",
+      "CUSTOMIZED"
+    ],
+    "userControlledTransitions": true,
+    "automaticAuthority": false,
+    "automaticPersistence": false
+  }
+}

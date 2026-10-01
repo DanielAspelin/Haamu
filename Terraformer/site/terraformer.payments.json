@@ -1,0 +1,6 @@
+{
+  "schema": "TERRAFORMER-PAYMENTS/1",
+  "systemId": "system.payment",
+  "membershipGrantsAuthority": false,
+  "records": []
+}

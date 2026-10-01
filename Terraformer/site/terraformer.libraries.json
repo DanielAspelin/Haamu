@@ -1,0 +1,16 @@
+{
+  "$schema": "terraformer.registry/library_registry/1",
+  "version": "0.44.21",
+  "kind": "LIBRARY_REGISTRY",
+  "owner": "system.library",
+  "items": [
+    {
+      "id": "library.standard",
+      "status": "DECLARED",
+      "dependencies": [],
+      "authority": false
+    }
+  ],
+  "authority": false,
+  "governedBy": "terraformer.library.js"
+}

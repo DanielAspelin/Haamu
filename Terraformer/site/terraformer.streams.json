@@ -1,0 +1,8 @@
+{
+  "schema": "TERRAFORMER-STREAMS/1",
+  "purpose": "governed stream definitions, instances, state and evidence",
+  "authorityGranted": false,
+  "membershipGrantsAuthority": false,
+  "automaticExecution": false,
+  "records": []
+}

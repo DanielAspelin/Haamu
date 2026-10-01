@@ -1,0 +1,143 @@
+{
+  "schema": "TERRAFORMER-NATURALIZATION-FLOW/1",
+  "version": "0.47.87",
+  "logicalOrder": [
+    "Evidence",
+    "Candidate",
+    "Normalization",
+    "Classification",
+    "Typing",
+    "Relationships",
+    "Responsibility",
+    "Physicalization",
+    "Functionality",
+    "Qualification",
+    "Naturalization",
+    "Finalization",
+    "Tokenization",
+    "Token"
+  ],
+  "invariants": [
+    "Normalization changes representation, not authority or meaning.",
+    "Naturalization requires evidenced type and responsibility; Candidate status cannot be removed merely because a file exists.",
+    "Finalization follows qualified naturalization and remains revision-sensitive.",
+    "Tokenization is the future convergence representation and does not collapse semantic type boundaries.",
+    "Input and output may resolve to Tokens while retaining input/output kind.",
+    "System, Application, Virtual Machine, Function, Worker, Instance, Value, and Data may resolve to Tokens while retaining kind and identity."
+  ],
+  "candidateCountBefore": 473,
+  "evidenceNaturalizedThisPass": 18,
+  "candidateCountAfter": 455,
+  "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+  "authorityGranted": false,
+  "relationshipBoundary": {
+    "system": "system.relationship",
+    "registry": "terraformer.relationships.json",
+    "projection": "terraformer.relationship.typeof.js",
+    "normalizedTypeOfEdges": 579,
+    "deduplication": "from+relation+to",
+    "endpointImplementationDuplicated": false,
+    "inverseTypesEdges": 579
+  },
+  "candidateReconciliation": {
+    "before": 455,
+    "promoted": 1,
+    "after": 454,
+    "note": "Only Token was promoted; Nameserver\u2192Call proximity evidence was rejected as unsafe."
+  },
+  "stageOwners": [
+    {
+      "stage": "Evidence",
+      "system": "system.evidence",
+      "registry": "terraformer.evidences.json"
+    },
+    {
+      "stage": "Candidate",
+      "system": "system.candidate",
+      "registry": "terraformer.candidates.json"
+    },
+    {
+      "stage": "Normalization",
+      "system": "system.normalization"
+    },
+    {
+      "stage": "Classification",
+      "system": "system.classification",
+      "registry": "terraformer.classifications.json"
+    },
+    {
+      "stage": "Typing",
+      "system": "system.type",
+      "registry": "terraformer.types.json"
+    },
+    {
+      "stage": "Relationships",
+      "system": "system.relationship",
+      "registry": "terraformer.relationships.json"
+    },
+    {
+      "stage": "Responsibility",
+      "system": "system.responsibility",
+      "registry": "terraformer.responsibilities.json"
+    },
+    {
+      "stage": "Physicalization",
+      "system": "system.physicalization",
+      "registry": "terraformer.physicalizations.json"
+    },
+    {
+      "stage": "Functionality",
+      "system": "system.functionality",
+      "registry": "terraformer.functionalities.json"
+    },
+    {
+      "stage": "Qualification",
+      "system": "system.qualification",
+      "registry": "terraformer.qualifications.json"
+    },
+    {
+      "stage": "Naturalization",
+      "system": "system.naturalization"
+    },
+    {
+      "stage": "Finalization",
+      "system": "system.finalization"
+    },
+    {
+      "stage": "Tokenization",
+      "system": "system.tokenization"
+    },
+    {
+      "stage": "Token",
+      "system": "system.token",
+      "registry": "terraformer.tokens.json"
+    }
+  ],
+  "completeStageOwnership": true,
+  "tokenAudit": {
+    "system": "system.tokenaudit",
+    "registry": "terraformer.tokenaudits.json",
+    "auditedTokens": 1308,
+    "semanticCompletenessClaimed": false,
+    "authorityGranted": false,
+    "unresolvedSurface": 8198,
+    "reductionThisPass": 546,
+    "conceptFilesAdded": 0,
+    "physicalizationTargets": "terraformer.tokenphysicalizationtargets.json",
+    "pluralPhysicalization": {
+      "createdThisPass": 0,
+      "existingIrregularBindingsRecognized": 18,
+      "remainingPluralCandidates": 28,
+      "singularOwnersVerified": 46,
+      "singularOwnersMissing": 0,
+      "rule": "Every deferred target was checked for its singular JS owner; existing irregular/plural-invariant JSON registries are reused rather than duplicated."
+    }
+  },
+  "currentAudit": {
+    "file": "terraformer.tokenaudits.json",
+    "schema": "TERRAFORMER-TOKEN-SEMANTIC-AUDIT/3",
+    "auditedTokens": 1368,
+    "unresolvedStageObservations": 8886,
+    "mutationQueue": "terraformer.mutations.json"
+  }
+}

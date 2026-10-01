@@ -1,0 +1,10 @@
+{
+  "schema": "TERRAFORMER-CATALOGS/1",
+  "systemId": "system.catalog",
+  "membershipGrantsNavigation": false,
+  "membershipGrantsSelection": false,
+  "membershipGrantsMutation": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

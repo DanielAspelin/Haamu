@@ -1,0 +1,12 @@
+{
+  "schema": "TERRAFORMER-ARITIES/1",
+  "version": "0.47.55",
+  "kind": "ARITIES_REGISTRY",
+  "owner": "system.arity",
+  "governedBy": "terraformer.arity.js",
+  "family": "classification",
+  "records": [],
+  "authorityGranted": false,
+  "automaticExecution": false,
+  "automaticPersistence": false
+}

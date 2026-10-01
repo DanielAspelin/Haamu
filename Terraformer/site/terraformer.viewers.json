@@ -1,0 +1,10 @@
+{
+  "schema": "TERRAFORMER-VIEWERS/1",
+  "systemId": "system.viewer",
+  "membershipGrantsMutation": false,
+  "membershipGrantsApproval": false,
+  "membershipGrantsPublication": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

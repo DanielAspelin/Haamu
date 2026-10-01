@@ -1,0 +1,20 @@
+{
+  "schema": "TERRAFORMER-SPECIFIERS/1",
+  "systemId": "system.specifier",
+  "declarativeRegistry": true,
+  "membershipGrantsExecution": false,
+  "membershipGrantsMutation": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": [],
+  "concept": "Specifier",
+  "relationship": {
+    "partOf": "system.specifying",
+    "producesThrough": "system.specifying",
+    "produces": "system.specification"
+  },
+  "relatedRegistries": [
+    "terraformer.specifyings.json",
+    "terraformer.specifications.json"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "schema": "TERRAFORMER-CONCEPT-REGISTRY/1",
+  "version": "0.48.23",
+  "kind": "CONCEPT_REGISTRY",
+  "owner": "system.access",
+  "concept": "access",
+  "singularOwner": "terraformer.access.js",
+  "records": [],
+  "sourceEvidence": [
+    "terraformer.tokenaudits.json",
+    "terraformer.spreads.json"
+  ],
+  "physicalization": "PLURAL_SET",
+  "pluralForm": "accesses",
+  "membershipGrantsAuthority": false,
+  "membershipGrantsExecution": false,
+  "membershipGrantsPersistence": false,
+  "automaticPopulation": false,
+  "qualification": "UNDER_CONDITIONAL_EXPERIMENT"
+}

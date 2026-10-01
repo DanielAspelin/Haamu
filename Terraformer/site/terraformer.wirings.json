@@ -1,0 +1,11 @@
+{
+  "schema": "TERRAFORMER-WIRINGS/1",
+  "systemId": "system.wiring",
+  "declarativeRegistry": true,
+  "membershipGrantsConnection": false,
+  "membershipGrantsNetworkBinding": false,
+  "membershipGrantsIdentityMutation": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

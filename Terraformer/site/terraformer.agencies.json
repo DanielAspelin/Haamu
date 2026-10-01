@@ -1,0 +1,17 @@
+{
+  "schema": "TERRAFORMER-AGENCIES/1",
+  "systemId": "system.agency",
+  "declarativeRegistry": true,
+  "membershipGrantsExecution": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": [],
+  "types": [
+    {
+      "id": "system.space-agency",
+      "concept": "Space Agency",
+      "isA": "system.agency",
+      "mode": "reference"
+    }
+  ]
+}

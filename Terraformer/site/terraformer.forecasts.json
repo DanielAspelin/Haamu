@@ -1,0 +1,7 @@
+{
+  "schema": "TERRAFORMER-FORECASTS/1",
+  "systemId": "system.forecast",
+  "authorityGranted": false,
+  "automaticExecution": false,
+  "records": []
+}

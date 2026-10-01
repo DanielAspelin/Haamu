@@ -1,0 +1,23 @@
+{
+  "schema": "TERRAFORMER-LINKS/1",
+  "systemId": "system.link",
+  "membershipGrantsAuthority": false,
+  "records": [],
+  "linkingFabricV04659": {
+    "role": "association",
+    "logical": true,
+    "automaticConnect": false,
+    "automaticInvoke": false,
+    "automaticResolve": false,
+    "automaticMutation": false,
+    "automaticNetwork": false,
+    "automaticPersistence": false,
+    "externalEffect": false,
+    "authorityGranted": false
+  },
+  "reconstructibleRelationships": true,
+  "reconstructionRules": [
+    "rule.linking.canonical",
+    "rule.linking.boundary"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "schema": "TERRAFORMER-PLURAL-SET/1",
+  "version": "0.48.35",
+  "kind": "PLURAL_SET",
+  "concept": "programmings",
+  "singular": "programming",
+  "owner": "terraformer.programming.js",
+  "records": [],
+  "pluralEvidence": {
+    "rule": "ENGLISH_INFLECTION",
+    "corpusAttested": false,
+    "status": "DEFERRED",
+    "normalization": "CONCEPT_EVIDENCED_BUT_PLURAL_UNATTESTED"
+  },
+  "membershipGrantsAuthority": false,
+  "membershipGrantsExecution": false,
+  "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+  "canonical": false
+}

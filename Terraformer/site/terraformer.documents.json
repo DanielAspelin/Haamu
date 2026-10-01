@@ -1,0 +1,17 @@
+{
+  "$schema": "terraformer.registry/document_registry/1",
+  "version": "0.44.24",
+  "kind": "DOCUMENT_REGISTRY",
+  "governedBy": "system.document",
+  "governanceEvidence": "PREDECESSOR_CANONICAL_SOURCE_IDENTITY",
+  "authority": false,
+  "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+  "validation": "EXPLICIT_SCHEMA_AND_IDENTITY_REQUIRED",
+  "failureSemantics": "INVALID_OR_UNAUTHORIZED_INPUT_FAILS_CLOSED",
+  "provenance": {
+    "predecessor": "v0.44.21",
+    "checkpoint": "v0.44.22"
+  },
+  "semantics": "Document identity/metadata/provenance; registration does not establish correctness, ownership or authority.",
+  "documents": []
+}

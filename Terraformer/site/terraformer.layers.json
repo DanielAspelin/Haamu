@@ -1,0 +1,58 @@
+{
+  "schema": "TERRAFORMER-LAYER-ARCHITECTURE/1",
+  "version": "0.47.84",
+  "developmentOrder": [
+    "system.platform",
+    "system.system",
+    "system.application",
+    "system.program"
+  ],
+  "userProjection": [
+    "system.program",
+    "system.application",
+    "system.system"
+  ],
+  "invariants": {
+    "systemsImplementedFirst": true,
+    "applicationsComposeSystems": true,
+    "programsComposeApplications": true,
+    "programIsPrimaryVisualizationBoundary": true,
+    "systemsHiddenBehindApplicationsByDefault": true,
+    "morphologyCreatesCandidatesOnly": true,
+    "privatePlatformPrecedesSystems": true,
+    "targetPlatformDeliveryExplicit": true
+  },
+  "linguist": {
+    "tokenDiscovery": true,
+    "systemCandidateSuffixes": [
+      "ion",
+      "ing"
+    ],
+    "workerCandidateFinal": "r",
+    "canonicalizationRequiresSemanticReconciliation": true
+  },
+  "authorityGranted": false,
+  "automaticExecution": false,
+  "automaticNaturalization": false,
+  "deliveryOrder": [
+    "system.program",
+    "system.delivery",
+    "system.platform"
+  ],
+  "platformProjection": {
+    "construction": {
+      "classification": "PRIVATE",
+      "role": "internal-foundation"
+    },
+    "delivery": {
+      "classification": "TARGET",
+      "privacyPublicity": "ORTHOGONAL"
+    },
+    "samePlatformSystem": true,
+    "automaticPublication": false,
+    "automaticDelivery": false
+  },
+  "owner": "system.layer",
+  "ownerBindingVersion": "0.48.16",
+  "ownerBindingAuthorityGranted": false
+}

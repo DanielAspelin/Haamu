@@ -1,0 +1,11 @@
+{
+  "schema": "TERRAFORMER-HASHINGS/1",
+  "purpose": "governed hashing operation definitions/evidence",
+  "authorityGranted": false,
+  "automaticExecution": false,
+  "secretMaterial": false,
+  "records": [],
+  "owner": "system.hashing",
+  "ownerBindingVersion": "0.48.16",
+  "ownerBindingAuthorityGranted": false
+}

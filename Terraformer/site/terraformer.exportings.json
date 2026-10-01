@@ -1,0 +1,9 @@
+{
+  "schema": "TERRAFORMER-EXPORTINGS/1",
+  "systemId": "system.exporting",
+  "declarativeRegistry": true,
+  "membershipGrantsExecution": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

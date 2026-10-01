@@ -1,0 +1,7 @@
+{
+  "schema": "terraformer.registry/clocks/1",
+  "owner": "system.clock",
+  "entries": [],
+  "authority": false,
+  "qualificationGranted": false
+}

@@ -1,0 +1,11 @@
+{
+  "schema": "TERRAFORMER-UNSIGNEDS/1",
+  "systemId": "system.unsigned",
+  "membershipGrantsAllocation": false,
+  "membershipGrantsConversion": false,
+  "membershipGrantsValidation": false,
+  "membershipGrantsExecution": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

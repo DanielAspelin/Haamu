@@ -1,0 +1,4 @@
+'use strict';
+const TERRAFORMER_THEME_SYSTEM=Object.freeze({schema:'TERRAFORMER-THEME-SYSTEM/1',id:'system.theme',name:'Theme System',parent:'system.customization',family:'presentation',type:'theme-coordination',mode:'DOM-integrated',input:'admitted named theme / theme-token set',output:'coordinated presentation theme state',coordinates:Object.freeze(['system.color','system.border','system.button','system.text-field','system.text-area','system.dialog','system.visualization','system.bar-layout']),capabilities:Object.freeze(['named-theme','light-dark-mode','color-token','typography-token','spacing-token','border-token','control-token','dialog-token','bar-token','visualization-token']),authority:'coordination-only; subordinate systems retain their own presentation/interaction boundaries',persistence:false});
+
+module.exports=Object.freeze({TERRAFORMER_THEME_SYSTEM});

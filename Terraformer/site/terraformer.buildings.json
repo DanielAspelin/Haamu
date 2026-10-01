@@ -1,0 +1,8 @@
+{
+  "schema": "TERRAFORMER-BUILDINGS/1",
+  "authorityGranted": false,
+  "records": [],
+  "owner": "system.building",
+  "ownerBindingVersion": "0.48.16",
+  "ownerBindingAuthorityGranted": false
+}

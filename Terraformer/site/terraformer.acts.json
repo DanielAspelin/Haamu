@@ -1,0 +1,9 @@
+{
+  "schema": "TERRAFORMER-ACTS/1",
+  "systemId": "historical-system.acts",
+  "historical": true,
+  "resultCollection": true,
+  "records": [],
+  "membershipGrantsExecution": false,
+  "membershipGrantsAuthority": false
+}

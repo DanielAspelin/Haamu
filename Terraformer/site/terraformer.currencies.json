@@ -1,0 +1,6 @@
+{
+  "schema": "TERRAFORMER-CURRENCIES/1",
+  "systemId": "system.currency",
+  "membershipGrantsAuthority": false,
+  "records": []
+}

@@ -1,0 +1,20 @@
+{
+  "schema": "TERRAFORMER-CONCEPT-REGISTRY/1",
+  "version": "0.48.23",
+  "kind": "CONCEPT_REGISTRY",
+  "owner": "system.behaviour",
+  "concept": "behaviour",
+  "singularOwner": "terraformer.behaviour.js",
+  "records": [],
+  "sourceEvidence": [
+    "terraformer.tokenaudits.json",
+    "terraformer.spreads.json"
+  ],
+  "physicalization": "PLURAL_SET",
+  "pluralForm": "behaviours",
+  "membershipGrantsAuthority": false,
+  "membershipGrantsExecution": false,
+  "membershipGrantsPersistence": false,
+  "automaticPopulation": false,
+  "qualification": "UNDER_CONDITIONAL_EXPERIMENT"
+}

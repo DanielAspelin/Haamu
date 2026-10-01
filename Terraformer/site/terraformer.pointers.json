@@ -1,0 +1,9 @@
+{
+  "schema": "TERRAFORMER-POINTERS/1",
+  "systemId": "system.pointer",
+  "featureDetected": true,
+  "permissionDoesNotFollowFromPresence": true,
+  "invokeAutomatically": false,
+  "authorityGranted": false,
+  "records": []
+}

@@ -1,0 +1,24 @@
+{
+  "schema": "TERRAFORMER-DEVICES/1",
+  "system": {
+    "id": "system.device",
+    "name": "Device System",
+    "authorityGranted": false
+  },
+  "types": {
+    "volatileBlockDevice": {
+      "id": "system.blockdevice.volatile",
+      "type": "device-type",
+      "specializations": [
+        "block",
+        "volatile-memory"
+      ],
+      "backing": "RAM",
+      "maximumBytes": 67108864,
+      "persistence": false,
+      "restartHandoff": false,
+      "hostDeviceAuthority": false,
+      "destructionZeroizes": true
+    }
+  }
+}

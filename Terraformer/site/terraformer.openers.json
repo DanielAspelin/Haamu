@@ -1,0 +1,10 @@
+{
+  "schema": "TERRAFORMER-OPENERS-REGISTRY/1",
+  "owner": "terraformer.opener.js",
+  "entity": "agent.opener",
+  "class": "Worker",
+  "system": "system.opening",
+  "entries": [],
+  "authorityGranted": false,
+  "rule": "Declarative actor registry only; membership grants no authentication, authorization, execution, persistence, approval, financial, or external-effect authority."
+}

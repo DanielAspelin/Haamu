@@ -1,0 +1,8 @@
+{
+  "schema": "TERRAFORMER-NEWS/1",
+  "systemId": "system.news",
+  "authorityGranted": false,
+  "automaticPublication": false,
+  "automaticStreaming": false,
+  "records": []
+}

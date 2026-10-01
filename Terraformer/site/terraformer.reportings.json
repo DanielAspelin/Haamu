@@ -1,0 +1,12 @@
+{
+  "schema": "TERRAFORMER-REPORTINGS/1",
+  "systemId": "system.reporting",
+  "membershipGrantsExecution": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": [],
+  "logicalSuccessor": "system.messaging",
+  "signalSystem": "system.signal",
+  "roundTrip": "roundtrip.communication",
+  "roundTripRegistry": "terraformer.roundtrips.json"
+}

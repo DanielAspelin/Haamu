@@ -1,0 +1,9 @@
+{
+  "schema": "TERRAFORMER-TOUCHES/1",
+  "systemId": "system.touch",
+  "featureDetected": true,
+  "permissionDoesNotFollowFromPresence": true,
+  "invokeAutomatically": false,
+  "authorityGranted": false,
+  "records": []
+}

@@ -1,0 +1,44 @@
+{
+  "schema": "TERRAFORMER-PROJECTS/1",
+  "systemId": "system.project",
+  "authorityGranted": false,
+  "automaticExecution": false,
+  "records": [
+    {
+      "id": "project.linguist",
+      "name": "Linguist",
+      "owner": "terraformer.project.js",
+      "role": "project-provenance-lineage",
+      "canonicalLanguageRoot": "system.language",
+      "canonicalToolRoot": "system.tool",
+      "parallelRuntimeAuthority": false,
+      "automaticExecution": false,
+      "qualificationInheritance": false,
+      "program": "program.linguist",
+      "implementationOwner": "terraformer.linguist.js"
+    }
+  ],
+  "version": "0.48.21",
+  "repositories": [
+    {
+      "project": "Terraformer",
+      "repository": "repository.terraformer.github",
+      "fullName": "DanielAspelin/Terraformer",
+      "visibility": "PRIVATE",
+      "hardcoded": true,
+      "authorityGranted": false
+    }
+  ],
+  "accounts": [
+    {
+      "project": "Terraformer",
+      "provider": "Telegram",
+      "user": "@DanielAspelinTG",
+      "supergroup": "@TerraformerTG",
+      "bot": "@TerraformerTGBot",
+      "registry": "terraformer.accounts.json",
+      "hardcoded": true,
+      "authorityGranted": false
+    }
+  ]
+}

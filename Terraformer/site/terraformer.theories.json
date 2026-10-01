@@ -1,0 +1,11 @@
+{
+  "schema": "TERRAFORMER-THEORIES/1",
+  "systemId": "system.theory",
+  "membershipGrantsTruth": false,
+  "membershipGrantsQualification": false,
+  "membershipGrantsExecution": false,
+  "membershipGrantsExternalEffect": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

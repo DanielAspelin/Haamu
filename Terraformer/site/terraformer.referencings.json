@@ -1,0 +1,9 @@
+{
+  "schema": "TERRAFORMER-REFERENCINGS/1",
+  "systemId": "system.referencing",
+  "declarativeRegistry": true,
+  "membershipGrantsIdentityMutation": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

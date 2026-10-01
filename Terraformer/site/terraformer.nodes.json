@@ -1,0 +1,17 @@
+{
+  "$schema": "terraformer.registry/node_registry/1",
+  "version": "0.44.24",
+  "kind": "NODE_REGISTRY",
+  "governedBy": "system.node",
+  "governanceEvidence": "PREDECESSOR_CANONICAL_SOURCE_IDENTITY",
+  "authority": false,
+  "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+  "validation": "EXPLICIT_SCHEMA_AND_IDENTITY_REQUIRED",
+  "failureSemantics": "INVALID_OR_UNAUTHORIZED_INPUT_FAILS_CLOSED",
+  "provenance": {
+    "predecessor": "v0.44.21",
+    "checkpoint": "v0.44.22"
+  },
+  "semantics": "Node identity/kind/relationships/provenance/lifecycle; registration does not establish connectivity, availability, execution, authority, ownership or Node.js capability.",
+  "nodes": []
+}

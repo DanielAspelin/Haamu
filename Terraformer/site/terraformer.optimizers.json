@@ -1,0 +1,7 @@
+{
+  "schema": "TERRAFORMER-OPTIMIZERS/1",
+  "systemId": "system.optimizer",
+  "authorityGranted": false,
+  "automaticExecution": false,
+  "records": []
+}

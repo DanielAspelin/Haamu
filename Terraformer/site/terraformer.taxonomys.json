@@ -1,0 +1,14 @@
+{
+  "schema": "TERRAFORMER-TAXONOMYS/1",
+  "kind": "taxonomy",
+  "authorityGranted": false,
+  "records": [
+    {
+      "id": "system.terraformer.taxonomy",
+      "source": "terraformer.js",
+      "executable": "terraformer.taxonomy.js",
+      "status": "registered",
+      "authorityGranted": false
+    }
+  ]
+}

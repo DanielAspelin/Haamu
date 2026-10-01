@@ -1,0 +1,7 @@
+{
+  "schema": "TERRAFORMER-OFFLINES/1",
+  "systemId": "system.offline",
+  "descriptive": true,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

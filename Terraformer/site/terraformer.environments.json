@@ -1,0 +1,15 @@
+{
+  "$schema": "terraformer.registry/environment_registry/1",
+  "version": "0.44.21",
+  "kind": "ENVIRONMENT_REGISTRY",
+  "owner": "system.system",
+  "items": [
+    {
+      "id": "environment.default",
+      "type": "VOLATILE",
+      "authority": false
+    }
+  ],
+  "authority": false,
+  "governedBy": "terraformer.system.js"
+}

@@ -1,0 +1,7 @@
+{
+  "schema": "terraformer.registry/rfid/1",
+  "owner": "system.rfid",
+  "entries": [],
+  "authority": false,
+  "qualificationGranted": false
+}

@@ -1,0 +1,24 @@
+{
+  "schema": "TERRAFORMER-HOSTINGS/1",
+  "version": "0.48.48",
+  "kind": "hosting-projection-set",
+  "owner": "system.hosting",
+  "records": [
+    {
+      "id": "hosting.terraformer.github-pages",
+      "provider": "GitHub",
+      "service": "GitHub Pages",
+      "repository": "repository.terraformer.github",
+      "branch": "main",
+      "sourceDirectory": "site/",
+      "protectedPersistentFile": "site/terraformer.github.pages.js",
+      "role": "DELIVERY_PRESENTATION_SURFACE",
+      "canonicalSource": false,
+      "remoteAuthorizationAssumed": false,
+      "credentialsEmbedded": false,
+      "authorityGranted": false,
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT"
+    }
+  ],
+  "authorityGranted": false
+}

@@ -1,0 +1,12 @@
+{
+  "schema": "TERRAFORMER-PLURAL-REGISTRY/1",
+  "version": "0.48.16",
+  "owner": "system.reservation",
+  "concept": "reservation",
+  "kind": "plural-registry",
+  "records": [],
+  "source": "terraformer.tokenaudits.json",
+  "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+  "membershipGrantsAuthority": false,
+  "membershipGrantsExecution": false
+}

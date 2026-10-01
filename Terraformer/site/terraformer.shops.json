@@ -1,0 +1,10 @@
+{
+  "schema": "TERRAFORMER-SHOPS-REGISTRY/1",
+  "owner": "terraformer.shop.js",
+  "system": "system.shop",
+  "actor": "agent.shopper",
+  "entries": [],
+  "persistentByDefault": false,
+  "authorityGranted": false,
+  "rule": "Shop records describe admitted shop instances/results/history only; records do not independently execute, persist, authorize, or create external effects."
+}

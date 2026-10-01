@@ -1,0 +1,38 @@
+{
+  "schema": "TERRAFORMER-REPOSITORIES/1",
+  "version": "0.48.48",
+  "owner": "system.repository",
+  "kind": "plural-registry",
+  "records": [
+    {
+      "id": "repository.terraformer.github",
+      "name": "Terraformer",
+      "provider": "GitHub",
+      "visibility": "PRIVATE",
+      "owner": "DanielAspelin",
+      "repository": "Terraformer",
+      "fullName": "DanielAspelin/Terraformer",
+      "url": "https://github.com/DanielAspelin/Terraformer.git",
+      "purpose": "Canonical Terraformer project repository identity and provenance target.",
+      "hardcoded": true,
+      "credentialEmbedded": false,
+      "authenticationGranted": false,
+      "authorizationGranted": false,
+      "remoteVerification": "UNVERIFIED_CONNECTOR_ACCESS",
+      "remoteVerificationEvidence": "Connected GitHub installation returned NOT_FOUND and installation search returned no matching repository.",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "deliveryProjection": {
+        "provider": "GitHub",
+        "service": "GitHub Pages",
+        "branch": "main",
+        "siteDirectory": "site/",
+        "protectedPersistentFile": "site/terraformer.github.pages.js",
+        "canonicalSource": false,
+        "credentialsEmbedded": false,
+        "authorizationGranted": false,
+        "qualification": "UNDER_CONDITIONAL_EXPERIMENT"
+      }
+    }
+  ],
+  "authorityGranted": false
+}

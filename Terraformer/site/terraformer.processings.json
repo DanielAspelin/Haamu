@@ -1,0 +1,116 @@
+{
+  "schema": "TERRAFORMER-PROCESSINGS/1",
+  "systemId": "system.processing",
+  "declarativeRegistry": true,
+  "pidIsOsProcessId": false,
+  "membershipGrantsExecution": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": [],
+  "version": "0.48.18",
+  "results": [
+    {
+      "id": "result.processing.architecture.v0.48.18",
+      "relationship": [
+        "system.processing",
+        "system.architecture"
+      ],
+      "source": "v0.48.17:terraformer.processingarchitecture.json",
+      "types": [
+        {
+          "workload": "visual",
+          "preferredProcessor": "system.gpu",
+          "fallbackProcessor": "system.cpu"
+        },
+        {
+          "workload": "vector-graphics",
+          "preferredProcessor": "system.gpu",
+          "fallbackProcessor": "system.cpu"
+        },
+        {
+          "workload": "background",
+          "preferredProcessor": "system.cpu",
+          "fallbackProcessor": null
+        },
+        {
+          "workload": "general",
+          "preferredProcessor": "system.cpu",
+          "fallbackProcessor": null
+        }
+      ],
+      "coordination": {
+        "parallelism": "system.parallelism",
+        "concurrency": "system.concurrency",
+        "affinity": "system.affinity",
+        "conformity": "system.conformity"
+      },
+      "rules": {
+        "preferenceNotPlacement": true,
+        "capabilityDetectionRequiredForGPU": true,
+        "cpuFallbackForVisual": true,
+        "parallelismDoesNotGuaranteeParallelHardwareExecution": true,
+        "concurrencyDoesNotGuaranteeSimultaneity": true,
+        "hostRuntimeRetainsSchedulingAuthority": true,
+        "qualityGoal": "best available processing compatibility and responsiveness within admitted resources",
+        "foregroundAndBackgroundMayUseBothParallelismAndConcurrency": true,
+        "mutualAdaptationIsNegotiatedNotForced": true,
+        "directConnectionMeansShortestAdmittedPath": true,
+        "directConnectionDoesNotBypassSecurityAuthorityQualificationOrScheduler": true,
+        "sustainmentPreferenceDoesNotGuaranteePersistentConnection": true,
+        "vectorGraphicsPreferredByDefault": true,
+        "rasterGraphicsFallbackAvailable": true,
+        "rasterFallbackIsCapabilityDriven": true,
+        "noHardwareClassInferredFromUserOrDeviceIdentity": true
+      },
+      "contexts": [
+        {
+          "id": "system.foreground",
+          "supports": [
+            "system.parallelism",
+            "system.concurrency"
+          ],
+          "preferredProcessor": "system.gpu",
+          "fallbackProcessor": "system.cpu",
+          "adaptsWith": "system.background",
+          "directConnectionPreference": true,
+          "sustainment": "system.sustainment"
+        },
+        {
+          "id": "system.background",
+          "supports": [
+            "system.parallelism",
+            "system.concurrency"
+          ],
+          "preferredProcessor": "system.cpu",
+          "adaptsWith": "system.foreground",
+          "directConnectionPreference": true,
+          "sustainment": "system.sustainment"
+        }
+      ],
+      "foregroundRendering": {
+        "orientation": "visual-graphics",
+        "default": "system.vector",
+        "fallback": "system.raster",
+        "selection": "capability-driven",
+        "fallbackPurpose": "compatibility for constrained/unsupported rendering capability",
+        "sameForegroundBoundary": true
+      },
+      "foregroundVisualOwnership": {
+        "scope": [
+          "system.graphics",
+          "system.visualization",
+          "system.layout",
+          "system.layer"
+        ],
+        "backgroundLayoutPlane": "visual.layout.background",
+        "foregroundLayoutPlane": "visual.layout.foreground",
+        "nestedLayers": true,
+        "surrealComposition": true,
+        "presentationOnly": true,
+        "backgroundComputationExcluded": true
+      },
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false
+    }
+  ]
+}

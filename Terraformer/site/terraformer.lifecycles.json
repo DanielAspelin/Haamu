@@ -1,0 +1,21 @@
+{
+  "schema": "TERRAFORMER-LIFECYCLES/1",
+  "owner": "system.lifecycle",
+  "executable": "terraformer.lifecycle.js",
+  "authorityGranted": false,
+  "membershipGrantsAuthority": false,
+  "records": [
+    {
+      "id": "lifecycle.canonical",
+      "states": [
+        "registered",
+        "admitted",
+        "active",
+        "suspended",
+        "retired"
+      ],
+      "status": "registered",
+      "authorityGranted": false
+    }
+  ]
+}

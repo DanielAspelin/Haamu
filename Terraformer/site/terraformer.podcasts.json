@@ -1,0 +1,8 @@
+{
+  "schema": "TERRAFORMER-PODCASTS/1",
+  "systemId": "system.podcast",
+  "authorityGranted": false,
+  "automaticPublication": false,
+  "automaticStreaming": false,
+  "records": []
+}

@@ -1,0 +1,3 @@
+"use strict";
+const TERRAFORMER_NOTIFIER=Object.freeze({schema:'TERRAFORMER-NOTIFIER/1',id:'agent.notifier',name:'Notifier',family:'agent',type:'notification-agent',state:'integrated',canonicalPath:'terraformer://notification/notifier/',system:'system.notification',authorityInherited:false,capabilities:Object.freeze(['receive-notification','validate-channel','route-admitted','record-delivery-evidence']),rule:'Notifier routes only admitted notifications and cannot infer receipt, acknowledgement, consent, authorization, or permission to contact.'});
+module.exports=Object.freeze({TERRAFORMER_NOTIFIER});

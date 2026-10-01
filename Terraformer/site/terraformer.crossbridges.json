@@ -1,0 +1,2834 @@
+{
+  "schema": "TERRAFORMER-CROSS-OWNER-BRIDGE/1",
+  "version": "0.48.1",
+  "owner": "system.bridge",
+  "records": [
+    {
+      "id": "bridge.acquisition.command",
+      "from": "system.acquisition",
+      "to": "system.command",
+      "evidence": {
+        "edgeCount": 1,
+        "independentCallers": 1,
+        "independentDependencies": 1,
+        "reciprocalObserved": true,
+        "callers": [
+          "tfPlanetAcquisitionSelfTestV4038"
+        ],
+        "dependencies": [
+          "tfPlanetDownloadCommandV4038"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.admission.canonical",
+      "from": "system.admission",
+      "to": "system.canonical",
+      "evidence": {
+        "edgeCount": 2,
+        "independentCallers": 2,
+        "independentDependencies": 1,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfCompleteOsAdmission",
+          "tfOsAdmissionHTML"
+        ],
+        "dependencies": [
+          "tfPreservePermanentTokenForCanonicalRuntime"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.admission.content",
+      "from": "system.admission",
+      "to": "system.content",
+      "evidence": {
+        "edgeCount": 1,
+        "independentCallers": 1,
+        "independentDependencies": 1,
+        "reciprocalObserved": true,
+        "callers": [
+          "tfContentAdmissionV377"
+        ],
+        "dependencies": [
+          "tfContentDescriptorV377"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.admission.identity",
+      "from": "system.admission",
+      "to": "system.identity",
+      "evidence": {
+        "edgeCount": 2,
+        "independentCallers": 2,
+        "independentDependencies": 1,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfInvariantAdmissionV394",
+          "tfVarianceAdmissionV394"
+        ],
+        "dependencies": [
+          "tfNormalizeSystemIdentityV381"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.admission.privilege",
+      "from": "system.admission",
+      "to": "system.privilege",
+      "evidence": {
+        "edgeCount": 2,
+        "independentCallers": 2,
+        "independentDependencies": 1,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfCompleteOsAdmission",
+          "tfOsAdmissionHTML"
+        ],
+        "dependencies": [
+          "tfRequestPrivilege"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.admission.sandbox",
+      "from": "system.admission",
+      "to": "system.sandbox",
+      "evidence": {
+        "edgeCount": 1,
+        "independentCallers": 1,
+        "independentDependencies": 1,
+        "reciprocalObserved": true,
+        "callers": [
+          "tfSandboxAdmissionV36451"
+        ],
+        "dependencies": [
+          "tfSystemSandboxV36451"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.admission.script",
+      "from": "system.admission",
+      "to": "system.script",
+      "evidence": {
+        "edgeCount": 3,
+        "independentCallers": 3,
+        "independentDependencies": 3,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfDataQueryAdmissionV391",
+          "tfGitActionAdmissionV393",
+          "tfReadWriteAdmissionV378"
+        ],
+        "dependencies": [
+          "tfDataQueryDescriptorV391",
+          "tfGitFederationDescriptorV393",
+          "tfReadWriteDescriptorV378"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.admission.session",
+      "from": "system.admission",
+      "to": "system.session",
+      "evidence": {
+        "edgeCount": 2,
+        "independentCallers": 2,
+        "independentDependencies": 1,
+        "reciprocalObserved": true,
+        "callers": [
+          "tfCompleteOsAdmission",
+          "tfOsAdmissionHTML"
+        ],
+        "dependencies": [
+          "tfEstablishInternalSession"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.admission.token",
+      "from": "system.admission",
+      "to": "system.token",
+      "evidence": {
+        "edgeCount": 6,
+        "independentCallers": 2,
+        "independentDependencies": 5,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfCompleteOsAdmission",
+          "tfOsAdmissionHTML"
+        ],
+        "dependencies": [
+          "tfAdmitDiscoveredToken",
+          "tfAutoAdmitPermanentToken",
+          "tfDiscoverTokens",
+          "tfVerifyPermanentBackupToken",
+          "tfVerifyToken"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.admission.transaction",
+      "from": "system.admission",
+      "to": "system.transaction",
+      "evidence": {
+        "edgeCount": 6,
+        "independentCallers": 6,
+        "independentDependencies": 1,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfAddressSpacingAdmissionV401",
+          "tfGitActionAdmissionV393",
+          "tfHealthActionAdmissionV404",
+          "tfLocatorMutationAdmissionV403",
+          "tfSignalActionAdmissionV406",
+          "tfVarianceAdmissionV394"
+        ],
+        "dependencies": [
+          "tfActionTransactionGateV393"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.audit.reconciliation",
+      "from": "system.audit",
+      "to": "system.reconciliation",
+      "evidence": {
+        "edgeCount": 1,
+        "independentCallers": 1,
+        "independentDependencies": 1,
+        "reciprocalObserved": true,
+        "callers": [
+          "tfFinalClosureAuditV384"
+        ],
+        "dependencies": [
+          "tfReconciliationPassIIIV383"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.audit.terraformer",
+      "from": "system.audit",
+      "to": "system.terraformer",
+      "evidence": {
+        "edgeCount": 1,
+        "independentCallers": 1,
+        "independentDependencies": 1,
+        "reciprocalObserved": true,
+        "callers": [
+          "tfInteroperabilityAudit"
+        ],
+        "dependencies": [
+          "tfTerraformerMeet"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.audit.universal",
+      "from": "system.audit",
+      "to": "system.universal",
+      "evidence": {
+        "edgeCount": 6,
+        "independentCallers": 2,
+        "independentDependencies": 6,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfClosureAuditV380",
+          "tfFinalClosureAuditV384"
+        ],
+        "dependencies": [
+          "tfUniversalContentFabricV377",
+          "tfUniversalFontFabricV376",
+          "tfUniversalLoggingFabricV375",
+          "tfUniversalObservabilityV384",
+          "tfUniversalPolicyFabricV379",
+          "tfUniversalReadWriteFabricV378"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.block.power",
+      "from": "system.block",
+      "to": "system.power",
+      "evidence": {
+        "edgeCount": 2,
+        "independentCallers": 2,
+        "independentDependencies": 1,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfOXValidateBlockV4093",
+          "tfValidateBlockV4095"
+        ],
+        "dependencies": [
+          "tfOXIsPowerOfTwoV4093"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.block.sha256",
+      "from": "system.block",
+      "to": "system.sha256",
+      "evidence": {
+        "edgeCount": 3,
+        "independentCallers": 3,
+        "independentDependencies": 1,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfOXValidateBlockV4093",
+          "tfValidateBlockPageV4096",
+          "tfValidateBlockV4095"
+        ],
+        "dependencies": [
+          "tfOXSHA256V4093"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.candidate.token",
+      "from": "system.candidate",
+      "to": "system.token",
+      "evidence": {
+        "edgeCount": 2,
+        "independentCallers": 1,
+        "independentDependencies": 2,
+        "reciprocalObserved": true,
+        "callers": [
+          "tfTokenCandidateStatus"
+        ],
+        "dependencies": [
+          "tfVerifyPermanentBackupToken",
+          "tfVerifyToken"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.canonical.identity",
+      "from": "system.canonical",
+      "to": "system.identity",
+      "evidence": {
+        "edgeCount": 2,
+        "independentCallers": 2,
+        "independentDependencies": 1,
+        "reciprocalObserved": true,
+        "callers": [
+          "tfCanonicalIdentityAuditV381",
+          "tfCanonicalStabilityContractV394"
+        ],
+        "dependencies": [
+          "tfNormalizeSystemIdentityV381"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.center.canonical",
+      "from": "system.center",
+      "to": "system.canonical",
+      "evidence": {
+        "edgeCount": 2,
+        "independentCallers": 2,
+        "independentDependencies": 2,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfURICenterV4117",
+          "tfURLCenterV4118"
+        ],
+        "dependencies": [
+          "tfCanonicalSystemURIV4117",
+          "tfCanonicalSystemURLV4118"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.center.record",
+      "from": "system.center",
+      "to": "system.record",
+      "evidence": {
+        "edgeCount": 2,
+        "independentCallers": 2,
+        "independentDependencies": 2,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfURICenterV4117",
+          "tfURLCenterV4118"
+        ],
+        "dependencies": [
+          "tfSystemURIRecordV4117",
+          "tfSystemURLRecordV4118"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.change.universal",
+      "from": "system.change",
+      "to": "system.universal",
+      "evidence": {
+        "edgeCount": 1,
+        "independentCallers": 1,
+        "independentDependencies": 1,
+        "reciprocalObserved": true,
+        "callers": [
+          "tfChangeSelfTestV36450"
+        ],
+        "dependencies": [
+          "tfUniversalChangeFabricV36450"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.checkpoint.reconstruction",
+      "from": "system.checkpoint",
+      "to": "system.reconstruction",
+      "evidence": {
+        "edgeCount": 1,
+        "independentCallers": 1,
+        "independentDependencies": 1,
+        "reciprocalObserved": true,
+        "callers": [
+          "tfCheckpoint"
+        ],
+        "dependencies": [
+          "tfCanonicalReconstructionSnapshot"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.command.acquisition",
+      "from": "system.command",
+      "to": "system.acquisition",
+      "evidence": {
+        "edgeCount": 2,
+        "independentCallers": 1,
+        "independentDependencies": 2,
+        "reciprocalObserved": true,
+        "callers": [
+          "tfPlanetDownloadCommandV4038"
+        ],
+        "dependencies": [
+          "tfPlanetAcquisitionPlanV4038",
+          "tfPlanetAcquisitionSelfTestV4038"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.construct.power",
+      "from": "system.construct",
+      "to": "system.power",
+      "evidence": {
+        "edgeCount": 2,
+        "independentCallers": 2,
+        "independentDependencies": 1,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfConstructBlockV4095",
+          "tfOXConstructBlockV4093"
+        ],
+        "dependencies": [
+          "tfOXIsPowerOfTwoV4093"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.construct.query",
+      "from": "system.construct",
+      "to": "system.query",
+      "evidence": {
+        "edgeCount": 2,
+        "independentCallers": 2,
+        "independentDependencies": 2,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfConstructiveClosureV390",
+          "tfConstructiveClosureV391"
+        ],
+        "dependencies": [
+          "tfDataQuerySelfTestV391",
+          "tfQuerySelfTestV390"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.construct.sha256",
+      "from": "system.construct",
+      "to": "system.sha256",
+      "evidence": {
+        "edgeCount": 3,
+        "independentCallers": 3,
+        "independentDependencies": 1,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfConstructBlockPageV4096",
+          "tfConstructBlockV4095",
+          "tfOXConstructBlockV4093"
+        ],
+        "dependencies": [
+          "tfOXSHA256V4093"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.construction.construct",
+      "from": "system.construction",
+      "to": "system.construct",
+      "evidence": {
+        "edgeCount": 8,
+        "independentCallers": 2,
+        "independentDependencies": 4,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfPageConstructionLifecycleV4021",
+          "tfPageConstructionSelfTestV4021"
+        ],
+        "dependencies": [
+          "tfConstructPageV4021",
+          "tfMaterializeConstructedPageV4021",
+          "tfPreConstructPageV4021",
+          "tfReconstructPageV4021"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.content.admission",
+      "from": "system.content",
+      "to": "system.admission",
+      "evidence": {
+        "edgeCount": 1,
+        "independentCallers": 1,
+        "independentDependencies": 1,
+        "reciprocalObserved": true,
+        "callers": [
+          "tfContentSelfTestV377"
+        ],
+        "dependencies": [
+          "tfContentAdmissionV377"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.identity.canonical",
+      "from": "system.identity",
+      "to": "system.canonical",
+      "evidence": {
+        "edgeCount": 1,
+        "independentCallers": 1,
+        "independentDependencies": 1,
+        "reciprocalObserved": true,
+        "callers": [
+          "tfSystemIdentityPath"
+        ],
+        "dependencies": [
+          "tfCanonicalOntologyEntries"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.inventory.worker",
+      "from": "system.inventory",
+      "to": "system.worker",
+      "evidence": {
+        "edgeCount": 1,
+        "independentCallers": 1,
+        "independentDependencies": 1,
+        "reciprocalObserved": true,
+        "callers": [
+          "tfWorkerUriInventory"
+        ],
+        "dependencies": [
+          "tfWorkerUriKey"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.linguist.qualification",
+      "from": "system.linguist",
+      "to": "system.qualification",
+      "evidence": {
+        "edgeCount": 2,
+        "independentCallers": 2,
+        "independentDependencies": 1,
+        "reciprocalObserved": true,
+        "callers": [
+          "tfLinguistClosureSelfTestV4055",
+          "tfLinguistNaturalizedSuccessorV4055"
+        ],
+        "dependencies": [
+          "tfLinguistRepeatedQualificationV4055"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.materialization.native",
+      "from": "system.materialization",
+      "to": "system.native",
+      "evidence": {
+        "edgeCount": 1,
+        "independentCallers": 1,
+        "independentDependencies": 1,
+        "reciprocalObserved": true,
+        "callers": [
+          "tfIONativeMergeMaterializationV4046"
+        ],
+        "dependencies": [
+          "tfIONativeGraphEdgesV4046"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.model.universal",
+      "from": "system.model",
+      "to": "system.universal",
+      "evidence": {
+        "edgeCount": 6,
+        "independentCallers": 1,
+        "independentDependencies": 6,
+        "reciprocalObserved": true,
+        "callers": [
+          "tfModelCadSelfTestV36432"
+        ],
+        "dependencies": [
+          "tfUniversalEvidenceFabricV36430",
+          "tfUniversalFrameFabricV36426",
+          "tfUniversalGuardFabricV36421",
+          "tfUniversalHealthFabricV36422",
+          "tfUniversalModelFabricV36432",
+          "tfUniversalTimeCountFabricV36427"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.native.materialization",
+      "from": "system.native",
+      "to": "system.materialization",
+      "evidence": {
+        "edgeCount": 1,
+        "independentCallers": 1,
+        "independentDependencies": 1,
+        "reciprocalObserved": true,
+        "callers": [
+          "tfIONativeMergeSelfTestV4046"
+        ],
+        "dependencies": [
+          "tfIONativeMergeMaterializationV4046"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.native.qualification",
+      "from": "system.native",
+      "to": "system.qualification",
+      "evidence": {
+        "edgeCount": 2,
+        "independentCallers": 2,
+        "independentDependencies": 2,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfIONativeMergeSelfTestV4046",
+          "tfNativeIOSelfTestV4044"
+        ],
+        "dependencies": [
+          "tfIOMergeQualificationV4044",
+          "tfIONativeGraphQualificationV4046"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.naturalization.qualification",
+      "from": "system.naturalization",
+      "to": "system.qualification",
+      "evidence": {
+        "edgeCount": 1,
+        "independentCallers": 1,
+        "independentDependencies": 1,
+        "reciprocalObserved": true,
+        "callers": [
+          "tfIONaturalizationSelfTestV4047"
+        ],
+        "dependencies": [
+          "tfIORepeatedQualificationV4047"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.placement.canonical",
+      "from": "system.placement",
+      "to": "system.canonical",
+      "evidence": {
+        "edgeCount": 3,
+        "independentCallers": 2,
+        "independentDependencies": 2,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfReconcileSelfPlacement",
+          "tfSelfPlacementStatus"
+        ],
+        "dependencies": [
+          "tfCanonicalSelfPath",
+          "tfCanonicalSessionEvidence"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.policy.universal",
+      "from": "system.policy",
+      "to": "system.universal",
+      "evidence": {
+        "edgeCount": 1,
+        "independentCallers": 1,
+        "independentDependencies": 1,
+        "reciprocalObserved": true,
+        "callers": [
+          "tfPolicySelfTestV379"
+        ],
+        "dependencies": [
+          "tfUniversalPolicyFabricV379"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.position.block",
+      "from": "system.position",
+      "to": "system.block",
+      "evidence": {
+        "edgeCount": 2,
+        "independentCallers": 2,
+        "independentDependencies": 2,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfBlockDispositionV4095",
+          "tfOXBlockDispositionV4094"
+        ],
+        "dependencies": [
+          "tfOXValidateBlockV4093",
+          "tfValidateBlockV4095"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.presentation.identity",
+      "from": "system.presentation",
+      "to": "system.identity",
+      "evidence": {
+        "edgeCount": 2,
+        "independentCallers": 2,
+        "independentDependencies": 1,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfReadPresentationSession",
+          "tfWritePresentationSession"
+        ],
+        "dependencies": [
+          "tfExecutableIdentity"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.project.inventory",
+      "from": "system.project",
+      "to": "system.inventory",
+      "evidence": {
+        "edgeCount": 2,
+        "independentCallers": 2,
+        "independentDependencies": 1,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfUriProjectionAudit",
+          "tfUriProjectionFind"
+        ],
+        "dependencies": [
+          "tfUriProjectionInventory"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.qualification.admission",
+      "from": "system.qualification",
+      "to": "system.admission",
+      "evidence": {
+        "edgeCount": 4,
+        "independentCallers": 4,
+        "independentDependencies": 4,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfControlQualificationV4090",
+          "tfFullRuntimeGateQualificationV4148",
+          "tfRegistryAdmissionIIQualificationV0422",
+          "tfTestLearningQualificationV4080"
+        ],
+        "dependencies": [
+          "tfControlAdmissionV4090",
+          "tfFullRuntimeAdmissionV4148",
+          "tfLearningAdmissionV4080",
+          "tfRegistryAdmissionIIStatusV0422"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.qualification.architecture",
+      "from": "system.qualification",
+      "to": "system.architecture",
+      "evidence": {
+        "edgeCount": 2,
+        "independentCallers": 2,
+        "independentDependencies": 2,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfLanguageArchitectureRetirementQualificationV4195",
+          "tfMemoryArchitectureQualificationV4113"
+        ],
+        "dependencies": [
+          "tfPlatformArchitectureV4113",
+          "tfResolveCurrentLanguageArchitectureV4195"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.qualification.authority",
+      "from": "system.qualification",
+      "to": "system.authority",
+      "evidence": {
+        "edgeCount": 2,
+        "independentCallers": 2,
+        "independentDependencies": 2,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfLanguageLogicalOrderQualificationV4188",
+          "tfRuntimeAuthorityQualificationV4160"
+        ],
+        "dependencies": [
+          "tfResolveLanguageAuthorityV4188",
+          "tfRuntimeAuthorityV4160"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.qualification.availability",
+      "from": "system.qualification",
+      "to": "system.availability",
+      "evidence": {
+        "edgeCount": 2,
+        "independentCallers": 2,
+        "independentDependencies": 2,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfAvailabilityQualificationV4057",
+          "tfOccupationIdleQualificationV4058"
+        ],
+        "dependencies": [
+          "tfAvailabilityConflictV4057",
+          "tfAvailabilityOccupationViewV4058"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.qualification.block",
+      "from": "system.qualification",
+      "to": "system.block",
+      "evidence": {
+        "edgeCount": 6,
+        "independentCallers": 3,
+        "independentDependencies": 6,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfBlockDeviceIOQualificationV417",
+          "tfBlockPageLogicQualificationV4096",
+          "tfOXBlockQualificationV4093"
+        ],
+        "dependencies": [
+          "tfAdmitBlockIOV417",
+          "tfBlockIOStateV417",
+          "tfOXValidateBlockV4093",
+          "tfOXVolatileBlockStoreV4093",
+          "tfValidateBlockPageV4096",
+          "tfVolatileBlockPageStoreV4096"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.qualification.blockdevice",
+      "from": "system.qualification",
+      "to": "system.blockdevice",
+      "evidence": {
+        "edgeCount": 5,
+        "independentCallers": 4,
+        "independentDependencies": 3,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfBlockDeviceIOQualificationV417",
+          "tfFileImageBlockBindingQualificationV418",
+          "tfIORecordQualificationV419",
+          "tfOXPersistenceQualificationV4092"
+        ],
+        "dependencies": [
+          "tfBindImageToBlockDeviceV418",
+          "tfBlockDeviceDescriptorV417",
+          "tfOXBlockDeviceDescriptorV4092"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.qualification.boundary",
+      "from": "system.qualification",
+      "to": "system.boundary",
+      "evidence": {
+        "edgeCount": 5,
+        "independentCallers": 5,
+        "independentDependencies": 5,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfCrossPlatformIOQualificationV4111",
+          "tfFingerScanningQualificationV4087",
+          "tfFingerprintQualificationV4086",
+          "tfPlatformIOQualificationV4110",
+          "tfUsageStateQualificationV4060"
+        ],
+        "dependencies": [
+          "tfAndroidStorageBoundaryV4111",
+          "tfBiometricFingerprintBoundaryV4086",
+          "tfFingerScannerBoundaryV4087",
+          "tfIOSAccessBoundaryV4110",
+          "tfUserUsageBoundaryV4060"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.qualification.candidate",
+      "from": "system.qualification",
+      "to": "system.candidate",
+      "evidence": {
+        "edgeCount": 4,
+        "independentCallers": 3,
+        "independentDependencies": 4,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfCandidateSubsidiaryQualificationV4154",
+          "tfRegistryAdmissionIQualificationV0421",
+          "tfTestLearningQualificationV4080"
+        ],
+        "dependencies": [
+          "tfAdmitRegistryCandidateV0421",
+          "tfCandidateDecisionV4154",
+          "tfCandidateV4154",
+          "tfNeuralCandidateV4080"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.qualification.canonical",
+      "from": "system.qualification",
+      "to": "system.canonical",
+      "evidence": {
+        "edgeCount": 2,
+        "independentCallers": 2,
+        "independentDependencies": 2,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfCanonicalLabelQualificationV4051",
+          "tfCanonicalRegistryDeltaQualificationV4198"
+        ],
+        "dependencies": [
+          "tfCanonicalLabelRenameV4051",
+          "tfCanonicalRegistryDeltaStatusV4198"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.qualification.capability",
+      "from": "system.qualification",
+      "to": "system.capability",
+      "evidence": {
+        "edgeCount": 7,
+        "independentCallers": 6,
+        "independentDependencies": 7,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfCapabilityMigrationQualificationV4176",
+          "tfCapabilityTruthQualificationV4162",
+          "tfMachineTopologyQualificationV4114",
+          "tfMemoryArchitectureQualificationV4113",
+          "tfProcessorCapabilityQualificationV4112",
+          "tfToolCapabilityQualificationV4192"
+        ],
+        "dependencies": [
+          "tfBindToolCapabilityV4192",
+          "tfCapabilityTruthV4162",
+          "tfMachineCapabilityViewV4114",
+          "tfMemoryCapabilityV4113",
+          "tfProcessorCapabilityRecordV4112",
+          "tfReconcileLegacyCapabilityV4176",
+          "tfResolveToolCapabilityUseV4192"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.qualification.center",
+      "from": "system.qualification",
+      "to": "system.center",
+      "evidence": {
+        "edgeCount": 5,
+        "independentCallers": 4,
+        "independentDependencies": 3,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfAPICenterQualificationV4115",
+          "tfAPIInvocationQualificationV4116",
+          "tfURICenterQualificationV4117",
+          "tfURLCenterQualificationV4118"
+        ],
+        "dependencies": [
+          "tfAPICenterV4115",
+          "tfURICenterV4117",
+          "tfURLCenterV4118"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.qualification.construct",
+      "from": "system.qualification",
+      "to": "system.construct",
+      "evidence": {
+        "edgeCount": 3,
+        "independentCallers": 2,
+        "independentDependencies": 3,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfBlockPageLogicQualificationV4096",
+          "tfOXBlockQualificationV4093"
+        ],
+        "dependencies": [
+          "tfConstructBlockPageV4096",
+          "tfConstructBlockV4095",
+          "tfOXConstructBlockV4093"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.qualification.contract",
+      "from": "system.qualification",
+      "to": "system.contract",
+      "evidence": {
+        "edgeCount": 2,
+        "independentCallers": 2,
+        "independentDependencies": 2,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfAPIInvocationQualificationV4116",
+          "tfUniversalSystemContractQualificationV4157"
+        ],
+        "dependencies": [
+          "tfAPIContractV4116",
+          "tfSystemStructuralContractV4157"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.qualification.controller",
+      "from": "system.qualification",
+      "to": "system.controller",
+      "evidence": {
+        "edgeCount": 2,
+        "independentCallers": 2,
+        "independentDependencies": 2,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfControlQualificationV4090",
+          "tfDomainControllerQualificationV4125"
+        ],
+        "dependencies": [
+          "tfPromoteDomainWithControllerV4125",
+          "tfUniversalControllerV4090"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.qualification.domain",
+      "from": "system.qualification",
+      "to": "system.domain",
+      "evidence": {
+        "edgeCount": 2,
+        "independentCallers": 2,
+        "independentDependencies": 2,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfDomainPromotionQualificationV4124",
+          "tfHostingDomainQualificationV4123"
+        ],
+        "dependencies": [
+          "tfDomainRootV4124",
+          "tfDomainTreeV4123"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.qualification.estate",
+      "from": "system.qualification",
+      "to": "system.estate",
+      "evidence": {
+        "edgeCount": 2,
+        "independentCallers": 2,
+        "independentDependencies": 2,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfOccupationIdleQualificationV4058",
+          "tfUsageStateQualificationV4060"
+        ],
+        "dependencies": [
+          "tfIdleStateV4058",
+          "tfUsageStateViewV4060"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.qualification.evidence",
+      "from": "system.qualification",
+      "to": "system.evidence",
+      "evidence": {
+        "edgeCount": 2,
+        "independentCallers": 2,
+        "independentDependencies": 2,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfIdentityNfcQualificationV4133",
+          "tfTestLearningQualificationV4080"
+        ],
+        "dependencies": [
+          "tfDigitalIdEvidenceV4133",
+          "tfTestEvidenceV4080"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.qualification.execution",
+      "from": "system.qualification",
+      "to": "system.execution",
+      "evidence": {
+        "edgeCount": 2,
+        "independentCallers": 2,
+        "independentDependencies": 2,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfProcessorCapabilityQualificationV4112",
+          "tfToolSystemQualificationV4190"
+        ],
+        "dependencies": [
+          "tfGPUExecutionContractV4112",
+          "tfResolveToolExecutionV4190"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.qualification.identity",
+      "from": "system.qualification",
+      "to": "system.identity",
+      "evidence": {
+        "edgeCount": 3,
+        "independentCallers": 2,
+        "independentDependencies": 3,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfIdentityAddressQualificationV4150",
+          "tfLegitimationQualificationV4132"
+        ],
+        "dependencies": [
+          "tfIdentityRecordV4150",
+          "tfResolveIdentityV4150",
+          "tfSystemIdentityCardV4131"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.qualification.image",
+      "from": "system.qualification",
+      "to": "system.image",
+      "evidence": {
+        "edgeCount": 2,
+        "independentCallers": 2,
+        "independentDependencies": 2,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfFileImageBlockBindingQualificationV418",
+          "tfFileSystemQualificationV416"
+        ],
+        "dependencies": [
+          "tfCreateFileImageV416",
+          "tfImageIOPlanV418"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.qualification.immunity",
+      "from": "system.qualification",
+      "to": "system.immunity",
+      "evidence": {
+        "edgeCount": 2,
+        "independentCallers": 2,
+        "independentDependencies": 2,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfImmunityQualificationV4163",
+          "tfUniversalImmunityQualificationV4175"
+        ],
+        "dependencies": [
+          "tfImmunityV4163",
+          "tfSetImmunityStateV4175"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.qualification.invocation",
+      "from": "system.qualification",
+      "to": "system.invocation",
+      "evidence": {
+        "edgeCount": 2,
+        "independentCallers": 2,
+        "independentDependencies": 2,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfAPIInvocationQualificationV4116",
+          "tfGoverningInvocationQualificationV4170"
+        ],
+        "dependencies": [
+          "tfAPIInvocationPlanV4116",
+          "tfGoverningInvocationV4170"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.qualification.language",
+      "from": "system.qualification",
+      "to": "system.language",
+      "evidence": {
+        "edgeCount": 6,
+        "independentCallers": 4,
+        "independentDependencies": 6,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfLanguageOrderQualificationV4193",
+          "tfLanguageQualificationV4054",
+          "tfLanguageToolAssignmentQualificationV4194",
+          "tfLanguageToolingQualificationV4189"
+        ],
+        "dependencies": [
+          "tfLanguageIRV4054",
+          "tfLanguageSemanticClassifyV4054",
+          "tfLanguageStageV4193",
+          "tfLanguageTransitionV4193",
+          "tfResolveLanguageToolAssignmentV4194",
+          "tfResolveLanguageToolingV4189"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.qualification.lifecycle",
+      "from": "system.qualification",
+      "to": "system.lifecycle",
+      "evidence": {
+        "edgeCount": 2,
+        "independentCallers": 2,
+        "independentDependencies": 2,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfBaselineLifecycleQualificationV4158",
+          "tfBoundaryLifecycleQualificationV4155"
+        ],
+        "dependencies": [
+          "tfBaselineLifecycleV4158",
+          "tfBoundaryLifecycleV4155"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.qualification.linguist",
+      "from": "system.qualification",
+      "to": "system.linguist",
+      "evidence": {
+        "edgeCount": 1,
+        "independentCallers": 1,
+        "independentDependencies": 1,
+        "reciprocalObserved": true,
+        "callers": [
+          "tfLinguistRepeatedQualificationV4055"
+        ],
+        "dependencies": [
+          "tfLinguistClosureAuditV4055"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.qualification.mobility",
+      "from": "system.qualification",
+      "to": "system.mobility",
+      "evidence": {
+        "edgeCount": 2,
+        "independentCallers": 2,
+        "independentDependencies": 2,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfMobilityQualificationV411",
+          "tfSurfaceQualificationV413"
+        ],
+        "dependencies": [
+          "tfMobilitySessionV411",
+          "tfSurfaceMobilityRequestV413"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.qualification.naturalization",
+      "from": "system.qualification",
+      "to": "system.naturalization",
+      "evidence": {
+        "edgeCount": 3,
+        "independentCallers": 3,
+        "independentDependencies": 3,
+        "reciprocalObserved": true,
+        "callers": [
+          "tfLanguageQualificationV4054",
+          "tfUnyResourceJsQualificationV4074",
+          "tfUnylifeResolutionQualificationV4070"
+        ],
+        "dependencies": [
+          "tfJavaScriptNaturalizationV4074",
+          "tfLinguistNaturalizationV4054",
+          "tfUnylifeNaturalizationAdmissionV4070"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.qualification.occupation",
+      "from": "system.qualification",
+      "to": "system.occupation",
+      "evidence": {
+        "edgeCount": 2,
+        "independentCallers": 2,
+        "independentDependencies": 2,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfLockingQualificationV4062",
+          "tfOccupationIdleQualificationV4058"
+        ],
+        "dependencies": [
+          "tfOccupationLockPolicyV4062",
+          "tfOccupationV4058"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.qualification.origin",
+      "from": "system.qualification",
+      "to": "system.origin",
+      "evidence": {
+        "edgeCount": 4,
+        "independentCallers": 3,
+        "independentDependencies": 4,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfOriginMigrationQualificationV4177",
+          "tfOriginQualificationV4049",
+          "tfOriginTruthQualificationV4164"
+        ],
+        "dependencies": [
+          "tfOriginMergeV4049",
+          "tfOriginTruthV4164",
+          "tfReconcileHistoricalOriginV4177",
+          "tfSystemIOOriginV4049"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.qualification.ownership",
+      "from": "system.qualification",
+      "to": "system.ownership",
+      "evidence": {
+        "edgeCount": 3,
+        "independentCallers": 2,
+        "independentDependencies": 3,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfExecutableOwnershipManifestQualificationV4185",
+          "tfExecutableOwnershipQualificationV4179"
+        ],
+        "dependencies": [
+          "tfRegisterExecutableOwnershipV4185",
+          "tfResolveExecutableOwnershipV4179",
+          "tfResolveExecutableOwnershipV4185"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.qualification.passport",
+      "from": "system.qualification",
+      "to": "system.passport",
+      "evidence": {
+        "edgeCount": 4,
+        "independentCallers": 3,
+        "independentDependencies": 4,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfIdentityNfcQualificationV4133",
+          "tfLegitimationQualificationV4132",
+          "tfPassportQualificationV4131"
+        ],
+        "dependencies": [
+          "tfHumanPassportV4133",
+          "tfLegitimatedPassportV4132",
+          "tfLegitimatedSystemPassportV4133",
+          "tfSystemPassportV4131"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.qualification.personalization",
+      "from": "system.qualification",
+      "to": "system.personalization",
+      "evidence": {
+        "edgeCount": 2,
+        "independentCallers": 2,
+        "independentDependencies": 2,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfEntityPersonQualificationV4063",
+          "tfEntityUserOntologyQualificationV4064"
+        ],
+        "dependencies": [
+          "tfPersonalizationBoundaryV4064",
+          "tfPersonalizationV4063"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.qualification.platform",
+      "from": "system.qualification",
+      "to": "system.platform",
+      "evidence": {
+        "edgeCount": 2,
+        "independentCallers": 2,
+        "independentDependencies": 2,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfCrossPlatformIOQualificationV4111",
+          "tfPlatformIOQualificationV4110"
+        ],
+        "dependencies": [
+          "tfNormalizePlatformIOV4111",
+          "tfPlatformIORecordV4110"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.qualification.reconciliation",
+      "from": "system.qualification",
+      "to": "system.reconciliation",
+      "evidence": {
+        "edgeCount": 3,
+        "independentCallers": 3,
+        "independentDependencies": 3,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfSiteQualificationV4119",
+          "tfURICenterQualificationV4117",
+          "tfURLCenterQualificationV4118"
+        ],
+        "dependencies": [
+          "tfDomainSiteReconciliationV4119",
+          "tfURIAPIReconciliationV4117",
+          "tfURIURLReconciliationV4118"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.qualification.record",
+      "from": "system.qualification",
+      "to": "system.record",
+      "evidence": {
+        "edgeCount": 2,
+        "independentCallers": 2,
+        "independentDependencies": 2,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfBuiltOutQualificationV4153",
+          "tfOXPersistenceQualificationV4092"
+        ],
+        "dependencies": [
+          "tfBuildRecordV4153",
+          "tfOXImageRecordV4092"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.qualification.registry",
+      "from": "system.qualification",
+      "to": "system.registry",
+      "evidence": {
+        "edgeCount": 4,
+        "independentCallers": 4,
+        "independentDependencies": 2,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfKeySystemQualificationV4126",
+          "tfQRQualificationV410",
+          "tfSystemAboutQualificationV4099",
+          "tfSystemSerialQualificationV4098"
+        ],
+        "dependencies": [
+          "tfKeyRegistryV4126",
+          "tfSystemSerialRegistryV4098"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.qualification.relationship",
+      "from": "system.qualification",
+      "to": "system.relationship",
+      "evidence": {
+        "edgeCount": 5,
+        "independentCallers": 4,
+        "independentDependencies": 5,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfNativeSourceQualificationV4053",
+          "tfRelationshipGraphQualificationV4165",
+          "tfSubsidiaryTreeMappingQualificationV4156",
+          "tfToolRelationshipQualificationV4191"
+        ],
+        "dependencies": [
+          "tfNativeSourceRelationshipV4053",
+          "tfRegisterToolRelationshipV4191",
+          "tfResolveToolRelationshipV4191",
+          "tfSubsidiaryRelationshipV4156",
+          "tfTypedRelationshipGraphV4165"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.qualification.request",
+      "from": "system.qualification",
+      "to": "system.request",
+      "evidence": {
+        "edgeCount": 4,
+        "independentCallers": 3,
+        "independentDependencies": 4,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfBlockDeviceIOQualificationV417",
+          "tfFileImageBlockBindingQualificationV418",
+          "tfLockingQualificationV4062"
+        ],
+        "dependencies": [
+          "tfBlockIORequestV417",
+          "tfImageDeviceRequestsV418",
+          "tfLockRequestV4062",
+          "tfUnlockRequestV4062"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.qualification.runtime",
+      "from": "system.qualification",
+      "to": "system.runtime",
+      "evidence": {
+        "edgeCount": 2,
+        "independentCallers": 2,
+        "independentDependencies": 2,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfBaselineRuntimeQualificationV4149",
+          "tfSafeRuntimeQualificationV4167"
+        ],
+        "dependencies": [
+          "tfRuntimeSystemV4149",
+          "tfSafeRuntimeHarnessV4167"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.qualification.session",
+      "from": "system.qualification",
+      "to": "system.session",
+      "evidence": {
+        "edgeCount": 1,
+        "independentCallers": 1,
+        "independentDependencies": 1,
+        "reciprocalObserved": true,
+        "callers": [
+          "tfMobilityQualificationV411"
+        ],
+        "dependencies": [
+          "tfSwapSessionsV411"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.qualification.subsidiary",
+      "from": "system.qualification",
+      "to": "system.subsidiary",
+      "evidence": {
+        "edgeCount": 2,
+        "independentCallers": 2,
+        "independentDependencies": 2,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfCandidateSubsidiaryQualificationV4154",
+          "tfSubsidiaryTreeMappingQualificationV4156"
+        ],
+        "dependencies": [
+          "tfSubsidiaryV4154",
+          "tfTreeMapCannotCreateSubsidiaryV4156"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.qualification.terraformer",
+      "from": "system.qualification",
+      "to": "system.terraformer",
+      "evidence": {
+        "edgeCount": 2,
+        "independentCallers": 2,
+        "independentDependencies": 1,
+        "reciprocalObserved": true,
+        "callers": [
+          "tfKeySystemQualificationV4126",
+          "tfSelfDiscoveryQualificationV4127"
+        ],
+        "dependencies": [
+          "tfTerraformerSystemV4126"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.qualification.transaction",
+      "from": "system.qualification",
+      "to": "system.transaction",
+      "evidence": {
+        "edgeCount": 2,
+        "independentCallers": 2,
+        "independentDependencies": 2,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfFinanceCardQualificationV4135",
+          "tfOXPersistenceQualificationV4092"
+        ],
+        "dependencies": [
+          "tfCardTransactionOrderV4135",
+          "tfOXTransactionV4092"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.qualification.universal",
+      "from": "system.qualification",
+      "to": "system.universal",
+      "evidence": {
+        "edgeCount": 7,
+        "independentCallers": 7,
+        "independentDependencies": 7,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfBaselineTimelineQualificationV4151",
+          "tfIdentityResolutionQualificationV4161",
+          "tfMappingTreeQualificationV4152",
+          "tfUniversalContractQualificationV415",
+          "tfUniversalImmunityQualificationV4175",
+          "tfUniversalSystemContractQualificationV4157",
+          "tfUniversalTimelineQualificationV4159"
+        ],
+        "dependencies": [
+          "tfUniversalBaselineTimelineCoverageV4151",
+          "tfUniversalIdentityCoverageV4161",
+          "tfUniversalImmunityPlacesV4175",
+          "tfUniversalSystemContractCoverageV4157",
+          "tfUniversalSystemContractV415",
+          "tfUniversalTimelineCoverageV4159",
+          "tfUniversalTreeMapCoverageV4152"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.qualification.usage",
+      "from": "system.qualification",
+      "to": "system.usage",
+      "evidence": {
+        "edgeCount": 3,
+        "independentCallers": 2,
+        "independentDependencies": 2,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfEntityUserOntologyQualificationV4064",
+          "tfUsageStateQualificationV4060"
+        ],
+        "dependencies": [
+          "tfTypedUsageV4064",
+          "tfUsageV4060"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.qualification.window",
+      "from": "system.qualification",
+      "to": "system.window",
+      "evidence": {
+        "edgeCount": 2,
+        "independentCallers": 2,
+        "independentDependencies": 2,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfPlatformIOQualificationV4110",
+          "tfSystemAboutQualificationV4099"
+        ],
+        "dependencies": [
+          "tfSystemWindowTabsV4099",
+          "tfWindowsUnbufferedCheckV4110"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.query.admission",
+      "from": "system.query",
+      "to": "system.admission",
+      "evidence": {
+        "edgeCount": 2,
+        "independentCallers": 2,
+        "independentDependencies": 2,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfDataQuerySelfTestV391",
+          "tfQuerySelfTestV390"
+        ],
+        "dependencies": [
+          "tfDataQueryAdmissionV391",
+          "tfQueryAdmissionV390"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.query.universal",
+      "from": "system.query",
+      "to": "system.universal",
+      "evidence": {
+        "edgeCount": 2,
+        "independentCallers": 2,
+        "independentDependencies": 2,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfDataQuerySelfTestV391",
+          "tfQuerySelfTestV390"
+        ],
+        "dependencies": [
+          "tfUniversalDataQueryFabricV391",
+          "tfUniversalQueryFabricV390"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.reconciliation.audit",
+      "from": "system.reconciliation",
+      "to": "system.audit",
+      "evidence": {
+        "edgeCount": 5,
+        "independentCallers": 3,
+        "independentDependencies": 5,
+        "reciprocalObserved": true,
+        "callers": [
+          "tfProjectWideReconciliationAudit",
+          "tfReconciliationPassIV381",
+          "tfReconciliationStatusV384"
+        ],
+        "dependencies": [
+          "tfClosureAuditV380",
+          "tfFinalClosureAuditV384",
+          "tfInteroperabilityAudit",
+          "tfResilienceAudit",
+          "tfSemanticRoleAuditV381"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.reconciliation.capability",
+      "from": "system.reconciliation",
+      "to": "system.capability",
+      "evidence": {
+        "edgeCount": 2,
+        "independentCallers": 2,
+        "independentDependencies": 1,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfCompletionReconciliationAudit",
+          "tfProjectWideReconciliationAudit"
+        ],
+        "dependencies": [
+          "tfCapabilityRegisterAudit"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.reconciliation.record",
+      "from": "system.reconciliation",
+      "to": "system.record",
+      "evidence": {
+        "edgeCount": 3,
+        "independentCallers": 2,
+        "independentDependencies": 2,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfURIAPIReconciliationV4117",
+          "tfURIURLReconciliationV4118"
+        ],
+        "dependencies": [
+          "tfSystemURIRecordV4117",
+          "tfSystemURLRecordV4118"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.reconciliation.registry",
+      "from": "system.reconciliation",
+      "to": "system.registry",
+      "evidence": {
+        "edgeCount": 3,
+        "independentCallers": 2,
+        "independentDependencies": 2,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfCompletionReconciliationAudit",
+          "tfProjectWideReconciliationAudit"
+        ],
+        "dependencies": [
+          "tfRegistryCatalogAudit",
+          "tfRegistryFamilyAudit"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.reconciliation.relationship",
+      "from": "system.reconciliation",
+      "to": "system.relationship",
+      "evidence": {
+        "edgeCount": 2,
+        "independentCallers": 2,
+        "independentDependencies": 2,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfProjectWideReconciliationAudit",
+          "tfReconciliationPassIV381"
+        ],
+        "dependencies": [
+          "tfRelationshipAuditV381",
+          "tfRelationshipCommerceAudit"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.reconstruction.capability",
+      "from": "system.reconstruction",
+      "to": "system.capability",
+      "evidence": {
+        "edgeCount": 2,
+        "independentCallers": 2,
+        "independentDependencies": 2,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfCanonicalReconstructionSnapshot",
+          "tfLifecycleReconstructionAudit"
+        ],
+        "dependencies": [
+          "tfCapabilityRegisterInventory",
+          "tfSystemCapabilityRegister"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.reconstruction.checkpoint",
+      "from": "system.reconstruction",
+      "to": "system.checkpoint",
+      "evidence": {
+        "edgeCount": 1,
+        "independentCallers": 1,
+        "independentDependencies": 1,
+        "reciprocalObserved": true,
+        "callers": [
+          "tfLifecycleReconstructionAudit"
+        ],
+        "dependencies": [
+          "tfCheckpoint"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.reconstruction.relationship",
+      "from": "system.reconstruction",
+      "to": "system.relationship",
+      "evidence": {
+        "edgeCount": 2,
+        "independentCallers": 2,
+        "independentDependencies": 1,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfCanonicalReconstructionSnapshot",
+          "tfLifecycleReconstructionAudit"
+        ],
+        "dependencies": [
+          "tfNormalizedRelationships"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.record.canonical",
+      "from": "system.record",
+      "to": "system.canonical",
+      "evidence": {
+        "edgeCount": 2,
+        "independentCallers": 2,
+        "independentDependencies": 2,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfSystemURIRecordV4117",
+          "tfSystemURLRecordV4118"
+        ],
+        "dependencies": [
+          "tfCanonicalSystemURIV4117",
+          "tfCanonicalSystemURLV4118"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.reference.canonical",
+      "from": "system.reference",
+      "to": "system.canonical",
+      "evidence": {
+        "edgeCount": 2,
+        "independentCallers": 2,
+        "independentDependencies": 1,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfExpandURLReferenceV4118",
+          "tfURLReferenceV4118"
+        ],
+        "dependencies": [
+          "tfCanonicalSystemURLV4118"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.sandbox.admission",
+      "from": "system.sandbox",
+      "to": "system.admission",
+      "evidence": {
+        "edgeCount": 1,
+        "independentCallers": 1,
+        "independentDependencies": 1,
+        "reciprocalObserved": true,
+        "callers": [
+          "tfSandboxSelfTestV36451"
+        ],
+        "dependencies": [
+          "tfSandboxAdmissionV36451"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.sandbox.universal",
+      "from": "system.sandbox",
+      "to": "system.universal",
+      "evidence": {
+        "edgeCount": 1,
+        "independentCallers": 1,
+        "independentDependencies": 1,
+        "reciprocalObserved": true,
+        "callers": [
+          "tfSandboxSelfTestV36451"
+        ],
+        "dependencies": [
+          "tfUniversalSandboxFabricV36451"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.session.admission",
+      "from": "system.session",
+      "to": "system.admission",
+      "evidence": {
+        "edgeCount": 2,
+        "independentCallers": 1,
+        "independentDependencies": 2,
+        "reciprocalObserved": true,
+        "callers": [
+          "tfSwapSessionsV411"
+        ],
+        "dependencies": [
+          "tfFullRuntimeAdmissionV4148",
+          "tfRegistryAdmissionIIStatusV0422"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.session.qualification",
+      "from": "system.session",
+      "to": "system.qualification",
+      "evidence": {
+        "edgeCount": 148,
+        "independentCallers": 1,
+        "independentDependencies": 148,
+        "reciprocalObserved": true,
+        "callers": [
+          "tfSwapSessionsV411"
+        ],
+        "dependencies": [
+          "tfAPICenterQualificationV4115",
+          "tfAPIInvocationQualificationV4116",
+          "tfActualEvidenceAuditQualificationV04270",
+          "tfAuthQualificationV4138",
+          "tfBaselineLifecycleQualificationV4158",
+          "tfBaselineRuntimeQualificationV4149",
+          "tfBaselineTimelineQualificationV4151",
+          "tfBatchSemanticQualificationV04276",
+          "tfBehavioralOwnershipQualificationV04283",
+          "tfBlockDeviceIOQualificationV417",
+          "tfBlockerLedgerQualificationV04274",
+          "tfBoundaryLifecycleQualificationV4155",
+          "tfBuiltOutQualificationV4153",
+          "tfCandidateSubsidiaryQualificationV4154",
+          "tfCanonicalAuditQualificationV04267",
+          "tfCanonicalRegistryDeltaQualificationV4198",
+          "tfCapabilityLockBoundaryQualificationV04251",
+          "tfCapabilityMigrationQualificationV4176",
+          "tfCapabilityTruthQualificationV4162",
+          "tfCaptureLockQualificationV04224",
+          "tfCardProviderQualificationV4136",
+          "tfCentralInternalPresentationQualificationV04230",
+          "tfClosedSystemBoundaryQualificationV04248",
+          "tfCommonBoundaryQualificationV04256",
+          "tfConnectionSessionQualificationV4172",
+          "tfConstitutionalLawQualificationV4144",
+          "tfContinuityQualificationV412",
+          "tfCoverageRepairQualificationV04269",
+          "tfCrossPlatformIOQualificationV4111",
+          "tfCurrentOwnershipQualificationV04284",
+          "tfDomainControllerQualificationV4125",
+          "tfDomainPromotionQualificationV4124",
+          "tfExecPartitionQualificationV04275",
+          "tfExecutableEvidenceQualificationV04272",
+          "tfExecutableOwnershipManifestQualificationV4185",
+          "tfExecutableOwnershipQualificationV4179",
+          "tfExternalBoundaryQualificationV04212",
+          "tfFileImageBlockBindingQualificationV418",
+          "tfFileSystemQualificationV416",
+          "tfFilmerWorkerQualificationV04242",
+          "tfFinanceCardQualificationV4135",
+          "tfFiveDimensionQualificationV04259",
+          "tfFullRuntimeGateQualificationV4148",
+          "tfGPYQualificationV4129",
+          "tfGoverningInvocationQualificationV4170",
+          "tfHistoricalRegistryQualificationV4199",
+          "tfHistoricalSubordinateQualificationV04213",
+          "tfHostingDomainQualificationV4123",
+          "tfIOAbsorptionQualificationV04233",
+          "tfIOLogicalOrderQualificationV04232",
+          "tfIORecordQualificationV419",
+          "tfIXAbsorptionQualificationV04236",
+          "tfIdentityAddressQualificationV4150",
+          "tfIdentityNfcQualificationV4133",
+          "tfIdentityResolutionQualificationV4161",
+          "tfImmunityQualificationV4163",
+          "tfIndustrySystemQualificationV04243",
+          "tfInternetBoundaryQualificationV04257",
+          "tfKeySystemQualificationV4126",
+          "tfKeySystemRegistryQualificationV04249",
+          "tfLabelRecordQualificationV04244",
+          "tfLanguageArchitectureRetirementQualificationV4195",
+          "tfLanguageBehaviorInventoryQualificationV4187",
+          "tfLanguageLogicalOrderQualificationV4188",
+          "tfLanguageOrderQualificationV4193",
+          "tfLanguageToolAssignmentQualificationV4194",
+          "tfLanguageToolingQualificationV4189",
+          "tfLawQualificationV4141",
+          "tfLegitimationQualificationV4132",
+          "tfLingualTransversionQualificationV04237",
+          "tfMachineTopologyQualificationV4114",
+          "tfManagementBoundaryQualificationV04247",
+          "tfManagerTaskQualificationV04246",
+          "tfMappingTreeQualificationV4152",
+          "tfMemoryArchitectureQualificationV4113",
+          "tfMobilityQualificationV411",
+          "tfMoneyQualificationV4137",
+          "tfMorphQualificationV4130",
+          "tfNfcRwQualificationV4134",
+          "tfNonKeyLockMarkingQualificationV04250",
+          "tfOriginMigrationQualificationV4177",
+          "tfOriginTruthQualificationV4164",
+          "tfOrthogonalStateQualificationV4171",
+          "tfOwnershipLedgerQualificationV04280",
+          "tfParticipatingSystemsQualificationV04282",
+          "tfPassportQualificationV4131",
+          "tfPersistenceClosureQualificationV4166",
+          "tfPlatformBoundaryQualificationV04255",
+          "tfPlatformIOQualificationV4110",
+          "tfPopulatedOwnershipQualificationV04281",
+          "tfPostHistoricalRegistryQualificationV0423",
+          "tfProcessorCapabilityQualificationV4112",
+          "tfProgramApplicationLockQualificationV04252",
+          "tfProgramApplicationProjectionQualificationV04264",
+          "tfProgramCompositionQualificationV04262",
+          "tfProgramOrderQualificationV04253",
+          "tfProjectBoundaryQualificationV04261",
+          "tfProjectionAuditQualificationV04265",
+          "tfProtectiveIntegrationQualificationV4174",
+          "tfQadQualificationV4140",
+          "tfQualificationEvidenceV4148",
+          "tfQualificationOrchestratorQualificationV4147",
+          "tfRegistryAdmissionIIQualificationV0422",
+          "tfRegistryAdmissionIQualificationV0421",
+          "tfRegistryLedgerQualificationV0420",
+          "tfRelationshipGraphQualificationV4165",
+          "tfRelationshipResolutionQualificationV04277",
+          "tfReleaseIdentityQualificationV4178",
+          "tfRuleOfLawQualificationV4142",
+          "tfRuntimeAuthorityQualificationV4160",
+          "tfSafeRuntimeQualificationV4167",
+          "tfSeedQualificationV4128",
+          "tfSelectiveRepairQualificationV04271",
+          "tfSelfDiscoveryQualificationV4127",
+          "tfSemanticOwnershipQualificationV04273",
+          "tfSessionLifecycleQualificationV4139",
+          "tfSingleSurfaceQualificationV04263",
+          "tfSiteQualificationV4119",
+          "tfSiteRootQualificationV4122",
+          "tfSiteTypeQualificationV4120",
+          "tfSixDimensionQualificationV04260",
+          "tfSloganQualificationV4143",
+          "tfSoundAudioMusicQualificationV04239",
+          "tfStateMigrationQualificationV4173",
+          "tfStrongCandidateQualificationV04210",
+          "tfStructuralBindingQualificationV04285",
+          "tfSubsidiaryTreeMappingQualificationV4156",
+          "tfSurfaceQualificationV413",
+          "tfSurfaceSemanticsQualificationV04279",
+          "tfSystemStatusControlQualificationV04245",
+          "tfTerraformerRoleQualificationV04229",
+          "tfToolCapabilityQualificationV4192",
+          "tfToolRelationshipQualificationV4191",
+          "tfToolSystemQualificationV4190",
+          "tfTwelveIdentityQualificationV04222",
+          "tfTypedProgramApplicationBoundaryQualificationV04254",
+          "tfURICenterQualificationV4117",
+          "tfURLCenterQualificationV4118",
+          "tfUniversalContractQualificationV415",
+          "tfUniversalCoverageQualificationV4169",
+          "tfUniversalCoverageRequalificationV4169",
+          "tfUniversalImmunityQualificationV4175",
+          "tfUniversalSystemContractQualificationV4157",
+          "tfUniversalTimelineQualificationV4159",
+          "tfUniversalToolContractQualificationV4196",
+          "tfVisualMediaFabricQualificationV04241",
+          "tfVoiceMicMediaQualificationV04240",
+          "tfWebSiteControlQualificationV4121"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.signal.universal",
+      "from": "system.signal",
+      "to": "system.universal",
+      "evidence": {
+        "edgeCount": 1,
+        "independentCallers": 1,
+        "independentDependencies": 1,
+        "reciprocalObserved": true,
+        "callers": [
+          "tfSignalSelfTestV406"
+        ],
+        "dependencies": [
+          "tfUniversalSignalFabricV406"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.terraformer.audit",
+      "from": "system.terraformer",
+      "to": "system.audit",
+      "evidence": {
+        "edgeCount": 2,
+        "independentCallers": 2,
+        "independentDependencies": 2,
+        "reciprocalObserved": true,
+        "callers": [
+          "tfTerraformerHandbookV380",
+          "tfTerraformerHandbookV384"
+        ],
+        "dependencies": [
+          "tfClosureAuditV380",
+          "tfFinalClosureAuditV384"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.terraformer.composition",
+      "from": "system.terraformer",
+      "to": "system.composition",
+      "evidence": {
+        "edgeCount": 2,
+        "independentCallers": 2,
+        "independentDependencies": 2,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfTerraformerHandbookV36432",
+          "tfTerraformerHandbookV400"
+        ],
+        "dependencies": [
+          "tfCadCompositionV36432",
+          "tfDesktopCompositionV400"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.terraformer.construct",
+      "from": "system.terraformer",
+      "to": "system.construct",
+      "evidence": {
+        "edgeCount": 13,
+        "independentCallers": 13,
+        "independentDependencies": 13,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfTerraformerHandbookV390",
+          "tfTerraformerHandbookV391",
+          "tfTerraformerHandbookV392",
+          "tfTerraformerHandbookV393",
+          "tfTerraformerHandbookV394",
+          "tfTerraformerHandbookV400",
+          "tfTerraformerHandbookV401",
+          "tfTerraformerHandbookV402",
+          "tfTerraformerHandbookV403",
+          "tfTerraformerHandbookV404",
+          "tfTerraformerHandbookV405",
+          "tfTerraformerHandbookV406",
+          "tfTerraformerHandbookV407"
+        ],
+        "dependencies": [
+          "tfConstructiveClosureV390",
+          "tfConstructiveClosureV391",
+          "tfConstructiveClosureV392",
+          "tfConstructiveClosureV393",
+          "tfConstructiveClosureV394",
+          "tfConstructiveClosureV400",
+          "tfConstructiveClosureV401",
+          "tfConstructiveClosureV402",
+          "tfConstructiveClosureV403",
+          "tfConstructiveClosureV404",
+          "tfConstructiveClosureV405",
+          "tfConstructiveClosureV406",
+          "tfConstructiveClosureV407"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.terraformer.interconnection",
+      "from": "system.terraformer",
+      "to": "system.interconnection",
+      "evidence": {
+        "edgeCount": 2,
+        "independentCallers": 2,
+        "independentDependencies": 2,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfTerraformerHandbookV404",
+          "tfTerraformerHandbookV405"
+        ],
+        "dependencies": [
+          "tfEmergencyCareInterconnectionV405",
+          "tfHealthInterconnectionV404"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.terraformer.qualification",
+      "from": "system.terraformer",
+      "to": "system.qualification",
+      "evidence": {
+        "edgeCount": 1,
+        "independentCallers": 1,
+        "independentDependencies": 1,
+        "reciprocalObserved": true,
+        "callers": [
+          "tfTerraformerHandbookV36418"
+        ],
+        "dependencies": [
+          "tfGapClosureQualificationV36418"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.terraformer.reconciliation",
+      "from": "system.terraformer",
+      "to": "system.reconciliation",
+      "evidence": {
+        "edgeCount": 4,
+        "independentCallers": 4,
+        "independentDependencies": 4,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfTerraformerHandbookV36433",
+          "tfTerraformerHandbookV381",
+          "tfTerraformerHandbookV382",
+          "tfTerraformerHandbookV383"
+        ],
+        "dependencies": [
+          "tfReconciliationPassIIIV383",
+          "tfReconciliationPassIIV382",
+          "tfReconciliationPassIV381",
+          "tfSystemReconciliationV36433"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.terraformer.universal",
+      "from": "system.terraformer",
+      "to": "system.universal",
+      "evidence": {
+        "edgeCount": 16,
+        "independentCallers": 16,
+        "independentDependencies": 16,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfTerraformerHandbookV36421",
+          "tfTerraformerHandbookV36426",
+          "tfTerraformerHandbookV36427",
+          "tfTerraformerHandbookV36430",
+          "tfTerraformerHandbookV36432",
+          "tfTerraformerHandbookV36446",
+          "tfTerraformerHandbookV36447",
+          "tfTerraformerHandbookV36449",
+          "tfTerraformerHandbookV36450",
+          "tfTerraformerHandbookV36451",
+          "tfTerraformerHandbookV375",
+          "tfTerraformerHandbookV376",
+          "tfTerraformerHandbookV377",
+          "tfTerraformerHandbookV378",
+          "tfTerraformerHandbookV379",
+          "tfTerraformerHandbookV406"
+        ],
+        "dependencies": [
+          "tfUniversalChangeFabricV36450",
+          "tfUniversalCodingFabricV36447",
+          "tfUniversalContentFabricV377",
+          "tfUniversalEvidenceFabricV36430",
+          "tfUniversalFontFabricV376",
+          "tfUniversalFrameFabricV36426",
+          "tfUniversalGuardFabricV36421",
+          "tfUniversalLoggingFabricV375",
+          "tfUniversalModelFabricV36432",
+          "tfUniversalPolicyFabricV379",
+          "tfUniversalRankingFabricV36446",
+          "tfUniversalReadWriteFabricV378",
+          "tfUniversalSandboxFabricV36451",
+          "tfUniversalSavingFabricV36449",
+          "tfUniversalSignalFabricV406",
+          "tfUniversalTimeCountFabricV36427"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.token.candidate",
+      "from": "system.token",
+      "to": "system.candidate",
+      "evidence": {
+        "edgeCount": 3,
+        "independentCallers": 3,
+        "independentDependencies": 1,
+        "reciprocalObserved": true,
+        "callers": [
+          "tfAdmitDiscoveredToken",
+          "tfAutoAdmitPermanentToken",
+          "tfDiscoverTokens"
+        ],
+        "dependencies": [
+          "tfTokenCandidateStatus"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.universal.change",
+      "from": "system.universal",
+      "to": "system.change",
+      "evidence": {
+        "edgeCount": 1,
+        "independentCallers": 1,
+        "independentDependencies": 1,
+        "reciprocalObserved": true,
+        "callers": [
+          "tfUniversalLoggingFabricV375"
+        ],
+        "dependencies": [
+          "tfSystemChangeLogV375"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.universal.model",
+      "from": "system.universal",
+      "to": "system.model",
+      "evidence": {
+        "edgeCount": 1,
+        "independentCallers": 1,
+        "independentDependencies": 1,
+        "reciprocalObserved": true,
+        "callers": [
+          "tfUniversalModelFabricV36432"
+        ],
+        "dependencies": [
+          "tfSystemModelV36432"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.universal.policy",
+      "from": "system.universal",
+      "to": "system.policy",
+      "evidence": {
+        "edgeCount": 1,
+        "independentCallers": 1,
+        "independentDependencies": 1,
+        "reciprocalObserved": true,
+        "callers": [
+          "tfUniversalPolicyFabricV379"
+        ],
+        "dependencies": [
+          "tfSystemPolicySetV379"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.universal.sandbox",
+      "from": "system.universal",
+      "to": "system.sandbox",
+      "evidence": {
+        "edgeCount": 1,
+        "independentCallers": 1,
+        "independentDependencies": 1,
+        "reciprocalObserved": true,
+        "callers": [
+          "tfUniversalSandboxFabricV36451"
+        ],
+        "dependencies": [
+          "tfSystemSandboxV36451"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.universal.script",
+      "from": "system.universal",
+      "to": "system.script",
+      "evidence": {
+        "edgeCount": 3,
+        "independentCallers": 3,
+        "independentDependencies": 3,
+        "reciprocalObserved": false,
+        "callers": [
+          "tfUniversalQueryFabricV390",
+          "tfUniversalReadWriteFabricV378",
+          "tfUniversalStabilityFabricV394"
+        ],
+        "dependencies": [
+          "tfQueryDescriptorV390",
+          "tfReadWriteDescriptorV378",
+          "tfVarianceInvarianceDescriptorV394"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.universal.signal",
+      "from": "system.universal",
+      "to": "system.signal",
+      "evidence": {
+        "edgeCount": 1,
+        "independentCallers": 1,
+        "independentDependencies": 1,
+        "reciprocalObserved": true,
+        "callers": [
+          "tfUniversalSignalFabricV406"
+        ],
+        "dependencies": [
+          "tfSystemSignalFabricV406"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    },
+    {
+      "id": "bridge.worker.inventory",
+      "from": "system.worker",
+      "to": "system.inventory",
+      "evidence": {
+        "edgeCount": 2,
+        "independentCallers": 2,
+        "independentDependencies": 1,
+        "reciprocalObserved": true,
+        "callers": [
+          "tfDirectWorkerUriRoots",
+          "tfWorkerUriGet"
+        ],
+        "dependencies": [
+          "tfWorkerUriInventory"
+        ]
+      },
+      "status": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false,
+      "executionGranted": false
+    }
+  ],
+  "rules": {
+    "observedCallsRequired": true,
+    "qualificationRule": "two independent caller functions OR reciprocal observed dependency",
+    "dependencyDoesNotGrantAuthority": true,
+    "bridgeDoesNotGrantExecution": true,
+    "automaticInvocation": false
+  }
+}

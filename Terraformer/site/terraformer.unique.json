@@ -1,0 +1,12 @@
+{
+  "schema": "TERRAFORMER-UNIQUE/1",
+  "systemId": "system.unique",
+  "membershipGrantsIdentity": false,
+  "membershipGrantsAuthentication": false,
+  "membershipGrantsAuthorization": false,
+  "membershipGrantsExternalRegistration": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": [],
+  "declarativeContext": true
+}

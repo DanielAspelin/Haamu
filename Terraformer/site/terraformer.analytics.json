@@ -1,0 +1,9 @@
+{
+  "schema": "TERRAFORMER-ANALYTICS/1",
+  "systemId": "system.analytics",
+  "uses": "system.analysis",
+  "membershipGrantsAuthority": false,
+  "resultAuthority": false,
+  "decisionAuthority": false,
+  "records": []
+}

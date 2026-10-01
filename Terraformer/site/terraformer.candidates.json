@@ -1,0 +1,3634 @@
+{
+  "schema": "TERRAFORMER-CANDIDATES/1",
+  "version": "0.47.71",
+  "owner": "system.candidate",
+  "purpose": "Transition holding registry for evidenced identities physicalized before canonical responsibility reconciliation.",
+  "promotionRule": "A Candidate may be retyped only after responsibility, ownership, overlap, and qualification reconciliation.",
+  "records": [
+    {
+      "system": "system.abstraction",
+      "file": "terraformer.abstraction.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "representation-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.access",
+      "file": "terraformer.access.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "actor-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.addressing",
+      "file": "terraformer.addressing.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.appliance",
+      "file": "terraformer.appliance.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "decision-confirmation-actor-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.array",
+      "file": "terraformer.array.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "array-system",
+      "establishedFamily": "programming",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.atom",
+      "file": "terraformer.atom.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "atom-system",
+      "establishedFamily": "science",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.atomic",
+      "file": "terraformer.atomic.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "atomic-system",
+      "establishedFamily": "science",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.attribute",
+      "file": "terraformer.attribute.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.attributer",
+      "file": "terraformer.attributer.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.awareness",
+      "file": "terraformer.awareness.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "bounded-situational-model",
+      "establishedFamily": "observation",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.bank",
+      "file": "terraformer.bank.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "bank-system",
+      "establishedFamily": "finance",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.base64",
+      "file": "terraformer.base64.js",
+      "origin": "terraformer.foundation.js",
+      "establishedType": null,
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.beam",
+      "file": "terraformer.beam.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "result-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.beaming",
+      "file": "terraformer.beaming.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "reflection-result-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.cad",
+      "file": "terraformer.cad.js",
+      "origin": "terraformer.industry.js",
+      "establishedType": "design-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.cancellation",
+      "file": "terraformer.cancellation.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "application-actor-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.checkbox",
+      "file": "terraformer.checkbox.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "selection-option-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.checkpointing",
+      "file": "terraformer.checkpointing.js",
+      "origin": "terraformer.syntax.js",
+      "establishedType": null,
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.child",
+      "file": "terraformer.child.js",
+      "origin": "terraformer.relationship.js",
+      "establishedType": "relationship-navigation-system",
+      "establishedFamily": "relationship",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.choice",
+      "file": "terraformer.choice.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "selection-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.classified",
+      "file": "terraformer.classified.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "protection-descriptor-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.classifying",
+      "file": "terraformer.classifying.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "actor-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.clause",
+      "file": "terraformer.clause.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.commandline",
+      "file": "terraformer.commandline.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "command-line-system",
+      "establishedFamily": "interactive",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.commencing",
+      "file": "terraformer.commencing.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.commission",
+      "file": "terraformer.commission.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "organizational-institution",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.confirmation",
+      "file": "terraformer.confirmation.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "highlighting-specialization-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.consciousness",
+      "file": "terraformer.consciousness.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "integrated-runtime-state",
+      "establishedFamily": "control",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.constant",
+      "file": "terraformer.constant.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "constant-system",
+      "establishedFamily": "programming",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.cookie",
+      "file": "terraformer.cookie.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "cookie-system",
+      "establishedFamily": "web",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.corpora",
+      "file": "terraformer.corpora.js",
+      "origin": "terraformer.corpus.js",
+      "establishedType": "bounded-content-collection-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.corruption",
+      "file": "terraformer.corruption.js",
+      "origin": "terraformer.documentary.js",
+      "establishedType": "text-structure-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.counter",
+      "file": "terraformer.counter.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": "measurement",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.counting",
+      "file": "terraformer.counting.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "time-measurement-process-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.crypt",
+      "file": "terraformer.crypt.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": "infrastructure",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.datacenter",
+      "file": "terraformer.datacenter.js",
+      "origin": "terraformer.eco.js",
+      "establishedType": "data-center-system",
+      "establishedFamily": "infrastructure",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.declaration",
+      "file": "terraformer.declaration.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "scope-representation-actor-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.design",
+      "file": "terraformer.design.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "representation-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.designing",
+      "file": "terraformer.designing.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "design-artifact-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.detection",
+      "file": "terraformer.detection.js",
+      "origin": "terraformer.css.js",
+      "establishedType": "boundary-aware-system-discovery",
+      "establishedFamily": "control",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.dhcp",
+      "file": "terraformer.dhcp.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.directing",
+      "file": "terraformer.directing.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "actor-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.direction",
+      "file": "terraformer.direction.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "context-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.directive",
+      "file": "terraformer.directive.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "orientation-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.disabling",
+      "file": "terraformer.disabling.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "lifecycle-control-actor-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.discovering",
+      "file": "terraformer.discovering.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "finding-actor-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.discussion",
+      "file": "terraformer.discussion.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.dispatch",
+      "file": "terraformer.dispatch.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "dispatch-system",
+      "establishedFamily": "logistics",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.display",
+      "file": "terraformer.display.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "output-device-system",
+      "establishedFamily": "device",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.div",
+      "file": "terraformer.div.js",
+      "origin": "terraformer.composition.js",
+      "establishedType": null,
+      "establishedFamily": "geometry",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.electron",
+      "file": "terraformer.electron.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "particle-system",
+      "establishedFamily": "science",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.emergency",
+      "file": "terraformer.emergency.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "resilience-system",
+      "establishedFamily": "control",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.enabling",
+      "file": "terraformer.enabling.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "lifecycle-control-process-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.existence",
+      "file": "terraformer.existence.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "classification-descriptor-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.fifo",
+      "file": "terraformer.fifo.js",
+      "origin": "terraformer.ordering.js",
+      "establishedType": "ordering-discipline-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.filesystem",
+      "file": "terraformer.filesystem.js",
+      "origin": "terraformer.file.js",
+      "establishedType": "bounded-filesystem",
+      "establishedFamily": "storage",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.filming",
+      "file": "terraformer.filming.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "CAPTURE_PRODUCES_VISUAL_REPRESENTATION",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.filo",
+      "file": "terraformer.filo.js",
+      "origin": "terraformer.queue.js",
+      "establishedType": "ordered-collection-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.finding",
+      "file": "terraformer.finding.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "search-actor-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.font",
+      "file": "terraformer.font.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.footage",
+      "file": "terraformer.footage.js",
+      "origin": "terraformer.composition.js",
+      "establishedType": null,
+      "establishedFamily": "semantic-html",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.footer",
+      "file": "terraformer.footer.js",
+      "origin": "terraformer.composition.js",
+      "establishedType": null,
+      "establishedFamily": "layout",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.founder",
+      "file": "terraformer.founder.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.frame",
+      "file": "terraformer.frame.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.framing",
+      "file": "terraformer.framing.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "lifecycle-control-actor-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.geographic",
+      "file": "terraformer.geographic.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "parameter-composition-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.governer",
+      "file": "terraformer.governer.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.governing",
+      "file": "terraformer.governing.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.guarded",
+      "file": "terraformer.guarded.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "access-descriptor-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.guarding",
+      "file": "terraformer.guarding.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "actor-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.gui",
+      "file": "terraformer.gui.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": "presentation",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.hdmi",
+      "file": "terraformer.hdmi.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "interface-system",
+      "establishedFamily": "display-interface",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.heading",
+      "file": "terraformer.heading.js",
+      "origin": "terraformer.composition.js",
+      "establishedType": null,
+      "establishedFamily": "content",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.healthcare",
+      "file": "terraformer.healthcare.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.hibernator",
+      "file": "terraformer.hibernator.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": "lifecycle",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.highlighting",
+      "file": "terraformer.highlighting.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "presentation-process-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.hospitalization",
+      "file": "terraformer.hospitalization.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.hospitalizer",
+      "file": "terraformer.hospitalizer.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.hpp",
+      "file": "terraformer.hpp.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "has-s",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.intelligence",
+      "file": "terraformer.intelligence.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "evidence-assessment",
+      "establishedFamily": "control",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.invariancer",
+      "file": "terraformer.invariancer.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.invariancy",
+      "file": "terraformer.invariancy.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.ip",
+      "file": "terraformer.ip.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.key",
+      "file": "terraformer.key.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "key-system",
+      "establishedFamily": "security",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.knob",
+      "file": "terraformer.knob.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "button-type-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.lifo",
+      "file": "terraformer.lifo.js",
+      "origin": "terraformer.ordering.js",
+      "establishedType": "data-structure-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.lilo",
+      "file": "terraformer.lilo.js",
+      "origin": "terraformer.queue.js",
+      "establishedType": "ordering-discipline-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.lingual",
+      "file": "terraformer.lingual.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.location",
+      "file": "terraformer.location.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": "infrastructure",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.locator",
+      "file": "terraformer.locator.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.locker",
+      "file": "terraformer.locker.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "locker-system",
+      "establishedFamily": "containment",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.logic",
+      "file": "terraformer.logic.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.mainframe",
+      "file": "terraformer.mainframe.js",
+      "origin": "terraformer.eco.js",
+      "establishedType": "mainframe-system",
+      "establishedFamily": "infrastructure",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.manual",
+      "file": "terraformer.manual.js",
+      "origin": "terraformer.documentation.js",
+      "establishedType": null,
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.medical",
+      "file": "terraformer.medical.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.medicine",
+      "file": "terraformer.medicine.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.member",
+      "file": "terraformer.member.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "organizational-identity-system",
+      "establishedFamily": "service",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.membership",
+      "file": "terraformer.membership.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "organizational-system",
+      "establishedFamily": "service",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.mirror",
+      "file": "terraformer.mirror.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "space-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.model",
+      "file": "terraformer.model.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "representation-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.modeling",
+      "file": "terraformer.modeling.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "abstraction-actor-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.morphing",
+      "file": "terraformer.morphing.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.mouse",
+      "file": "terraformer.mouse.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "pointer-input-system",
+      "establishedFamily": "device",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.movie",
+      "file": "terraformer.movie.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "CAPTURE_PRODUCES_VISUAL_REPRESENTATION",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.multidimension",
+      "file": "terraformer.multidimension.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "dimension-composition-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.multiparameter",
+      "file": "terraformer.multiparameter.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "dimension-composition-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.nameserver",
+      "file": "terraformer.nameserver.js",
+      "origin": "terraformer.hierarchy.js",
+      "establishedType": "dns-name-server-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.namespace",
+      "file": "terraformer.namespace.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.namespacer",
+      "file": "terraformer.namespacer.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.native",
+      "file": "terraformer.native.js",
+      "origin": "terraformer.architecture.js",
+      "establishedType": "native-system",
+      "establishedFamily": "runtime-identity",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.nav",
+      "file": "terraformer.nav.js",
+      "origin": "terraformer.composition.js",
+      "establishedType": null,
+      "establishedFamily": "html-primitive",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.nosql",
+      "file": "terraformer.nosql.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.obtainment",
+      "file": "terraformer.obtainment.js",
+      "origin": "terraformer.industry.js",
+      "establishedType": "obtainment-system",
+      "establishedFamily": "industry",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.option",
+      "file": "terraformer.option.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "selection-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.pacification",
+      "file": "terraformer.pacification.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": "lifecycle",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.pacifier",
+      "file": "terraformer.pacifier.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": "lifecycle",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.parallelizer",
+      "file": "terraformer.parallelizer.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.parcel",
+      "file": "terraformer.parcel.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "parcel-system",
+      "establishedFamily": "logistics",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.parent",
+      "file": "terraformer.parent.js",
+      "origin": "terraformer.relationship.js",
+      "establishedType": "relationship-navigation-system",
+      "establishedFamily": "relationship",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.passport",
+      "file": "terraformer.passport.js",
+      "origin": "terraformer.currency.js",
+      "establishedType": "external-payment-service-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.people",
+      "file": "terraformer.people.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "specializes",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.permission",
+      "file": "terraformer.permission.js",
+      "origin": "terraformer.system.js",
+      "establishedType": "system-architecture-primitive",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.persister",
+      "file": "terraformer.persister.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "process-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.persisting",
+      "file": "terraformer.persisting.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "result-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.person",
+      "file": "terraformer.person.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "specializes",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.personalization",
+      "file": "terraformer.personalization.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "specializes",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.pgsql",
+      "file": "terraformer.pgsql.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.picture",
+      "file": "terraformer.picture.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.positron",
+      "file": "terraformer.positron.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "particle-system",
+      "establishedFamily": "science",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.postal",
+      "file": "terraformer.postal.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "postal-system",
+      "establishedFamily": "logistics",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.prelaunch",
+      "file": "terraformer.prelaunch.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "launch-preparation",
+      "establishedFamily": "lifecycle",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.preload",
+      "file": "terraformer.preload.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "FAILED",
+      "establishedFamily": "lifecycle",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.preloading",
+      "file": "terraformer.preloading.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.private",
+      "file": "terraformer.private.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "access-descriptor-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.propagation",
+      "file": "terraformer.propagation.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "provenance-preserving-signal-routing",
+      "establishedFamily": "message",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.protected",
+      "file": "terraformer.protected.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "protection-descriptor-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.protecting",
+      "file": "terraformer.protecting.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "actor-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.protector",
+      "file": "terraformer.protector.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "process-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.public",
+      "file": "terraformer.public.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "access-descriptor-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.purchase",
+      "file": "terraformer.purchase.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "commerce-system",
+      "establishedFamily": "service",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.querier",
+      "file": "terraformer.querier.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.query",
+      "file": "terraformer.query.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.quiescence",
+      "file": "terraformer.quiescence.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": "lifecycle",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.ranking",
+      "file": "terraformer.ranking.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "evaluation-ordering-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.reflect",
+      "file": "terraformer.reflect.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "operation-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.reflecting",
+      "file": "terraformer.reflecting.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "actor-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.relation",
+      "file": "terraformer.relation.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "relation-system",
+      "establishedFamily": "structure",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.reloading",
+      "file": "terraformer.reloading.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.replacement",
+      "file": "terraformer.replacement.js",
+      "origin": "terraformer.system.js",
+      "establishedType": "system-architecture-primitive",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.rescue",
+      "file": "terraformer.rescue.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.rescuer",
+      "file": "terraformer.rescuer.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.resolution",
+      "file": "terraformer.resolution.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.resumption",
+      "file": "terraformer.resumption.js",
+      "origin": "terraformer.system.js",
+      "establishedType": "system-architecture-primitive",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.safety",
+      "file": "terraformer.safety.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "safety-system",
+      "establishedFamily": "control",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.sandbox",
+      "file": "terraformer.sandbox.js",
+      "origin": "terraformer.foundation.js",
+      "establishedType": null,
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.sandboxing",
+      "file": "terraformer.sandboxing.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "governed-isolation-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.satellite",
+      "file": "terraformer.satellite.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "vehicle-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.saving",
+      "file": "terraformer.saving.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "governed-persistence-checkpoint-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.searching",
+      "file": "terraformer.searching.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "search-process-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.section",
+      "file": "terraformer.section.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.selfhosting",
+      "file": "terraformer.selfhosting.js",
+      "origin": "terraformer.hosting.js",
+      "establishedType": "selfhosting-system",
+      "establishedFamily": "hosting",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.sha256",
+      "file": "terraformer.sha256.js",
+      "origin": "terraformer.foundation.js",
+      "establishedType": null,
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.shine",
+      "file": "terraformer.shine.js",
+      "origin": "terraformer.shining.js",
+      "establishedType": "command-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.shopping",
+      "file": "terraformer.shopping.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "commerce-system",
+      "establishedFamily": "service",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.sibling",
+      "file": "terraformer.sibling.js",
+      "origin": "terraformer.relationship.js",
+      "establishedType": "relationship-navigation-system",
+      "establishedFamily": "relationship",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.simulation",
+      "file": "terraformer.simulation.js",
+      "origin": "terraformer.industry.js",
+      "establishedType": "simulation-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.sleeper",
+      "file": "terraformer.sleeper.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": "measurement",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.snapshot",
+      "file": "terraformer.snapshot.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "snapshot-system",
+      "establishedFamily": "infrastructure",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.sound",
+      "file": "terraformer.sound.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "CAPTURES_ACOUSTIC_INPUT",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.spacecraft",
+      "file": "terraformer.spacecraft.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "computational-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.spacer",
+      "file": "terraformer.spacer.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.spacing",
+      "file": "terraformer.spacing.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.sql",
+      "file": "terraformer.sql.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.starter",
+      "file": "terraformer.starter.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": "lifecycle",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.stopper",
+      "file": "terraformer.stopper.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": "lifecycle",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.storage",
+      "file": "terraformer.storage.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "storage-system",
+      "establishedFamily": "storage",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.subject",
+      "file": "terraformer.subject.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.subjecter",
+      "file": "terraformer.subjecter.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.suspension",
+      "file": "terraformer.suspension.js",
+      "origin": "terraformer.system.js",
+      "establishedType": "system-architecture-primitive",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.sustainment",
+      "file": "terraformer.sustainment.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": "lifecycle",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.symbol",
+      "file": "terraformer.symbol.js",
+      "origin": "terraformer.role.js",
+      "establishedType": "control-entity",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.symbolic",
+      "file": "terraformer.symbolic.js",
+      "origin": "terraformer.role.js",
+      "establishedType": "control-entity",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.symbolizer",
+      "file": "terraformer.symbolizer.js",
+      "origin": "terraformer.role.js",
+      "establishedType": "control-entity",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.synchronizer",
+      "file": "terraformer.synchronizer.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.syntaxing",
+      "file": "terraformer.syntaxing.js",
+      "origin": "terraformer.syntax.js",
+      "establishedType": "governed-syntax-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.tbuild",
+      "file": "terraformer.tbuild.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "external-capability-boundary-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.telemedicine",
+      "file": "terraformer.telemedicine.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.terminal",
+      "file": "terraformer.terminal.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "terminal-system",
+      "establishedFamily": "interactive",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.terraformer",
+      "file": "terraformer.terraformer.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "system",
+      "establishedFamily": "root-runtime",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.timeout",
+      "file": "terraformer.timeout.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "counting-process-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.timer",
+      "file": "terraformer.timer.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": "scheduler",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.timing",
+      "file": "terraformer.timing.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "time-measurement-process-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.title",
+      "file": "terraformer.title.js",
+      "origin": "terraformer.composition.js",
+      "establishedType": null,
+      "establishedFamily": "semantic-html",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.tld",
+      "file": "terraformer.tld.js",
+      "origin": "terraformer.hierarchy.js",
+      "establishedType": "top-level-domain-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.topic",
+      "file": "terraformer.topic.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.topicer",
+      "file": "terraformer.topicer.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.touchpad",
+      "file": "terraformer.touchpad.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "pointer-input-system",
+      "establishedFamily": "device",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.transferring",
+      "file": "terraformer.transferring.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "transfer-lifecycle-system",
+      "establishedFamily": "infrastructure",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.transformation",
+      "file": "terraformer.transformation.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "governed-change-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.transversioning",
+      "file": "terraformer.transversioning.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "lineage-checkpoint-actor-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.unification",
+      "file": "terraformer.unification.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "classification-relationship-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.updating",
+      "file": "terraformer.updating.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "governed-realization-actor-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.url",
+      "file": "terraformer.url.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.usb",
+      "file": "terraformer.usb.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "interface-system",
+      "establishedFamily": "device-bus",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.usbc",
+      "file": "terraformer.usbc.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "interface-system",
+      "establishedFamily": "device-interface",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.utilization",
+      "file": "terraformer.utilization.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "use-lifecycle-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.variable",
+      "file": "terraformer.variable.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "variable-system",
+      "establishedFamily": "programming",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.variancer",
+      "file": "terraformer.variancer.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.variancy",
+      "file": "terraformer.variancy.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.vault",
+      "file": "terraformer.vault.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "vault-system",
+      "establishedFamily": "security",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.versioning",
+      "file": "terraformer.versioning.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "lineage-checkpoint-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.vip",
+      "file": "terraformer.vip.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "classification-system",
+      "establishedFamily": "service",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.visibility",
+      "file": "terraformer.visibility.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "governance-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.vpn",
+      "file": "terraformer.vpn.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.wallet",
+      "file": "terraformer.wallet.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "wallet-system",
+      "establishedFamily": "finance",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.wasm",
+      "file": "terraformer.wasm.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": "compute",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.watermarking",
+      "file": "terraformer.watermarking.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "descriptive-provenance-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.wcpu",
+      "file": "terraformer.wcpu.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": "compute",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.webassembly",
+      "file": "terraformer.webassembly.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": "graphics",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.webgpu",
+      "file": "terraformer.webgpu.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": "execution",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.wgpu",
+      "file": "terraformer.wgpu.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": "compute",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.workstation",
+      "file": "terraformer.workstation.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": "computational-system",
+      "establishedFamily": null,
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.wram",
+      "file": "terraformer.wram.js",
+      "origin": "terraformer.temporary.js",
+      "establishedType": null,
+      "establishedFamily": "compute",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.abstractor",
+      "file": "terraformer.abstractor.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.acceptance",
+      "file": "terraformer.acceptance.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.acceptor",
+      "file": "terraformer.acceptor.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.account",
+      "file": "terraformer.account.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.accounting",
+      "file": "terraformer.accounting.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.activation",
+      "file": "terraformer.activation.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.acts",
+      "file": "terraformer.acts.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.add",
+      "file": "terraformer.add.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.addresser",
+      "file": "terraformer.addresser.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.admission",
+      "file": "terraformer.admission.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.admitter",
+      "file": "terraformer.admitter.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.aes256",
+      "file": "terraformer.aes256.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.amount",
+      "file": "terraformer.amount.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.analytics",
+      "file": "terraformer.analytics.js",
+      "origin": "terraformer.analytics.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.answerer",
+      "file": "terraformer.answerer.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.answering",
+      "file": "terraformer.answering.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.applier",
+      "file": "terraformer.applier.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.arp",
+      "file": "terraformer.arp.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.asm",
+      "file": "terraformer.asm.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.authority",
+      "file": "terraformer.authority.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.awakener",
+      "file": "terraformer.awakener.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.balance",
+      "file": "terraformer.balance.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.baseline",
+      "file": "terraformer.baseline.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.beamer",
+      "file": "terraformer.beamer.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.behaver",
+      "file": "terraformer.behaver.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.behavior",
+      "file": "terraformer.behavior.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.canceler",
+      "file": "terraformer.canceler.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.canonicalpath",
+      "file": "terraformer.canonicalpath.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.capabilities",
+      "file": "terraformer.capabilities.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.centralizer",
+      "file": "terraformer.centralizer.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.certifier",
+      "file": "terraformer.certifier.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.change",
+      "file": "terraformer.change.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.chat",
+      "file": "terraformer.chat.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.checkpointer",
+      "file": "terraformer.checkpointer.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.checksum",
+      "file": "terraformer.checksum.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.classifier",
+      "file": "terraformer.classifier.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.clearing",
+      "file": "terraformer.clearing.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.cloud",
+      "file": "terraformer.cloud.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.cognitive",
+      "file": "terraformer.cognitive.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.commencer",
+      "file": "terraformer.commencer.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.commissioner",
+      "file": "terraformer.commissioner.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.commit",
+      "file": "terraformer.commit.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.compaction",
+      "file": "terraformer.compaction.js",
+      "origin": "terraformer.temporary.js",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.compatibility",
+      "file": "terraformer.compatibility.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.compiling",
+      "file": "terraformer.compiling.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.concurrencer",
+      "file": "terraformer.concurrencer.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.concurrency",
+      "file": "terraformer.concurrency.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.confirmer",
+      "file": "terraformer.confirmer.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.console",
+      "file": "terraformer.console.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.constitution",
+      "file": "terraformer.constitution.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.constructing",
+      "file": "terraformer.constructing.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.continuity",
+      "file": "terraformer.continuity.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.courtesy",
+      "file": "terraformer.courtesy.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.cpp",
+      "file": "terraformer.cpp.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.crop",
+      "file": "terraformer.crop.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.deactivation",
+      "file": "terraformer.deactivation.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.deallocator",
+      "file": "terraformer.deallocator.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.debit",
+      "file": "terraformer.debit.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.decentralizer",
+      "file": "terraformer.decentralizer.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.declarer",
+      "file": "terraformer.declarer.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.delimitation",
+      "file": "terraformer.delimitation.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.delimiter",
+      "file": "terraformer.delimiter.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.designer",
+      "file": "terraformer.designer.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.destructor",
+      "file": "terraformer.destructor.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.director",
+      "file": "terraformer.director.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.disabler",
+      "file": "terraformer.disabler.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.discoverer",
+      "file": "terraformer.discoverer.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.discusser",
+      "file": "terraformer.discusser.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.dispatcher",
+      "file": "terraformer.dispatcher.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.downloader",
+      "file": "terraformer.downloader.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.enabler",
+      "file": "terraformer.enabler.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.endpoint",
+      "file": "terraformer.endpoint.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.equivalence",
+      "file": "terraformer.equivalence.js",
+      "origin": "terraformer.temporary.js",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.erp",
+      "file": "terraformer.erp.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.euro",
+      "file": "terraformer.euro.js",
+      "origin": "terraformer.currency.js",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.example",
+      "file": "terraformer.example.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.explorer",
+      "file": "terraformer.explorer.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.extranet",
+      "file": "terraformer.extranet.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.extraneter",
+      "file": "terraformer.extraneter.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.factory",
+      "file": "terraformer.factory.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.fallback",
+      "file": "terraformer.fallback.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.fallbacker",
+      "file": "terraformer.fallbacker.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.family",
+      "file": "terraformer.family.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.finance",
+      "file": "terraformer.finance.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.finder",
+      "file": "terraformer.finder.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.fingerprinter",
+      "file": "terraformer.fingerprinter.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.fingerprinting",
+      "file": "terraformer.fingerprinting.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.fixture",
+      "file": "terraformer.fixture.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.footager",
+      "file": "terraformer.footager.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.framer",
+      "file": "terraformer.framer.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.functions",
+      "file": "terraformer.functions.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.gateway",
+      "file": "terraformer.gateway.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.germination",
+      "file": "terraformer.germination.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.git",
+      "file": "terraformer.git.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.globalizer",
+      "file": "terraformer.globalizer.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.glossarist",
+      "file": "terraformer.glossarist.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.governs",
+      "file": "terraformer.governs.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.gravitation",
+      "file": "terraformer.gravitation.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.gravitator",
+      "file": "terraformer.gravitator.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.h",
+      "file": "terraformer.h.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.handoff",
+      "file": "terraformer.handoff.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.highlighter",
+      "file": "terraformer.highlighter.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.http2",
+      "file": "terraformer.http2.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.iana",
+      "file": "terraformer.iana.js",
+      "origin": "terraformer.coordination.js",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.icann",
+      "file": "terraformer.icann.js",
+      "origin": "terraformer.coordination.js",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.id",
+      "file": "terraformer.id.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.idle",
+      "file": "terraformer.idle.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.ietf",
+      "file": "terraformer.ietf.js",
+      "origin": "terraformer.coordination.js",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.immunity",
+      "file": "terraformer.immunity.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.immunizer",
+      "file": "terraformer.immunizer.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.index",
+      "file": "terraformer.index.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.informing",
+      "file": "terraformer.informing.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.initializer",
+      "file": "terraformer.initializer.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.institution",
+      "file": "terraformer.institution.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.instrumentation",
+      "file": "terraformer.instrumentation.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.integrateswith",
+      "file": "terraformer.integrateswith.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.integrity",
+      "file": "terraformer.integrity.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.interpreting",
+      "file": "terraformer.interpreting.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.intranet",
+      "file": "terraformer.intranet.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.intraneter",
+      "file": "terraformer.intraneter.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.ipify",
+      "file": "terraformer.ipify.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.iss",
+      "file": "terraformer.iss.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.ix",
+      "file": "terraformer.ix.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.js",
+      "file": "terraformer.js.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.justification",
+      "file": "terraformer.justification.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.kvm",
+      "file": "terraformer.kvm.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.labeler",
+      "file": "terraformer.labeler.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.labeling",
+      "file": "terraformer.labeling.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.learner",
+      "file": "terraformer.learner.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.legitimation",
+      "file": "terraformer.legitimation.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.lexeme",
+      "file": "terraformer.lexeme.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.lexing",
+      "file": "terraformer.lexing.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.licensing",
+      "file": "terraformer.licensing.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.licensor",
+      "file": "terraformer.licensor.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.limitation",
+      "file": "terraformer.limitation.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.limiter",
+      "file": "terraformer.limiter.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.loader",
+      "file": "terraformer.loader.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.localizer",
+      "file": "terraformer.localizer.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.logout",
+      "file": "terraformer.logout.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.loopbacker",
+      "file": "terraformer.loopbacker.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.mac",
+      "file": "terraformer.mac.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.main",
+      "file": "terraformer.main.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.manager",
+      "file": "terraformer.manager.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.mastercard",
+      "file": "terraformer.mastercard.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.method",
+      "file": "terraformer.method.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.mobilizer",
+      "file": "terraformer.mobilizer.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.modeler",
+      "file": "terraformer.modeler.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.monitoring",
+      "file": "terraformer.monitoring.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.morpher",
+      "file": "terraformer.morpher.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.neighbor",
+      "file": "terraformer.neighbor.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.neuralyzer",
+      "file": "terraformer.neuralyzer.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.oauth2",
+      "file": "terraformer.oauth2.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.originator",
+      "file": "terraformer.originator.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.other",
+      "file": "terraformer.other.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.ox",
+      "file": "terraformer.ox.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.parsing",
+      "file": "terraformer.parsing.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.peer",
+      "file": "terraformer.peer.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.perimeter",
+      "file": "terraformer.perimeter.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.personalizer",
+      "file": "terraformer.personalizer.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.placement",
+      "file": "terraformer.placement.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.pollination",
+      "file": "terraformer.pollination.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.pooler",
+      "file": "terraformer.pooler.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.preloader",
+      "file": "terraformer.preloader.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.pricing",
+      "file": "terraformer.pricing.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.privacy",
+      "file": "terraformer.privacy.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.probabilist",
+      "file": "terraformer.probabilist.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.probability",
+      "file": "terraformer.probability.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.prompt",
+      "file": "terraformer.prompt.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.publicity",
+      "file": "terraformer.publicity.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.qemu",
+      "file": "terraformer.qemu.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.quantifier",
+      "file": "terraformer.quantifier.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.questioner",
+      "file": "terraformer.questioner.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.questioning",
+      "file": "terraformer.questioning.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.randomization",
+      "file": "terraformer.randomization.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.randomizer",
+      "file": "terraformer.randomizer.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.re",
+      "file": "terraformer.re.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.reallocator",
+      "file": "terraformer.reallocator.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.reconstructing",
+      "file": "terraformer.reconstructing.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.reconstructor",
+      "file": "terraformer.reconstructor.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.recovery",
+      "file": "terraformer.recovery.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.rejection",
+      "file": "terraformer.rejection.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.rejector",
+      "file": "terraformer.rejector.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.reloader",
+      "file": "terraformer.reloader.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.replicator",
+      "file": "terraformer.replicator.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.resizer",
+      "file": "terraformer.resizer.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.rest",
+      "file": "terraformer.rest.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.retry",
+      "file": "terraformer.retry.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.rollback",
+      "file": "terraformer.rollback.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.rollout",
+      "file": "terraformer.rollout.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.routing",
+      "file": "terraformer.routing.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.rpc",
+      "file": "terraformer.rpc.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.rsa2048",
+      "file": "terraformer.rsa2048.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.s",
+      "file": "terraformer.s.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.scope",
+      "file": "terraformer.scope.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.script",
+      "file": "terraformer.script.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.scripting",
+      "file": "terraformer.scripting.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.secure",
+      "file": "terraformer.secure.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.self",
+      "file": "terraformer.self.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.semantics",
+      "file": "terraformer.semantics.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.sensor",
+      "file": "terraformer.sensor.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.settlement",
+      "file": "terraformer.settlement.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.sizer",
+      "file": "terraformer.sizer.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.skip",
+      "file": "terraformer.skip.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.slice",
+      "file": "terraformer.slice.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.slogan",
+      "file": "terraformer.slogan.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.subsidiary",
+      "file": "terraformer.subsidiary.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.summarizer",
+      "file": "terraformer.summarizer.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.surface",
+      "file": "terraformer.surface.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.swap",
+      "file": "terraformer.swap.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.tagger",
+      "file": "terraformer.tagger.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.tagging",
+      "file": "terraformer.tagging.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.terraformation",
+      "file": "terraformer.terraformation.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.terramorphing",
+      "file": "terraformer.terramorphing.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.timestamping",
+      "file": "terraformer.timestamping.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.translation",
+      "file": "terraformer.translation.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.transmorphing",
+      "file": "terraformer.transmorphing.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.unclassified",
+      "file": "terraformer.unclassified.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.unlocker",
+      "file": "terraformer.unlocker.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.unlocking",
+      "file": "terraformer.unlocking.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.unregistered",
+      "file": "terraformer.unregistered.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.uploader",
+      "file": "terraformer.uploader.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.vector",
+      "file": "terraformer.vector.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.viewporter",
+      "file": "terraformer.viewporter.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.visa",
+      "file": "terraformer.visa.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.visual",
+      "file": "terraformer.visual.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.vlan",
+      "file": "terraformer.vlan.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.webmail",
+      "file": "terraformer.webmail.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.websocket",
+      "file": "terraformer.websocket.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.wifi",
+      "file": "terraformer.wifi.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.word",
+      "file": "terraformer.word.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    },
+    {
+      "system": "system.yielding",
+      "file": "terraformer.yielding.js",
+      "origin": "terraformer.entities.json",
+      "typeOf": "system.candidate",
+      "qualification": "UNVERIFIED"
+    }
+  ],
+  "authorityGranted": false
+}

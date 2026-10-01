@@ -1,0 +1,15 @@
+{
+  "schema": "TERRAFORMER-LOCALHOSTS-REGISTRY/1",
+  "owner": "terraformer.localhost.js",
+  "entries": [
+    {
+      "id": "application.localhost",
+      "source": "localhost-v0.68.0",
+      "systems": 40,
+      "workers": 160,
+      "state": "imported-lineage",
+      "canonicalTerraformerAuthority": false
+    }
+  ],
+  "rule": "Imported Localhost lineage is evidence/context only and grants no Terraformer authentication, authorization, execution, persistence, or system authority."
+}

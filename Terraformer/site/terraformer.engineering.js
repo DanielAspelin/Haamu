@@ -1,0 +1,3 @@
+"use strict";
+const TERRAFORMER_ENGINEERING_SYSTEM=Object.freeze({schema:'TERRAFORMER-ENGINEERING-SYSTEM/1',id:'system.engineering',name:'Engineering System',family:'engineering',type:'engineering-system',state:'integrated',canonicalPath:'terraformer://engineering/',dependsOn:Object.freeze(['system.development', 'system.science']),governs:Object.freeze(['scope','evidence','state','relation','result']),rule:'Engineering System organizes requirements, design, implementation, verification, qualification, and maintenance under admitted authority; engineering representation does not authorize deployment or physical modification.'});
+module.exports=Object.freeze({TERRAFORMER_ENGINEERING_SYSTEM});

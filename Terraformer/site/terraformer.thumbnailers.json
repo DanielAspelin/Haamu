@@ -1,0 +1,10 @@
+{
+  "schema": "TERRAFORMER-THUMBNAILERS/1",
+  "systemId": "system.thumbnailer",
+  "derived": true,
+  "membershipGrantsMutation": false,
+  "membershipGrantsPublication": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

@@ -1,0 +1,7 @@
+{
+  "schema": "TERRAFORMER-DNSSECS/1",
+  "systemId": "system.dnssec",
+  "authorityGranted": false,
+  "hostMutation": false,
+  "records": []
+}

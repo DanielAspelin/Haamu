@@ -1,0 +1,11 @@
+{
+  "schema": "TERRAFORMER-ENUMS/1",
+  "systemId": "system.enum",
+  "membershipGrantsAllocation": false,
+  "membershipGrantsConversion": false,
+  "membershipGrantsValidation": false,
+  "membershipGrantsExecution": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

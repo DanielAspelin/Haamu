@@ -1,0 +1,7 @@
+{
+  "schema": "TERRAFORMER-RISKS/1",
+  "systemId": "system.risk",
+  "authorityGranted": false,
+  "automaticExecution": false,
+  "records": []
+}

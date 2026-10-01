@@ -1,0 +1,10 @@
+{
+  "schema": "TERRAFORMER-PROCESSORS/1",
+  "systemId": "system.processor",
+  "declarativeRegistry": true,
+  "pidIsOsProcessId": false,
+  "membershipGrantsExecution": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

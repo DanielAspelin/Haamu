@@ -1,0 +1,9 @@
+{
+  "schema": "TERRAFORMER-NATURALIZERS/1",
+  "systemId": "system.naturalizer",
+  "membershipGrantsMutation": false,
+  "membershipGrantsQualification": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

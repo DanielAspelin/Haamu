@@ -1,0 +1,13 @@
+{
+  "schema": "TERRAFORMER-DEFAULTS/1",
+  "systemId": "system.defaults",
+  "declarativeContext": true,
+  "schemaAdmittedFallback": true,
+  "explicitValuesOverrideDefaults": true,
+  "mandatoryAbsenceNotSilentlySatisfied": true,
+  "membershipGrantsMutation": false,
+  "membershipGrantsExecution": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

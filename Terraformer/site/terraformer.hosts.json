@@ -1,0 +1,22 @@
+{
+  "schema": "TERRAFORMER-HOSTS/1",
+  "owner": "system.host-capability-discovery",
+  "executable": "terraformer.host.js",
+  "purpose": "governed host capability and discovery evidence records",
+  "authorityGranted": false,
+  "membershipGrantsAuthority": false,
+  "grantsIdentityAuthority": false,
+  "grantsExecutionAuthority": false,
+  "grantsNetworkAuthority": false,
+  "grantsDeviceAuthority": false,
+  "records": [],
+  "supportsHosting": "system.hosting",
+  "resourceCoordination": {
+    "pool": "system.pool",
+    "farming": "system.farming",
+    "farmer": "system.farmer",
+    "sharedByDefault": false,
+    "backgroundByDefault": false
+  },
+  "relationshipsOwnedBy": "terraformer.hosting.js"
+}

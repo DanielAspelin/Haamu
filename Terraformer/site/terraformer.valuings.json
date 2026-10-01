@@ -1,0 +1,10 @@
+{
+  "schema": "TERRAFORMER-VALUINGS/1",
+  "version": "0.47.45",
+  "kind": "VALUING_REGISTRY",
+  "owner": "system.valuing",
+  "governedBy": "terraformer.valuing.js",
+  "records": [],
+  "authorityGranted": false,
+  "automaticPersistence": false
+}

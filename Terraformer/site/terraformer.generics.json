@@ -1,0 +1,11 @@
+{
+  "schema": "TERRAFORMER-GENERICS/1",
+  "systemId": "system.generic",
+  "membershipGrantsAllocation": false,
+  "membershipGrantsConversion": false,
+  "membershipGrantsValidation": false,
+  "membershipGrantsExecution": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

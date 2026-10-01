@@ -1,0 +1,11 @@
+{
+  "schema": "TERRAFORMER-WIRES/1",
+  "systemId": "system.wire",
+  "declarativeRegistry": true,
+  "membershipGrantsConnection": false,
+  "membershipGrantsNetworkBinding": false,
+  "membershipGrantsIdentityMutation": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

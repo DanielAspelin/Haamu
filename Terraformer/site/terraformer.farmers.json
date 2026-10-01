@@ -1,0 +1,7 @@
+{
+  "schema": "TERRAFORMER-FARMERS/1",
+  "systemId": "system.farmer",
+  "membershipGrantsAuthority": false,
+  "activeByDefault": false,
+  "records": []
+}

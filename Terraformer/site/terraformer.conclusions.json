@@ -1,0 +1,10 @@
+{
+  "schema": "TERRAFORMER-CONCLUSIONS/1",
+  "systemId": "system.conclusion",
+  "membershipGrantsDecisionAuthority": false,
+  "membershipGrantsAssertion": false,
+  "membershipGrantsExternalEffect": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

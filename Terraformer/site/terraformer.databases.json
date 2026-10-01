@@ -1,0 +1,9 @@
+{
+  "schema": "TERRAFORMER-DATABASES/1",
+  "systemId": "system.database",
+  "storageAuthority": false,
+  "persistenceAuthority": false,
+  "records": [],
+  "baseSystem": "system.base",
+  "baseType": "data"
+}

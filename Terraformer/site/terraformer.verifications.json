@@ -1,0 +1,200 @@
+{
+  "$schema": "terraformer.registry/verifications/1",
+  "version": "0.47.16",
+  "governedBy": "terraformer.verification.js",
+  "kind": "VERIFICATION_REGISTRY",
+  "owner": "system.verification",
+  "dimension": "VERIFICATION",
+  "position": {
+    "after": "VALIDATION",
+    "before": "QUALIFICATION"
+  },
+  "selectionModel": "DEFINE_CENTRALLY_SELECT_LOCALLY",
+  "eligibleConsumers": [
+    "SYSTEM",
+    "PROJECT",
+    "PROGRAM",
+    "APPLICATION",
+    "PLATFORM",
+    "COMMON",
+    "INTERNET",
+    "FILE",
+    "USER",
+    "MACHINE",
+    "GROUP",
+    "DIMENSION"
+  ],
+  "authority": false,
+  "approvalGranted": false,
+  "qualificationGranted": false,
+  "entries": [
+    {
+      "id": "UNVERIFIED",
+      "definition": "No applicable verification has yet established a result.",
+      "aliases": [],
+      "applicability": [
+        "SYSTEM",
+        "PROJECT",
+        "PROGRAM",
+        "APPLICATION",
+        "PLATFORM",
+        "COMMON",
+        "INTERNET",
+        "FILE",
+        "USER",
+        "MACHINE",
+        "GROUP",
+        "DIMENSION"
+      ],
+      "constraints": {
+        "explicitSelection": true,
+        "scoped": true,
+        "noAuthority": true,
+        "noApproval": true,
+        "doesNotQualifyByItself": true
+      },
+      "version": "0.47.16",
+      "authority": false
+    },
+    {
+      "id": "PENDING",
+      "definition": "Verification is admitted but not yet complete.",
+      "aliases": [],
+      "applicability": [
+        "SYSTEM",
+        "PROJECT",
+        "PROGRAM",
+        "APPLICATION",
+        "PLATFORM",
+        "COMMON",
+        "INTERNET",
+        "FILE",
+        "USER",
+        "MACHINE",
+        "GROUP",
+        "DIMENSION"
+      ],
+      "constraints": {
+        "explicitSelection": true,
+        "scoped": true,
+        "noAuthority": true,
+        "noApproval": true,
+        "doesNotQualifyByItself": true
+      },
+      "version": "0.47.16",
+      "authority": false
+    },
+    {
+      "id": "PASS",
+      "definition": "Applicable verification checks passed for the stated scope.",
+      "aliases": [],
+      "applicability": [
+        "SYSTEM",
+        "PROJECT",
+        "PROGRAM",
+        "APPLICATION",
+        "PLATFORM",
+        "COMMON",
+        "INTERNET",
+        "FILE",
+        "USER",
+        "MACHINE",
+        "GROUP",
+        "DIMENSION"
+      ],
+      "constraints": {
+        "explicitSelection": true,
+        "scoped": true,
+        "noAuthority": true,
+        "noApproval": true,
+        "doesNotQualifyByItself": true
+      },
+      "version": "0.47.16",
+      "authority": false
+    },
+    {
+      "id": "FAIL",
+      "definition": "At least one applicable verification check failed for the stated scope.",
+      "aliases": [],
+      "applicability": [
+        "SYSTEM",
+        "PROJECT",
+        "PROGRAM",
+        "APPLICATION",
+        "PLATFORM",
+        "COMMON",
+        "INTERNET",
+        "FILE",
+        "USER",
+        "MACHINE",
+        "GROUP",
+        "DIMENSION"
+      ],
+      "constraints": {
+        "explicitSelection": true,
+        "scoped": true,
+        "noAuthority": true,
+        "noApproval": true,
+        "doesNotQualifyByItself": true
+      },
+      "version": "0.47.16",
+      "authority": false
+    },
+    {
+      "id": "INCONCLUSIVE",
+      "definition": "Verification was performed but available evidence cannot establish pass or fail.",
+      "aliases": [],
+      "applicability": [
+        "SYSTEM",
+        "PROJECT",
+        "PROGRAM",
+        "APPLICATION",
+        "PLATFORM",
+        "COMMON",
+        "INTERNET",
+        "FILE",
+        "USER",
+        "MACHINE",
+        "GROUP",
+        "DIMENSION"
+      ],
+      "constraints": {
+        "explicitSelection": true,
+        "scoped": true,
+        "noAuthority": true,
+        "noApproval": true,
+        "doesNotQualifyByItself": true
+      },
+      "version": "0.47.16",
+      "authority": false
+    },
+    {
+      "id": "STALE",
+      "definition": "Prior verification evidence exists but governing conditions changed or freshness requirements are no longer met.",
+      "aliases": [],
+      "applicability": [
+        "SYSTEM",
+        "PROJECT",
+        "PROGRAM",
+        "APPLICATION",
+        "PLATFORM",
+        "COMMON",
+        "INTERNET",
+        "FILE",
+        "USER",
+        "MACHINE",
+        "GROUP",
+        "DIMENSION"
+      ],
+      "constraints": {
+        "explicitSelection": true,
+        "scoped": true,
+        "noAuthority": true,
+        "noApproval": true,
+        "doesNotQualifyByItself": true
+      },
+      "version": "0.47.16",
+      "authority": false
+    }
+  ]
+}

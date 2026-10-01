@@ -1,0 +1,11 @@
+{
+  "schema": "TERRAFORMER-SALTINGS/1",
+  "purpose": "governed salting operation definitions/evidence",
+  "authorityGranted": false,
+  "automaticExecution": false,
+  "secretMaterial": false,
+  "records": [],
+  "owner": "system.salting",
+  "ownerBindingVersion": "0.48.16",
+  "ownerBindingAuthorityGranted": false
+}

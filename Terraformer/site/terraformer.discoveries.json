@@ -1,0 +1,14 @@
+{
+  "schema": "terraformer.registry/discoveries/1",
+  "owner": "system.discovery",
+  "kind": "DISCOVERY_REGISTRY",
+  "entries": [
+    {
+      "id": "central-discovery-v04227",
+      "via": "system.central",
+      "ownershipTransfer": false,
+      "authorityEscalation": "NONE"
+    }
+  ],
+  "authority": false
+}

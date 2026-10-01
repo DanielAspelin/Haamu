@@ -1,0 +1,7 @@
+{
+  "schema": "terraformer.registry/boots/1",
+  "owner": "system.boot",
+  "entries": [],
+  "authority": false,
+  "qualificationGranted": false
+}

@@ -1,0 +1,7 @@
+{
+  "schema": "terraformer.registry/uefis/1",
+  "owner": "system.uefi",
+  "entries": [],
+  "authority": false,
+  "qualificationGranted": false
+}

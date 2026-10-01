@@ -1,0 +1,10 @@
+{
+  "schema": "TERRAFORMER-BANKERS-REGISTRY/1",
+  "owner": "terraformer.banker.js",
+  "entity": "agent.banker",
+  "class": "Worker",
+  "system": "system.banking",
+  "entries": [],
+  "authorityGranted": false,
+  "rule": "Declarative actor registry only; membership grants no authentication, authorization, execution, persistence, approval, financial, or external-effect authority."
+}

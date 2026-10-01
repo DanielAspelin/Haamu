@@ -1,0 +1,22 @@
+{
+  "schema": "TERRAFORMER-HYBRID-COMPOSITION/1",
+  "version": "0.47.85",
+  "mode": [
+    "MODULAR",
+    "MONOLITHIC"
+  ],
+  "rule": "One canonical responsibility; modular and monolithic composition projections must not duplicate implementation.",
+  "modular": {
+    "independentlyAddressable": true,
+    "inspectable": true,
+    "testable": true,
+    "versionable": true
+  },
+  "monolithic": {
+    "constituentOfWhole": true,
+    "deterministicComposition": true,
+    "deterministicReconstruction": true
+  },
+  "authorityGranted": false,
+  "automaticComposition": false
+}

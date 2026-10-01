@@ -1,0 +1,10 @@
+{
+  "schema": "TERRAFORMER-SHOPPERS-REGISTRY/1",
+  "owner": "terraformer.shopper.js",
+  "entity": "agent.shopper",
+  "class": "Worker",
+  "system": "system.shop",
+  "entries": [],
+  "authorityGranted": false,
+  "rule": "Declarative actor registry only; membership grants no authentication, authorization, execution, persistence, approval, financial, or external-effect authority."
+}

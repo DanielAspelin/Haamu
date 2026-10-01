@@ -1,0 +1,8 @@
+{
+  "schema": "TERRAFORMER-BANNERS/1",
+  "systemId": "system.banner",
+  "membershipGrantsMutation": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

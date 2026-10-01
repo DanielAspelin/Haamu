@@ -1,0 +1,11 @@
+{
+  "schema": "TERRAFORMER-FORKS/1",
+  "systemId": "system.fork",
+  "processSystem": "system.forking",
+  "actorSystem": "system.forker",
+  "lineagePreserved": true,
+  "membershipGrantsExecution": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

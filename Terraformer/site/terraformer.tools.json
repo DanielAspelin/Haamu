@@ -1,0 +1,9 @@
+{
+  "schema": "TERRAFORMER-TOOLS/1",
+  "systemId": "system.tool",
+  "membershipGrantsExecution": false,
+  "membershipGrantsMutation": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

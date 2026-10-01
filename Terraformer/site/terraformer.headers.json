@@ -1,0 +1,12 @@
+{
+  "schema": "TERRAFORMER-HEADERS/1",
+  "systemId": "system.header",
+  "structural": true,
+  "genericHeader": true,
+  "headerRowImplied": false,
+  "columnHeaderImplied": false,
+  "protocolHeaderImplied": false,
+  "storageAuthority": false,
+  "persistenceAuthority": false,
+  "records": []
+}

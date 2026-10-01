@@ -1,0 +1,31 @@
+{
+  "schema": "TERRAFORMER-CONTEXTS/1",
+  "systemId": "system.context",
+  "canonicalIdentityPreserved": true,
+  "contextDistinctFromSubject": true,
+  "persistenceAuthority": false,
+  "executionAuthority": false,
+  "records": [],
+  "universalDerivedContexts": {
+    "schema": "TERRAFORMER-SYSTEM-CONTEXTS/1",
+    "contextsPerSystem": 12,
+    "physicalFilePerDerivedContext": false,
+    "automaticMutation": false,
+    "persistence": false,
+    "authorityAmplification": false
+  },
+  "audioContextTypes": [
+    {
+      "systemId": "system.audio-context",
+      "domain": "system.audio"
+    },
+    {
+      "systemId": "system.music-context",
+      "domain": "system.music"
+    },
+    {
+      "systemId": "system.mixing-context",
+      "domain": "system.mixing"
+    }
+  ]
+}

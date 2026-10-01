@@ -1,0 +1,10 @@
+{
+  "schema": "TERRAFORMER-RETURNABLES/1",
+  "version": "0.47.48",
+  "owner": "system.returnable",
+  "governedBy": "terraformer.returnable.js",
+  "records": [],
+  "membershipGrantsReturn": false,
+  "membershipGrantsExecution": false,
+  "membershipGrantsAuthority": false
+}

@@ -1,0 +1,7 @@
+{
+  "schema": "TERRAFORMER-DEBUGGERS/1",
+  "systemId": "system.debugger",
+  "authorityGranted": false,
+  "automaticExecution": false,
+  "records": []
+}

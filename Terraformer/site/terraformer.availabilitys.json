@@ -1,0 +1,7 @@
+{
+  "schema": "TERRAFORMER-AVAILABILITYS/1",
+  "systemId": "system.availability",
+  "authorityGranted": false,
+  "automaticExecution": false,
+  "records": []
+}

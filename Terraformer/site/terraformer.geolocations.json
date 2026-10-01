@@ -1,0 +1,9 @@
+{
+  "schema": "TERRAFORMER-GEOLOCATIONS/1",
+  "systemId": "system.geolocation",
+  "featureDetected": true,
+  "permissionDoesNotFollowFromPresence": true,
+  "invokeAutomatically": false,
+  "authorityGranted": false,
+  "records": []
+}

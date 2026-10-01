@@ -1,0 +1,17 @@
+{
+  "schema": "terraformer.registry/rooters/1",
+  "owner": "worker.rooter",
+  "system": "system.rooting",
+  "entries": [
+    {
+      "id": "worker.rooter",
+      "type": "rooting-worker",
+      "authorizationRequired": true,
+      "qualificationRequired": true,
+      "osPrivilege": false,
+      "authorityAmplification": false
+    }
+  ],
+  "authority": false,
+  "qualificationGranted": false
+}

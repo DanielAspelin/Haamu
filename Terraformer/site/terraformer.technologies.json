@@ -1,0 +1,11 @@
+{
+  "schema": "TERRAFORMER-TECHNOLOGIES/1",
+  "version": "0.47.63",
+  "owner": "system.technology",
+  "governedBy": "terraformer.technology.js",
+  "entries": [],
+  "authorityGranted": false,
+  "qualificationGranted": false,
+  "automaticExecution": false,
+  "automaticPersistence": false
+}

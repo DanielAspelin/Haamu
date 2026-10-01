@@ -1,0 +1,8 @@
+{
+  "schema": "TERRAFORMER-BARS/1",
+  "systemId": "system.bar",
+  "membershipGrantsMutation": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

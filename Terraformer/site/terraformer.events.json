@@ -1,0 +1,9 @@
+{
+  "schema": "TERRAFORMER-EVENTS/1",
+  "systemId": "system.event",
+  "membershipGrantsCapture": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsHistoryRewrite": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

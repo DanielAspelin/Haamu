@@ -1,0 +1,10 @@
+{
+  "schema": "TERRAFORMER-PROTOTYPERS/1",
+  "systemId": "system.prototyper",
+  "membershipGrantsCreation": false,
+  "membershipGrantsExecution": false,
+  "membershipGrantsMutation": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

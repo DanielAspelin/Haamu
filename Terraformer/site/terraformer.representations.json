@@ -1,0 +1,42 @@
+{
+  "schema": "TERRAFORMER-REPRESENTATIONS/1",
+  "authorityGranted": false,
+  "automaticExecution": false,
+  "records": [],
+  "owner": "system.representation",
+  "ownerBindingVersion": "0.48.16",
+  "ownerBindingAuthorityGranted": false,
+  "version": "0.48.18",
+  "results": [
+    {
+      "id": "result.graphics.representation.v0.48.18",
+      "relationship": [
+        "system.graphics",
+        "system.representation"
+      ],
+      "source": "v0.48.17:terraformer.graphicsrepresentations.json",
+      "representations": [
+        {
+          "system": "system.vector",
+          "owner": "terraformer.vector.js",
+          "registry": "terraformer.vectors.json",
+          "role": "PREFERRED_DEFAULT"
+        },
+        {
+          "system": "system.raster",
+          "owner": "terraformer.raster.js",
+          "registry": "terraformer.rasters.json",
+          "role": "CAPABILITY_FALLBACK"
+        }
+      ],
+      "rules": {
+        "bothHaveJavaScriptOwner": true,
+        "bothHaveJsonRegistry": true,
+        "sameForegroundBoundary": true,
+        "authorityGranted": false
+      },
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authorityGranted": false
+    }
+  ]
+}

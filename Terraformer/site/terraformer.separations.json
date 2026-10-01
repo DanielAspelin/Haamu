@@ -1,0 +1,22 @@
+{
+  "schema": "TERRAFORMER-PLURAL-SET/1",
+  "version": "0.48.34",
+  "kind": "PLURAL_SET",
+  "concept": "separations",
+  "singular": "separation",
+  "owner": "terraformer.separation.js",
+  "records": [],
+  "pluralEvidence": {
+    "rule": "ENGLISH_INFLECTION",
+    "corpusAttested": false,
+    "status": "INTERNALLY_SUPPORTED",
+    "normalization": "INDEPENDENT_INTERNAL_CONCEPT_EVIDENCE_PLUS_PHYSICAL_OWNER",
+    "internalEvidenceSources": [
+      "terraformer.entities.json"
+    ],
+    "physicalOwnerVerified": true
+  },
+  "membershipGrantsAuthority": false,
+  "membershipGrantsExecution": false,
+  "qualification": "UNDER_CONDITIONAL_EXPERIMENT"
+}

@@ -1,0 +1,11 @@
+{
+  "schema": "TERRAFORMER-METATYPES/1",
+  "systemId": "system.meta-type",
+  "membershipGrantsAllocation": false,
+  "membershipGrantsConversion": false,
+  "membershipGrantsValidation": false,
+  "membershipGrantsExecution": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

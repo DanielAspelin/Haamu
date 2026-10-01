@@ -1,0 +1,14 @@
+{
+  "schema": "TERRAFORMER-LOCKS/1",
+  "systemId": "system.lock",
+  "types": [
+    {
+      "id": "system.wake-lock",
+      "typeOf": "system.lock"
+    }
+  ],
+  "presenceGrantsPermission": false,
+  "invokeAutomatically": false,
+  "authorityGranted": false,
+  "records": []
+}

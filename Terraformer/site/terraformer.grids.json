@@ -1,0 +1,12 @@
+{
+  "schema": "terraformer.registry/grids/1",
+  "owner": "system.grid",
+  "entries": [
+    {
+      "type": "presentation",
+      "sourceIdentity": "system.grid.presentation"
+    }
+  ],
+  "authority": false,
+  "qualificationGranted": false
+}

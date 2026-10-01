@@ -1,0 +1,10 @@
+{
+  "schema": "TERRAFORMER-CONCATENATORS-REGISTRY/1",
+  "owner": "terraformer.concatenator.js",
+  "entity": "agent.concatenator",
+  "class": "Worker",
+  "system": "system.concatenation",
+  "entries": [],
+  "authorityGranted": false,
+  "rule": "Declarative actor registry only; membership grants no authentication, authorization, execution, persistence, approval, financial, or external-effect authority."
+}

@@ -1,0 +1,36 @@
+{
+  "schema": "TERRAFORMER-PASSAGES/1",
+  "version": "0.48.41",
+  "kind": "topology-type-set",
+  "owner": "terraformer.passage.js",
+  "concept": "Passage",
+  "records": [
+    {
+      "id": "system.passage",
+      "typeOf": "Topology",
+      "typeIndex": 0,
+      "zeroPoint": true,
+      "members": [
+        "Busline",
+        "Chain",
+        "Ring",
+        "Grid",
+        "Mesh",
+        "Matrix",
+        "Bridge",
+        "Path",
+        "Lane",
+        "Track",
+        "Route",
+        "Rail",
+        "Pattern",
+        "Transmission",
+        "Connection"
+      ],
+      "authorityGranted": false,
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT"
+    }
+  ],
+  "membershipGrantsAuthority": false,
+  "qualification": "UNDER_CONDITIONAL_EXPERIMENT"
+}

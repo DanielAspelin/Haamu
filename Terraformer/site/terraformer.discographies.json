@@ -1,0 +1,11 @@
+{
+  "schema": "TERRAFORMER-DISCOGRAPHIES/1",
+  "systemId": "system.discography",
+  "membershipGrantsIdentity": false,
+  "membershipGrantsAuthentication": false,
+  "membershipGrantsCollection": false,
+  "membershipGrantsPublication": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

@@ -1,0 +1,37 @@
+{
+  "$schema": "terraformer.registry/uuids/1",
+  "version": "0.44.29",
+  "kind": "UUID_REGISTRY",
+  "owner": "system.uuid",
+  "governedBy": "terraformer.uuid.js",
+  "governanceStatus": "EVIDENCED_EXECUTABLE_OWNER_V5_RECONCILIATION_EXTRACTED",
+  "authority": false,
+  "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+  "semantics": {
+    "uuid": "Identifier evidence within its evidenced scope; a UUID is not authentication, authorization, ownership, connectivity, execution authority, qualification, or proof of global uniqueness."
+  },
+  "scheme": {
+    "generator": "terraformer.uuid.js#generatorV36195",
+    "runtime": "UUIDv4",
+    "stable": "UUIDv5",
+    "namespace": "b3bb5e4e-59d8-5fcb-8b4d-12e7f24e6c95",
+    "cryptographicPrimitive": true,
+    "externalAuthority": false
+  },
+  "records": [],
+  "evidence": [
+    "terraformer.uuid.js#v4V36195",
+    "terraformer.uuid.js#v5V36195",
+    "terraformer.uuid.js#identityV36195",
+    "terraformer.uuid.js#reconcileCollectionV36195",
+    "terraformer.js#tfUuidNumberSelfTestV36195"
+  ],
+  "rules": {
+    "registrationCreatesAuthority": false,
+    "registrationCreatesAuthentication": false,
+    "registrationCreatesAuthorization": false,
+    "registrationCreatesOwnership": false,
+    "registrationCreatesQualification": false,
+    "unknownSubject": "UNRESOLVED"
+  }
+}

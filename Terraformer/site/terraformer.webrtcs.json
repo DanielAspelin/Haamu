@@ -1,0 +1,9 @@
+{
+  "schema": "TERRAFORMER-WEBRTCS/1",
+  "systemId": "system.webrtc",
+  "featureDetected": true,
+  "permissionDoesNotFollowFromPresence": true,
+  "invokeAutomatically": false,
+  "authorityGranted": false,
+  "records": []
+}

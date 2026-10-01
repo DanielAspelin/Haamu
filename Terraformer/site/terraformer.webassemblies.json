@@ -1,0 +1,20 @@
+{
+  "schema": "TERRAFORMER-CONCEPT-REGISTRY/1",
+  "version": "0.48.23",
+  "kind": "CONCEPT_REGISTRY",
+  "owner": "system.webassembly",
+  "concept": "webassembly",
+  "singularOwner": "terraformer.webassembly.js",
+  "records": [],
+  "sourceEvidence": [
+    "terraformer.tokenaudits.json",
+    "terraformer.spreads.json"
+  ],
+  "physicalization": "PLURAL_SET",
+  "pluralForm": "webassemblies",
+  "membershipGrantsAuthority": false,
+  "membershipGrantsExecution": false,
+  "membershipGrantsPersistence": false,
+  "automaticPopulation": false,
+  "qualification": "UNDER_CONDITIONAL_EXPERIMENT"
+}

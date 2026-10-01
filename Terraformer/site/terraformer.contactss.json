@@ -1,0 +1,8 @@
+{
+  "schema": "TERRAFORMER-CONTACTSS/1",
+  "systemId": "system.contacts",
+  "readOnlyDiscovery": true,
+  "automaticInvocation": false,
+  "authorityGranted": false,
+  "records": []
+}

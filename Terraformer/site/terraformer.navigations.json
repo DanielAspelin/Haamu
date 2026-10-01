@@ -1,0 +1,26 @@
+{
+  "schema": "TERRAFORMER-NAVIGATIONS/2",
+  "version": "0.47.77",
+  "systemId": "system.navigation",
+  "rule": "For every admitted navigation transition, prepare two valid steps ahead within the user's current environment.",
+  "preloadDepth": 2,
+  "environmentScoped": true,
+  "planOnly": true,
+  "preloadDoesNotExecute": true,
+  "preloadDoesNotGrantAuthority": true,
+  "constraints": [
+    "authority",
+    "security",
+    "jurisdiction",
+    "qualification",
+    "criticality",
+    "environment"
+  ],
+  "membershipGrantsNavigation": false,
+  "membershipGrantsSelection": false,
+  "membershipGrantsMutation": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "authorityGranted": false,
+  "records": []
+}

@@ -1,0 +1,8 @@
+{
+  "schema": "TERRAFORMER-GATES/1",
+  "purpose": "governed gate definitions, conditions, statuses and evidence",
+  "authorityGranted": false,
+  "membershipGrantsAuthority": false,
+  "automaticExecution": false,
+  "records": []
+}

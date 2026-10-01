@@ -1,0 +1,21 @@
+{
+  "$schema": "terraformer.registry/transaction_registry/1",
+  "version": "0.44.24",
+  "kind": "TRANSACTION_REGISTRY",
+  "governedBy": "system.transaction",
+  "governanceEvidence": "MIGRATED_EXECUTABLE_OWNER_V0.44.23",
+  "authority": false,
+  "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+  "validation": "EXPLICIT_SCHEMA_AND_IDENTITY_REQUIRED",
+  "failureSemantics": "INVALID_OR_UNAUTHORIZED_INPUT_FAILS_CLOSED",
+  "provenance": {
+    "predecessor": "v0.44.21",
+    "checkpoint": "v0.44.22"
+  },
+  "semantics": "Transaction state/evidence; admission failure blocks consequential execution and records cannot create authorization, approval, qualification, settlement, ownership or correctness.",
+  "transactions": [],
+  "executableGovernor": "terraformer.reporting.js",
+  "owner": "system.transaction",
+  "ownerBindingVersion": "0.48.16",
+  "ownerBindingAuthorityGranted": false
+}

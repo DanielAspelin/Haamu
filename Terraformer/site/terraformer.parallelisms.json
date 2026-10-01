@@ -1,0 +1,10 @@
+{
+  "schema": "TERRAFORMER-CONCEPT-REGISTRY/1",
+  "version": "0.48.2",
+  "concept": "Parallelism",
+  "owner": "system.parallelism",
+  "records": [],
+  "automaticPopulation": false,
+  "authorityGranted": false,
+  "qualification": "UNDER_CONDITIONAL_EXPERIMENT"
+}

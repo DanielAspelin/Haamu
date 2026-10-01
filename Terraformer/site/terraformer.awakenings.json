@@ -1,0 +1,9 @@
+{
+  "schema": "TERRAFORMER-AWAKENINGS/1",
+  "systemId": "system.awakening",
+  "declarativeRegistry": true,
+  "membershipGrantsThreadCreation": false,
+  "membershipGrantsExternalEffect": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

@@ -1,0 +1,11 @@
+{
+  "schema": "TERRAFORMER-ABSENCES/1",
+  "systemId": "system.absence",
+  "membershipGrantsAllocation": false,
+  "membershipGrantsConversion": false,
+  "membershipGrantsValidation": false,
+  "membershipGrantsExecution": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

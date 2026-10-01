@@ -1,0 +1,13 @@
+{
+  "schema": "TERRAFORMER-TRINARIES/1",
+  "version": "0.47.54",
+  "kind": "TRINARIES_REGISTRY",
+  "owner": "system.trinary",
+  "governedBy": "terraformer.trinary.js",
+  "family": "arity",
+  "arity": 3,
+  "records": [],
+  "authorityGranted": false,
+  "automaticExecution": false,
+  "automaticPersistence": false
+}

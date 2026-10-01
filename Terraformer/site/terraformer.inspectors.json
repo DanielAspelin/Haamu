@@ -1,0 +1,7 @@
+{
+  "schema": "TERRAFORMER-INSPECTORS/1",
+  "systemId": "system.inspector",
+  "membershipGrantsExecution": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

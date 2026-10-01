@@ -1,0 +1,8 @@
+{
+  "schema": "TERRAFORMER-GEOMETRIES/1",
+  "systemId": "system.geometry",
+  "membershipGrantsMutation": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

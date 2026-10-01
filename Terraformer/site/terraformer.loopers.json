@@ -1,0 +1,20 @@
+{
+  "schema": "TERRAFORMER-LOOPERS/1",
+  "authorityGranted": false,
+  "automaticExecution": false,
+  "records": [],
+  "types": {
+    "while": {
+      "semanticId": "system.while-looper"
+    },
+    "for": {
+      "semanticId": "system.for-looper"
+    },
+    "for-each": {
+      "semanticId": "system.for-each-looper"
+    }
+  },
+  "owner": "system.looper",
+  "ownerBindingVersion": "0.48.16",
+  "ownerBindingAuthorityGranted": false
+}

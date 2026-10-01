@@ -1,0 +1,9 @@
+{
+  "schema": "TERRAFORMER-TARGETINGS/1",
+  "systemId": "system.targeting",
+  "declarativeRegistry": true,
+  "membershipGrantsMutation": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

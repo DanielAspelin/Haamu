@@ -1,0 +1,12 @@
+{
+  "schema": "TERRAFORMER-MERCHANDISERS/1",
+  "systemId": "system.merchandiser",
+  "membershipGrantsOwnership": false,
+  "membershipGrantsSale": false,
+  "membershipGrantsLicense": false,
+  "membershipGrantsContractExecution": false,
+  "membershipGrantsLegalAuthority": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

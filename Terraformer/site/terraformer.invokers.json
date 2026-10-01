@@ -1,0 +1,16 @@
+{
+  "schema": "TERRAFORMER-INVOKERS-REGISTRY/1",
+  "owner": "terraformer.invoker.js",
+  "role": "role.invoker",
+  "memberships": [
+    {
+      "class": "Worker",
+      "domain": "tool",
+      "identity": "tool.worker.invoker",
+      "parent": "system.tool"
+    }
+  ],
+  "entries": [],
+  "authorityGranted": false,
+  "rule": "Registry records identities/evidence only; membership grants no execution, authentication, authorization, persistence, or approval authority."
+}

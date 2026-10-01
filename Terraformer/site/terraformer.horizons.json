@@ -1,0 +1,8 @@
+{
+  "schema": "TERRAFORMER-HORIZONS/1",
+  "systemId": "system.horizon",
+  "membershipGrantsMutation": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

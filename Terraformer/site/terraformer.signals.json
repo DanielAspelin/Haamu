@@ -1,0 +1,21 @@
+{
+  "schema": "TERRAFORMER-SIGNALS/1",
+  "version": "0.47.56",
+  "owner": "system.signal",
+  "governedBy": "terraformer.signal.js",
+  "logicalContext": {
+    "reporting": "system.reporting",
+    "messaging": "system.messaging",
+    "order": [
+      "system.reporting",
+      "system.messaging"
+    ],
+    "rule": "Reporting precedes Messaging in this admitted logical ordering; ordering grants no execution, transmission, publication, or authority."
+  },
+  "records": [],
+  "authorityGranted": false,
+  "automaticTransmission": false,
+  "automaticPersistence": false,
+  "roundTrip": "roundtrip.communication",
+  "roundTripRegistry": "terraformer.roundtrips.json"
+}

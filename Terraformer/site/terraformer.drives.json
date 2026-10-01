@@ -1,0 +1,14 @@
+{
+  "schema": "TERRAFORMER-DRIVES/1",
+  "systemId": "system.drive",
+  "webTypes": [
+    "system.web-drive"
+  ],
+  "membershipGrantsAuthentication": false,
+  "membershipGrantsConnection": false,
+  "membershipGrantsSendOrWrite": false,
+  "membershipGrantsSynchronization": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

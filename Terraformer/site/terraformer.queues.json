@@ -1,0 +1,16 @@
+{
+  "schema": "TERRAFORMER-QUEUES/1",
+  "systemId": "system.queue",
+  "orderingSystem": "system.ordering",
+  "availableDisciplines": [
+    "FIFO",
+    "LIFO",
+    "FILO",
+    "LILO"
+  ],
+  "executionImplied": false,
+  "mutationImplied": false,
+  "persistenceImplied": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

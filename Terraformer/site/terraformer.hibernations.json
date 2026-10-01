@@ -1,0 +1,9 @@
+{
+  "schema": "TERRAFORMER-HIBERNATIONS/1",
+  "systemId": "system.hibernation",
+  "declarativeRegistry": true,
+  "membershipGrantsThreadCreation": false,
+  "membershipGrantsExternalEffect": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

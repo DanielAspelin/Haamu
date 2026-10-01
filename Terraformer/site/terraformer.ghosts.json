@@ -1,0 +1,9 @@
+{
+  "schema": "TERRAFORMER-GHOSTS/1",
+  "systemId": "system.ghost",
+  "authorityGranted": false,
+  "records": [],
+  "nonAuthoritative": true,
+  "placeholderOnly": true,
+  "fabricatesQualification": false
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "terraformer.registry/automator_registry/1",
+  "version": "0.44.28",
+  "kind": "AUTOMATOR_REGISTRY",
+  "governedBy": "terraformer.automation.js",
+  "executableGovernor": "terraformer.automation.js",
+  "semantics": "Automator identities/capabilities; declaration does not create autonomous or external authority.",
+  "automators": [],
+  "authority": false,
+  "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+  "failureSemantics": "INVALID_OR_UNAUTHORIZED_INPUT_FAILS_CLOSED",
+  "provenance": {
+    "predecessor": "v0.44.24",
+    "checkpoint": "v0.44.25"
+  }
+}

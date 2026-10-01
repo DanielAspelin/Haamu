@@ -1,0 +1,3 @@
+"use strict";
+const TERRAFORMER_INSTRUCTION_SYSTEM=Object.freeze({schema:'TERRAFORMER-INSTRUCTION-SYSTEM/1',id:'system.instruction',name:'Instruction System',family:'instruction',type:'instruction-system',state:'integrated',canonicalPath:'terraformer://instruction/',dependsOn:Object.freeze(['system.information','system.authorization']),governs:Object.freeze(['instruction','issuer-reference','recipient-reference','scope','precondition','action-reference','result-reference']),rule:'Instruction System represents bounded instructions under governing authority; an instruction is not self-authorizing and does not execute an action merely by existing.'});
+module.exports=Object.freeze({TERRAFORMER_INSTRUCTION_SYSTEM});

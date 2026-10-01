@@ -1,0 +1,11 @@
+{
+  "schema": "TERRAFORMER-OBJECTIVES/1",
+  "version": "0.47.61",
+  "owner": "system.objective",
+  "governedBy": "terraformer.objective.js",
+  "family": "goal",
+  "records": [],
+  "authorityGranted": false,
+  "qualificationGranted": false,
+  "automaticPersistence": false
+}

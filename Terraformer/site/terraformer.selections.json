@@ -1,0 +1,10 @@
+{
+  "schema": "TERRAFORMER-SELECTIONS/1",
+  "systemId": "system.selection",
+  "membershipGrantsNavigation": false,
+  "membershipGrantsSelection": false,
+  "membershipGrantsMutation": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

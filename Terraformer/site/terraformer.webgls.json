@@ -1,0 +1,9 @@
+{
+  "schema": "TERRAFORMER-WEBGLS/1",
+  "systemId": "system.webgl",
+  "featureDetected": true,
+  "permissionDoesNotFollowFromPresence": true,
+  "invokeAutomatically": false,
+  "authorityGranted": false,
+  "records": []
+}

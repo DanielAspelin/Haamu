@@ -1,0 +1,9 @@
+{
+  "schema": "TERRAFORMER-CAMERAS/1",
+  "systemId": "system.camera",
+  "featureDetected": true,
+  "permissionDoesNotFollowFromPresence": true,
+  "invokeAutomatically": false,
+  "authorityGranted": false,
+  "records": []
+}

@@ -1,0 +1,7 @@
+{
+  "schema": "TERRAFORMER-PROVINCES/1",
+  "systemId": "system.province",
+  "descriptive": true,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

@@ -1,0 +1,9 @@
+{
+  "schema": "TERRAFORMER-RESOLVERS/1",
+  "systemId": "system.resolver",
+  "declarativeRegistry": true,
+  "membershipGrantsMutation": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

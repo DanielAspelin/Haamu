@@ -1,0 +1,10 @@
+{
+  "schema": "TERRAFORMER-PROXIES/1",
+  "owner": "system.proxy",
+  "executable": "terraformer.proxy.js",
+  "purpose": "governed proxy definitions and evidence",
+  "authorityGranted": false,
+  "membershipGrantsAuthority": false,
+  "executionAuthorityGranted": false,
+  "records": []
+}

@@ -1,0 +1,9 @@
+{
+  "schema": "TERRAFORMER-MICROPHONES/1",
+  "systemId": "system.microphone",
+  "featureDetected": true,
+  "permissionDoesNotFollowFromPresence": true,
+  "invokeAutomatically": false,
+  "authorityGranted": false,
+  "records": []
+}

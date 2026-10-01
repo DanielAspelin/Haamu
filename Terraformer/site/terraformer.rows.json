@@ -1,0 +1,8 @@
+{
+  "schema": "TERRAFORMER-ROWS/1",
+  "systemId": "system.row",
+  "structural": true,
+  "storageAuthority": false,
+  "persistenceAuthority": false,
+  "records": []
+}

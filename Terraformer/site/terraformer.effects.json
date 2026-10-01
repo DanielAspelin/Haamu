@@ -1,0 +1,8 @@
+{
+  "schema": "TERRAFORMER-EFFECTS/1",
+  "owner": "terraformer.effect.js",
+  "canonical": "system.effect",
+  "records": [],
+  "membershipGrantsAuthority": false,
+  "qualificationInheritance": false
+}

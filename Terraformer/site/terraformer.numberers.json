@@ -1,0 +1,14 @@
+{
+  "schema": "TERRAFORMER-NUMBERERS/1",
+  "systemId": "system.numberer",
+  "membershipGrantsIdentity": false,
+  "membershipGrantsMutation": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": [],
+  "declarativeRegistry": true,
+  "membershipGrantsAuthentication": false,
+  "membershipGrantsAuthorization": false,
+  "membershipGrantsIssuanceAuthority": false,
+  "membershipGrantsExternalRegistration": false
+}

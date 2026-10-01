@@ -1,0 +1,7 @@
+{
+  "schema": "TERRAFORMER-BOOTSTRAPS/1",
+  "systemId": "system.bootstrap",
+  "authorityGranted": false,
+  "automaticExecution": false,
+  "records": []
+}

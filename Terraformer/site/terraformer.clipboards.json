@@ -1,0 +1,9 @@
+{
+  "schema": "TERRAFORMER-CLIPBOARDS/1",
+  "systemId": "system.clipboard",
+  "featureDetected": true,
+  "permissionDoesNotFollowFromPresence": true,
+  "invokeAutomatically": false,
+  "authorityGranted": false,
+  "records": []
+}

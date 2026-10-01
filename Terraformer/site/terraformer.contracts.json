@@ -1,0 +1,12 @@
+{
+  "schema": "TERRAFORMER-CONTRACTS/1",
+  "systemId": "system.contract",
+  "membershipGrantsOwnership": false,
+  "membershipGrantsSale": false,
+  "membershipGrantsLicense": false,
+  "membershipGrantsContractExecution": false,
+  "membershipGrantsLegalAuthority": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

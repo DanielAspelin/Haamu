@@ -1,0 +1,61 @@
+{
+  "schema": "TERRAFORMER-CONCEPT-REGISTRY/1",
+  "version": "0.48.21",
+  "kind": "CONCEPT_REGISTRY",
+  "owner": "system.account",
+  "concept": "account",
+  "singularOwner": "terraformer.account.js",
+  "records": [
+    {
+      "id": "telegram.user.danielaspelin",
+      "kind": "USER",
+      "username": "@DanielAspelinTG",
+      "handle": "DanielAspelinTG",
+      "hardcoded": true,
+      "authenticationGranted": false,
+      "authorizationGranted": false,
+      "provider": "Telegram",
+      "context": "system.telegram",
+      "accountRecord": true
+    },
+    {
+      "id": "telegram.supergroup.terraformer",
+      "kind": "SUPERGROUP",
+      "username": "@TerraformerTG",
+      "handle": "TerraformerTG",
+      "hardcoded": true,
+      "authenticationGranted": false,
+      "authorizationGranted": false,
+      "provider": "Telegram",
+      "context": "system.telegram",
+      "accountRecord": true
+    },
+    {
+      "id": "telegram.bot.terraformer",
+      "kind": "BOT",
+      "username": "@TerraformerTGBot",
+      "handle": "TerraformerTGBot",
+      "hardcoded": true,
+      "authenticationGranted": false,
+      "authorizationGranted": false,
+      "provider": "Telegram",
+      "context": "system.telegram",
+      "accountRecord": true
+    }
+  ],
+  "membershipGrantsAuthority": false,
+  "membershipGrantsExecution": false,
+  "membershipGrantsPersistence": false,
+  "automaticPopulation": false,
+  "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+  "providerContexts": {
+    "Telegram": {
+      "system": "system.telegram",
+      "records": [
+        "telegram.user.danielaspelin",
+        "telegram.supergroup.terraformer",
+        "telegram.bot.terraformer"
+      ]
+    }
+  }
+}

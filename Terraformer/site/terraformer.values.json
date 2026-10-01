@@ -1,0 +1,23 @@
+{
+  "schema": "TERRAFORMER-VALUES/1",
+  "version": "0.47.45",
+  "kind": "VALUE_REGISTRY",
+  "owner": "system.value",
+  "governedBy": "terraformer.value.js",
+  "valuedBy": "terraformer.valuing.js",
+  "records": [],
+  "rules": [
+    "A Value represents admitted data plus bounded metadata.",
+    "A Value does not itself grant assignment, mutation, persistence, execution, approval, or authority.",
+    "Variables may bind or reference Values only through an admitted relationship.",
+    "Valuing establishes or resolves Value representations without silently persisting them."
+  ],
+  "authorityGranted": false,
+  "mutationGranted": false,
+  "persistenceGranted": false,
+  "relatedSystems": {
+    "valuing": "system.valuing",
+    "valuable": "system.valuable",
+    "rule": "Value content and Valuable classification remain logically distinct."
+  }
+}

@@ -1,0 +1,6 @@
+"use strict";
+const SYSTEM=Object.freeze({id:"system.pdf",authorityGranted:false,scaffold:true});
+const TERRAFORMER_PDF_SYSTEM=Object.freeze({schema:'TERRAFORMER-PDF-SYSTEM/1',id:'system.pdf',name:'PDF System',family:'document',type:'pdf-system',state:'integrated',canonicalPath:'terraformer://document/pdf/',dependsOn:Object.freeze(['system.document','system.binary']),integratesWith:Object.freeze(['system.graphics','system.text','system.image']),governs:Object.freeze(['pdf','document','page','object-reference','metadata','text-reference','image-reference','render-reference','parse','validate']),rule:'PDF System represents admitted PDF document structure and rendering references; parsing or rendering does not grant arbitrary file access, execution, extraction, publication, overwrite, or persistence authority.'});
+function tfDocumentFormatDescribe(kind){const k=String(kind||'').toLowerCase();const map={markup:TERRAFORMER_MARKUP_SYSTEM,markdown:TERRAFORMER_MARKDOWN_SYSTEM,pdf:TERRAFORMER_PDF_SYSTEM};const x=map[k];return x?Object.freeze({schema:'TERRAFORMER-DOCUMENT-FORMAT-DESCRIPTOR/1',id:x.id,name:x.name,canonicalPath:x.canonicalPath,executionAuthorized:false,persistenceAuthorized:false}):null}
+
+module.exports=Object.freeze({SYSTEM,TERRAFORMER_PDF_SYSTEM,tfDocumentFormatDescribe});

@@ -1,0 +1,12 @@
+{
+  "schema": "TERRAFORMER-SOCKETS/1",
+  "systemId": "system.socket",
+  "logicalByDefault": true,
+  "membershipGrantsRead": false,
+  "membershipGrantsWrite": false,
+  "membershipGrantsTransfer": false,
+  "membershipGrantsNetworkBinding": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

@@ -1,0 +1,7 @@
+{
+  "schema": "TERRAFORMER-SHUTDOWNS/1",
+  "systemId": "system.shutdown",
+  "authorityGranted": false,
+  "automaticExecution": false,
+  "records": []
+}

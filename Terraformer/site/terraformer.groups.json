@@ -1,0 +1,75 @@
+{
+  "schema": "TERRAFORMER-GROUPS/1",
+  "systemId": "system.group",
+  "declarativeRegistry": true,
+  "membershipGrantsConnection": false,
+  "membershipGrantsNetworkBinding": false,
+  "membershipGrantsIdentityMutation": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": [],
+  "types": {
+    "system-group": {
+      "semanticId": "system.system-group",
+      "isA": "system.group",
+      "physicalOwner": "terraformer.group.js"
+    }
+  },
+  "specializationTypes": [
+    {
+      "kind": "wire",
+      "systemId": "system.wire-group",
+      "memberSystem": "system.wire"
+    },
+    {
+      "kind": "system",
+      "systemId": "system.system-group",
+      "memberSystem": "system.system"
+    },
+    {
+      "kind": "server",
+      "systemId": "system.server-group",
+      "memberSystem": "system.server"
+    },
+    {
+      "kind": "object",
+      "systemId": "system.object-group",
+      "memberSystem": "system.object"
+    },
+    {
+      "kind": "node",
+      "systemId": "system.node-group",
+      "memberSystem": "system.node"
+    },
+    {
+      "kind": "client",
+      "systemId": "system.client-group",
+      "memberSystem": "system.client"
+    },
+    {
+      "kind": "global",
+      "systemId": "system.global-group",
+      "memberSystem": "system.system",
+      "scopeSystem": "system.global"
+    },
+    {
+      "kind": "local",
+      "systemId": "system.local-group",
+      "memberSystem": "system.system",
+      "scopeSystem": "system.local"
+    },
+    {
+      "kind": "network",
+      "systemId": "system.network-group",
+      "memberSystem": "system.network"
+    }
+  ],
+  "specializationSemantics": {
+    "allAreTypesOf": "system.group",
+    "logical": true,
+    "automaticConnect": false,
+    "networkBinding": false,
+    "objectMutation": false,
+    "authorityGranted": false
+  }
+}

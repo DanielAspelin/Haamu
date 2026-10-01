@@ -1,0 +1,23 @@
+{
+  "schema": "TERRAFORMER-ELEMENT-PRIORITY-IMPORTANCE/1",
+  "version": "0.47.86",
+  "appliesTo": "every-addressable-admitted-element",
+  "priority": {
+    "owner": "system.priority",
+    "value": "non-negative-safe-integer",
+    "default": "UNSET"
+  },
+  "importance": {
+    "owner": "system.importance",
+    "levels": 5,
+    "default": "UNSET"
+  },
+  "independent": true,
+  "rules": [
+    "Priority and Importance are orthogonal.",
+    "Priority does not grant execution order or authority.",
+    "Importance does not imply Priority, Criticality, authority, or execution.",
+    "UNSET is preserved when no value is admitted."
+  ],
+  "authorityGranted": false
+}

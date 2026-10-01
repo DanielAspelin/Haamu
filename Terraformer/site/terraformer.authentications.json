@@ -1,0 +1,7 @@
+{
+  "schema": "terraformer.registry/authentications/1",
+  "owner": "system.authentication",
+  "entries": [],
+  "authority": false,
+  "qualificationGranted": false
+}

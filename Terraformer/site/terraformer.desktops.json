@@ -1,0 +1,17 @@
+{
+  "schema": "TERRAFORMER-DESKTOPS/1",
+  "systemId": "system.desktop",
+  "types": [
+    {
+      "id": "system.meta-desktop",
+      "kind": "meta"
+    }
+  ],
+  "membershipGrantsHostControl": false,
+  "membershipGrantsWindowMutation": false,
+  "membershipGrantsApplicationLaunch": false,
+  "membershipGrantsVMLaunch": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

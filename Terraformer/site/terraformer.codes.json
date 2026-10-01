@@ -1,0 +1,8 @@
+{
+  "schema": "TERRAFORMER-CODES/1",
+  "systemId": "system.code",
+  "membershipGrantsAuthority": false,
+  "records": [],
+  "roundTrip": "roundtrip.communication",
+  "roundTripRegistry": "terraformer.roundtrips.json"
+}

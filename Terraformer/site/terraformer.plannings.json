@@ -1,0 +1,10 @@
+{
+  "schema": "TERRAFORMER-PLANNINGS-REGISTRY/1",
+  "owner": "terraformer.planning.js",
+  "system": "system.planning",
+  "actor": "agent.planner",
+  "entries": [],
+  "persistentByDefault": false,
+  "authorityGranted": false,
+  "rule": "Plannings records planning instances/results/history only. A planning record does not authorize or execute its proposed steps."
+}

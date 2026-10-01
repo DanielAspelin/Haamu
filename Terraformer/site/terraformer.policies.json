@@ -1,0 +1,7 @@
+{
+  "schema": "TERRAFORMER-POLICIES/1",
+  "systemId": "system.policy",
+  "authorityGranted": false,
+  "automaticExecution": false,
+  "records": []
+}

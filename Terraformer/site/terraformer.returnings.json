@@ -1,0 +1,9 @@
+{
+  "schema": "TERRAFORMER-RETURNINGS/1",
+  "authorityGranted": false,
+  "automaticExecution": false,
+  "records": [],
+  "owner": "system.returning",
+  "ownerBindingVersion": "0.48.16",
+  "ownerBindingAuthorityGranted": false
+}

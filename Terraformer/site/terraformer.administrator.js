@@ -1,0 +1,3 @@
+"use strict";
+const TERRAFORMER_ADMINISTRATOR=Object.freeze({schema:'TERRAFORMER-ADMINISTRATOR/1',id:'agent.administrator',name:'Administrator',family:'agent',type:'bounded-agent',state:'integrated',canonicalPath:'terraformer://administration/administrator/',system:'system.administration',authorityInherited:false,capabilities:Object.freeze(['receive-scope','observe','act-admitted','report','verify']),rule:'Administrator performs explicitly authorized administrative actions; the role is not root authority, ownership, or unrestricted privilege.'});
+module.exports=Object.freeze({TERRAFORMER_ADMINISTRATOR});

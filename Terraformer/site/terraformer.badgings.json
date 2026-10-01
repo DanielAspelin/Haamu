@@ -1,0 +1,8 @@
+{
+  "schema": "TERRAFORMER-BADGINGS/1",
+  "systemId": "system.badging",
+  "readOnlyDiscovery": true,
+  "automaticInvocation": false,
+  "authorityGranted": false,
+  "records": []
+}

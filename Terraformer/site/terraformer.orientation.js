@@ -1,0 +1,5 @@
+'use strict';
+const TERRAFORMER_ORIENTATION_SYSTEM=Object.freeze({schema:'TERRAFORMER-ORIENTATION-SYSTEM/1',id:'system.orientation',name:'Orientation System',parent:'system.page-generation',family:'presentation',modes:Object.freeze(['portrait','landscape']),defaultByClass:Object.freeze({mobile:'portrait',desktop:'landscape'}),detection:'viewport width/height plus CSS orientation media query',events:Object.freeze(['resize','orientationchange','screen-orientation-change']),authority:'presentation geometry only'});
+function tfPageGenerationDescribe(){return {schema:'TERRAFORMER-PAGE-GENERATION-DESCRIBE/1',system:TERRAFORMER_PAGE_GENERATION_SYSTEM,orientation:TERRAFORMER_ORIENTATION_SYSTEM,order:['mobile','desktop'],mobile:{defaultOrientation:'portrait',rotatableTo:'landscape'},desktop:{defaultOrientation:'landscape',rotatableTo:'portrait'},runtime:'browser viewport decides active orientation; device label does not lock orientation'}}
+
+module.exports=Object.freeze({TERRAFORMER_ORIENTATION_SYSTEM,tfPageGenerationDescribe});

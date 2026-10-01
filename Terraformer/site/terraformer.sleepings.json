@@ -1,0 +1,9 @@
+{
+  "schema": "TERRAFORMER-SLEEPINGS/1",
+  "systemId": "system.sleeping",
+  "declarativeRegistry": true,
+  "membershipGrantsThreadCreation": false,
+  "membershipGrantsExternalEffect": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

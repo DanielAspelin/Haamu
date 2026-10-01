@@ -1,0 +1,15 @@
+{
+  "schema": "TERRAFORMER-FIRMWARE/1",
+  "owner": "system.firmware",
+  "executable": "terraformer.firmware.js",
+  "mode": "canonical-firmware-architecture",
+  "authorityGranted": false,
+  "configuration": {
+    "supportedModes": [
+      "bios",
+      "uefi"
+    ],
+    "defaultMode": "uefi",
+    "secureBootAuthorityGranted": false
+  }
+}

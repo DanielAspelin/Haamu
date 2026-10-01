@@ -1,0 +1,1 @@
+{"schema":"TERRAFORMER-CONCEPT-REGISTRY/1","version":"0.47.81","kind":"CONCEPT_REGISTRY","owner":"system.sensor","concept":"sensor","singularOwner":"terraformer.sensor.js","records":[],"membershipGrantsAuthority":false,"membershipGrantsExecution":false,"membershipGrantsPersistence":false,"automaticPopulation":false,"qualification":"UNDER_CONDITIONAL_EXPERIMENT"}

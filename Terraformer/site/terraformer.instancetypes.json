@@ -1,0 +1,78 @@
+{
+  "$schema": "terraformer.registry/instancetypes/1",
+  "version": "0.47.30",
+  "governedBy": "terraformer.instancetype.js",
+  "kind": "INSTANCE_TYPE_REGISTRY",
+  "owner": "system.instancetype",
+  "classification": "INSTANCE_TYPE",
+  "isDimension": false,
+  "isState": false,
+  "automaticPromotion": false,
+  "authority": false,
+  "entries": [
+    {
+      "id": "RUNTIME",
+      "rank": 0,
+      "initialFor": {
+        "instanceOrdinal": 0,
+        "dimensionCoordinate": 1
+      },
+      "eligibility": {
+        "conditionRequired": false
+      },
+      "stateIndependent": true,
+      "authority": false
+    },
+    {
+      "id": "SUPER_INSTANCE",
+      "rank": 1,
+      "eligibility": {
+        "conditionRequired": true,
+        "conditionContract": "SUPER_INSTANCE_ELIGIBILITY",
+        "stateType": "CONDITIONAL"
+      },
+      "stateIndependent": true,
+      "automaticPromotion": false,
+      "authority": false
+    },
+    {
+      "id": "HYPER_INSTANCE",
+      "rank": 2,
+      "eligibility": {
+        "conditionRequired": true,
+        "conditionContract": "HYPER_INSTANCE_ELIGIBILITY",
+        "stateType": "CONDITIONAL"
+      },
+      "stateIndependent": true,
+      "automaticPromotion": false,
+      "authority": false
+    }
+  ],
+  "rules": [
+    "Instance Type is independent of the INSTANCE dimension and STATE dimension.",
+    "SUPER_INSTANCE and HYPER_INSTANCE require satisfied condition contracts before becoming eligible.",
+    "Eligibility does not automatically promote, instantiate, execute, authorize, persist, or mutate.",
+    "Any Instance Type may independently carry an applicable State value."
+  ],
+  "stateTypeSystem": "system.statetype",
+  "conditionContracts": [
+    {
+      "id": "SUPER_INSTANCE_ELIGIBILITY",
+      "targetType": "SUPER_INSTANCE",
+      "stateType": "CONDITIONAL",
+      "definition": "Governed condition contract for Super-Instance eligibility. Concrete predicates/evidence remain deferred.",
+      "predicates": "DEFERRED",
+      "automaticPromotion": false,
+      "authority": false
+    },
+    {
+      "id": "HYPER_INSTANCE_ELIGIBILITY",
+      "targetType": "HYPER_INSTANCE",
+      "stateType": "CONDITIONAL",
+      "definition": "Governed condition contract for Hyper-Instance eligibility. Concrete predicates/evidence remain deferred.",
+      "predicates": "DEFERRED",
+      "automaticPromotion": false,
+      "authority": false
+    }
+  ]
+}

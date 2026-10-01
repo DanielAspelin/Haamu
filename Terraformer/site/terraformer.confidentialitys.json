@@ -1,0 +1,7 @@
+{
+  "schema": "TERRAFORMER-CONFIDENTIALITYS/1",
+  "systemId": "system.confidentiality",
+  "authorityGranted": false,
+  "automaticExecution": false,
+  "records": []
+}

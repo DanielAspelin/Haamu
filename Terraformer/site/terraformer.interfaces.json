@@ -1,0 +1,31 @@
+{
+  "schema": "TERRAFORMER-INTERFACES/1",
+  "registry": "terraformer.interfaces.json",
+  "owner": "system.interface",
+  "authorityGranted": false,
+  "membershipGrantsAuthority": false,
+  "records": [
+    {
+      "id": "interface.system",
+      "subject": "system.interface",
+      "class": "interface-system",
+      "status": "registered",
+      "authorityGranted": false
+    },
+    {
+      "id": "interface.feature",
+      "subject": "system.feature",
+      "class": "feature-interface",
+      "status": "registered",
+      "routesThrough": "system.interface",
+      "authorityGranted": false
+    },
+    {
+      "id": "interface.feature-kit",
+      "subject": "kit.interface-feature",
+      "class": "interface-feature-kit",
+      "status": "registered",
+      "authorityGranted": false
+    }
+  ]
+}

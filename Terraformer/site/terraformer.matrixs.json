@@ -1,0 +1,12 @@
+{
+  "schema": "TERRAFORMER-MATRIXS/1",
+  "version": "0.47.49",
+  "kind": "MATRIX_REGISTRY",
+  "owner": "system.matrix",
+  "governedBy": "terraformer.matrix.js",
+  "topologyType": "Passage",
+  "records": [],
+  "authorityGranted": false,
+  "automaticExecution": false,
+  "automaticPersistence": false
+}

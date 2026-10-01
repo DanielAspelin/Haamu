@@ -1,0 +1,10 @@
+{
+  "schema": "TERRAFORMER-CONCATENATIONS-REGISTRY/1",
+  "owner": "terraformer.concatenation.js",
+  "system": "system.concatenation",
+  "actor": "agent.concatenator",
+  "entries": [],
+  "persistentByDefault": false,
+  "authorityGranted": false,
+  "rule": "Concatenation records describe admitted concatenation instances/results/history only; records do not independently execute, persist, authorize, or create external effects."
+}

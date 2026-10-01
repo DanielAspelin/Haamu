@@ -1,0 +1,199 @@
+{
+  "$schema": "terraformer.registry/qualifications/1",
+  "version": "0.47.15",
+  "governedBy": "terraformer.qualification.js",
+  "kind": "QUALIFICATION_REGISTRY",
+  "owner": "system.qualification",
+  "dimension": "QUALIFICATION",
+  "position": {
+    "after": "VERIFICATION",
+    "before": "STATE"
+  },
+  "selectionModel": "DEFINE_CENTRALLY_SELECT_LOCALLY",
+  "eligibleConsumers": [
+    "SYSTEM",
+    "PROJECT",
+    "PROGRAM",
+    "APPLICATION",
+    "PLATFORM",
+    "COMMON",
+    "INTERNET",
+    "FILE",
+    "USER",
+    "MACHINE",
+    "GROUP",
+    "DIMENSION"
+  ],
+  "authority": false,
+  "approvalGranted": false,
+  "entries": [
+    {
+      "id": "PRE_INFORMATIVE",
+      "definition": "Pre-informative; evidence is insufficient for reliance.",
+      "aliases": [],
+      "applicability": [
+        "SYSTEM",
+        "PROJECT",
+        "PROGRAM",
+        "APPLICATION",
+        "PLATFORM",
+        "COMMON",
+        "INTERNET",
+        "FILE",
+        "USER",
+        "MACHINE",
+        "GROUP",
+        "DIMENSION"
+      ],
+      "constraints": {
+        "explicitSelection": true,
+        "scoped": true,
+        "noAuthority": true,
+        "noApproval": true
+      },
+      "version": "0.47.15",
+      "authority": false,
+      "approvalGranted": false
+    },
+    {
+      "id": "UNVERIFIED",
+      "definition": "Specified or observed but not yet verified.",
+      "aliases": [],
+      "applicability": [
+        "SYSTEM",
+        "PROJECT",
+        "PROGRAM",
+        "APPLICATION",
+        "PLATFORM",
+        "COMMON",
+        "INTERNET",
+        "FILE",
+        "USER",
+        "MACHINE",
+        "GROUP",
+        "DIMENSION"
+      ],
+      "constraints": {
+        "explicitSelection": true,
+        "scoped": true,
+        "noAuthority": true,
+        "noApproval": true
+      },
+      "version": "0.47.15",
+      "authority": false,
+      "approvalGranted": false
+    },
+    {
+      "id": "UNDER_CONDITIONAL_EXPERIMENT",
+      "definition": "Under controlled conditional experimentation; reliance remains bounded.",
+      "aliases": [],
+      "applicability": [
+        "SYSTEM",
+        "PROJECT",
+        "PROGRAM",
+        "APPLICATION",
+        "PLATFORM",
+        "COMMON",
+        "INTERNET",
+        "FILE",
+        "USER",
+        "MACHINE",
+        "GROUP",
+        "DIMENSION"
+      ],
+      "constraints": {
+        "explicitSelection": true,
+        "scoped": true,
+        "noAuthority": true,
+        "noApproval": true
+      },
+      "version": "0.47.15",
+      "authority": false,
+      "approvalGranted": false
+    },
+    {
+      "id": "VERIFIED",
+      "definition": "Verified against the applicable established requirements and evidence.",
+      "aliases": [],
+      "applicability": [
+        "SYSTEM",
+        "PROJECT",
+        "PROGRAM",
+        "APPLICATION",
+        "PLATFORM",
+        "COMMON",
+        "INTERNET",
+        "FILE",
+        "USER",
+        "MACHINE",
+        "GROUP",
+        "DIMENSION"
+      ],
+      "constraints": {
+        "explicitSelection": true,
+        "scoped": true,
+        "noAuthority": true,
+        "noApproval": true
+      },
+      "version": "0.47.15",
+      "authority": false,
+      "approvalGranted": false
+    },
+    {
+      "id": "NATURALIZED",
+      "definition": "Repeatedly qualified and integrated under demonstrated governing conditions.",
+      "aliases": [],
+      "applicability": [
+        "SYSTEM",
+        "PROJECT",
+        "PROGRAM",
+        "APPLICATION",
+        "PLATFORM",
+        "COMMON",
+        "INTERNET",
+        "FILE",
+        "USER",
+        "MACHINE",
+        "GROUP",
+        "DIMENSION"
+      ],
+      "constraints": {
+        "explicitSelection": true,
+        "scoped": true,
+        "noAuthority": true,
+        "noApproval": true
+      },
+      "version": "0.47.15",
+      "authority": false,
+      "approvalGranted": false
+    },
+    {
+      "id": "DE_NATURALIZED",
+      "definition": "Previously naturalized standing suspended by material contradiction or changed governing conditions.",
+      "aliases": [],
+      "applicability": [
+        "SYSTEM",
+        "PROJECT",
+        "PROGRAM",
+        "APPLICATION",
+        "PLATFORM",
+        "COMMON",
+        "INTERNET",
+        "FILE",
+        "USER",
+        "MACHINE",
+        "GROUP",
+        "DIMENSION"
+      ],
+      "constraints": {
+        "explicitSelection": true,
+        "scoped": true,
+        "noAuthority": true,
+        "noApproval": true
+      },
+      "version": "0.47.15",
+      "authority": false,
+      "approvalGranted": false
+    }
+  ]
+}

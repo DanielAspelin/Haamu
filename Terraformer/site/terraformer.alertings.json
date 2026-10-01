@@ -1,0 +1,7 @@
+{
+  "schema": "TERRAFORMER-ALERTINGS/1",
+  "systemId": "system.alerting",
+  "membershipGrantsExecution": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

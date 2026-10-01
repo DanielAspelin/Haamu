@@ -1,0 +1,263 @@
+{
+  "schema": "TERRAFORMER-RECONCILIATIONS/1",
+  "purpose": "governed reconciliation definitions, results and evidence",
+  "authorityGranted": false,
+  "membershipGrantsAuthority": false,
+  "automaticMutation": false,
+  "records": [
+    {
+      "id": "reconciliation.global.v0.48.30",
+      "priorityOrder": [
+        "PLURAL_SEMANTICS",
+        "APPLICATION_CLASSIFICATION",
+        "SYSTEM_CLASSIFICATION",
+        "OWNER_BINDING",
+        "ONE_WORD_NAMING",
+        "RUNTIME_LINKAGE",
+        "TEMPORARY_EXHAUSTION",
+        "NATURALIZATION"
+      ],
+      "counts": {
+        "inferredPluralSets": 9249,
+        "attestedPluralSets": 27,
+        "jsonWithoutOwnerField": 603,
+        "jsonBadOwnerBinding": 2,
+        "weakFinalRApplicationCandidates": 1015,
+        "strongErOrApplicationCandidates": 4887,
+        "temporarySimpleNamedFunctions": 1504,
+        "temporaryTopDeclarations": 3471
+      },
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT"
+    },
+    {
+      "id": "reconciliation.plurals.v0.48.35",
+      "status": "CONSTRUCTIVELY_RESOLVED",
+      "normalized": 104,
+      "rejectedCanonical": 9163,
+      "deferred": 9,
+      "undispositioned": 0,
+      "seal": "CONSTRUCTIVE",
+      "naturalizationOfDeferred": false
+    },
+    {
+      "id": "reconciliation.canonicals.v0.48.36",
+      "status": "ACTIVE",
+      "resolved": [
+        "duplicate identity audit",
+        "physical owner existence audit",
+        "two structural duplicate URI aliases",
+        "plural canonical leakage audit"
+      ],
+      "remaining": [
+        "language.machine.high vs language.programming URI collision",
+        "156 non-simple/dotted/camel/compound identity review",
+        "173 shared physical-owner groups require alias/projection/ownership classification"
+      ],
+      "next": "Canonical Reconciliation Pass II"
+    },
+    {
+      "id": "reconciliation.canonicals.v0.48.37",
+      "status": "ACTIVE",
+      "resolved": [
+        "language semantic URI collision",
+        "dotted hierarchy separated from malformed identity",
+        "shared-owner first classification"
+      ],
+      "remaining": [
+        "13 dotted/URI segmentation mismatches",
+        "3 camel-case identities",
+        "594 hyphenated lexical/compound candidates",
+        "21 shared-implementation owner groups",
+        "temporary.js shared-owner migration debt"
+      ],
+      "next": "Canonical Reconciliation Pass III"
+    },
+    {
+      "id": "reconciliation.canonicals.v0.48.38",
+      "status": "ACTIVE",
+      "resolved": [
+        "13 dotted URI segmentation mismatches",
+        "hyphenated identity first classification",
+        "21 shared owners reclassified as owner-Entity gaps"
+      ],
+      "remaining": [
+        "3 camel-case legacy identities require relationship/identity migration",
+        "154 specialized hyphenated identities require evidence review",
+        "442 composed-attested-part identities require projection-vs-canonical review",
+        "21 owner-Entity gaps",
+        "temporary.js migration debt"
+      ],
+      "next": "Canonical Reconciliation Pass IV"
+    },
+    {
+      "id": "reconciliation.canonicals.v0.48.39",
+      "status": "ACTIVE",
+      "resolved": [
+        "owner-Entity gaps",
+        "camel relationship-vs-system classification",
+        "simple-body hyphenated canonical candidacy"
+      ],
+      "remaining": [
+        "dotted hierarchical canonical semantics review",
+        "temporary.js canonical ownership migration debt",
+        "canonical closure/invariant verification"
+      ],
+      "next": "Canonical Reconciliation Pass V / closure"
+    },
+    {
+      "id": "reconciliation.canonicals.v0.48.40",
+      "status": "CONSTRUCTIVELY_RESOLVED",
+      "seal": "CONSTRUCTIVE",
+      "verified": [
+        "canonical ID uniqueness",
+        "canonical URI uniqueness",
+        "physical owner existence",
+        "dotted hierarchy segmentation",
+        "canonical namespace consistency"
+      ],
+      "deferredToTopology": {
+        "missingRepresentedParents": 66
+      },
+      "separateMigrationDebt": {
+        "temporaryOwnedCanonicalIdentities": 76
+      },
+      "next": "TOPOLOGY_RECONCILIATION"
+    },
+    {
+      "id": "reconciliation.topology.v0.48.41",
+      "status": "ACTIVE",
+      "passageFamily": {
+        "members": 15,
+        "ordered": true,
+        "registryConsistent": true,
+        "physicalizedPassage": true
+      },
+      "canonicalParentDependencies": {
+        "childReferences": 66,
+        "uniqueParents": 15,
+        "establishedNamespaceOwners": 11,
+        "compositeParentProjections": 3,
+        "unresolvedStructuralNamespaces": 1
+      },
+      "principle": "Identity hierarchy, type hierarchy, and operational topology remain distinct.",
+      "next": "Topology Reconciliation Pass II"
+    },
+    {
+      "id": "reconciliation.topology.v0.48.42",
+      "status": "ACTIVE",
+      "resolved": [
+        "10 one-word canonical parent URI namespaces",
+        "Passage forward/inverse type consistency",
+        "nested namespace projection classification"
+      ],
+      "remaining": [
+        "3 composite namespace projections",
+        "astronomical structural namespace",
+        "operational topology edge audit",
+        "topology closure/invariant verification"
+      ],
+      "next": "Topology Reconciliation Pass III"
+    },
+    {
+      "id": "reconciliation.topology.v0.48.43",
+      "status": "ACTIVE",
+      "resolved": [
+        "global typeOf/types inverse consistency",
+        "operational edge classification",
+        "remaining namespace evidence disposition"
+      ],
+      "remaining": [
+        "systemgraph baseline recomputation against current entity corpus",
+        "operational round-trip verification beyond explicit communication cycle",
+        "topology closure/invariant verification"
+      ],
+      "next": "Topology Reconciliation Pass IV"
+    },
+    {
+      "id": "reconciliation.graph.v0.48.44",
+      "status": "CONSTRUCTIVELY_ESTABLISHED",
+      "created": [
+        "terraformer.graph.js",
+        "terraformer.graphs.json"
+      ],
+      "canonicalEntity": "system.graph",
+      "typeOf": "System",
+      "relationshipProjection": "typeOf/types",
+      "distinction": "Graph represents nodes/relationships; it does not itself establish Topology, operational connectivity, or round-trip evidence.",
+      "authorityGranted": false
+    },
+    {
+      "id": "reconciliation.plotting.v0.48.45",
+      "status": "CONSTRUCTIVELY_ESTABLISHED",
+      "systems": [
+        "system.graph",
+        "system.plotting",
+        "system.plot"
+      ],
+      "application": "application.plotter",
+      "flow": "Graph/data context -> Plotting -> Plot; Plotter is the application-level invocation/presentation actor.",
+      "preservedPluralHistory": [
+        "plottings",
+        "plotters"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "reconciliation.distribution.v0.48.46",
+      "status": "CONSTRUCTIVELY_ESTABLISHED",
+      "tokenCorpus": 76226,
+      "dispositions": {
+        "TOKEN_REGISTRY_ONLY": 65785,
+        "APPLICATION_OWNER_PRESENT": 5776,
+        "SYSTEM_OWNER_PRESENT": 4006,
+        "SINGULAR_OWNER_PRESENT_OTHER": 659
+      },
+      "manifest": "terraformer.manifest.json",
+      "spread": "terraformer.spreads.json",
+      "principle": "Distributed artifacts compose one Terraformer; semantic Tokens need not be falsely promoted into Systems or Applications.",
+      "authorityGranted": false
+    },
+    {
+      "id": "reconciliation.distributed-interconnection.v0.48.47",
+      "status": "CONSTRUCTIVELY_ESTABLISHED",
+      "tokenCorpus": 76226,
+      "classifications": {
+        "TOKEN_WITH_EXISTING_ARCHITECTURAL_EVIDENCE": 13,
+        "TOKEN_ONLY": 65772,
+        "PHYSICALIZED_CONCEPT_OWNER_ONLY": 9418,
+        "PHYSICALIZED_CONCEPT_WITH_ARCHITECTURAL_EVIDENCE": 1023
+      },
+      "crosslinkRegistry": "terraformer.crosslinks.json",
+      "preservedExistingInterconnectionRegistry": true,
+      "principle": "Crosslinking records evidence across distributed artifacts without converting lexical Tokens into architectural concepts.",
+      "authorityGranted": false
+    },
+    {
+      "id": "reconciliation.github-pages.v0.48.48",
+      "status": "CONSTRUCTIVELY_ESTABLISHED",
+      "path": [
+        "system.manifest",
+        "system.distribution",
+        "system.deployment",
+        "system.site",
+        "system.page"
+      ],
+      "providerProjection": "GitHub Pages",
+      "repository": "repository.terraformer.github",
+      "branch": "main",
+      "siteDirectory": "site/",
+      "protectedPersistentFile": "site/terraformer.github.pages.js",
+      "synchronization": {
+        "intervalMinutes": 10,
+        "singleFlight": true,
+        "convergesAfterCurrentRun": true,
+        "failClosed": true
+      },
+      "canonicalSource": false,
+      "remoteAuthorizationAssumed": false,
+      "credentialsEmbedded": false,
+      "authorityGranted": false
+    }
+  ],
+  "version": "0.48.48"
+}

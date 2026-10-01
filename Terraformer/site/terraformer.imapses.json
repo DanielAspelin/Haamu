@@ -1,0 +1,10 @@
+{
+  "schema": "TERRAFORMER-IMAPSES/1",
+  "systemId": "system.imaps",
+  "membershipGrantsConnection": false,
+  "membershipGrantsMailOperation": false,
+  "membershipGrantsTunnel": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

@@ -1,0 +1,231 @@
+{
+  "schema": "TERRAFORMER-TOPOLOGYS/1",
+  "kind": "topology",
+  "authorityGranted": false,
+  "records": [
+    {
+      "id": "system.terraformer.topology",
+      "source": "terraformer.js",
+      "executable": "terraformer.topology.js",
+      "status": "registered",
+      "authorityGranted": false
+    }
+  ],
+  "types": [
+    "Busline",
+    "Chain",
+    "Ring",
+    "Grid",
+    "Mesh",
+    "Matrix",
+    "Bridge",
+    "Path",
+    "Lane",
+    "Track",
+    "Route",
+    "Rail",
+    "Pattern",
+    "Transmission",
+    "Connection"
+  ],
+  "typeSemantics": {
+    "Bridge": "connection topology classification; does not itself authorize bridging",
+    "Path": "traversal topology classification; does not itself authorize traversal",
+    "Lane": "bounded path-channel topology classification; generic topology realized through admitted lane systems",
+    "Route": "ordered path-selection topology classification; does not itself authorize routing",
+    "Pattern": "recurring or structured arrangement topology classification; does not itself authorize replication, execution, or control",
+    "Busline": "shared linear passage topology; may later be realized logically or physically but does not itself assert hardware, signaling, connectivity, access, execution, or authority",
+    "Transmission": "passage topology describing a transmission-oriented passage structure; does not itself perform or authorize transmission",
+    "Connection": "passage topology describing a connection-oriented passage structure; does not itself establish or authorize connectivity",
+    "Track": "defined passage course/topology classification; does not itself authorize traversal, routing, execution, persistence, or control",
+    "Rail": "guided passage topology classification; does not itself assert physical railway infrastructure or authorize traversal, routing, execution, persistence, or control"
+  },
+  "topologyTypes": [
+    {
+      "id": 0,
+      "name": "Passage",
+      "point": 0,
+      "status": "admitted",
+      "authorityGranted": false,
+      "semantics": "zero-point topology type governing passage structures; classification only and does not itself grant traversal, transmission, connection, access, execution, persistence, or authority",
+      "members": [
+        "Busline",
+        "Chain",
+        "Ring",
+        "Grid",
+        "Mesh",
+        "Matrix",
+        "Bridge",
+        "Path",
+        "Lane",
+        "Track",
+        "Route",
+        "Rail",
+        "Pattern",
+        "Transmission",
+        "Connection"
+      ]
+    }
+  ],
+  "canonicalTypeRelationship": {
+    "system": "Topology",
+    "typeOf": "System",
+    "typeZero": "Passage",
+    "typeZeroPoint": 0,
+    "relationshipRegistry": "terraformer.systemtypes.json"
+  },
+  "version": "0.48.43",
+  "reconciliation": {
+    "pass": "TOPOLOGY_RECONCILIATION_PASS_I",
+    "passageFamilyVerified": true,
+    "passageOwner": "terraformer.passage.js",
+    "passageRegistry": "terraformer.passages.json",
+    "identityHierarchyIsNotOperationalTopology": true,
+    "typeHierarchyIsNotOperationalTopology": true,
+    "missingParentDependencies": [
+      {
+        "parentUri": "terraformer://system/astronomical/",
+        "childReferences": 1,
+        "terminal": "astronomical",
+        "disposition": "UNRESOLVED_STRUCTURAL_NAMESPACE"
+      },
+      {
+        "parentUri": "terraformer://system/business/",
+        "childReferences": 1,
+        "terminal": "business",
+        "disposition": "ESTABLISHED_OWNER_MISSING_CANONICAL_ENTITY"
+      },
+      {
+        "parentUri": "terraformer://system/chat/bridge/",
+        "childReferences": 2,
+        "terminal": "bridge",
+        "disposition": "ESTABLISHED_OWNER_MISSING_CANONICAL_ENTITY"
+      },
+      {
+        "parentUri": "terraformer://system/data/",
+        "childReferences": 1,
+        "terminal": "data",
+        "disposition": "ESTABLISHED_OWNER_MISSING_CANONICAL_ENTITY"
+      },
+      {
+        "parentUri": "terraformer://system/domain/",
+        "childReferences": 1,
+        "terminal": "domain",
+        "disposition": "ESTABLISHED_OWNER_MISSING_CANONICAL_ENTITY"
+      },
+      {
+        "parentUri": "terraformer://system/language/",
+        "childReferences": 26,
+        "terminal": "language",
+        "disposition": "ESTABLISHED_OWNER_MISSING_CANONICAL_ENTITY"
+      },
+      {
+        "parentUri": "terraformer://system/language/machine/",
+        "childReferences": 1,
+        "terminal": "machine",
+        "disposition": "ESTABLISHED_OWNER_MISSING_CANONICAL_ENTITY"
+      },
+      {
+        "parentUri": "terraformer://system/network/",
+        "childReferences": 6,
+        "terminal": "network",
+        "disposition": "ESTABLISHED_OWNER_MISSING_CANONICAL_ENTITY"
+      },
+      {
+        "parentUri": "terraformer://system/platform/",
+        "childReferences": 4,
+        "terminal": "platform",
+        "disposition": "ESTABLISHED_OWNER_MISSING_CANONICAL_ENTITY"
+      },
+      {
+        "parentUri": "terraformer://system/program/",
+        "childReferences": 2,
+        "terminal": "program",
+        "disposition": "ESTABLISHED_OWNER_MISSING_CANONICAL_ENTITY"
+      },
+      {
+        "parentUri": "terraformer://system/red-hat/",
+        "childReferences": 4,
+        "terminal": "red-hat",
+        "disposition": "NONCANONICAL_COMPOSITE_PARENT_PROJECTION"
+      },
+      {
+        "parentUri": "terraformer://system/space-agency/",
+        "childReferences": 5,
+        "terminal": "space-agency",
+        "disposition": "NONCANONICAL_COMPOSITE_PARENT_PROJECTION"
+      },
+      {
+        "parentUri": "terraformer://system/space-provider/",
+        "childReferences": 1,
+        "terminal": "space-provider",
+        "disposition": "NONCANONICAL_COMPOSITE_PARENT_PROJECTION"
+      },
+      {
+        "parentUri": "terraformer://system/terraformer/",
+        "childReferences": 6,
+        "terminal": "terraformer",
+        "disposition": "ESTABLISHED_OWNER_MISSING_CANONICAL_ENTITY"
+      },
+      {
+        "parentUri": "terraformer://system/tool/",
+        "childReferences": 5,
+        "terminal": "tool",
+        "disposition": "ESTABLISHED_OWNER_MISSING_CANONICAL_ENTITY"
+      }
+    ],
+    "authorityGranted": false
+  },
+  "reconciliationPassII": {
+    "oneWordCanonicalParentUrisNormalized": 10,
+    "remainingParentReferences": 14,
+    "remainingUniqueParentNamespaces": 6,
+    "nestedOneWordNamespaceProjections": 2,
+    "compositeNamespaceProjections": 3,
+    "unresolvedStructuralNamespaces": 1,
+    "passageForwardInverseConsistent": true,
+    "passageMemberCount": 15,
+    "operationalTopologyEdgesNotInferredFromUriHierarchy": true,
+    "authorityGranted": false
+  },
+  "reconciliationPassIII": {
+    "typeRelationships": {
+      "typeOf": 743,
+      "inverseMissing": 0,
+      "status": "VERIFIED_FORWARD_INVERSE"
+    },
+    "declaredNonTypeEdges": 167,
+    "passageFamilyNonTypeReferences": {
+      "bridge": 3,
+      "connection": 2
+    },
+    "explicitRoundTripRegistryRecords": 1,
+    "systemGraphBaseline": {
+      "declaredSystems": 1501,
+      "resolvedDirectedEdges": 1468,
+      "linkedSystems": 914,
+      "isolatedSystems": 587,
+      "linkCoverage": 60.89,
+      "stronglyConnectedComponents": 1442,
+      "roundTripComponents": 17,
+      "roundTripSystems": 76,
+      "roundTripCoverage": 5.06,
+      "largestRoundTripComponent": 11,
+      "weakComponents": 618,
+      "largestWeakComponent": 827
+    },
+    "namespaceEvidence": {
+      "astronomical": "DEFERRED_NAMESPACE_ONLY_NO_INDEPENDENT_EVIDENCE",
+      "red-hat": "NONCANONICAL_NAMESPACE_ONLY",
+      "space-agency": "NONCANONICAL_NAMESPACE_ONLY",
+      "space-provider": "NONCANONICAL_NAMESPACE_ONLY"
+    },
+    "principles": [
+      "typeOf membership is classification, not an operational edge",
+      "a declared directed relationship is not automatically invertible",
+      "URI ancestry is not operational topology",
+      "round-trip requires explicit return-path evidence"
+    ],
+    "authorityGranted": false
+  }
+}

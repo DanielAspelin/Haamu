@@ -1,0 +1,12 @@
+{
+  "schema": "TERRAFORMER-HALTS/1",
+  "kind": "halt-event",
+  "governedBy": "system.halting",
+  "declarativeCollection": true,
+  "createsSystem": false,
+  "membershipGrantsExecution": false,
+  "membershipGrantsMutation": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

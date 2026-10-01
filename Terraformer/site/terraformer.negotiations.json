@@ -1,0 +1,9 @@
+{
+  "schema": "TERRAFORMER-NEGOTIATIONS/1",
+  "systemId": "system.negotiation",
+  "authorityGranted": false,
+  "automaticExecution": false,
+  "records": [],
+  "roundTrip": "roundtrip.communication",
+  "roundTripRegistry": "terraformer.roundtrips.json"
+}

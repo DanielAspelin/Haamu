@@ -1,0 +1,14 @@
+{
+  "schema": "TERRAFORMER-CONCEPT-REGISTRY/1",
+  "version": "0.48.5",
+  "kind": "CONCEPT_REGISTRY",
+  "owner": "system.vector",
+  "concept": "Vector",
+  "singularOwner": "terraformer.vector.js",
+  "records": [],
+  "membershipGrantsAuthority": false,
+  "membershipGrantsExecution": false,
+  "membershipGrantsPersistence": false,
+  "automaticPopulation": false,
+  "qualification": "UNDER_CONDITIONAL_EXPERIMENT"
+}

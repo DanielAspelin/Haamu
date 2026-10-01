@@ -1,0 +1,69 @@
+{
+  "schema": "TERRAFORMER-POSITIONS/1",
+  "systemId": "system.position",
+  "authorityGranted": false,
+  "automaticExecution": false,
+  "records": [],
+  "reconciledProjections": [
+    {
+      "source": "terraformer.naturalizationposition.json",
+      "context": "NATURALIZATION_POSITION",
+      "data": {
+        "schema": "TERRAFORMER-NATURALIZATION-POSITION/1",
+        "version": "0.47.69",
+        "counts": {
+          "evidencedSingleWordSystemIdentities": 1580,
+          "explicitlyDefinedSystemIdentities": 1450,
+          "physicalBeforeThisPass": 1197,
+          "newCandidatePhysicalizations": 233,
+          "physicalDefinedAfterThisPass": 1425,
+          "candidateAfterThisPass": 473,
+          "referenceOnlyIdentities": 130,
+          "definedDeferredExternalOrMalformed": 25
+        },
+        "definedDeferred": [
+          "a",
+          "ad",
+          "addres",
+          "addressin",
+          "ag",
+          "android",
+          "aws",
+          "b",
+          "bitcoin",
+          "c",
+          "chatgpt",
+          "cloudflare",
+          "codeberg",
+          "conf",
+          "dependson",
+          "facebook",
+          "gcp",
+          "github",
+          "gitlab",
+          "godaddy",
+          "ios",
+          "npm",
+          "openai",
+          "paypal",
+          "proton"
+        ],
+        "rule": "Explicit definition is sufficient for Candidate physicalization, not for canonical naturalization.",
+        "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+        "authorityGranted": false,
+        "flow": {
+          "candidateBefore": 473,
+          "evidenceNaturalized": 18,
+          "candidateAfter": 455,
+          "normalizationSystem": true,
+          "naturalizationSystem": true,
+          "tokenSystem": true,
+          "tokenizationSystem": true,
+          "establishedFunctionPhysicalProjections": 1
+        }
+      },
+      "migrationVersion": "0.48.30",
+      "dataLoss": false
+    }
+  ]
+}

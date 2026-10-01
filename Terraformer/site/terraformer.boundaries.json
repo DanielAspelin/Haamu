@@ -1,0 +1,1096 @@
+{
+  "$schema": "terraformer.registry/boundaries/3",
+  "version": "0.47.34",
+  "governedBy": "terraformer.boundary.js",
+  "kind": "BOUNDARY_REGISTRY",
+  "types": [
+    "SYSTEM_BOUNDARY",
+    "PROJECT_BOUNDARY",
+    "PROGRAM_BOUNDARY",
+    "APPLICATION_BOUNDARY",
+    "PLATFORM_BOUNDARY",
+    "COMMON_BOUNDARY",
+    "INTERNET_BOUNDARY",
+    "FILE_BOUNDARY",
+    "USER_BOUNDARY",
+    "MACHINE_BOUNDARY",
+    "GROUP_BOUNDARY",
+    "DIMENSION_BOUNDARY",
+    "HOSTING_BOUNDARY",
+    "FARMING_BOUNDARY",
+    "POOLING_BOUNDARY",
+    "RESOURCING_BOUNDARY",
+    "PUBLICITY_BOUNDARY",
+    "PRIVACY_BOUNDARY"
+  ],
+  "logicalContainment": [
+    "SYSTEM",
+    "PROJECT",
+    "PROGRAM",
+    "APPLICATION"
+  ],
+  "orthogonal": [
+    "PLATFORM",
+    "COMMON",
+    "INTERNET",
+    "FILE",
+    "USER",
+    "MACHINE",
+    "GROUP",
+    "DIMENSION",
+    "HOSTING",
+    "FARMING",
+    "POOLING",
+    "RESOURCING",
+    "PUBLICITY",
+    "PRIVACY"
+  ],
+  "boundarySemantics": {
+    "USER": "identity/governance scope; no authority by declaration",
+    "MACHINE": "machine/runtime-host scope; no hardware or OS authority by declaration",
+    "GROUP": "grouping/membership scope; no membership or permission by declaration",
+    "DIMENSION": "dimensional classification scope; no state or qualification by declaration",
+    "HOSTING": "hosting scope; hosting does not imply farming, pooling, resourcing, publicity, persistence, deployment, network exposure, or authority",
+    "FARMING": "coordinated work/resource scope; farming does not imply hosting, pooling, resourcing, publicity, persistence, background execution, or authority",
+    "POOLING": "resource aggregation scope; pooling is private by default and does not imply sharing, hosting, farming, resourcing, publicity, persistence, execution, or authority",
+    "RESOURCING": "resource supply/assignment scope; resourcing does not imply ownership, hosting, farming, pooling, publicity, persistence, execution, or authority",
+    "PUBLICITY": "admitted public exposure/projection scope; publicity requires an explicit admitted transition and does not arise from hosting, farming, pooling, or resourcing",
+    "PRIVACY": "restricted exposure/non-disclosure scope; privacy does not itself grant authority and an authorized public transition must cross the publicity/privacy boundary explicitly"
+  },
+  "fileBoundary": {
+    "memberCount": 90,
+    "hashAlgorithm": "SHA-256",
+    "selfDigestRule": "Canonical JSON with terraformer.boundaries.json sha256 field set to null; UTF-8 JSON.stringify output; no trailing newline.",
+    "authority": false
+  },
+  "files": [
+    {
+      "id": "file.terraformer.allocation.js",
+      "name": "terraformer.allocation.js",
+      "role": "JAVASCRIPT_MONOLITH",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "e0b222c466f19d10f165c27da802d6f62259da9264173694eb32bd8b54c55770",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.api.js",
+      "name": "terraformer.api.js",
+      "role": "JAVASCRIPT_MONOLITH",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "c1a72c245cdf9f9039783097025acad1b4f78123aa1bb6c49cc965479a0a4669",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.application.js",
+      "name": "terraformer.application.js",
+      "role": "JAVASCRIPT_MONOLITH",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "71debaea90820bae624ab30ffdb7b8f4dedc66d6d09721b769279831040c0ab8",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.applications.json",
+      "name": "terraformer.applications.json",
+      "role": "DECLARATIVE_REGISTRY",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "027ed8b914c9e2ceaf3b5abd18a03583b8a0583a1a661f15d02528971e996e01",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.audio.js",
+      "name": "terraformer.audio.js",
+      "role": "JAVASCRIPT_MONOLITH",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "9af33f2a2e070cab012d4eb1c66bec3fdf67fe7782b93b11acfcf89c50011d6d",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.automation.js",
+      "name": "terraformer.automation.js",
+      "role": "JAVASCRIPT_MONOLITH",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "b58a19360cde3cdc5591cb881743a943fb6fb8c4ea950a3e66a929a914d5b23f",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.automations.json",
+      "name": "terraformer.automations.json",
+      "role": "DECLARATIVE_REGISTRY",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "17ab7d98295692ee78845e2c7a2c18658620a48cff9f9e8e2a4e7df7a8083e29",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.automators.json",
+      "name": "terraformer.automators.json",
+      "role": "DECLARATIVE_REGISTRY",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "c3472f68e6d0efc107eb1c0fb385bb44b79c49954000307ef00033bb677f561e",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.behaviour.js",
+      "name": "terraformer.behaviour.js",
+      "role": "JAVASCRIPT_MONOLITH",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "5c8452faedea93615df77cc9dece21e1802666ff8b214e4d50e0fe793b5909c0",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.boundaries.json",
+      "name": "terraformer.boundaries.json",
+      "role": "DECLARATIVE_REGISTRY",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "e96c5c67b4d8f916f10982af8b65282af94da4b635e39728119499e2e220dc56",
+      "integrity": "CANONICAL_SELF_DIGEST",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.boundary.js",
+      "name": "terraformer.boundary.js",
+      "role": "JAVASCRIPT_MONOLITH",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "19465da4f576ec1a704c35a2136aeb0699dec4dd82a031858cf34653bc420b9f",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.common.js",
+      "name": "terraformer.common.js",
+      "role": "JAVASCRIPT_MONOLITH",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "8aa1788c17a8e8f38e4c988363a53f4f1b6efff5db725a97069b6824a86c6124",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.condition.js",
+      "name": "terraformer.condition.js",
+      "role": "JAVASCRIPT_MONOLITH",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "59f1260bbfab4bcf90cb6e5d0972b1969dda5cebab9628a3cdf9a2df7ca4cef8",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.conditions.json",
+      "name": "terraformer.conditions.json",
+      "role": "DECLARATIVE_REGISTRY",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "7986b93e9649b07988d992fdb61d2ba771d4446aecab3a002c32e4d57e978dac",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.core.js",
+      "name": "terraformer.core.js",
+      "role": "JAVASCRIPT_MONOLITH",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "18bdf6e8d9fb2fcc2518899c3b8b3664778bdcfd22296d1f8502a5c74117c2d6",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.coverage.json",
+      "name": "terraformer.coverage.json",
+      "role": "DECLARATIVE_REGISTRY",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "23fbc3013e924bceda8f9bb8e6329408060ef49f604d6a88e9f983a7efcde1b6",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.csv.js",
+      "name": "terraformer.csv.js",
+      "role": "JAVASCRIPT_MONOLITH",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "89a1b69997174b047f999224915163b3e29c4fc700470bf5771afecff476a53d",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.desktop.js",
+      "name": "terraformer.desktop.js",
+      "role": "JAVASCRIPT_MONOLITH",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "5125764a119b82f50a44ae6924fac8982943d2752efd6ba1b5ff829f8a002fb7",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.dimension.js",
+      "name": "terraformer.dimension.js",
+      "role": "JAVASCRIPT_MONOLITH",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "82e13fa2ecfd5334a490684ec2fe1552813a61d20082953534b5c769c8fd72ed",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.dimensions.json",
+      "name": "terraformer.dimensions.json",
+      "role": "DECLARATIVE_REGISTRY",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "13752a9ca50b4ece44d33ffd9e8395744775107ea36b5c6ffd07cf02dce5fc4b",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.documents.json",
+      "name": "terraformer.documents.json",
+      "role": "DECLARATIVE_REGISTRY",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "c35117657b6c68a8c2dcd3bc5d29dffcc4766a88e90bdd0eac351744df562904",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.domain.js",
+      "name": "terraformer.domain.js",
+      "role": "JAVASCRIPT_MONOLITH",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "66fdaf76a3e6561b8938bc44447fc51728cab5b8b69fc1f5de58df08550c70b4",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.domains.json",
+      "name": "terraformer.domains.json",
+      "role": "DECLARATIVE_REGISTRY",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "4eef03b85a76be8468e557dd69fba5703af5d88a2948c4b3646ce8bde0b475b1",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.environments.json",
+      "name": "terraformer.environments.json",
+      "role": "DECLARATIVE_REGISTRY",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "70f643d5aa14ea100a14fb7142c515d9574942f8d4d04b5e662b59d37ed1199a",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.error.js",
+      "name": "terraformer.error.js",
+      "role": "JAVASCRIPT_MONOLITH",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "f708500652d4ac24ce5ac98cbde94ed13367914f587414d102029287f1ce5c19",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.errors.json",
+      "name": "terraformer.errors.json",
+      "role": "DECLARATIVE_REGISTRY",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "5be095b7f5afb162809af31c9322f68a3bd2d4fb4f61db2ca576b3f73155b661",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.exports.json",
+      "name": "terraformer.exports.json",
+      "role": "DECLARATIVE_REGISTRY",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "a4206c13a18691e699e8ed72e141aaf684dddcec2b374387572bca45ec49e20e",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.framework.js",
+      "name": "terraformer.framework.js",
+      "role": "JAVASCRIPT_MONOLITH",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "68cf3fb48ddfb4d053ab4e8f33618e60f46a36dffae0a19582be20560b816abc",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.frameworks.json",
+      "name": "terraformer.frameworks.json",
+      "role": "DECLARATIVE_REGISTRY",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "a653bd453692463bfc8eed4f366475c79d5a95d6f849098f0e78000d792c39c3",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.generation.js",
+      "name": "terraformer.generation.js",
+      "role": "JAVASCRIPT_MONOLITH",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "7f4cbd64e01806501e0fde9056c4dcabf9d6a7ffc36a5ea2dbf79e724422abd8",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.generations.json",
+      "name": "terraformer.generations.json",
+      "role": "DECLARATIVE_REGISTRY",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "ba9ae4272bb2960c369104135ed873e8162f3e8bca879bd4154761e1d23e1d91",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.generators.json",
+      "name": "terraformer.generators.json",
+      "role": "DECLARATIVE_REGISTRY",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "8197131ce83d3e0214bca17bd3a33b8e576c8d14779a5473c75b0ce312a00c8e",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.global.js",
+      "name": "terraformer.global.js",
+      "role": "JAVASCRIPT_MONOLITH",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "821fdc1b32f2aec02717d8a5ed27262e3a4fd9fa26a0766f04c7f7c1726adb27",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.health.js",
+      "name": "terraformer.health.js",
+      "role": "JAVASCRIPT_MONOLITH",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "d98c4289a2b91a3b0b9b744113784dc7c930a5a2db65878deb0018cb4d225ad7",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.history.json",
+      "name": "terraformer.history.json",
+      "role": "DECLARATIVE_REGISTRY",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "29164b74e7ab85590de0d81da16b617b47a0301b776e5e77988ded861bf4d27c",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.image.js",
+      "name": "terraformer.image.js",
+      "role": "JAVASCRIPT_MONOLITH",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "e0462554176ff766ec02229644ec1de492ec87efe60f42a80a516d4b23f23001",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.images.json",
+      "name": "terraformer.images.json",
+      "role": "DECLARATIVE_REGISTRY",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "36111d7ddfaaa306af8cedd47dcd794d20e95f39cd69149a1430a1768c4a9921",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.imports.json",
+      "name": "terraformer.imports.json",
+      "role": "DECLARATIVE_REGISTRY",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "86c898bff15666be5020948e31580c07b37b5030fd00c17ba5d847e5e880d765",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.internet.js",
+      "name": "terraformer.internet.js",
+      "role": "JAVASCRIPT_MONOLITH",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "fe1599b08e81d0cfb945a18715c86068e24b8cb1833c3684a15ebe3cdc868587",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.io.js",
+      "name": "terraformer.io.js",
+      "role": "JAVASCRIPT_MONOLITH",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "af6884b0526a670840e304727bcb2fa171babeb6d17b54330c75c16786cf382b",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.js",
+      "name": "terraformer.js",
+      "role": "JAVASCRIPT_MONOLITH",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "8ebea74565a0810353d1112c2327c576e07bc0ee0b0160dc409f077f6045af33",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.json.js",
+      "name": "terraformer.json.js",
+      "role": "JAVASCRIPT_MONOLITH",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "93607b4d5bcaf99bda382fcd4fd57856c54ada0b80d8d4b98dbe250c4b3335c7",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.layers.json",
+      "name": "terraformer.layers.json",
+      "role": "DECLARATIVE_REGISTRY",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "4763074aa6e9b031903ec5613dc63fd9b56494a1507b34f7ba2c37835551c383",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.libraries.json",
+      "name": "terraformer.libraries.json",
+      "role": "DECLARATIVE_REGISTRY",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "a40de4cac338df675821454792e86b5e6d9939f238d8773c84b8d8d4b600d9d5",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.library.js",
+      "name": "terraformer.library.js",
+      "role": "JAVASCRIPT_MONOLITH",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "c2666cf8009e96007e6d6bb871b0f12873cf6dd97b90acd5d226d065f08d1b08",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.linux.js",
+      "name": "terraformer.linux.js",
+      "role": "JAVASCRIPT_MONOLITH",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "b9125e74cefe1d8939ff2b7244c6cfffd2de5114b4696994c50f61896e98fced",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.local.js",
+      "name": "terraformer.local.js",
+      "role": "JAVASCRIPT_MONOLITH",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "fdeb2cbb693aed982c5b25eb1cd1f763f765bfb006352f00c2c80363d4705535",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.logs.json",
+      "name": "terraformer.logs.json",
+      "role": "DECLARATIVE_REGISTRY",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "a079613c0c953485071fd74840b82549a2ef7af4ef18986a59137686e10dd563",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.maps.json",
+      "name": "terraformer.maps.json",
+      "role": "DECLARATIVE_REGISTRY",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "d51fd5ef86a3f90edb23eed92a597d4ebe915c98ed039e19cd23754b4d50837e",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.mobile.js",
+      "name": "terraformer.mobile.js",
+      "role": "JAVASCRIPT_MONOLITH",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "54219d9d26986a6f6457c30395d6984952cb6ff98013f91a3290e62c76bcdf81",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.mode.js",
+      "name": "terraformer.mode.js",
+      "role": "JAVASCRIPT_MONOLITH",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "45df01780898d9a400aec499415540499f58ddebba7baa9fd5a788f2becdaf37",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.modes.json",
+      "name": "terraformer.modes.json",
+      "role": "DECLARATIVE_REGISTRY",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "0ed4f031664355606332ae15cc2b2d4ef9a1ec0ea2c65146f101b1fc7ed67519",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.network.js",
+      "name": "terraformer.network.js",
+      "role": "JAVASCRIPT_MONOLITH",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "eaaa2ef57047d3bdda35db5abe08e328caf3562252fcc7123a400da80ecf8ff2",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.networks.json",
+      "name": "terraformer.networks.json",
+      "role": "DECLARATIVE_REGISTRY",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "226db064961cd1f18471b2f0a311c665157e60e0a1ec95f4858934c1298bfa10",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.node.js",
+      "name": "terraformer.node.js",
+      "role": "JAVASCRIPT_MONOLITH",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "6d57df1bf2f6bbadf24b70796766b2e857d69bdfb2f7e07f57c413c4fcabbf94",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.nodejs.js",
+      "name": "terraformer.nodejs.js",
+      "role": "JAVASCRIPT_MONOLITH",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "9ee7d6db1d7f35fd10baa3cbbeaed112eb555305630addc01e78406afd60d5a2",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.nodes.json",
+      "name": "terraformer.nodes.json",
+      "role": "DECLARATIVE_REGISTRY",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "1b1d446ae9d183be54529f20595856e06c37e5bf14bce4b76931d5bb2fbb6eaf",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.object.js",
+      "name": "terraformer.object.js",
+      "role": "JAVASCRIPT_MONOLITH",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "7409547ff8b24dbbc50e11693a7b97e3e3e3de6ef040a00237b6566d7a093006",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.objects.json",
+      "name": "terraformer.objects.json",
+      "role": "DECLARATIVE_REGISTRY",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "c5bf5347558e567538b35df3b78d9cfb04730052138008a35503bfad6cb131cc",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.openaudio.js",
+      "name": "terraformer.openaudio.js",
+      "role": "JAVASCRIPT_MONOLITH",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "a9bcf18c8121f8f832c0c0c31394cc15804a844a1fa5da50de0a8520c91adfc4",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.persistence.js",
+      "name": "terraformer.persistence.js",
+      "role": "JAVASCRIPT_MONOLITH",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "2890390eb265565d8a4bbac31e208ba05880b1a520951fca77aa4cccc9f1aeb2",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.processing.js",
+      "name": "terraformer.processing.js",
+      "role": "JAVASCRIPT_MONOLITH",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "1dc1a5c89015d5084caaf5903c59d1fdb1a658f94fe0eb2ed3006c0b2b074b94",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.program.js",
+      "name": "terraformer.program.js",
+      "role": "JAVASCRIPT_MONOLITH",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "a981c377487ddc057b55876866bee55eb7573b1544342ba7e4c3fb6c05deea00",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.programs.json",
+      "name": "terraformer.programs.json",
+      "role": "DECLARATIVE_REGISTRY",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "5e6f8de6a18c802376293ab3d36c32a5ab39df96b31034d7d60448b510df5742",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.recordings.json",
+      "name": "terraformer.recordings.json",
+      "role": "DECLARATIVE_REGISTRY",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "8b4cfa25c5ba021586d511c9a5ce5fca7b12ea4e80ae91064c8ba273addb284c",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.records.json",
+      "name": "terraformer.records.json",
+      "role": "DECLARATIVE_REGISTRY",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "d583451c23fe4648e37e1a30c410b456b6b2f2c609af9b6138d155961999ecad",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.reporting.js",
+      "name": "terraformer.reporting.js",
+      "role": "JAVASCRIPT_MONOLITH",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "929fa67c83eeff7763db4da57140155ea785a828be2d7e6c6d703986a98cdb60",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.reports.json",
+      "name": "terraformer.reports.json",
+      "role": "DECLARATIVE_REGISTRY",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "497ba436abef4042108ef4b280012be37f52d0b53369145735dd91bf146dc53f",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.runtime.js",
+      "name": "terraformer.runtime.js",
+      "role": "JAVASCRIPT_MONOLITH",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "e05d5c11ea153656023627d7a0b04967be3757cc711e4d43855717ec0677e3ed",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.sites.json",
+      "name": "terraformer.sites.json",
+      "role": "DECLARATIVE_REGISTRY",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "11238bb084e88f8034ada409b794e566c34b585900e86715c45f3f50663b1a00",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.socket.js",
+      "name": "terraformer.socket.js",
+      "role": "JAVASCRIPT_MONOLITH",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "9e6ec2fd62f7c5b7fae350042cfd45ecd52298de3f7de84c2c625687e77f2e49",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.state.js",
+      "name": "terraformer.state.js",
+      "role": "JAVASCRIPT_MONOLITH",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "467f7e3e53f5df207096ddbbfa14c58998186e1daa26b885267c90e86fd5bfde",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.states.json",
+      "name": "terraformer.states.json",
+      "role": "DECLARATIVE_REGISTRY",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "e2690224ebf1d5573bb0ca3fd83860094cfc032a4293bc6ab5f58069fc58fa86",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.system.js",
+      "name": "terraformer.system.js",
+      "role": "JAVASCRIPT_MONOLITH",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "a36ae29fc0b5925aa4e26dc4e18a9412e78f2cdccbe50aca3ed9c8f456dadf1d",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.systems.json",
+      "name": "terraformer.systems.json",
+      "role": "DECLARATIVE_REGISTRY",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "69a9ad6af15c85a4a00cc6e03708de697d50bf7583488744a8f1d98287662f06",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.telegram.api.js",
+      "name": "terraformer.telegram.api.js",
+      "role": "JAVASCRIPT_MONOLITH",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "be3ae4b298398c8cf9c695722a698ceeabbe858251b841ecfcc95f82228c14fb",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.telegram.js",
+      "name": "terraformer.telegram.js",
+      "role": "JAVASCRIPT_MONOLITH",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "e4e83abe0902ea3960a2b7d5df860831424b6f9f36b888086332505388774daf",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.test.js",
+      "name": "terraformer.test.js",
+      "role": "JAVASCRIPT_MONOLITH",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "dce5e1f19074dbbfd3d49b3967c6a340ce8a07f917bc2a8a5a7ea1bcf53c5da2",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.tests.json",
+      "name": "terraformer.tests.json",
+      "role": "DECLARATIVE_REGISTRY",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "c8f66f242cfa34efaa9b2e6c11224936fd50d44e35c45097088440f7149f533c",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.text.js",
+      "name": "terraformer.text.js",
+      "role": "JAVASCRIPT_MONOLITH",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "c68b4223b8da747f867b762e5484b11ad9dcfa7ec60a20d1bf71fd440d915e06",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.transactions.json",
+      "name": "terraformer.transactions.json",
+      "role": "DECLARATIVE_REGISTRY",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "b6bfe5f9bfa818cf8224838de6c3fc209b31a09b9ed0ebca74b499fe87c2f517",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.type.js",
+      "name": "terraformer.type.js",
+      "role": "JAVASCRIPT_MONOLITH",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "e2deadc5ca69b2075266212a155d0e2c851213ed1ec63b228036fc35c1d1fac5",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.types.json",
+      "name": "terraformer.types.json",
+      "role": "DECLARATIVE_REGISTRY",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "0c07a043d1c6bbb4f4bab7d69e5a85e2fcd92538c442cbbd6f66e6dbedbacda5",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.users.json",
+      "name": "terraformer.users.json",
+      "role": "DECLARATIVE_REGISTRY",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "82a74ad7bce61796cd2e7aedd335a39a7f71c06b72024e22b2e9d328a02f18a0",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.uuid.js",
+      "name": "terraformer.uuid.js",
+      "role": "JAVASCRIPT_MONOLITH",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "16123658bba68c746b5d1ce5eb7b5b08c259c082ab3b1292618cd0db50f6a015",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.uuids.json",
+      "name": "terraformer.uuids.json",
+      "role": "DECLARATIVE_REGISTRY",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "ce48edf38eb576a5e76ac25522c70d1968819eda16a321eb3adaf469a5bbde9f",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.video.js",
+      "name": "terraformer.video.js",
+      "role": "JAVASCRIPT_MONOLITH",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "ccd278beb828abc3e2c168b2f2e1fb4c433a15bb02ae13387e34c028b62bd640",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.web.js",
+      "name": "terraformer.web.js",
+      "role": "JAVASCRIPT_MONOLITH",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "4c9bf48cbd2f3f08869123dce73a39b7c72e0a70d131433a00b5faa1f01357cd",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.whatsapp.api.js",
+      "name": "terraformer.whatsapp.api.js",
+      "role": "JAVASCRIPT_MONOLITH",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "bb95784b616047e75e612221812d1fa694a84319ab7a99337cf4271f047040c2",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    },
+    {
+      "id": "file.terraformer.whatsapp.js",
+      "name": "terraformer.whatsapp.js",
+      "role": "JAVASCRIPT_MONOLITH",
+      "boundary": "FILE_BOUNDARY",
+      "sha256": "72faa033b248285ecbe7a758d5441c6c2627684955c35d8370393e9e22bfcb91",
+      "integrity": "FULL_FILE_SHA256",
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+      "authority": false
+    }
+  ],
+  "authority": false,
+  "owner": "system.boundary",
+  "dimensionPropagation": {
+    "governedBy": "terraformer.dimension.js",
+    "eligibleBoundaryKinds": [
+      "SYSTEM",
+      "PROJECT",
+      "PROGRAM",
+      "APPLICATION",
+      "PLATFORM",
+      "COMMON",
+      "INTERNET",
+      "FILE",
+      "USER",
+      "MACHINE",
+      "GROUP",
+      "DIMENSION"
+    ],
+    "defaultValue": "UNSET",
+    "selection": "EXPLICIT_SCOPED",
+    "authority": false
+  },
+  "responsibilityMigration": {
+    "version": "0.44.30",
+    "predecessor": "v0.44.21",
+    "policy": "CANONICAL_SYSTEM_RECONCILIATION_PLUS_CONTENT_MEDIA_OBJECT_NODE_NATURALIZATION",
+    "authority": false,
+    "v04423": {
+      "source": "terraformer.js",
+      "destination": "terraformer.reporting.js",
+      "systems": [
+        "system.identification",
+        "system.reporting",
+        "system.logging",
+        "system.transaction"
+      ],
+      "method": "COHESIVE_SOURCE_MIGRATION",
+      "authority": false
+    },
+    "v04424": {
+      "source": "terraformer.js",
+      "destination": "canonical Terraformer distribution root",
+      "system": "system.self-placement",
+      "method": "STAGED_COMPLETE_MODULAR_DISTRIBUTION_PLACEMENT",
+      "recovery": "predecessor members retained in timestamped backup directory when replaced",
+      "authority": false
+    },
+    "v04426": {
+      "subject": "terraformer.uuids.json",
+      "governor": "terraformer.js#crypto.randomUUID",
+      "status": "REGISTRY_NATURALIZED_STANDALONE_EXECUTABLE_EXTRACTION_PENDING",
+      "authority": false
+    },
+    "v04427": {
+      "source": "terraformer.js direct node:crypto.randomUUID call sites",
+      "destination": "terraformer.uuid.js",
+      "system": "system.uuid",
+      "method": "COMPATIBILITY_INTERFACE_EXTRACTION_AND_CALLSITE_ROUTING",
+      "routedCallsites": 26,
+      "consumers": [
+        "terraformer.js",
+        "terraformer.generation.js",
+        "terraformer.automation.js"
+      ],
+      "recovery": "v0.44.26",
+      "authority": false
+    },
+    "v04428": {
+      "source": "terraformer.js",
+      "destinations": [
+        "terraformer.generation.js",
+        "terraformer.automation.js"
+      ],
+      "systems": [
+        "system.generation",
+        "system.automation"
+      ],
+      "method": "DEPENDENCY_CLOSED_FABRIC_EXTRACTION",
+      "mainBytesBefore": 27725028,
+      "mainBytesAfter": 27718878,
+      "reductionBytes": 6150,
+      "recovery": "v0.44.27",
+      "authority": false
+    },
+    "v04429": {
+      "source": "terraformer.js UUID v4/v5 identity and reconciliation fabric",
+      "destination": "terraformer.uuid.js",
+      "system": "system.uuid",
+      "method": "DEPENDENCY_CLOSED_UUID_IDENTITY_EXTRACTION",
+      "preservedInMonolith": [
+        "number generator",
+        "UUID-aware generator successor extension",
+        "legacy global compatibility exports"
+      ],
+      "recovery": "v0.44.28",
+      "authority": false
+    },
+    "v04430": {
+      "source": "terraformer.js Number Generator + UUID-aware Generator successor extension",
+      "destination": "terraformer.generation.js",
+      "system": "system.generation",
+      "method": "CONTIGUOUS_GENERATOR_SUCCESSOR_EXTRACTION",
+      "preserves": [
+        "terraformer.uuid.js UUID mechanics authority",
+        "legacy global compatibility bindings",
+        "non-authority semantics"
+      ],
+      "recovery": "v0.44.29",
+      "authority": false
+    }
+  },
+  "platformTypeCanonicalization": {
+    "removedPhysicalOwners": [
+      "terraformer.windows.js",
+      "terraformer.macos.js",
+      "terraformer.ios.js",
+      "terraformer.android.js",
+      "terraformer.debian.js",
+      "terraformer.fedora.js"
+    ],
+    "canonicalOwner": "terraformer.platform.js",
+    "registry": "terraformer.platforms.json",
+    "retained": [
+      "terraformer.linux.js",
+      "terraformer.common.js"
+    ],
+    "windowsJsonPreservedAsUIWindowRegistry": true
+  }
+}

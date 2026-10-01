@@ -1,0 +1,17 @@
+{
+  "schema": "TERRAFORMER-SPECIFICATIONS/1",
+  "systemId": "system.specification",
+  "authorityMode": "external-reference-only",
+  "automaticGovernance": false,
+  "records": [],
+  "concept": "Specification",
+  "relationship": {
+    "producedBy": "system.specifier",
+    "through": "system.specifying",
+    "specifies": "system.system"
+  },
+  "relatedRegistries": [
+    "terraformer.specifiers.json",
+    "terraformer.specifyings.json"
+  ]
+}

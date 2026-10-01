@@ -1,0 +1,19 @@
+{
+  "schema": "TERRAFORMER-PLURAL-SET/1",
+  "version": "0.48.35",
+  "kind": "PLURAL_SET",
+  "concept": "baserunners",
+  "singular": "baserunner",
+  "owner": "terraformer.baserunner.js",
+  "records": [],
+  "pluralEvidence": {
+    "rule": "ENGLISH_INFLECTION",
+    "corpusAttested": false,
+    "status": "REJECTED_CANONICAL",
+    "normalization": "NO_CORPUS_PLURAL_AND_NO_INDEPENDENT_SEMANTIC_EVIDENCE"
+  },
+  "membershipGrantsAuthority": false,
+  "membershipGrantsExecution": false,
+  "qualification": "PRE_INFORMATIVE",
+  "canonical": false
+}

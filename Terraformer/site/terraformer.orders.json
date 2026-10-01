@@ -1,0 +1,11 @@
+{
+  "schema": "TERRAFORMER-ORDERS/1",
+  "purpose": "governed order rank definitions, memberships and evidence",
+  "authorityGranted": false,
+  "membershipGrantsAuthority": false,
+  "subjectMutation": false,
+  "records": [],
+  "owner": "system.order",
+  "ownerBindingVersion": "0.48.16",
+  "ownerBindingAuthorityGranted": false
+}

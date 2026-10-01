@@ -1,0 +1,7 @@
+{
+  "schema": "terraformer.registry/featurers/1",
+  "owner": "system.featurer",
+  "implementationOwner": "system.featuring",
+  "authority": false,
+  "entries": []
+}

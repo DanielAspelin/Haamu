@@ -1,0 +1,38 @@
+{
+  "schema": "TERRAFORMER-IDENTITIES/1",
+  "systemId": "system.identity",
+  "membershipGrantsAuthority": false,
+  "records": [],
+  "declarativeRegistry": true,
+  "membershipGrantsAuthentication": false,
+  "membershipGrantsAuthorization": false,
+  "membershipGrantsIssuanceAuthority": false,
+  "membershipGrantsExternalRegistration": false,
+  "membershipGrantsPersistence": false,
+  "subordinateHistoricalEvidence": {
+    "checkpoint": "v0.42.17",
+    "owner": "terraformer.identity.js",
+    "records": 856,
+    "reconstructionOwner": "terraformer.reconstruction.js",
+    "subordinationResolved": false,
+    "authorityCreated": false
+  },
+  "externalBoundaryHistoricalEvidence": {
+    "checkpoint": "v0.42.18",
+    "records": 481,
+    "identityOwner": "terraformer.identity.js",
+    "boundaryOwner": "terraformer.boundary.js",
+    "reconstructionOwner": "terraformer.reconstruction.js",
+    "resolved": false,
+    "externalAuthorityAbsorbed": false
+  },
+  "provenanceUnresolvedHistoricalEvidence": {
+    "checkpoint": "v0.42.16",
+    "records": 450,
+    "identityOwner": "terraformer.identity.js",
+    "provenanceOwner": "terraformer.provenance.js",
+    "reconstructionOwner": "terraformer.reconstruction.js",
+    "resolved": false,
+    "authorityCreated": false
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "schema": "TERRAFORMER-TIMELININGS/1",
+  "systemId": "system.timelining",
+  "membershipGrantsCapture": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsHistoryRewrite": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

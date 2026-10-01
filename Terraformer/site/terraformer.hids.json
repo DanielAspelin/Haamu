@@ -1,0 +1,8 @@
+{
+  "schema": "TERRAFORMER-HIDS/1",
+  "systemId": "system.hid",
+  "readOnlyDiscovery": true,
+  "automaticInvocation": false,
+  "authorityGranted": false,
+  "records": []
+}

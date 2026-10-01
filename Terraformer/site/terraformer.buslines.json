@@ -1,0 +1,12 @@
+{
+  "schema": "TERRAFORMER-BUSLINES/1",
+  "version": "0.47.49",
+  "kind": "BUSLINE_REGISTRY",
+  "owner": "system.busline",
+  "governedBy": "terraformer.busline.js",
+  "topologyType": "Passage",
+  "records": [],
+  "authorityGranted": false,
+  "automaticExecution": false,
+  "automaticPersistence": false
+}

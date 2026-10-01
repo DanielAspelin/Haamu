@@ -1,0 +1,16 @@
+{
+  "schema": "TERRAFORMER-SIGNERS/1",
+  "systemId": "system.signer",
+  "types": [
+    {
+      "id": "system.digital-signer",
+      "typeOf": "system.signer"
+    }
+  ],
+  "roleRegistry": true,
+  "membershipGrantsSigningAuthority": false,
+  "membershipProvesIdentity": false,
+  "membershipGrantsAuthorization": false,
+  "privateKeysStored": false,
+  "records": []
+}

@@ -1,0 +1,7 @@
+{
+  "schema": "TERRAFORMER-VERIFIERS/1",
+  "systemId": "system.verifier",
+  "membershipGrantsExecution": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

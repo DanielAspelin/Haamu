@@ -1,0 +1,9 @@
+{
+  "schema": "TERRAFORMER-TARGETS/1",
+  "systemId": "system.target",
+  "contextualRole": true,
+  "identityAuthority": false,
+  "authorizationAuthority": false,
+  "automaticTransmission": false,
+  "records": []
+}

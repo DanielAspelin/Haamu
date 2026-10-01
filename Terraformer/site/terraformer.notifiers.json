@@ -1,0 +1,10 @@
+{
+  "schema": "TERRAFORMER-NOTIFIERS/1",
+  "owner": "terraformer.notifier.js",
+  "canonical": "agent.notifier",
+  "kind": "agent-role",
+  "records": [],
+  "membershipGrantsAuthority": false,
+  "membershipGrantsExecution": false,
+  "qualificationInheritance": false
+}

@@ -1,0 +1,7 @@
+{
+  "schema": "TERRAFORMER-TICKETERS/1",
+  "systemId": "system.ticketer",
+  "membershipGrantsExecution": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

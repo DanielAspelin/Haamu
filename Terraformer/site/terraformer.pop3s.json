@@ -1,0 +1,10 @@
+{
+  "schema": "TERRAFORMER-POP3S/1",
+  "systemId": "system.pop3",
+  "membershipGrantsConnection": false,
+  "membershipGrantsMailOperation": false,
+  "membershipGrantsTunnel": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

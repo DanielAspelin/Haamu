@@ -1,0 +1,12 @@
+{
+  "schema": "TERRAFORMER-DUMPS/1",
+  "version": "0.47.55",
+  "kind": "DUMPS_REGISTRY",
+  "owner": "system.dump",
+  "governedBy": "terraformer.dump.js",
+  "family": "diagnostic-data",
+  "records": [],
+  "authorityGranted": false,
+  "automaticExecution": false,
+  "automaticPersistence": false
+}

@@ -1,0 +1,10 @@
+{
+  "schema": "TERRAFORMER-HALTINGS/1",
+  "systemId": "system.halting",
+  "declarativeRegistry": true,
+  "membershipGrantsExecution": false,
+  "membershipGrantsMutation": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

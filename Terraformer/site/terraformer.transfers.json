@@ -1,0 +1,12 @@
+{
+  "schema": "TERRAFORMER-TRANSFERS/1",
+  "systemId": "system.transfer",
+  "logicalByDefault": true,
+  "membershipGrantsRead": false,
+  "membershipGrantsWrite": false,
+  "membershipGrantsTransfer": false,
+  "membershipGrantsNetworkBinding": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

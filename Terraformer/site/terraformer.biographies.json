@@ -1,0 +1,11 @@
+{
+  "schema": "TERRAFORMER-BIOGRAPHIES/1",
+  "systemId": "system.biography",
+  "membershipGrantsIdentity": false,
+  "membershipGrantsAuthentication": false,
+  "membershipGrantsCollection": false,
+  "membershipGrantsPublication": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

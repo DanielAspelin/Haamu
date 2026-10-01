@@ -1,0 +1,7 @@
+{
+  "schema": "TERRAFORMER-ONLINES/1",
+  "systemId": "system.online",
+  "descriptive": true,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

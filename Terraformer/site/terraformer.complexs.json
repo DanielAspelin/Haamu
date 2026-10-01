@@ -1,0 +1,11 @@
+{
+  "schema": "TERRAFORMER-COMPLEXS/1",
+  "systemId": "system.complex",
+  "membershipGrantsAllocation": false,
+  "membershipGrantsConversion": false,
+  "membershipGrantsValidation": false,
+  "membershipGrantsExecution": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

@@ -1,0 +1,9 @@
+{
+  "schema": "terraformer.system/settings/1",
+  "owner": "system.settings",
+  "kind": "SETTINGS_SYSTEM_DECLARATION",
+  "setter": "system.setter",
+  "authority": false,
+  "persistence": "VOLATILE",
+  "qualification": "UNDER_CONDITIONAL_EXPERIMENT"
+}

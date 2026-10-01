@@ -1,0 +1,9 @@
+{
+  "schema": "TERRAFORMER-LAUNCHES/1",
+  "owner": "system.launch",
+  "executable": "terraformer.launch.js",
+  "purpose": "governed launch definitions, instances and evidence",
+  "authorityGranted": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

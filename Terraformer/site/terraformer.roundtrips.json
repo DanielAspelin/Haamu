@@ -1,0 +1,102 @@
+{
+  "schema": "TERRAFORMER-ROUNDTRIPS/1",
+  "version": "0.47.61",
+  "owner": "system.roundtrip",
+  "governedBy": "terraformer.roundtrip.js",
+  "records": [
+    {
+      "id": "roundtrip.communication",
+      "system": "system.communication",
+      "members": [
+        "system.code",
+        "system.instruction",
+        "system.command",
+        "system.signal",
+        "system.reporting",
+        "system.messaging",
+        "system.communication",
+        "system.correspondence",
+        "system.negotiation",
+        "system.agreement",
+        "system.disagreement",
+        "system.broadcasting",
+        "system.message"
+      ],
+      "edges": [
+        {
+          "from": "system.code",
+          "to": "system.instruction"
+        },
+        {
+          "from": "system.instruction",
+          "to": "system.command"
+        },
+        {
+          "from": "system.command",
+          "to": "system.signal"
+        },
+        {
+          "from": "system.signal",
+          "to": "system.reporting"
+        },
+        {
+          "from": "system.reporting",
+          "to": "system.messaging"
+        },
+        {
+          "from": "system.messaging",
+          "to": "system.communication"
+        },
+        {
+          "from": "system.communication",
+          "to": "system.correspondence"
+        },
+        {
+          "from": "system.correspondence",
+          "to": "system.negotiation"
+        },
+        {
+          "from": "system.negotiation",
+          "to": "system.agreement"
+        },
+        {
+          "from": "system.agreement",
+          "to": "system.broadcasting"
+        },
+        {
+          "from": "system.broadcasting",
+          "to": "system.message"
+        },
+        {
+          "from": "system.message",
+          "to": "system.code"
+        }
+      ],
+      "authorityGranted": false,
+      "automaticExecution": false,
+      "automaticTransmission": false,
+      "branches": [
+        {
+          "from": "system.negotiation",
+          "outcomes": [
+            "system.agreement",
+            "system.disagreement"
+          ],
+          "rejoin": "system.broadcasting",
+          "rule": "Outcome is evidence-driven; neither outcome grants consent, authority, legal effect, or execution."
+        }
+      ],
+      "responsibilities": "terraformer.responsibilities.json",
+      "responsibilityMode": "ORTHOGONAL_METADATA",
+      "interactions": [
+        {
+          "request": "system.request",
+          "response": "system.response",
+          "relation": "correlated-pair",
+          "rule": "A Request does not grant authority; a Response does not manufacture success or completion."
+        }
+      ]
+    }
+  ],
+  "authorityGranted": false
+}

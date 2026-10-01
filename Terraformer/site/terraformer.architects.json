@@ -1,0 +1,28 @@
+{
+  "schema": "terraformer.registry/architects/1",
+  "owner": "system.architect",
+  "entries": [
+    {
+      "id": "system.architect",
+      "name": "Architect",
+      "attribution": {
+        "name": "Daniel Alexander Aspelin",
+        "relation": "creator",
+        "roles": [
+          "Founder",
+          "Architect",
+          "Designer",
+          "Engineer",
+          "Developer"
+        ],
+        "scope": "Terraformer"
+      },
+      "rootControlDeliveryBoundary": true,
+      "authenticationGranted": false,
+      "authorizationGranted": false,
+      "machineRootGranted": false
+    }
+  ],
+  "authority": false,
+  "qualificationGranted": false
+}

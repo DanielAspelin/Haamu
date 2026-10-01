@@ -1,0 +1,14 @@
+{
+  "schema": "TERRAFORMER-COMMUNICATIONS/1",
+  "purpose": "governed communication definitions, lifecycle instances, transitions and evidence",
+  "authorityGranted": false,
+  "membershipGrantsAuthority": false,
+  "automaticConnection": false,
+  "automaticExecution": false,
+  "records": [],
+  "roundTrip": "roundtrip.communication",
+  "roundTripRegistry": "terraformer.roundtrips.json",
+  "owner": "system.communication",
+  "ownerBindingVersion": "0.48.16",
+  "ownerBindingAuthorityGranted": false
+}

@@ -1,0 +1,20 @@
+{
+  "schema": "TERRAFORMER-PLURAL-SET/1",
+  "version": "0.48.32",
+  "kind": "PLURAL_SET",
+  "concept": "lodgings",
+  "singular": "lodging",
+  "owner": "terraformer.lodging.js",
+  "records": [],
+  "pluralEvidence": {
+    "englishToken": "lodgings",
+    "singularEnglishToken": "lodging",
+    "rule": "REGULAR",
+    "corpusAttested": true,
+    "status": "ATTESTED",
+    "normalization": "CORPUS_ATTESTED_REGULAR_ENGLISH_PLURAL"
+  },
+  "membershipGrantsAuthority": false,
+  "membershipGrantsExecution": false,
+  "qualification": "UNDER_CONDITIONAL_EXPERIMENT"
+}

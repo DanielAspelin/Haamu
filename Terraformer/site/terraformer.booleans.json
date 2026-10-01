@@ -1,0 +1,11 @@
+{
+  "schema": "TERRAFORMER-BOOLEANS/1",
+  "systemId": "system.boolean",
+  "membershipGrantsAllocation": false,
+  "membershipGrantsConversion": false,
+  "membershipGrantsValidation": false,
+  "membershipGrantsExecution": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

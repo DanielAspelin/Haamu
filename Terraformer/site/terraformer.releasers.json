@@ -1,0 +1,11 @@
+{
+  "schema": "TERRAFORMER-RELEASERS/1",
+  "systemId": "system.releaser",
+  "declarativeRegistry": true,
+  "membershipGrantsHostAllocation": false,
+  "membershipGrantsGeneration": false,
+  "membershipGrantsSystemization": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

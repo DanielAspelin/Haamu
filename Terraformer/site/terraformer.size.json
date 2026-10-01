@@ -1,0 +1,7 @@
+{
+  "schema": "TERRAFORMER-SIZE/1",
+  "id": "system.size",
+  "typeOf": "system.sizing",
+  "meaning": "single bounded size value/parameter",
+  "authorityGranted": false
+}

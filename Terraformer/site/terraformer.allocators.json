@@ -1,0 +1,11 @@
+{
+  "schema": "TERRAFORMER-ALLOCATORS/1",
+  "systemId": "system.allocator",
+  "declarativeRegistry": true,
+  "membershipGrantsHostAllocation": false,
+  "membershipGrantsGeneration": false,
+  "membershipGrantsSystemization": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

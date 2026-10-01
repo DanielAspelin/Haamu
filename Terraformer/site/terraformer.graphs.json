@@ -1,0 +1,19 @@
+{
+  "schema": "TERRAFORMER-GRAPHS/1",
+  "version": "0.48.44",
+  "kind": "graph-set",
+  "owner": "terraformer.graph.js",
+  "records": [
+    {
+      "id": "system.graph",
+      "concept": "Graph",
+      "typeOf": "System",
+      "status": "registered",
+      "responsibility": "Govern graph identity and graph-structure representation. Graph membership does not itself prove operational topology or round-trip connectivity.",
+      "authorityGranted": false,
+      "qualification": "UNDER_CONDITIONAL_EXPERIMENT"
+    }
+  ],
+  "authorityGranted": false,
+  "qualification": "UNDER_CONDITIONAL_EXPERIMENT"
+}

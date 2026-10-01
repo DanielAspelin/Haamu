@@ -1,0 +1,7 @@
+{
+  "schema": "terraformer.registry/blockdevices/1",
+  "owner": "system.blockdevice",
+  "entries": [],
+  "authority": false,
+  "qualificationGranted": false
+}

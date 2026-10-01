@@ -1,0 +1,21 @@
+{
+  "schema": "TERRAFORMER-CLIENTS/1",
+  "systemId": "system.client",
+  "derivedPerSystem": true,
+  "privateByDefault": true,
+  "inertByDefault": true,
+  "admissionRequired": true,
+  "membershipGrantsNetworkActivity": false,
+  "membershipGrantsPortBinding": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": [],
+  "typeListing": {
+    "derived": true,
+    "deterministic": true,
+    "role": "client",
+    "perCanonicalSystem": true,
+    "networkExposure": false,
+    "authorityAmplification": false
+  }
+}

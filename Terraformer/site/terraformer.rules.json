@@ -1,0 +1,129 @@
+{
+  "schema": "TERRAFORMER-RULES/1",
+  "systemId": "system.rule",
+  "authorityGranted": false,
+  "automaticExecution": false,
+  "records": [],
+  "rendererRelationshipRules": [
+    {
+      "id": "rule.renderer.audio",
+      "rendererType": "renderer-type.audio",
+      "renderer": "system.audio-renderer",
+      "media": "system.audio",
+      "editing": "system.audio-editing",
+      "program": "system.audio-program",
+      "context": "system.audio-context"
+    },
+    {
+      "id": "rule.renderer.photo",
+      "rendererType": "renderer-type.photo",
+      "renderer": "system.photo-renderer",
+      "media": "system.photo",
+      "editing": "system.photo-editing",
+      "program": null,
+      "context": null,
+      "compatibleMedia": "system.image"
+    },
+    {
+      "id": "rule.renderer.video",
+      "rendererType": "renderer-type.video",
+      "renderer": "system.video-renderer",
+      "media": "system.video",
+      "editing": "system.video-editing",
+      "program": null,
+      "context": null
+    }
+  ],
+  "rendererRuleBoundary": {
+    "logical": true,
+    "automaticExecution": false,
+    "automaticRender": false,
+    "automaticPersistence": false,
+    "externalEffect": false,
+    "authorityGranted": false
+  },
+  "programTypeRelationshipRules": [
+    {
+      "id": "rule.program-type.audio",
+      "programType": "program-type.audio",
+      "program": "system.audio-program",
+      "domain": "system.audio",
+      "context": "system.audio-context",
+      "editing": "system.audio-editing",
+      "renderer": "system.audio-renderer"
+    },
+    {
+      "id": "rule.program-type.music",
+      "programType": "program-type.music",
+      "program": "system.music-program",
+      "domain": "system.music",
+      "context": "system.music-context"
+    },
+    {
+      "id": "rule.program-type.mixing",
+      "programType": "program-type.mixing",
+      "program": "system.mixing-program",
+      "domain": "system.mixing",
+      "context": "system.mixing-context",
+      "editing": "system.audio-editing",
+      "specialist": "system.mixer"
+    },
+    {
+      "id": "rule.program-type.synthesizer",
+      "programType": "program-type.synthesizer",
+      "program": "system.synthesizer-program",
+      "domain": "system.synthesizer",
+      "context": "system.audio-context",
+      "specialist": "system.synthesizer"
+    }
+  ],
+  "programTypeRuleBoundary": {
+    "logical": true,
+    "automaticExecution": false,
+    "automaticEditing": false,
+    "automaticRendering": false,
+    "automaticPersistence": false,
+    "externalEffect": false,
+    "authorityGranted": false
+  },
+  "programRelationshipClosure": {
+    "id": "rule.program.relationship-closure",
+    "type": "relationship-closure-rule",
+    "program": "system.program",
+    "programType": "system.program-type",
+    "requiresExplicitProgramRequirement": true,
+    "implicitProgramCreation": false,
+    "relationshipAuthority": "system.relationship",
+    "ruleAuthority": "system.rule",
+    "automaticExecution": false,
+    "automaticCreation": false,
+    "automaticPersistence": false,
+    "externalEffect": false,
+    "authorityAmplification": false
+  },
+  "linkingReconstructionRules": [
+    {
+      "id": "rule.linking.canonical",
+      "type": "linking-rule",
+      "process": "system.linking",
+      "actor": "system.linker",
+      "result": "system.link",
+      "endpointPolicy": "explicit",
+      "logical": true
+    },
+    {
+      "id": "rule.linking.boundary",
+      "type": "linking-boundary-rule",
+      "link": "system.link",
+      "wire": "system.wire",
+      "relationship": "system.relationship",
+      "reference": "system.reference",
+      "automaticConnect": false,
+      "automaticInvoke": false,
+      "automaticResolve": false,
+      "automaticMutation": false,
+      "automaticNetwork": false,
+      "authorityAmplification": false
+    }
+  ]
+}

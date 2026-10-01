@@ -1,0 +1,12 @@
+{
+  "schema": "TERRAFORMER-CARRIERS/1",
+  "systemId": "system.carrier",
+  "logicalByDefault": true,
+  "membershipGrantsRead": false,
+  "membershipGrantsWrite": false,
+  "membershipGrantsTransfer": false,
+  "membershipGrantsNetworkBinding": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

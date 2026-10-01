@@ -1,0 +1,11 @@
+{
+  "schema": "TERRAFORMER-RESULTS/1",
+  "version": "0.47.61",
+  "owner": "system.result",
+  "governedBy": "terraformer.result.js",
+  "family": "outcome",
+  "records": [],
+  "authorityGranted": false,
+  "qualificationGranted": false,
+  "automaticPersistence": false
+}

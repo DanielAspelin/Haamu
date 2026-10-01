@@ -1,0 +1,7 @@
+{
+  "schema": "TERRAFORMER-STATICANALYSISS/1",
+  "systemId": "system.static-analysis",
+  "authorityGranted": false,
+  "automaticExecution": false,
+  "records": []
+}

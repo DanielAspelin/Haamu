@@ -1,0 +1,7 @@
+{
+  "schema": "TERRAFORMER-FILERS/1",
+  "systemId": "system.filer",
+  "membershipGrantsAuthority": false,
+  "activeByDefault": false,
+  "records": []
+}

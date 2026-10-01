@@ -1,0 +1,9 @@
+{
+  "schema": "TERRAFORMER-LAYERINGS/1",
+  "systemId": "system.layering",
+  "declarativeRegistry": true,
+  "membershipGrantsExecution": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

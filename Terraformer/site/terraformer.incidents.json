@@ -1,0 +1,7 @@
+{
+  "schema": "TERRAFORMER-INCIDENTS/1",
+  "systemId": "system.incident",
+  "authorityGranted": false,
+  "automaticExecution": false,
+  "records": []
+}

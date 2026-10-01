@@ -1,0 +1,7 @@
+{
+  "schema": "TERRAFORMER-UPTIMES/1",
+  "systemId": "system.uptime",
+  "descriptive": true,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "terraformer.registry/network_registry/1",
+  "version": "0.44.21",
+  "kind": "NETWORK_REGISTRY",
+  "owner": "system.network",
+  "items": [
+    {
+      "id": "network.local",
+      "scope": "LOCAL",
+      "authority": false
+    }
+  ],
+  "authority": false,
+  "governedBy": "terraformer.network.js"
+}

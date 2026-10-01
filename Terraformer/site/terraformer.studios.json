@@ -1,0 +1,12 @@
+{
+  "schema": "TERRAFORMER-STUDIOS/1",
+  "systemId": "system.studio",
+  "declarativeRegistry": true,
+  "contextualWorkspace": true,
+  "membershipGrantsRegistration": false,
+  "membershipGrantsExecution": false,
+  "membershipGrantsHostMutation": false,
+  "membershipGrantsPersistence": false,
+  "membershipGrantsAuthority": false,
+  "records": []
+}

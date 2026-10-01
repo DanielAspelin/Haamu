@@ -1,0 +1,19 @@
+{
+  "$schema": "terraformer.registry/automation_registry/1",
+  "version": "0.44.28",
+  "kind": "AUTOMATION_REGISTRY",
+  "governedBy": "terraformer.automation.js",
+  "executableGovernor": "terraformer.automation.js",
+  "semantics": "Automation definitions/instances/runs; declaration does not schedule or execute work.",
+  "automations": [],
+  "authority": false,
+  "qualification": "UNDER_CONDITIONAL_EXPERIMENT",
+  "failureSemantics": "INVALID_OR_UNAUTHORIZED_INPUT_FAILS_CLOSED",
+  "provenance": {
+    "predecessor": "v0.44.24",
+    "checkpoint": "v0.44.25"
+  },
+  "owner": "system.automation",
+  "ownerBindingVersion": "0.48.16",
+  "ownerBindingAuthorityGranted": false
+}

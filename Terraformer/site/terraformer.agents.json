@@ -1,0 +1,11 @@
+{
+  "schema": "TERRAFORMER-AGENTS/1",
+  "owner": "system.agent",
+  "executable": "terraformer.agent.js",
+  "purpose": "governed agent identities, roles, capabilities and evidence",
+  "authorityGranted": false,
+  "membershipGrantsAuthority": false,
+  "identityGrantsAuthority": false,
+  "executionAuthorityGranted": false,
+  "records": []
+}

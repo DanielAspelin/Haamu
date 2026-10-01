@@ -1,0 +1,14 @@
+{
+  "schema": "TERRAFORMER-BROADCASTINGS/1",
+  "purpose": "governed broadcasting definitions, identities, capabilities and evidence",
+  "workerRoleEstablished": false,
+  "authorityGranted": false,
+  "membershipGrantsAuthority": false,
+  "automaticExecution": false,
+  "records": [],
+  "roundTrip": "roundtrip.communication",
+  "roundTripRegistry": "terraformer.roundtrips.json",
+  "owner": "system.broadcasting",
+  "ownerBindingVersion": "0.48.16",
+  "ownerBindingAuthorityGranted": false
+}

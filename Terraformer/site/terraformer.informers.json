@@ -1,0 +1,10 @@
+{
+  "schema": "TERRAFORMER-INFORMERS/1",
+  "owner": "terraformer.informer.js",
+  "canonical": "agent.informer",
+  "kind": "agent-role",
+  "records": [],
+  "membershipGrantsAuthority": false,
+  "membershipGrantsExecution": false,
+  "qualificationInheritance": false
+}

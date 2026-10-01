@@ -1,0 +1,13 @@
+{
+  "schema": "TERRAFORMER-FIRMWARES-REGISTRY/1",
+  "owner": "terraformer.firmware.js",
+  "records": [
+    {
+      "id": "system.firmware",
+      "type": "firmware-system",
+      "state": "integrated",
+      "authorityGranted": false
+    }
+  ],
+  "registryMembershipGrantsAuthority": false
+}
