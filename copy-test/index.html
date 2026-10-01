@@ -1,0 +1,873 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover,interactive-widget=resizes-content">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta name="haamu-build" content="0.165.0">
+  <meta name="description" content="Haamu — open community, technology and culture">
+  <title>Haamu</title>
+  <style>
+    @font-face{
+      font-family:'Rajdhani';
+      src:url('./fonts/rajdhani/Rajdhani-SemiBold.ttf') format('truetype');
+      font-style:normal;
+      font-weight:600;
+      font-display:swap;
+    }
+    :root{--haamu-sky:#071019;--haamu-sky-gradient:radial-gradient(circle at 50% 38%,#203349 0,#0c1723 35%,#050b12 78%);color-scheme:dark;background:var(--haamu-sky);color:#f5f7fa}
+    *{box-sizing:border-box}
+    html,body,#haamu-root{margin:0;width:100%;height:100%;min-width:0;min-height:0;overflow:hidden}
+    html,body{position:fixed;inset:0;width:100%;height:100%;max-width:100%;max-height:100%;touch-action:manipulation}
+    #haamu-root{position:absolute;inset:0;width:auto;height:auto;overflow:visible}
+    body{overscroll-behavior:none;background:var(--haamu-sky-gradient),var(--haamu-sky)}
+    button{font:inherit}
+    .haamu-interface{
+      --corner:clamp(52px,5.5vw,76px);
+      position:absolute;
+      inset:0;
+      overflow:visible;
+      width:auto;height:auto;min-width:0;min-height:0;display:grid;
+      grid-template-columns:var(--corner) 1fr var(--corner);
+      grid-template-rows:var(--corner) 1fr var(--corner);
+      grid-template-areas:
+        "tl top tr"
+        "left center right"
+        "bl bottom br";
+      gap:0;background:var(--haamu-sky-gradient),var(--haamu-sky);
+    }
+    .haamu-wordmark-layer{
+      position:fixed;inset:0;z-index:1;pointer-events:none;
+      display:flex;align-items:center;justify-content:center;
+      overflow:hidden;
+    }
+    /* Canonical Haamu text projection shared by mobile and desktop. */
+    .haamu-wordmark{
+      margin:0;
+      font-family:'Rajdhani',sans-serif;
+      font-size:clamp(39px,8.4vw,104px);
+      font-style:normal;font-weight:600;
+      line-height:1;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:#55aaff;
+      -webkit-text-fill-color:#55aaff;
+      -webkit-text-stroke:3px #fff;
+      paint-order:stroke fill;
+      filter:
+        drop-shadow(0 0 2px rgba(255,255,255,1))
+        drop-shadow(0 0 6px rgba(255,255,255,.95))
+        drop-shadow(0 0 12px rgba(190,225,255,.92))
+        drop-shadow(0 0 24px rgba(80,165,255,.78))
+        drop-shadow(0 0 42px rgba(35,105,225,.58));
+      text-shadow:
+        0 0 1px #fff,
+        0 0 4px rgba(255,255,255,1),
+        0 0 10px rgba(190,225,255,.95),
+        0 0 22px rgba(85,165,255,.82);
+      user-select:none;
+    }
+    /* Mobile keeps the qualified size. Desktop receives its own explicit
+       class from the runtime so CSS viewport/input heuristics cannot mask it. */
+    .haamu-interface.haamu-desktop .haamu-wordmark{
+      font-size:32px !important;
+      letter-spacing:.12em;
+    }
+    .corner{
+      --corner-rgb:0,0,0;
+      width:calc(100% - 1mm);height:calc(100% - 1mm);
+      opacity:.85;
+      border:0;margin:0;cursor:pointer;position:relative;
+      border-radius:10px;
+      background-color:rgba(var(--corner-rgb),.68);
+      background-image:linear-gradient(135deg,rgba(255,255,255,.30),rgba(255,255,255,.06) 42%,rgba(0,0,0,.10));
+      /* Body layer only. Aura is independently owned by ::before. */
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.42),inset 0 -1px 0 rgba(0,0,0,.18);
+      backdrop-filter:blur(14px) saturate(150%);
+      -webkit-backdrop-filter:blur(14px) saturate(150%);
+      z-index:3;isolation:isolate;transition:background-color .16s ease,box-shadow .16s ease,filter .16s ease,transform .12s ease;
+    }
+    /* Independent cold-blue aura layer. It does not participate in button
+       sizing/anchoring and can be tuned without changing control geometry. */
+    .corner::before{
+      content:"";
+      display:block;
+      position:absolute;
+      z-index:-1;
+      inset:-5px;
+      border-radius:14px;
+      pointer-events:none;
+      background:rgba(130,190,255,.14);
+      box-shadow:
+        0 0 10px 4px rgba(190,225,255,.74),
+        0 0 22px 8px rgba(85,165,255,.52),
+        0 0 38px 13px rgba(35,105,225,.36);
+      transform:none;
+      animation:none;
+      filter:none;
+    }
+    .corner:hover,.corner:focus-visible{
+      background-color:rgba(var(--corner-rgb),.82);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.62),0 0 22px rgba(var(--corner-rgb),.28);
+      filter:brightness(1.08);
+      outline:none;
+    }
+    .corner:active{transform:scale(.94)}
+    .corner{
+      animation:haamu-corner-breathe 4.8s linear infinite;
+    }
+    /* Four equal 1.2 s quarters: green -> yellow -> orange -> purple. */
+    .neon-green{animation-delay:0s}
+    .lemon-yellow{animation-delay:1.2s}
+    .orange{animation-delay:2.4s}
+    .purple{animation-delay:3.6s}
+    @keyframes haamu-corner-breathe{
+      0%,24%{
+        background-color:rgba(var(--corner-rgb),.68);
+        filter:brightness(1);
+      }
+      8%{
+        background-color:rgba(var(--corner-rgb),.42);
+        filter:brightness(.66);
+      }
+      16%{
+        background-color:rgba(var(--corner-rgb),.98);
+        filter:brightness(1.42);
+      }
+      25%,100%{
+        background-color:rgba(var(--corner-rgb),.68);
+        filter:brightness(1);
+      }
+    }
+    .corner.morphing{animation:haamu-corner-morph .58s cubic-bezier(.16,1,.3,1)}
+    @keyframes haamu-corner-morph{
+      0%{
+        transform:scale(1);border-radius:0;
+        background-color:rgba(var(--corner-rgb),.68);
+        filter:brightness(1);
+      }
+      34%{
+        transform:scale(.90);border-radius:22%;
+        background-color:rgba(var(--corner-rgb),.36);
+        filter:brightness(.58);
+        box-shadow:inset 0 0 18px rgba(0,0,0,.48);
+      }
+      70%{
+        transform:scale(1.05);border-radius:8%;
+        background-color:rgba(var(--corner-rgb),.96);
+        filter:brightness(1.48);
+        box-shadow:inset 0 1px 0 rgba(255,255,255,.72),0 0 28px rgba(var(--corner-rgb),.48);
+      }
+      100%{
+        transform:scale(1);border-radius:0;
+        background-color:rgba(var(--corner-rgb),.68);
+        filter:brightness(1);
+      }
+    }
+    /* Canonical corner snapping system.
+       Grid areas select the corner cell; physical inset properties snap each
+       control to that cell's actual corner without transforms or offsets. */
+    .corner[data-snap="top-left"]{align-self:start;justify-self:start;inset-block-start:0;inset-inline-start:0}
+    .corner[data-snap="top-right"]{align-self:start;justify-self:end;inset-block-start:0;inset-inline-end:0}
+    .corner[data-snap="bottom-left"]{align-self:end;justify-self:start;inset-block-end:0;inset-inline-start:0}
+    .corner[data-snap="bottom-right"]{align-self:end;justify-self:end;inset-block-end:0;inset-inline-end:0}
+    /* Grid-area ownership snaps each full-size control to its corner cell. */
+    .neon-green{grid-area:tl;align-self:start;justify-self:start;margin:0;border-radius:0 10px 10px 10px;--corner-rgb:0,0,0}
+    .lemon-yellow{grid-area:tr;align-self:start;justify-self:end;margin:0;border-radius:10px 0 10px 10px;--corner-rgb:0,0,0}
+    .purple{grid-area:bl;align-self:end;justify-self:start;margin:0;border-radius:10px 10px 10px 0;--corner-rgb:0,0,0}
+    .orange{grid-area:br;align-self:end;justify-self:end;margin:0;border-radius:10px 10px 0 10px;--corner-rgb:0,0,0}
+    .plate-layer{
+      position:absolute;
+      inset:0;
+      z-index:2;
+      pointer-events:none;
+    }
+    .corner-menu{
+      --plate-inline:calc(100% - (var(--corner) * .82) - 20px);
+      --plate-block:calc(100% - (var(--corner) * .82) - 32px);
+      position:absolute;
+      width:var(--plate-inline);height:var(--plate-block);
+      z-index:0;pointer-events:none;opacity:0;border-radius:12px;
+      background:linear-gradient(135deg,rgba(255,255,255,.126),rgba(255,255,255,.0315));
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.20),0 14px 30px rgba(0,0,0,.30);
+
+      backdrop-filter:blur(18px) saturate(145%);
+      -webkit-backdrop-filter:blur(18px) saturate(145%);
+      transition:
+        opacity .32s ease,
+        transform .52s cubic-bezier(.16,1,.3,1),
+        width .48s cubic-bezier(.22,1,.36,1),
+        height .48s cubic-bezier(.22,1,.36,1),
+        border-radius .36s ease;
+      will-change:transform,opacity;
+    }
+    .corner-menu[data-corner="top-left"]{top:12px;left:4px;right:auto;bottom:auto;transform-origin:top left;transform:scale(.18);background:linear-gradient(135deg,rgba(0,0,0,.96) 0,rgba(0,0,0,.82) 24px,rgba(0,0,0,.34) 48px,transparent 72px),linear-gradient(135deg,rgba(255,255,255,.126),rgba(255,255,255,.0315));box-shadow:0 14px 30px rgba(0,0,0,.30)}
+    .corner-menu[data-corner="top-right"]{top:12px;right:4px;left:auto;bottom:auto;transform-origin:top right;transform:scale(.18);background:linear-gradient(225deg,rgba(0,0,0,.96) 0,rgba(0,0,0,.82) 24px,rgba(0,0,0,.34) 48px,transparent 72px),linear-gradient(135deg,rgba(255,255,255,.126),rgba(255,255,255,.0315));box-shadow:0 14px 30px rgba(0,0,0,.30)}
+    .corner-menu[data-corner="bottom-left"]{bottom:12px;left:4px;right:auto;top:auto;transform-origin:bottom left;transform:scale(.18);background:linear-gradient(45deg,rgba(0,0,0,.96) 0,rgba(0,0,0,.82) 24px,rgba(0,0,0,.34) 48px,transparent 72px),linear-gradient(135deg,rgba(255,255,255,.126),rgba(255,255,255,.0315));box-shadow:0 -14px 30px rgba(0,0,0,.30)}
+    .corner-menu[data-corner="bottom-right"]{bottom:12px;right:4px;left:auto;top:auto;transform-origin:bottom right;transform:scale(.18);background:linear-gradient(315deg,rgba(0,0,0,.96) 0,rgba(0,0,0,.82) 24px,rgba(0,0,0,.34) 48px,transparent 72px),linear-gradient(135deg,rgba(255,255,255,.126),rgba(255,255,255,.0315));box-shadow:0 -14px 30px rgba(0,0,0,.30)}
+    .corner-menu.open{opacity:1;pointer-events:auto;transform:scale(1)}
+    .corner-menu.plate-restoring{
+      filter:brightness(.98);
+    }
+    /* Concurrent handoff: outgoing and incoming Plates animate during the
+       same interval, preserving each Plate's own corner transform origin. */
+    /* Outgoing authority must outrank platform-specific transition rules.
+       The class is applied at the same instant .open is removed, so transform,
+       dimensions and opacity begin together on both mobile and desktop. */
+    .corner-menu.plate-transition-out,
+    .haamu-desktop .corner-menu[data-platform="desktop"].plate-transition-out{
+      opacity:0;
+      transition:
+        opacity .34s linear,
+        transform .34s cubic-bezier(.4,0,.6,1),
+        width .34s cubic-bezier(.4,0,.6,1),
+        height .34s cubic-bezier(.4,0,.6,1),
+        border-radius .28s linear;
+    }
+    .corner-menu.plate-transition-in{
+      opacity:1;
+      filter:brightness(1);
+    }
+    /* Plate size remains automatic. Desktop gets one maximize/restore toggle
+       on the Plate corner that faces the center of the screen. */
+    .plate-state-toggle{
+      position:absolute;z-index:9;
+      width:44px;height:44px;padding:0;
+      /* Punched-through control: no painted perimeter. The Plate remains
+         continuous and only the cut/separator and glyph identify the control. */
+      border:0;
+      border-radius:0;
+      display:grid;place-items:center;pointer-events:auto;
+      background:transparent;
+      color:rgba(0,0,0,.78);
+      box-shadow:none;
+      backdrop-filter:none;
+      -webkit-backdrop-filter:none;
+      font:600 14px/1.2 'Rajdhani',sans-serif;cursor:pointer;
+    }
+    .plate-state-toggle:hover{background:transparent;box-shadow:none}
+    .plate-state-toggle{
+      color:rgba(0,0,0,.28)!important;
+      -webkit-text-fill-color:rgba(0,0,0,.28)!important;
+      -webkit-text-stroke:0;
+      text-shadow:0 1px 0 rgba(255,255,255,.46);
+      mix-blend-mode:normal;
+      letter-spacing:.04em;
+    }
+    .plate-state-toggle:focus-visible{outline:1px solid rgba(235,247,255,.50);outline-offset:-2px}
+    /* Only the corner pointing inward into the Plate is softened. */
+    .corner-menu[data-corner="top-left"] .plate-state-toggle{border-radius:7px 0 0 0}
+    .corner-menu[data-corner="top-right"] .plate-state-toggle{border-radius:0 7px 0 0}
+    .corner-menu[data-corner="bottom-left"] .plate-state-toggle{border-radius:0 0 0 7px}
+    .corner-menu[data-corner="bottom-right"] .plate-state-toggle{border-radius:0 0 7px 0}
+    .corner-menu[data-platform="mobile"] .plate-state-toggle{display:none!important}
+    /* The control occupies the Prompt track itself, outside content padding.
+       Its corner is always the Plate corner nearest the screen center. */
+    .corner-menu[data-platform="desktop"][data-corner="top-left"] .plate-state-toggle{right:0;bottom:0}
+    .corner-menu[data-platform="desktop"][data-corner="top-right"] .plate-state-toggle{left:0;bottom:0}
+    .corner-menu[data-platform="desktop"][data-corner="bottom-left"] .plate-state-toggle{right:0;top:0}
+    .corner-menu[data-platform="desktop"][data-corner="bottom-right"] .plate-state-toggle{left:0;top:0}
+    .corner-menu[data-platform="desktop"] .plate-state-toggle{visibility:visible!important;opacity:1!important}
+    /* Explicit Prompt/Button split: the toggle owns its own 44px cell and a
+       single separator edge; the Prompt terminates before that cell. */
+    /* Toggle is a nested 44px Prompt-track cell, not an overlay.
+       Reserve it in the Prompt row so Prompt and toggle meet edge-to-edge. */
+    .corner-menu[data-platform="desktop"] .plate-prompt-wrap{box-sizing:border-box}
+    .corner-menu[data-platform="desktop"][data-corner$="-left"] .plate-prompt-wrap{width:calc(100% - 44px);margin-right:44px;padding:0}
+    .corner-menu[data-platform="desktop"][data-corner$="-right"] .plate-prompt-wrap{width:calc(100% - 44px);margin-left:44px;padding:0}
+    /* Accepted v0.137.9 Plate geometry and animation restored. */
+    .haamu-desktop .corner-menu[data-platform="desktop"]{
+      /* Owning-corner coordinates are invariant. Only dimensions animate. */
+      transition:
+        width .30s cubic-bezier(.22,1,.36,1),
+        height .30s cubic-bezier(.22,1,.36,1),
+        opacity .20s ease;
+    }
+    .haamu-desktop .corner-menu[data-platform="desktop"][data-plate-state="maximized"]{
+      /* Maximize changes dimensions only. Corner-specific normal anchors below
+         remain the sole positioning authority. */
+      width:calc(100vw - var(--corner) - 38px);
+      height:calc(100vh - var(--corner) - 46px);
+    }
+    /* Every platform plate owns an invisible visual matrix/table.
+       Only its outward prompt row is projected; matrix/table lines remain invisible. */
+    .plate-matrix{position:absolute;inset:0;display:grid;grid-template-rows:auto 1fr;pointer-events:none}
+    .plate-table{display:contents}
+    .plate-row{display:grid;grid-template-columns:1fr;min-width:0;min-height:0}
+    .plate-prompt-row{align-items:center}
+    .plate-prompt{
+      box-sizing:border-box;width:100%;min-width:0;
+      border:0!important;outline:0!important;border-radius:0!important;
+      background:transparent!important;
+      color:rgba(235,247,255,.96);
+      -webkit-text-fill-color:rgba(235,247,255,.96);
+      box-shadow:none!important;
+      backdrop-filter:none;-webkit-backdrop-filter:none;
+      font:600 14px/1.2 'Rajdhani',sans-serif;letter-spacing:.04em;
+      pointer-events:auto;
+      appearance:none;-webkit-appearance:none;
+    }
+    /* Mobile browsers may inject native input chrome. Suppress every prompt
+       edge explicitly so the prompt remains visually part of its Plate. */
+    @media(max-width:900px){
+      .plate-prompt,.corner-menu.open .plate-prompt{
+        border:0!important;outline:0!important;border-radius:0!important;
+        box-shadow:none!important;background:transparent!important;
+        appearance:none!important;-webkit-appearance:none!important;
+        text-decoration:none!important;
+        text-decoration-line:none!important;
+        -webkit-text-decoration:none!important;
+        -webkit-text-decoration-line:none!important;
+        text-decoration-color:transparent!important;
+        -webkit-text-decoration-color:transparent!important;
+        text-decoration-style:solid!important;
+        -webkit-text-decoration-style:solid!important;
+        -webkit-tap-highlight-color:transparent;
+        text-rendering:geometricPrecision;
+        -webkit-font-smoothing:antialiased;
+        white-space:pre-wrap!important;
+        overflow-wrap:anywhere!important;
+        word-break:break-word!important;
+        resize:none!important;
+        /* Keep the mobile caret in the same text box as the glyphs. */
+        line-height:17px!important;
+        padding:13px 12px!important;
+        margin:0!important;
+        vertical-align:top!important;
+        caret-color:rgba(235,247,255,.96);
+        -webkit-text-fill-color:rgba(235,247,255,.96)!important;
+        text-shadow:none!important;
+        text-emphasis:none!important;
+        -webkit-text-emphasis:none!important;
+        text-decoration-skip-ink:none!important;
+        width:100%!important;
+        max-width:100%!important;
+        min-width:0!important;
+      }
+      /* Android textarea must wrap inside the visible Prompt box. Prevent the
+         native editing surface from extending past the Plate edge. */
+      .corner-menu[data-platform="mobile"] .plate-prompt-wrap{
+        width:100%!important;
+        max-width:100%!important;
+        min-width:0!important;
+        overflow:hidden!important;
+      }
+      .corner-menu[data-platform="mobile"] .plate-prompt-row{
+        width:100%!important;
+        max-width:100%!important;
+        min-width:0!important;
+        overflow:hidden!important;
+      }
+    }
+    .corner-menu[data-corner^="top-"] .plate-prompt-row{align-self:start}
+    .corner-menu[data-corner^="bottom-"] .plate-matrix{grid-template-rows:1fr auto}
+    .corner-menu[data-corner$="-left"] .plate-prompt{text-align:left;margin:0 8px;width:calc(100% - 16px);padding:9px 12px}
+    .corner-menu[data-corner$="-right"] .plate-prompt{
+      direction:ltr !important;
+      text-align:left !important;
+      unicode-bidi:plaintext;
+      margin:0 8px;width:calc(100% - 16px);padding:9px 12px
+    }
+    .plate-prompt::placeholder{color:transparent!important;-webkit-text-fill-color:transparent;opacity:0!important}
+    .plate-prompt-wrap{position:relative;display:block;width:100%;height:44px;z-index:5}
+    .plate-prompt-label{
+      position:absolute;left:20px;top:50%;transform:translateY(-50%);
+      z-index:7;display:block!important;visibility:visible!important;opacity:1!important;
+      color:rgba(0,0,0,.78)!important;-webkit-text-fill-color:rgba(0,0,0,.78)!important;
+      -webkit-text-stroke:0;
+      text-shadow:0 1px 0 rgba(255,255,255,.32);
+      mix-blend-mode:normal;
+      font:600 14px/1.2 'Rajdhani',sans-serif;letter-spacing:.04em;
+      pointer-events:none;white-space:nowrap;
+    }
+    .plate-prompt-wrap.has-value .plate-prompt-label{display:none!important}
+    /* Focus itself is editing intent: clear the SERVER/LOCAL/GLOBAL/CLIENT
+       label before the first glyph so the caret owns the initial text slot. */
+    .plate-prompt-wrap:focus-within .plate-prompt-label{display:none!important}
+    .plate-prompt-wrap .plate-prompt{position:relative;z-index:6}
+    .plate-prompt-projection,.plate-prompt-measure{display:none}
+    @media(max-width:900px){
+      /* Measurement mirror: same wrapping metrics as the native Prompt, but
+         never painted or exposed to pointer/accessibility interaction. */
+      .corner-menu[data-platform="mobile"] .plate-prompt-measure{
+        position:absolute!important;
+        left:-100000px!important;
+        top:0!important;
+        display:block!important;
+        box-sizing:border-box!important;
+        height:auto!important;
+        min-height:0!important;
+        padding:13px 12px!important;
+        border:0!important;
+        margin:0!important;
+        font:600 14px/17px 'Rajdhani',sans-serif!important;
+        letter-spacing:.04em!important;
+        white-space:pre-wrap!important;
+        overflow-wrap:anywhere!important;
+        word-break:break-word!important;
+        visibility:hidden!important;
+        pointer-events:none!important;
+      }
+      /* Canonical mobile Prompt/WebText authority.
+         Native textarea owns Input/IME; projection owns visible WebText. */
+      .corner-menu[data-platform="mobile"]{overflow:hidden!important}
+      .corner-menu[data-platform="mobile"] .plate-matrix,
+      .corner-menu[data-platform="mobile"] .plate-table,
+      .corner-menu[data-platform="mobile"] .plate-prompt-row{
+        max-width:100%!important;min-width:0!important;overflow:hidden!important;
+      }
+      .corner-menu[data-platform="mobile"] .plate-prompt-wrap{
+        position:relative!important;isolation:isolate!important;
+        width:100%!important;min-width:0!important;height:44px;
+        overflow:hidden!important;pointer-events:auto!important;
+      }
+      .corner-menu[data-platform="mobile"] .plate-prompt-projection{
+        position:absolute!important;inset:0!important;display:block!important;
+        box-sizing:border-box!important;width:100%!important;height:100%!important;
+        max-height:100%!important;padding:13px 12px!important;overflow:hidden!important;
+        contain:layout paint;z-index:3!important;pointer-events:none!important;
+        color:rgba(235,247,255,.96)!important;
+        -webkit-text-fill-color:rgba(235,247,255,.96)!important;
+        font:600 14px/17px 'Rajdhani',sans-serif!important;letter-spacing:.04em!important;
+      }
+      .corner-menu[data-platform="mobile"] .plate-prompt-text-area{container-type:inline-size}
+      .corner-menu[data-platform="mobile"] .plate-prompt-text-field{
+        position:static!important;display:block!important;box-sizing:border-box!important;
+        width:100%!important;min-width:0!important;height:auto;
+        min-height:17px!important;max-height:51px!important;padding:0!important;margin:0!important;
+        overflow:hidden!important;color:rgba(235,247,255,.96)!important;
+        -webkit-text-fill-color:rgba(235,247,255,.96)!important;
+        opacity:1!important;visibility:visible!important;pointer-events:none!important;
+      }
+      .corner-menu[data-platform="mobile"] .plate-prompt{
+        position:absolute!important;inset:0!important;width:100%!important;height:100%!important;
+        min-height:44px!important;padding:13px 12px!important;margin:0!important;z-index:2!important;
+        color:transparent!important;-webkit-text-fill-color:transparent!important;
+        caret-color:transparent!important;background:transparent!important;
+        pointer-events:auto!important;touch-action:manipulation!important;
+      }
+      .corner-menu[data-platform="mobile"] .plate-prompt-label{
+        z-index:4!important;pointer-events:none!important;
+      }
+      .corner-menu[data-platform="mobile"] .plate-prompt-projection-line{
+        display:block;box-sizing:border-box;pointer-events:none!important;
+        height:17px;line-height:17px;width:100%;white-space:pre;overflow:hidden;
+      }
+      /* Dedicated caret: position belongs to Text Field flow; animation owns
+         appearance only. Selection and IME authority remain native textarea. */
+      .corner-menu[data-platform="mobile"] .plate-prompt-caret{
+        display:inline-block;
+        width:1px;
+        height:17px;
+        margin:0 1px;
+        vertical-align:-3px;
+        background:rgba(255,255,255,1);
+        pointer-events:none!important;
+        transform-origin:center;
+        animation:haamu-prompt-caret-morph 1.35s cubic-bezier(.45,0,.55,1) infinite alternate;
+      }
+      .corner-menu[data-platform="mobile"] .plate-prompt-caret[hidden]{display:none!important;}
+      /* Continuous projected-caret morph. The caret never blinks, disappears,
+         or relinquishes its text-end geometry: only its visual material
+         transitions between luminous white and a punched-out glass state. */
+      @keyframes haamu-prompt-caret-morph{
+        0%{
+          opacity:1;
+          transform:scaleX(.72);
+          background:rgba(255,255,255,1);
+          box-shadow:0 0 5px rgba(255,255,255,.62);
+          border-radius:1px;
+        }
+        50%{
+          opacity:1;
+          transform:scaleX(1.18);
+          background:rgba(255,255,255,.56);
+          box-shadow:
+            inset 0 0 0 1px rgba(255,255,255,.92),
+            inset 0 0 4px rgba(7,16,25,.48),
+            0 0 4px rgba(255,255,255,.36);
+          border-radius:1px;
+        }
+        100%{
+          opacity:1;
+          transform:scaleX(1.65);
+          background:rgba(7,16,25,.20);
+          box-shadow:
+            inset 0 0 0 1px rgba(255,255,255,1),
+            inset 0 0 5px rgba(7,16,25,.82),
+            0 0 3px rgba(255,255,255,.24);
+          border-radius:2px;
+        }
+      }
+      /* The caret remains continuously visible when reduced motion is
+         requested; suppress motion rather than reverting to native blinking. */
+      @media(prefers-reduced-motion:reduce){
+        .corner-menu[data-platform="mobile"] .plate-prompt-caret{
+          animation:none!important;
+          opacity:1!important;
+          transform:scaleX(.72)!important;
+          background:rgba(255,255,255,1)!important;
+          box-shadow:0 0 5px rgba(255,255,255,.62)!important;
+        }
+
+      }
+    }
+    .corner-menu[data-platform="mobile"]{display:none}
+    .corner-menu[data-platform="desktop"]{display:block}
+    .haamu-mobile .corner-menu[data-platform="desktop"]{display:none}
+    .haamu-mobile .corner-menu[data-platform="mobile"]{display:block}
+    /* Integrated plate composition: Prompt owns input behavior, while Plate
+       owns its visual containment. The remaining matrix track is reserved for
+       generated Matrix/Grid/Mesh/WebText content. */
+    .corner-menu.open .plate-matrix{
+      --prompt-track-height:44px;
+      grid-template-rows:1fr var(--prompt-track-height);
+      padding:0;
+      margin:0;
+      outline:0;
+      box-shadow:none;
+      gap:0;
+    }
+    /* Prompt remains edge-integrated. Only the post-Prompt content track owns
+       adaptive internal clearance. Matrix/Grid/Mesh live inside this region. */
+    .plate-content-row{
+      min-width:0;
+      min-height:0;
+      overflow:hidden;
+      align-self:stretch;
+      justify-self:stretch;
+    }
+    .plate-content-region{
+      --plate-content-pad:clamp(3px,.65vmin,7px);
+      --plate-content-gap:clamp(1px,.28vmin,3px);
+      box-sizing:border-box;
+      width:100%;
+      height:100%;
+      min-width:0;
+      min-height:0;
+      margin:auto;
+      padding:var(--plate-content-pad);
+      display:grid;
+      place-self:center;
+      align-content:start;
+      justify-content:stretch;
+      gap:var(--plate-content-gap);
+      overflow:auto;
+      color:rgba(235,247,255,.96);
+      font:500 clamp(12px,1.5vmin,14px)/1.35 'Rajdhani',sans-serif;
+      letter-spacing:.02em;
+      white-space:pre-wrap;
+      overflow-wrap:anywhere;
+      word-break:break-word;
+      pointer-events:auto;
+    }
+    .plate-content-region:empty{overflow:hidden}
+    /* The content track is the plate-owned generation field. Matrix is the
+       governing layout; generated grids and meshes occupy this entire track. */
+    .corner-menu.open .plate-row:not(.plate-prompt-row){
+      min-width:0;min-height:0;width:100%;height:100%;
+      grid-template-columns:repeat(var(--plate-grid-columns,1),minmax(0,1fr));
+      grid-template-rows:repeat(var(--plate-grid-rows,1),minmax(0,1fr));
+    }
+    .corner-menu.open[data-corner^="bottom-"] .plate-matrix{
+      grid-template-rows:var(--prompt-track-height) 1fr;
+    }
+    .corner-menu.open[data-corner^="top-"] .plate-content-row{grid-row:1}
+    .corner-menu.open[data-corner^="bottom-"] .plate-content-row{grid-row:2}
+    .corner-menu.open .plate-prompt-row{
+      position:relative;
+      inset:auto;
+      display:grid;
+      height:44px;
+      min-height:44px;
+      box-sizing:border-box;
+      visibility:visible;
+      opacity:1;
+      transform:none;
+    }
+    .corner-menu.open[data-corner^="top-"] .plate-prompt-row{
+      grid-row:2;
+      align-self:stretch;
+      transform:none;
+    }
+    .corner-menu.open[data-corner^="bottom-"] .plate-prompt-row{
+      grid-row:1;
+      align-self:stretch;
+      transform:none;
+    }
+    .corner-menu.open .plate-prompt{
+      display:block;
+      visibility:visible;
+      opacity:1;
+      height:44px;
+      margin:0;
+      width:100%;
+      padding:9px 12px;
+      border:0!important;
+      outline:0!important;
+      border-radius:0;
+      background:transparent;
+      box-shadow:none!important;
+    }
+    .corner-menu.open .plate-prompt-label{left:12px}
+
+    /* Prompt is text/input semantics only on every platform. The Plate owns
+       every visible surface; desktop and mobile therefore share one projection. */
+    .plate-prompt-row,
+    .plate-prompt-wrap,
+    .plate-prompt,
+    .corner-menu.open .plate-prompt-row,
+    .corner-menu.open .plate-prompt-wrap,
+    .corner-menu.open .plate-prompt{
+      border:0!important;
+      outline:0!important;
+      border-radius:0!important;
+      box-shadow:none!important;
+      background:transparent!important;
+      background-image:none!important;
+      filter:none!important;
+      -webkit-appearance:none!important;
+      appearance:none!important;
+    }
+    .plate-prompt:focus,
+    .plate-prompt:focus-visible{
+      border:0!important;
+      outline:0!important;
+      box-shadow:none!important;
+    }
+    /* Prompt text is intentionally plain while being entered. Suppress
+       browser spell/grammar decoration without changing text semantics. */
+    .plate-prompt{
+      text-decoration:none!important;
+      text-decoration-line:none!important;
+      text-decoration-color:transparent!important;
+      text-decoration-thickness:0!important;
+      -webkit-text-decoration:none!important;
+      resize:none!important;
+      overflow-y:hidden!important;
+      overflow-x:hidden;
+      white-space:pre-wrap;
+      overflow-wrap:anywhere;
+      word-break:break-word;
+      min-height:44px;
+      max-height:132px;
+    }
+    /* Prompt grows automatically from one to at most three 44px tracks.
+       The Plate remains automatic; this is text wrapping, not Plate resizing. */
+    .plate-prompt-wrap,.corner-menu.open .plate-prompt-wrap{
+      min-height:44px;
+      max-height:132px;
+    }
+    .corner-menu.open .plate-prompt-row{
+      min-height:44px;
+      max-height:132px;
+    }
+
+    @media(max-width:600px){
+      /* Qualified mobile geometry recovered from eef48b6d...:
+         plates remain corner-owned and nearly full-height beneath controls. */
+      .corner-menu{
+        /* Preserve the owning-corner origin. Only the far edges back off
+           from the three non-owning corner controls. */
+        --mobile-opposite-clearance:calc(var(--corner) + 24px);
+        --mobile-owning-inset:12px;
+        --plate-inline:calc(100% - var(--mobile-opposite-clearance) - var(--mobile-owning-inset));
+        --plate-block:calc(100% - var(--mobile-opposite-clearance) - var(--mobile-owning-inset));
+      }
+      .corner-menu[data-corner="top-left"]{top:var(--mobile-owning-inset);left:var(--mobile-owning-inset)}
+      .corner-menu[data-corner="top-right"]{top:var(--mobile-owning-inset);right:var(--mobile-owning-inset)}
+      .corner-menu[data-corner="bottom-left"]{bottom:var(--mobile-owning-inset);left:var(--mobile-owning-inset)}
+      .corner-menu[data-corner="bottom-right"]{bottom:var(--mobile-owning-inset);right:var(--mobile-owning-inset)}
+    }
+    @media(max-width:900px) and (orientation:landscape){
+      /* Landscape needs a larger horizontal far-edge clearance because the
+         short rotated viewport makes the plate visually crowd the opposite
+         top control. Keep vertical clearance at the portrait-qualified value. */
+      .corner-menu{
+        --mobile-landscape-owning-inset:12px;
+        --mobile-landscape-opposite-inline-clearance:calc(var(--corner) + 48px);
+        --mobile-landscape-opposite-block-clearance:calc(var(--corner) + 24px);
+        --plate-inline:calc(100% - var(--mobile-landscape-opposite-inline-clearance) - var(--mobile-landscape-owning-inset));
+        --plate-block:calc(100% - var(--mobile-landscape-opposite-block-clearance) - var(--mobile-landscape-owning-inset));
+      }
+      .corner-menu[data-corner="top-left"]{top:var(--mobile-landscape-owning-inset);left:var(--mobile-landscape-owning-inset)}
+      .corner-menu[data-corner="top-right"]{top:var(--mobile-landscape-owning-inset);right:var(--mobile-landscape-owning-inset)}
+      .corner-menu[data-corner="bottom-left"]{bottom:var(--mobile-landscape-owning-inset);left:var(--mobile-landscape-owning-inset)}
+      .corner-menu[data-corner="bottom-right"]{bottom:var(--mobile-landscape-owning-inset);right:var(--mobile-landscape-owning-inset)}
+    }
+    @media(min-width:901px){
+      .corner-menu{
+        --plate-inline:48vw;
+        --plate-block:48vh;
+      }
+    }
+    .pane{
+      position:relative;border:0;background:linear-gradient(135deg,rgba(255,255,255,.055),rgba(255,255,255,.018));
+      opacity:0;box-shadow:none;background:transparent;
+      backdrop-filter:none;-webkit-backdrop-filter:none;
+      transition:none;
+    }
+    .pane:hover,.pane:focus-within{opacity:0}
+    .top-pane{grid-area:top}
+    .left-pane{grid-area:left}
+    .right-pane{grid-area:right}
+    .bottom-pane{grid-area:bottom}
+    .center{grid-area:center;background:transparent;min-width:0;min-height:0}
+    @media(max-width:600px){
+      /* Mobile corner controls remain physically snapped to the viewport.
+         Plate back-off/containment is owned by .corner-menu above and must
+         never reposition the interface or its corner controls. */
+      .haamu-interface{
+        --corner:min(48px,8.5dvh);
+      }
+      /* Preserve canonical corner-cell sizing on mobile. The global 1 mm
+         subtraction keeps each control's inner edges backed off while the
+         outer edges remain snapped by grid alignment. */
+      .corner{
+        width:calc(100% - 1mm);
+        height:calc(100% - 1mm);
+      }
+    }
+    /* Invisible structural viewport lattice: composition only, never rendered. */
+    .haamu-interface{
+      --split-x:50%;--split-y:50%;
+      --region-full:inset(0);
+      --region-left:inset(0 50% 0 0);--region-right:inset(0 0 0 50%);
+      --region-top:inset(0 0 50% 0);--region-bottom:inset(50% 0 0);
+      --region-top-left:inset(0 50% 50% 0);--region-top-right:inset(0 0 50% 50%);
+      --region-bottom-left:inset(50% 50% 0 0);--region-bottom-right:inset(50% 0 0 50%);
+    }
+    .structural-split{position:absolute;z-index:1;pointer-events:none;visibility:hidden;opacity:0}
+    .structural-split.vertical{top:0;bottom:0;left:var(--split-x);width:0}
+    .structural-split.horizontal{left:0;right:0;top:var(--split-y);height:0}
+    .pane-layer{position:absolute;inset:0;z-index:1;pointer-events:none;visibility:hidden;opacity:0}
+    .pane-layer .pane-region{position:absolute;pointer-events:none}
+    .pane-layer .pane-left{inset:0 50% 0 0}
+    .pane-layer .pane-up{inset:0 0 50% 0}
+    .pane-layer .pane-right{inset:0 0 0 50%}
+    .pane-layer .pane-down{inset:50% 0 0 0}
+    /* Mobile composition has three coincident structural layers:
+       whole viewport + two orientation-aware compartments. All are invisible. */
+    .mobile-compartment-layer{display:none;position:absolute;inset:0;z-index:1;pointer-events:none;visibility:hidden;opacity:0}
+    .mobile-compartment{position:absolute;pointer-events:none}
+    .mobile-compartment.whole{inset:0}
+    @media(max-width:900px){
+      .mobile-compartment-layer{display:block}
+      /* Portrait: one horizontal split => upper + lower + whole. */
+      .mobile-compartment.first{inset:0 0 50% 0}
+      .mobile-compartment.second{inset:50% 0 0 0}
+    }
+    @media(max-width:900px) and (orientation:landscape){
+      /* Rotated mobile: the same split rotates vertical => left + right + whole. */
+      .mobile-compartment.first{inset:0 50% 0 0}
+      .mobile-compartment.second{inset:0 0 0 50%}
+    }
+    @media(prefers-reduced-motion:reduce){.corner,.pane,.corner-menu{transition:none}}
+  </style>
+</head>
+<body>
+  <i class="structural-split vertical" aria-hidden="true"></i>
+  <i class="structural-split horizontal" aria-hidden="true"></i>
+  <div class="pane-layer" aria-hidden="true">
+    <i class="pane-region pane-left"></i>
+    <i class="pane-region pane-up"></i>
+    <i class="pane-region pane-right"></i>
+    <i class="pane-region pane-down"></i>
+  </div>
+  <div class="mobile-compartment-layer" aria-hidden="true" data-layer-count="3">
+    <i class="mobile-compartment whole" data-compartment="whole"></i>
+    <i class="mobile-compartment first" data-compartment="upper-left"></i>
+    <i class="mobile-compartment second" data-compartment="lower-right"></i>
+  </div>
+  <div id="haamu-root"><noscript>Haamu requires JavaScript for its runtime projection.</noscript></div>
+  <script src="entry.pre.js?v=0.165.0"></script>
+  <script src="entry.post.js?v=0.165.0"></script>
+  <script src="index.js?v=0.165.0"></script>
+  <script src="default.js?v=0.165.0"></script>
+  <script src="haamu.js?v=0.165.0"></script>
+  <script src="browser.entry.js?v=0.165.0"></script>
+  <script src="browser.plate.state.js?v=0.165.0"></script>
+  <script src="browser.js?v=0.165.0"></script>
+  <script src="browser.input.js?v=0.165.0"></script>
+  <script src="browser.output.js?v=0.165.0"></script>
+  <script src="browser.plate.systems.js?v=0.165.0"></script>
+  <script src="browser.plate.text.js?v=0.165.0"></script>
+  <script src="browser.search.js?v=0.165.0"></script>
+  <script src="browser.cookies.js?v=0.165.0"></script>
+  <script src="browser.api.js?v=0.165.0"></script>
+  <script src="browser.window.js?v=0.165.0"></script>
+  <script src="browser.windowing.js?v=0.165.0"></script>
+  <script src="browser.prompt.systems.js?v=0.165.0"></script>
+  <script src="web.entry.js?v=0.165.0"></script>
+  <script src="web.concurrency.js?v=0.165.0"></script>
+  <script src="web.parallelism.js?v=0.165.0"></script>
+  <script src="shell.input.js?v=0.165.0"></script>
+  <script src="shell.output.js?v=0.165.0"></script>
+  <script src="search.input.js?v=0.165.0"></script>
+  <script src="search.output.js?v=0.165.0"></script>
+  <script src="shell.js?v=0.165.0"></script>
+  <script src="terminal.input.js?v=0.165.0"></script>
+  <script src="terminal.output.js?v=0.165.0"></script>
+  <script src="command.input.js?v=0.165.0"></script>
+  <script src="command.channel.js?v=0.165.0"></script>
+  <script src="command.js?v=0.165.0"></script>
+  <script src="command.line.js?v=0.165.0"></script>
+  <script src="terminal.shell.js?v=0.165.0"></script>
+  <script src="terminal.search.js?v=0.165.0"></script>
+  <script src="terminal.js?v=0.165.0"></script>
+  <script src="web.shell.js?v=0.165.0"></script>
+  <script src="web.terminal.js?v=0.165.0"></script>
+  <script src="web.search.js?v=0.165.0"></script>
+  <script src="text.parsing.js?v=0.165.0"></script>
+  <script src="text.processing.js?v=0.165.0"></script>
+  <script src="text.allocation.js?v=0.165.0"></script>
+  <script src="text.scheduling.js?v=0.165.0"></script>
+  <script src="web.text.js?v=0.165.0"></script>
+  <script src="web.view.js?v=0.165.0"></script>
+  <script src="audio.parsing.js?v=0.165.0"></script>
+  <script src="audio.processing.js?v=0.165.0"></script>
+  <script src="audio.allocation.js?v=0.165.0"></script>
+  <script src="audio.scheduling.js?v=0.165.0"></script>
+  <script src="web.audio.js?v=0.165.0"></script>
+  <script src="video.parsing.js?v=0.165.0"></script>
+  <script src="video.processing.js?v=0.165.0"></script>
+  <script src="video.allocation.js?v=0.165.0"></script>
+  <script src="video.scheduling.js?v=0.165.0"></script>
+  <script src="web.video.js?v=0.165.0"></script>
+  <script src="web.parsing.js?v=0.165.0"></script>
+  <script src="web.processing.js?v=0.165.0"></script>
+  <script src="web.allocation.js?v=0.165.0"></script>
+  <script src="web.scheduling.js?v=0.165.0"></script>
+  <script src="web.interpreter.js?v=0.165.0"></script>
+  <script src="web.matrix.js?v=0.165.0"></script>
+  <script src="web.grid.js?v=0.165.0"></script>
+  <script src="web.mesh.js?v=0.165.0"></script>
+  <script src="web.plate.js?v=0.165.0"></script>
+  <script src="web.assembly.js?v=0.165.0"></script>
+  <script src="web.gpu.js?v=0.165.0"></script>
+  <script src="web.js?v=0.165.0"></script>
+  <script src="browser.plate.text.test.js?v=0.165.0"></script>
+  <script>
+    /* Website-scoped freshness boundary. Haamu versions and refreshes only
+       Haamu resources; the host browser remains outside Haamu control. */
+    (() => {
+      const current = document.querySelector('meta[name="haamu-build"]')?.content;
+      if (!current) return;
+      const key = 'haamu-site-build';
+      const seen = sessionStorage.getItem(key);
+      const resources = Object.freeze(Array.from(document.scripts)
+        .map(script => script.src)
+        .filter(Boolean));
+      sessionStorage.setItem(key, current);
+      window.HaamuBuild = Object.freeze({
+        version: current,
+        scope: 'website',
+        changed: seen !== null && seen !== current,
+        resources
+      });
+    })();
+  </script>
+</body>
+</html>

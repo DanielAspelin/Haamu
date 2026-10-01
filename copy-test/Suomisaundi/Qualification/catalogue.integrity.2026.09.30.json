@@ -1,0 +1,36 @@
+{
+  "schema": "haamu.suomisaundi.qualification-evidence",
+  "version": "0.1.0",
+  "date": "2026-09-30",
+  "subject_commit": "d6471a7bde9f1349976c91d7337bd364aa1ca778",
+  "workflow_run_id": 36754566343,
+  "workflow_job_id": 110021407285,
+  "test_runner": "Suomisaundi/Tests/catalogue.invariants.js",
+  "workflow": ".github/workflows/suomisaundi-catalogue.yml",
+  "execution": {
+    "environment": "GitHub Actions / ubuntu-latest / Node.js 20",
+    "status": "completed",
+    "conclusion": "success",
+    "invariants": 7,
+    "inferred_passed": 7,
+    "inferred_failed": 0
+  },
+  "qualification": {
+    "state": "Verified",
+    "scope": "Seven catalogue integrity invariants at subject commit only",
+    "limitations": [
+      "Corpus completeness remains false.",
+      "Open conflicts remain unresolved.",
+      "Pending external reconciliation remains pending.",
+      "Verification does not promote all factual catalogue content to verified."
+    ]
+  },
+  "recovery": {
+    "subject_commit": "d6471a7bde9f1349976c91d7337bd364aa1ca778",
+    "previous_constructive_checkpoint": "72cec216affaadbe4930e11ca2089979363a3adf"
+  },
+  "seal": {
+    "type": "Constructive Seal",
+    "reason": "Integrity invariants executed successfully; development remains open and corpus incomplete."
+  }
+}

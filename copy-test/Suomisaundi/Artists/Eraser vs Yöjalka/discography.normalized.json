@@ -1,0 +1,107 @@
+{
+  "artist": "Eraser vs Yöjalka",
+  "version": "0.1.0",
+  "qualification": "source-supported",
+  "albums": [
+    {
+      "title": "Round 1",
+      "label": "Exogenic Records",
+      "year": 2002
+    },
+    {
+      "title": "Tarinat",
+      "label": "Exogenic Records",
+      "year": 2003
+    },
+    {
+      "title": "Lords of the Liverdance",
+      "label": "Faerie Dragon",
+      "year": 2006
+    },
+    {
+      "title": "Virtuosi di Quosi",
+      "label": "Faerie Dragon",
+      "year": 2009
+    },
+    {
+      "title": "Evsylocybine",
+      "label": "Ektoplazm",
+      "year": 2010
+    }
+  ],
+  "eps": [
+    {
+      "title": "Eraser vs Yöjalka EP",
+      "label": "Exogenic Records",
+      "year": 2001
+    }
+  ],
+  "compilation_tracks": [
+    {
+      "title": "Headache",
+      "credit": "Eraser",
+      "release": "Fusion vs Confusion",
+      "label": "Exogenic Records",
+      "country": "Finland",
+      "year": 1999
+    },
+    {
+      "title": "Ranblax",
+      "credit": "Yöjalka",
+      "release": "Beats and Beyond",
+      "label": "Surreal Audio",
+      "country": "Finland",
+      "year": 2000
+    },
+    {
+      "title": "Hattivatti",
+      "release": "Custom File",
+      "label": "Exogenic Records",
+      "country": "Finland",
+      "year": 2002
+    },
+    {
+      "title": "Reunion",
+      "release": "Trance of Scandinavia",
+      "country": "Sweden",
+      "year": 2003
+    },
+    {
+      "title": "A Holy Man Spat Beer On My Gear",
+      "release": "Funland Boogie Files",
+      "label": "Space Boogie Productions",
+      "country": "Finland",
+      "year": 2006
+    },
+    {
+      "title": "Just Looking for the Best Pieces of this Puzzle",
+      "release": "No Tone Unstirred",
+      "label": "Faerie Dragon",
+      "country": "Australia",
+      "year": 2007
+    },
+    {
+      "title": "A Morning Story",
+      "featured_artist": "Haltya",
+      "release": "No Tone Unstirred",
+      "label": "Faerie Dragon",
+      "country": "Australia",
+      "year": 2007
+    },
+    {
+      "title": "Tanza Toleranza",
+      "release": "Eye Sea Animals",
+      "label": "Nullzone Records",
+      "country": "Japan",
+      "year": 2007
+    },
+    {
+      "title": "Himolaskijan Pitkät Nousut",
+      "release": "Spoken Weird",
+      "label": "Adama Records",
+      "country": "Australia",
+      "year": 2008
+    }
+  ],
+  "source": "https://suomisaundi.fi/artists/eraser-vs-yojalka/"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "release.magic-mushrooms-1998",
+  "name": "Magic Mushrooms (The Ultimate '98 Collection Of Audio Space Cakes & Trippy Beats)",
+  "type": "compilation",
+  "year": 1998,
+  "territory": "UK & Europe",
+  "label": "Millennium Records",
+  "catalogue_number": "MILL 068-CD",
+  "genres": [
+    "Psy-Trance",
+    "Techno",
+    "Goa Trance",
+    "Ambient",
+    "Breakbeat",
+    "Downtempo"
+  ],
+  "membership": "associated",
+  "suomisaundi_evidence": [
+    {
+      "artist": "Texas Faggott",
+      "track": "Koessi Kuittaa",
+      "position": "2-6",
+      "duration": "7:20",
+      "role": "compilation-appearance"
+    }
+  ],
+  "qualification": "source-supported",
+  "sources": [
+    "https://suomisaundi.fi/releases/magic-mushrooms-the-ultimate-98-collection-of-audio-space-cakes-trippy-beats-250931/"
+  ]
+}

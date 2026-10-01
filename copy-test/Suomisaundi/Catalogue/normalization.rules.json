@@ -1,0 +1,30 @@
+{
+  "schema": "haamu.suomisaundi.normalization-rules",
+  "version": "0.1.0",
+  "rules": [
+    {
+      "id": "release-role",
+      "rule": "Compilation appearance does not imply primary release authorship."
+    },
+    {
+      "id": "catalogue-membership",
+      "rule": "Catalogue inclusion establishes relevance only; core genre membership requires explicit evidence."
+    },
+    {
+      "id": "name-preservation",
+      "rule": "Preserve source spelling and diacritics; normalized identifiers are separate fields."
+    },
+    {
+      "id": "duplicate-observation",
+      "rule": "Duplicate source listings are retained as observations but deduplicated in canonical indexes."
+    },
+    {
+      "id": "country-territory",
+      "rule": "Distinguish artist origin, label location, release country, release territory, and event location."
+    },
+    {
+      "id": "time",
+      "rule": "Distinguish release year, source observation date, founding date, active period, and event date."
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "title": "Magic Carpet",
+  "artist": "Salakavala",
+  "date": "2018-02-16",
+  "country": "Russia",
+  "label": "Hippie Killer Productions",
+  "format": "Digital Media",
+  "type": "Album",
+  "status": "Official",
+  "track_count": 11,
+  "length": "1:19:39",
+  "tracks": [
+    "Clubitakki",
+    "Rusty Spacecraft",
+    "Catronaut",
+    "Magic Carpet",
+    "Foggy Matter",
+    "Unordinary Level",
+    "Hijacked Fridge",
+    "Far Fetched",
+    "Sauceror",
+    "Early Picker",
+    "Floaters"
+  ],
+  "qualification": "externally-corroborated",
+  "source": "https://musicbrainz.org/release/e3f87185-e650-4930-ac40-fd91854b17bb"
+}

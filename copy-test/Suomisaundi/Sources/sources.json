@@ -1,0 +1,63 @@
+{
+  "schema": "haamu.suomisaundi.sources",
+  "version": "0.1.0",
+  "sources": [
+    {
+      "name": "Suomisaundi.fi",
+      "url": "https://suomisaundi.fi/",
+      "type": "community catalogue",
+      "priority": "primary catalogue source"
+    },
+    {
+      "name": "Suomisaundi.fi Artists",
+      "url": "https://suomisaundi.fi/artists/",
+      "type": "artist directory"
+    },
+    {
+      "name": "Suomisaundi.fi DJs",
+      "url": "https://suomisaundi.fi/djs/",
+      "type": "DJ directory"
+    },
+    {
+      "name": "Suomisaundi.fi Labels",
+      "url": "https://suomisaundi.fi/labels/",
+      "type": "label directory"
+    },
+    {
+      "name": "Suomisaundi.fi Releases",
+      "url": "https://suomisaundi.fi/releases/",
+      "type": "release catalogue"
+    },
+    {
+      "name": "Suomisaundi.fi Links",
+      "url": "https://suomisaundi.fi/links/",
+      "type": "source directory"
+    },
+    {
+      "name": "Wikipedia Suomisaundi",
+      "url": "https://en.wikipedia.org/wiki/Suomisaundi",
+      "type": "secondary overview"
+    },
+    {
+      "name": "Toni Aittoniemi master's thesis",
+      "url": "https://helda.helsinki.fi/items/a51d9919-6da7-442f-a4c1-184c97137cbd",
+      "type": "academic research"
+    },
+    {
+      "name": "Internet Archive Thixx'n'Dixx",
+      "type": "historical archive"
+    },
+    {
+      "name": "Discogs",
+      "type": "discography database"
+    },
+    {
+      "name": "Bandcamp",
+      "type": "artist/label release source"
+    },
+    {
+      "name": "Ektoplazm",
+      "type": "free music archive"
+    }
+  ]
+}

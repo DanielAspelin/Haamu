@@ -1,0 +1,13 @@
+{
+  "schema": "haamu.suomisaundi.collectives",
+  "version": "0.1.0",
+  "qualification": "pre-informative",
+  "collectives": [
+    "Ruskababa",
+    "Smooth Underground",
+    "Löyhä",
+    "Midiliitto",
+    "People Of The Butterflies",
+    "Antiscarp Warriors"
+  ]
+}

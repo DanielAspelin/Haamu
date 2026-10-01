@@ -1,0 +1,20 @@
+{
+  "id": "release.acyber-tribal-exodus-movement-of-da-people",
+  "name": "Acyber Tribal Exodus - Movement Of Da People",
+  "type": "compilation",
+  "year": 2005,
+  "country": "Switzerland",
+  "label": "Happy People Music",
+  "catalogue_number": "HP-ATE01",
+  "genre": "Psy-Trance",
+  "texas_faggott_relationship": {
+    "role": "track-artist",
+    "track": "Sense-I",
+    "duration": "7:42"
+  },
+  "membership": "associated",
+  "qualification": "source-supported",
+  "sources": [
+    "https://suomisaundi.fi/releases/acyber-tribal-exodus-movement-of-da-people-786638/"
+  ]
+}

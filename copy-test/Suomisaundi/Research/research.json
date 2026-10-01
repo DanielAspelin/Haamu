@@ -1,0 +1,19 @@
+{
+  "schema": "haamu.suomisaundi.research",
+  "version": "0.1.0",
+  "works": [
+    {
+      "author": "Toni Aittoniemi",
+      "title": "Cultural and Musical Dimensions of Goa Trance and Early Psychedelic Trance in Finland",
+      "type": "master's thesis",
+      "institution": "University of Helsinki",
+      "source": "https://helda.helsinki.fi/items/a51d9919-6da7-442f-a4c1-184c97137cbd"
+    },
+    {
+      "title": "From underground to the spotlight. Finnish minimal techno in the 1990s",
+      "type": "academic publication",
+      "relevance": "Contextual evidence for Finnish rave culture and Suomisaundi development"
+    }
+  ],
+  "qualification": "source-supported"
+}

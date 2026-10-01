@@ -1,0 +1,20 @@
+{
+  "schema": "haamu.suomisaundi.festivals",
+  "version": "0.1.0",
+  "qualification": "unverified",
+  "festivals": [
+    {
+      "name": "Metsäfestival",
+      "evidence": "Referenced in Suomisaundi.fi artist biography material; full event history pending."
+    },
+    {
+      "name": "Lost Theory Festival",
+      "evidence": "Release catalogue includes 5 Years Of Lost Theory Festival; relationship to scene requires normalization."
+    },
+    {
+      "name": "Misterika Festival",
+      "evidence": "Release catalogue includes Misterika Festival - Tree Of The Life; event details pending."
+    }
+  ],
+  "note": "Festival inclusion records evidence of scene/release association, not a claim that an event is exclusively Suomisaundi."
+}

@@ -1,0 +1,15 @@
+{
+  "schema": "haamu.suomisaundi.release-roles",
+  "version": "0.1.0",
+  "roles": [
+    "primary-artist-release",
+    "compilation",
+    "compilation-appearance",
+    "track-artist",
+    "featured-artist",
+    "remixer",
+    "label-release",
+    "contextual-catalogue-entry"
+  ],
+  "rule": "A source page association must be assigned its evidenced role; artist-page or catalogue inclusion alone never implies primary authorship."
+}

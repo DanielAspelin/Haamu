@@ -1,0 +1,15 @@
+{
+  "name": "MusicBrainz",
+  "type": "open music metadata database",
+  "operator": "MetaBrainz Foundation",
+  "role": [
+    "release metadata reconciliation",
+    "stable identifiers",
+    "tracklists",
+    "label/catalogue numbers",
+    "external relationships"
+  ],
+  "access": "public web/database",
+  "qualification": "source-registered",
+  "source": "https://musicbrainz.org/"
+}

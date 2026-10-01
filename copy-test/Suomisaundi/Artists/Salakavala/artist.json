@@ -1,0 +1,33 @@
+{
+  "id": "artist.salakavala",
+  "name": "Salakavala",
+  "type": "artist",
+  "kind": "duo",
+  "country": "Finland",
+  "location": "Helsinki",
+  "members": [
+    "Tommy Lauhiala",
+    "Toni Sorsa"
+  ],
+  "debut_album": {
+    "title": "Fractal Fishing",
+    "year": 2006,
+    "label": "Faerie Dragon Records"
+  },
+  "discography_seed": [
+    "Custom File (2001)",
+    "First Conflict (2002)",
+    "Broadband Pasuuna, Vol. 1 (2003)",
+    "Treacherous Tunes (2004)",
+    "Avatar (2005)",
+    "Fractal Fishing (2006)",
+    "Garlic Shake (2008)",
+    "Idiosynth Trickery (2010)",
+    "Magic Carpet (2018)",
+    "Suomisaundi 7.0 (2020)"
+  ],
+  "qualification": "source-supported",
+  "sources": [
+    "https://suomisaundi.fi/artists/salakavala/"
+  ]
+}

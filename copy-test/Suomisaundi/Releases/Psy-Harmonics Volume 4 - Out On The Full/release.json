@@ -1,0 +1,23 @@
+{
+  "id": "release.psy-harmonics-volume-4-out-on-the-full",
+  "name": "Psy-Harmonics Volume 4 - Out On The Full",
+  "type": "compilation",
+  "year": 1999,
+  "country": "Australia",
+  "label": "Psy-Harmonics",
+  "catalogue_number": "PSY-040",
+  "genres": [
+    "Goa Trance",
+    "Experimental"
+  ],
+  "texas_faggott_relationship": {
+    "role": "track-artist",
+    "track": "Stiff Neck",
+    "duration": "6:40"
+  },
+  "membership": "associated",
+  "qualification": "source-supported",
+  "sources": [
+    "https://suomisaundi.fi/releases/psy-harmonics-volume-4-out-on-the-full-205040/"
+  ]
+}

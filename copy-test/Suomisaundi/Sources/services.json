@@ -1,0 +1,44 @@
+{
+  "schema": "haamu.suomisaundi.services",
+  "version": "0.1.0",
+  "qualification": "source-observed",
+  "services": [
+    {
+      "name": "SoundCloud",
+      "role": "tagged music discovery"
+    },
+    {
+      "name": "Mixcloud",
+      "role": "tagged DJ mixes"
+    },
+    {
+      "name": "Ektoplazm",
+      "role": "tagged releases/archive"
+    },
+    {
+      "name": "Bandcamp",
+      "role": "tagged music and first-party release pages"
+    },
+    {
+      "name": "YouTube",
+      "role": "generated playlist/video discovery"
+    },
+    {
+      "name": "Spotify",
+      "role": "release discovery"
+    },
+    {
+      "name": "Last.fm",
+      "role": "genre/artist discovery"
+    },
+    {
+      "name": "Discogs",
+      "role": "discographic reconciliation"
+    },
+    {
+      "name": "Internet Archive",
+      "role": "Thixx'n'Dixx historical archive"
+    }
+  ],
+  "source": "https://suomisaundi.fi/links/"
+}

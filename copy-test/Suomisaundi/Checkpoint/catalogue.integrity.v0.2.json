@@ -1,0 +1,19 @@
+{
+  "schema": "haamu.suomisaundi.checkpoint",
+  "version": "0.2.0",
+  "name": "catalogue-integrity-v0.2",
+  "date": "2026-09-30",
+  "tested_commit": "d6b5208c35b908040e4ad50442eda196c3aa3515",
+  "workflow_run_id": 36759474464,
+  "qualification": "Verified",
+  "seal": "Constructive Seal",
+  "changes": [
+    "Human Spectrum Records source-observed catalogue",
+    "Exogenic Records source-observed historical catalogue",
+    "Thixx'n'Dixx archival lineage"
+  ],
+  "recovery": {
+    "previous": "df6bbe8828ab12ca00b30a4880849b4644d292c0",
+    "tested": "d6b5208c35b908040e4ad50442eda196c3aa3515"
+  }
+}

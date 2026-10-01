@@ -1,0 +1,15 @@
+{
+  "id": "label.antiscarp-records",
+  "name": "Antiscarp Records",
+  "type": "label",
+  "location": "Helsinki, Finland",
+  "founded": 2001,
+  "focus": [
+    "psy-trance",
+    "Suomisaundi"
+  ],
+  "qualification": "source-supported",
+  "sources": [
+    "https://suomisaundi.fi/labels/"
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "schema": "haamu.suomisaundi.releases",
+  "version": "0.1.0",
+  "qualification": "pre-informative",
+  "source": "https://suomisaundi.fi/releases/",
+  "note": "Seed set; the source catalogue contains a much larger historical release corpus and should be expanded incrementally.",
+  "releases": [
+    {
+      "title": "Flippin Bixies",
+      "year": 1996,
+      "type": "compilation"
+    },
+    {
+      "title": "Abstract Forest",
+      "year": 2026,
+      "artists": [
+        "Igor Swamp"
+      ],
+      "label": "Psy-Harmonics"
+    },
+    {
+      "title": "Contact",
+      "year": 2026,
+      "artists": [
+        "James Reipas"
+      ],
+      "label": "Wild Youth Digital"
+    },
+    {
+      "title": "Encoredemption",
+      "year": 2026,
+      "artists": [
+        "Oikeusjyvä"
+      ],
+      "label": "Trance Bum Productions"
+    },
+    {
+      "title": "Futurescape",
+      "year": 2026,
+      "artists": [
+        "Vishnudata"
+      ],
+      "label": "Psy-Harmonics"
+    },
+    {
+      "title": "Kiitos Volume 2",
+      "year": 2025,
+      "label": "Random Records"
+    },
+    {
+      "title": "Space Travellers",
+      "year": 2025,
+      "artists": [
+        "Eraser vs Yöjalka",
+        "Haltya"
+      ],
+      "label": "StereoHemia Records"
+    },
+    {
+      "title": "Maplesaundi 2",
+      "year": 2024,
+      "label": "Cosmic Frequencies"
+    }
+  ]
+}

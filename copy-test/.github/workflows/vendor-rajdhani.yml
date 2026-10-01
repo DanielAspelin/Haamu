@@ -1,0 +1,38 @@
+name: Vendor Rajdhani
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/vendor-rajdhani.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  vendor:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download pinned Rajdhani assets
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p fonts/rajdhani
+          curl --fail --location --silent --show-error \
+            'https://raw.githubusercontent.com/google/fonts/main/ofl/rajdhani/Rajdhani-SemiBold.ttf' \
+            --output fonts/rajdhani/Rajdhani-SemiBold.ttf
+          curl --fail --location --silent --show-error \
+            'https://raw.githubusercontent.com/google/fonts/main/ofl/rajdhani/OFL.txt' \
+            --output fonts/rajdhani/OFL.txt
+          test "$(wc -c < fonts/rajdhani/Rajdhani-SemiBold.ttf)" -eq 390340
+      - name: Commit vendored font
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add fonts/rajdhani/Rajdhani-SemiBold.ttf fonts/rajdhani/OFL.txt
+          git diff --cached --quiet && exit 0
+          git -c user.name='github-actions[bot]' \
+              -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
+              commit -m 'Vendor Rajdhani SemiBold font [skip ci]'
+          git push

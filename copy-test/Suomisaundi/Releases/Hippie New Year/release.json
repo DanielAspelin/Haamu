@@ -1,0 +1,100 @@
+{
+  "id": "release.hippie-new-year",
+  "name": "Hippie New Year",
+  "type": "compilation",
+  "year": 2018,
+  "country": "Finland",
+  "label": "Sound Kitchen Records",
+  "catalogue_number": "SKR0006",
+  "genres": [
+    "Psy-Trance",
+    "Goa Trance"
+  ],
+  "tracks": [
+    {
+      "position": 1,
+      "artist": "D.D.A",
+      "title": "Hima Еye Laaja",
+      "duration": "5:26"
+    },
+    {
+      "position": 2,
+      "artist": "Kirna",
+      "title": "Body Bass",
+      "duration": "4:00"
+    },
+    {
+      "position": 3,
+      "artist": "Vihtahousu",
+      "title": "Aurinkoo",
+      "duration": "8:53"
+    },
+    {
+      "position": 4,
+      "artist": "Khaiku",
+      "title": "Soul Tour",
+      "duration": "8:11"
+    },
+    {
+      "position": 5,
+      "artist": "RRRastas",
+      "title": "Lever & Njurar",
+      "duration": "5:38"
+    },
+    {
+      "position": 6,
+      "artist": "MicroChief",
+      "title": "Acd Bake",
+      "duration": "6:46"
+    },
+    {
+      "position": 7,
+      "artist": "Sonic Bandits",
+      "title": "Space Time",
+      "duration": "6:44"
+    },
+    {
+      "position": 8,
+      "artist": "Kyril & Escobar",
+      "title": "Öinen Samba",
+      "duration": "5:47"
+    },
+    {
+      "position": 9,
+      "artist": [
+        "Omitomi",
+        "RRRastas"
+      ],
+      "title": "Snakes And Wikings",
+      "duration": "6:27"
+    },
+    {
+      "position": 10,
+      "artist": "Scum Unit",
+      "title": "Dangerous Business",
+      "duration": "6:17"
+    },
+    {
+      "position": 11,
+      "artist": "Discolin",
+      "title": "Uutuus Karma",
+      "duration": "5:36"
+    },
+    {
+      "position": 12,
+      "artist": "Suomies",
+      "title": "Laavu Song",
+      "duration": "7:30"
+    },
+    {
+      "position": 13,
+      "artist": "Club Kooma",
+      "title": "Child In Kooma (Tribute To Robert Miles)",
+      "duration": "5:37"
+    }
+  ],
+  "qualification": "source-supported",
+  "sources": [
+    "https://suomisaundi.fi/releases/hippie-new-year-11658021/"
+  ]
+}

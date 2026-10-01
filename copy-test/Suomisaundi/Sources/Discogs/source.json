@@ -1,0 +1,19 @@
+{
+  "name": "Discogs",
+  "type": "community-built discography database",
+  "role": [
+    "release reconciliation",
+    "artist name variation evidence",
+    "label/release identifiers"
+  ],
+  "identity_model": [
+    "Primary Artist Name (PAN)",
+    "Artist Name Variation (ANV)",
+    "Alias"
+  ],
+  "qualification": "source-registered",
+  "sources": [
+    "https://support.discogs.com/hc/en-us/articles/360005054753-Database-Guidelines-2-Artist",
+    "https://support.discogs.com/hc/en-us/articles/360004017694-Database-Glossary"
+  ]
+}

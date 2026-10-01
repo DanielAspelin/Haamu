@@ -1,0 +1,108 @@
+{
+  "schema": "haamu.visual-layout",
+  "version": "0.7.0",
+  "state": "experimental",
+  "origin": "c24890ca1cfeb0a56188421e8000a39be3c34605",
+  "phase": "single-centerward-corner-plate",
+  "visibleText": false,
+  "viewport": {
+    "mobile": "visual-viewport-bound",
+    "safeArea": true,
+    "scroll": false,
+    "allCornersSimultaneouslyVisible": true
+  },
+  "geometry": {
+    "center": {
+      "content": "empty"
+    },
+    "corners": {
+      "top-left": {
+        "control": "start",
+        "visibleLabel": false,
+        "color": "neon-green",
+        "surface": "glass"
+      },
+      "top-right": {
+        "control": "start",
+        "visibleLabel": false,
+        "color": "lemon-yellow",
+        "surface": "glass"
+      },
+      "bottom-left": {
+        "control": "start",
+        "visibleLabel": false,
+        "color": "purple",
+        "surface": "glass"
+      },
+      "bottom-right": {
+        "control": "start",
+        "visibleLabel": false,
+        "color": "orange",
+        "surface": "glass"
+      }
+    },
+    "panes": {
+      "top-center": {
+        "content": "empty",
+        "persistentOutline": false,
+        "hoverReveal": "fade-in-out",
+        "hoverOutline": false,
+        "fade": true
+      },
+      "left-middle": {
+        "content": "empty",
+        "persistentOutline": false,
+        "hoverReveal": "fade-in-out",
+        "hoverOutline": false,
+        "fade": true
+      },
+      "right-middle": {
+        "content": "empty",
+        "persistentOutline": false,
+        "hoverReveal": "fade-in-out",
+        "hoverOutline": false,
+        "fade": true
+      },
+      "bottom-center": {
+        "content": "empty",
+        "persistentOutline": false,
+        "hoverReveal": "fade-in-out",
+        "hoverOutline": false,
+        "fade": true
+      }
+    }
+  },
+  "invariants": [
+    "no visible textual interface content",
+    "center remains empty",
+    "all four panes remain empty",
+    "all four corner controls remain simultaneously visible within the active viewport",
+    "the interface does not create document scrolling",
+    "mobile safe-area insets are respected",
+    "pane boundaries are not persistently visible",
+    "pane hover reveal uses no border, outline, or edge line",
+    "corner controls have no visible names",
+    "corner controls retain position and color identity through a glass surface",
+    "corner menu surfaces remain below their owning corner controls",
+    "at most one corner menu surface is open at a time",
+    "each pane fades in and fades out without a hard edge",
+    "switching corners completes the active sequence retraction before opening the new sequence",
+    "each corner owns exactly one square glass plate",
+    "the plate begins beneath its owning corner control and morphs diagonally toward the viewport center"
+  ],
+  "interaction": {
+    "cornerMenus": {
+      "count": 4,
+      "content": "one empty square glass plate per corner",
+      "activation": "press",
+      "simultaneousOpen": 1,
+      "layer": "under-corner-control",
+      "motion": "retract old plate beneath anchor then morph new plate toward center",
+      "shape": "single-square-plate",
+      "itemsPerCorner": 1,
+      "durationMs": 520,
+      "originScale": 0.18,
+      "direction": "diagonally toward viewport center"
+    }
+  }
+}

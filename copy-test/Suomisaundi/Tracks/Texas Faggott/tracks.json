@@ -1,0 +1,32 @@
+{
+  "artist": "Texas Faggott",
+  "qualification": "source-supported",
+  "observations": [
+    {
+      "title": "Stiff Neck",
+      "release": "Psy-Harmonics Volume 4 - Out On The Full",
+      "year": 1999,
+      "duration": "6:40",
+      "role": "track-artist"
+    },
+    {
+      "title": "Sense-I",
+      "release": "Acyber Tribal Exodus - Movement Of Da People",
+      "year": 2005,
+      "duration": "7:42",
+      "role": "track-artist"
+    },
+    {
+      "title": "Uniaika (Texas Faggott Remix)",
+      "release": "Harry Blotter",
+      "year": 2008,
+      "duration": "6:04",
+      "role": "remixer"
+    }
+  ],
+  "sources": [
+    "https://suomisaundi.fi/releases/psy-harmonics-volume-4-out-on-the-full-205040/",
+    "https://suomisaundi.fi/releases/acyber-tribal-exodus-movement-of-da-people-786638/",
+    "https://suomisaundi.fi/releases/harry-blotter-1833660/"
+  ]
+}

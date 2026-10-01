@@ -1,0 +1,28 @@
+{
+  "schema": "haamu.suomisaundi.coverage-snapshot",
+  "date": "2026-09-30",
+  "status": {
+    "structure": "established",
+    "provenance_model": "established",
+    "release_role_model": "established",
+    "artist_directory": "partial-multi-page-snapshot",
+    "artist_entities": "partial",
+    "dj_directory": "partial",
+    "labels": "partial-with-selected-discographies",
+    "releases": "partial",
+    "tracks": "partial",
+    "people_aliases": "partial",
+    "events_festivals": "minimal",
+    "archives": "seeded",
+    "academic_research": "seeded",
+    "external_identifier_reconciliation": "not-started"
+  },
+  "next_priority": [
+    "complete source pagination",
+    "Discogs/MusicBrainz identifier reconciliation",
+    "tracklist normalization",
+    "event chronology",
+    "archive inventory"
+  ],
+  "completeness": false
+}

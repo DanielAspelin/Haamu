@@ -1,0 +1,32 @@
+{
+  "schema": "haamu.suomisaundi.labels",
+  "version": "0.1.0",
+  "qualification": "pre-informative",
+  "source": "https://suomisaundi.fi/labels/",
+  "labels": [
+    "6-Dimension Sound",
+    "Adama Records",
+    "Ajopuu Records",
+    "Antiscarp Records",
+    "Avaruusteknologistiikka Records",
+    "Cosmic Frequencies",
+    "Dada Stream Publishing",
+    "Demon Tea Recordings",
+    "Exogenic Records",
+    "Faerie Dragon Records",
+    "Feeless Records",
+    "Freakdance Records",
+    "Gi'iwa Productions",
+    "Hippie Killer Productions",
+    "Human Spectrum Records",
+    "Jolly Fill Music",
+    "Karelia Records",
+    "Morning Monster Records",
+    "Nullzone",
+    "Pelto",
+    "People Of The Butterflies",
+    "Psy-Harmonics",
+    "Psymply Psychedelic Productions",
+    "Random Records"
+  ]
+}

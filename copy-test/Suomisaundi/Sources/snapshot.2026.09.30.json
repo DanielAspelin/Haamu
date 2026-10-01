@@ -1,0 +1,50 @@
+{
+  "schema": "haamu.suomisaundi.source-snapshot",
+  "observed": "2026-09-30",
+  "sources": [
+    {
+      "url": "https://suomisaundi.fi/artists/",
+      "kind": "community catalogue",
+      "observed_content": [
+        "artist directory",
+        "biography excerpts"
+      ]
+    },
+    {
+      "url": "https://suomisaundi.fi/labels/",
+      "kind": "community catalogue",
+      "observed_content": [
+        "label directory",
+        "locations",
+        "founding descriptions"
+      ]
+    },
+    {
+      "url": "https://suomisaundi.fi/links/",
+      "kind": "community source directory",
+      "observed_content": [
+        "Discogs",
+        "Spotify",
+        "Last.fm",
+        "Internet Archive",
+        "social groups"
+      ]
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Suomisaundi",
+      "kind": "secondary overview",
+      "observed_content": [
+        "terminology",
+        "mid-1990s Finland origin",
+        "early collective chronology"
+      ]
+    },
+    {
+      "url": "https://helda.helsinki.fi/items/a51d9919-6da7-442f-a4c1-184c97137cbd",
+      "kind": "academic repository",
+      "observed_content": [
+        "Aittoniemi thesis record"
+      ]
+    }
+  ]
+}

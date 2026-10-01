@@ -1,0 +1,39 @@
+name: HTML modularization integrity
+
+on:
+  push:
+    branches:
+      - html-modularization-experiment
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  integrity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify JavaScript syntax
+        run: |
+          node --check html.js
+          node --check html.button.js
+          node --check html.prompt.js
+          node --check html.plate.js
+      - name: Install browser qualification dependency
+        run: npm install --no-save --no-package-lock playwright@1.55.0
+      - name: Run browser structural and presentation integrity
+        run: |
+          npx playwright install --with-deps chromium
+          node test/html-modularization.browser.test.js
+      - name: Verify isolated ownership boundaries
+        shell: bash
+        run: |
+          set -euo pipefail
+          ! grep -Eq 'classList\.(add|remove|toggle).*open|plate-transition-(in|out)' html.js html.button.js html.prompt.js html.plate.js
+          ! grep -Eq 'HaamuWebText|WebGL|WebGPU|canvas|getContext' html.js html.button.js html.prompt.js html.plate.js
+          ! grep -Eq 'addEventListener' html.button.js html.plate.js
+          grep -q "className: 'corner-menu'" html.plate.js
+          grep -q "className: 'plate-prompt'" html.prompt.js
+          grep -q "'corner start" browser.js

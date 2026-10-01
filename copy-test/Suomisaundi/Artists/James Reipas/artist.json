@@ -1,0 +1,27 @@
+{
+  "id": "artist.james-reipas",
+  "name": "James Reipas",
+  "type": "artist",
+  "location": "Helsinki, Finland",
+  "current_style": "melodic psychedelic techno",
+  "related_projects": [
+    {
+      "name": "Reipas Longos",
+      "with": "Hongos Longos"
+    },
+    {
+      "name": "Super Reipas DJ",
+      "type": "DJ project"
+    }
+  ],
+  "latest_source_observed_release": {
+    "title": "Maybe He Is A Dancer",
+    "year": 2024,
+    "label": "Suomunalle Records",
+    "format": "vinyl album"
+  },
+  "qualification": "source-supported",
+  "sources": [
+    "https://suomisaundi.fi/artists/james-reipas/"
+  ]
+}

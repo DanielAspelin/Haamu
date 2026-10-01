@@ -1,0 +1,23 @@
+{
+  "schema": "haamu.suomisaundi.entity.schema",
+  "version": "0.1.0",
+  "common_fields": [
+    "id",
+    "name",
+    "type",
+    "qualification",
+    "sources"
+  ],
+  "identity_rules": [
+    "IDs are stable and lowercase dot/hyphen identifiers.",
+    "Display names preserve source spelling.",
+    "Aliases never overwrite canonical/source names.",
+    "Human identity and project identity remain distinct."
+  ],
+  "evidence_rules": [
+    "Every factual promotion retains source provenance.",
+    "Catalogue inclusion alone does not prove core Suomisaundi membership.",
+    "Conflicts remain represented until resolved.",
+    "Unknown values remain absent/null rather than invented."
+  ]
+}

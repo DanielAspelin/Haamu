@@ -1,0 +1,15 @@
+{
+  "id": "artist.rayhaviina",
+  "name": "Räyhäviina",
+  "type": "artist",
+  "formed": 2022,
+  "relationship": {
+    "type": "side-project-of",
+    "artist": "Rayavana"
+  },
+  "classification": "Suomisaundi-focused",
+  "qualification": "source-supported",
+  "sources": [
+    "https://suomisaundi.fi/artists/page/15/"
+  ]
+}

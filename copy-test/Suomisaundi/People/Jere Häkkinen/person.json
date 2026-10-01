@@ -1,0 +1,19 @@
+{
+  "id": "person.jere-hakkinen",
+  "name": "Jere Häkkinen",
+  "birth_year": 1982,
+  "country": "Finland",
+  "artist_identities": [
+    "Luomuhappo",
+    "Puukko-Jere"
+  ],
+  "roles": [
+    "electronic musician",
+    "co-founder of Freakdance Records"
+  ],
+  "qualification": "source-supported",
+  "sources": [
+    "https://suomisaundi.fi/artists/luomuhappo/",
+    "https://suomisaundi.fi/artists/puukko-jere/"
+  ]
+}

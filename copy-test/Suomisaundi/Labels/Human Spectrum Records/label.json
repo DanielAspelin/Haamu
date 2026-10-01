@@ -1,0 +1,141 @@
+{
+  "schema": "haamu.suomisaundi.label",
+  "id": "label.human-spectrum-records",
+  "display_name": "Human Spectrum Records",
+  "location": "Finland",
+  "description": "Electronic dance music record label for a full spectrum of psytrance varieties from Finland.",
+  "qualification": "source-observed",
+  "source": "https://suomisaundi.fi/labels/human-spectrum-records/",
+  "discography_observations": [
+    {
+      "title": "Acidophilus Fennica",
+      "year": 2018,
+      "role": "label-discography-observation"
+    },
+    {
+      "title": "Human Spectrum Volume 1",
+      "year": 2019,
+      "role": "label-discography-observation"
+    },
+    {
+      "title": "Omnomania",
+      "year": 2019,
+      "role": "label-discography-observation"
+    },
+    {
+      "title": "Sarpa Salpa",
+      "year": 2019,
+      "role": "label-discography-observation"
+    },
+    {
+      "title": "Free Your Soul",
+      "year": 2019,
+      "role": "label-discography-observation"
+    },
+    {
+      "title": "Simple Hyymor Tactics",
+      "year": 2020,
+      "role": "label-discography-observation"
+    },
+    {
+      "title": "Spellissimo",
+      "year": 2020,
+      "role": "label-discography-observation"
+    },
+    {
+      "title": "They Can Lift You Up If They Want",
+      "year": 2020,
+      "role": "label-discography-observation"
+    },
+    {
+      "title": "Meidän Jälkeemme Hiljaisuus (Remix)",
+      "year": 2020,
+      "role": "label-discography-observation"
+    },
+    {
+      "title": "Cucumbular Vehicle",
+      "year": 2021,
+      "role": "label-discography-observation"
+    },
+    {
+      "title": "Delta Variant",
+      "year": 2021,
+      "role": "label-discography-observation"
+    },
+    {
+      "title": "Human Spectrum Volume 2",
+      "year": 2021,
+      "role": "label-discography-observation"
+    },
+    {
+      "title": "Outer Borders",
+      "year": 2021,
+      "role": "label-discography-observation"
+    },
+    {
+      "title": "Aslak's Daydream",
+      "year": 2022,
+      "role": "label-discography-observation"
+    },
+    {
+      "title": "Fornjótr",
+      "year": 2022,
+      "role": "label-discography-observation"
+    },
+    {
+      "title": "Adventures Offroad",
+      "year": 2023,
+      "role": "label-discography-observation"
+    },
+    {
+      "title": "Retro Goa Am",
+      "year": 2023,
+      "role": "label-discography-observation"
+    },
+    {
+      "title": "Aivovaurio",
+      "year": 2023,
+      "role": "label-discography-observation"
+    },
+    {
+      "title": "Fractal Vision",
+      "year": 2023,
+      "role": "label-discography-observation"
+    },
+    {
+      "title": "Tales Without Words",
+      "year": 2024,
+      "role": "label-discography-observation"
+    },
+    {
+      "title": "The Labyrinth Of Choices",
+      "year": 2024,
+      "role": "label-discography-observation"
+    },
+    {
+      "title": "Antisharp Rewardings",
+      "year": 2024,
+      "role": "label-discography-observation"
+    },
+    {
+      "title": "Ghetto Trance Vol.1",
+      "year": 2024,
+      "role": "label-discography-observation"
+    },
+    {
+      "title": "I Used To Be Square",
+      "year": 2024,
+      "role": "label-discography-observation"
+    },
+    {
+      "title": "Virtanen & Lahtinen",
+      "year": 2024,
+      "role": "label-discography-observation"
+    },
+    {
+      "title": "Vocatus Silvae",
+      "year": 2026,
+      "role": "label-discography-observation"
+    }
+  ]
+}

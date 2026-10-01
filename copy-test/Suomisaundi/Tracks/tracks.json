@@ -1,0 +1,7 @@
+{
+  "schema": "haamu.suomisaundi.tracks",
+  "version": "0.1.0",
+  "qualification": "pre-informative",
+  "tracks": [],
+  "policy": "Track records require title, credited artist, release/appearance when known, source, and role. Do not derive track lists from release titles."
+}

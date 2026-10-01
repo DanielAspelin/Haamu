@@ -1,0 +1,54 @@
+{
+  "schema": "haamu.suomisaundi.discography",
+  "version": "0.1.0",
+  "qualification": "source-supported",
+  "note": "Selected source-indexed discography observations. Titles may be albums, EPs, compilations or appearances; release-role normalization remains pending.",
+  "artists": {
+    "Texas Faggott": [
+      "Bliss Point: Sampler (1997)",
+      "Kössi Kuittaa EP (1998)",
+      "Texas Faggott (1999)",
+      "Back To Mad EP (2000)",
+      "Petoman's Peflett (2000)",
+      "From Israel With Love (2001)",
+      "Mäntsälän Mad Max (2003)",
+      "Kaupungin Vauhdissa EP (2004)",
+      "Liquid Quit (2006)",
+      "Online Onanoita II (2010)",
+      "Dame Esso Medley (Live In Helsinki) (2024)"
+    ],
+    "Squaremeat": [
+      "Squarebeat (1998)",
+      "Wave Soup (2000)",
+      "Jungle Boogie Party Line (2003)",
+      "Astronomical Coffee Break (2005)",
+      "Idiosynth Trickery (2010)",
+      "Audiodrugz (2017)",
+      "Frequency Brew (2020)",
+      "Kiitos Volume 2 (2025)"
+    ],
+    "Salakavala": [
+      "Custom File (2001)",
+      "First Conflict (2002)",
+      "Fractal Fishing (2006)",
+      "Garlic Shake (2008)",
+      "Idiosynth Trickery (2010)",
+      "Magic Carpet (2018)",
+      "Suomisaundi 7.0 (2020)"
+    ],
+    "Haltya": [
+      "Forest Flavour (2001)",
+      "Hero (2003)",
+      "Electric Help Elves (2004)",
+      "Book Of Nature (2008)",
+      "Japan Anime Punk Sessions (2012)",
+      "Space Travellers (2025)"
+    ]
+  },
+  "sources": [
+    "https://suomisaundi.fi/artists/texas-faggott/",
+    "https://suomisaundi.fi/artists/squaremeat/",
+    "https://suomisaundi.fi/artists/salakavala/",
+    "https://suomisaundi.fi/artists/haltya/"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "id": "artist.puukko-jere",
+  "name": "Puukko-Jere",
+  "type": "artist-alias",
+  "person_id": "person.jere-hakkinen",
+  "related_artist": "Luomuhappo",
+  "qualification": "source-supported",
+  "sources": [
+    "https://suomisaundi.fi/artists/puukko-jere/"
+  ]
+}

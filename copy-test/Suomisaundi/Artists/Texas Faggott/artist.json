@@ -1,0 +1,30 @@
+{
+  "id": "artist.texas-faggott",
+  "name": "Texas Faggott",
+  "type": "artist",
+  "kind": "duo",
+  "country": "Finland",
+  "members": [
+    {
+      "name": "Tim Thick",
+      "also_known_as": "Timo Bentley"
+    },
+    {
+      "name": "Pentti Slayer",
+      "also_known_as": "Pasi Hartikainen"
+    }
+  ],
+  "significance": "Early and influential Suomisaundi psychedelic trance project.",
+  "releases_seed": [
+    "Kössi Kuittaa EP",
+    "Texas Faggott",
+    "Petoman's Peflett",
+    "Back To Mad EP",
+    "From Israel With Love"
+  ],
+  "qualification": "source-supported",
+  "sources": [
+    "https://suomisaundi.fi/artists/texas-faggott/",
+    "https://en.wikipedia.org/wiki/Suomisaundi"
+  ]
+}

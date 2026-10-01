@@ -1,0 +1,13 @@
+{
+  "schema": "haamu.suomisaundi.external-identifier-policy",
+  "version": "0.1.0",
+  "rules": [
+    "Never attach an external artist identifier from name similarity alone.",
+    "Require corroborating release, label, geography, membership, or relationship evidence.",
+    "Store release and release-group identifiers separately.",
+    "Preserve source-specific identifiers without treating an external database as canonical authority.",
+    "Record rejected ambiguous matches when they are likely to recur.",
+    "Cross-source agreement may raise qualification of the specific fact corroborated, not the entire entity."
+  ],
+  "discogs_note": "Discogs PAN/ANV conventions are useful for reconciliation but remain source-specific; Haamu preserves its own canonical identity model."
+}

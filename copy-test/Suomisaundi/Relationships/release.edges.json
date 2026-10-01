@@ -1,0 +1,46 @@
+{
+  "schema": "haamu.suomisaundi.release-edges",
+  "version": "0.1.0",
+  "edges": [
+    {
+      "artist": "Texas Faggott",
+      "role": "track-artist",
+      "release": "Psy-Harmonics Volume 4 - Out On The Full",
+      "track": "Stiff Neck"
+    },
+    {
+      "artist": "Texas Faggott",
+      "role": "track-artist",
+      "release": "Acyber Tribal Exodus - Movement Of Da People",
+      "track": "Sense-I"
+    },
+    {
+      "artist": "Texas Faggott",
+      "role": "remixer",
+      "release": "Harry Blotter",
+      "track": "Uniaika (Texas Faggott Remix)"
+    },
+    {
+      "artist": "Texas Faggott",
+      "role": "compilation-appearance",
+      "release": "Magic Mushrooms 1998",
+      "track": "Koessi Kuittaa"
+    },
+    {
+      "artist": "Salakavala",
+      "role": "associated-artist",
+      "release": "5 Years Of Lost Theory Festival"
+    },
+    {
+      "artist": "Texas Faggott",
+      "role": "associated-artist",
+      "release": "5 Years Of Lost Theory Festival"
+    },
+    {
+      "artist": "Luomuhappo",
+      "role": "primary-artist",
+      "release": "Pallit ja sielu"
+    }
+  ],
+  "qualification": "source-supported"
+}

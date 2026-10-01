@@ -1,0 +1,52 @@
+{
+  "schema": "haamu.suomisaundi.compilation-track-observations",
+  "version": "0.1.0",
+  "qualification": "source-supported",
+  "observations": [
+    {
+      "artist": "Texas Faggott",
+      "title": "Koessi Kuittaa",
+      "release": "Magic Mushrooms (The Ultimate '98 Collection Of Audio Space Cakes & Trippy Beats)",
+      "year": 1998,
+      "territory": "UK & Europe",
+      "label": "Millennium Records"
+    },
+    {
+      "artist": "Texas Faggott",
+      "title": "Stiff Neck",
+      "release": "Psy-Harmonics Volume 4 - Out On The Full",
+      "year": 1999,
+      "country": "Australia",
+      "label": "Psy-Harmonics"
+    },
+    {
+      "artist": "D.D.A",
+      "title": "Hima Еye Laaja",
+      "release": "Hippie New Year",
+      "year": 2018,
+      "country": "Finland",
+      "label": "Sound Kitchen Records"
+    },
+    {
+      "artist": "Kirna",
+      "title": "Body Bass",
+      "release": "Hippie New Year",
+      "year": 2018,
+      "country": "Finland",
+      "label": "Sound Kitchen Records"
+    },
+    {
+      "artist": "Suomies",
+      "title": "Laavu Song",
+      "release": "Hippie New Year",
+      "year": 2018,
+      "country": "Finland",
+      "label": "Sound Kitchen Records"
+    }
+  ],
+  "sources": [
+    "https://suomisaundi.fi/releases/magic-mushrooms-the-ultimate-98-collection-of-audio-space-cakes-trippy-beats-250931/",
+    "https://suomisaundi.fi/releases/psy-harmonics-volume-4-out-on-the-full-205040/",
+    "https://suomisaundi.fi/releases/hippie-new-year-11658021/"
+  ]
+}

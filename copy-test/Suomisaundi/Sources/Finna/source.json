@@ -1,0 +1,12 @@
+{
+  "name": "Finna / National Library of Finland",
+  "type": "national-library discovery service",
+  "role": [
+    "Finnish music-record metadata",
+    "track-level identifiers",
+    "composer/performer evidence",
+    "bibliographic research"
+  ],
+  "qualification": "source-registered",
+  "source": "https://kansalliskirjasto.finna.fi/"
+}

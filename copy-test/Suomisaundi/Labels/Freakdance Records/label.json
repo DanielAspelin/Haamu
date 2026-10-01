@@ -1,0 +1,11 @@
+{
+  "id": "label.freakdance-records",
+  "name": "Freakdance Records",
+  "type": "collective-and-label",
+  "country": "Finland",
+  "description": "Collective of electronic and psychedelic music artists.",
+  "qualification": "source-supported",
+  "sources": [
+    "https://suomisaundi.fi/labels/"
+  ]
+}

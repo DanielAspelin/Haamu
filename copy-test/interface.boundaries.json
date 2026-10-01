@@ -1,0 +1,23 @@
+{
+  "schema": "haamu.interface-boundary-order",
+  "version": "0.1.0",
+  "originating_experiment": "17b1f59df756a459a251ffc4e1a6a4bee5ec4d0c",
+  "reason": "Correct implementation/runtime ordering that placed Web outside Browser.",
+  "ingress": [
+    "Human",
+    "Browser Entry",
+    "Browser",
+    "Web Entry",
+    "Web",
+    "Haamu internals"
+  ],
+  "projection": [
+    "Haamu internals",
+    "Web",
+    "Web Entry",
+    "Browser",
+    "Browser Entry",
+    "Human"
+  ],
+  "invariant": "Browser is the outer human access boundary; Web is internal to Browser."
+}

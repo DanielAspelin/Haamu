@@ -1,0 +1,38 @@
+{
+  "id": "artist.eraser-vs-yojalka",
+  "name": "Eraser vs Yöjalka",
+  "abbreviation": "EvsY",
+  "type": "artist",
+  "kind": "duo",
+  "origin": "Helsinki, Finland",
+  "members": [
+    {
+      "name": "Julius Lehmuskallio",
+      "alias": "Eraser"
+    },
+    {
+      "name": "Simo Ojala",
+      "alias": "Yöjalka"
+    }
+  ],
+  "history": {
+    "production_interest_from": 1993,
+    "international_performance_countries": [
+      "Finland",
+      "Russia",
+      "United States",
+      "Japan",
+      "Ukraine",
+      "Israel",
+      "Sweden",
+      "England",
+      "Belgium",
+      "Lithuania",
+      "Turkey"
+    ]
+  },
+  "qualification": "source-supported",
+  "sources": [
+    "https://suomisaundi.fi/artists/eraser-vs-yojalka/"
+  ]
+}

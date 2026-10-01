@@ -1,0 +1,32 @@
+{
+  "schema": "haamu.suomisaundi.qualification-evidence",
+  "version": "0.2.0",
+  "date": "2026-09-30",
+  "subject_commit": "d6b5208c35b908040e4ad50442eda196c3aa3515",
+  "workflow_run_id": 36759474464,
+  "workflow_job_id": 110038048969,
+  "test_runner": "Suomisaundi/Tests/catalogue.invariants.js",
+  "execution": {
+    "environment": "GitHub Actions / ubuntu-latest / Node.js 20",
+    "status": "completed",
+    "conclusion": "success",
+    "invariants": 7,
+    "passed": 7,
+    "failed": 0
+  },
+  "qualification": {
+    "state": "Verified",
+    "scope": "Catalogue integrity invariants after label/archive corpus expansion",
+    "limitations": [
+      "Corpus completeness remains false.",
+      "Source-observed discographies are not automatically release-identity verified.",
+      "Thixx'n'Dixx archive completeness remains explicitly unclaimed."
+    ]
+  },
+  "lineage": {
+    "previous_verified_checkpoint": "df6bbe8828ab12ca00b30a4880849b4644d292c0"
+  },
+  "seal": {
+    "type": "Constructive Seal"
+  }
+}

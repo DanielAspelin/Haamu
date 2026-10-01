@@ -1,0 +1,44 @@
+{
+  "schema": "haamu.suomisaundi.identifiers",
+  "version": "0.1.0",
+  "namespaces": [
+    {
+      "name": "haamu",
+      "authority": "Haamu corpus",
+      "examples": [
+        "artist.texas-faggott",
+        "person.jere-hakkinen"
+      ]
+    },
+    {
+      "name": "musicbrainz-release",
+      "authority": "MusicBrainz"
+    },
+    {
+      "name": "musicbrainz-release-group",
+      "authority": "MusicBrainz"
+    },
+    {
+      "name": "isrc",
+      "authority": "recording industry"
+    },
+    {
+      "name": "barcode",
+      "authority": "release packaging/distribution"
+    },
+    {
+      "name": "catalogue-number",
+      "authority": "record label"
+    },
+    {
+      "name": "finna-record",
+      "authority": "Finna/National Library of Finland"
+    },
+    {
+      "name": "discogs",
+      "authority": "Discogs",
+      "status": "reconciliation-pending"
+    }
+  ],
+  "rule": "No namespace identifier substitutes for Haamu canonical identity."
+}
