@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.110.0',
+  version: '0.111.0',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -122,8 +122,8 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       const prompt = document.createElement('input');
       prompt.className = 'plate-prompt';
       prompt.type = 'text';
-      prompt.placeholder = plateTitles[corner] + ' — Prompt';
-      prompt.setAttribute('placeholder', plateTitles[corner] + ' — Prompt');
+      prompt.placeholder = plateTitles[corner];
+      prompt.setAttribute('placeholder', plateTitles[corner]);
       prompt.autocomplete = 'off';
       prompt.setAttribute('aria-label', plateTitles[corner] + ' prompt');
       prompt.dataset.logicalPrompt = promptId;
@@ -138,7 +138,7 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       promptWrap.className = 'plate-prompt-wrap';
       const promptLabel = document.createElement('span');
       promptLabel.className = 'plate-prompt-label';
-      promptLabel.textContent = plateTitles[corner] + ' — Prompt';
+      promptLabel.textContent = plateTitles[corner];
       promptWrap.appendChild(prompt);
       promptWrap.appendChild(promptLabel);
       prompt.addEventListener('input', () => {
