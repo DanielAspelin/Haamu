@@ -15,7 +15,7 @@ const HaamuWebText = Object.freeze({
   family: 'web',
   role: 'web.text',
   type: 'text-input-output-processor-allocator-symbolizer-parser-mutator-deparser-font-renderer',
-  version: '1.2.0',
+  version: '1.3.0',
 
   input(event = {}, state = {}) {
     const key = event.key ?? null, code = event.code ?? null;
@@ -93,6 +93,50 @@ const HaamuWebText = Object.freeze({
       axes: Object.freeze({ ...(options.axes ?? {}) }),
       direction: options.direction ?? 'inherit',
       writingMode: options.writingMode ?? 'horizontal-tb',
+    });
+  },
+
+  evolveRight(value, options = {}) {
+    const symbols = this.symbolize(value);
+    const start = Math.max(0, Math.trunc(finite(options.start, 0)));
+    const advance = Math.max(0, finite(options.advance, 1));
+    return Object.freeze({
+      type:'web-text-evolve-right',
+      direction:'right',
+      start,
+      end:start + symbols.length * advance,
+      advance,
+      symbols,
+    });
+  },
+
+  pullLeft(value, options = {}) {
+    const symbols = this.symbolize(value);
+    const capacity = Math.max(0, Math.trunc(finite(options.capacity, symbols.length)));
+    const overflow = Math.max(0, symbols.length - capacity);
+    return Object.freeze({
+      type:'web-text-pull-left',
+      direction:'left',
+      capacity,
+      overflow,
+      displaced:Object.freeze(symbols.slice(0, overflow)),
+      visible:Object.freeze(symbols.slice(overflow)),
+    });
+  },
+
+  newLine(value = '', options = {}) {
+    const text = this.normalize(value);
+    const position = Math.max(0, Math.min(text.length, Math.trunc(finite(options.position, text.length))));
+    const newline = options.sequence ?? '\n';
+    const after = text.slice(0, position) + newline + text.slice(position);
+    return Object.freeze({
+      type:'web-text-new-line',
+      sequence:newline,
+      position,
+      before:text,
+      after,
+      cursor:position + newline.length,
+      lineCount:this.lines(after).length,
     });
   },
 
