@@ -36,8 +36,28 @@ const clientExecute = command => {
 };
 
 const HaamuShell = Object.freeze({
-  family:'shell', role:'shell.system', type:'bounded-shell-router', version:'0.1.0',
+  family:'shell', role:'shell.system', type:'bounded-shell-router', version:'0.2.0',
   types:TYPES,
+
+  inspect(command) {
+    const source=String(command ?? '');
+    let quote=null, escape=false, round=0, square=0, curly=0;
+    for (const character of source) {
+      if (escape) { escape=false; continue; }
+      if (character==='\\' && quote!=="'") { escape=true; continue; }
+      if (quote) { if (character===quote) quote=null; continue; }
+      if (character==="'" || character==='"') { quote=character; continue; }
+      if (character==='(') round+=1; else if(character===')') round=Math.max(0,round-1);
+      if (character==='[') square+=1; else if(character===']') square=Math.max(0,square-1);
+      if (character==='{') curly+=1; else if(character==='}') curly=Math.max(0,curly-1);
+    }
+    const trailingEscape=escape;
+    const continuation=!!quote || trailingEscape || round>0 || square>0 || curly>0;
+    return Object.freeze({
+      type:'shell-input-inspection', complete:!continuation, continuation,
+      reason:quote?'quote':trailingEscape?'escape':round?'parenthesis':square?'bracket':curly?'brace':null,
+    });
+  },
 
   create(type, definition={}) {
     type=String(type);
