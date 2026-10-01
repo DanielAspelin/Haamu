@@ -1,0 +1,51 @@
+name: Import public repositories to temporary
+on:
+  push:
+    branches: [html-modularization-experiment]
+    paths: [.github/workflows/import-public-repositories-temporary.yml]
+permissions:
+  contents: write
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: html-modularization-experiment
+          fetch-depth: 0
+      - name: Copy public repositories into temporary
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p temporary
+          repos=(
+            "ASCII-Utility"
+            "UTF-Utility"
+            "Symbol-Utility"
+            "Multicode-Utility"
+            "Datetime-Utility"
+            "Base64-Utility"
+            "Memstore"
+            "Softinit"
+            "Ghostwait"
+            "Crypt"
+            "Nodeterm"
+            "Lambda"
+            "TCPIP"
+            "Domain"
+            "JavaScript-Artifacts"
+            "C-CPP-Artifacts"
+          )
+          for name in "${repos[@]}"; do
+            test ! -e "temporary/$name"
+            git clone --depth 1 "https://github.com/DanielAspelin/$name.git" "/tmp/$name"
+            rm -rf "/tmp/$name/.git"
+            mkdir "temporary/$name"
+            cp -a "/tmp/$name/." "temporary/$name/"
+          done
+          rm .github/workflows/import-public-repositories-temporary.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A temporary .github/workflows/import-public-repositories-temporary.yml
+          git commit -m "Preserve public repositories in temporary"
+          git push origin HEAD:html-modularization-experiment
