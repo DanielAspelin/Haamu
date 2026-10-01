@@ -15,7 +15,7 @@ async function qualify(browser,name,viewport,isMobile){
    const open=page.locator('.corner-menu.open'); if(await open.count()!==1)throw Error(name+' '+pos+' open count '+await open.count());
    const menu=open.first(); const plat=await menu.getAttribute('data-platform'); if(plat!==(isMobile?'mobile':'desktop'))throw Error(name+' '+pos+' wrong platform '+plat);
    const prompt=menu.locator('.plate-prompt'); await prompt.fill('Alpha beta gamma delta epsilon zeta eta theta iota kappa lambda mu nu xi omicron pi rho sigma tau');
-   await prompt.press('Home'); await prompt.press('ArrowRight'); await prompt.press('ArrowRight'); await page.waitForTimeout(80);
+   await prompt.evaluate(el=>{el.focus();el.setSelectionRange(0,0);el.dispatchEvent(new Event('select',{bubbles:true}));}); await prompt.press('ArrowRight'); await prompt.press('ArrowRight'); await page.waitForTimeout(80);
    if(await prompt.inputValue()==='')throw Error(name+' '+pos+' prompt input lost');
    const selection=await prompt.evaluate(el=>({start:el.selectionStart,end:el.selectionEnd}));
    if(selection.start!==2||selection.end!==2)throw Error(name+' '+pos+' native caret authority lost '+JSON.stringify(selection));
