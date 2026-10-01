@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.134.0',
+  version: '0.135.0',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -129,6 +129,7 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
     off.width=Math.max(1,Math.floor(wr.width));off.height=Math.max(1,Math.floor(wr.height));
     oc.font='600 14px Rajdhani,sans-serif';oc.textBaseline='alphabetic';oc.fillStyle='#fff';
     const text=prompt.value,leftInset=12,rightInset=12,wrapWidth=Math.max(1,wr.width-leftInset-rightInset),
+      /* v8.3 baseline is Plate-local, not derived from production row flow. */
       anchorBaseline=Math.round(44/2+5),lineHeight=17,lines=[''];
     for(const ch of text){if(ch==='\n'){lines.push('');continue;}const current=lines[lines.length-1];
       if(current&&oc.measureText(current+ch).width>wrapWidth)lines.push(ch);else lines[lines.length-1]=current+ch;}
@@ -137,13 +138,15 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
     for(let li=0;li<lines.length;li++){const len=lines[li].length;
       if(caretIndex<=consumed+len){caretLine=li;caretColumn=Math.max(0,caretIndex-consumed);break;}
       consumed+=len;if(text[consumed]==='\n')consumed++;caretLine=Math.min(li+1,lines.length-1);caretColumn=lines[caretLine]?.length||0;}
-    const activeLine=Math.max(0,lines.length-1),visibleStart=Math.max(0,activeLine-2);
-    /* Qualified v8.3 conveyor invariant: the newest/active line always owns
-       the original Prompt baseline. Older visible lines are displaced upward
-       by exact line-height increments and clipped by the projection raster. */
-    for(let li=visibleStart;li<lines.length;li++){
-      const age=activeLine-li;
-      oc.fillText(lines[li],leftInset,anchorBaseline-(age*lineHeight));
+    const activeLine=Math.max(0,lines.length-1);
+    /* Exact isolated-v8.3 conveyor:
+       line 1 starts at the qualified baseline. Each newly-created line takes
+       that same baseline immediately; prior lines translate upward. Only the
+       current line and its two predecessors are eligible for projection. */
+    const visibleStart=Math.max(0,activeLine-2);
+    for(let li=visibleStart;li<=activeLine;li++){
+      const projectedBaseline=anchorBaseline-((activeLine-li)*lineHeight);
+      oc.fillText(lines[li],leftInset,projectedBaseline);
     }
     const metrics=oc.measureText(lines[caretLine]||text||'Hg'),ascent=metrics.actualBoundingBoxAscent||11,
       descent=metrics.actualBoundingBoxDescent||3,
