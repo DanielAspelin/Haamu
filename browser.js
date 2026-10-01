@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.98.0',
+  version: '0.104.0',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -88,6 +88,12 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
 
   const menus = new Map();
   const logicalPrompts = new Map();
+  const plateTitles = Object.freeze({
+    'top-left': 'SERVER',
+    'top-right': 'LOCAL',
+    'bottom-left': 'GLOBAL',
+    'bottom-right': 'CLIENT',
+  });
   for (const button of shell.querySelectorAll('.corner.start')) {
     const corner = button.dataset.position;
     const promptId = 'prompt-' + corner;
@@ -104,6 +110,10 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       const matrix = document.createElement('div');
       matrix.className = 'plate-matrix';
       matrix.dataset.matrix = platform + '-' + corner;
+
+      const title = document.createElement('div');
+      title.className = 'plate-title';
+      title.textContent = plateTitles[corner];
 
       const table = document.createElement('div');
       table.className = 'plate-table';
@@ -128,6 +138,7 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       promptRow.appendChild(prompt);
       table.appendChild(promptRow);
       matrix.appendChild(table);
+      matrix.appendChild(title);
       menu.appendChild(matrix);
       plateLayer.appendChild(menu);
       projections[platform] = menu;
