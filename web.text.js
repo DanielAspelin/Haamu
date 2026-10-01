@@ -15,7 +15,7 @@ const HaamuWebText = Object.freeze({
   family: 'web',
   role: 'web.text',
   type: 'text-input-output-processor-allocator-symbolizer-parser-mutator-deparser-font-renderer',
-  version: '1.10.0',
+  version: '1.11.0',
 
   key(event = {}) {
     const key = event.key ?? null;
@@ -608,6 +608,20 @@ const HaamuWebText = Object.freeze({
       direction: options.direction ?? 'auto',
       language: options.language ?? 'und',
       writingMode: options.writingMode ?? 'horizontal-tb',
+    });
+  },
+
+  output(value, options = {}) {
+    const record = this.process(value, options);
+    return Object.freeze({
+      type: 'web-text-output',
+      text: record.text,
+      source: record,
+      semantic: options.semantic ?? 'result',
+      dynamic: options.dynamic !== false,
+      live: options.live ?? 'polite',
+      atomic: options.atomic === true,
+      relevant: options.relevant ?? 'additions text',
     });
   },
 
