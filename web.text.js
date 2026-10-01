@@ -15,7 +15,7 @@ const HaamuWebText = Object.freeze({
   family: 'web',
   role: 'web.text',
   type: 'text-input-output-processor-allocator-symbolizer-parser-mutator-deparser-font-renderer',
-  version: '1.7.0',
+  version: '1.8.0',
 
   key(event = {}) {
     const key = event.key ?? null;
@@ -331,6 +331,49 @@ const HaamuWebText = Object.freeze({
       type:'web-text-alignment',
       horizontal:options.horizontal ?? 'start', vertical:options.vertical ?? 'start',
       direction:options.direction ?? 'auto', writingMode:options.writingMode ?? 'horizontal-tb',
+    });
+  },
+
+  allocateLines(value = '', options = {}) {
+    const text=this.normalize(value);
+    const source=Array.isArray(options.lines) ? options.lines : this.lines(text).map((line,index)=>({
+      start:0,end:line.length,value:line,softBreak:false,hardBreak:index<this.lines(text).length-1
+    }));
+    const capacity=Math.max(1,Math.trunc(finite(options.capacity,3)));
+    const normalized=source.map((line,index)=>Object.freeze({
+      type:'web-text-line',
+      number:index,
+      start:Math.max(0,Math.trunc(finite(line.start,0))),
+      end:Math.max(0,Math.trunc(finite(line.end,line.value?.length ?? 0))),
+      value:line.value == null ? text.slice(line.start ?? 0,line.end ?? 0) : String(line.value),
+      softBreak:!!line.softBreak,
+      hardBreak:!!line.hardBreak,
+    }));
+    const first=Math.max(0,normalized.length-capacity);
+    return Object.freeze({
+      type:'web-text-line-allocation',
+      capacity,
+      total:normalized.length,
+      first,
+      last:Math.max(first,normalized.length-1),
+      overflowing:normalized.length>capacity,
+      displaced:Object.freeze(normalized.slice(0,first)),
+      visible:Object.freeze(normalized.slice(first)),
+      direction:normalized.length>capacity?'up':'none',
+    });
+  },
+
+  pullUp(value = '', options = {}) {
+    const allocation=this.allocateLines(value,options);
+    return Object.freeze({
+      type:'web-text-pull-up',
+      direction:'up',
+      capacity:allocation.capacity,
+      displaced:allocation.displaced,
+      visible:allocation.visible,
+      first:allocation.first,
+      last:allocation.last,
+      overflowing:allocation.overflowing,
     });
   },
 
