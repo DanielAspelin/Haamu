@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.105.0',
+  version: '0.106.0',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -111,10 +111,6 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       matrix.className = 'plate-matrix';
       matrix.dataset.matrix = platform + '-' + corner;
 
-      const title = document.createElement('div');
-      title.className = 'plate-title';
-      title.textContent = plateTitles[corner];
-
       const table = document.createElement('div');
       table.className = 'plate-table';
       table.setAttribute('role', 'table');
@@ -137,7 +133,6 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
 
       promptRow.appendChild(prompt);
       table.appendChild(promptRow);
-      matrix.appendChild(title);
       matrix.appendChild(table);
       menu.appendChild(matrix);
       plateLayer.appendChild(menu);
