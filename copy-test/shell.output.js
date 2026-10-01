@@ -1,5 +1,8 @@
 'use strict';
 
+
+/* module-private execution scope */
+(() => {
 /** Haamu Shell Output — renderer-independent shell egress contract. */
 globalThis.HaamuFamilies ??= Object.create(null);
 let sequence=0;
@@ -17,3 +20,4 @@ const HaamuShellOutput=Object.freeze({
 });
 globalThis.HaamuFamilies['shell.output']=Object.freeze({family:'shell',role:'shell.output',type:'shell-output-contract',version:'0.1.0'});
 globalThis.HaamuShellOutput=HaamuShellOutput;
+})();
