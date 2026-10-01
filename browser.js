@@ -199,9 +199,9 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       promptWrap.appendChild(prompt);
       promptWrap.appendChild(promptLabel);
 
-      if (platform === 'desktop') {
+      {
         const desktopCursor = document.createElement('span');
-        desktopCursor.className = 'desktop-prompt-cursor';
+        desktopCursor.className = 'prompt-block-cursor';
         desktopCursor.setAttribute('aria-hidden', 'true');
         promptWrap.appendChild(desktopCursor);
 
