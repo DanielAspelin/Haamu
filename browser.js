@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.129.0',
+  version: '0.130.0',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -114,7 +114,7 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
     const plateState = globalThis.HaamuBrowserPlateState?.forPlate(plateId);
     const webPlate = globalThis.HaamuWebPlate?.create?.({ id:plateId, corner, platform:'common' });
     const commandChannel = globalThis.HaamuCommandChannel?.get?.(channelId);
-    commandChannel?.bindOutput?.(plateId);
+    commandChannel?.bindInput?.(plateId);
     const shellRouter = globalThis.HaamuShell?.router?.();
     const projections = Object.create(null);
 
@@ -162,7 +162,7 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       contentRegion.setAttribute('aria-live', 'polite');
       contentRegion.dataset.logicalPlate = plateId;
       contentRegion.dataset.channel = channelId;
-      contentRegion.dataset.outputSocket = plateSystems?.outputSocket?.socket?.id ?? '';
+      contentRegion.dataset.inputSocket = plateSystems?.inputSocket?.socket?.id ?? '';
       const plateArea=plateSystems?.configureArea?.({mode:'text'});
       contentRegion.dataset.areaMode=plateArea?.mode ?? 'text';
       contentRegion.dataset.snap=plateArea?.snap ?? 'plate';
@@ -170,7 +170,7 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       contentRegion.classList.add('plate-area','plate-text-area');
       contentRegion.dataset.liveCapable='true';
       contentRegion.dataset.livePrompt='';
-      contentRegion.dataset.liveInputSocket='';
+      contentRegion.dataset.livePromptOutputSocket='';
       contentRow.appendChild(contentRegion);
 
       const promptRow = document.createElement('div');
@@ -208,7 +208,7 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       });
       prompt.setAttribute('aria-label', plateTitles[corner] + ' prompt');
       prompt.dataset.logicalPrompt = promptId;
-      prompt.dataset.inputSocket = promptSystems?.inputSocket?.socket?.id ?? '';
+      prompt.dataset.outputSocket = promptSystems?.outputSocket?.socket?.id ?? '';
       const resizePrompt = target => {
         const menu=target.closest('.corner-menu'), wrap=target.closest('.plate-prompt-wrap');
         const row=target.closest('.plate-prompt-row'), area=wrap?.querySelector('.plate-prompt-text-area');
