@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.136.0',
+  version: '0.137.0',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -533,6 +533,24 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       promptWrap.appendChild(promptProjection);
       promptWrap.appendChild(prompt);
       promptWrap.appendChild(promptLabel);
+
+      /* CLIENT/mobile qualification boundary: physically retire every legacy
+         visual painter instead of relying on cascade precedence. The textarea
+         remains present, focusable and editable at full geometry, but is
+         optically transparent. Only the external particle substrate may paint. */
+      if(platform==='mobile' && scope==='client'){
+        promptProjection.hidden=true;
+        promptProjection.style.display='none';
+        promptMeasure.hidden=true;
+        promptMeasure.style.display='none';
+        promptLabel.hidden=true;
+        promptLabel.style.setProperty('display','none','important');
+        prompt.style.setProperty('color','transparent','important');
+        prompt.style.setProperty('-webkit-text-fill-color','transparent','important');
+        prompt.style.setProperty('caret-color','transparent','important');
+        prompt.style.setProperty('text-shadow','none','important');
+        prompt.dataset.visualAuthority='particle-substrate-v8.3';
+      }
       /* Prompt activation belongs to the Prompt track, not to whichever
          projection/label layer happens to be under the pointer. This makes
          tapping the visible Prompt name a deterministic focus operation while
