@@ -213,10 +213,14 @@
     }
     /* Concurrent handoff: outgoing and incoming Plates animate during the
        same interval, preserving each Plate's own corner transform origin. */
-    .corner-menu.plate-transition-out{
+    /* Outgoing authority must outrank platform-specific transition rules.
+       The class is applied at the same instant .open is removed, so transform,
+       dimensions and opacity begin together on both mobile and desktop. */
+    .corner-menu.plate-transition-out,
+    .haamu-desktop .corner-menu[data-platform="desktop"].plate-transition-out{
       opacity:0;
       transition:
-        opacity .26s linear,
+        opacity .34s linear,
         transform .34s cubic-bezier(.4,0,.6,1),
         width .34s cubic-bezier(.4,0,.6,1),
         height .34s cubic-bezier(.4,0,.6,1),
