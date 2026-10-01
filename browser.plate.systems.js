@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * Haamu Browser Plate Systems — isolated output ownership per logical Plate.
+ * Haamu Browser Plate Systems — isolated input/received-output ownership per logical Plate.
  * Projection is deliberately data-bound only; visual rendering remains deferred.
  */
 globalThis.HaamuFamilies ??= Object.create(null);
@@ -23,7 +23,7 @@ const create=(plateId,definition={})=>{
   return record;
  };
  return Object.freeze({
-  type:'plate-output-systems',plateId,channelId,
+  type:'plate-input-systems',plateId,channelId,
   inputSocket:Object.freeze({type:'plate-input-socket',plateId,channelId,socket:channel?.inputSocket??null}),
   area:()=>area,
   configureArea(definition={}){
@@ -53,7 +53,7 @@ const create=(plateId,definition={})=>{
 };
 
 const HaamuBrowserPlateSystems=Object.freeze({
- family:'browser',role:'browser.plate.systems',type:'per-plate-output-systems',version:'0.5.0',
+ family:'browser',role:'browser.plate.systems',type:'per-plate-output-systems',version:'0.5.1',
  forPlate(plate,definition={}){
   const plateId=String(typeof plate==='string'?plate:(plate?.id??plate?.dataset?.plate??'')).trim();
   if(!plateId)throw new RangeError('Plate identity required.');
@@ -63,5 +63,5 @@ const HaamuBrowserPlateSystems=Object.freeze({
  remove(id){return systems.delete(String(id));},
  plates(){return Object.freeze(Array.from(systems.keys()));}
 });
-globalThis.HaamuFamilies['browser.plate.systems']=Object.freeze({family:'browser',role:'browser.plate.systems',type:'per-plate-output-systems',version:'0.4.0'});
+globalThis.HaamuFamilies['browser.plate.systems']=Object.freeze({family:'browser',role:'browser.plate.systems',type:'per-plate-output-systems',version:'0.5.1'});
 globalThis.HaamuBrowserPlateSystems=HaamuBrowserPlateSystems;
