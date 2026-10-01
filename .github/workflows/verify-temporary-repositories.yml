@@ -1,0 +1,58 @@
+name: Verify temporary repository preservation
+on:
+  push:
+    branches: [html-modularization-experiment]
+    paths: [.github/workflows/verify-temporary-repositories.yml]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: html-modularization-experiment
+      - name: Cross-check repositories file by file
+        shell: bash
+        run: |
+          set -euo pipefail
+          repos=(
+            "ASCII-Utility"
+            "UTF-Utility"
+            "Symbol-Utility"
+            "Multicode-Utility"
+            "Datetime-Utility"
+            "Base64-Utility"
+            "Memstore"
+            "Softinit"
+            "Ghostwait"
+            "Crypt"
+            "Nodeterm"
+            "Lambda"
+            "TCPIP"
+            "Domain"
+            "JavaScript-Artifacts"
+            "C-CPP-Artifacts"
+          )
+          total_source=0
+          total_copy=0
+          for name in "${repos[@]}"; do
+            rm -rf "/tmp/source-$name"
+            git clone --depth 1 "https://github.com/DanielAspelin/$name.git" "/tmp/source-$name"
+            rm -rf "/tmp/source-$name/.git"
+            (cd "/tmp/source-$name" && find . -type f -print0 | sort -z | xargs -0 -r sha256sum) > "/tmp/$name.source.sha256"
+            (cd "temporary/$name" && find . -type f -print0 | sort -z | xargs -0 -r sha256sum) > "/tmp/$name.copy.sha256"
+            source_count="$(wc -l < "/tmp/$name.source.sha256")"
+            copy_count="$(wc -l < "/tmp/$name.copy.sha256")"
+            source_manifest="$(sha256sum "/tmp/$name.source.sha256" | awk '{print $1}')"
+            copy_manifest="$(sha256sum "/tmp/$name.copy.sha256" | awk '{print $1}')"
+            diff -u "/tmp/$name.source.sha256" "/tmp/$name.copy.sha256"
+            test "$source_count" = "$copy_count"
+            test "$source_manifest" = "$copy_manifest"
+            printf '%s source=%s copy=%s manifest=%s PASS\n' "$name" "$source_count" "$copy_count" "$source_manifest"
+            total_source=$((total_source + source_count))
+            total_copy=$((total_copy + copy_count))
+          done
+          test "$total_source" = "$total_copy"
+          printf 'TOTAL source=%s copy=%s repositories=%s\n' "$total_source" "$total_copy" "${#repos[@]}"
+          echo "TEMPORARY_REPOSITORY_PRESERVATION=PASS"
