@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.113.0',
+  version: '0.114.0',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -97,6 +97,23 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
   for (const button of shell.querySelectorAll('.corner.start')) {
     const corner = button.dataset.position;
     const promptId = 'prompt-' + corner;
+    const plateId = 'plate-' + corner;
+    const channelId = 'command-' + corner;
+    const shellByCorner = Object.freeze({
+      'top-left':'server',
+      'top-right':'local',
+      'bottom-left':'global',
+      'bottom-right':'client',
+    });
+    const promptSystems = globalThis.HaamuBrowserPromptSystems?.forPrompt(promptId, {
+      channelId,
+      shell: shellByCorner[corner],
+    });
+    const plateSystems = globalThis.HaamuBrowserPlateSystems?.forPlate(plateId, { channelId });
+    const windowing = globalThis.HaamuBrowserWindowing?.forPlate(plateId);
+    const commandChannel = globalThis.HaamuCommandChannel?.get?.(channelId);
+    commandChannel?.bindOutput?.(plateId);
+    const shellRouter = globalThis.HaamuShell?.router?.();
     const projections = Object.create(null);
 
     for (const platform of ['mobile', 'desktop']) {
@@ -105,6 +122,8 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       menu.dataset.corner = corner;
       menu.dataset.platform = platform;
       menu.dataset.prompt = promptId;
+      menu.dataset.plate = plateId;
+      menu.dataset.channel = channelId;
       menu.setAttribute('aria-hidden', 'true');
 
       const matrix = document.createElement('div');
@@ -156,35 +175,25 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
         if (event.key !== 'Enter' || event.isComposing) return;
         event.preventDefault();
 
-        const shellByCorner = Object.freeze({
-          'top-left':'server',
-          'top-right':'local',
-          'bottom-left':'global',
-          'bottom-right':'client',
-        });
-        const interpreter = globalThis.HaamuWebInterpreter;
-        const promptSystems = globalThis.HaamuBrowserPromptSystems?.forPrompt(promptId, {
-          shell: shellByCorner[corner],
-        });
-        if (!interpreter || !promptSystems) return;
-
-        const output = interpreter.execute(prompt.value, {
-          shell: promptSystems.shellType,
-          router: promptSystems.shell.router,
-          /* Search is isolated per logical prompt. A provider remains
-             explicitly unconnected until separately authorized/configured. */
-          search: promptSystems.search.connected()
-            ? (query, context) => promptSystems.search.execute(query, context)
-            : undefined,
-          terminal: promptSystems.terminal,
+        if (!promptSystems || !plateSystems) return;
+        const transaction = promptSystems.submit(prompt.value, {
+          router: shellRouter,
           promptId,
+          plateId,
+          channelId,
           corner,
           platform,
         });
+        const projectedOutput = plateSystems.accept(transaction.output);
 
-        globalThis.dispatchEvent(new CustomEvent('haamu:terminal-output', {
-          detail: output,
+        globalThis.dispatchEvent(new CustomEvent('haamu:command-output', {
+          detail: Object.freeze({ transaction, output: projectedOutput, promptId, plateId, channelId }),
         }));
+        if (transaction.output?.type === 'terminal-output') {
+          globalThis.dispatchEvent(new CustomEvent('haamu:terminal-output', {
+            detail: transaction.output,
+          }));
+        }
         prompt.value = '';
         logicalPrompts.set(promptId, '');
         promptWrap.classList.remove('has-value');
