@@ -221,7 +221,6 @@
     }
     .corner-menu[data-corner^="top-"] .plate-prompt-row{align-self:start}
     .corner-menu[data-corner^="bottom-"] .plate-matrix{grid-template-rows:1fr auto}
-    .corner-menu[data-corner^="bottom-"] .plate-prompt-row{grid-row:2;align-self:end}
     .corner-menu[data-corner$="-left"] .plate-prompt{text-align:left;margin:6px 8px;width:calc(100% - 16px);padding:9px 12px}
     .corner-menu[data-corner$="-right"] .plate-prompt{
       direction:ltr !important;
@@ -241,8 +240,12 @@
     }
     /* Prompt faces the owning button: upper buttons use the plate's lowest
        row; lower buttons use the plate's highest row. */
-    .corner-menu.open[data-corner^="top-"] .plate-prompt-row{bottom:0;top:auto}
-    .corner-menu.open[data-corner^="bottom-"] .plate-prompt-row{top:0;bottom:auto}
+    .corner-menu.open[data-corner^="top-"] .plate-prompt-row{
+      top:auto !important;bottom:0 !important;grid-row:auto;align-self:auto;
+    }
+    .corner-menu.open[data-corner^="bottom-"] .plate-prompt-row{
+      top:0 !important;bottom:auto !important;grid-row:auto;align-self:auto;
+    }
     .corner-menu.open .plate-prompt{
       display:block;visibility:visible;opacity:1;height:44px;
       background:linear-gradient(135deg,rgba(255,255,255,.18),rgba(255,255,255,.055));
