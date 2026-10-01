@@ -1,0 +1,34 @@
+'use strict';
+const {JSDOM} = require('jsdom');
+const fs = require('node:fs');
+const path = require('node:path');
+const vm = require('node:vm');
+const assert = require('node:assert/strict');
+const root=path.resolve(__dirname,'..');
+const html=fs.readFileSync(path.join(root,'index.html'),'utf8');
+const dom=new JSDOM(html.replace(/<style>[\s\S]*?<\/style>/,''),{url:'https://haamu.space/',runScripts:'outside-only'});
+const w=dom.window;
+w.matchMedia=()=>({matches:true,addEventListener(){},removeEventListener(){}});
+for(const match of html.matchAll(/<script src="([^?]+)\?[^\"]+"><\/script>/g)){
+ new vm.Script(fs.readFileSync(path.join(root,match[1]),'utf8'),{filename:match[1]}).runInContext(dom.getInternalVMContext());
+}
+w.document.dispatchEvent(new w.Event('DOMContentLoaded'));
+assert.equal(w.HaamuRuntime.state,'READY');
+const buttons=w.document.querySelectorAll('.corner');buttons[0].click();
+assert.equal(w.document.querySelectorAll('.corner-menu.open').length,1);
+const output=w.HaamuVisual.render('top-left','<script>x</script>',{links:{'token:0':'javascript:alert(1)'}});
+assert.ok(output.desktop.mesh);
+assert.equal(w.document.querySelectorAll('.plate-content script').length,0);
+assert.equal(w.document.querySelectorAll('.plate-content a').length,0);
+assert.ok(w.document.querySelector('.corner-menu.open .plate-content').textContent.includes('<script>'));
+w.HaamuVisual.button('top-left','S','100.0%');
+assert.equal(buttons[0].querySelector('.corner-value').textContent,'100.0%');
+buttons[2].click();
+assert.equal(w.document.querySelectorAll('.corner-menu.open').length,1);
+for(const plate of w.document.querySelectorAll('.corner-menu:not(.open)')) assert.equal(plate.inert,true);
+w.HaamuVisual.render('top-left','Link',{links:{'token:0':'https://example.com/'}});
+assert.equal(w.document.querySelector('.plate-content a').href,'https://example.com/');
+w.HaamuVisual.dispose();
+assert.equal(w.document.querySelector('.plate-content').children.length,0);
+dom.window.close();
+console.log('PASS DOM boot, safe projection, links, button values, plate switching and disposal (no layout engine)');

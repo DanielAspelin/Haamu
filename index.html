@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover,interactive-widget=resizes-content">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,interactive-widget=resizes-content">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<meta name="haamu-build" content="0.118.0">
+<meta name="haamu-build" content="0.119.0">
   <meta name="description" content="Haamu — open community, technology and culture">
   <title>Haamu</title>
   <style>
@@ -354,6 +354,18 @@
       .mobile-compartment.second{inset:0 0 0 50%}
     }
     @media(prefers-reduced-motion:reduce){.corner,.pane,.corner-menu{transition:none}}
+    /* Content is bounded independently of the established outer plate. */
+    .plate-content{position:absolute;inset:64px 12px;overflow:auto;container-type:inline-size;pointer-events:auto;min-width:0;min-height:0}
+    .visual-grid{display:grid;gap:8px;grid-template-columns:repeat(var(--visual-columns,1),minmax(0,1fr));align-content:start}
+    .visual-cell{min-width:0;white-space:pre-wrap;overflow-wrap:anywhere;color:inherit;font:600 16px/1.4 'Rajdhani',sans-serif;text-decoration-thickness:1px}
+    .visual-unit{display:inline-block;white-space:pre-wrap}
+    @container(max-width:240px){.visual-grid{gap:4px}.visual-cell{font-size:14px}}
+    .corner{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:4px}
+    .corner-label{font:600 16px/1 'Rajdhani',sans-serif}
+    .corner-value{font:600 10px/1.1 monospace;font-variant-numeric:tabular-nums;min-inline-size:6ch;white-space:nowrap}
+    .corner-value:empty{display:none}
+    .visual-cell:focus-visible,.corner:focus-visible{outline:2px solid white;outline-offset:-2px}
+    @media(prefers-reduced-motion:reduce){.corner,.pane,.corner-menu,.visual-unit{animation:none!important;transition:none!important}}
   </style>
 </head>
 <body>
@@ -371,24 +383,26 @@
     <i class="mobile-compartment second" data-compartment="lower-right"></i>
   </div>
   <div id="haamu-root"><noscript>Haamu requires JavaScript for its runtime projection.</noscript></div>
-  <script src="entry.pre.js?v=0.118.0"></script>
-  <script src="entry.post.js?v=0.118.0"></script>
-  <script src="index.js?v=0.118.0"></script>
-  <script src="default.js?v=0.118.0"></script>
-  <script src="haamu.js?v=0.118.0"></script>
-  <script src="browser.entry.js?v=0.118.0"></script>
-  <script src="browser.js?v=0.118.0"></script>
-  <script src="web.entry.js?v=0.118.0"></script>
-  <script src="web.concurrency.js?v=0.118.0"></script>
-  <script src="web.parallelism.js?v=0.118.0"></script>
-  <script src="web.text.js?v=0.118.0"></script>
-  <script src="web.matrix.js?v=0.118.0"></script>
-  <script src="web.grid.js?v=0.118.0"></script>
-  <script src="web.mesh.js?v=0.118.0"></script>
-  <script src="web.plate.js?v=0.118.0"></script>
-  <script src="web.assembly.js?v=0.118.0"></script>
-  <script src="web.gpu.js?v=0.118.0"></script>
-  <script src="web.js?v=0.118.0"></script>
+  <script src="entry.pre.js?v=0.119.0"></script>
+  <script src="entry.post.js?v=0.119.0"></script>
+  <script src="index.js?v=0.119.0"></script>
+  <script src="default.js?v=0.119.0"></script>
+  <script src="haamu.js?v=0.119.0"></script>
+  <script src="browser.entry.js?v=0.119.0"></script>
+  <script src="browser.js?v=0.119.0"></script>
+  <script src="web.entry.js?v=0.119.0"></script>
+  <script src="web.concurrency.js?v=0.119.0"></script>
+  <script src="web.parallelism.js?v=0.119.0"></script>
+  <script src="web.text.js?v=0.119.0"></script>
+  <script src="web.matrix.js?v=0.119.0"></script>
+  <script src="web.grid.js?v=0.119.0"></script>
+  <script src="web.mesh.js?v=0.119.0"></script>
+  <script src="web.plate.js?v=0.119.0"></script>
+  <script src="web.assembly.js?v=0.119.0"></script>
+  <script src="web.gpu.js?v=0.119.0"></script>
+  <script src="browser.animation.composition.js?v=0.119.0"></script>
+  <script src="web.dom.js?v=0.119.0"></script>
+  <script src="web.js?v=0.119.0"></script>
   <script>
     /* Website-scoped freshness boundary. Haamu versions and refreshes only
        Haamu resources; the host browser remains outside Haamu control. */

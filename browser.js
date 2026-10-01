@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.111.0',
+  version: '0.112.0',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -33,6 +33,7 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
   if (!root) throw new Error('Haamu visual root not found.');
 
   // Phase 1 is deliberately geometry-only: remove every prior projection.
+  globalThis.HaamuVisual?.dispose();
   root.replaceChildren();
   const shell = document.createElement('main');
   shell.className = 'haamu-interface';
@@ -83,9 +84,11 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
    */
   const plateLayer = document.createElement('div');
   plateLayer.className = 'plate-layer';
-  plateLayer.setAttribute('aria-hidden', 'true');
+  // Individual closed plates own visibility and focus exclusion.
   shell.prepend(plateLayer);
 
+  const controlAnimation = HaamuBrowserAnimation.create();
+  const views = new Map();
   const menus = new Map();
   const logicalPrompts = new Map();
   const plateTitles = Object.freeze({
@@ -106,6 +109,7 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       menu.dataset.platform = platform;
       menu.dataset.prompt = promptId;
       menu.setAttribute('aria-hidden', 'true');
+      menu.inert = true;
 
       const matrix = document.createElement('div');
       matrix.className = 'plate-matrix';
@@ -113,11 +117,11 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
 
       const table = document.createElement('div');
       table.className = 'plate-table';
-      table.setAttribute('role', 'table');
+
 
       const promptRow = document.createElement('div');
       promptRow.className = 'plate-row plate-prompt-row';
-      promptRow.setAttribute('role', 'row');
+
 
       const prompt = document.createElement('input');
       prompt.className = 'plate-prompt';
@@ -148,35 +152,23 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       table.appendChild(promptRow);
       matrix.appendChild(table);
       menu.appendChild(matrix);
+      const content = document.createElement('div');
+      content.className = 'plate-content';
+      menu.appendChild(content);
+      const plate = HaamuWebPlate.create({ id: platform + '-' + corner, platform, corner });
+      views.set(platform + '-' + corner, HaamuWebDOM.mount(content, plate));
       plateLayer.appendChild(menu);
       projections[platform] = menu;
     }
 
     menus.set(corner, projections);
     button.setAttribute('aria-expanded', 'false');
-    let buttonMorph = null;
-    let buttonMorphTimers = [];
+    HaamuWebDOM.decorateButton(button);
     button.addEventListener('click', () => {
-      buttonMorph?.cancel();
-      buttonMorphTimers.forEach(clearTimeout);
-      buttonMorphTimers = [];
-
-      const rgb = getComputedStyle(button).getPropertyValue('--corner-rgb').trim();
-      const paint = (background, brightness, scale) => {
-        button.style.backgroundColor = background;
-        button.style.filter = 'brightness(' + brightness + ')';
-        button.style.transform = 'scale(' + scale + ')';
-      };
-
-      paint('rgba(' + rgb + ', .32)', .52, .90);
-      buttonMorphTimers.push(setTimeout(() => {
-        paint('rgba(' + rgb + ', 1)', 1.65, 1.06);
-      }, 260));
-      buttonMorphTimers.push(setTimeout(() => {
-        button.style.backgroundColor = '';
-        button.style.filter = '';
-        button.style.transform = '';
-      }, 620));
+      controlAnimation.animate(corner, button, [
+        { transform: 'scale(1)' }, { transform: 'scale(.90)' },
+        { transform: 'scale(1.06)' }, { transform: 'scale(1)' },
+      ], { duration: 620 });
 
       const activePlatform = mobilePlatform ? 'mobile' : 'desktop';
       const current = [...menus.entries()].find(([, pair]) =>
@@ -188,6 +180,7 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
         for (const active of Object.values(pair)) {
           active.classList.remove('open');
           active.setAttribute('aria-hidden', 'true');
+        active.inert = true;
         }
         shell.querySelector('.corner.start[data-position="' + position + '"]')?.setAttribute('aria-expanded', 'false');
       }
@@ -195,8 +188,9 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       if (!same) {
         const menu = projections[activePlatform];
         menu.setAttribute('aria-hidden', 'false');
+        menu.inert = false;
         button.setAttribute('aria-expanded', 'true');
-        requestAnimationFrame(() => menu.classList.add('open'));
+        menu.classList.add('open');
       }
     });
   }
@@ -210,11 +204,30 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       for (const active of open) {
         active.classList.remove('open');
         active.setAttribute('aria-hidden', 'true');
+        active.inert = true;
       }
       shell.querySelector('.corner.start[data-position="' + position + '"]')?.setAttribute('aria-expanded', 'false');
     }
   });
 
+  globalThis.HaamuVisual = Object.freeze({
+    // Presentation-only API: callers supply text and real numeric results.
+    render(corner, value, options = {}) {
+      if (!views.has('desktop-' + corner)) throw new RangeError('Unknown corner');
+      const results = {};
+      for (const platform of ['mobile', 'desktop']) results[platform] = views.get(platform + '-' + corner).render(value, options);
+      return Object.freeze(results);
+    },
+    animate(corner, id, keyframes, options) {
+      return views.get((mobilePlatform ? 'mobile-' : 'desktop-') + corner)?.animate(id, keyframes, options);
+    },
+    button(corner, label, value = '') {
+      const button = shell.querySelector('.corner[data-position="' + corner + '"]');
+      if (!button) throw new RangeError('Unknown corner');
+      HaamuWebDOM.updateButton(button, label, value);
+    },
+    dispose() { controlAnimation.dispose(); for (const view of views.values()) view.dispose(); },
+  });
   root.appendChild(shell);
   document.documentElement.dataset.haamu = 'ready';
   return Object.freeze({

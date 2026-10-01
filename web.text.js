@@ -15,7 +15,7 @@ const HaamuWebText = Object.freeze({
   family: 'web',
   role: 'web.text',
   type: 'text-processor-allocator-parser-renderer',
-  version: '0.9.0',
+  version: '0.10.0',
 
   normalize(value, form = 'NFC') {
     const text = value == null ? '' : String(value);
@@ -33,6 +33,13 @@ const HaamuWebText = Object.freeze({
 
   characters(value) {
     return Array.from(this.normalize(value));
+  },
+
+  // Visual graphemes preserve combining sequences; code-point APIs stay intact.
+  graphemes(value) {
+    const text = this.normalize(value);
+    if (typeof Intl.Segmenter !== 'function') return [text];
+    return Array.from(new Intl.Segmenter(undefined, { granularity: 'grapheme' }).segment(text), item => item.segment);
   },
 
   codePoints(value) {
@@ -113,7 +120,7 @@ const HaamuWebText = Object.freeze({
     if (!plate || plate.type !== 'web-plate') throw new TypeError('WebText target must be a Plate.');
     const record = this.process(value, options);
     const unit = options.unit ?? 'token';
-    const sourceUnits = unit === 'glyph' ? record.characters : record.parsed.tokens;
+    const sourceUnits = unit === 'glyph' ? this.graphemes(record.text) : record.parsed.tokens;
     const columns = Math.max(1, Math.trunc(finite(options.columns, 1)));
     const cells = sourceUnits.map((source, index) => {
       const text = unit === 'glyph' ? source : source.value;
