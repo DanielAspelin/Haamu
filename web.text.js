@@ -15,7 +15,7 @@ const HaamuWebText = Object.freeze({
   family: 'web',
   role: 'web.text',
   type: 'text-input-output-processor-allocator-symbolizer-parser-mutator-deparser-font-renderer',
-  version: '1.3.0',
+  version: '1.4.0',
 
   input(event = {}, state = {}) {
     const key = event.key ?? null, code = event.code ?? null;
@@ -121,6 +121,39 @@ const HaamuWebText = Object.freeze({
       overflow,
       displaced:Object.freeze(symbols.slice(0, overflow)),
       visible:Object.freeze(symbols.slice(overflow)),
+    });
+  },
+
+  lineBreak(value = '', options = {}) {
+    const text = this.normalize(value);
+    const position = Math.max(0, Math.min(text.length, Math.trunc(finite(options.position, text.length))));
+    const kind = options.kind ?? 'soft';
+    const sequence = kind === 'hard' ? (options.sequence ?? '\n') : '';
+    return Object.freeze({
+      type:'web-text-line-break',
+      kind,
+      position,
+      sequence,
+      source:options.source ?? (kind === 'hard' ? 'explicit' : 'wrap'),
+      before:text,
+      after:sequence ? text.slice(0,position)+sequence+text.slice(position) : text,
+      preservesText:sequence.length === 0,
+    });
+  },
+
+  whiteSpace(value = '', options = {}) {
+    const text = this.normalize(value);
+    const symbols = this.symbolize(text).filter(symbol => symbol.whitespace);
+    return Object.freeze({
+      type:'web-text-white-space',
+      mode:options.mode ?? 'preserve',
+      collapse:options.collapse ?? false,
+      wrap:options.wrap ?? true,
+      trim:options.trim ?? false,
+      symbols:Object.freeze(symbols),
+      spaces:symbols.filter(symbol => symbol.value === ' ').length,
+      tabs:symbols.filter(symbol => symbol.value === '\t').length,
+      newlines:symbols.filter(symbol => symbol.newline).length,
     });
   },
 
