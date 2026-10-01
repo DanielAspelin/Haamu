@@ -15,7 +15,7 @@ const HaamuWebText = Object.freeze({
   family: 'web',
   role: 'web.text',
   type: 'text-input-output-processor-allocator-symbolizer-parser-mutator-deparser-font-renderer',
-  version: '1.4.0',
+  version: '1.5.0',
 
   input(event = {}, state = {}) {
     const key = event.key ?? null, code = event.code ?? null;
@@ -154,6 +154,47 @@ const HaamuWebText = Object.freeze({
       spaces:symbols.filter(symbol => symbol.value === ' ').length,
       tabs:symbols.filter(symbol => symbol.value === '\t').length,
       newlines:symbols.filter(symbol => symbol.newline).length,
+    });
+  },
+
+  space(value = '', options = {}) {
+    const text = this.normalize(value);
+    const position = Math.max(0, Math.min(text.length, Math.trunc(finite(options.position, text.length))));
+    const character = options.character ?? ' ';
+    const after = text.slice(0, position) + character + text.slice(position);
+    return Object.freeze({
+      type:'web-text-space',
+      position,
+      character,
+      before:text,
+      after,
+      cursor:position + character.length,
+    });
+  },
+
+  backspace(value = '', options = {}) {
+    const text = this.normalize(value);
+    const position = Math.max(0, Math.min(text.length, Math.trunc(finite(options.position, text.length))));
+    const start = Math.max(0, Math.min(position, Math.trunc(finite(options.start, position))));
+    const end = Math.max(start, Math.min(text.length, Math.trunc(finite(options.end, position))));
+    if (start !== end) {
+      return Object.freeze({
+        type:'web-text-backspace', before:text,
+        after:text.slice(0,start)+text.slice(end),
+        removed:text.slice(start,end), start, end, cursor:start,
+      });
+    }
+    if (position === 0) return Object.freeze({
+      type:'web-text-backspace', before:text, after:text,
+      removed:'', start:0, end:0, cursor:0,
+    });
+    const prefix = Array.from(text.slice(0,position));
+    const removed = prefix.pop() ?? '';
+    const cut = position - removed.length;
+    return Object.freeze({
+      type:'web-text-backspace', before:text,
+      after:text.slice(0,cut)+text.slice(position),
+      removed, start:cut, end:position, cursor:cut,
     });
   },
 
