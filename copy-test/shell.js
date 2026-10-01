@@ -1,5 +1,8 @@
 'use strict';
 
+
+/* module-private execution scope */
+(() => {
 /**
  * Haamu Shell System — bounded command-routing contract.
  *
@@ -96,3 +99,4 @@ globalThis.HaamuFamilies['shell.system']=Object.freeze({
   family:HaamuShell.family, role:HaamuShell.role, type:HaamuShell.type, version:HaamuShell.version,
 });
 globalThis.HaamuShell=HaamuShell;
+})();
