@@ -15,7 +15,34 @@ const HaamuWebText = Object.freeze({
   family: 'web',
   role: 'web.text',
   type: 'text-input-output-processor-allocator-symbolizer-parser-mutator-deparser-font-renderer',
-  version: '1.5.0',
+  version: '1.6.0',
+
+  key(event = {}) {
+    const key = event.key ?? null;
+    const code = event.code ?? null;
+    const phase = event.type === 'keyup' ? 'up' : event.type === 'keydown' ? 'down' : (event.phase ?? 'unknown');
+    const printable = typeof key === 'string' && Array.from(key).length === 1;
+    return Object.freeze({
+      type:'web-text-key',
+      key,
+      code,
+      phase,
+      pressed:phase === 'down',
+      released:phase === 'up',
+      repeat:!!event.repeat,
+      location:event.location ?? 0,
+      printable,
+      modifier:!!(key && ['Alt','AltGraph','Control','Meta','Shift'].includes(key)),
+      editing:!!(key && ['Backspace','Delete','Enter','Tab'].includes(key)),
+      navigation:!!(key && ['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Home','End','PageUp','PageDown'].includes(key)),
+      modifiers:Object.freeze({
+        alt:!!event.altKey,
+        control:!!event.ctrlKey,
+        meta:!!event.metaKey,
+        shift:!!event.shiftKey,
+      }),
+    });
+  },
 
   input(event = {}, state = {}) {
     const key = event.key ?? null, code = event.code ?? null;
@@ -24,6 +51,7 @@ const HaamuWebText = Object.freeze({
     const phase = event.type ?? 'input';
     return Object.freeze({
       type: 'web-text-input', phase, key, code,
+      keyState: this.key(event),
       repeat: !!event.repeat, location: event.location ?? 0,
       inputType: event.inputType ?? null, data: event.data ?? null,
       composing: !!event.isComposing,
