@@ -201,6 +201,7 @@
         width .48s cubic-bezier(.22,1,.36,1),
         height .48s cubic-bezier(.22,1,.36,1),
         border-radius .36s ease;
+      will-change:transform,opacity;
     }
     .corner-menu[data-corner="top-left"]{top:12px;left:4px;right:auto;bottom:auto;transform-origin:top left;transform:scale(.18);background:linear-gradient(135deg,rgba(0,0,0,.96) 0,rgba(0,0,0,.82) 24px,rgba(0,0,0,.34) 48px,transparent 72px),linear-gradient(135deg,rgba(255,255,255,.126),rgba(255,255,255,.0315));box-shadow:0 14px 30px rgba(0,0,0,.30)}
     .corner-menu[data-corner="top-right"]{top:12px;right:4px;left:auto;bottom:auto;transform-origin:top right;transform:scale(.18);background:linear-gradient(225deg,rgba(0,0,0,.96) 0,rgba(0,0,0,.82) 24px,rgba(0,0,0,.34) 48px,transparent 72px),linear-gradient(135deg,rgba(255,255,255,.126),rgba(255,255,255,.0315));box-shadow:0 14px 30px rgba(0,0,0,.30)}
@@ -214,7 +215,12 @@
        same interval, preserving each Plate's own corner transform origin. */
     .corner-menu.plate-transition-out{
       opacity:0;
-      filter:brightness(.94);
+      transition:
+        opacity .26s linear,
+        transform .34s cubic-bezier(.4,0,.6,1),
+        width .34s cubic-bezier(.4,0,.6,1),
+        height .34s cubic-bezier(.4,0,.6,1),
+        border-radius .28s linear;
     }
     .corner-menu.plate-transition-in{
       opacity:1;
