@@ -229,14 +229,16 @@
       margin:0 8px;width:calc(100% - 16px);padding:9px 12px
     }
     .plate-prompt::placeholder{color:transparent!important;-webkit-text-fill-color:transparent;opacity:0!important}
-    .plate-prompt-wrap{position:relative;display:block;width:100%;height:44px}
+    .plate-prompt-wrap{position:relative;display:block;width:100%;height:44px;z-index:5}
     .plate-prompt-label{
       position:absolute;left:20px;top:50%;transform:translateY(-50%);
-      z-index:4;color:#fff;-webkit-text-fill-color:#fff;
+      z-index:7;display:block!important;visibility:visible!important;opacity:1!important;
+      color:#fff!important;-webkit-text-fill-color:#fff!important;
       font:600 14px/1.2 'Rajdhani',sans-serif;letter-spacing:.04em;
       pointer-events:none;white-space:nowrap;
     }
-    .plate-prompt-wrap.has-value .plate-prompt-label{display:none}
+    .plate-prompt-wrap.has-value .plate-prompt-label{display:none!important}
+    .plate-prompt-wrap .plate-prompt{position:relative;z-index:6}
     .corner-menu[data-platform="mobile"]{display:none}
     .corner-menu[data-platform="desktop"]{display:block}
     .haamu-mobile .corner-menu[data-platform="desktop"]{display:none}
