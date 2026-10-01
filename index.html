@@ -221,12 +221,12 @@
     }
     .corner-menu[data-corner^="top-"] .plate-prompt-row{align-self:start}
     .corner-menu[data-corner^="bottom-"] .plate-matrix{grid-template-rows:1fr auto}
-    .corner-menu[data-corner$="-left"] .plate-prompt{text-align:left;margin:6px 8px;width:calc(100% - 16px);padding:9px 12px}
+    .corner-menu[data-corner$="-left"] .plate-prompt{text-align:left;margin:0 8px;width:calc(100% - 16px);padding:9px 12px}
     .corner-menu[data-corner$="-right"] .plate-prompt{
       direction:ltr !important;
       text-align:left !important;
       unicode-bidi:plaintext;
-      margin:6px 8px;width:calc(100% - 16px);padding:9px 12px
+      margin:0 8px;width:calc(100% - 16px);padding:9px 12px
     }
     .plate-prompt::placeholder{color:rgba(225,242,255,.72);opacity:1}
     .corner-menu[data-platform="mobile"]{display:none}
@@ -235,16 +235,18 @@
     .haamu-mobile .corner-menu[data-platform="mobile"]{display:block}
     /* Active prompt is an outward-facing plate skin strip, not a floating field. */
     .corner-menu.open .plate-prompt-row{
-      position:absolute;left:0;right:0;display:grid;min-height:44px;
-      visibility:visible;opacity:1;
+      position:absolute;left:0;right:0;display:grid;height:44px;min-height:44px;
+      box-sizing:border-box;visibility:visible;opacity:1;
     }
     /* Prompt faces the owning button: upper buttons use the plate's lowest
        row; lower buttons use the plate's highest row. */
     .corner-menu.open[data-corner^="top-"] .plate-prompt-row{
       top:auto !important;bottom:0 !important;grid-row:auto;align-self:auto;
+      transform:translateY(-8px);
     }
     .corner-menu.open[data-corner^="bottom-"] .plate-prompt-row{
       top:0 !important;bottom:auto !important;grid-row:auto;align-self:auto;
+      transform:translateY(8px);
     }
     .corner-menu.open .plate-prompt{
       display:block;visibility:visible;opacity:1;height:44px;
