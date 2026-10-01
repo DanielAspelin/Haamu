@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.134.0',
+  version: '0.127.0',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -39,30 +39,6 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
   const mobilePlatform = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
   shell.classList.add(mobilePlatform ? 'haamu-mobile' : 'haamu-desktop');
   shell.setAttribute('aria-label', 'Haamu interface');
-
-  /* Canonical under-split projection substrate.
-     This checkpoint is intentionally nonvisual and noninteractive: it owns
-     projection-space identity only. Existing split geometry, Plate movement,
-     controls and Prompt rendering remain authoritative above it. */
-  const substrate = document.createElement('div');
-  substrate.className = 'haamu-projection-substrate';
-  substrate.setAttribute('aria-hidden','true');
-  substrate.dataset.projectionSubstrate='under-splits';
-  substrate.dataset.state='dormant';
-  substrate.dataset.platform=mobilePlatform?'mobile':'desktop';
-  const substrateSpaces = Object.freeze(
-    mobilePlatform
-      ? Object.freeze(['viewport','upper','lower'])
-      : Object.freeze(['viewport','top-left','top-right','bottom-left','bottom-right'])
-  );
-  substrate.dataset.spaces=substrateSpaces.join(' ');
-  const substrateCanvas=document.createElement('canvas');
-  substrateCanvas.className='haamu-projection-substrate-canvas';
-  substrateCanvas.setAttribute('aria-hidden','true');
-  substrate.appendChild(substrateCanvas);
-  /* Keep the projection substrate out of the shell's grid/flex child flow.
-     It is a viewport projection plane, not structural content. */
-  document.body.appendChild(substrate);
 
   // First projected layer after the shell background: centered identity text.
   // Controls and plates remain on their higher established z-index layers.
@@ -112,58 +88,6 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
 
   const menus = new Map();
   const logicalPrompts = new Map();
-  let substratePhase=0, substrateRaf=0;
-  const renderSubstrateClientPrompt=()=>{
-    const client=menus.get('bottom-right')?.mobile;
-    const prompt=client?.querySelector('.plate-prompt');
-    const wrap=client?.querySelector('.plate-prompt-wrap');
-    if(!client?.classList.contains('open')||!prompt||!wrap)return;
-    const sr=shell.getBoundingClientRect(),wr=wrap.getBoundingClientRect();
-    if(!sr.width||!sr.height||!wr.width||!wr.height)return;
-    const d=Math.min(2,devicePixelRatio||1);
-    substrateCanvas.width=Math.max(1,Math.round(innerWidth*d));
-    substrateCanvas.height=Math.max(1,Math.round(innerHeight*d));
-    const pc=substrateCanvas.getContext('2d');
-    pc.setTransform(d,0,0,d,0,0);pc.clearRect(0,0,innerWidth,innerHeight);
-    const off=document.createElement('canvas'),oc=off.getContext('2d',{willReadFrequently:true});
-    off.width=Math.max(1,Math.floor(wr.width));off.height=Math.max(1,Math.floor(wr.height));
-    oc.font='600 14px Rajdhani,sans-serif';oc.textBaseline='alphabetic';oc.fillStyle='#fff';
-    const text=prompt.value,leftInset=12,rightInset=12,wrapWidth=Math.max(1,wr.width-leftInset-rightInset),
-      anchorBaseline=Math.round(44/2+5),lineHeight=17,lines=[''];
-    for(const ch of text){if(ch==='\n'){lines.push('');continue;}const current=lines[lines.length-1];
-      if(current&&oc.measureText(current+ch).width>wrapWidth)lines.push(ch);else lines[lines.length-1]=current+ch;}
-    const caretIndex=Math.max(0,Math.min(text.length,prompt.selectionStart??text.length));
-    let consumed=0,caretLine=0,caretColumn=0;
-    for(let li=0;li<lines.length;li++){const len=lines[li].length;
-      if(caretIndex<=consumed+len){caretLine=li;caretColumn=Math.max(0,caretIndex-consumed);break;}
-      consumed+=len;if(text[consumed]==='\n')consumed++;caretLine=Math.min(li+1,lines.length-1);caretColumn=lines[caretLine]?.length||0;}
-    const activeLine=Math.max(0,lines.length-1),visibleStart=Math.max(0,activeLine-2);
-    /* Qualified v8.3 conveyor invariant: the newest/active line always owns
-       the original Prompt baseline. Older visible lines are displaced upward
-       by exact line-height increments and clipped by the projection raster. */
-    for(let li=visibleStart;li<lines.length;li++){
-      const age=activeLine-li;
-      oc.fillText(lines[li],leftInset,anchorBaseline-(age*lineHeight));
-    }
-    const metrics=oc.measureText(lines[caretLine]||text||'Hg'),ascent=metrics.actualBoundingBoxAscent||11,
-      descent=metrics.actualBoundingBoxDescent||3,
-      caretBaseline=anchorBaseline-((activeLine-caretLine)*lineHeight),
-      textTop=caretBaseline-ascent,textBottom=caretBaseline+descent,textHeight=textBottom-textTop,
-      caretHeight=textHeight*1.025*(.75+.275*((Math.sin(substratePhase)+1)/2)),
-      caretCenter=(textTop+textBottom)/2-1,caretTop=caretCenter-caretHeight/2,
-      caretX=Math.min(wr.width-rightInset-1,leftInset+oc.measureText((lines[caretLine]||'').slice(0,caretColumn)).width+2);
-    if(document.activeElement===prompt&&caretLine>=visibleStart)oc.fillRect(caretX,caretTop,1,caretHeight);
-    /* The substrate is viewport-fixed and outside the shell context.
-       Project with viewport coordinates only; never feed its geometry back
-       into shell, button, split or Plate layout. */
-    const data=oc.getImageData(0,0,off.width,off.height).data,ox=wr.left,oy=wr.top;
-    pc.fillStyle='#dce8f5';let n=0;
-    for(let y=0;y<off.height;y++)for(let x=0;x<off.width;x++){const a=data[(y*off.width+x)*4+3];
-      if(a>8){const z=.76;pc.globalAlpha=Math.max(.18,a/255);pc.beginPath();pc.moveTo(ox+x,oy+y-z);pc.lineTo(ox+x+z,oy+y);
-        pc.lineTo(ox+x,oy+y+z);pc.lineTo(ox+x-z,oy+y);pc.closePath();pc.fill();if(++n>=12000)break;}if(n>=12000)break;}
-    pc.globalAlpha=1;
-  };
-  const animateSubstrate=()=>{substratePhase+=.045;renderSubstrateClientPrompt();substrateRaf=requestAnimationFrame(animateSubstrate);};
   const plateTitles = Object.freeze({
     'top-left': 'SERVER',
     'top-right': 'LOCAL',
@@ -227,10 +151,6 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       menu.dataset.console = consoleId;
       menu.dataset.scope = consoleScope;
       menu.dataset.physicalPlate = webPlates[platform]?.id ?? (plateId + '-' + platform);
-      menu.dataset.projectionSubstrate='under-splits';
-      menu.dataset.projectionSpace=platform==='mobile'
-        ? (corner.startsWith('top-')?'upper':'lower')
-        : corner;
       menu.setAttribute('aria-hidden', 'true');
       menu.dataset.plateState = platform === 'mobile' ? 'automatic' : (plateState?.state('desktop') ?? 'normal');
 
@@ -306,18 +226,7 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       prompt.dataset.logicalPrompt = promptId;
       const resizePrompt = target => {
         const menu=target.closest('.corner-menu'), wrap=target.closest('.plate-prompt-wrap');
-        const row=target.closest('.plate-prompt-row');
-        /* Qualified v8.3 CLIENT/mobile convention: the Prompt viewport remains
-           one 44px Plate track. Wrapping is a projection concern and must not
-           resize/reflow the moving Plate. Native textarea remains input/IME
-           authority; the external substrate painter owns visible glyphs/caret. */
-        if(menu?.dataset.platform==='mobile' && menu?.dataset.scope==='client'){
-          if(wrap)wrap.style.height='44px';
-          if(row)row.style.height='44px';
-          target.style.height='44px';
-          return;
-        }
-        const area=wrap?.querySelector('.plate-prompt-text-area');
+        const row=target.closest('.plate-prompt-row'), area=wrap?.querySelector('.plate-prompt-text-area');
         const field=area?.querySelector('.plate-prompt-text-field'), mirror=wrap?.querySelector('.plate-prompt-measure');
         let caret=area?.querySelector('.plate-prompt-caret');
         if(!area||!field||!mirror)return;
@@ -768,8 +677,6 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
   });
 
   root.appendChild(shell);
-  substrate.dataset.state='client-mobile-conditional-v8.3';
-  substrateRaf=requestAnimationFrame(animateSubstrate);
   document.documentElement.dataset.haamu = 'ready';
   return Object.freeze({
     state: 'READY',
@@ -784,8 +691,6 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
     logicalConsoles: 4,
     physicalPlates: 8,
     consoleProjectionModel: 'four-consoles-two-platform-plates-each',
-    projectionSubstrate: 'under-splits-dormant',
-    projectionSpaces: substrateSpaces,
   });
 }
 
