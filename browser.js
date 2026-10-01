@@ -296,25 +296,39 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       prompt.addEventListener('blur', () => {
         prompt.closest('.plate-prompt-wrap')?.classList.remove('is-focused');
       });
-      prompt.addEventListener('input', () => {
-        logicalPrompts.set(promptId, prompt.value);
-        promptProjection.textContent = prompt.value;
-        resizePrompt(prompt);
+      const synchronizePrompt = target => {
+        logicalPrompts.set(promptId, target.value);
+        resizePrompt(target);
         for (const peer of plateLayer.querySelectorAll('[data-logical-prompt="' + promptId + '"]')) {
-          if (peer !== prompt) {
-            peer.value = prompt.value;
-            const peerProjection = peer.closest('.plate-prompt-wrap')?.querySelector('.plate-prompt-projection');
-            if (peerProjection) peerProjection.textContent = prompt.value;
-            resizePrompt(peer);
-          }
+          if (peer === target) continue;
+          peer.value = target.value;
+          resizePrompt(peer);
         }
-      });
+      };
+      prompt.addEventListener('input', () => synchronizePrompt(prompt));
+      /* Selection is independent from value mutation. Re-project on native
+         caret/selection movement so the visual Text Field can subsequently
+         consume the browser's authoritative insertion index without changing
+         Prompt geometry or text state. */
+      const synchronizeSelection = () => {
+        prompt.dataset.selectionStart = String(prompt.selectionStart ?? 0);
+        prompt.dataset.selectionEnd = String(prompt.selectionEnd ?? 0);
+        prompt.dataset.selectionDirection = prompt.selectionDirection || 'none';
+        resizePrompt(prompt);
+      };
+      prompt.addEventListener('select', synchronizeSelection);
+      prompt.addEventListener('keyup', synchronizeSelection);
+      prompt.addEventListener('pointerup', synchronizeSelection);
+
 
       const promptWrap = document.createElement('div');
       promptWrap.className = 'plate-prompt-wrap';
       const promptProjection = document.createElement('div');
-      promptProjection.className = 'plate-prompt-projection';
+      promptProjection.className = 'plate-prompt-projection plate-prompt-text-area is-empty';
       promptProjection.setAttribute('aria-hidden', 'true');
+      const promptTextField = document.createElement('div');
+      promptTextField.className = 'plate-prompt-text-field';
+      promptProjection.appendChild(promptTextField);
       const promptMeasure = document.createElement('div');
       promptMeasure.className = 'plate-prompt-measure';
       promptMeasure.setAttribute('aria-hidden', 'true');
