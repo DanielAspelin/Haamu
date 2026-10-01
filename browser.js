@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.129.0',
+  version: '0.130.0',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -294,7 +294,18 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       prompt.dataset.logicalPrompt = promptId;
       const resizePrompt = target => {
         const menu=target.closest('.corner-menu'), wrap=target.closest('.plate-prompt-wrap');
-        const row=target.closest('.plate-prompt-row'), area=wrap?.querySelector('.plate-prompt-text-area');
+        const row=target.closest('.plate-prompt-row');
+        /* Qualified v8.3 CLIENT/mobile convention: the Prompt viewport remains
+           one 44px Plate track. Wrapping is a projection concern and must not
+           resize/reflow the moving Plate. Native textarea remains input/IME
+           authority; the external substrate painter owns visible glyphs/caret. */
+        if(menu?.dataset.platform==='mobile' && menu?.dataset.scope==='client'){
+          if(wrap)wrap.style.height='44px';
+          if(row)row.style.height='44px';
+          target.style.height='44px';
+          return;
+        }
+        const area=wrap?.querySelector('.plate-prompt-text-area');
         const field=area?.querySelector('.plate-prompt-text-field'), mirror=wrap?.querySelector('.plate-prompt-measure');
         let caret=area?.querySelector('.plate-prompt-caret');
         if(!area||!field||!mirror)return;
