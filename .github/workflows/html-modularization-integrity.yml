@@ -27,6 +27,14 @@ jobs:
         run: |
           npx playwright install --with-deps chromium
           node test/html-modularization.browser.test.js
+          node copy-test/test/full-site.browser.test.js
+      - name: Upload copy-test screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: copy-test-browser-screenshots
+          path: artifacts/
+          if-no-files-found: ignore
       - name: Verify isolated ownership boundaries
         shell: bash
         run: |
