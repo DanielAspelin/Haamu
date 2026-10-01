@@ -12,7 +12,7 @@ pre{white-space:pre-wrap;overflow-wrap:anywhere}small{opacity:.75}
 </style></head><body><main>
 <h1>Haamu Projection Space — isolated test</h1>
 <p><small>This page does not load or modify the production Haamu Plate runtime.</small></p>
-<div class="controls"><button id="explode" type="button">EXPLODE</button><button id="reset" type="button">RESET</button><span id="status" aria-live="polite">Projection stable.</span></div>
+<div class="controls"><button id="explode" type="button">EXPLODE → TEXT</button><button id="reset" type="button">RESET</button><span id="status" aria-live="polite">Projection stable.</span></div>
 <div id="surface" aria-label="Experimental projection surface"><canvas id="particles"></canvas></div>
 <pre id="evidence"></pre></main>
 <script src="../projection.space.js"></script><script>
@@ -32,20 +32,26 @@ for(const node of nodes){const el=document.createElement('div');el.className='no
  el.style.left=node.bounds.x*100+'%';el.style.top=node.bounds.y*100+'%';el.style.width=node.bounds.width*100+'%';el.style.height=node.bounds.height*100+'%';
  el.textContent=node.projectionType+' — '+node.id;surface.insertBefore(el,canvas);elements.push(el);}
 let particles=[],raf=0,start=0,running=false;
+function textTargets(count){const r=surface.getBoundingClientRect(),off=document.createElement('canvas'),oc=off.getContext('2d'),d=1;off.width=Math.max(1,Math.floor(r.width*d));off.height=Math.max(1,Math.floor(r.height*d));
+ oc.clearRect(0,0,off.width,off.height);oc.fillStyle='#fff';oc.textAlign='center';oc.textBaseline='middle';oc.font='700 '+Math.max(28,Math.min(86,r.width*.13))+'px system-ui,sans-serif';oc.fillText('HAAMU',off.width/2,off.height/2);
+ const data=oc.getImageData(0,0,off.width,off.height).data,pts=[],step=Math.max(3,Math.floor(r.width/180));
+ for(let y=0;y<off.height;y+=step)for(let x=0;x<off.width;x+=step)if(data[(y*off.width+x)*4+3]>100)pts.push({x,y});
+ if(!pts.length)return Array.from({length:count},()=>({x:r.width/2,y:r.height/2}));
+ return Array.from({length:count},(_,i)=>pts[Math.floor(i*pts.length/count)%pts.length]);}
 function size(){const d=Math.min(2,devicePixelRatio||1),r=surface.getBoundingClientRect();canvas.width=Math.max(1,Math.round(r.width*d));canvas.height=Math.max(1,Math.round(r.height*d));ctx.setTransform(d,0,0,d,0,0);}
 function build(){const sr=surface.getBoundingClientRect(),out=[];elements.forEach((el,group)=>{const r=el.getBoundingClientRect(),step=Math.max(7,Math.min(13,r.width/24));
  for(let y=step/2;y<r.height;y+=step)for(let x=step/2;x<r.width;x+=step){const px=r.left-sr.left+x,py=r.top-sr.top+y,a=(group+1)*2.399+x*.071+y*.113;
   out.push({x:px,y:py,ox:px,oy:py,vx:Math.cos(a)*(55+((x+y)%75)),vy:Math.sin(a)*(55+((x*2+y)%75)),s:Math.max(1.2,step*.22)});}});
  return out.slice(0,1800);}
-function draw(t){const r=surface.getBoundingClientRect();ctx.clearRect(0,0,r.width,r.height);const elapsed=(t-start)/1000,explodePhase=Math.min(1,elapsed/1.15),returnPhase=Math.max(0,Math.min(1,(elapsed-1.15)/1.15));
- const ease=returnPhase*returnPhase*(3-2*returnPhase);ctx.fillStyle='#dce8f5';
- particles.forEach(p=>{const ex=p.ox+p.vx*explodePhase,ey=p.oy+p.vy*explodePhase+90*explodePhase*explodePhase;p.x=ex+(p.ox-ex)*ease;p.y=ey+(p.oy-ey)*ease;ctx.fillRect(p.x,p.y,p.s,p.s);});
- if(elapsed<2.3){raf=requestAnimationFrame(draw);}else{finish();}}
+function draw(t){const r=surface.getBoundingClientRect();ctx.clearRect(0,0,r.width,r.height);const elapsed=(t-start)/1000;
+ const out=Math.min(1,elapsed/1.05),into=Math.max(0,Math.min(1,(elapsed-1.05)/1.55)),ease=into*into*(3-2*into);ctx.fillStyle='#dce8f5';
+ particles.forEach(p=>{const ex=p.ox+p.vx*out,ey=p.oy+p.vy*out+80*out*out;p.x=ex+(p.tx-ex)*ease;p.y=ey+(p.ty-ey)*ease;ctx.fillRect(p.x,p.y,p.s,p.s);});
+ if(elapsed<2.6){raf=requestAnimationFrame(draw);}else{running=false;explode.disabled=false;status.textContent='Particles imploded into HAAMU text.';}}
 function finish(){cancelAnimationFrame(raf);raf=0;running=false;ctx.clearRect(0,0,canvas.width,canvas.height);elements.forEach(e=>e.style.visibility='visible');explode.disabled=false;status.textContent='Projection reconstructed.';}
 function run(){if(running)return;if(matchMedia('(prefers-reduced-motion: reduce)').matches){status.textContent='Reduced motion is enabled; projection remains stable.';return;}
- size();particles=build();elements.forEach(e=>e.style.visibility='hidden');running=true;explode.disabled=true;status.textContent='Projection exploded into '+particles.length+' particles.';start=performance.now();raf=requestAnimationFrame(draw);}
+ size();particles=build();const targets=textTargets(particles.length);particles.forEach((p,i)=>{p.tx=targets[i].x;p.ty=targets[i].y;});elements.forEach(e=>e.style.visibility='hidden');running=true;explode.disabled=true;status.textContent='Projection exploded into '+particles.length+' particles; implosion target: HAAMU.';start=performance.now();raf=requestAnimationFrame(draw);}
 function restore(){finish();status.textContent='Projection reset.';}
 explode.addEventListener('click',run);reset.addEventListener('click',restore);addEventListener('resize',()=>{if(!running)size();},{passive:true});size();
-evidence.textContent=JSON.stringify({test:true,productionPlateLoaded:false,projectionVersion:P.version,renderer:'test-particle-adapter',particleLimit:1800,
+evidence.textContent=JSON.stringify({test:true,productionPlateLoaded:false,projectionVersion:P.version,renderer:'test-particle-text-formation-adapter',particleLimit:1800,formation:'HAAMU',
  space:{id:space.id,resolution:space.resolution,plateAuthority:space.plate.authority},nodes:nodes.map(n=>({id:n.id,type:n.projectionType,bounds:n.bounds,rendererConnected:n.rendererConnected}))},null,2);
 </script></body></html>
