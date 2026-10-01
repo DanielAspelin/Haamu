@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.135.0',
+  version: '0.136.0',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -85,6 +85,11 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
   plateLayer.className = 'plate-layer';
   plateLayer.setAttribute('aria-label', 'Haamu plates');
   shell.prepend(plateLayer);
+
+  /* Visual-preservation boundary: publish the accepted visual shell before
+     optional supporting systems are attached. A supporting-system failure
+     must not erase the established wordmark or corner controls. */
+  root.appendChild(shell);
 
   const menus = new Map();
   const logicalPrompts = new Map();
@@ -629,7 +634,6 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
     }
   });
 
-  root.appendChild(shell);
   document.documentElement.dataset.haamu = 'ready';
   return Object.freeze({
     state: 'READY',
