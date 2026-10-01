@@ -15,7 +15,7 @@ const payloadText=output=>{
 };
 
 const HaamuBrowserPlateText=Object.freeze({
- family:'browser',role:'browser.plate.text',type:'plate-text-projector',version:'0.2.0',
+ family:'browser',role:'browser.plate.text',type:'plate-text-projector',version:'0.2.1',
 
  project(output,plate,target,options={}){
   if(!plate||plate.type!=='web-plate')throw new TypeError('Web Plate required.');
@@ -35,6 +35,8 @@ const HaamuBrowserPlateText=Object.freeze({
      generated symbol mesh; each mesh node corresponds to a WebText symbol. */
   target.textContent=value;
   target.dataset.placement='symbol-mesh';
+  target.dataset.snap='plate';
+  target.dataset.areaPlate=plate.id;
   target.dataset.textState='projected';
   target.dataset.matrixRows=String(rendered?.matrix?.rows??0);
   target.dataset.matrixColumns=String(rendered?.matrix?.columns??0);
@@ -64,5 +66,5 @@ const HaamuBrowserPlateText=Object.freeze({
   });
  }
 });
-globalThis.HaamuFamilies['browser.plate.text']=Object.freeze({family:'browser',role:'browser.plate.text',type:'plate-text-projector',version:'0.1.0'});
+globalThis.HaamuFamilies['browser.plate.text']=Object.freeze({family:'browser',role:'browser.plate.text',type:'plate-text-projector',version:'0.2.1'});
 globalThis.HaamuBrowserPlateText=HaamuBrowserPlateText;
