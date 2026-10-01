@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.127.6',
+  version: '0.127.7',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -609,8 +609,11 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
 
       const activePlatform = mobilePlatform ? 'mobile' : 'desktop';
       const targetPosition = button.dataset.position;
+      /* Current ownership is platform-local. A dormant projection on the
+         other platform may retain .open during responsive/platform changes;
+         it must never consume a desktop (or mobile) button activation. */
       const current = [...menus.entries()].find(([, pair]) =>
-        [pair.mobile, pair.desktop].some(candidate => candidate?.classList.contains('open')));
+        pair[activePlatform]?.classList.contains('open'));
       const same = current && current[0] === targetPosition;
       let handoffAuthorized = !same;
 
@@ -705,6 +708,8 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
         requestAnimationFrame(() => {
           activeCurrent?.classList.remove('open');
           incoming?.classList.add('open', 'plate-transition-in');
+          /* The retiring Plate's completion must not clear the incoming Plate.
+             closeCurrent() below operates only on the old logical pair. */
           setTimeout(() => incoming?.classList.remove('plate-transition-in'), 520);
         });
       } else {
