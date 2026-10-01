@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.119.0',
+  version: '0.118.0',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -140,25 +140,6 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
         control.textContent = '□';
         control.addEventListener('click', event => {
           event.stopPropagation();
-          const isMaximized = menu.dataset.plateState === 'maximized';
-          if (!isMaximized) {
-            const rect = menu.getBoundingClientRect();
-            const shellRect = shell.getBoundingClientRect();
-            const styles = getComputedStyle(shell);
-            const cornerSize = parseFloat(styles.getPropertyValue('--corner')) || 76;
-            const glowBackoff = 30;
-            const limit = Object.freeze({
-              left: shellRect.left + cornerSize + glowBackoff,
-              top: shellRect.top + cornerSize + glowBackoff,
-              right: shellRect.right - cornerSize - glowBackoff,
-              bottom: shellRect.bottom - cornerSize - glowBackoff,
-            });
-            const growthRatio = 1.12;
-            const targetWidth = Math.min(rect.width * growthRatio, Math.max(rect.width, limit.right - rect.left));
-            const targetHeight = Math.min(rect.height * growthRatio, Math.max(rect.height, limit.bottom - rect.top));
-            menu.style.setProperty('--plate-expanded-inline', targetWidth + 'px');
-            menu.style.setProperty('--plate-expanded-block', targetHeight + 'px');
-          }
           stateSystem?.toggle('desktop');
         });
         menu.appendChild(control);
