@@ -26,7 +26,18 @@ const create=(plateId,definition={})=>{
   type:'plate-output-systems',plateId,channelId,
   outputSocket:Object.freeze({type:'plate-output-socket',plateId,channelId,socket:channel?.outputSocket??null}),
   area:()=>area,
-  configureArea(definition={}){const mode=definition.mode==='live'?'live':'text';area=Object.freeze({type:'plate-area',mode,snap:'plate',live:mode==='live',inputPromptId:definition.inputPromptId?String(definition.inputPromptId):null});return area;},
+  configureArea(definition={}){
+   const mode=definition.mode==='live'?'live':'text';
+   let inputPromptId=null,inputSocket=null,inputChannelId=null;
+   if(mode==='live'&&definition.input!==false){
+    inputPromptId=String(definition.inputPromptId??(plateId+':live-prompt'));
+    inputChannelId=String(definition.inputChannelId??(channelId+':live'));
+    const prompt=globalThis.HaamuBrowserPromptSystems?.forPrompt?.(inputPromptId,{channelId:inputChannelId,shell:definition.shell??'client'});
+    inputSocket=prompt?.inputSocket??null;
+   }
+   area=Object.freeze({type:'plate-area',mode,snap:'plate',live:mode==='live',plateId,outputSocket:channel?.outputSocket??null,inputPromptId,inputChannelId,inputSocket});
+   return area;
+  },
   terminal:Object.freeze({accept:output=>accept('terminal',output)}),
   search:Object.freeze({accept:output=>accept('search',output)}),
   shell:Object.freeze({accept:output=>accept('shell',output)}),
@@ -42,7 +53,7 @@ const create=(plateId,definition={})=>{
 };
 
 const HaamuBrowserPlateSystems=Object.freeze({
- family:'browser',role:'browser.plate.systems',type:'per-plate-output-systems',version:'0.3.0',
+ family:'browser',role:'browser.plate.systems',type:'per-plate-output-systems',version:'0.4.0',
  forPlate(plate,definition={}){
   const plateId=String(typeof plate==='string'?plate:(plate?.id??plate?.dataset?.plate??'')).trim();
   if(!plateId)throw new RangeError('Plate identity required.');
@@ -52,5 +63,5 @@ const HaamuBrowserPlateSystems=Object.freeze({
  remove(id){return systems.delete(String(id));},
  plates(){return Object.freeze(Array.from(systems.keys()));}
 });
-globalThis.HaamuFamilies['browser.plate.systems']=Object.freeze({family:'browser',role:'browser.plate.systems',type:'per-plate-output-systems',version:'0.1.0'});
+globalThis.HaamuFamilies['browser.plate.systems']=Object.freeze({family:'browser',role:'browser.plate.systems',type:'per-plate-output-systems',version:'0.4.0'});
 globalThis.HaamuBrowserPlateSystems=HaamuBrowserPlateSystems;
