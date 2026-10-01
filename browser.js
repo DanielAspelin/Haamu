@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.127.2',
+  version: '0.127.3',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -612,9 +612,10 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       const current = [...menus.entries()].find(([, pair]) =>
         [pair.mobile, pair.desktop].some(candidate => candidate?.classList.contains('open')));
       const same = current && current[0] === targetPosition;
+      let handoffAuthorized = !same;
 
       const openTargetNow = () => {
-        if (same) return;
+        if (!handoffAuthorized) return;
         const menu = projections[activePlatform];
         projections.stateSystem?.restore('desktop');
         menu.setAttribute('aria-hidden', 'false');
@@ -670,7 +671,20 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
         shell.querySelector('.corner.start[data-position="' + position + '"]')
           ?.setAttribute('aria-expanded', 'false');
         if (wasMaximized) closingState?.restore('desktop');
-        if (!same) openTargetNow();
+        if (handoffAuthorized) {
+          /* Consume this click's handoff exactly once. Do not re-evaluate the
+             stale 'same' snapshot captured before the old Plate closed. */
+          handoffAuthorized = false;
+          const menu = projections[activePlatform];
+          projections.stateSystem?.restore('desktop');
+          menu.setAttribute('aria-hidden', 'false');
+          button.setAttribute('aria-expanded', 'true');
+          void menu.offsetWidth;
+          requestAnimationFrame(() => {
+            menu.classList.add('open', 'plate-transition-in');
+            setTimeout(() => menu.classList.remove('plate-transition-in'), 520);
+          });
+        }
       };
       const onCloseTransitionEnd = (event) => {
         if (event.target === activeCurrent && event.propertyName === 'transform') closeCurrent();
