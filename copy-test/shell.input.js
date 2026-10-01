@@ -1,5 +1,8 @@
 'use strict';
 
+
+/* module-private execution scope */
+(() => {
 /** Haamu Shell Input — renderer-independent shell ingress contract. */
 globalThis.HaamuFamilies ??= Object.create(null);
 let sequence=0;
@@ -17,3 +20,4 @@ const HaamuShellInput=Object.freeze({
 });
 globalThis.HaamuFamilies['shell.input']=Object.freeze({family:'shell',role:'shell.input',type:'shell-input-contract',version:'0.1.0'});
 globalThis.HaamuShellInput=HaamuShellInput;
+})();
