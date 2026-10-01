@@ -30,6 +30,9 @@ jobs:
       - name: Run exhaustive copy-test interaction qualification
         if: always()
         run: node copy-test/test/full-site.browser.test.js
+      - name: Attribute legacy browser script collisions
+        if: always()
+        run: node copy-test/test/script-collision.browser.test.js
       - name: Upload copy-test screenshots
         if: always()
         uses: actions/upload-artifact@v4
