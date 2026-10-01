@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.126.0',
+  version: '0.126.1',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -113,6 +113,24 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
     const windowing = globalThis.HaamuBrowserWindowing?.forPlate(plateId);
     const plateState = globalThis.HaamuBrowserPlateState?.forPlate(plateId);
     const webPlate = globalThis.HaamuWebPlate?.create?.({ id:plateId, corner, platform:'common' });
+    /* Nonvisual reconciliation metadata only. The accepted visual runtime
+       retains sole authority over Plate creation, geometry, stacking and
+       movement. These descriptors model Console -> mobile/desktop projection
+       identity without creating additional Web Plates or mutating the DOM. */
+    const consoleScope = shellByCorner[corner];
+    const consoleBinding = Object.freeze({
+      type:'logical-console-binding',
+      id:'console-' + consoleScope,
+      scope:consoleScope,
+      corner,
+      logicalPlateId:plateId,
+      channelId,
+      projections:Object.freeze({
+        mobile:Object.freeze({ id:plateId + '-mobile', platform:'mobile' }),
+        desktop:Object.freeze({ id:plateId + '-desktop', platform:'desktop' }),
+      }),
+      visualAuthority:'accepted-common-web-plate',
+    });
     const commandChannel = globalThis.HaamuCommandChannel?.get?.(channelId);
     commandChannel?.bindOutput?.(plateId);
     const shellRouter = globalThis.HaamuShell?.router?.();
@@ -547,6 +565,7 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       });
     }
     projections.stateSystem = activePlateState ?? plateState ?? null;
+    projections.consoleBinding = consoleBinding;
     menus.set(corner, projections);
     button.setAttribute('aria-expanded', 'false');
     let buttonMorph = null;
@@ -659,6 +678,9 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
     matrices: 8,
     tables: 8,
     logicalPrompts: 4,
+    logicalConsoles: 4,
+    physicalProjectionDescriptors: 8,
+    consoleProjectionModel: 'nonvisual-four-consoles-two-platform-descriptors-each',
   });
 }
 
