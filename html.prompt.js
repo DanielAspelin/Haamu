@@ -3,7 +3,7 @@
 /**
  * Haamu HTML Prompt.
  * Generates the production-equivalent static Prompt DOM only.
- * Native input behavior, WebText rendering and Plate transitions remain
+ * Native input behavior, visual rendering and Plate transitions remain
  * independent responsibilities.
  */
 (() => {
