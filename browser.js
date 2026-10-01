@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.88.0',
+  version: '0.92.0',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -36,6 +36,8 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
   root.replaceChildren();
   const shell = document.createElement('main');
   shell.className = 'haamu-interface';
+  const mobilePlatform = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
+  shell.classList.add(mobilePlatform ? 'haamu-mobile' : 'haamu-desktop');
   shell.setAttribute('aria-label', 'Haamu interface');
 
   // First projected layer after the shell background: centered identity text.
