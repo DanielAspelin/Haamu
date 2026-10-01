@@ -10,17 +10,44 @@ const HaamuWebPlate = Object.freeze({
   family: 'web',
   role: 'web.plate',
   type: 'plate-composition-provider',
-  version: '0.1.0',
+  version: '0.2.0',
 
   create(definition = {}) {
     const id = String(definition.id ?? 'plate');
     const state = { matrix: null, grid: null, mesh: null };
+    const projection = Object.freeze({
+      type: 'plate-projection-console',
+      plateId: id,
+      coordinateSystem: 'plate-local',
+      clipping: 'inner-border',
+      geometryAuthority: 'read-only',
+      particle: Object.freeze({ primitive: 'vector-diamond', radius: 1.15, limit: 12000, samplingStep: 2 }),
+      anchors: Object.freeze(['top-left','top-right','bottom-left','bottom-right']),
+      snap(anchor = 'top-left', inset = {}) {
+        if (!this.anchors.includes(anchor)) throw new RangeError('Unknown Plate projection anchor.');
+        return Object.freeze({
+          type: 'plate-projection-anchor',
+          plateId: id,
+          anchor,
+          inset: Object.freeze({ x: Math.max(0, Number(inset.x) || 0), y: Math.max(0, Number(inset.y) || 0) }),
+          clip: 'inner-border',
+          mayResizePlate: false,
+          mayMovePlate: false,
+          changesLayout: false,
+        });
+      },
+      space(bounds = {}) {
+        if (!globalThis.HaamuProjectionSpace?.create) throw new Error('HaamuProjectionSpace unavailable.');
+        return globalThis.HaamuProjectionSpace.create({ plate: { id, ...bounds } });
+      },
+    });
 
     const plate = {
       type: 'web-plate',
       id,
       platform: definition.platform ?? 'common',
       corner: definition.corner ?? null,
+      projectionConsole: projection,
 
       generateMatrix(matrixDefinition = {}) {
         if (!globalThis.HaamuMatrix?.generate) throw new Error('HaamuMatrix unavailable.');
@@ -49,7 +76,7 @@ const HaamuWebPlate = Object.freeze({
       },
 
       composition() {
-        return Object.freeze({ matrix: state.matrix, grid: state.grid, mesh: state.mesh });
+        return Object.freeze({ matrix: state.matrix, grid: state.grid, mesh: state.mesh, projection });
       },
     };
 
