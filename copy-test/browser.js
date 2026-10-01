@@ -132,7 +132,7 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       visualAuthority:'accepted-common-web-plate',
     });
     const commandChannel = globalThis.HaamuCommandChannel?.get?.(channelId);
-    commandChannel?.bindOutput?.(plateId);
+    commandChannel?.bindInput?.(plateId);
     const shellRouter = globalThis.HaamuShell?.router?.();
     const projections = Object.create(null);
 
