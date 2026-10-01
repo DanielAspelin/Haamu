@@ -15,7 +15,7 @@ const HaamuWebText = Object.freeze({
   family: 'web',
   role: 'web.text',
   type: 'text-input-output-processor-allocator-symbolizer-parser-mutator-deparser-font-renderer',
-  version: '1.16.0',
+  version: '1.17.0',
 
   key(event = {}) {
     const key = event.key ?? null;
@@ -403,10 +403,56 @@ const HaamuWebText = Object.freeze({
     });
   },
 
+  reserveField(options = {}) {
+    const area=this.area(options.area ?? {});
+    const padding=Object.freeze({
+      top:Math.max(0,finite(options.padding?.top,0)),
+      right:Math.max(0,finite(options.padding?.right,0)),
+      bottom:Math.max(0,finite(options.padding?.bottom,0)),
+      left:Math.max(0,finite(options.padding?.left,0)),
+    });
+    const content=Object.freeze({
+      x:area.x+padding.left,
+      y:area.y+padding.top,
+      width:Math.max(0,area.width-padding.left-padding.right),
+      height:Math.max(0,area.height-padding.top-padding.bottom),
+    });
+    const promptReserve=Math.max(0,Math.min(content.height,finite(options.promptReserve,0)));
+    const gap=Math.max(0,Math.min(Math.max(0,content.height-promptReserve),finite(options.promptGap,0)));
+    const field=Object.freeze({
+      type:'web-text-output-field',
+      x:content.x,
+      y:content.y,
+      width:content.width,
+      height:Math.max(0,content.height-promptReserve-gap),
+      role:options.role??'output',
+      streams:Object.freeze([...(options.streams??['text','shell','terminal','search','command','status','error'])]),
+    });
+    const promptBoundary=Object.freeze({
+      type:'web-text-prompt-boundary',
+      reserved:promptReserve,
+      gap,
+      startsAt:field.y+field.height+gap,
+      endsAt:content.y+content.height,
+      authority:'exclusion-only',
+    });
+    return Object.freeze({
+      type:'web-text-field-reservation',
+      area,
+      padding,
+      content,
+      field,
+      promptBoundary,
+      overlap:false,
+      changesGeometry:false,
+    });
+  },
+
   allocateArea(value = '', options = {}) {
     const text=this.normalize(value);
     const area=this.area(options.area ?? {});
     const alignment=this.alignment(options.alignment ?? {});
+    const reservation=this.reserveField(options);
     const lines=this.lines(text);
     const padding=Object.freeze({
       top:Math.max(0,finite(options.padding?.top,0)),
@@ -420,10 +466,10 @@ const HaamuWebText = Object.freeze({
     });
     const contentArea=Object.freeze({
       type:'web-text-content-area',
-      x:area.x+padding.left,
-      y:area.y+padding.top,
-      width:Math.max(0,area.width-padding.left-padding.right),
-      height:Math.max(0,area.height-padding.top-padding.bottom),
+      x:reservation.field.x,
+      y:reservation.field.y,
+      width:reservation.field.width,
+      height:reservation.field.height,
     });
     const lineAdvance=Math.max(0,finite(options.lineAdvance,1))+spacing.line;
     const columnAdvance=Math.max(0,finite(options.columnAdvance,1))+spacing.symbol;
@@ -456,6 +502,7 @@ const HaamuWebText = Object.freeze({
       stream:options.stream??'text',
       area,
       contentArea,
+      fieldReservation:reservation,
       padding,
       spacing,
       placementTopology:Object.freeze({
