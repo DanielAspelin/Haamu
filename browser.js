@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.92.0',
+  version: '0.95.0',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -16,7 +16,7 @@ globalThis.HaamuIngress ??= [];
 globalThis.HaamuIngress.push('browser');
 
 const HaamuLayout = Object.freeze({
-  version: '0.6.0',
+  version: '0.7.0',
   center: 'empty',
   corners: Object.freeze({
     topLeft: Object.freeze({ role: 'start', color: 'neon-green' }),
@@ -87,14 +87,53 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
   shell.prepend(plateLayer);
 
   const menus = new Map();
+  const logicalPrompts = new Map();
   for (const button of shell.querySelectorAll('.corner.start')) {
-    const menu = document.createElement('section');
-    menu.className = 'corner-menu';
-    menu.dataset.corner = button.dataset.position;
-    menu.setAttribute('aria-hidden', 'true');
-    plateLayer.appendChild(menu);
-    menus.set(button.dataset.position, menu);
+    const corner = button.dataset.position;
+    const promptId = 'prompt-' + corner;
+    const projections = Object.create(null);
 
+    for (const platform of ['mobile', 'desktop']) {
+      const menu = document.createElement('section');
+      menu.className = 'corner-menu';
+      menu.dataset.corner = corner;
+      menu.dataset.platform = platform;
+      menu.dataset.prompt = promptId;
+      menu.setAttribute('aria-hidden', 'true');
+
+      const matrix = document.createElement('div');
+      matrix.className = 'plate-matrix';
+      matrix.dataset.matrix = platform + '-' + corner;
+
+      const table = document.createElement('div');
+      table.className = 'plate-table';
+      table.setAttribute('role', 'table');
+
+      const promptRow = document.createElement('div');
+      promptRow.className = 'plate-row plate-prompt-row';
+      promptRow.setAttribute('role', 'row');
+
+      const prompt = document.createElement('input');
+      prompt.className = 'plate-prompt';
+      prompt.type = 'text';
+      prompt.setAttribute('aria-label', 'Prompt, ' + corner);
+      prompt.dataset.logicalPrompt = promptId;
+      prompt.addEventListener('input', () => {
+        logicalPrompts.set(promptId, prompt.value);
+        for (const peer of plateLayer.querySelectorAll('[data-logical-prompt="' + promptId + '"]')) {
+          if (peer !== prompt) peer.value = prompt.value;
+        }
+      });
+
+      promptRow.appendChild(prompt);
+      table.appendChild(promptRow);
+      matrix.appendChild(table);
+      menu.appendChild(matrix);
+      plateLayer.appendChild(menu);
+      projections[platform] = menu;
+    }
+
+    menus.set(corner, projections);
     button.setAttribute('aria-expanded', 'false');
     let buttonMorph = null;
     let buttonMorphTimers = [];
@@ -120,17 +159,22 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
         button.style.transform = '';
       }, 620));
 
-      const current = [...menus.entries()].find(([, candidate]) => candidate.classList.contains('open'));
+      const activePlatform = mobilePlatform ? 'mobile' : 'desktop';
+      const current = [...menus.entries()].find(([, pair]) =>
+        Object.values(pair).some(candidate => candidate.classList.contains('open')));
       const same = current && current[0] === button.dataset.position;
 
       if (current) {
-        const [position, active] = current;
-        active.classList.remove('open');
-        active.setAttribute('aria-hidden', 'true');
+        const [position, pair] = current;
+        for (const active of Object.values(pair)) {
+          active.classList.remove('open');
+          active.setAttribute('aria-hidden', 'true');
+        }
         shell.querySelector('.corner.start[data-position="' + position + '"]')?.setAttribute('aria-expanded', 'false');
       }
 
       if (!same) {
+        const menu = projections[activePlatform];
         menu.setAttribute('aria-hidden', 'false');
         button.setAttribute('aria-expanded', 'true');
         requestAnimationFrame(() => menu.classList.add('open'));
@@ -141,10 +185,13 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
   shell.addEventListener('click', (event) => {
     if (event.target.closest('.corner.start') || event.target.closest('.corner-menu')) return;
 
-    for (const [position, active] of menus.entries()) {
-      if (!active.classList.contains('open')) continue;
-      active.classList.remove('open');
-      active.setAttribute('aria-hidden', 'true');
+    for (const [position, pair] of menus.entries()) {
+      const open = Object.values(pair).filter(active => active.classList.contains('open'));
+      if (!open.length) continue;
+      for (const active of open) {
+        active.classList.remove('open');
+        active.setAttribute('aria-hidden', 'true');
+      }
       shell.querySelector('.corner.start[data-position="' + position + '"]')?.setAttribute('aria-expanded', 'false');
     }
   });
@@ -157,7 +204,10 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
     corners: 4,
     panes: 4,
     center: 'empty',
-    cornerMenus: 4,
+    cornerMenus: 8,
+    matrices: 8,
+    tables: 8,
+    logicalPrompts: 4,
   });
 }
 
