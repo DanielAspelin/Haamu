@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.123.0',
+  version: '0.124.0',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -425,6 +425,8 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       });
       prompt.addEventListener('input', () => {
         promptWrap.classList.toggle('has-value', prompt.value.length > 0);
+        const state=promptSystems?.transition?.(prompt.dataset.promptMode==='continuation'?'continuation':'primary',{reason:'input'});
+        if(state) prompt.dataset.promptState=state.state;
         resizePrompt(prompt);
       });
       prompt.addEventListener('keydown', (event) => {
@@ -443,6 +445,8 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
           prompt.setSelectionRange(next,next);
           prompt.dataset.promptMode='continuation';
           prompt.dataset.continuationReason=event.shiftKey?'explicit':(inspection?.reason ?? 'incomplete');
+          const state=promptSystems?.transition?.('continuation',{reason:prompt.dataset.continuationReason});
+          if(state) prompt.dataset.promptState=state.state;
           synchronizePrompt(prompt);
           return;
         }
@@ -450,6 +454,10 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
         delete prompt.dataset.continuationReason;
 
         if (!promptSystems || !plateSystems) return;
+        let state=promptSystems.transition?.('submitted',{reason:'enter'});
+        if(state) prompt.dataset.promptState=state.state;
+        state=promptSystems.transition?.('executing',{reason:'dispatch'});
+        if(state) prompt.dataset.promptState=state.state;
         const transaction = promptSystems.submit(prompt.value, {
           router: shellRouter,
           promptId,
@@ -473,6 +481,8 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
             detail: transaction.output,
           }));
         }
+        state=promptSystems.transition?.('ready',{reason:transaction.output?.state ?? 'completed'});
+        if(state) prompt.dataset.promptState=state.state;
         prompt.value = '';
         prompt.setSelectionRange(0,0);
         resizePrompt(prompt);
