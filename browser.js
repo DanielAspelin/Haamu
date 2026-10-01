@@ -203,8 +203,14 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
         const menu=target.closest('.corner-menu'), wrap=target.closest('.plate-prompt-wrap');
         const row=target.closest('.plate-prompt-row'), area=wrap?.querySelector('.plate-prompt-text-area');
         const field=area?.querySelector('.plate-prompt-text-field'), mirror=wrap?.querySelector('.plate-prompt-measure');
-        const caret=area?.querySelector('.plate-prompt-caret');
+        let caret=area?.querySelector('.plate-prompt-caret');
         if(!area||!field||!mirror)return;
+        if(!caret){
+          caret=document.createElement('span');
+          caret.className='plate-prompt-caret';
+          caret.setAttribute('aria-hidden','true');
+          caret.hidden=true;
+        }
         const style=getComputedStyle(target), lineHeight=parseFloat(style.lineHeight)||17;
         const paddingTop=parseFloat(style.paddingTop)||0, paddingBottom=parseFloat(style.paddingBottom)||0;
         const oneLine=44, maxLines=3;
@@ -295,6 +301,7 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       promptCaret.className = 'plate-prompt-caret';
       promptCaret.setAttribute('aria-hidden','true');
       promptCaret.hidden = true;
+      promptTextField.appendChild(promptCaret);
       const promptMeasure = document.createElement('div');
       promptMeasure.className = 'plate-prompt-measure';
       promptMeasure.setAttribute('aria-hidden', 'true');
