@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.111.1',
+  version: '0.112.0',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -151,6 +151,41 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       promptWrap.appendChild(promptLabel);
       prompt.addEventListener('input', () => {
         promptWrap.classList.toggle('has-value', prompt.value.length > 0);
+      });
+      prompt.addEventListener('keydown', (event) => {
+        if (event.key !== 'Enter' || event.isComposing) return;
+        event.preventDefault();
+
+        const shellByCorner = Object.freeze({
+          'top-left':'server',
+          'top-right':'local',
+          'bottom-left':'global',
+          'bottom-right':'client',
+        });
+        const interpreter = globalThis.HaamuWebInterpreter;
+        if (!interpreter) return;
+
+        globalThis.HaamuShellRouter ??= globalThis.HaamuShell?.router?.();
+        const output = interpreter.execute(prompt.value, {
+          shell: shellByCorner[corner],
+          router: globalThis.HaamuShellRouter,
+          /* Search remains an explicit integration boundary. No network
+             authority is created merely by entering a search command. */
+          search: globalThis.HaamuSearch?.search,
+          corner,
+          platform,
+        });
+
+        globalThis.dispatchEvent(new CustomEvent('haamu:terminal-output', {
+          detail: output,
+        }));
+        prompt.value = '';
+        logicalPrompts.set(promptId, '');
+        promptWrap.classList.remove('has-value');
+        for (const peer of plateLayer.querySelectorAll('[data-logical-prompt="' + promptId + '"]')) {
+          peer.value = '';
+          peer.closest('.plate-prompt-wrap')?.classList.remove('has-value');
+        }
       });
       promptRow.appendChild(promptWrap);
       table.appendChild(promptRow);
