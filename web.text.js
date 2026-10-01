@@ -15,7 +15,7 @@ const HaamuWebText = Object.freeze({
   family: 'web',
   role: 'web.text',
   type: 'text-processor-allocator-parser-renderer',
-  version: '0.6.0',
+  version: '0.7.0',
 
   normalize(value, form = 'NFC') {
     const text = value == null ? '' : String(value);
@@ -126,6 +126,32 @@ const HaamuWebText = Object.freeze({
       direction: options.direction ?? 'auto',
       language: options.language ?? 'und',
       writingMode: options.writingMode ?? 'horizontal-tb',
+    });
+  },
+
+  renderToPlate(value, plate, options = {}) {
+    if (!plate || plate.type !== 'web-plate') throw new TypeError('WebText target must be a Plate.');
+    const rendered = this.render(value, options);
+    const cells = rendered.units.map((unit, index) => ({
+      row: Math.trunc(index / Math.max(1, Number(options.columns) || 1)),
+      column: index % Math.max(1, Number(options.columns) || 1),
+      id: unit.id,
+      text: unit.value,
+      link: options.links?.[unit.id] ?? null,
+    }));
+    const columns = Math.max(1, Number(options.columns) || 1);
+    const rows = Math.max(1, Math.ceil(cells.length / columns));
+    const matrix = plate.generateMatrix({ rows, columns, cells });
+    const grid = plate.generateGrid(options.grid ?? {});
+    const mesh = plate.generateMesh(options.mesh ?? {});
+
+    return Object.freeze({
+      type: 'plate-text-render',
+      target: plate.id,
+      text: rendered,
+      matrix,
+      grid,
+      mesh,
     });
   },
 
