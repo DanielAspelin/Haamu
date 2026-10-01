@@ -733,36 +733,21 @@ const HaamuWebText = Object.freeze({
     const source=transaction.source;
     const trimmed=source.trim();
     const prefix=trimmed.match(/^([?!>$])\s*/)?.[1]??null;
-    const mode=prefix==='?'?'search':prefix==='!'||prefix==='
-    const context=this.context(scope,options);
-    const prepared=Array.from(outputs,output=>{
-      if(!output||typeof output!=='object')return output;
-      return Object.freeze({
-        ...output,
-        channelId:output.channelId??context.channelId,
-        sessionId:output.sessionId??context.sessionId,
-      });
-    });
-    const session=this.session(prepared,{
-      ...options,
-      channelId:context.channelId,
-      sessionId:context.sessionId,
-    });
-    const allocation=this.allocateStreams(session.ordered,{
-      ...options,
-      area:context.field,
-      role:context.scope,
-      streams:context.field.streams,
-      promptReserve:0,
-      promptGap:0,
-    });
+    const mode=prefix==='?'?'search':prefix==='!'||prefix==='$'?'shell':prefix==='>'?'prompt':'command';
+    const body=prefix?trimmed.slice(1).trimStart():source;
+    transaction.transition('accepted',{semantic:mode,text:body});
     return Object.freeze({
-      type:'web-text-context-pipeline',
-      scope:context.scope,
-      context,
-      input:Object.freeze(prepared),
-      session,
-      allocation,
+      type:'prompt-interpretation',
+      mode,source,body,prefix,
+      structured:Object.freeze({
+        instruction:mode==='prompt'?body:null,
+        query:mode==='search'?body:null,
+        command:(mode==='command'||mode==='shell')?body:null,
+        context:null,
+      }),
+      transaction,
+      channelId:transaction.context.channelId,
+      sessionId:transaction.context.sessionId,
       executable:false,
       rendererConnected:false,
       changesGeometry:false,
