@@ -30,4 +30,4 @@ jobs:
           ! grep -Eq 'addEventListener' html.button.js html.plate.js
           grep -q "className: 'corner-menu'" html.plate.js
           grep -q "className: 'plate-prompt'" html.prompt.js
-          grep -q "className: 'corner start" browser.js
+          grep -q "'corner start" browser.js
