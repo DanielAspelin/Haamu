@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.120.1',
+  version: '0.120.2',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -212,7 +212,12 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
         const measured = target.scrollHeight;
         const height = Math.min(maxHeight, Math.max(oneLine, measured));
         target.style.height = height + 'px';
-        target.style.overflowY = measured > maxHeight ? 'auto' : 'hidden';
+        /* Prompt is a three-line viewport, never a scrolling control.
+           Once input wraps beyond line three, keep the newest three lines
+           visible by shifting the native editor and Haamu projection upward. */
+        target.style.overflowY = 'hidden';
+        const overflow = Math.max(0, measured - maxHeight);
+        target.scrollTop = overflow;
         if (wrap) wrap.style.height = height + 'px';
         if (row) {
           row.style.height = height + 'px';
@@ -221,7 +226,10 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
         if (menu) {
           menu.style.setProperty('--prompt-track-height', height + 'px');
           const projection = target.closest('.plate-prompt-wrap')?.querySelector('.plate-prompt-projection');
-          if (projection) projection.style.height = height + 'px';
+          if (projection) {
+            projection.style.height = height + 'px';
+            projection.style.transform = 'translateY(-' + overflow + 'px)';
+          }
         }
       };
       prompt.addEventListener('input', () => {
