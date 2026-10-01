@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.127.7',
+  version: '0.127.8',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -617,6 +617,25 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       const same = current && current[0] === targetPosition;
       let handoffAuthorized = !same;
 
+      /* Temporary bounded handoff evidence. Keep this nonvisual: it records
+         exactly what the first activation resolved without altering geometry,
+         timing, stacking or animation. */
+      const traceHandoff = (phase, detail = {}) => {
+        globalThis.HaamuPlateHandoffTrace ??= [];
+        globalThis.HaamuPlateHandoffTrace.push(Object.freeze({
+          phase,
+          platform: activePlatform,
+          target: targetPosition,
+          current: current?.[0] ?? null,
+          same: Boolean(same),
+          authorized: Boolean(handoffAuthorized),
+          ...detail
+        }));
+        if (globalThis.HaamuPlateHandoffTrace.length > 32)
+          globalThis.HaamuPlateHandoffTrace.splice(0, globalThis.HaamuPlateHandoffTrace.length - 32);
+      };
+      traceHandoff('click');
+
       const openTargetNow = () => {
         const menu = projections[activePlatform];
         projections.stateSystem?.restore('desktop');
@@ -706,8 +725,16 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
         void incoming?.offsetWidth;
         handoffAuthorized = false;
         requestAnimationFrame(() => {
+          traceHandoff('desktop-frame-before', {
+            outgoingOpen: Boolean(activeCurrent?.classList.contains('open')),
+            incomingOpen: Boolean(incoming?.classList.contains('open'))
+          });
           activeCurrent?.classList.remove('open');
           incoming?.classList.add('open', 'plate-transition-in');
+          traceHandoff('desktop-frame-after', {
+            outgoingOpen: Boolean(activeCurrent?.classList.contains('open')),
+            incomingOpen: Boolean(incoming?.classList.contains('open'))
+          });
           /* The retiring Plate's completion must not clear the incoming Plate.
              closeCurrent() below operates only on the old logical pair. */
           setTimeout(() => incoming?.classList.remove('plate-transition-in'), 520);
