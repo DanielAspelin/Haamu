@@ -15,7 +15,7 @@ const HaamuWebText = Object.freeze({
   family: 'web',
   role: 'web.text',
   type: 'text-input-output-processor-allocator-symbolizer-parser-mutator-deparser-font-renderer',
-  version: '1.1.0',
+  version: '1.2.0',
 
   input(event = {}, state = {}) {
     const key = event.key ?? null, code = event.code ?? null;
@@ -96,6 +96,28 @@ const HaamuWebText = Object.freeze({
     });
   },
 
+  cursor(options = {}) {
+    const position = Math.max(0, Math.trunc(finite(options.position, 0)));
+    const anchor = Math.max(0, Math.trunc(finite(options.anchor, position)));
+    const focus = Math.max(0, Math.trunc(finite(options.focus, position)));
+    return Object.freeze({
+      type:'web-text-cursor',
+      position,
+      anchor,
+      focus,
+      collapsed:anchor===focus,
+      visible:options.visible !== false,
+      active:options.active !== false,
+      affinity:options.affinity ?? 'forward',
+      direction:options.direction ?? 'auto',
+      line:Math.max(0,Math.trunc(finite(options.line,0))),
+      column:Math.max(0,Math.trunc(finite(options.column,0))),
+      preferredColumn:Math.max(0,Math.trunc(finite(options.preferredColumn ?? options.column,0))),
+      shape:options.shape ?? 'bar',
+      blink:options.blink !== false,
+    });
+  },
+
   alignment(options = {}) {
     return Object.freeze({
       type:'web-text-alignment',
@@ -130,6 +152,7 @@ const HaamuWebText = Object.freeze({
       symbols: this.symbolize(value),
       font: this.font(options.font ?? {}),
       alignment: this.alignment(options.alignment ?? {}),
+      cursor: this.cursor(options.cursor ?? {}),
       viewport: this.viewport(value, options.viewport ?? {}),
       measure: this.measure(value, options),
       render: this.render(value, options),
