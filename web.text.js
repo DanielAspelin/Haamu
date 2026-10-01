@@ -15,7 +15,7 @@ const HaamuWebText = Object.freeze({
   family: 'web',
   role: 'web.text',
   type: 'text-input-output-processor-allocator-symbolizer-parser-mutator-deparser-font-renderer',
-  version: '1.13.1',
+  version: '1.14.0',
 
   key(event = {}) {
     const key = event.key ?? null;
@@ -363,10 +363,43 @@ const HaamuWebText = Object.freeze({
   },
 
   alignment(options = {}) {
+    const horizontal=options.horizontal??'start';
+    const vertical=options.vertical??'start';
+    const direction=options.direction??'auto';
+    const writingMode=options.writingMode??'horizontal-tb';
+    const anchor=options.anchor??'content';
+    const flow=options.flow??'forward';
+    const allowedHorizontal=new Set(['start','center','end','justify']);
+    const allowedVertical=new Set(['start','center','end']);
+    const allowedDirection=new Set(['auto','ltr','rtl']);
+    const allowedWritingMode=new Set(['horizontal-tb','vertical-rl','vertical-lr']);
+    if(!allowedHorizontal.has(horizontal))throw new RangeError('Unsupported horizontal text alignment.');
+    if(!allowedVertical.has(vertical))throw new RangeError('Unsupported vertical text alignment.');
+    if(!allowedDirection.has(direction))throw new RangeError('Unsupported text direction.');
+    if(!allowedWritingMode.has(writingMode))throw new RangeError('Unsupported writing mode.');
     return Object.freeze({
       type:'web-text-alignment',
-      horizontal:options.horizontal ?? 'start', vertical:options.vertical ?? 'start',
-      direction:options.direction ?? 'auto', writingMode:options.writingMode ?? 'horizontal-tb',
+      horizontal,vertical,direction,writingMode,anchor,flow,
+      logical:Object.freeze({
+        inline:horizontal,
+        block:vertical,
+        startIsDirectionRelative:horizontal==='start'||horizontal==='end',
+      }),
+      application:'renderer-neutral',
+    });
+  },
+
+  align(value, options = {}) {
+    const text=this.normalize(value);
+    const alignment=this.alignment(options);
+    return Object.freeze({
+      type:'web-text-aligned',
+      text,
+      symbols:this.symbolize(text),
+      lines:Object.freeze(this.lines(text)),
+      alignment,
+      preservesText:true,
+      changesGeometry:false,
     });
   },
 
@@ -444,6 +477,7 @@ const HaamuWebText = Object.freeze({
       symbols: this.symbolize(value),
       font: this.font(options.font ?? {}),
       alignment: this.alignment(options.alignment ?? {}),
+      aligned: this.align(value, options.alignment ?? {}),
       cursor: this.cursor(options.cursor ?? {}),
       viewport: this.viewport(value, options.viewport ?? {}),
       measure: this.measure(value, options),
