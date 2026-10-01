@@ -226,11 +226,11 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
         };
 
         const showDesktopCursor = () => {
-          desktopCursor.style.display = 'block';
+          promptWrap.classList.add('cursor-active');
           positionDesktopCursor();
         };
         prompt.addEventListener('focus', showDesktopCursor);
-        prompt.addEventListener('blur', () => { desktopCursor.style.display = 'none'; });
+        prompt.addEventListener('blur', () => { promptWrap.classList.remove('cursor-active'); });
         prompt.addEventListener('click', positionDesktopCursor);
         prompt.addEventListener('keyup', positionDesktopCursor);
         prompt.addEventListener('select', positionDesktopCursor);
