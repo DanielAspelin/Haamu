@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.119.3',
+  version: '0.120.0',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -222,10 +222,13 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       };
       prompt.addEventListener('input', () => {
         logicalPrompts.set(promptId, prompt.value);
+        promptProjection.textContent = prompt.value;
         resizePrompt(prompt);
         for (const peer of plateLayer.querySelectorAll('[data-logical-prompt="' + promptId + '"]')) {
           if (peer !== prompt) {
             peer.value = prompt.value;
+            const peerProjection = peer.closest('.plate-prompt-wrap')?.querySelector('.plate-prompt-projection');
+            if (peerProjection) peerProjection.textContent = prompt.value;
             resizePrompt(peer);
           }
         }
@@ -233,6 +236,9 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
 
       const promptWrap = document.createElement('div');
       promptWrap.className = 'plate-prompt-wrap';
+      const promptProjection = document.createElement('div');
+      promptProjection.className = 'plate-prompt-projection';
+      promptProjection.setAttribute('aria-hidden', 'true');
       const promptLabel = document.createElement('span');
       promptLabel.className = 'plate-prompt-label';
       promptLabel.textContent = plateTitles[corner];
@@ -244,6 +250,7 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
         '-webkit-text-stroke:0','text-shadow:0 1px 0 rgba(255,255,255,.32)',
         'mix-blend-mode:normal'
       ].join(';');
+      promptWrap.appendChild(promptProjection);
       promptWrap.appendChild(prompt);
       promptWrap.appendChild(promptLabel);
       prompt.addEventListener('input', () => {
@@ -278,11 +285,14 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
           }));
         }
         prompt.value = '';
+        promptProjection.textContent = '';
         resizePrompt(prompt);
         logicalPrompts.set(promptId, '');
         promptWrap.classList.remove('has-value');
         for (const peer of plateLayer.querySelectorAll('[data-logical-prompt="' + promptId + '"]')) {
           peer.value = '';
+          const peerProjection = peer.closest('.plate-prompt-wrap')?.querySelector('.plate-prompt-projection');
+          if (peerProjection) peerProjection.textContent = '';
           resizePrompt(peer);
           peer.closest('.plate-prompt-wrap')?.classList.remove('has-value');
         }
