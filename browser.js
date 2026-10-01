@@ -204,6 +204,7 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
         const wrap = target.closest('.plate-prompt-wrap');
         const row = target.closest('.plate-prompt-row');
         const projection = wrap?.querySelector('.plate-prompt-projection');
+        const textField = projection?.querySelector('.plate-prompt-text-field');
         const mirror = wrap?.querySelector('.plate-prompt-measure');
         const style = getComputedStyle(target);
         const lineHeight = parseFloat(style.lineHeight) || 17;
@@ -233,12 +234,12 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
           const text = target.value;
           projection.classList.toggle('is-empty', !text);
           if (!text) {
-            projection.textContent = '';
+            textField?.replaceChildren();
           } else if (!mirror || measured <= maxHeight) {
             const lineNode = document.createElement('div');
             lineNode.className = 'plate-prompt-projection-line';
             lineNode.textContent = text;
-            projection.replaceChildren(lineNode);
+            textField?.replaceChildren(lineNode);
           } else {
             /* Measure the ORIGINAL full-text wrapping. Re-wrapping a suffix at
                column zero changes its line breaks and makes the cursor queue
@@ -266,12 +267,12 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
               range.detach?.();
             }
             const visibleLines = lines.slice(-3);
-            projection.replaceChildren();
+            textField?.replaceChildren();
             for (const line of visibleLines) {
               const lineNode = document.createElement('div');
               lineNode.className = 'plate-prompt-projection-line';
               lineNode.textContent = text.slice(line.start, line.end).replace(/\n$/, '');
-              projection.appendChild(lineNode);
+              textField?.appendChild(lineNode);
             }
           }
           projection.style.height = height + 'px';
