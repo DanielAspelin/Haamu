@@ -15,7 +15,7 @@ const HaamuWebText = Object.freeze({
   family: 'web',
   role: 'web.text',
   type: 'text-input-output-processor-allocator-symbolizer-parser-mutator-deparser-font-renderer',
-  version: '1.17.0',
+  version: '1.18.0',
 
   key(event = {}) {
     const key = event.key ?? null;
@@ -444,6 +444,62 @@ const HaamuWebText = Object.freeze({
       field,
       promptBoundary,
       overlap:false,
+      changesGeometry:false,
+    });
+  },
+
+  allocateStreams(records = [], options = {}) {
+    const reservation=this.reserveField(options);
+    const allowed=new Set(reservation.field.streams);
+    const normalized=records.map((record,index)=>{
+      const stream=String(record?.stream??record?.kind??record?.type??'text');
+      const text=this.normalize(record?.text??record?.value??record?.payload??'');
+      return Object.freeze({
+        type:'web-text-stream-record',
+        sequence:Math.max(0,Math.trunc(finite(record?.sequence,index))),
+        insertion:index,
+        stream,
+        source:record?.source??stream,
+        semantic:record?.semantic??stream,
+        text,
+        accepted:allowed.has(stream),
+      });
+    }).sort((a,b)=>a.sequence-b.sequence||a.insertion-b.insertion);
+    const accepted=normalized.filter(record=>record.accepted);
+    const rejected=normalized.filter(record=>!record.accepted);
+    const lines=[];
+    for(const record of accepted){
+      const members=this.lines(record.text);
+      members.forEach((text,index)=>lines.push(Object.freeze({
+        type:'web-text-stream-line',
+        stream:record.stream,
+        source:record.source,
+        semantic:record.semantic,
+        sequence:record.sequence,
+        sourceLine:index,
+        text,
+      })));
+    }
+    const lineAdvance=Math.max(0,finite(options.lineAdvance,1))+Math.max(0,finite(options.spacing?.line,0));
+    const capacity=lineAdvance>0&&reservation.field.height>0
+      ? Math.max(1,Math.floor((reservation.field.height+Math.max(0,finite(options.spacing?.line,0)))/lineAdvance))
+      : Math.max(1,lines.length||1);
+    const first=Math.max(0,lines.length-capacity);
+    return Object.freeze({
+      type:'web-text-stream-allocation',
+      field:reservation.field,
+      promptBoundary:reservation.promptBoundary,
+      records:Object.freeze(normalized),
+      accepted:Object.freeze(accepted),
+      rejected:Object.freeze(rejected),
+      lines:Object.freeze(lines),
+      visible:Object.freeze(lines.slice(first)),
+      displaced:Object.freeze(lines.slice(0,first)),
+      capacity,
+      firstVisibleLine:first,
+      overflow:lines.length>capacity,
+      order:'sequence-then-insertion',
+      preservesSourceIdentity:true,
       changesGeometry:false,
     });
   },
