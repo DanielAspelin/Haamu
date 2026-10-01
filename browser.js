@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.121.5',
+  version: '0.121.6',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -344,6 +344,19 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       promptWrap.appendChild(promptProjection);
       promptWrap.appendChild(prompt);
       promptWrap.appendChild(promptLabel);
+      /* Prompt activation belongs to the Prompt track, not to whichever
+         projection/label layer happens to be under the pointer. This makes
+         tapping the visible Prompt name a deterministic focus operation while
+         the native textarea remains the sole IME/editing authority. */
+      promptWrap.addEventListener('pointerdown', event => {
+        if (event.pointerType === 'mouse' && event.button !== 0) return;
+        if (document.activeElement !== prompt) {
+          prompt.focus({ preventScroll:true });
+          const end=prompt.value.length;
+          try { prompt.setSelectionRange(end,end); } catch {}
+          resizePrompt(prompt);
+        }
+      });
       prompt.addEventListener('input', () => {
         promptWrap.classList.toggle('has-value', prompt.value.length > 0);
       });
