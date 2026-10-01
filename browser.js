@@ -130,6 +130,19 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
         desktop:Object.freeze({ id:plateId + '-desktop', platform:'desktop' }),
       }),
       visualAuthority:'accepted-common-web-plate',
+      projectionConsoleState:Object.freeze({
+        mode:'nonvisual',
+        lifecycle:'registered',
+        logicalConsoleId:'console-' + consoleScope,
+        channels:Object.freeze({
+          mobile:Object.freeze({ projectionId:plateId + '-mobile', state:'dormant' }),
+          desktop:Object.freeze({ projectionId:plateId + '-desktop', state:'dormant' }),
+        }),
+        ownsGeometry:false,
+        ownsLayout:false,
+        ownsStacking:false,
+        ownsInteraction:false,
+      }),
     });
     const commandChannel = globalThis.HaamuCommandChannel?.get?.(channelId);
     commandChannel?.bindOutput?.(plateId);
