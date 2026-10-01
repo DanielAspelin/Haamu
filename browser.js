@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.126.9',
+  version: '0.127.0',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -682,19 +682,17 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       closeFallback = setTimeout(closeCurrent, wasMaximized ? 620 : 600);
 
       if (activePlatform === 'desktop' && !same) {
-        /* Desktop is also ordered: start retracting the old Plate immediately,
-           then open the selected Plate only after the old transform completes.
-           This prevents the old Plate from appearing to wait for the new one. */
-        const openAfterDesktopClose = () => {
+        /* Desktop has several transitioning properties (opacity, dimensions,
+           transform). Do not use a once-listener here: opacity can end first
+           and consume it before the transform completes. Open the successor
+           only on the outgoing Plate's actual transform boundary. */
+        const openAfterDesktopClose = (event) => {
+          if (event.target !== activeCurrent || event.propertyName !== 'transform') return;
           activeCurrent?.removeEventListener('transitionend', openAfterDesktopClose);
           if (!closeFinished) closeCurrent();
           openTargetNow();
         };
-        activeCurrent?.addEventListener('transitionend', (event) => {
-          if (event.target === activeCurrent && event.propertyName === 'transform') {
-            openAfterDesktopClose();
-          }
-        }, { once:true });
+        activeCurrent?.addEventListener('transitionend', openAfterDesktopClose);
       }
     });
   }
