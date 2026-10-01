@@ -1,8 +1,8 @@
 'use strict';
 
 /**
- * Haamu Browser Prompt Systems — governed input ownership per logical Prompt.
- * Prompt interprets and records input intent; execution authority remains with
+ * Haamu Browser Prompt Systems — governed user-input ownership with a Prompt output transport boundary.
+ * Prompt interprets and records input intent; its output socket does not grant execution authority; authority remains with
  * Command, Shell, Search, Terminal or later provider boundaries.
  */
 globalThis.HaamuFamilies ??= Object.create(null);
@@ -91,14 +91,18 @@ const create=(promptId,definition={})=>{
   search:Object.freeze({input:query=>channel.search.input(query,{source:promptId})}),
   shellInput:Object.freeze({input:command=>HaamuShellInput.create(command,{channelId,shell,source:promptId})}),
   submit(value,context={}){
-   const input=channel.command.input(value,{promptId,source:'prompt'});
-   return commandLine.submit(input,{...context,promptId});
+   const interpretation=interpret(value);
+   const source=interpretation.body;
+   if(interpretation.mode==='search')return channel.search.input(source,{source:promptId});
+   if(interpretation.mode==='shell')return channel.shell.input(source,{source:promptId});
+   const input=channel.command.input(source,{promptId,source:'prompt',mode:interpretation.mode});
+   return commandLine.submit(input,{...context,promptId,interpretation});
   },
  });
 };
 
 const HaamuBrowserPromptSystems=Object.freeze({
- family:'browser',role:'browser.prompt.systems',type:'per-prompt-input-systems',version:'0.7.1',
+ family:'browser',role:'browser.prompt.systems',type:'per-prompt-input-systems',version:'0.8.0',
  forPrompt(prompt,definition={}){
   const promptId=String(typeof prompt==='string'?prompt:(prompt?.dataset?.logicalPrompt??prompt?.id??'')).trim();
   if(!promptId)throw new RangeError('Prompt identity required.');
@@ -109,6 +113,6 @@ const HaamuBrowserPromptSystems=Object.freeze({
  prompts:()=>Object.freeze(Array.from(systems.keys())),
 });
 globalThis.HaamuFamilies['browser.prompt.systems']=Object.freeze({
- family:'browser',role:'browser.prompt.systems',type:'per-prompt-input-systems',version:'0.7.0'
+ family:'browser',role:'browser.prompt.systems',type:'per-prompt-input-systems',version:'0.8.0'
 });
 globalThis.HaamuBrowserPromptSystems=HaamuBrowserPromptSystems;
