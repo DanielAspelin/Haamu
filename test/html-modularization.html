@@ -46,6 +46,23 @@ function referencePlate({corner,platform,title,promptId,plateId,channelId,plateS
   table.append(contentRow,promptRow); matrix.appendChild(table); menu.appendChild(matrix);
   return menu;
 }
+const PRESENTATION_PROPERTIES=[
+  'display','position','boxSizing','width','height','minWidth','minHeight','maxWidth','maxHeight',
+  'marginTop','marginRight','marginBottom','marginLeft','paddingTop','paddingRight','paddingBottom','paddingLeft',
+  'borderTopWidth','borderRightWidth','borderBottomWidth','borderLeftWidth','borderRadius',
+  'fontFamily','fontSize','fontWeight','lineHeight','letterSpacing','textAlign',
+  'opacity','visibility','overflow','pointerEvents','transform','transformOrigin','zIndex'
+];
+function presentation(node){
+  document.body.appendChild(node);
+  const style=getComputedStyle(node), rect=node.getBoundingClientRect();
+  const value={
+    rect:{width:rect.width,height:rect.height},
+    style:Object.fromEntries(PRESENTATION_PROPERTIES.map(name=>[name,style[name]]))
+  };
+  node.remove();
+  return value;
+}
 function normalize(node){
   if(node.nodeType===Node.TEXT_NODE) return {text:node.data};
   const attrs=[...node.attributes].map(a=>[a.name,a.value]).sort((a,b)=>a[0].localeCompare(b[0]));
@@ -70,7 +87,20 @@ for(const corner of ['top-left','top-right','bottom-left','bottom-right']){
     cases.push({name:corner+'/'+platform,diffs:diff(normalize(reference),normalize(candidate))});
   }
 }
+/* Presentation/geometry stream is isolated from structural authority.
+   It reports independently so a style difference cannot mutate DOM state. */
+const presentationCases=[];
+for(const corner of ['top-left','top-right','bottom-left','bottom-right']){
+  const title=({'top-left':'SERVER','top-right':'LOCAL','bottom-left':'GLOBAL','bottom-right':'CLIENT'})[corner];
+  for(const platform of ['mobile','desktop']){
+    const spec={corner,platform,title,promptId:'prompt-'+corner,plateId:'plate-'+corner,channelId:'command-'+corner,plateState:'normal'};
+    const reference=referencePlate(spec), candidate=HaamuHTMLPlate.create(spec).root;
+    const a=presentation(reference), b=presentation(candidate);
+    presentationCases.push({name:corner+'/'+platform,pass:JSON.stringify(a)===JSON.stringify(b),reference:a,candidate:b});
+  }
+}
 const failures=cases.filter(c=>c.diffs.length);
+const presentationFailures=presentationCases.filter(c=>!c.pass);
 const output=()=>document.querySelector('#result').textContent=
   (failures.length?'FAIL':'PASS')+' '+(cases.length-failures.length)+'/'+cases.length+' exact structural projections\n'+
   cases.map(c=>(c.diffs.length?'FAIL ':'PASS ')+c.name+(c.diffs.length?'\n  '+c.diffs.join('\n  '):'')).join('\n');
