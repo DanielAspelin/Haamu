@@ -23,8 +23,6 @@ class V1 {
   static NAME = 'Haamu V1';
   static VERSION = '1.0.0';
   static STATE = 'under-construction';
-
-  static V0 = V0;
 }
 
 globalThis.V0 = V0;
