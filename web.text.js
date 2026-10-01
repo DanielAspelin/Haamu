@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * Haamu Web Text — web-family text processor.
+ * Haamu Web Text — web-family text processor, allocator and parser.
  *
  * Text is retained as semantic Unicode data while exposing deterministic
  * vector-ready geometry. Rendering remains owned by graphics/browser layers.
@@ -14,8 +14,8 @@ const finite = (value, fallback) => Number.isFinite(Number(value)) ? Number(valu
 const HaamuWebText = Object.freeze({
   family: 'web',
   role: 'web.text',
-  type: 'text-processor-allocator',
-  version: '0.4.0',
+  type: 'text-processor-allocator-parser',
+  version: '0.5.0',
 
   normalize(value, form = 'NFC') {
     const text = value == null ? '' : String(value);
@@ -37,6 +37,59 @@ const HaamuWebText = Object.freeze({
 
   codePoints(value) {
     return this.characters(value).map(character => character.codePointAt(0));
+  },
+
+  parse(value, options = {}) {
+    const text = this.normalize(value, options.normalization ?? 'NFC');
+    const tokens = [];
+    const lines = [];
+    const pattern = /\r\n|\r|\n|[\p{L}\p{M}\p{N}_]+|[ \t]+|[^\p{L}\p{M}\p{N}_ \t\r\n]/gu;
+    let match;
+    let line = 0;
+    let column = 0;
+
+    while ((match = pattern.exec(text)) !== null) {
+      const lexeme = match[0];
+      let type = 'punctuation';
+      if (/^\r\n|\r|\n$/u.test(lexeme)) type = 'newline';
+      else if (/^[ \t]+$/u.test(lexeme)) type = 'whitespace';
+      else if (/^[\p{L}\p{M}\p{N}_]+$/u.test(lexeme)) type = 'word';
+
+      const token = Object.freeze({
+        type,
+        value: lexeme,
+        start: match.index,
+        end: match.index + lexeme.length,
+        line,
+        column,
+      });
+      tokens.push(token);
+
+      if (type === 'newline') {
+        line += 1;
+        column = 0;
+      } else {
+        column += Array.from(lexeme).length;
+      }
+    }
+
+    for (let number = 0; number <= line; number += 1) {
+      const members = tokens.filter(token => token.line === number && token.type !== 'newline');
+      lines.push(Object.freeze({
+        type: 'text-line',
+        number,
+        tokens: Object.freeze(members),
+        text: members.map(token => token.value).join(''),
+      }));
+    }
+
+    return Object.freeze({
+      type: 'parsed-text',
+      source: text,
+      normalization: options.normalization ?? 'NFC',
+      tokens: Object.freeze(tokens),
+      lines: Object.freeze(lines),
+    });
   },
 
   allocate(value, options = {}) {
@@ -61,9 +114,11 @@ const HaamuWebText = Object.freeze({
   process(value, options = {}) {
     const text = this.normalize(value, options.normalization ?? 'NFC');
     const characters = this.characters(text);
+    const parsed = this.parse(text, options);
     return Object.freeze({
       type: 'text',
       text,
+      parsed,
       lines: Object.freeze(this.lines(text)),
       words: Object.freeze(this.words(text)),
       characters: Object.freeze(characters),
