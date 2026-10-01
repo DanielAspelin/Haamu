@@ -15,7 +15,7 @@ const HaamuWebText = Object.freeze({
   family: 'web',
   role: 'web.text',
   type: 'text-input-output-processor-allocator-symbolizer-parser-mutator-deparser-font-renderer',
-  version: '1.21.0',
+  version: '1.22.0',
 
   key(event = {}) {
     const key = event.key ?? null;
@@ -531,6 +531,42 @@ const HaamuWebText = Object.freeze({
     return Object.freeze(['server','local','global','client'].map(scope=>
       this.context(scope,{...options,...(definitions[scope]??{})})
     ));
+  },
+
+  pipeline(scope, outputs = [], options = {}) {
+    const context=this.context(scope,options);
+    const prepared=Array.from(outputs,output=>{
+      if(!output||typeof output!=='object')return output;
+      return Object.freeze({
+        ...output,
+        channelId:output.channelId??context.channelId,
+        sessionId:output.sessionId??context.sessionId,
+      });
+    });
+    const session=this.session(prepared,{
+      ...options,
+      channelId:context.channelId,
+      sessionId:context.sessionId,
+    });
+    const allocation=this.allocateStreams(session.ordered,{
+      ...options,
+      area:context.field,
+      role:context.scope,
+      streams:context.field.streams,
+      promptReserve:0,
+      promptGap:0,
+    });
+    return Object.freeze({
+      type:'web-text-context-pipeline',
+      scope:context.scope,
+      context,
+      input:Object.freeze(prepared),
+      session,
+      allocation,
+      executable:false,
+      rendererConnected:false,
+      changesGeometry:false,
+    });
   },
 
   session(outputs = [], options = {}) {
