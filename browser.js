@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.127.0',
+  version: '0.127.1',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -682,17 +682,23 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       closeFallback = setTimeout(closeCurrent, wasMaximized ? 620 : 600);
 
       if (activePlatform === 'desktop' && !same) {
-        /* Desktop has several transitioning properties (opacity, dimensions,
-           transform). Do not use a once-listener here: opacity can end first
-           and consume it before the transform completes. Open the successor
-           only on the outgoing Plate's actual transform boundary. */
-        const openAfterDesktopClose = (event) => {
-          if (event.target !== activeCurrent || event.propertyName !== 'transform') return;
-          activeCurrent?.removeEventListener('transitionend', openAfterDesktopClose);
+        /* closeCurrent already owns the transform completion boundary. Attach
+           successor opening to that same idempotent completion path so the
+           target cannot be lost if another transition event or fallback wins. */
+        const finishDesktopHandoff = () => {
           if (!closeFinished) closeCurrent();
           openTargetNow();
         };
-        activeCurrent?.addEventListener('transitionend', openAfterDesktopClose);
+        const onDesktopTransformEnd = (event) => {
+          if (event.target !== activeCurrent || event.propertyName !== 'transform') return;
+          activeCurrent?.removeEventListener('transitionend', onDesktopTransformEnd);
+          finishDesktopHandoff();
+        };
+        activeCurrent?.addEventListener('transitionend', onDesktopTransformEnd);
+        setTimeout(() => {
+          activeCurrent?.removeEventListener('transitionend', onDesktopTransformEnd);
+          if (!projections.desktop?.classList.contains('open')) finishDesktopHandoff();
+        }, wasMaximized ? 625 : 605);
       }
     });
   }
