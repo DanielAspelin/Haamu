@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.121.2',
+  version: '0.121.3',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -230,8 +230,16 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
         }
         if(!lines.length)lines.push({top:0,start:0,end:0});
         const selection=Math.max(0,Math.min(text.length,target.selectionStart??text.length));
-        let caretLine=Math.max(0,lines.findIndex(line=>selection>=line.start&&selection<=line.end));
-        if(caretLine<0)caretLine=lines.length-1;
+        /* A wrap boundary belongs to the following visual line. Using an
+           inclusive end test assigns the caret to the previous line when
+           selection === previous.end === next.start, preventing the 3-line
+           window from advancing upward. Choose the last line whose start is
+           at or before the insertion point instead. */
+        let caretLine=0;
+        for(let i=0;i<lines.length;i+=1){
+          if(lines[i].start<=selection)caretLine=i;
+          else break;
+        }
         const firstVisible=Math.max(0,Math.min(caretLine,lines.length-maxLines));
         const visible=lines.slice(firstVisible,firstVisible+maxLines);
         field.replaceChildren();
