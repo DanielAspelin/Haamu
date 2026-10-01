@@ -15,7 +15,7 @@ const HaamuWebText = Object.freeze({
   family: 'web',
   role: 'web.text',
   type: 'text-input-output-processor-allocator-symbolizer-parser-mutator-deparser-font-renderer',
-  version: '1.13.0',
+  version: '1.13.1',
 
   key(event = {}) {
     const key = event.key ?? null;
@@ -252,9 +252,9 @@ const HaamuWebText = Object.freeze({
       type:'web-text-backspace', before:text, after:text,
       removed:'', start:0, end:0, cursor:0,
     });
-    const prefix = Array.from(text.slice(0,position));
-    const removed = prefix.pop() ?? '';
-    const cut = position - removed.length;
+    const prior=this.graphemes(text).filter(grapheme=>grapheme.end<=position).at(-1);
+    const removed=prior?.value??'';
+    const cut=prior?.start??position;
     return Object.freeze({
       type:'web-text-backspace', before:text,
       after:text.slice(0,cut)+text.slice(position),
