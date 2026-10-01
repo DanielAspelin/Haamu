@@ -1,5 +1,8 @@
 'use strict';
 
+
+/* module-private execution scope */
+(() => {
 /**
  * Haamu Browser Prompt Systems — governed user-input ownership with a Prompt output transport boundary.
  * Prompt interprets and records input intent; its output socket does not grant execution authority; authority remains with
@@ -116,3 +119,4 @@ globalThis.HaamuFamilies['browser.prompt.systems']=Object.freeze({
  family:'browser',role:'browser.prompt.systems',type:'per-prompt-input-systems',version:'0.8.0'
 });
 globalThis.HaamuBrowserPromptSystems=HaamuBrowserPromptSystems;
+})();
