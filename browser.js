@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.136.0',
+  version: '0.121.2',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -86,11 +86,6 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
   plateLayer.setAttribute('aria-label', 'Haamu plates');
   shell.prepend(plateLayer);
 
-  /* Visual-preservation boundary: publish the accepted visual shell before
-     optional supporting systems are attached. A supporting-system failure
-     must not erase the established wordmark or corner controls. */
-  root.appendChild(shell);
-
   const menus = new Map();
   const logicalPrompts = new Map();
   const plateTitles = Object.freeze({
@@ -119,11 +114,7 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
     const plateState = globalThis.HaamuBrowserPlateState?.forPlate(plateId);
     const webPlate = globalThis.HaamuWebPlate?.create?.({ id:plateId, corner, platform:'common' });
     const commandChannel = globalThis.HaamuCommandChannel?.get?.(channelId);
-    commandChannel?.bindInput?.(plateId);
-    const consoleRole=plateTitles[corner].toLowerCase();
-    const consoleSystem=globalThis.HaamuConsole?.ensure?.('console-'+consoleRole,{
-      role:consoleRole,prompt:promptSystems,plate:plateSystems
-    });
+    commandChannel?.bindOutput?.(plateId);
     const shellRouter = globalThis.HaamuShell?.router?.();
     const projections = Object.create(null);
 
@@ -135,7 +126,6 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       menu.dataset.prompt = promptId;
       menu.dataset.plate = plateId;
       menu.dataset.channel = channelId;
-      menu.dataset.console = consoleSystem?.consoleId ?? '';
       menu.setAttribute('aria-hidden', 'true');
       menu.dataset.plateState = platform === 'mobile' ? 'automatic' : (plateState?.state('desktop') ?? 'normal');
 
@@ -170,20 +160,8 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       contentRegion.className = 'plate-content-region';
       contentRegion.setAttribute('role', 'cell');
       contentRegion.setAttribute('aria-live', 'polite');
-      contentRegion.setAttribute('aria-atomic', 'false');
-      contentRegion.setAttribute('aria-relevant', 'additions text');
-      contentRegion.dataset.outputRole='log';
       contentRegion.dataset.logicalPlate = plateId;
       contentRegion.dataset.channel = channelId;
-      contentRegion.dataset.inputSocket = plateSystems?.inputSocket?.socket?.id ?? '';
-      const plateArea=plateSystems?.configureArea?.({mode:'text'});
-      contentRegion.dataset.areaMode=plateArea?.mode ?? 'text';
-      contentRegion.dataset.snap=plateArea?.snap ?? 'plate';
-      contentRegion.dataset.areaPlate=plateId;
-      contentRegion.classList.add('plate-area','plate-text-area');
-      contentRegion.dataset.liveCapable='true';
-      contentRegion.dataset.livePrompt='';
-      contentRegion.dataset.livePromptOutputSocket='';
       contentRow.appendChild(contentRegion);
 
       const promptRow = document.createElement('div');
@@ -204,187 +182,123 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       prompt.setAttribute('data-gramm', 'false');
       prompt.setAttribute('data-gramm_editor', 'false');
       prompt.setAttribute('data-enable-grammarly', 'false');
+      /* Android/Chrome IMEs may render composition decoration independently
+         of CSS. Keep composition native for caret correctness, but force the
+         editable surface to reassert undecorated text after composition. */
+      prompt.addEventListener('compositionstart', () => {
+        prompt.dataset.composing = 'true';
+      });
+      prompt.addEventListener('compositionend', () => {
+        delete prompt.dataset.composing;
+        const start = prompt.selectionStart;
+        const end = prompt.selectionEnd;
+        const value = prompt.value;
+        prompt.value = value;
+        if (start !== null && end !== null) prompt.setSelectionRange(start, end);
+        prompt.dispatchEvent(new Event('input', { bubbles:true }));
+      });
       prompt.setAttribute('aria-label', plateTitles[corner] + ' prompt');
       prompt.dataset.logicalPrompt = promptId;
-      prompt.dataset.outputSocket = promptSystems?.outputSocket?.socket?.id ?? '';
-      const promptInput=globalThis.HaamuBrowserPromptInput?.bind?.(prompt,{promptId});
-      prompt.dataset.inputBoundary=promptInput?.type ?? '';
       const resizePrompt = target => {
-        const menu=target.closest('.corner-menu'), wrap=target.closest('.plate-prompt-wrap');
-        const row=target.closest('.plate-prompt-row'), area=wrap?.querySelector('.plate-prompt-text-area');
-        const field=area?.querySelector('.plate-prompt-text-field'), mirror=wrap?.querySelector('.plate-prompt-measure');
-        let caret=area?.querySelector('.plate-prompt-caret');
-        if(!area||!field||!mirror)return;
+        const menu = target.closest('.corner-menu');
+        const wrap = target.closest('.plate-prompt-wrap');
+        const row = target.closest('.plate-prompt-row');
+        const projection = wrap?.querySelector('.plate-prompt-projection');
+        const mirror = wrap?.querySelector('.plate-prompt-measure');
+        const style = getComputedStyle(target);
+        const lineHeight = parseFloat(style.lineHeight) || 17;
+        const paddingY = (parseFloat(style.paddingTop) || 0) + (parseFloat(style.paddingBottom) || 0);
+        const oneLine = 44;
+        const maxHeight = Math.ceil(paddingY + lineHeight * 3);
 
-        const text=target.value ?? '';
-        const selection=Math.max(0,Math.min(text.length,target.selectionStart ?? text.length));
-        const selectionEnd=Math.max(selection,Math.min(text.length,target.selectionEnd ?? selection));
-        const style=getComputedStyle(target);
-        const lineHeight=parseFloat(style.lineHeight)||17;
-        const paddingTop=parseFloat(style.paddingTop)||13, paddingBottom=parseFloat(style.paddingBottom)||13;
-        const oneLine=44, maxLines=3;
+        /* Native textarea is IME/caret authority only. A separate invisible
+           mirror measures wrapping; Haamu renders a bounded three-line window
+           instead of translating a second full-text scroll surface. */
+        if (mirror) {
+          mirror.style.width = target.clientWidth + 'px';
+          mirror.textContent = target.value || '\u200b';
+        }
+        const measured = mirror ? mirror.scrollHeight : target.scrollHeight;
+        const height = Math.min(maxHeight, Math.max(oneLine, measured));
+        target.style.height = height + 'px';
+        target.style.overflowY = 'hidden';
+        if (wrap) wrap.style.height = height + 'px';
+        if (row) {
+          row.style.height = height + 'px';
+          row.style.minHeight = height + 'px';
+        }
+        if (menu) menu.style.setProperty('--prompt-track-height', height + 'px');
 
-        /* Native textarea is Input/IME authority. WebText owns semantic state;
-           the mirror exists only to obtain browser-exact wrap geometry. */
-        const webText=globalThis.HaamuWebText;
-        const symbols=webText?.symbolize ? webText.symbolize(text) : Array.from(text);
-        const selectionDirection=target.selectionDirection||'none';
-        const selectionState=webText?.selection ? webText.selection({
-          anchor:selectionDirection==='backward'?selectionEnd:selection,
-          focus:selectionDirection==='backward'?selection:selectionEnd,
-        }) : null;
-        const cursor=webText?.cursor ? webText.cursor({
-          position:selection, anchor:selection, focus:selectionEnd,
-          visible:document.activeElement===target, active:document.activeElement===target,
-        }) : null;
-        const caretState=webText?.caret ? webText.caret({
-          position:selection,
-          visible:document.activeElement===target && selection===selectionEnd,
-          active:document.activeElement===target,
-        }) : null;
-        const font=webText?.font ? webText.font({
-          family:style.fontFamily, weight:style.fontWeight, style:style.fontStyle,
-          size:style.fontSize, lineHeight:style.lineHeight, letterSpacing:style.letterSpacing,
-          wordSpacing:style.wordSpacing, direction:style.direction,
-        }) : null;
-
-        mirror.style.width=target.clientWidth+'px';
-        mirror.textContent=text||'\u200b';
-        const node=mirror.firstChild, lines=[];
-        if(node?.nodeType===Node.TEXT_NODE && text.length){
-          const range=document.createRange(); let active=null;
-          for(const symbol of symbols){
-            const start=symbol.utf16?.start??0,end=symbol.utf16?.end??start+symbol.value.length;
-            range.setStart(node,start); range.setEnd(node,end);
-            const rect=range.getBoundingClientRect(); if(!rect.height)continue;
-            if(!active||Math.abs(rect.top-active.top)>1){
-              active={top:rect.top,start,end}; lines.push(active);
-            }else active.end=end;
+        if (projection) {
+          const text = target.value;
+          if (!text) {
+            projection.textContent = '';
+          } else if (!mirror || measured <= maxHeight) {
+            projection.textContent = text;
+          } else {
+            /* Measure the ORIGINAL full-text wrapping. Re-wrapping a suffix at
+               column zero changes its line breaks and makes the cursor queue
+               horizontally. Range rectangles give the browser's actual visual
+               line membership, so the last three lines retain their original
+               boundaries. */
+            mirror.textContent = text;
+            const node = mirror.firstChild;
+            const lines = [];
+            if (node?.nodeType === Node.TEXT_NODE) {
+              const range = document.createRange();
+              let active = null;
+              for (let i = 0; i < text.length; i += 1) {
+                range.setStart(node, i);
+                range.setEnd(node, i + 1);
+                const rect = range.getBoundingClientRect();
+                if (!rect.height) continue;
+                if (!active || Math.abs(rect.top - active.top) > 1) {
+                  active = { top:rect.top, start:i, end:i + 1 };
+                  lines.push(active);
+                } else {
+                  active.end = i + 1;
+                }
+              }
+              range.detach?.();
+            }
+            const visibleLines = lines.slice(-3);
+            projection.replaceChildren();
+            for (const line of visibleLines) {
+              const lineNode = document.createElement('div');
+              lineNode.className = 'plate-prompt-projection-line';
+              lineNode.textContent = text.slice(line.start, line.end).replace(/\n$/, '');
+              projection.appendChild(lineNode);
+            }
           }
-          range.detach?.();
+          projection.style.height = height + 'px';
+          projection.style.transform = 'none';
         }
-        if(!lines.length) lines.push({top:0,start:0,end:0});
-
-        let cursorLine=0;
-        for(let i=0;i<lines.length;i+=1){
-          if(lines[i].start<=selection)cursorLine=i; else break;
-        }
-        const measuredLines=lines.map((line,index)=>({
-          start:line.start,
-          end:line.end,
-          value:text.slice(line.start,line.end).replace(/\n$/,''),
-          hardBreak:text.slice(line.start,line.end).endsWith('\n'),
-          softBreak:index<lines.length-1 && !text.slice(line.start,line.end).endsWith('\n'),
-        }));
-        const allocation=webText?.allocateLines
-          ? webText.allocateLines(text,{lines:measuredLines,capacity:maxLines})
-          : {first:Math.max(0,lines.length-maxLines),visible:measuredLines.slice(Math.max(0,lines.length-maxLines)),overflowing:lines.length>maxLines};
-        const firstVisible=allocation.first;
-        const visible=lines.slice(firstVisible,firstVisible+allocation.visible.length);
-
-        if(!caret){
-          caret=document.createElement('span');
-          caret.className='plate-prompt-caret';
-          caret.setAttribute('aria-hidden','true');
-        }
-        field.replaceChildren();
-        visible.forEach((line,visibleIndex)=>{
-          const sourceIndex=firstVisible+visibleIndex;
-          const lineNode=document.createElement('div');
-          lineNode.className='plate-prompt-projection-line';
-          const cursorHere=sourceIndex===cursorLine && selection===selectionEnd;
-          const cut=Math.max(line.start,Math.min(selection,line.end));
-          if(cursorHere){
-            lineNode.append(
-              document.createTextNode(text.slice(line.start,cut).replace(/\n$/,'')),
-              caret,
-              document.createTextNode(text.slice(cut,line.end).replace(/\n$/,''))
-            );
-          }else{
-            lineNode.textContent=text.slice(line.start,line.end).replace(/\n$/,'');
-          }
-          field.appendChild(lineNode);
-        });
-
-        const visibleCount=Math.min(maxLines,Math.max(1,lines.length));
-        const governedHeight=Math.max(oneLine,Math.ceil(paddingTop+paddingBottom+visibleCount*lineHeight));
-        target.style.height=governedHeight+'px';
-        wrap.style.height=governedHeight+'px';
-        row.style.height=governedHeight+'px'; row.style.minHeight=governedHeight+'px';
-        menu?.style.setProperty('--prompt-track-height',governedHeight+'px');
-        area.style.height=governedHeight+'px';
-        field.style.height=(visibleCount*lineHeight)+'px';
-
-        area.classList.toggle('is-empty',!text);
-        area.dataset.lineCount=String(lines.length);
-        area.dataset.visibleLines=String(visibleCount);
-        area.dataset.firstVisibleLine=String(firstVisible);
-        area.dataset.overflowing=String(!!allocation.overflowing);
-        area.dataset.flowDirection=allocation.overflowing?'up':'none';
-        field.dataset.symbolCount=String(symbols.length);
-        if(font) field.dataset.fontFamily=String(font.family);
-        if(cursor) field.dataset.cursorPosition=String(cursor.position);
-        if(selectionState){
-          field.dataset.selectionStart=String(selectionState.start);
-          field.dataset.selectionEnd=String(selectionState.end);
-        }
-        if(caretState) field.dataset.caretPosition=String(caretState.position);
-        caret.hidden=caretState ? !caretState.visible : document.activeElement!==target||selection!==selectionEnd;
       };
       prompt.addEventListener('focus', () => {
         prompt.closest('.plate-prompt-wrap')?.classList.add('is-focused');
-        resizePrompt(prompt);
       });
       prompt.addEventListener('blur', () => {
         prompt.closest('.plate-prompt-wrap')?.classList.remove('is-focused');
       });
-      const synchronizePrompt = target => {
-        logicalPrompts.set(promptId, target.value);
-        resizePrompt(target);
+      prompt.addEventListener('input', () => {
+        logicalPrompts.set(promptId, prompt.value);
+        promptProjection.textContent = prompt.value;
+        resizePrompt(prompt);
         for (const peer of plateLayer.querySelectorAll('[data-logical-prompt="' + promptId + '"]')) {
-          if (peer === target) continue;
-          peer.value = target.value;
-          resizePrompt(peer);
+          if (peer !== prompt) {
+            peer.value = prompt.value;
+            const peerProjection = peer.closest('.plate-prompt-wrap')?.querySelector('.plate-prompt-projection');
+            if (peerProjection) peerProjection.textContent = prompt.value;
+            resizePrompt(peer);
+          }
         }
-      };
-      /* Browser owns projection reactions only. Prompt Input owns semantic
-         input/composition/selection observation; this listener synchronizes
-         the logical peer and then performs one visual/lifecycle projection. */
-      const projectPromptInput = () => {
-        synchronizePrompt(prompt);
-        prompt.dataset.selectionStart = String(prompt.selectionStart ?? 0);
-        prompt.dataset.selectionEnd = String(prompt.selectionEnd ?? 0);
-        prompt.dataset.selectionDirection = prompt.selectionDirection || 'none';
-        promptWrap?.classList.toggle('has-value', prompt.value.length > 0);
-        const state=promptSystems?.transition?.(prompt.dataset.promptMode==='continuation'?'continuation':'primary',{reason:'input'});
-        if(state) prompt.dataset.promptState=state.state;
-        resizePrompt(prompt);
-      };
-      prompt.addEventListener('input', projectPromptInput);
-      const projectPromptSelection = () => {
-        prompt.dataset.selectionStart = String(prompt.selectionStart ?? 0);
-        prompt.dataset.selectionEnd = String(prompt.selectionEnd ?? 0);
-        prompt.dataset.selectionDirection = prompt.selectionDirection || 'none';
-        resizePrompt(prompt);
-      };
-      prompt.addEventListener('select', projectPromptSelection);
-      prompt.addEventListener('keyup', projectPromptSelection);
-      prompt.addEventListener('pointerup', projectPromptSelection);
-
+      });
 
       const promptWrap = document.createElement('div');
       promptWrap.className = 'plate-prompt-wrap';
       const promptProjection = document.createElement('div');
-      promptProjection.className = 'plate-prompt-projection plate-prompt-text-area is-empty';
+      promptProjection.className = 'plate-prompt-projection';
       promptProjection.setAttribute('aria-hidden', 'true');
-      const promptTextField = document.createElement('div');
-      promptTextField.className = 'plate-prompt-text-field';
-      promptProjection.appendChild(promptTextField);
-      const promptCaret = document.createElement('span');
-      promptCaret.className = 'plate-prompt-caret';
-      promptCaret.setAttribute('aria-hidden','true');
-      promptCaret.hidden = true;
-      promptTextField.appendChild(promptCaret);
       const promptMeasure = document.createElement('div');
       promptMeasure.className = 'plate-prompt-measure';
       promptMeasure.setAttribute('aria-hidden', 'true');
@@ -403,76 +317,14 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       promptWrap.appendChild(promptProjection);
       promptWrap.appendChild(prompt);
       promptWrap.appendChild(promptLabel);
-      /* Prompt activation belongs to the Prompt track, not to whichever
-         projection/label layer happens to be under the pointer. This makes
-         tapping the visible Prompt name a deterministic focus operation while
-         the native textarea remains the sole IME/editing authority. */
-      promptWrap.addEventListener('pointerdown', event => {
-        if (event.pointerType === 'mouse' && event.button !== 0) return;
-        if (document.activeElement !== prompt) {
-          prompt.focus({ preventScroll:true });
-          const end=prompt.value.length;
-          try { prompt.setSelectionRange(end,end); } catch {}
-          resizePrompt(prompt);
-        }
+      prompt.addEventListener('input', () => {
+        promptWrap.classList.toggle('has-value', prompt.value.length > 0);
       });
       prompt.addEventListener('keydown', (event) => {
-        if(event.isComposing)return;
-        if(event.key==='ArrowUp' && promptSystems?.recall){
-          const next=(Number(prompt.dataset.historyOffset)||0)+1;
-          const entry=promptSystems.recall(next);
-          if(entry){
-            event.preventDefault(); prompt.dataset.historyOffset=String(next);
-            prompt.value=entry.value; prompt.setSelectionRange(prompt.value.length,prompt.value.length);
-            synchronizePrompt(prompt);
-          }
-          return;
-        }
-        if(event.key==='Tab' && promptSystems?.complete){
-          const candidates=promptSystems.history().map(entry=>entry.value);
-          const completion=promptSystems.complete(prompt.value,candidates);
-          if(completion.matches.length===1 && completion.matches[0]!==prompt.value){
-            event.preventDefault(); prompt.value=completion.matches[0];
-            prompt.setSelectionRange(prompt.value.length,prompt.value.length); synchronizePrompt(prompt);
-          }
-          prompt.dataset.completionCount=String(completion.matches.length);
-          return;
-        }
-        if (event.key !== 'Enter') return;
+        if (event.key !== 'Enter' || event.isComposing) return;
         event.preventDefault();
 
-        const inspection=shellRouter?.inspect?.(prompt.value) ?? globalThis.HaamuShell?.inspect?.(prompt.value);
-        const continuation=event.shiftKey || inspection?.continuation;
-        if(continuation){
-          const start=prompt.selectionStart ?? prompt.value.length;
-          const end=prompt.selectionEnd ?? start;
-          const edit=globalThis.HaamuWebText?.newLine?.(prompt.value,{position:start});
-          prompt.value=start===end ? (edit?.after ?? prompt.value.slice(0,start)+'\n'+prompt.value.slice(end))
-            : prompt.value.slice(0,start)+'\n'+prompt.value.slice(end);
-          const next=start+1;
-          prompt.setSelectionRange(next,next);
-          prompt.dataset.promptMode='continuation';
-          prompt.dataset.continuationReason=event.shiftKey?'explicit':(inspection?.reason ?? 'incomplete');
-          const state=promptSystems?.transition?.('continuation',{reason:prompt.dataset.continuationReason});
-          if(state) prompt.dataset.promptState=state.state;
-          synchronizePrompt(prompt);
-          return;
-        }
-        prompt.dataset.promptMode='primary';
-        delete prompt.dataset.continuationReason;
-
         if (!promptSystems || !plateSystems) return;
-        const interpretation=promptSystems.interpret?.(prompt.value);
-        promptSystems.remember?.(prompt.value,{mode:interpretation?.mode});
-        prompt.dataset.historyOffset='0';
-        if(interpretation){
-          prompt.dataset.promptIntent=interpretation.mode;
-          prompt.dataset.promptPrefix=interpretation.prefix ?? '';
-        }
-        let state=promptSystems.transition?.('submitted',{reason:interpretation?.mode ?? 'enter'});
-        if(state) prompt.dataset.promptState=state.state;
-        state=promptSystems.transition?.('executing',{reason:'dispatch'});
-        if(state) prompt.dataset.promptState=state.state;
         const transaction = promptSystems.submit(prompt.value, {
           router: shellRouter,
           promptId,
@@ -496,16 +348,15 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
             detail: transaction.output,
           }));
         }
-        state=promptSystems.transition?.('ready',{reason:transaction.output?.state ?? 'completed'});
-        if(state) prompt.dataset.promptState=state.state;
         prompt.value = '';
-        prompt.setSelectionRange(0,0);
+        promptProjection.textContent = '';
         resizePrompt(prompt);
         logicalPrompts.set(promptId, '');
         promptWrap.classList.remove('has-value');
         for (const peer of plateLayer.querySelectorAll('[data-logical-prompt="' + promptId + '"]')) {
           peer.value = '';
-          peer.setSelectionRange?.(0,0);
+          const peerProjection = peer.closest('.plate-prompt-wrap')?.querySelector('.plate-prompt-projection');
+          if (peerProjection) peerProjection.textContent = '';
           resizePrompt(peer);
           peer.closest('.plate-prompt-wrap')?.classList.remove('has-value');
         }
@@ -634,6 +485,7 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
     }
   });
 
+  root.appendChild(shell);
   document.documentElement.dataset.haamu = 'ready';
   return Object.freeze({
     state: 'READY',
