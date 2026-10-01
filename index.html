@@ -239,8 +239,10 @@
       position:absolute;left:0;right:0;display:grid;min-height:44px;
       visibility:visible;opacity:1;
     }
-    .corner-menu.open[data-corner^="top-"] .plate-prompt-row{top:0;bottom:auto}
-    .corner-menu.open[data-corner^="bottom-"] .plate-prompt-row{bottom:0;top:auto}
+    /* Prompt faces the owning button: upper buttons use the plate's lowest
+       row; lower buttons use the plate's highest row. */
+    .corner-menu.open[data-corner^="top-"] .plate-prompt-row{bottom:0;top:auto}
+    .corner-menu.open[data-corner^="bottom-"] .plate-prompt-row{top:0;bottom:auto}
     .corner-menu.open .plate-prompt{
       display:block;visibility:visible;opacity:1;height:44px;
       background:linear-gradient(135deg,rgba(255,255,255,.18),rgba(255,255,255,.055));
