@@ -82,7 +82,7 @@ const create=(promptId,definition={})=>{
  transition('ready',{reason:'created'});
 
  return Object.freeze({
-  type:'prompt-input-systems',promptId,channelId,shell,channel,commandLine,
+  type:'prompt-output-systems',promptId,channelId,shell,channel,commandLine,
   outputSocket:Object.freeze({type:'prompt-output-socket',promptId,channelId,socket:channel.outputSocket}),
   state:()=>promptStates.get(promptId),transition,interpret,remember,recall,
   history:()=>Object.freeze([...history()]),complete,suggest,
@@ -98,7 +98,7 @@ const create=(promptId,definition={})=>{
 };
 
 const HaamuBrowserPromptSystems=Object.freeze({
- family:'browser',role:'browser.prompt.systems',type:'per-prompt-input-systems',version:'0.7.0',
+ family:'browser',role:'browser.prompt.systems',type:'per-prompt-input-systems',version:'0.7.1',
  forPrompt(prompt,definition={}){
   const promptId=String(typeof prompt==='string'?prompt:(prompt?.dataset?.logicalPrompt??prompt?.id??'')).trim();
   if(!promptId)throw new RangeError('Prompt identity required.');
