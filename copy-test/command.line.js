@@ -1,5 +1,8 @@
 'use strict';
 
+
+/* module-private execution scope */
+(() => {
 /**
  * Haamu Command Line — companion controller for Command.
  * Consumes Command Input, controls Terminal/Shell/Search mode and emits the
@@ -111,3 +114,4 @@ const HaamuCommandLine=Object.freeze({
 });
 globalThis.HaamuFamilies['command.line']=Object.freeze({family:'command',role:'command.line',type:'terminal-shell-search-command-line',version:'0.2.2'});
 globalThis.HaamuCommandLine=HaamuCommandLine;
+})();
