@@ -428,6 +428,7 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       promptWrap.appendChild(promptProjection);
       promptWrap.appendChild(prompt);
       promptWrap.appendChild(promptLabel);
+      if (platform === 'mobile') globalThis.HaamuPromptParticle?.attach?.(prompt, promptWrap);
       /* Prompt activation belongs to the Prompt track, not to whichever
          projection/label layer happens to be under the pointer. This makes
          tapping the visible Prompt name a deterministic focus operation while
