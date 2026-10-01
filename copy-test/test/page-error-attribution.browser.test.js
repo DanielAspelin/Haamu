@@ -1,0 +1,10 @@
+'use strict';
+const {chromium}=require('playwright'),http=require('http'),fs=require('fs'),path=require('path');
+const root=path.resolve(__dirname,'..'),mime={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.ttf':'font/ttf','.json':'application/json'};
+const server=http.createServer((req,res)=>{const p=decodeURIComponent(new URL(req.url,'http://x').pathname);let file=path.resolve(root,'.'+p);if(p==='/')file=path.join(root,'index.html');if(!file.startsWith(root)){res.writeHead(403).end();return;}fs.readFile(file,(e,d)=>{if(e){res.writeHead(404).end();return;}res.writeHead(200,{'content-type':mime[path.extname(file)]||'application/octet-stream'});res.end(d);});});
+(async()=>{await new Promise(r=>server.listen(0,'127.0.0.1',r));const base='http://127.0.0.1:'+server.address().port+'/';const browser=await chromium.launch({headless:true}),page=await browser.newPage();const errors=[];
+page.on('pageerror',e=>errors.push({message:e.message,stack:e.stack||'',name:e.name}));
+await page.goto(base,{waitUntil:'load'});await page.waitForTimeout(500);
+console.log('PAGE ERROR MAP '+JSON.stringify(errors));
+await browser.close();server.close();
+})().catch(e=>{console.error(e.stack||e);process.exit(1);});
