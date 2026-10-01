@@ -1,5 +1,8 @@
 'use strict';
 
+
+/* module-private execution scope */
+(() => {
 /** Haamu Web Grid — deterministic matrix-to-layout projection. */
 globalThis.HaamuFamilies ??= Object.create(null);
 
@@ -42,3 +45,4 @@ globalThis.HaamuFamilies['web.grid'] = Object.freeze({
   type: HaamuWebGrid.type, version: HaamuWebGrid.version,
 });
 globalThis.HaamuWebGrid = HaamuWebGrid;
+})();
