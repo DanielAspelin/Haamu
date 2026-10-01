@@ -174,6 +174,10 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       prompt.placeholder = plateTitles[corner];
       prompt.setAttribute('placeholder', plateTitles[corner]);
       prompt.autocomplete = 'off';
+      prompt.spellcheck = false;
+      prompt.setAttribute('spellcheck', 'false');
+      prompt.setAttribute('autocorrect', 'off');
+      prompt.setAttribute('autocapitalize', 'off');
       prompt.setAttribute('aria-label', plateTitles[corner] + ' prompt');
       prompt.dataset.logicalPrompt = promptId;
       prompt.addEventListener('input', () => {
