@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.126.3',
+  version: '0.126.4',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -632,27 +632,36 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       if (wasMaximized) activeCurrent?.classList.add('plate-restoring');
       activeCurrent?.classList.add('plate-transition-out');
 
+      /* Removing .open starts the actual transform back toward the owning
+         button. Keeping .open until cleanup only faded the Plate and caused
+         the geometric slide to happen late. */
+      activeCurrent?.classList.remove('open');
+
+      let closeFinished = false;
+      let closeFallback = 0;
       const closeCurrent = () => {
+        if (closeFinished) return;
+        closeFinished = true;
+        clearTimeout(closeFallback);
+        activeCurrent?.removeEventListener('transitionend', onCloseTransitionEnd);
         for (const active of [pair.mobile, pair.desktop]) {
           active?.classList.remove('open', 'plate-restoring', 'plate-transition-out');
           active?.setAttribute('aria-hidden', 'true');
         }
         shell.querySelector('.corner.start[data-position="' + position + '"]')
           ?.setAttribute('aria-expanded', 'false');
+        if (activePlatform === 'mobile' && !same) openTargetNow();
       };
+      const onCloseTransitionEnd = (event) => {
+        if (event.target === activeCurrent && event.propertyName === 'transform') closeCurrent();
+      };
+      activeCurrent?.addEventListener('transitionend', onCloseTransitionEnd);
+      closeFallback = setTimeout(closeCurrent, wasMaximized ? 560 : 540);
 
-      if (activePlatform === 'mobile') {
-        /* Mobile is deliberately sequential: the current Plate must finish
-           retracting into its button before the selected Plate slides out. */
-        setTimeout(() => {
-          closeCurrent();
-          if (!same) openTargetNow();
-        }, 360);
-      } else {
-        /* Desktop retains the established concurrent handoff. Its window-like
-           Plate transition is independent from the mobile corner-slide rule. */
-        if (!same) openTargetNow();
-        setTimeout(closeCurrent, wasMaximized ? 500 : 360);
+      if (activePlatform === 'desktop' && !same) {
+        /* Desktop begins the selected Plate immediately while the previous
+           Plate retracts smoothly toward its own button. */
+        openTargetNow();
       }
     });
   }
