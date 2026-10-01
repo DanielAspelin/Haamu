@@ -15,34 +15,41 @@ const HaamuWebText = Object.freeze({
   family: 'web',
   role: 'web.text',
   type: 'text-input-output-processor-allocator-symbolizer-parser-mutator-deparser-font-renderer',
-  version: '1.0.0',
+  version: '1.1.0',
 
-  input(event = {}) {
-    const key = event.key ?? null;
-    const code = event.code ?? null;
-    const inputType = event.inputType ?? null;
-    const data = event.data ?? null;
+  input(event = {}, state = {}) {
+    const key = event.key ?? null, code = event.code ?? null;
+    const selectionStart = Math.max(0, Math.trunc(finite(state.selectionStart ?? event.target?.selectionStart, 0)));
+    const selectionEnd = Math.max(selectionStart, Math.trunc(finite(state.selectionEnd ?? event.target?.selectionEnd, selectionStart)));
+    const phase = event.type ?? 'input';
     return Object.freeze({
-      type: 'web-text-input',
-      key, code, inputType, data,
-      modifiers: Object.freeze({
-        alt: !!event.altKey, control: !!event.ctrlKey,
-        meta: !!event.metaKey, shift: !!event.shiftKey,
-      }),
+      type: 'web-text-input', phase, key, code,
+      repeat: !!event.repeat, location: event.location ?? 0,
+      inputType: event.inputType ?? null, data: event.data ?? null,
       composing: !!event.isComposing,
+      selection: Object.freeze({ start:selectionStart, end:selectionEnd, collapsed:selectionStart===selectionEnd }),
+      modifiers: Object.freeze({ alt:!!event.altKey, control:!!event.ctrlKey, meta:!!event.metaKey, shift:!!event.shiftKey }),
+      producesText: typeof event.data === 'string' || (typeof key === 'string' && Array.from(key).length === 1),
+      timestamp: finite(event.timeStamp, 0),
     });
   },
 
   symbolize(value) {
-    return Object.freeze(this.characters(value).map((character, index) => Object.freeze({
-      type: 'symbol',
-      index,
-      value: character,
-      codePoint: character.codePointAt(0),
-      class: /^\p{N}$/u.test(character) ? 'number'
-        : /^[\p{L}\p{M}]$/u.test(character) ? 'character'
-        : 'special-character',
-    })));
+    let utf16Offset = 0;
+    return Object.freeze(this.characters(value).map((character, index) => {
+      const codePoint = character.codePointAt(0);
+      const category = /^\p{N}$/u.test(character) ? 'number'
+        : /^[\p{L}\p{M}]$/u.test(character) ? 'character' : 'special-character';
+      const symbol = Object.freeze({
+        type:'symbol', id:`symbol:${index}`, index, value:character, codePoint,
+        unicode:`U+${codePoint.toString(16).toUpperCase().padStart(4,'0')}`,
+        class:category, whitespace:/^\s$/u.test(character),
+        newline:character==='\n'||character==='\r',
+        utf16:Object.freeze({ start:utf16Offset, end:utf16Offset+character.length }),
+      });
+      utf16Offset += character.length;
+      return symbol;
+    }));
   },
 
   mutate(value, mutation = {}) {
@@ -50,12 +57,23 @@ const HaamuWebText = Object.freeze({
     const start = Math.max(0, Math.min(source.length, Math.trunc(finite(mutation.start, source.length))));
     const end = Math.max(start, Math.min(source.length, Math.trunc(finite(mutation.end, start))));
     const insert = mutation.value == null ? '' : String(mutation.value);
-    return source.slice(0, start) + insert + source.slice(end);
+    const text = source.slice(0,start) + insert + source.slice(end);
+    return Object.freeze({
+      type:'web-text-mutation', operation:mutation.operation ?? (start===end?'insert':'replace'),
+      before:source, after:text, range:Object.freeze({start,end}),
+      inserted:insert, removed:source.slice(start,end),
+      selection:Object.freeze({start:start+insert.length,end:start+insert.length}),
+      changed:text!==source,
+    });
   },
 
-  deparse(parsed) {
+  deparse(parsed, options = {}) {
     if (!parsed || parsed.type !== 'parsed-text') throw new TypeError('WebText deparser requires parsed-text.');
-    return parsed.tokens.map(token => token.value).join('');
+    const text = parsed.tokens.map(token => token.value).join('');
+    return options.record ? Object.freeze({
+      type:'deparsed-text', text, lossless:text===parsed.source,
+      source:parsed, normalization:parsed.normalization,
+    }) : text;
   },
 
   font(options = {}) {
@@ -69,6 +87,40 @@ const HaamuWebText = Object.freeze({
       letterSpacing: options.letterSpacing ?? 'normal',
       wordSpacing: options.wordSpacing ?? 'normal',
       fallback: Object.freeze([...(options.fallback ?? [])]),
+      stretch: options.stretch ?? 'normal',
+      variant: options.variant ?? 'normal',
+      features: Object.freeze({ ...(options.features ?? {}) }),
+      axes: Object.freeze({ ...(options.axes ?? {}) }),
+      direction: options.direction ?? 'inherit',
+      writingMode: options.writingMode ?? 'horizontal-tb',
+    });
+  },
+
+  alignment(options = {}) {
+    return Object.freeze({
+      type:'web-text-alignment',
+      horizontal:options.horizontal ?? 'start', vertical:options.vertical ?? 'start',
+      direction:options.direction ?? 'auto', writingMode:options.writingMode ?? 'horizontal-tb',
+    });
+  },
+
+  viewport(value, options = {}) {
+    const lines=this.lines(value), capacity=Math.max(1,Math.trunc(finite(options.lines,lines.length||1)));
+    const first=Math.max(0,lines.length-capacity);
+    return Object.freeze({
+      type:'web-text-viewport', capacity, first, last:Math.max(first,lines.length-1),
+      overflowing:lines.length>capacity, visible:Object.freeze(lines.slice(first)),
+    });
+  },
+
+  measure(value, options = {}) {
+    const font=this.font(options.font ?? {}), symbols=this.symbolize(value);
+    const advance=Math.max(0,finite(options.advance,1)), lineHeight=Math.max(0,finite(options.lineHeight,1));
+    const lines=this.lines(value);
+    return Object.freeze({
+      type:'web-text-measure', font, symbolCount:symbols.length, lineCount:lines.length,
+      width:Math.max(0,...lines.map(line=>Array.from(line).length*advance)),
+      height:Math.max(1,lines.length)*lineHeight, advance, lineHeight,
     });
   },
 
@@ -77,6 +129,9 @@ const HaamuWebText = Object.freeze({
       type: 'web-text-output',
       symbols: this.symbolize(value),
       font: this.font(options.font ?? {}),
+      alignment: this.alignment(options.alignment ?? {}),
+      viewport: this.viewport(value, options.viewport ?? {}),
+      measure: this.measure(value, options),
       render: this.render(value, options),
     });
   },
@@ -254,6 +309,7 @@ const HaamuWebText = Object.freeze({
       words: Object.freeze(this.words(text)),
       characters: Object.freeze(characters),
       codePoints: Object.freeze(characters.map(character => character.codePointAt(0))),
+      symbols: this.symbolize(text),
       direction: options.direction ?? 'auto',
       language: options.language ?? 'und',
       writingMode: options.writingMode ?? 'horizontal-tb',
