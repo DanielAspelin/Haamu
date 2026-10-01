@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.107.0',
+  version: '0.108.0',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -123,6 +123,7 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       prompt.className = 'plate-prompt';
       prompt.type = 'text';
       prompt.placeholder = plateTitles[corner] + ' — Prompt';
+      prompt.setAttribute('placeholder', plateTitles[corner] + ' — Prompt');
       prompt.autocomplete = 'off';
       prompt.setAttribute('aria-label', plateTitles[corner] + ' prompt');
       prompt.dataset.logicalPrompt = promptId;
