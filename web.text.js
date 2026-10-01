@@ -15,7 +15,7 @@ const HaamuWebText = Object.freeze({
   family: 'web',
   role: 'web.text',
   type: 'text-input-output-processor-allocator-symbolizer-parser-mutator-deparser-font-renderer',
-  version: '1.25.0',
+  version: '1.26.0',
 
   key(event = {}) {
     const key = event.key ?? null;
@@ -448,6 +448,52 @@ const HaamuWebText = Object.freeze({
       field,
       anchor,
       matrix,grid,mesh,
+      mayResizePlate:false,
+      mayMovePlate:false,
+      rendererConnected:false,
+      changesGeometry:false,
+    });
+  },
+
+  promptTopology(options = {}) {
+    const reservation=this.reserveField(options);
+    const boundary=reservation.promptBoundary;
+    const content=reservation.content;
+    const area=Object.freeze({
+      type:'web-text-prompt-area',
+      x:content.x,
+      y:boundary.startsAt,
+      width:content.width,
+      height:Math.max(0,boundary.endsAt-boundary.startsAt),
+    });
+    const corner=String(options.promptCorner??options.corner??'bottom-left');
+    const corners=new Set(['top-left','top-right','bottom-left','bottom-right']);
+    if(!corners.has(corner))throw new RangeError('Unknown Prompt corner.');
+    const cellWidth=Math.max(1,finite(options.promptCell?.width??options.cell?.width,1));
+    const cellHeight=Math.max(1,finite(options.promptCell?.height??options.cell?.height,1));
+    const columnGap=Math.max(0,finite(options.promptCell?.columnGap??options.spacing?.symbol,0));
+    const rowGap=Math.max(0,finite(options.promptCell?.rowGap??options.spacing?.line,0));
+    const pitchX=cellWidth+columnGap,pitchY=cellHeight+rowGap;
+    const columns=area.width>0?Math.max(0,Math.floor((area.width+columnGap)/pitchX)):0;
+    const rows=area.height>0?Math.max(0,Math.floor((area.height+rowGap)/pitchY)):0;
+    const right=area.x+area.width,bottom=area.y+area.height;
+    const anchor=Object.freeze({
+      corner,
+      x:corner.endsWith('right')?right:area.x,
+      y:corner.startsWith('bottom')?bottom:area.y,
+      inlineDirection:corner.endsWith('right')?'left':'right',
+      blockDirection:corner.startsWith('bottom')?'up':'down',
+    });
+    return Object.freeze({
+      type:'web-text-prompt-topology',
+      area,anchor,
+      matrix:Object.freeze({type:'web-text-prompt-matrix',rows,columns,address:'row-column',bounds:area,anchor}),
+      grid:Object.freeze({type:'web-text-prompt-grid',rows,columns,cell:Object.freeze({width:cellWidth,height:cellHeight,columnGap,rowGap,pitchX,pitchY}),bounds:area,anchor}),
+      mesh:Object.freeze({type:'web-text-prompt-mesh',capacity:rows*columns,nodes:Object.freeze([]),bounds:area,anchor,population:'deferred'}),
+      editingAuthority:'native-textarea-ime',
+      textAuthority:'web-text',
+      plateAuthority:'read-only',
+      outputAreaOverlap:false,
       mayResizePlate:false,
       mayMovePlate:false,
       rendererConnected:false,
