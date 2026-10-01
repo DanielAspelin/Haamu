@@ -199,6 +199,9 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       const promptCursor = document.createElement('span');
       promptCursor.className = 'plate-prompt-cursor';
       promptCursor.setAttribute('aria-hidden', 'true');
+      /* Runtime visibility is authoritative: do not depend on sibling/focus
+         selector support for the projected cursor. */
+      promptCursor.style.display = 'none';
 
       const positionPromptCursor = () => {
         const style = getComputedStyle(prompt);
@@ -223,7 +226,14 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       promptWrap.appendChild(prompt);
       promptWrap.appendChild(promptLabel);
       promptWrap.appendChild(promptCursor);
-      prompt.addEventListener('focus', positionPromptCursor);
+      prompt.addEventListener('focus', () => {
+        promptCursor.style.display = 'block';
+        promptCursor.style.opacity = '.72';
+        positionPromptCursor();
+      });
+      prompt.addEventListener('blur', () => {
+        promptCursor.style.display = 'none';
+      });
       prompt.addEventListener('click', positionPromptCursor);
       prompt.addEventListener('keyup', positionPromptCursor);
       prompt.addEventListener('select', positionPromptCursor);
