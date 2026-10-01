@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.114.0',
+  version: '0.115.0',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -111,6 +111,7 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
     });
     const plateSystems = globalThis.HaamuBrowserPlateSystems?.forPlate(plateId, { channelId });
     const windowing = globalThis.HaamuBrowserWindowing?.forPlate(plateId);
+    const webPlate = globalThis.HaamuWebPlate?.create?.({ id:plateId, corner, platform:'common' });
     const commandChannel = globalThis.HaamuCommandChannel?.get?.(channelId);
     commandChannel?.bindOutput?.(plateId);
     const shellRouter = globalThis.HaamuShell?.router?.();
@@ -133,6 +134,17 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       const table = document.createElement('div');
       table.className = 'plate-table';
       table.setAttribute('role', 'table');
+
+      const contentRow = document.createElement('div');
+      contentRow.className = 'plate-row plate-content-row';
+      contentRow.setAttribute('role', 'row');
+      const contentRegion = document.createElement('div');
+      contentRegion.className = 'plate-content-region';
+      contentRegion.setAttribute('role', 'cell');
+      contentRegion.setAttribute('aria-live', 'polite');
+      contentRegion.dataset.logicalPlate = plateId;
+      contentRegion.dataset.channel = channelId;
+      contentRow.appendChild(contentRegion);
 
       const promptRow = document.createElement('div');
       promptRow.className = 'plate-row plate-prompt-row';
@@ -185,6 +197,11 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
           platform,
         });
         const projectedOutput = plateSystems.accept(transaction.output);
+        if (webPlate && globalThis.HaamuBrowserPlateText?.project) {
+          for (const target of plateLayer.querySelectorAll('[data-logical-plate="' + plateId + '"]')) {
+            HaamuBrowserPlateText.project(transaction.output, webPlate, target);
+          }
+        }
 
         globalThis.dispatchEvent(new CustomEvent('haamu:command-output', {
           detail: Object.freeze({ transaction, output: projectedOutput, promptId, plateId, channelId }),
@@ -203,6 +220,7 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
         }
       });
       promptRow.appendChild(promptWrap);
+      table.appendChild(contentRow);
       table.appendChild(promptRow);
       matrix.appendChild(table);
       menu.appendChild(matrix);
