@@ -1,10 +1,14 @@
-'use strict';
+(() => {
+  "use strict";
 
-/**
- * Haamu index entry.
- */
+  const root = document.getElementById("haamu-root");
+  if (!root) return;
 
-globalThis.HaamuIndex = Object.freeze({
-  name: 'Haamu Index',
-  version: '0.1.0',
-});
+  const heading = document.createElement("h1");
+  heading.textContent = "Haamu";
+
+  const status = document.createElement("p");
+  status.textContent = "Currently under construction.";
+
+  root.replaceChildren(heading, status);
+})();
