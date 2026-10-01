@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.122.3',
+  version: '0.122.4',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -334,6 +334,35 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
           resizePrompt(peer);
         }
       };
+      /* beforeinput records the browser/IME editing intention through
+         WebText without replacing the native editor's authoritative mutation. */
+      prompt.addEventListener('beforeinput', event => {
+        const webText=globalThis.HaamuWebText;
+        if(!webText?.input)return;
+        const state=webText.input(event,{
+          selectionStart:prompt.selectionStart ?? 0,
+          selectionEnd:prompt.selectionEnd ?? 0,
+        });
+        prompt.dataset.inputType=state.inputType ?? '';
+        prompt.dataset.inputProducesText=String(state.producesText);
+        if(webText.edit){
+          const edit=webText.edit(prompt.value,{
+            inputType:state.inputType,
+            data:state.data,
+            selectionStart:state.selection.start,
+            selectionEnd:state.selection.end,
+          });
+          prompt.dataset.editOperation=edit.operation ?? edit.type;
+        }
+      });
+      prompt.addEventListener('keydown', event => {
+        const key=globalThis.HaamuWebText?.key?.(event);
+        if(key){
+          prompt.dataset.key=key.key ?? '';
+          prompt.dataset.keyCode=key.code ?? '';
+          prompt.dataset.keyPhase=key.phase;
+        }
+      });
       prompt.addEventListener('input', () => synchronizePrompt(prompt));
       /* Selection is independent from value mutation. Re-project on native
          caret/selection movement so the visual Text Field can subsequently
