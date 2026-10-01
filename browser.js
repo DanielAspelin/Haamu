@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.127.0',
+  version: '0.128.0',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -39,6 +39,24 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
   const mobilePlatform = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
   shell.classList.add(mobilePlatform ? 'haamu-mobile' : 'haamu-desktop');
   shell.setAttribute('aria-label', 'Haamu interface');
+
+  /* Canonical under-split projection substrate.
+     This checkpoint is intentionally nonvisual and noninteractive: it owns
+     projection-space identity only. Existing split geometry, Plate movement,
+     controls and Prompt rendering remain authoritative above it. */
+  const substrate = document.createElement('div');
+  substrate.className = 'haamu-projection-substrate';
+  substrate.setAttribute('aria-hidden','true');
+  substrate.dataset.projectionSubstrate='under-splits';
+  substrate.dataset.state='dormant';
+  substrate.dataset.platform=mobilePlatform?'mobile':'desktop';
+  const substrateSpaces = Object.freeze(
+    mobilePlatform
+      ? Object.freeze(['viewport','upper','lower'])
+      : Object.freeze(['viewport','top-left','top-right','bottom-left','bottom-right'])
+  );
+  substrate.dataset.spaces=substrateSpaces.join(' ');
+  shell.appendChild(substrate);
 
   // First projected layer after the shell background: centered identity text.
   // Controls and plates remain on their higher established z-index layers.
@@ -151,6 +169,10 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       menu.dataset.console = consoleId;
       menu.dataset.scope = consoleScope;
       menu.dataset.physicalPlate = webPlates[platform]?.id ?? (plateId + '-' + platform);
+      menu.dataset.projectionSubstrate='under-splits';
+      menu.dataset.projectionSpace=platform==='mobile'
+        ? (corner.startsWith('top-')?'upper':'lower')
+        : corner;
       menu.setAttribute('aria-hidden', 'true');
       menu.dataset.plateState = platform === 'mobile' ? 'automatic' : (plateState?.state('desktop') ?? 'normal');
 
@@ -691,6 +713,8 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
     logicalConsoles: 4,
     physicalPlates: 8,
     consoleProjectionModel: 'four-consoles-two-platform-plates-each',
+    projectionSubstrate: 'under-splits-dormant',
+    projectionSpaces: substrateSpaces,
   });
 }
 
