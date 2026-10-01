@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.120.8',
+  version: '0.120.9',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -221,11 +221,11 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
            first three rendered lines. The native editor remains independent
            for caret/IME state and must not enlarge the visible projection. */
         const overflow = Math.max(0, measured - maxHeight);
-        /* Three-line rolling viewport: once full, advance continuously
-           only by the overflow amount. This pushes existing text upward as
-           wrapping occurs instead of jumping an entire native scroll step. */
+        /* The native textarea is only the invisible IME/caret boundary.
+           Never scroll it programmatically: Android already keeps its caret
+           visible and a second scroll creates the apparent fourth blank line.
+           Only Haamu's visible projection rolls upward inside its 3-line clip. */
         const projectionOffset = overflow;
-        target.scrollTop = overflow;
         if (wrap) wrap.style.height = height + 'px';
         if (row) {
           row.style.height = height + 'px';
