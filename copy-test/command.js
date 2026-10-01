@@ -1,5 +1,8 @@
 'use strict';
 
+
+/* module-private execution scope */
+(() => {
 /**
  * Haamu Command — renderer-independent command contract and registry.
  *
@@ -93,3 +96,4 @@ globalThis.HaamuFamilies['command.system']=Object.freeze({
  family:HaamuCommand.family,role:HaamuCommand.role,type:HaamuCommand.type,version:HaamuCommand.version,
 });
 globalThis.HaamuCommand=HaamuCommand;
+})();
