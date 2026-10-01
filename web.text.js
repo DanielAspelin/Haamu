@@ -15,7 +15,7 @@ const HaamuWebText = Object.freeze({
   family: 'web',
   role: 'web.text',
   type: 'text-input-output-processor-allocator-symbolizer-parser-mutator-deparser-font-renderer',
-  version: '1.8.0',
+  version: '1.9.0',
 
   key(event = {}) {
     const key = event.key ?? null;
@@ -78,6 +78,27 @@ const HaamuWebText = Object.freeze({
       utf16Offset += character.length;
       return symbol;
     }));
+  },
+
+  edit(value = '', input = {}) {
+    const text=this.normalize(value);
+    const start=Math.max(0,Math.min(text.length,Math.trunc(finite(input.selectionStart, text.length))));
+    const end=Math.max(start,Math.min(text.length,Math.trunc(finite(input.selectionEnd,start))));
+    const inputType=input.inputType ?? null;
+    if(inputType==='insertText' && input.data===' ') return this.space(text,{position:start});
+    if(inputType==='deleteContentBackward') return this.backspace(text,{position:end,start,end});
+    if(inputType==='insertLineBreak' || inputType==='insertParagraph') {
+      if(start!==end) {
+        const replaced=this.mutate(text,{operation:'replace',start,end,value:'\n'});
+        return Object.freeze({...replaced,type:'web-text-new-line',sequence:'\n',position:start,cursor:start+1});
+      }
+      return this.newLine(text,{position:start});
+    }
+    if(typeof input.data==='string') return this.mutate(text,{operation:start===end?'insert':'replace',start,end,value:input.data});
+    return Object.freeze({
+      type:'web-text-edit', operation:inputType ?? 'none', before:text, after:text,
+      selection:Object.freeze({start,end}), changed:false,
+    });
   },
 
   mutate(value, mutation = {}) {
