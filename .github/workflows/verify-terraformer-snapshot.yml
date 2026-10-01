@@ -1,0 +1,28 @@
+name: Verify Terraformer snapshot integrity
+on:
+  push:
+    branches: [html-modularization-experiment]
+    paths: [.github/workflows/verify-terraformer-snapshot.yml]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: html-modularization-experiment
+      - name: Clone source Terraformer
+        run: git clone --depth 1 https://github.com/DanielAspelin/Terraformer.git /tmp/source
+      - name: Cross-check file set and SHA-256 checksums
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/source/.git
+          (cd /tmp/source && find . -type f -print0 | sort -z | xargs -0 sha256sum) > /tmp/source.sha256
+          (cd Terraformer && find . -type f -print0 | sort -z | xargs -0 sha256sum) > /tmp/import.sha256
+          echo "source_files=$(wc -l < /tmp/source.sha256)"
+          echo "import_files=$(wc -l < /tmp/import.sha256)"
+          diff -u /tmp/source.sha256 /tmp/import.sha256
+          sha256sum /tmp/source.sha256 /tmp/import.sha256
+          echo "TERRAFORMER_SNAPSHOT_INTEGRITY=PASS"
