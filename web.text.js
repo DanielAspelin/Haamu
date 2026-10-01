@@ -15,7 +15,7 @@ const HaamuWebText = Object.freeze({
   family: 'web',
   role: 'web.text',
   type: 'text-input-output-processor-allocator-symbolizer-parser-mutator-deparser-font-renderer',
-  version: '1.14.0',
+  version: '1.15.0',
 
   key(event = {}) {
     const key = event.key ?? null;
@@ -403,6 +403,53 @@ const HaamuWebText = Object.freeze({
     });
   },
 
+  allocateArea(value = '', options = {}) {
+    const text=this.normalize(value);
+    const area=this.area(options.area ?? {});
+    const alignment=this.alignment(options.alignment ?? {});
+    const lines=this.lines(text);
+    const lineAdvance=Math.max(0,finite(options.lineAdvance,1));
+    const columnAdvance=Math.max(0,finite(options.columnAdvance,1));
+    const capacity=Math.max(1,Math.trunc(finite(options.capacity,lines.length||1)));
+    const first=Math.max(0,lines.length-capacity);
+    const visible=lines.slice(first);
+    const origin=Object.freeze({
+      x:finite(options.origin?.x,area.x),
+      y:finite(options.origin?.y,area.y),
+      anchor:options.origin?.anchor??alignment.anchor,
+    });
+    const placements=visible.map((line,index)=>Object.freeze({
+      type:'web-text-line-placement',
+      sourceLine:first+index,
+      visibleLine:index,
+      text:line,
+      x:origin.x,
+      y:origin.y+(index*lineAdvance),
+      inlineAdvance:Array.from(line).length*columnAdvance,
+      blockAdvance:lineAdvance,
+      alignment,
+    }));
+    return Object.freeze({
+      type:'web-text-area-allocation',
+      text,
+      role:options.role??'output',
+      stream:options.stream??'text',
+      area,
+      alignment,
+      origin,
+      lineAdvance,
+      columnAdvance,
+      capacity,
+      totalLines:lines.length,
+      firstVisibleLine:first,
+      overflow:lines.length>capacity,
+      overflowDirection:lines.length>capacity?'before':'none',
+      placements:Object.freeze(placements),
+      preservesText:true,
+      changesGeometry:false,
+    });
+  },
+
   allocateLines(value = '', options = {}) {
     const text=this.normalize(value);
     const hardLines=this.lines(text);
@@ -478,6 +525,12 @@ const HaamuWebText = Object.freeze({
       font: this.font(options.font ?? {}),
       alignment: this.alignment(options.alignment ?? {}),
       aligned: this.align(value, options.alignment ?? {}),
+      allocation: this.allocateArea(value, {
+        ...(options.allocation ?? {}),
+        alignment: options.alignment ?? options.allocation?.alignment ?? {},
+        role: options.role ?? options.allocation?.role ?? 'output',
+        stream: options.stream ?? options.allocation?.stream ?? 'text',
+      }),
       cursor: this.cursor(options.cursor ?? {}),
       viewport: this.viewport(value, options.viewport ?? {}),
       measure: this.measure(value, options),
