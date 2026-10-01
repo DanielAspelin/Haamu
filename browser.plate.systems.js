@@ -24,7 +24,7 @@ const create=(plateId,definition={})=>{
  };
  return Object.freeze({
   type:'plate-output-systems',plateId,channelId,
-  outputSocket:Object.freeze({type:'plate-output-socket',plateId,channelId,socket:channel?.outputSocket??null}),
+  inputSocket:Object.freeze({type:'plate-input-socket',plateId,channelId,socket:channel?.inputSocket??null}),
   area:()=>area,
   configureArea(definition={}){
    const mode=definition.mode==='live'?'live':'text';
@@ -33,9 +33,9 @@ const create=(plateId,definition={})=>{
     inputPromptId=String(definition.inputPromptId??(plateId+':live-prompt'));
     inputChannelId=String(definition.inputChannelId??(channelId+':live'));
     const prompt=globalThis.HaamuBrowserPromptSystems?.forPrompt?.(inputPromptId,{channelId:inputChannelId,shell:definition.shell??'client'});
-    inputSocket=prompt?.inputSocket??null;
+    inputSocket=prompt?.outputSocket??null;
    }
-   area=Object.freeze({type:'plate-area',mode,snap:'plate',live:mode==='live',plateId,outputSocket:channel?.outputSocket??null,inputPromptId,inputChannelId,inputSocket});
+   area=Object.freeze({type:'plate-area',mode,snap:'plate',live:mode==='live',plateId,inputSocket:channel?.inputSocket??null,inputPromptId,inputChannelId,promptOutputSocket:inputSocket});
    return area;
   },
   terminal:Object.freeze({accept:output=>accept('terminal',output)}),
@@ -53,7 +53,7 @@ const create=(plateId,definition={})=>{
 };
 
 const HaamuBrowserPlateSystems=Object.freeze({
- family:'browser',role:'browser.plate.systems',type:'per-plate-output-systems',version:'0.4.0',
+ family:'browser',role:'browser.plate.systems',type:'per-plate-output-systems',version:'0.5.0',
  forPlate(plate,definition={}){
   const plateId=String(typeof plate==='string'?plate:(plate?.id??plate?.dataset?.plate??'')).trim();
   if(!plateId)throw new RangeError('Plate identity required.');
