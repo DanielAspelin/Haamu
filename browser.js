@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.130.0',
+  version: '0.131.0',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -115,6 +115,10 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
     const webPlate = globalThis.HaamuWebPlate?.create?.({ id:plateId, corner, platform:'common' });
     const commandChannel = globalThis.HaamuCommandChannel?.get?.(channelId);
     commandChannel?.bindInput?.(plateId);
+    const consoleRole=plateTitles[corner].toLowerCase();
+    const consoleSystem=globalThis.HaamuConsole?.ensure?.('console-'+consoleRole,{
+      role:consoleRole,prompt:promptSystems,plate:plateSystems
+    });
     const shellRouter = globalThis.HaamuShell?.router?.();
     const projections = Object.create(null);
 
@@ -126,6 +130,7 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       menu.dataset.prompt = promptId;
       menu.dataset.plate = plateId;
       menu.dataset.channel = channelId;
+      menu.dataset.console = consoleSystem?.consoleId ?? '';
       menu.setAttribute('aria-hidden', 'true');
       menu.dataset.plateState = platform === 'mobile' ? 'automatic' : (plateState?.state('desktop') ?? 'normal');
 
