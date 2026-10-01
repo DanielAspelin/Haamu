@@ -291,30 +291,50 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
         Object.values(pair).some(candidate => candidate.classList.contains('open')));
       const same = current && current[0] === button.dataset.position;
 
-      if (current) {
-        const [position, pair] = current;
-        const closingDesktop = pair.desktop;
-        const closingPlateId = closingDesktop?.dataset.logicalPlate;
-        const closingState = closingPlateId
-          ? globalThis.HaamuBrowserPlateState?.forPlate(closingPlateId)
-          : null;
-        if (closingState?.state('desktop') === 'maximized') {
-          closingDesktop?.classList.add('plate-restoring');
-          closingState.restore('desktop');
-          setTimeout(() => closingDesktop?.classList.remove('plate-restoring'), 560);
-        }
-        for (const active of Object.values(pair)) {
-          active.classList.remove('open');
-          active.setAttribute('aria-hidden', 'true');
-        }
-        shell.querySelector('.corner.start[data-position="' + position + '"]')?.setAttribute('aria-expanded', 'false');
-      }
-
-      if (!same) {
+      const openTarget = () => {
+        if (same) return;
         const menu = projections[activePlatform];
         menu.setAttribute('aria-hidden', 'false');
         button.setAttribute('aria-expanded', 'true');
         requestAnimationFrame(() => menu.classList.add('open'));
+      };
+
+      if (!current) {
+        openTarget();
+        return;
+      }
+
+      const [position, pair] = current;
+      const activeCurrent = pair[activePlatform];
+      const closingDesktop = pair.desktop;
+      const closingPlateId = closingDesktop?.dataset.logicalPlate;
+      const closingState = closingPlateId
+        ? globalThis.HaamuBrowserPlateState?.forPlate(closingPlateId)
+        : null;
+      const mustRestore = activePlatform === 'desktop'
+        && closingState?.state('desktop') === 'maximized';
+
+      const closeCurrent = () => {
+        for (const active of Object.values(pair)) {
+          active.classList.remove('open', 'plate-restoring');
+          active.setAttribute('aria-hidden', 'true');
+        }
+        shell.querySelector('.corner.start[data-position="' + position + '"]')
+          ?.setAttribute('aria-expanded', 'false');
+      };
+
+      if (mustRestore) {
+        activeCurrent?.classList.add('plate-restoring');
+        closingState.restore('desktop');
+        /* Let the maximized Plate visibly morph back to normal before it
+           closes and the newly selected corner Plate opens. */
+        setTimeout(() => {
+          closeCurrent();
+          if (!same) setTimeout(openTarget, 70);
+        }, 500);
+      } else {
+        closeCurrent();
+        if (!same) setTimeout(openTarget, 70);
       }
     });
   }
