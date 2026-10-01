@@ -12,13 +12,13 @@ pre{white-space:pre-wrap;overflow-wrap:anywhere}small{opacity:.75}
 </style></head><body><main>
 <h1>Haamu Projection Space — isolated test</h1>
 <p><small>This page does not load or modify the production Haamu Plate runtime.</small></p>
-<div class="controls"><button id="explode" type="button">EXPLODE → TEXT</button><button id="gifTest" type="button">GIF → PARTICLES</button><button id="reset" type="button">RESET</button><input id="gifFile" type="file" accept="image/gif" hidden><span id="status" aria-live="polite">Projection stable.</span></div>
+<div class="controls"><button id="explode" type="button">EXPLODE → TEXT</button><button id="gifTest" type="button">TEST GIF → PARTICLES</button><button id="gifUpload" type="button">UPLOAD GIF</button><button id="reset" type="button">RESET</button><input id="gifFile" type="file" accept="image/gif" hidden><span id="status" aria-live="polite">Projection stable.</span></div>
 <div id="surface" aria-label="Experimental projection surface"><canvas id="particles"></canvas></div>
 <pre id="evidence"></pre></main>
 <script src="../projection.space.js"></script><script>
 'use strict';
 const surface=document.getElementById('surface'),canvas=document.getElementById('particles'),ctx=canvas.getContext('2d');
-const evidence=document.getElementById('evidence'),explode=document.getElementById('explode'),gifTest=document.getElementById('gifTest'),gifFile=document.getElementById('gifFile'),reset=document.getElementById('reset'),status=document.getElementById('status');
+const evidence=document.getElementById('evidence'),explode=document.getElementById('explode'),gifTest=document.getElementById('gifTest'),gifUpload=document.getElementById('gifUpload'),gifFile=document.getElementById('gifFile'),reset=document.getElementById('reset'),status=document.getElementById('status');
 const P=globalThis.HaamuProjectionSpace;
 const space=P.create({id:'test-space',plate:{id:'test-only',x:0,y:0,width:surface.clientWidth,height:surface.clientHeight}});
 const nodes=[
@@ -53,9 +53,10 @@ function run(){if(running)return;if(matchMedia('(prefers-reduced-motion: reduce)
  size();particles=build();const targets=textTargets(particles.length);particles.forEach((p,i)=>{p.tx=targets[i].x;p.ty=targets[i].y;});elements.forEach(e=>e.style.visibility='hidden');running=true;explode.disabled=true;status.textContent='Projection exploded into '+particles.length+' particles; implosion target: HAAMU.';start=performance.now();raf=requestAnimationFrame(draw);}
 function restore(){finish();status.textContent='Projection reset.';}
 function projectImage(img){restore();size();const r=surface.getBoundingClientRect(),off=document.createElement('canvas'),oc=off.getContext('2d',{willReadFrequently:true});off.width=Math.max(1,Math.floor(r.width));off.height=Math.max(1,Math.floor(r.height));const scale=Math.min(off.width/img.width,off.height/img.height)*.72,w=img.width*scale,h=img.height*scale,x=(off.width-w)/2,y=(off.height-h)/2;oc.clearRect(0,0,off.width,off.height);oc.drawImage(img,x,y,w,h);const data=oc.getImageData(0,0,off.width,off.height).data;particles=[];const step=2;for(let py=0;py<off.height;py+=step)for(let px=0;px<off.width;px+=step){const i=(py*off.width+px)*4,a=data[i+3];if(a>48){particles.push({x:px,y:py,s:1.15});if(particles.length>=12000)break;}if(particles.length>=12000)break;}elements.forEach(e=>e.style.visibility='hidden');ctx.clearRect(0,0,r.width,r.height);ctx.fillStyle='#dce8f5';for(const p of particles){const s=1.15;ctx.beginPath();ctx.moveTo(p.x,p.y-s);ctx.lineTo(p.x+s,p.y);ctx.lineTo(p.x,p.y+s);ctx.lineTo(p.x-s,p.y);ctx.closePath();ctx.fill();}status.textContent='GIF frame projected as '+particles.length+' vector diamond particles.';}
-gifTest.addEventListener('click',()=>gifFile.click());
+gifTest.addEventListener('click',()=>{const img=new Image();img.onload=()=>projectImage(img);img.onerror=()=>status.textContent='Built-in GIF test asset could not be decoded.';img.src='./haamu-test.gif?v=1';});
+gifUpload.addEventListener('click',()=>gifFile.click());
 gifFile.addEventListener('change',()=>{const file=gifFile.files&&gifFile.files[0];if(!file)return;if(file.type!=='image/gif'){status.textContent='Select a GIF file.';return;}const url=URL.createObjectURL(file),img=new Image();img.onload=()=>{projectImage(img);URL.revokeObjectURL(url);};img.onerror=()=>{URL.revokeObjectURL(url);status.textContent='GIF could not be decoded by this browser.';};img.src=url;});
 explode.addEventListener('click',run);reset.addEventListener('click',restore);addEventListener('resize',()=>{if(!running)size();},{passive:true});size();
-evidence.textContent=JSON.stringify({test:true,productionPlateLoaded:false,projectionVersion:P.version,renderer:'test-vector-diamond-particle-adapter-v4',particleLimit:12000,particlePrimitive:'vector-diamond',particleRadius:1.15,gifInput:'browser-decoded-frame',formation:'HAAMU',
+evidence.textContent=JSON.stringify({test:true,productionPlateLoaded:false,projectionVersion:P.version,renderer:'test-vector-diamond-particle-adapter-v4.1',particleLimit:12000,particlePrimitive:'vector-diamond',particleRadius:1.15,gifInput:'built-in-haamu-test.gif + browser-upload',formation:'HAAMU',
  space:{id:space.id,resolution:space.resolution,plateAuthority:space.plate.authority},nodes:nodes.map(n=>({id:n.id,type:n.projectionType,bounds:n.bounds,rendererConnected:n.rendererConnected}))},null,2);
 </script></body></html>
