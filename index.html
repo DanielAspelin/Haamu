@@ -6,7 +6,7 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<meta name="haamu-build" content="0.90.0">
+<meta name="haamu-build" content="0.91.0">
   <meta name="description" content="Haamu — open community, technology and culture">
   <title>Haamu</title>
   <style>
@@ -69,9 +69,11 @@
         0 0 22px rgba(85,165,255,.82);
       user-select:none;
     }
-    /* Keep the qualified mobile wordmark unchanged; desktop has its own scale. */
-    @media(min-width:901px){
-      .haamu-wordmark{font-size:clamp(34px,4.5vw,72px)}
+    /* Keep the qualified mobile wordmark unchanged.
+       Desktop is selected by interaction capability rather than CSS viewport
+       width, because desktop windows can be narrower than 901 CSS pixels. */
+    @media (hover:hover) and (pointer:fine){
+      .haamu-wordmark{font-size:56px}
     }
     .corner{
       --corner-rgb:0,0,0;
@@ -313,7 +315,7 @@
   <script src="default.js"></script>
   <script src="haamu.js"></script>
   <script src="browser.entry.js"></script>
-  <script src="browser.js?v=0.90.0"></script>
+  <script src="browser.js?v=0.91.0"></script>
   <script src="web.entry.js"></script>
   <script src="web.text.js"></script>
   <script src="web.assembly.js"></script>
