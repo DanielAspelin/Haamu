@@ -1,5 +1,8 @@
 'use strict';
 
+
+/* module-private execution scope */
+(() => {
 /** Haamu Search Input — renderer-independent search ingress contract. */
 globalThis.HaamuFamilies ??= Object.create(null);
 let sequence=0;
@@ -18,3 +21,4 @@ const HaamuSearchInput=Object.freeze({
 });
 globalThis.HaamuFamilies['search.input']=Object.freeze({family:'search',role:'search.input',type:'search-input-contract',version:'0.1.0'});
 globalThis.HaamuSearchInput=HaamuSearchInput;
+})();
