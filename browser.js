@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.126.5',
+  version: '0.126.6',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -628,8 +628,13 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       const wasMaximized = activePlatform === 'desktop'
         && pair.desktop?.dataset.plateState === 'maximized';
 
-      closingState?.restore('desktop');
-      if (wasMaximized) activeCurrent?.classList.add('plate-restoring');
+      /* A normal desktop handoff must not run restore(), because restore()
+         writes desktop Plate state/geometry before retraction and can create
+         a one-frame pause. Restore is reserved for an actually maximized Plate. */
+      if (wasMaximized) {
+        closingState?.restore('desktop');
+        activeCurrent?.classList.add('plate-restoring');
+      }
       activeCurrent?.classList.add('plate-transition-out');
 
       /* Removing .open starts the actual transform back toward the owning
