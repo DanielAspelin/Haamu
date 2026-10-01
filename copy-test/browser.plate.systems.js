@@ -1,5 +1,8 @@
 'use strict';
 
+
+/* module-private execution scope */
+(() => {
 /**
  * Haamu Browser Plate Systems — isolated input/received-output ownership per logical Plate.
  * Projection is deliberately data-bound only; visual rendering remains deferred.
@@ -71,3 +74,4 @@ const HaamuBrowserPlateSystems=Object.freeze({
 });
 globalThis.HaamuFamilies['browser.plate.systems']=Object.freeze({family:'browser',role:'browser.plate.systems',type:'per-plate-input-output-receiver',version:'0.6.1'});
 globalThis.HaamuBrowserPlateSystems=HaamuBrowserPlateSystems;
+})();
