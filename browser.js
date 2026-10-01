@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.121.8',
+  version: '0.122.0',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -205,87 +205,93 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
         const field=area?.querySelector('.plate-prompt-text-field'), mirror=wrap?.querySelector('.plate-prompt-measure');
         let caret=area?.querySelector('.plate-prompt-caret');
         if(!area||!field||!mirror)return;
+
+        const text=target.value ?? '';
+        const selection=Math.max(0,Math.min(text.length,target.selectionStart ?? text.length));
+        const selectionEnd=Math.max(selection,Math.min(text.length,target.selectionEnd ?? selection));
+        const style=getComputedStyle(target);
+        const lineHeight=parseFloat(style.lineHeight)||17;
+        const paddingTop=parseFloat(style.paddingTop)||13, paddingBottom=parseFloat(style.paddingBottom)||13;
+        const oneLine=44, maxLines=3;
+
+        /* Native textarea is Input/IME authority. WebText owns semantic state;
+           the mirror exists only to obtain browser-exact wrap geometry. */
+        const webText=globalThis.HaamuWebText;
+        const symbols=webText?.symbolize ? webText.symbolize(text) : Array.from(text);
+        const cursor=webText?.cursor ? webText.cursor({
+          position:selection, anchor:selection, focus:selectionEnd,
+          visible:document.activeElement===target, active:document.activeElement===target,
+        }) : null;
+        const font=webText?.font ? webText.font({
+          family:style.fontFamily, weight:style.fontWeight, style:style.fontStyle,
+          size:style.fontSize, lineHeight:style.lineHeight, letterSpacing:style.letterSpacing,
+          wordSpacing:style.wordSpacing, direction:style.direction,
+        }) : null;
+
+        mirror.style.width=target.clientWidth+'px';
+        mirror.textContent=text||'\u200b';
+        const node=mirror.firstChild, lines=[];
+        if(node?.nodeType===Node.TEXT_NODE && text.length){
+          const range=document.createRange(); let active=null;
+          for(let i=0;i<text.length;i+=1){
+            range.setStart(node,i); range.setEnd(node,i+1);
+            const rect=range.getBoundingClientRect(); if(!rect.height)continue;
+            if(!active||Math.abs(rect.top-active.top)>1){
+              active={top:rect.top,start:i,end:i+1}; lines.push(active);
+            }else active.end=i+1;
+          }
+          range.detach?.();
+        }
+        if(!lines.length) lines.push({top:0,start:0,end:0});
+
+        let cursorLine=0;
+        for(let i=0;i<lines.length;i+=1){
+          if(lines[i].start<=selection)cursorLine=i; else break;
+        }
+        const firstVisible=Math.max(0,lines.length-maxLines);
+        const visible=lines.slice(firstVisible);
+
         if(!caret){
           caret=document.createElement('span');
           caret.className='plate-prompt-caret';
           caret.setAttribute('aria-hidden','true');
-          caret.hidden=true;
         }
-        const style=getComputedStyle(target), lineHeight=parseFloat(style.lineHeight)||17;
-        const paddingTop=parseFloat(style.paddingTop)||0, paddingBottom=parseFloat(style.paddingBottom)||0;
-        const oneLine=44, maxLines=3;
-        mirror.style.width=target.clientWidth+'px';
-        mirror.textContent=target.value||'\u200b';
-        const node=mirror.firstChild, text=target.value, lines=[];
-        if(node?.nodeType===Node.TEXT_NODE){
-          const range=document.createRange(); let active=null;
-          for(let i=0;i<Math.max(1,text.length);i+=1){
-            if(!text.length){lines.push({top:0,start:0,end:0});break;}
-            range.setStart(node,i); range.setEnd(node,i+1);
-            const rect=range.getBoundingClientRect(); if(!rect.height)continue;
-            if(!active||Math.abs(rect.top-active.top)>1){active={top:rect.top,start:i,end:i+1};lines.push(active);}
-            else active.end=i+1;
-          }
-          range.detach?.();
-        }
-        if(!lines.length)lines.push({top:0,start:0,end:0});
-        const selection=Math.max(0,Math.min(text.length,target.selectionStart??text.length));
-        /* A wrap boundary belongs to the following visual line. Using an
-           inclusive end test assigns the caret to the previous line when
-           selection === previous.end === next.start, preventing the 3-line
-           window from advancing upward. Choose the last line whose start is
-           at or before the insertion point instead. */
-        let caretLine=0;
-        for(let i=0;i<lines.length;i+=1){
-          if(lines[i].start<=selection)caretLine=i;
-          else break;
-        }
-        /* The viewport is a line queue, not a caret-relative window.
-           Once overflow begins it advances exactly one complete source line
-           for every new wrapped line: 1-3, 2-4, 3-5, ... . This prevents
-           cumulative fifth-line-and-later drift. */
-        const firstVisible=Math.max(0,lines.length-maxLines);
-        const visible=lines.slice(firstVisible);
         field.replaceChildren();
-        for(const line of visible){
+        visible.forEach((line,visibleIndex)=>{
+          const sourceIndex=firstVisible+visibleIndex;
           const lineNode=document.createElement('div');
           lineNode.className='plate-prompt-projection-line';
-          const beforeEnd=Math.max(line.start,Math.min(selection,line.end));
-          if(caretLine===lines.indexOf(line)){
-            const before=document.createTextNode(text.slice(line.start,beforeEnd).replace(/\n$/,''));
-            const after=document.createTextNode(text.slice(beforeEnd,line.end).replace(/\n$/,''));
-            lineNode.append(before,caret,after);
-          }else lineNode.textContent=text.slice(line.start,line.end).replace(/\n$/,'');
+          const cursorHere=sourceIndex===cursorLine && selection===selectionEnd;
+          const cut=Math.max(line.start,Math.min(selection,line.end));
+          if(cursorHere){
+            lineNode.append(
+              document.createTextNode(text.slice(line.start,cut).replace(/\n$/,'')),
+              caret,
+              document.createTextNode(text.slice(cut,line.end).replace(/\n$/,''))
+            );
+          }else{
+            lineNode.textContent=text.slice(line.start,line.end).replace(/\n$/,'');
+          }
           field.appendChild(lineNode);
-        }
-        /* Projection owns its paint explicitly. Do not rely on inherited
-           transparency from the native editor or historical Prompt rules. */
-        field.style.setProperty('color','rgba(235,247,255,.96)','important');
-        field.style.setProperty('-webkit-text-fill-color','rgba(235,247,255,.96)','important');
-        field.style.setProperty('opacity','1','important');
-        field.style.setProperty('visibility','visible','important');
+        });
+
         const visibleCount=Math.min(maxLines,Math.max(1,lines.length));
-        const height=Math.max(oneLine,Math.ceil(paddingTop+paddingBottom+visibleCount*lineHeight));
-        const threeLineHeight=Math.max(oneLine,Math.ceil(paddingTop+paddingBottom+maxLines*lineHeight));
-        const governedHeight=lines.length>=maxLines?threeLineHeight:height;
-        const overflowing=lines.length>maxLines;
-        target.style.height=governedHeight+'px'; target.style.overflowY='hidden';
-        wrap.style.height=governedHeight+'px'; row.style.height=governedHeight+'px'; row.style.minHeight=governedHeight+'px';
+        const governedHeight=Math.max(oneLine,Math.ceil(paddingTop+paddingBottom+visibleCount*lineHeight));
+        target.style.height=governedHeight+'px';
+        wrap.style.height=governedHeight+'px';
+        row.style.height=governedHeight+'px'; row.style.minHeight=governedHeight+'px';
         menu?.style.setProperty('--prompt-track-height',governedHeight+'px');
-        /* At three lines the physical viewport locks permanently for overflow.
-           Line 4+ substitutes the oldest line; it may never alter geometry. */
         area.style.height=governedHeight+'px';
-        area.style.minHeight=governedHeight+'px';
-        area.style.maxHeight=governedHeight+'px';
-        field.style.height=(Math.min(maxLines,visibleCount)*lineHeight)+'px';
-        field.style.minHeight=field.style.height;
-        field.style.maxHeight=field.style.height;
-        area.dataset.overflowing=String(overflowing);
-        field.style.transform='none';
+        field.style.height=(visibleCount*lineHeight)+'px';
+
         area.classList.toggle('is-empty',!text);
-        area.dataset.lineCount=String(lines.length); area.dataset.visibleLines=String(visibleCount);
+        area.dataset.lineCount=String(lines.length);
+        area.dataset.visibleLines=String(visibleCount);
         area.dataset.firstVisibleLine=String(firstVisible);
-        caret.hidden=document.activeElement!==target||target.selectionStart!==target.selectionEnd;
+        field.dataset.symbolCount=String(symbols.length);
+        if(font) field.dataset.fontFamily=String(font.family);
+        if(cursor) field.dataset.cursorPosition=String(cursor.position);
+        caret.hidden=document.activeElement!==target||selection!==selectionEnd;
       };
       prompt.addEventListener('focus', () => {
         prompt.closest('.plate-prompt-wrap')?.classList.add('is-focused');
