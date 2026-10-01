@@ -1,5 +1,8 @@
 'use strict';
 
+
+/* module-private execution scope */
+(() => {
 /**
  * Haamu Command Input — command ingress contract.
  * Ownership is assigned by a later Prompt binding; this module has no DOM.
@@ -22,3 +25,4 @@ const HaamuCommandInput=Object.freeze({
 });
 globalThis.HaamuFamilies['command.input']=Object.freeze({family:'command',role:'command.input',type:'command-input-contract',version:'0.1.0'});
 globalThis.HaamuCommandInput=HaamuCommandInput;
+})();
