@@ -15,7 +15,7 @@ const HaamuWebText = Object.freeze({
   family: 'web',
   role: 'web.text',
   type: 'text-processor-allocator-parser-renderer',
-  version: '0.8.0',
+  version: '0.9.0',
 
   normalize(value, form = 'NFC') {
     const text = value == null ? '' : String(value);
@@ -92,6 +92,23 @@ const HaamuWebText = Object.freeze({
     });
   },
 
+  negotiate(stage, units, options = {}) {
+    const request = {
+      stage,
+      units,
+      completed: options.completed ?? [],
+      capacity: options.capacity,
+      direction: options.direction ?? 'forward',
+    };
+    const concurrency = globalThis.HaamuWebConcurrency?.negotiate
+      ? globalThis.HaamuWebConcurrency.negotiate(request)
+      : Object.freeze({ type:'concurrency-negotiation', stage, ready:Object.freeze(units), blocked:Object.freeze([]), backPressure:false });
+    const parallelism = globalThis.HaamuWebParallelism?.negotiate
+      ? globalThis.HaamuWebParallelism.negotiate({ ...request, units:concurrency.ready })
+      : Object.freeze({ type:'parallelism-negotiation', stage, capacity:1, lanes:Object.freeze([Object.freeze(concurrency.ready)]) });
+    return Object.freeze({ type:'web-text-negotiation', stage, concurrency, parallelism });
+  },
+
   composition(plate, value, options = {}) {
     if (!plate || plate.type !== 'web-plate') throw new TypeError('WebText target must be a Plate.');
     const record = this.process(value, options);
@@ -115,8 +132,10 @@ const HaamuWebText = Object.freeze({
 
   processForPlate(value, plate, options = {}) {
     const composition = this.composition(plate, value, options);
+    const negotiation = this.negotiate('processor', composition.mesh.nodes, options.execution ?? {});
     return Object.freeze({
       type: 'plate-text-processing',
+      negotiation,
       target: plate.id,
       record: composition.record,
       matrix: composition.matrix,
@@ -147,8 +166,10 @@ const HaamuWebText = Object.freeze({
   allocateToPlate(value, plate, options = {}) {
     const composition = this.composition(plate, value, options);
     const allocation = this.allocate(value, options);
+    const negotiation = this.negotiate('allocator', composition.mesh.nodes, options.execution ?? {});
     return Object.freeze({
       type: 'plate-text-allocation',
+      negotiation,
       target: plate.id,
       allocation,
       matrix: composition.matrix,
@@ -178,8 +199,10 @@ const HaamuWebText = Object.freeze({
   renderToPlate(value, plate, options = {}) {
     const composition = this.composition(plate, value, options);
     const rendered = this.render(value, options);
+    const negotiation = this.negotiate('renderer', composition.mesh.nodes, options.execution ?? {});
     return Object.freeze({
       type: 'plate-text-render',
+      negotiation,
       target: plate.id,
       text: rendered,
       matrix: composition.matrix,
