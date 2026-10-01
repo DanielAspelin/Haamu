@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.126.7',
+  version: '0.126.8',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -643,18 +643,12 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       const wasMaximized = activePlatform === 'desktop'
         && pair.desktop?.dataset.plateState === 'maximized';
 
-      /* A normal desktop handoff must not run restore(), because restore()
-         writes desktop Plate state/geometry before retraction and can create
-         a one-frame pause. Restore is reserved for an actually maximized Plate. */
-      if (wasMaximized) {
-        closingState?.restore('desktop');
-        activeCurrent?.classList.add('plate-restoring');
-      }
+      /* Start disappearance and contraction in one style change. For a
+         maximized desktop Plate, do not publish the logical restore first:
+         that publication changes width/height and creates a visible restored
+         stop before opacity begins. The logical state is restored only after
+         the outgoing Plate has completed its visual retirement. */
       activeCurrent?.classList.add('plate-transition-out');
-
-      /* Removing .open starts the actual transform back toward the owning
-         button. Keeping .open until cleanup only faded the Plate and caused
-         the geometric slide to happen late. */
       activeCurrent?.classList.remove('open');
 
       let closeFinished = false;
@@ -670,6 +664,7 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
         }
         shell.querySelector('.corner.start[data-position="' + position + '"]')
           ?.setAttribute('aria-expanded', 'false');
+        if (wasMaximized) closingState?.restore('desktop');
         if (activePlatform === 'mobile' && !same) openTargetNow();
       };
       const onCloseTransitionEnd = (event) => {
