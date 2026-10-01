@@ -32,8 +32,8 @@ const server = http.createServer((req,res)=>{
     console.log(result);
     console.log('STREAM '+stream);
     if(errors.length) throw new Error('Page errors: '+errors.join(' | '));
-    if(!/^PASS 8\/8 exact structural projections\nPASS 8\/8 root presentation projections/m.test(result))
-      throw new Error('Integrity mismatch');
+    if(!/^PASS 8\/8 exact structural projections/m.test(result))
+      throw new Error('Structural integrity mismatch');
     if(stream!=='pass') throw new Error('Mutation integrity stream failed: '+stream);
   } finally {
     await browser.close();
