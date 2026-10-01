@@ -15,7 +15,7 @@ const HaamuWebText = Object.freeze({
   family: 'web',
   role: 'web.text',
   type: 'text-input-output-processor-allocator-symbolizer-parser-mutator-deparser-font-renderer',
-  version: '1.19.0',
+  version: '1.20.0',
 
   key(event = {}) {
     const key = event.key ?? null;
@@ -494,6 +494,48 @@ const HaamuWebText = Object.freeze({
       ...options,
       sequence:output?.sequence??index,
     })));
+  },
+
+  session(outputs = [], options = {}) {
+    const expectedSession=options.sessionId==null?null:String(options.sessionId);
+    const expectedChannel=options.channelId==null?null:String(options.channelId);
+    const records=this.streamRecords(outputs,options);
+    const accepted=[],rejected=[];
+    for(const record of records){
+      const sessionMatch=!expectedSession||record.sessionId===expectedSession;
+      const channelMatch=!expectedChannel||record.channelId===expectedChannel;
+      (sessionMatch&&channelMatch?accepted:rejected).push(record);
+    }
+    const groups=new Map();
+    for(const record of accepted){
+      const key=record.originType==='search-output'
+        ? 'search:'+record.sequence
+        : record.originType==='prompt-interpretation'
+          ? 'prompt:'+record.sequence
+          : 'io:'+record.sessionId+':'+record.channelId;
+      if(!groups.has(key))groups.set(key,[]);
+      groups.get(key).push(record);
+    }
+    const sessions=Array.from(groups,([id,members])=>Object.freeze({
+      type:'web-text-session-group',
+      id,
+      sessionId:members[0]?.sessionId??'haamu',
+      channelId:members[0]?.channelId??'unbound',
+      records:Object.freeze([...members].sort((a,b)=>a.sequence-b.sequence)),
+      streams:Object.freeze(Array.from(new Set(members.map(record=>record.stream)))),
+      semantics:Object.freeze(Array.from(new Set(members.map(record=>record.semantic)))),
+    }));
+    return Object.freeze({
+      type:'web-text-session',
+      sessionId:expectedSession??'mixed',
+      channelId:expectedChannel??'mixed',
+      groups:Object.freeze(sessions),
+      accepted:Object.freeze(accepted),
+      rejected:Object.freeze(rejected),
+      ordered:Object.freeze([...accepted].sort((a,b)=>a.sequence-b.sequence)),
+      preservesProvenance:true,
+      changesGeometry:false,
+    });
   },
 
   allocateStreams(records = [], options = {}) {
