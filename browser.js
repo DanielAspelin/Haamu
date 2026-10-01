@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.126.4',
+  version: '0.126.5',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -659,9 +659,19 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       closeFallback = setTimeout(closeCurrent, wasMaximized ? 560 : 540);
 
       if (activePlatform === 'desktop' && !same) {
-        /* Desktop begins the selected Plate immediately while the previous
-           Plate retracts smoothly toward its own button. */
-        openTargetNow();
+        /* Desktop is also ordered: start retracting the old Plate immediately,
+           then open the selected Plate only after the old transform completes.
+           This prevents the old Plate from appearing to wait for the new one. */
+        const openAfterDesktopClose = () => {
+          activeCurrent?.removeEventListener('transitionend', openAfterDesktopClose);
+          if (!closeFinished) closeCurrent();
+          openTargetNow();
+        };
+        activeCurrent?.addEventListener('transitionend', (event) => {
+          if (event.target === activeCurrent && event.propertyName === 'transform') {
+            openAfterDesktopClose();
+          }
+        }, { once:true });
       }
     });
   }
