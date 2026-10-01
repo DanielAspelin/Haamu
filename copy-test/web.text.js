@@ -1,5 +1,8 @@
 'use strict';
 
+
+/* module-private execution scope */
+(() => {
 /**
  * Haamu Web Text — web-family text processor, allocator, parser and renderer.
  *
@@ -2038,3 +2041,4 @@ globalThis.HaamuFamilies['web.text'] = Object.freeze({
 });
 
 globalThis.HaamuWebText = HaamuWebText;
+})();
