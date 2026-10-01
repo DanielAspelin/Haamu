@@ -1,10 +1,10 @@
 'use strict';
 
 /**
- * Haamu Web Text — web-family text processor, allocator and parser.
+ * Haamu Web Text — web-family text processor, allocator, parser and renderer.
  *
  * Text is retained as semantic Unicode data while exposing deterministic
- * vector-ready geometry. Rendering remains owned by graphics/browser layers.
+ * vector-ready geometry. WebText emits renderer-neutral render records; browser/graphics layers own final painting.
  */
 globalThis.HaamuFamilies ??= Object.create(null);
 
@@ -14,8 +14,8 @@ const finite = (value, fallback) => Number.isFinite(Number(value)) ? Number(valu
 const HaamuWebText = Object.freeze({
   family: 'web',
   role: 'web.text',
-  type: 'text-processor-allocator-parser',
-  version: '0.5.0',
+  type: 'text-processor-allocator-parser-renderer',
+  version: '0.6.0',
 
   normalize(value, form = 'NFC') {
     const text = value == null ? '' : String(value);
@@ -126,6 +126,35 @@ const HaamuWebText = Object.freeze({
       direction: options.direction ?? 'auto',
       language: options.language ?? 'und',
       writingMode: options.writingMode ?? 'horizontal-tb',
+    });
+  },
+
+  render(value, options = {}) {
+    const record = this.process(value, options);
+    const vector = this.vectorize(record.text, options);
+    const units = (options.unit ?? 'token') === 'glyph'
+      ? vector.glyphs.map(glyph => Object.freeze({
+          type: 'text-render-unit',
+          id: `glyph:${glyph.index}`,
+          kind: 'glyph',
+          value: glyph.character,
+          source: glyph,
+        }))
+      : record.parsed.tokens.map((token, index) => Object.freeze({
+          type: 'text-render-unit',
+          id: `token:${index}`,
+          kind: token.type,
+          value: token.value,
+          source: token,
+        }));
+
+    return Object.freeze({
+      type: 'text-render',
+      mode: options.mode ?? 'projection',
+      source: record,
+      vector,
+      units: Object.freeze(units),
+      independentlyAddressable: true,
     });
   },
 
