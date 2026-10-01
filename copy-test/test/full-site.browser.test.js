@@ -17,6 +17,13 @@ async function qualify(browser,name,viewport,isMobile){
    const prompt=menu.locator('.plate-prompt'); await prompt.fill('Alpha beta gamma delta epsilon zeta eta theta iota kappa lambda mu nu xi omicron pi rho sigma tau');
    await prompt.press('Home'); await prompt.press('ArrowRight'); await prompt.press('ArrowRight'); await page.waitForTimeout(80);
    if(await prompt.inputValue()==='')throw Error(name+' '+pos+' prompt input lost');
+   const selection=await prompt.evaluate(el=>({start:el.selectionStart,end:el.selectionEnd}));
+   if(selection.start!==2||selection.end!==2)throw Error(name+' '+pos+' native caret authority lost '+JSON.stringify(selection));
+   if(isMobile){
+     await prompt.fill('Line one\nLine two with enough text to wrap across the available Prompt width and continue into additional wrapped lines beyond three visible rows.');
+     await prompt.press('End'); await page.waitForTimeout(100);
+     const v=await prompt.inputValue(); if(!v.includes('\n')||v.length<80)throw Error(name+' '+pos+' multiline Prompt value lost');
+   }
    if(isMobile){
      const particle=menu.locator('.plate-prompt-particle-projection');
      if(await particle.count()!==1)throw Error(name+' '+pos+' particle projection count '+await particle.count());
