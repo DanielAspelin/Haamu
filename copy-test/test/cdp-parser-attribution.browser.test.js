@@ -1,0 +1,7 @@
+'use strict';
+const { chromium }=require('playwright');
+const http=require('http'),fs=require('fs'),path=require('path');
+const root=path.resolve(__dirname,'..');
+const types={'.html':'text/html','.js':'text/javascript','.css':'text/css','.json':'application/json','.ttf':'font/ttf'};
+const server=http.createServer((req,res)=>{const pathname=decodeURIComponent(new URL(req.url,'http://x').pathname);let file=path.join(root,pathname==='/'?'index.html':pathname);if(!file.startsWith(root)){res.writeHead(403).end();return;}fs.readFile(file,(e,b)=>{if(e){res.writeHead(404).end();return;}res.writeHead(200,{'content-type':types[path.extname(file)]||'application/octet-stream'});res.end(b);});});
+(async()=>{await new Promise(r=>server.listen(0,'127.0.0.1',r));const browser=await chromium.launch({headless:true});const page=await browser.newPage();const cdp=await page.context().newCDPSession(page);const scripts=new Map(),errors=[];await cdp.send('Debugger.enable');await cdp.send('Runtime.enable');cdp.on('Debugger.scriptParsed',e=>scripts.set(e.scriptId,e.url));cdp.on('Runtime.exceptionThrown',e=>{const d=e.exceptionDetails;errors.push({text:d.text,url:d.url||scripts.get(d.scriptId)||'',line:(d.lineNumber??-1)+1,column:(d.columnNumber??-1)+1,description:d.exception?.description||''});});await page.goto('http://127.0.0.1:'+server.address().port+'/',{waitUntil:'networkidle'});await page.waitForTimeout(500);console.log('CDP EXCEPTION MAP '+JSON.stringify(errors));await browser.close();server.close();})().catch(e=>{console.error(e);server.close();process.exit(1);});
