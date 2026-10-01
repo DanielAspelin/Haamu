@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.127.1',
+  version: '0.127.2',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -670,7 +670,7 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
         shell.querySelector('.corner.start[data-position="' + position + '"]')
           ?.setAttribute('aria-expanded', 'false');
         if (wasMaximized) closingState?.restore('desktop');
-        if (activePlatform === 'mobile' && !same) openTargetNow();
+        if (!same) openTargetNow();
       };
       const onCloseTransitionEnd = (event) => {
         if (event.target === activeCurrent && event.propertyName === 'transform') closeCurrent();
@@ -681,25 +681,6 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       });
       closeFallback = setTimeout(closeCurrent, wasMaximized ? 620 : 600);
 
-      if (activePlatform === 'desktop' && !same) {
-        /* closeCurrent already owns the transform completion boundary. Attach
-           successor opening to that same idempotent completion path so the
-           target cannot be lost if another transition event or fallback wins. */
-        const finishDesktopHandoff = () => {
-          if (!closeFinished) closeCurrent();
-          openTargetNow();
-        };
-        const onDesktopTransformEnd = (event) => {
-          if (event.target !== activeCurrent || event.propertyName !== 'transform') return;
-          activeCurrent?.removeEventListener('transitionend', onDesktopTransformEnd);
-          finishDesktopHandoff();
-        };
-        activeCurrent?.addEventListener('transitionend', onDesktopTransformEnd);
-        setTimeout(() => {
-          activeCurrent?.removeEventListener('transitionend', onDesktopTransformEnd);
-          if (!projections.desktop?.classList.contains('open')) finishDesktopHandoff();
-        }, wasMaximized ? 625 : 605);
-      }
     });
   }
 
