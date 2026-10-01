@@ -200,98 +200,60 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       prompt.setAttribute('aria-label', plateTitles[corner] + ' prompt');
       prompt.dataset.logicalPrompt = promptId;
       const resizePrompt = target => {
-        const menu = target.closest('.corner-menu');
-        const wrap = target.closest('.plate-prompt-wrap');
-        const row = target.closest('.plate-prompt-row');
-        const projection = wrap?.querySelector('.plate-prompt-projection');
-        const textField = projection?.querySelector('.plate-prompt-text-field');
-        const mirror = wrap?.querySelector('.plate-prompt-measure');
-        const style = getComputedStyle(target);
-        const lineHeight = parseFloat(style.lineHeight) || 17;
-        const paddingY = (parseFloat(style.paddingTop) || 0) + (parseFloat(style.paddingBottom) || 0);
-        const oneLine = 44;
-        const maxHeight = Math.ceil(paddingY + lineHeight * 3);
-
-        /* Native textarea is IME/caret authority only. A separate invisible
-           mirror measures wrapping; Haamu renders a bounded three-line window
-           instead of translating a second full-text scroll surface. */
-        if (mirror) {
-          mirror.style.width = target.clientWidth + 'px';
-          mirror.textContent = target.value || '\u200b';
-        }
-        const measured = mirror ? mirror.scrollHeight : target.scrollHeight;
-        const measuredTextHeight = Math.max(lineHeight, measured - paddingY);
-        const lineCount = Math.max(1, Math.ceil(measuredTextHeight / lineHeight));
-        const visibleLineCount = Math.min(3, lineCount);
-        const height = Math.min(maxHeight, Math.max(oneLine, Math.ceil(paddingY + visibleLineCount * lineHeight)));
-        target.style.height = height + 'px';
-        target.style.overflowY = 'hidden';
-        if (wrap) wrap.style.height = height + 'px';
-        if (row) {
-          row.style.height = height + 'px';
-          row.style.minHeight = height + 'px';
-        }
-        if (menu) menu.style.setProperty('--prompt-track-height', height + 'px');
-
-        if (projection) {
-          const text = target.value;
-          projection.classList.toggle('is-empty', !text);
-          projection.dataset.lineCount = String(lineCount);
-          projection.dataset.visibleLines = String(visibleLineCount);
-          projection.dataset.overflowing = lineCount > 3 ? 'true' : 'false';
-          if (textField) {
-            textField.dataset.lineCount = String(lineCount);
-            textField.dataset.visibleLines = String(visibleLineCount);
+        const menu=target.closest('.corner-menu'), wrap=target.closest('.plate-prompt-wrap');
+        const row=target.closest('.plate-prompt-row'), area=wrap?.querySelector('.plate-prompt-text-area');
+        const field=area?.querySelector('.plate-prompt-text-field'), mirror=wrap?.querySelector('.plate-prompt-measure');
+        const caret=area?.querySelector('.plate-prompt-caret');
+        if(!area||!field||!mirror)return;
+        const style=getComputedStyle(target), lineHeight=parseFloat(style.lineHeight)||17;
+        const paddingTop=parseFloat(style.paddingTop)||0, paddingBottom=parseFloat(style.paddingBottom)||0;
+        const oneLine=44, maxLines=3;
+        mirror.style.width=target.clientWidth+'px';
+        mirror.textContent=target.value||'\u200b';
+        const node=mirror.firstChild, text=target.value, lines=[];
+        if(node?.nodeType===Node.TEXT_NODE){
+          const range=document.createRange(); let active=null;
+          for(let i=0;i<Math.max(1,text.length);i+=1){
+            if(!text.length){lines.push({top:0,start:0,end:0});break;}
+            range.setStart(node,i); range.setEnd(node,i+1);
+            const rect=range.getBoundingClientRect(); if(!rect.height)continue;
+            if(!active||Math.abs(rect.top-active.top)>1){active={top:rect.top,start:i,end:i+1};lines.push(active);}
+            else active.end=i+1;
           }
-          if (!text) {
-            textField?.replaceChildren();
-          } else if (!mirror || measured <= maxHeight) {
-            const lineNode = document.createElement('div');
-            lineNode.className = 'plate-prompt-projection-line';
-            lineNode.textContent = text;
-            textField?.replaceChildren(lineNode);
-          } else {
-            /* Measure the ORIGINAL full-text wrapping. Re-wrapping a suffix at
-               column zero changes its line breaks and makes the cursor queue
-               horizontally. Range rectangles give the browser's actual visual
-               line membership, so the last three lines retain their original
-               boundaries. */
-            mirror.textContent = text;
-            const node = mirror.firstChild;
-            const lines = [];
-            if (node?.nodeType === Node.TEXT_NODE) {
-              const range = document.createRange();
-              let active = null;
-              for (let i = 0; i < text.length; i += 1) {
-                range.setStart(node, i);
-                range.setEnd(node, i + 1);
-                const rect = range.getBoundingClientRect();
-                if (!rect.height) continue;
-                if (!active || Math.abs(rect.top - active.top) > 1) {
-                  active = { top:rect.top, start:i, end:i + 1 };
-                  lines.push(active);
-                } else {
-                  active.end = i + 1;
-                }
-              }
-              range.detach?.();
-            }
-            const visibleLines = lines.slice(-3);
-            textField?.replaceChildren();
-            for (const line of visibleLines) {
-              const lineNode = document.createElement('div');
-              lineNode.className = 'plate-prompt-projection-line';
-              lineNode.textContent = text.slice(line.start, line.end).replace(/\n$/, '');
-              textField?.appendChild(lineNode);
-            }
-          }
-          projection.style.height = height + 'px';
-          projection.style.transform = 'none';
-          if (textField) textField.style.maxHeight = (visibleLineCount * lineHeight) + 'px';
+          range.detach?.();
         }
+        if(!lines.length)lines.push({top:0,start:0,end:0});
+        const selection=Math.max(0,Math.min(text.length,target.selectionStart??text.length));
+        let caretLine=Math.max(0,lines.findIndex(line=>selection>=line.start&&selection<=line.end));
+        if(caretLine<0)caretLine=lines.length-1;
+        const firstVisible=Math.max(0,Math.min(caretLine,lines.length-maxLines));
+        const visible=lines.slice(firstVisible,firstVisible+maxLines);
+        field.replaceChildren();
+        for(const line of visible){
+          const lineNode=document.createElement('div');
+          lineNode.className='plate-prompt-projection-line';
+          const beforeEnd=Math.max(line.start,Math.min(selection,line.end));
+          if(caretLine===lines.indexOf(line)){
+            const before=document.createTextNode(text.slice(line.start,beforeEnd).replace(/\n$/,''));
+            const after=document.createTextNode(text.slice(beforeEnd,line.end).replace(/\n$/,''));
+            lineNode.append(before,caret,after);
+          }else lineNode.textContent=text.slice(line.start,line.end).replace(/\n$/,'');
+          field.appendChild(lineNode);
+        }
+        const visibleCount=Math.min(maxLines,Math.max(1,lines.length));
+        const height=Math.max(oneLine,Math.ceil(paddingTop+paddingBottom+visibleCount*lineHeight));
+        target.style.height=height+'px'; target.style.overflowY='hidden';
+        wrap.style.height=height+'px'; row.style.height=height+'px'; row.style.minHeight=height+'px';
+        menu?.style.setProperty('--prompt-track-height',height+'px');
+        area.style.height=height+'px'; field.style.height=(visibleCount*lineHeight)+'px';
+        area.classList.toggle('is-empty',!text);
+        area.dataset.lineCount=String(lines.length); area.dataset.visibleLines=String(visibleCount);
+        area.dataset.firstVisibleLine=String(firstVisible);
+        caret.hidden=document.activeElement!==target||target.selectionStart!==target.selectionEnd;
       };
       prompt.addEventListener('focus', () => {
         prompt.closest('.plate-prompt-wrap')?.classList.add('is-focused');
+        resizePrompt(prompt);
       });
       prompt.addEventListener('blur', () => {
         prompt.closest('.plate-prompt-wrap')?.classList.remove('is-focused');
@@ -329,6 +291,10 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       const promptTextField = document.createElement('div');
       promptTextField.className = 'plate-prompt-text-field';
       promptProjection.appendChild(promptTextField);
+      const promptCaret = document.createElement('span');
+      promptCaret.className = 'plate-prompt-caret';
+      promptCaret.setAttribute('aria-hidden','true');
+      promptCaret.hidden = true;
       const promptMeasure = document.createElement('div');
       promptMeasure.className = 'plate-prompt-measure';
       promptMeasure.setAttribute('aria-hidden', 'true');
