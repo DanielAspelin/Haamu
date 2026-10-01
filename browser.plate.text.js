@@ -15,7 +15,7 @@ const payloadText=output=>{
 };
 
 const HaamuBrowserPlateText=Object.freeze({
- family:'browser',role:'browser.plate.text',type:'plate-text-projector',version:'0.1.0',
+ family:'browser',role:'browser.plate.text',type:'plate-text-projector',version:'0.2.0',
 
  project(output,plate,target,options={}){
   if(!plate||plate.type!=='web-plate')throw new TypeError('Web Plate required.');
@@ -25,13 +25,16 @@ const HaamuBrowserPlateText=Object.freeze({
   const height=Math.max(1,Math.trunc(target.clientHeight||1));
   const rendered=globalThis.HaamuWebText?.renderToPlate
    ? HaamuWebText.renderToPlate(value,plate,{
-      unit:'token',columns:1,
+      unit:'symbol',columns:Math.max(1,Math.trunc(options.columns??80)),
       grid:{width,height,gapX:0,gapY:0},
-      mesh:{animationScope:'token'}
+      mesh:{animationScope:'symbol'}
      })
    : null;
 
+  /* The DOM remains a compatibility painter. Placement authority is the
+     generated symbol mesh; each mesh node corresponds to a WebText symbol. */
   target.textContent=value;
+  target.dataset.placement='symbol-mesh';
   target.dataset.textState='projected';
   target.dataset.matrixRows=String(rendered?.matrix?.rows??0);
   target.dataset.matrixColumns=String(rendered?.matrix?.columns??0);
