@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.131.0',
+  version: '0.132.0',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -165,6 +165,9 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       contentRegion.className = 'plate-content-region';
       contentRegion.setAttribute('role', 'cell');
       contentRegion.setAttribute('aria-live', 'polite');
+      contentRegion.setAttribute('aria-atomic', 'false');
+      contentRegion.setAttribute('aria-relevant', 'additions text');
+      contentRegion.dataset.outputRole='log';
       contentRegion.dataset.logicalPlate = plateId;
       contentRegion.dataset.channel = channelId;
       contentRegion.dataset.inputSocket = plateSystems?.inputSocket?.socket?.id ?? '';
