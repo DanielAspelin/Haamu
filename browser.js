@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.127.5',
+  version: '0.127.6',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -689,16 +689,29 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
         if (event.target === activeCurrent && event.propertyName === 'transform') closeCurrent();
       };
       activeCurrent?.addEventListener('transitionend', onCloseTransitionEnd);
-      requestAnimationFrame(() => {
-        activeCurrent?.classList.remove('open');
-        /* Desktop handoff is concurrent: as the previous Plate begins its
-           contraction/fade, the selected Plate begins expanding in the same
-           animation frame. Mobile retains its qualified sequential handoff. */
-        if (activePlatform === 'desktop' && handoffAuthorized) {
-          handoffAuthorized = false;
-          openTargetNow();
-        }
-      });
+
+      if (activePlatform === 'desktop' && handoffAuthorized) {
+        /* Commit both closed start states first. Then one animation frame owns
+           the entire desktop exchange: old loses .open while new gains .open.
+           Do not call openTargetNow() here because its nested rAF would defer
+           the incoming Plate by an additional frame. */
+        const incoming = projections.desktop;
+        projections.stateSystem?.restore('desktop');
+        incoming.setAttribute('aria-hidden', 'false');
+        button.setAttribute('aria-expanded', 'true');
+        void activeCurrent?.offsetWidth;
+        void incoming?.offsetWidth;
+        handoffAuthorized = false;
+        requestAnimationFrame(() => {
+          activeCurrent?.classList.remove('open');
+          incoming?.classList.add('open', 'plate-transition-in');
+          setTimeout(() => incoming?.classList.remove('plate-transition-in'), 520);
+        });
+      } else {
+        requestAnimationFrame(() => {
+          activeCurrent?.classList.remove('open');
+        });
+      }
       closeFallback = setTimeout(closeCurrent, wasMaximized ? 620 : 600);
 
     });
