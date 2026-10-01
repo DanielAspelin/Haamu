@@ -33,6 +33,9 @@ const create=(id,definition={})=>{
   outputSocket:prompt.outputSocket,
   inputSocket:plate.inputSocket,
   prompt,plate,route,
+  receive(output){
+   return plate.accept(output);
+  },
   topology:Object.freeze({
    source:'prompt',sourceSocket:prompt.outputSocket.socket.id,
    target:'plate',targetSocket:plate.inputSocket.socket.id,
@@ -42,7 +45,7 @@ const create=(id,definition={})=>{
 };
 
 const HaamuConsole=Object.freeze({
- family:'console',role:'console',type:'interactive-io-console',version:'0.2.0',
+ family:'console',role:'console',type:'interactive-io-console',version:'0.3.0',
  create(id,definition={}){
   const key=String(id??'').trim();
   if(consoles.has(key))throw new Error('Console already exists: '+key);
@@ -52,5 +55,5 @@ const HaamuConsole=Object.freeze({
  get:id=>consoles.get(String(id))??null,
  list:()=>Object.freeze(Array.from(consoles.values())),
 });
-globalThis.HaamuFamilies['console']=Object.freeze({family:'console',role:'console',type:'interactive-io-console',version:'0.1.0'});
+globalThis.HaamuFamilies['console']=Object.freeze({family:'console',role:'console',type:'interactive-io-console',version:'0.3.0'});
 globalThis.HaamuConsole=HaamuConsole;
