@@ -181,7 +181,8 @@
     /* Projection substrate sits with the background projection plane,
        below Plate layer (z=2) and never owns interaction or geometry. */
     .haamu-projection-substrate{
-      position:absolute;inset:0;z-index:1;overflow:hidden;pointer-events:none;
+      position:fixed;inset:0;z-index:1;overflow:hidden;pointer-events:none;
+      contain:strict;
     }
     .haamu-projection-substrate-canvas{
       position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none;
@@ -763,14 +764,18 @@
       .mobile-compartment.second{inset:0 0 0 50%}
     }
     @media(prefers-reduced-motion:reduce){.corner,.pane,.corner-menu{transition:none}}
-      /* CLIENT/mobile conditional qualification: hide only the legacy
-       visible Prompt painters while native textarea remains input authority. */
+      /* CLIENT/mobile visual handover. The native textarea remains the
+       semantic Input/IME surface, but every legacy visible Prompt painter is
+       suppressed. Particle/WebText substrate is the sole visible convention. */
     .haamu-mobile .corner-menu[data-platform="mobile"][data-scope="client"] .plate-prompt{
-      color:transparent!important;-webkit-text-fill-color:transparent!important;caret-color:transparent!important;
+      color:transparent!important;-webkit-text-fill-color:transparent!important;
+      caret-color:transparent!important;text-shadow:none!important;
     }
     .haamu-mobile .corner-menu[data-platform="mobile"][data-scope="client"] .plate-prompt-projection,
-    .haamu-mobile .corner-menu[data-platform="mobile"][data-scope="client"] .plate-prompt-label{
-      visibility:hidden!important;
+    .haamu-mobile .corner-menu[data-platform="mobile"][data-scope="client"] .plate-prompt-label,
+    .haamu-mobile .corner-menu[data-platform="mobile"][data-scope="client"] .plate-prompt-caret,
+    .haamu-mobile .corner-menu[data-platform="mobile"][data-scope="client"] .plate-prompt-measure{
+      visibility:hidden!important;opacity:0!important;
     }
 </style>
 </head>
