@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.121.4',
+  version: '0.121.5',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -261,12 +261,20 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
         const visibleCount=Math.min(maxLines,Math.max(1,lines.length));
         const height=Math.max(oneLine,Math.ceil(paddingTop+paddingBottom+visibleCount*lineHeight));
         const threeLineHeight=Math.max(oneLine,Math.ceil(paddingTop+paddingBottom+maxLines*lineHeight));
-        const governedHeight=lines.length>maxLines?threeLineHeight:height;
+        const governedHeight=lines.length>=maxLines?threeLineHeight:height;
+        const overflowing=lines.length>maxLines;
         target.style.height=governedHeight+'px'; target.style.overflowY='hidden';
         wrap.style.height=governedHeight+'px'; row.style.height=governedHeight+'px'; row.style.minHeight=governedHeight+'px';
         menu?.style.setProperty('--prompt-track-height',governedHeight+'px');
+        /* At three lines the physical viewport locks permanently for overflow.
+           Line 4+ substitutes the oldest line; it may never alter geometry. */
         area.style.height=governedHeight+'px';
+        area.style.minHeight=governedHeight+'px';
+        area.style.maxHeight=governedHeight+'px';
         field.style.height=(Math.min(maxLines,visibleCount)*lineHeight)+'px';
+        field.style.minHeight=field.style.height;
+        field.style.maxHeight=field.style.height;
+        area.dataset.overflowing=String(overflowing);
         field.style.transform='none';
         area.classList.toggle('is-empty',!text);
         area.dataset.lineCount=String(lines.length); area.dataset.visibleLines=String(visibleCount);
