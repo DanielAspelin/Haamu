@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.127.8',
+  version: '0.127.9',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -615,39 +615,14 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       const current = [...menus.entries()].find(([, pair]) =>
         pair[activePlatform]?.classList.contains('open'));
       const same = current && current[0] === targetPosition;
-      let handoffAuthorized = !same;
-
-      /* Temporary bounded handoff evidence. Keep this nonvisual: it records
-         exactly what the first activation resolved without altering geometry,
-         timing, stacking or animation. */
-      const traceHandoff = (phase, detail = {}) => {
-        globalThis.HaamuPlateHandoffTrace ??= [];
-        globalThis.HaamuPlateHandoffTrace.push(Object.freeze({
-          phase,
-          platform: activePlatform,
-          target: targetPosition,
-          current: current?.[0] ?? null,
-          same: Boolean(same),
-          authorized: Boolean(handoffAuthorized),
-          ...detail
-        }));
-        if (globalThis.HaamuPlateHandoffTrace.length > 32)
-          globalThis.HaamuPlateHandoffTrace.splice(0, globalThis.HaamuPlateHandoffTrace.length - 32);
-      };
-      traceHandoff('click');
 
       const openTargetNow = () => {
+        if (same) return;
         const menu = projections[activePlatform];
         projections.stateSystem?.restore('desktop');
         menu.setAttribute('aria-hidden', 'false');
         button.setAttribute('aria-expanded', 'true');
-        /* Force the closed geometry to be committed before applying .open.
-           This gives the browser a real start state while still beginning the
-           incoming and outgoing transitions in the same interaction turn. */
         void menu.offsetWidth;
-        /* Commit the closed Plate as one rendered frame, then begin expansion
-           on the very next frame. Outgoing contraction has already started in
-           this same interaction turn, so the animations remain concurrent. */
         requestAnimationFrame(() => {
           menu.classList.add('open', 'plate-transition-in');
           setTimeout(() => menu.classList.remove('plate-transition-in'), 520);
@@ -665,16 +640,12 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       const wasMaximized = activePlatform === 'desktop'
         && pair.desktop?.dataset.plateState === 'maximized';
 
-      /* Start disappearance and contraction in one style change. For a
-         maximized desktop Plate, do not publish the logical restore first:
-         that publication changes width/height and creates a visible restored
-         stop before opacity begins. The logical state is restored only after
-         the outgoing Plate has completed its visual retirement. */
-      /* Establish the outgoing transition declaration first, then cross the
-         open -> closed geometry boundary on the next animation frame. This
-         prevents the browser from coalescing both class mutations into one
-         style calculation, which can produce a restored-looking dwell before
-         opacity/transform interpolation actually begins. */
+      /* Root-cause correction: desktop successor opening is not a close-state
+         completion responsibility. It is authorized directly by this click.
+         Register its next-frame expansion now, before registering the old
+         Plate's next-frame contraction. Mobile intentionally remains ordered. */
+      if (activePlatform === 'desktop' && !same) openTargetNow();
+
       activeCurrent?.classList.add('plate-transition-out');
       void activeCurrent?.offsetWidth;
 
@@ -692,58 +663,16 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
         shell.querySelector('.corner.start[data-position="' + position + '"]')
           ?.setAttribute('aria-expanded', 'false');
         if (wasMaximized) closingState?.restore('desktop');
-        if (handoffAuthorized) {
-          /* Consume this click's handoff exactly once. Do not re-evaluate the
-             stale 'same' snapshot captured before the old Plate closed. */
-          handoffAuthorized = false;
-          const menu = projections[activePlatform];
-          projections.stateSystem?.restore('desktop');
-          menu.setAttribute('aria-hidden', 'false');
-          button.setAttribute('aria-expanded', 'true');
-          void menu.offsetWidth;
-          requestAnimationFrame(() => {
-            menu.classList.add('open', 'plate-transition-in');
-            setTimeout(() => menu.classList.remove('plate-transition-in'), 520);
-          });
-        }
+        if (activePlatform === 'mobile' && !same) openTargetNow();
       };
       const onCloseTransitionEnd = (event) => {
         if (event.target === activeCurrent && event.propertyName === 'transform') closeCurrent();
       };
       activeCurrent?.addEventListener('transitionend', onCloseTransitionEnd);
 
-      if (activePlatform === 'desktop' && handoffAuthorized) {
-        /* Commit both closed start states first. Then one animation frame owns
-           the entire desktop exchange: old loses .open while new gains .open.
-           Do not call openTargetNow() here because its nested rAF would defer
-           the incoming Plate by an additional frame. */
-        const incoming = projections.desktop;
-        projections.stateSystem?.restore('desktop');
-        incoming.setAttribute('aria-hidden', 'false');
-        button.setAttribute('aria-expanded', 'true');
-        void activeCurrent?.offsetWidth;
-        void incoming?.offsetWidth;
-        handoffAuthorized = false;
-        requestAnimationFrame(() => {
-          traceHandoff('desktop-frame-before', {
-            outgoingOpen: Boolean(activeCurrent?.classList.contains('open')),
-            incomingOpen: Boolean(incoming?.classList.contains('open'))
-          });
-          activeCurrent?.classList.remove('open');
-          incoming?.classList.add('open', 'plate-transition-in');
-          traceHandoff('desktop-frame-after', {
-            outgoingOpen: Boolean(activeCurrent?.classList.contains('open')),
-            incomingOpen: Boolean(incoming?.classList.contains('open'))
-          });
-          /* The retiring Plate's completion must not clear the incoming Plate.
-             closeCurrent() below operates only on the old logical pair. */
-          setTimeout(() => incoming?.classList.remove('plate-transition-in'), 520);
-        });
-      } else {
-        requestAnimationFrame(() => {
-          activeCurrent?.classList.remove('open');
-        });
-      }
+      requestAnimationFrame(() => {
+        activeCurrent?.classList.remove('open');
+      });
       closeFallback = setTimeout(closeCurrent, wasMaximized ? 620 : 600);
 
     });
