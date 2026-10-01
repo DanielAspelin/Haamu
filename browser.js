@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.130.0',
+  version: '0.131.0',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -135,10 +135,16 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
     for(let li=0;li<lines.length;li++){const len=lines[li].length;
       if(caretIndex<=consumed+len){caretLine=li;caretColumn=Math.max(0,caretIndex-consumed);break;}
       consumed+=len;if(text[consumed]==='\n')consumed++;caretLine=Math.min(li+1,lines.length-1);caretColumn=lines[caretLine]?.length||0;}
-    const activeLine=Math.max(0,lines.length-1),visibleStart=Math.max(0,activeLine-2),baselineShift=activeLine*lineHeight;
-    for(let li=visibleStart;li<lines.length;li++)oc.fillText(lines[li],leftInset,anchorBaseline+(li*lineHeight)-baselineShift);
+    const activeLine=Math.max(0,lines.length-1),visibleStart=Math.max(0,activeLine-2);
+    /* v8.3 absolute baseline invariant: advancing the three-line viewport
+       changes line membership only. It must never move the active baseline. */
+    for(let li=visibleStart;li<lines.length;li++){
+      const relativeLine=li-activeLine;
+      oc.fillText(lines[li],leftInset,anchorBaseline+(relativeLine*lineHeight));
+    }
     const metrics=oc.measureText(lines[caretLine]||text||'Hg'),ascent=metrics.actualBoundingBoxAscent||11,
-      descent=metrics.actualBoundingBoxDescent||3,caretBaseline=anchorBaseline+(caretLine*lineHeight)-baselineShift,
+      descent=metrics.actualBoundingBoxDescent||3,
+      caretBaseline=anchorBaseline+((caretLine-activeLine)*lineHeight),
       textTop=caretBaseline-ascent,textBottom=caretBaseline+descent,textHeight=textBottom-textTop,
       caretHeight=textHeight*1.025*(.75+.275*((Math.sin(substratePhase)+1)/2)),
       caretCenter=(textTop+textBottom)/2-1,caretTop=caretCenter-caretHeight/2,
