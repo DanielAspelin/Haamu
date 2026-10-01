@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.121.0',
+  version: '0.121.1',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -236,22 +236,39 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
           } else if (!mirror || measured <= maxHeight) {
             projection.textContent = text;
           } else {
-            /* Find the shortest suffix whose mirrored rendering fits the
-               three-line viewport. This keeps only the newest visible window;
-               there is no projection scroll position to synchronize. */
-            let low = 0;
-            let high = text.length;
-            while (low < high) {
-              const mid = Math.floor((low + high) / 2);
-              mirror.textContent = text.slice(mid) || '\u200b';
-              if (mirror.scrollHeight <= maxHeight) high = mid;
-              else low = mid + 1;
+            /* Measure the ORIGINAL full-text wrapping. Re-wrapping a suffix at
+               column zero changes its line breaks and makes the cursor queue
+               horizontally. Range rectangles give the browser's actual visual
+               line membership, so the last three lines retain their original
+               boundaries. */
+            mirror.textContent = text;
+            const node = mirror.firstChild;
+            const lines = [];
+            if (node?.nodeType === Node.TEXT_NODE) {
+              const range = document.createRange();
+              let active = null;
+              for (let i = 0; i < text.length; i += 1) {
+                range.setStart(node, i);
+                range.setEnd(node, i + 1);
+                const rect = range.getBoundingClientRect();
+                if (!rect.height) continue;
+                if (!active || Math.abs(rect.top - active.top) > 1) {
+                  active = { top:rect.top, start:i, end:i + 1 };
+                  lines.push(active);
+                } else {
+                  active.end = i + 1;
+                }
+              }
+              range.detach?.();
             }
-            let visible = text.slice(low);
-            /* Avoid beginning the rolling window in the middle of a surrogate
-               pair. */
-            if (visible && /[\uDC00-\uDFFF]/.test(visible[0])) visible = text.slice(Math.max(0, low - 1));
-            projection.textContent = visible;
+            const visibleLines = lines.slice(-3);
+            projection.replaceChildren();
+            for (const line of visibleLines) {
+              const lineNode = document.createElement('div');
+              lineNode.className = 'plate-prompt-projection-line';
+              lineNode.textContent = text.slice(line.start, line.end).replace(/\n$/, '');
+              projection.appendChild(lineNode);
+            }
           }
           projection.style.height = height + 'px';
           projection.style.transform = 'none';
