@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.115.0',
+  version: '0.116.0',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -111,6 +111,7 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
     });
     const plateSystems = globalThis.HaamuBrowserPlateSystems?.forPlate(plateId, { channelId });
     const windowing = globalThis.HaamuBrowserWindowing?.forPlate(plateId);
+    const plateState = globalThis.HaamuBrowserPlateState?.forPlate(plateId);
     const webPlate = globalThis.HaamuWebPlate?.create?.({ id:plateId, corner, platform:'common' });
     const commandChannel = globalThis.HaamuCommandChannel?.get?.(channelId);
     commandChannel?.bindOutput?.(plateId);
@@ -126,6 +127,30 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       menu.dataset.plate = plateId;
       menu.dataset.channel = channelId;
       menu.setAttribute('aria-hidden', 'true');
+      menu.dataset.plateState = platform === 'mobile' ? 'automatic' : (plateState?.state('desktop') ?? 'normal');
+
+      if (platform === 'desktop' && plateState) {
+        const controls = document.createElement('div');
+        controls.className = 'plate-state-controls';
+        controls.setAttribute('aria-label', plateTitles[corner] + ' Plate controls');
+        const makeControl = (action, label, symbol) => {
+          const control = document.createElement('button');
+          control.type = 'button';
+          control.className = 'plate-state-control';
+          control.dataset.action = action;
+          control.setAttribute('aria-label', label);
+          control.textContent = symbol;
+          control.addEventListener('click', event => {
+            event.stopPropagation();
+            plateState[action]('desktop');
+          });
+          return control;
+        };
+        controls.appendChild(makeControl('minimize', 'Minimize ' + plateTitles[corner] + ' Plate', '−'));
+        controls.appendChild(makeControl('maximize', 'Maximize ' + plateTitles[corner] + ' Plate', '□'));
+        controls.appendChild(makeControl('restore', 'Restore ' + plateTitles[corner] + ' Plate', '↺'));
+        menu.appendChild(controls);
+      }
 
       const matrix = document.createElement('div');
       matrix.className = 'plate-matrix';
@@ -228,6 +253,12 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       projections[platform] = menu;
     }
 
+    if (plateState) {
+      plateState.subscribe(snapshot => {
+        projections.mobile.dataset.plateState = 'automatic';
+        projections.desktop.dataset.plateState = snapshot.desktop;
+      });
+    }
     menus.set(corner, projections);
     button.setAttribute('aria-expanded', 'false');
     let buttonMorph = null;
