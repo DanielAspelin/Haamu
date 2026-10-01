@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.120.0',
+  version: '0.120.1',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -218,7 +218,11 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
           row.style.height = height + 'px';
           row.style.minHeight = height + 'px';
         }
-        if (menu) menu.style.setProperty('--prompt-track-height', height + 'px');
+        if (menu) {
+          menu.style.setProperty('--prompt-track-height', height + 'px');
+          const projection = target.closest('.plate-prompt-wrap')?.querySelector('.plate-prompt-projection');
+          if (projection) projection.style.height = height + 'px';
+        }
       };
       prompt.addEventListener('input', () => {
         logicalPrompts.set(promptId, prompt.value);
