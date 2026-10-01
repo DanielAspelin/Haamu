@@ -15,7 +15,7 @@ const HaamuWebText = Object.freeze({
   family: 'web',
   role: 'web.text',
   type: 'text-input-output-processor-allocator-symbolizer-parser-mutator-deparser-font-renderer',
-  version: '1.9.0',
+  version: '1.10.0',
 
   key(event = {}) {
     const key = event.key ?? null;
@@ -85,7 +85,7 @@ const HaamuWebText = Object.freeze({
     const start=Math.max(0,Math.min(text.length,Math.trunc(finite(input.selectionStart, text.length))));
     const end=Math.max(start,Math.min(text.length,Math.trunc(finite(input.selectionEnd,start))));
     const inputType=input.inputType ?? null;
-    if(inputType==='insertText' && input.data===' ') return this.space(text,{position:start});
+    if(inputType==='insertText' && input.data===' ') return start===end ? this.space(text,{position:start}) : this.mutate(text,{operation:'replace',start,end,value:' '});
     if(inputType==='deleteContentBackward') return this.backspace(text,{position:end,start,end});
     if(inputType==='insertLineBreak' || inputType==='insertParagraph') {
       if(start!==end) {
