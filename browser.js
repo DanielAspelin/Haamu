@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.134.0',
+  version: '0.135.0',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -342,20 +342,29 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
           resizePrompt(peer);
         }
       };
-      prompt.addEventListener('input', () => synchronizePrompt(prompt));
-      /* Selection is independent from value mutation. Re-project on native
-         caret/selection movement so the visual Text Field can subsequently
-         consume the browser's authoritative insertion index without changing
-         Prompt geometry or text state. */
-      const synchronizeSelection = () => {
+      /* Browser owns projection reactions only. Prompt Input owns semantic
+         input/composition/selection observation; this listener synchronizes
+         the logical peer and then performs one visual/lifecycle projection. */
+      const projectPromptInput = () => {
+        synchronizePrompt(prompt);
+        prompt.dataset.selectionStart = String(prompt.selectionStart ?? 0);
+        prompt.dataset.selectionEnd = String(prompt.selectionEnd ?? 0);
+        prompt.dataset.selectionDirection = prompt.selectionDirection || 'none';
+        promptWrap?.classList.toggle('has-value', prompt.value.length > 0);
+        const state=promptSystems?.transition?.(prompt.dataset.promptMode==='continuation'?'continuation':'primary',{reason:'input'});
+        if(state) prompt.dataset.promptState=state.state;
+        resizePrompt(prompt);
+      };
+      prompt.addEventListener('input', projectPromptInput);
+      const projectPromptSelection = () => {
         prompt.dataset.selectionStart = String(prompt.selectionStart ?? 0);
         prompt.dataset.selectionEnd = String(prompt.selectionEnd ?? 0);
         prompt.dataset.selectionDirection = prompt.selectionDirection || 'none';
         resizePrompt(prompt);
       };
-      prompt.addEventListener('select', synchronizeSelection);
-      prompt.addEventListener('keyup', synchronizeSelection);
-      prompt.addEventListener('pointerup', synchronizeSelection);
+      prompt.addEventListener('select', projectPromptSelection);
+      prompt.addEventListener('keyup', projectPromptSelection);
+      prompt.addEventListener('pointerup', projectPromptSelection);
 
 
       const promptWrap = document.createElement('div');
@@ -401,12 +410,6 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
           try { prompt.setSelectionRange(end,end); } catch {}
           resizePrompt(prompt);
         }
-      });
-      prompt.addEventListener('input', () => {
-        promptWrap.classList.toggle('has-value', prompt.value.length > 0);
-        const state=promptSystems?.transition?.(prompt.dataset.promptMode==='continuation'?'continuation':'primary',{reason:'input'});
-        if(state) prompt.dataset.promptState=state.state;
-        resizePrompt(prompt);
       });
       prompt.addEventListener('keydown', (event) => {
         if(event.isComposing)return;
