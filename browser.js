@@ -296,8 +296,6 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       const openTarget = () => {
         if (same) return;
         const menu = projections[activePlatform];
-        /* Opening is a normalization boundary: a Plate never inherits a
-           previous maximized presentation after another corner was selected. */
         projections.stateSystem?.restore('desktop');
         menu.setAttribute('aria-hidden', 'false');
         button.setAttribute('aria-expanded', 'true');
@@ -312,30 +310,28 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       const [position, pair] = current;
       const activeCurrent = pair[activePlatform];
       const closingState = pair.stateSystem ?? null;
+      const wasMaximized = activePlatform === 'desktop'
+        && pair.desktop?.dataset.plateState === 'maximized';
 
-      const closeCurrent = () => {
-        /* Closing is also a normalization boundary. Restore unconditionally
-           rather than depending on a potentially stale presentation query. */
-        closingState?.restore('desktop');
+      /* A button-to-button change is one continuous transition. Normalize the
+         logical state immediately, while the old Plate visually morphs home.
+         The destination Plate begins opening during that same morph rather
+         than waiting for a serial restore -> close -> open sequence. */
+      closingState?.restore('desktop');
+      if (wasMaximized) activeCurrent?.classList.add('plate-restoring');
+
+      if (!same) {
+        setTimeout(openTarget, wasMaximized ? 170 : 40);
+      }
+
+      setTimeout(() => {
         for (const active of [pair.mobile, pair.desktop]) {
           active?.classList.remove('open', 'plate-restoring');
           active?.setAttribute('aria-hidden', 'true');
         }
         shell.querySelector('.corner.start[data-position="' + position + '"]')
           ?.setAttribute('aria-expanded', 'false');
-      };
-
-      if (activePlatform === 'desktop' && pair.desktop?.dataset.plateState === 'maximized') {
-        activeCurrent?.classList.add('plate-restoring');
-        closingState?.restore('desktop');
-        setTimeout(() => {
-          closeCurrent();
-          if (!same) setTimeout(openTarget, 70);
-        }, 500);
-      } else {
-        closeCurrent();
-        if (!same) setTimeout(openTarget, 70);
-      }
+      }, wasMaximized ? 500 : 260);
     });
   }
 
