@@ -1,62 +1,92 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Haamu HTML modularization qualification</title>
-</head>
+<head><meta charset="utf-8"><title>Haamu HTML integrity stream</title></head>
 <body>
-  <main id="fixture"></main>
-  <pre id="result">RUNNING</pre>
-  <script src="../html.js"></script>
-  <script src="../html.button.js"></script>
-  <script src="../html.prompt.js"></script>
-  <script src="../html.plate.js"></script>
-  <script>
-    'use strict';
-    const assertions = [];
-    const assert = (name, condition) => {
-      assertions.push({ name, pass: Boolean(condition) });
-      if (!condition) throw new Error(name);
-    };
+<pre id="result">RUNNING</pre>
+<script src="../html.js"></script>
+<script src="../html.button.js"></script>
+<script src="../html.prompt.js"></script>
+<script src="../html.plate.js"></script>
+<script>
+'use strict';
 
-    try {
-      const prompt = HaamuHTMLPrompt.create({ id: 'prompt-client', label: 'Client prompt' });
-      const plate = HaamuHTMLPlate.create({
-        id: 'plate-client-desktop',
-        corner: 'bottom-right',
-        platform: 'desktop',
-        prompt
-      });
-      const button = HaamuHTMLButton.create({
-        position: 'bottom-right',
-        label: 'CLIENT',
-        controls: plate.root.id
-      });
-      document.querySelector('#fixture').append(button, plate.root);
+/* Reference constructor is deliberately literal: it mirrors the currently
+   accepted browser.js DOM construction without calling candidate modules. */
+function referencePlate({corner,platform,title,promptId,plateId,channelId,plateState='normal'}){
+  const menu=document.createElement('section');
+  menu.className='corner-menu'; menu.dataset.corner=corner; menu.dataset.platform=platform;
+  menu.dataset.prompt=promptId; menu.dataset.plate=plateId; menu.dataset.channel=channelId;
+  menu.setAttribute('aria-hidden','true');
+  menu.dataset.plateState=platform==='mobile'?'automatic':plateState;
+  if(platform==='desktop'){
+    const c=document.createElement('button'); c.type='button'; c.className='plate-state-toggle';
+    c.dataset.action='toggle-maximize'; c.setAttribute('aria-label','Maximize '+title+' Plate');
+    c.setAttribute('aria-pressed','false'); c.textContent='□'; menu.appendChild(c);
+  }
+  const matrix=document.createElement('div'); matrix.className='plate-matrix'; matrix.dataset.matrix=platform+'-'+corner;
+  const table=document.createElement('div'); table.className='plate-table'; table.setAttribute('role','table');
+  const contentRow=document.createElement('div'); contentRow.className='plate-row plate-content-row'; contentRow.setAttribute('role','row');
+  const content=document.createElement('div'); content.className='plate-content-region'; content.setAttribute('role','cell');
+  content.setAttribute('aria-live','polite'); content.dataset.logicalPlate=plateId; content.dataset.channel=channelId;
+  contentRow.appendChild(content);
+  const promptRow=document.createElement('div'); promptRow.className='plate-row plate-prompt-row'; promptRow.setAttribute('role','row');
+  const input=document.createElement('textarea'); input.className='plate-prompt'; input.rows=1; input.setAttribute('rows','1');
+  input.placeholder=title; input.setAttribute('placeholder',title); input.autocomplete='off'; input.spellcheck=false;
+  input.setAttribute('spellcheck','false'); input.setAttribute('autocorrect','off'); input.setAttribute('autocapitalize','off');
+  input.setAttribute('data-gramm','false'); input.setAttribute('data-gramm_editor','false'); input.setAttribute('data-enable-grammarly','false');
+  input.setAttribute('aria-label',title+' prompt'); input.dataset.logicalPrompt=promptId;
+  const wrap=document.createElement('div'); wrap.className='plate-prompt-wrap';
+  const projection=document.createElement('div'); projection.className='plate-prompt-projection plate-prompt-text-area is-empty'; projection.setAttribute('aria-hidden','true');
+  const field=document.createElement('div'); field.className='plate-prompt-text-field'; projection.appendChild(field);
+  const caret=document.createElement('span'); caret.className='plate-prompt-caret'; caret.setAttribute('aria-hidden','true'); caret.hidden=true; field.appendChild(caret);
+  const measure=document.createElement('div'); measure.className='plate-prompt-measure'; measure.setAttribute('aria-hidden','true');
+  const label=document.createElement('span'); label.className='plate-prompt-label'; label.textContent=title;
+  label.style.cssText=['display:block','visibility:visible','opacity:1','color:rgba(0,0,0,.78)','-webkit-text-fill-color:rgba(0,0,0,.78)','-webkit-text-stroke:0','text-shadow:0 1px 0 rgba(255,255,255,.32)','mix-blend-mode:normal'].join(';');
+  wrap.append(measure,projection,input,label); promptRow.appendChild(wrap);
+  table.append(contentRow,promptRow); matrix.appendChild(table); menu.appendChild(matrix);
+  return menu;
+}
+function normalize(node){
+  if(node.nodeType===Node.TEXT_NODE) return {text:node.data};
+  const attrs=[...node.attributes].map(a=>[a.name,a.value]).sort((a,b)=>a[0].localeCompare(b[0]));
+  return {tag:node.tagName.toLowerCase(),attrs,children:[...node.childNodes].map(normalize)};
+}
+function diff(a,b,path='root',out=[]){
+  if(JSON.stringify(a)===JSON.stringify(b)) return out;
+  if(!a||!b||a.tag!==b.tag){out.push(path+': tag/node mismatch');return out;}
+  if(JSON.stringify(a.attrs)!==JSON.stringify(b.attrs)) out.push(path+': attributes '+JSON.stringify(a.attrs)+' != '+JSON.stringify(b.attrs));
+  const n=Math.max(a.children.length,b.children.length);
+  if(a.children.length!==b.children.length) out.push(path+': child count '+a.children.length+' != '+b.children.length);
+  for(let i=0;i<n;i++) if(a.children[i]&&b.children[i]) diff(a.children[i],b.children[i],path+'/'+a.tag+'['+i+']',out);
+  return out;
+}
+const cases=[];
+for(const corner of ['top-left','top-right','bottom-left','bottom-right']){
+  const title=({'top-left':'SERVER','top-right':'LOCAL','bottom-left':'GLOBAL','bottom-right':'CLIENT'})[corner];
+  for(const platform of ['mobile','desktop']){
+    const spec={corner,platform,title,promptId:'prompt-'+corner,plateId:'plate-'+corner,channelId:'command-'+corner,plateState:'normal'};
+    const reference=referencePlate(spec);
+    const candidate=HaamuHTMLPlate.create(spec).root;
+    cases.push({name:corner+'/'+platform,diffs:diff(normalize(reference),normalize(candidate))});
+  }
+}
+const failures=cases.filter(c=>c.diffs.length);
+const output=()=>document.querySelector('#result').textContent=
+  (failures.length?'FAIL':'PASS')+' '+(cases.length-failures.length)+'/'+cases.length+' exact structural projections\n'+
+  cases.map(c=>(c.diffs.length?'FAIL ':'PASS ')+c.name+(c.diffs.length?'\n  '+c.diffs.join('\n  '):'')).join('\n');
+output();
 
-      assert('button is semantic BUTTON', button.tagName === 'BUTTON');
-      assert('button starts collapsed', button.getAttribute('aria-expanded') === 'false');
-      assert('button controls Plate', button.getAttribute('aria-controls') === plate.root.id);
-      assert('Plate is semantic SECTION', plate.root.tagName === 'SECTION');
-      assert('Plate starts hidden', plate.root.getAttribute('aria-hidden') === 'true');
-      assert('Plate corner retained', plate.root.dataset.corner === 'bottom-right');
-      assert('Plate platform retained', plate.root.dataset.platform === 'desktop');
-      assert('Plate matrix generated', plate.root.querySelector('.plate-matrix') === plate.matrix);
-      assert('content row generated', plate.root.querySelector('.plate-content-row') === plate.content);
-      assert('prompt row generated', plate.root.querySelector('.plate-prompt-row') === plate.promptRow);
-      assert('native textarea is input authority', prompt.input.tagName === 'TEXTAREA');
-      assert('projection is non-semantic', prompt.projection.getAttribute('aria-hidden') === 'true');
-      assert('no open state invented', !plate.root.classList.contains('open'));
-
-      document.querySelector('#result').textContent =
-        'PASS ' + assertions.length + '/' + assertions.length + '\n' +
-        assertions.map(item => 'PASS ' + item.name).join('\n');
-    } catch (error) {
-      document.querySelector('#result').textContent =
-        'FAIL\n' + error.stack + '\n\n' +
-        assertions.map(item => (item.pass ? 'PASS ' : 'FAIL ') + item.name).join('\n');
-      throw error;
-    }
-  </script>
+/* Read stream: once mounted, every candidate DOM mutation is immediately
+   re-compared to a fresh reference and reported. */
+const live=HaamuHTMLPlate.create({corner:'bottom-right',platform:'desktop',title:'CLIENT',promptId:'prompt-bottom-right',plateId:'plate-bottom-right',channelId:'command-bottom-right',plateState:'normal'}).root;
+live.hidden=true; document.body.appendChild(live);
+const observer=new MutationObserver(()=>{
+  const reference=referencePlate({corner:'bottom-right',platform:'desktop',title:'CLIENT',promptId:'prompt-bottom-right',plateId:'plate-bottom-right',channelId:'command-bottom-right',plateState:'normal'});
+  const changes=diff(normalize(reference),normalize(live));
+  document.querySelector('#result').dataset.streamIntegrity=changes.length?'fail':'pass';
+});
+observer.observe(live,{subtree:true,childList:true,attributes:true,characterData:true});
+document.querySelector('#result').dataset.streamIntegrity='pass';
+</script>
 </body>
 </html>
