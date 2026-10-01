@@ -16,6 +16,10 @@ class V1 {
   static NAME = 'Haamu V1';
   static VERSION = '1.0.0';
   static STATE = 'under-construction';
+
+  static PLATFORM = class PLATFORM {};
+  static BROWSER = class BROWSER {};
+  static WEB = class WEB {};
 }
 
 class V0 {
