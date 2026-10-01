@@ -3,16 +3,12 @@
 /**
  * Haamu V1 monolith.
  *
- * Canonical construction target for the V1 implementation.
- * Responsibilities are added here incrementally and qualified before
- * becoming part of the established V1 runtime.
+ * V1 is constructed class by class in semantic and dependency order.
  */
-(() => {
-  const V1 = Object.freeze({
-    name: 'Haamu V1',
-    version: '1.0.0',
-    state: 'under-construction'
-  });
+class V1 {
+  static NAME = 'Haamu V1';
+  static VERSION = '1.0.0';
+  static STATE = 'under-construction';
+}
 
-  globalThis.HaamuV1 = V1;
-})();
+globalThis.V1 = V1;
