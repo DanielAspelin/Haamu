@@ -59,7 +59,7 @@ const create=(plateId,definition={})=>{
 };
 
 const HaamuBrowserPlateSystems=Object.freeze({
- family:'browser',role:'browser.plate.systems',type:'per-plate-output-systems',version:'0.6.0',
+ family:'browser',role:'browser.plate.systems',type:'per-plate-input-output-receiver',version:'0.6.1',
  forPlate(plate,definition={}){
   const plateId=String(typeof plate==='string'?plate:(plate?.id??plate?.dataset?.plate??'')).trim();
   if(!plateId)throw new RangeError('Plate identity required.');
