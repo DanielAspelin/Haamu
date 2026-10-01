@@ -303,8 +303,13 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
            This gives the browser a real start state while still beginning the
            incoming and outgoing transitions in the same interaction turn. */
         void menu.offsetWidth;
-        menu.classList.add('open', 'plate-transition-in');
-        setTimeout(() => menu.classList.remove('plate-transition-in'), 520);
+        /* Commit the closed Plate as one rendered frame, then begin expansion
+           on the very next frame. Outgoing contraction has already started in
+           this same interaction turn, so the animations remain concurrent. */
+        requestAnimationFrame(() => {
+          menu.classList.add('open', 'plate-transition-in');
+          setTimeout(() => menu.classList.remove('plate-transition-in'), 520);
+        });
       };
 
       if (!current) {
