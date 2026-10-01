@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.118.0',
+  version: '0.119.0',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -168,9 +168,10 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       promptRow.className = 'plate-row plate-prompt-row';
       promptRow.setAttribute('role', 'row');
 
-      const prompt = document.createElement('input');
+      const prompt = document.createElement('textarea');
       prompt.className = 'plate-prompt';
-      prompt.type = 'text';
+      prompt.rows = 1;
+      prompt.setAttribute('rows', '1');
       prompt.placeholder = plateTitles[corner];
       prompt.setAttribute('placeholder', plateTitles[corner]);
       prompt.autocomplete = 'off';
@@ -180,10 +181,26 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       prompt.setAttribute('autocapitalize', 'off');
       prompt.setAttribute('aria-label', plateTitles[corner] + ' prompt');
       prompt.dataset.logicalPrompt = promptId;
+      const resizePrompt = target => {
+        target.style.height = '44px';
+        target.style.height = Math.min(132, Math.max(44, target.scrollHeight)) + 'px';
+        const height = target.style.height;
+        const wrap = target.closest('.plate-prompt-wrap');
+        const row = target.closest('.plate-prompt-row');
+        if (wrap) wrap.style.height = height;
+        if (row) {
+          row.style.height = height;
+          row.style.minHeight = height;
+        }
+      };
       prompt.addEventListener('input', () => {
         logicalPrompts.set(promptId, prompt.value);
+        resizePrompt(prompt);
         for (const peer of plateLayer.querySelectorAll('[data-logical-prompt="' + promptId + '"]')) {
-          if (peer !== prompt) peer.value = prompt.value;
+          if (peer !== prompt) {
+            peer.value = prompt.value;
+            resizePrompt(peer);
+          }
         }
       });
 
@@ -234,10 +251,12 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
           }));
         }
         prompt.value = '';
+        resizePrompt(prompt);
         logicalPrompts.set(promptId, '');
         promptWrap.classList.remove('has-value');
         for (const peer of plateLayer.querySelectorAll('[data-logical-prompt="' + promptId + '"]')) {
           peer.value = '';
+          resizePrompt(peer);
           peer.closest('.plate-prompt-wrap')?.classList.remove('has-value');
         }
       });
