@@ -15,7 +15,7 @@ const HaamuWebText = Object.freeze({
   family: 'web',
   role: 'web.text',
   type: 'text-processor-allocator-parser-renderer',
-  version: '0.7.0',
+  version: '0.8.0',
 
   normalize(value, form = 'NFC') {
     const text = value == null ? '' : String(value);
@@ -92,6 +92,39 @@ const HaamuWebText = Object.freeze({
     });
   },
 
+  composition(plate, value, options = {}) {
+    if (!plate || plate.type !== 'web-plate') throw new TypeError('WebText target must be a Plate.');
+    const record = this.process(value, options);
+    const unit = options.unit ?? 'token';
+    const sourceUnits = unit === 'glyph' ? record.characters : record.parsed.tokens;
+    const columns = Math.max(1, Math.trunc(finite(options.columns, 1)));
+    const cells = sourceUnits.map((source, index) => {
+      const text = unit === 'glyph' ? source : source.value;
+      const id = `${unit}:${index}`;
+      return {
+        row: Math.trunc(index / columns), column: index % columns,
+        id, text, link: options.links?.[id] ?? null,
+      };
+    });
+    const rows = Math.max(1, Math.ceil(cells.length / columns));
+    const matrix = plate.generateMatrix({ rows, columns, cells });
+    const grid = plate.generateGrid(options.grid ?? {});
+    const mesh = plate.generateMesh({ ...(options.mesh ?? {}), animationScope: unit });
+    return Object.freeze({ plateId: plate.id, unit, record, matrix, grid, mesh });
+  },
+
+  processForPlate(value, plate, options = {}) {
+    const composition = this.composition(plate, value, options);
+    return Object.freeze({
+      type: 'plate-text-processing',
+      target: plate.id,
+      record: composition.record,
+      matrix: composition.matrix,
+      grid: composition.grid,
+      mesh: composition.mesh,
+    });
+  },
+
   allocate(value, options = {}) {
     const record = this.process(value, options);
     const start = Math.max(0, Math.trunc(finite(options.start, 0)));
@@ -108,6 +141,19 @@ const HaamuWebText = Object.freeze({
       available: capacity - record.characters.length,
       units: options.allocationUnits ?? 'characters',
       record,
+    });
+  },
+
+  allocateToPlate(value, plate, options = {}) {
+    const composition = this.composition(plate, value, options);
+    const allocation = this.allocate(value, options);
+    return Object.freeze({
+      type: 'plate-text-allocation',
+      target: plate.id,
+      allocation,
+      matrix: composition.matrix,
+      grid: composition.grid,
+      mesh: composition.mesh,
     });
   },
 
@@ -130,28 +176,15 @@ const HaamuWebText = Object.freeze({
   },
 
   renderToPlate(value, plate, options = {}) {
-    if (!plate || plate.type !== 'web-plate') throw new TypeError('WebText target must be a Plate.');
+    const composition = this.composition(plate, value, options);
     const rendered = this.render(value, options);
-    const cells = rendered.units.map((unit, index) => ({
-      row: Math.trunc(index / Math.max(1, Number(options.columns) || 1)),
-      column: index % Math.max(1, Number(options.columns) || 1),
-      id: unit.id,
-      text: unit.value,
-      link: options.links?.[unit.id] ?? null,
-    }));
-    const columns = Math.max(1, Number(options.columns) || 1);
-    const rows = Math.max(1, Math.ceil(cells.length / columns));
-    const matrix = plate.generateMatrix({ rows, columns, cells });
-    const grid = plate.generateGrid(options.grid ?? {});
-    const mesh = plate.generateMesh(options.mesh ?? {});
-
     return Object.freeze({
       type: 'plate-text-render',
       target: plate.id,
       text: rendered,
-      matrix,
-      grid,
-      mesh,
+      matrix: composition.matrix,
+      grid: composition.grid,
+      mesh: composition.mesh,
     });
   },
 
