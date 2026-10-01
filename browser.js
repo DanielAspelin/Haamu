@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.121.7',
+  version: '0.121.8',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -365,6 +365,22 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       });
       prompt.addEventListener('input', () => {
         promptWrap.classList.toggle('has-value', prompt.value.length > 0);
+        /* Paint-path fail-safe: the logical input event directly publishes
+           the current value into the visible field before measurement. This
+           separates basic visibility from the wrapping/Range algorithm. */
+        promptTextField.textContent = prompt.value;
+        promptTextField.style.setProperty('position','absolute','important');
+        promptTextField.style.setProperty('left','12px','important');
+        promptTextField.style.setProperty('right','12px','important');
+        promptTextField.style.setProperty('bottom','13px','important');
+        promptTextField.style.setProperty('z-index','30','important');
+        promptTextField.style.setProperty('display','block','important');
+        promptTextField.style.setProperty('color','white','important');
+        promptTextField.style.setProperty('-webkit-text-fill-color','white','important');
+        promptTextField.style.setProperty('opacity','1','important');
+        promptTextField.style.setProperty('visibility','visible','important');
+        promptTextField.style.setProperty('pointer-events','none','important');
+        resizePrompt(prompt);
       });
       prompt.addEventListener('keydown', (event) => {
         if (event.key !== 'Enter' || event.isComposing) return;
