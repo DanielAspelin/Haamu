@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.119.0',
+  version: '0.119.1',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -182,15 +182,20 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       prompt.setAttribute('aria-label', plateTitles[corner] + ' prompt');
       prompt.dataset.logicalPrompt = promptId;
       const resizePrompt = target => {
-        target.style.height = '44px';
-        target.style.height = Math.min(132, Math.max(44, target.scrollHeight)) + 'px';
-        const height = target.style.height;
+        target.style.height = 'auto';
+        const lineHeight = parseFloat(getComputedStyle(target).lineHeight) || 17;
+        const verticalPadding = 18;
+        const oneLine = 44;
+        const maxHeight = Math.ceil(verticalPadding + lineHeight * 3);
+        const height = Math.min(maxHeight, Math.max(oneLine, target.scrollHeight));
+        target.style.height = height + 'px';
+        target.style.overflowY = target.scrollHeight > maxHeight ? 'auto' : 'hidden';
         const wrap = target.closest('.plate-prompt-wrap');
         const row = target.closest('.plate-prompt-row');
-        if (wrap) wrap.style.height = height;
+        if (wrap) wrap.style.height = height + 'px';
         if (row) {
-          row.style.height = height;
-          row.style.minHeight = height;
+          row.style.height = height + 'px';
+          row.style.minHeight = height + 'px';
         }
       };
       prompt.addEventListener('input', () => {
