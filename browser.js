@@ -293,6 +293,16 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
 
       if (current) {
         const [position, pair] = current;
+        const closingDesktop = pair.desktop;
+        const closingPlateId = closingDesktop?.dataset.logicalPlate;
+        const closingState = closingPlateId
+          ? globalThis.HaamuBrowserPlateState?.forPlate(closingPlateId)
+          : null;
+        if (closingState?.state('desktop') === 'maximized') {
+          closingDesktop?.classList.add('plate-restoring');
+          closingState.restore('desktop');
+          setTimeout(() => closingDesktop?.classList.remove('plate-restoring'), 560);
+        }
         for (const active of Object.values(pair)) {
           active.classList.remove('open');
           active.setAttribute('aria-hidden', 'true');
@@ -315,6 +325,14 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
     for (const [position, pair] of menus.entries()) {
       const open = Object.values(pair).filter(active => active.classList.contains('open'));
       if (!open.length) continue;
+      const desktop = pair.desktop;
+      const plateId = desktop?.dataset.logicalPlate;
+      const plateState = plateId ? globalThis.HaamuBrowserPlateState?.forPlate(plateId) : null;
+      if (plateState?.state('desktop') === 'maximized') {
+        desktop?.classList.add('plate-restoring');
+        plateState.restore('desktop');
+        setTimeout(() => desktop?.classList.remove('plate-restoring'), 560);
+      }
       for (const active of open) {
         active.classList.remove('open');
         active.setAttribute('aria-hidden', 'true');
