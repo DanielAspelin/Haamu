@@ -453,6 +453,15 @@
       outline:0!important;
       box-shadow:none!important;
     }
+    /* Prompt text is intentionally plain while being entered. Suppress
+       browser spell/grammar decoration without changing text semantics. */
+    .plate-prompt{
+      text-decoration:none!important;
+      text-decoration-line:none!important;
+      text-decoration-color:transparent!important;
+      text-decoration-thickness:0!important;
+      -webkit-text-decoration:none!important;
+    }
 
     @media(max-width:600px){
       /* Qualified mobile geometry recovered from eef48b6d...:
