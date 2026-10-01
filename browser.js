@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.122.1',
+  version: '0.122.2',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -218,9 +218,17 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
            the mirror exists only to obtain browser-exact wrap geometry. */
         const webText=globalThis.HaamuWebText;
         const symbols=webText?.symbolize ? webText.symbolize(text) : Array.from(text);
+        const selectionState=webText?.selection ? webText.selection({
+          anchor:selection, focus:selectionEnd,
+        }) : null;
         const cursor=webText?.cursor ? webText.cursor({
           position:selection, anchor:selection, focus:selectionEnd,
           visible:document.activeElement===target, active:document.activeElement===target,
+        }) : null;
+        const caretState=webText?.caret ? webText.caret({
+          position:selection,
+          visible:document.activeElement===target && selection===selectionEnd,
+          active:document.activeElement===target,
         }) : null;
         const font=webText?.font ? webText.font({
           family:style.fontFamily, weight:style.fontWeight, style:style.fontStyle,
@@ -291,7 +299,12 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
         field.dataset.symbolCount=String(symbols.length);
         if(font) field.dataset.fontFamily=String(font.family);
         if(cursor) field.dataset.cursorPosition=String(cursor.position);
-        caret.hidden=document.activeElement!==target||selection!==selectionEnd;
+        if(selectionState){
+          field.dataset.selectionStart=String(selectionState.start);
+          field.dataset.selectionEnd=String(selectionState.end);
+        }
+        if(caretState) field.dataset.caretPosition=String(caretState.position);
+        caret.hidden=caretState ? !caretState.visible : document.activeElement!==target||selection!==selectionEnd;
       };
       prompt.addEventListener('focus', () => {
         prompt.closest('.plate-prompt-wrap')?.classList.add('is-focused');
