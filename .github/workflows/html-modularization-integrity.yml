@@ -56,3 +56,15 @@ jobs:
           grep -q "className: 'corner-menu'" html.plate.js
           grep -q "className: 'plate-prompt'" html.prompt.js
           grep -q "'corner start" browser.js
+
+  parser-attribution:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install browser diagnostic dependency
+        run: npm install --no-save --no-package-lock playwright@1.55.0
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Attribute parser errors through CDP
+        run: node copy-test/test/cdp-parser-attribution.browser.test.js
