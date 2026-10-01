@@ -15,7 +15,7 @@ const HaamuWebText = Object.freeze({
   family: 'web',
   role: 'web.text',
   type: 'text-input-output-processor-allocator-symbolizer-parser-mutator-deparser-font-renderer',
-  version: '1.26.0',
+  version: '1.27.0',
 
   key(event = {}) {
     const key = event.key ?? null;
@@ -400,6 +400,57 @@ const HaamuWebText = Object.freeze({
       alignment,
       preservesText:true,
       changesGeometry:false,
+    });
+  },
+
+  populateMesh(value = '', topology, options = {}) {
+    if(!topology?.grid||!topology?.mesh||!topology?.anchor)throw new TypeError('WebText topology required.');
+    const text=this.normalize(value);
+    const units=this.graphemes(text);
+    const rows=topology.grid.rows,columns=topology.grid.columns;
+    const capacity=rows*columns;
+    const count=Math.min(units.length,capacity);
+    const nodes=[];
+    for(let index=0;index<count;index+=1){
+      const logicalRow=Math.trunc(index/Math.max(1,columns));
+      const logicalColumn=index%Math.max(1,columns);
+      const row=topology.anchor.blockDirection==='up'?rows-1-logicalRow:logicalRow;
+      const column=topology.anchor.inlineDirection==='left'?columns-1-logicalColumn:logicalColumn;
+      nodes.push(Object.freeze({
+        type:'web-text-mesh-node',
+        index,row,column,
+        address:row+':'+column,
+        text:units[index],
+        occupied:true,
+      }));
+    }
+    return Object.freeze({
+      type:'web-text-populated-mesh',
+      source:text,
+      topologyType:topology.type,
+      nodes:Object.freeze(nodes),
+      capacity,
+      populated:nodes.length,
+      overflow:units.length>capacity,
+      displaced:Object.freeze(units.slice(capacity)),
+      preservesSource:true,
+      mayResizePlate:false,
+      rendererConnected:false,
+      changesGeometry:false,
+    });
+  },
+
+  populateDisplay(value = '', options = {}) {
+    const topology=this.displayTopology(options);
+    return Object.freeze({topology,mesh:this.populateMesh(value,topology,options)});
+  },
+
+  populatePrompt(value = '', options = {}) {
+    const topology=this.promptTopology(options);
+    return Object.freeze({
+      topology,
+      mesh:this.populateMesh(value,topology,options),
+      editingAuthority:'native-textarea-ime',
     });
   },
 
