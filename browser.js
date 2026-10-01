@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.125.0',
+  version: '0.126.0',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -430,7 +430,28 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
         resizePrompt(prompt);
       });
       prompt.addEventListener('keydown', (event) => {
-        if (event.key !== 'Enter' || event.isComposing) return;
+        if(event.isComposing)return;
+        if(event.key==='ArrowUp' && promptSystems?.recall){
+          const next=(Number(prompt.dataset.historyOffset)||0)+1;
+          const entry=promptSystems.recall(next);
+          if(entry){
+            event.preventDefault(); prompt.dataset.historyOffset=String(next);
+            prompt.value=entry.value; prompt.setSelectionRange(prompt.value.length,prompt.value.length);
+            synchronizePrompt(prompt);
+          }
+          return;
+        }
+        if(event.key==='Tab' && promptSystems?.complete){
+          const candidates=promptSystems.history().map(entry=>entry.value);
+          const completion=promptSystems.complete(prompt.value,candidates);
+          if(completion.matches.length===1 && completion.matches[0]!==prompt.value){
+            event.preventDefault(); prompt.value=completion.matches[0];
+            prompt.setSelectionRange(prompt.value.length,prompt.value.length); synchronizePrompt(prompt);
+          }
+          prompt.dataset.completionCount=String(completion.matches.length);
+          return;
+        }
+        if (event.key !== 'Enter') return;
         event.preventDefault();
 
         const inspection=shellRouter?.inspect?.(prompt.value) ?? globalThis.HaamuShell?.inspect?.(prompt.value);
@@ -455,6 +476,8 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
 
         if (!promptSystems || !plateSystems) return;
         const interpretation=promptSystems.interpret?.(prompt.value);
+        promptSystems.remember?.(prompt.value,{mode:interpretation?.mode});
+        prompt.dataset.historyOffset='0';
         if(interpretation){
           prompt.dataset.promptIntent=interpretation.mode;
           prompt.dataset.promptPrefix=interpretation.prefix ?? '';
