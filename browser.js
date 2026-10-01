@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.132.0',
+  version: '0.133.0',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -217,6 +217,8 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       prompt.setAttribute('aria-label', plateTitles[corner] + ' prompt');
       prompt.dataset.logicalPrompt = promptId;
       prompt.dataset.outputSocket = promptSystems?.outputSocket?.socket?.id ?? '';
+      const promptInput=globalThis.HaamuBrowserPromptInput?.bind?.(prompt,{promptId});
+      prompt.dataset.inputBoundary=promptInput?.type ?? '';
       const resizePrompt = target => {
         const menu=target.closest('.corner-menu'), wrap=target.closest('.plate-prompt-wrap');
         const row=target.closest('.plate-prompt-row'), area=wrap?.querySelector('.plate-prompt-text-area');
