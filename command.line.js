@@ -79,9 +79,17 @@ const create=(id,definition={})=>{
 
    const typed=globalThis.HaamuTerminalInput.create(input.value,{channelId,shell,source:input.promptId});
    const router=context.router;
-   const output=(!globalThis.HaamuTerminalShell?.execute||!router)
-    ? channel.terminal.output('system','Terminal shell is not connected.','unavailable',{command:input.value})
-    : HaamuTerminalShell.execute(typed,router,{...context,channelId});
+   let output;
+   if(!globalThis.HaamuTerminalShell?.execute||!router){
+    output=channel.terminal.output('system','Terminal shell is not connected.','unavailable',{command:input.value});
+   }else{
+    const result=HaamuTerminalShell.execute(typed,router,{...context,channelId});
+    output=result?.type==='terminal-output'&&result.channelId===channelId
+      ? result
+      : channel.terminal.output(result?.stream??'stdout',result?.payload??result,result?.state??'completed',{
+          command:input.value,commandId:result?.commandId,sessionId:result?.sessionId
+        });
+   }
    return asTransaction(input,'terminal',typed,output);
   },
 
@@ -91,7 +99,7 @@ const create=(id,definition={})=>{
 };
 
 const HaamuCommandLine=Object.freeze({
- family:'command',role:'command.line',type:'terminal-shell-search-command-line',version:'0.2.0',
+ family:'command',role:'command.line',type:'terminal-shell-search-command-line',version:'0.2.1',
  modes:MODES,shells:SHELLS,create,
  forChannel(id,definition={}){
   const key=String(id??'').trim();if(!key)throw new RangeError('Command channel identity required.');
@@ -101,5 +109,5 @@ const HaamuCommandLine=Object.freeze({
  remove(id){return systems.delete(String(id));},
  channels(){return Object.freeze(Array.from(systems.keys()));}
 });
-globalThis.HaamuFamilies['command.line']=Object.freeze({family:'command',role:'command.line',type:'terminal-shell-search-command-line',version:'0.2.0'});
+globalThis.HaamuFamilies['command.line']=Object.freeze({family:'command',role:'command.line',type:'terminal-shell-search-command-line',version:'0.2.1'});
 globalThis.HaamuCommandLine=HaamuCommandLine;
