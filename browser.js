@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.112.0',
+  version: '0.113.0',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -163,15 +163,21 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
           'bottom-right':'client',
         });
         const interpreter = globalThis.HaamuWebInterpreter;
-        if (!interpreter) return;
-
-        globalThis.HaamuShellRouter ??= globalThis.HaamuShell?.router?.();
-        const output = interpreter.execute(prompt.value, {
+        const promptSystems = globalThis.HaamuBrowserPromptSystems?.forPrompt(promptId, {
           shell: shellByCorner[corner],
-          router: globalThis.HaamuShellRouter,
-          /* Search remains an explicit integration boundary. No network
-             authority is created merely by entering a search command. */
-          search: globalThis.HaamuSearch?.search,
+        });
+        if (!interpreter || !promptSystems) return;
+
+        const output = interpreter.execute(prompt.value, {
+          shell: promptSystems.shellType,
+          router: promptSystems.shell.router,
+          /* Search is isolated per logical prompt. A provider remains
+             explicitly unconnected until separately authorized/configured. */
+          search: promptSystems.search.connected()
+            ? (query, context) => promptSystems.search.execute(query, context)
+            : undefined,
+          terminal: promptSystems.terminal,
+          promptId,
           corner,
           platform,
         });
