@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.119.1',
+  version: '0.119.2',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -182,21 +182,25 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       prompt.setAttribute('aria-label', plateTitles[corner] + ' prompt');
       prompt.dataset.logicalPrompt = promptId;
       const resizePrompt = target => {
-        target.style.height = 'auto';
-        const lineHeight = parseFloat(getComputedStyle(target).lineHeight) || 17;
-        const verticalPadding = 18;
-        const oneLine = 44;
-        const maxHeight = Math.ceil(verticalPadding + lineHeight * 3);
-        const height = Math.min(maxHeight, Math.max(oneLine, target.scrollHeight));
-        target.style.height = height + 'px';
-        target.style.overflowY = target.scrollHeight > maxHeight ? 'auto' : 'hidden';
+        const menu = target.closest('.corner-menu');
         const wrap = target.closest('.plate-prompt-wrap');
         const row = target.closest('.plate-prompt-row');
+        const style = getComputedStyle(target);
+        const lineHeight = parseFloat(style.lineHeight) || 17;
+        const paddingY = (parseFloat(style.paddingTop) || 0) + (parseFloat(style.paddingBottom) || 0);
+        const oneLine = 44;
+        const maxHeight = Math.ceil(paddingY + lineHeight * 3);
+        target.style.height = '0px';
+        const measured = target.scrollHeight;
+        const height = Math.min(maxHeight, Math.max(oneLine, measured));
+        target.style.height = height + 'px';
+        target.style.overflowY = measured > maxHeight ? 'auto' : 'hidden';
         if (wrap) wrap.style.height = height + 'px';
         if (row) {
           row.style.height = height + 'px';
           row.style.minHeight = height + 'px';
         }
+        if (menu) menu.style.setProperty('--prompt-track-height', height + 'px');
       };
       prompt.addEventListener('input', () => {
         logicalPrompts.set(promptId, prompt.value);
