@@ -231,10 +231,14 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
 
         if (projection) {
           const text = target.value;
+          projection.classList.toggle('is-empty', !text);
           if (!text) {
             projection.textContent = '';
           } else if (!mirror || measured <= maxHeight) {
-            projection.textContent = text;
+            const lineNode = document.createElement('div');
+            lineNode.className = 'plate-prompt-projection-line';
+            lineNode.textContent = text;
+            projection.replaceChildren(lineNode);
           } else {
             /* Measure the ORIGINAL full-text wrapping. Re-wrapping a suffix at
                column zero changes its line breaks and makes the cursor queue
