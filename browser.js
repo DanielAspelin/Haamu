@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.126.0',
+  version: '0.127.0',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -112,7 +112,29 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
     const plateSystems = globalThis.HaamuBrowserPlateSystems?.forPlate(plateId, { channelId });
     const windowing = globalThis.HaamuBrowserWindowing?.forPlate(plateId);
     const plateState = globalThis.HaamuBrowserPlateState?.forPlate(plateId);
-    const webPlate = globalThis.HaamuWebPlate?.create?.({ id:plateId, corner, platform:'common' });
+    /* One logical Console owns the scope. Mobile and desktop are two
+       projections of that Console, each with its own physical Web Plate. */
+    const consoleScope = shellByCorner[corner];
+    const consoleId = 'console-' + consoleScope;
+    const webPlates = Object.freeze(Object.fromEntries(['mobile','desktop'].map(platform => [
+      platform,
+      globalThis.HaamuWebPlate?.create?.({
+        id: plateId + '-' + platform,
+        corner,
+        platform,
+        consoleId,
+        scope: consoleScope,
+      }) ?? null,
+    ])));
+    const consoleBinding = Object.freeze({
+      type:'plate-console-binding',
+      id:consoleId,
+      scope:consoleScope,
+      corner,
+      logicalPlateId:plateId,
+      channelId,
+      plates:webPlates,
+    });
     const commandChannel = globalThis.HaamuCommandChannel?.get?.(channelId);
     commandChannel?.bindOutput?.(plateId);
     const shellRouter = globalThis.HaamuShell?.router?.();
@@ -126,6 +148,9 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       menu.dataset.prompt = promptId;
       menu.dataset.plate = plateId;
       menu.dataset.channel = channelId;
+      menu.dataset.console = consoleId;
+      menu.dataset.scope = consoleScope;
+      menu.dataset.physicalPlate = webPlates[platform]?.id ?? (plateId + '-' + platform);
       menu.setAttribute('aria-hidden', 'true');
       menu.dataset.plateState = platform === 'mobile' ? 'automatic' : (plateState?.state('desktop') ?? 'normal');
 
@@ -495,9 +520,12 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
           platform,
         });
         const projectedOutput = plateSystems.accept(transaction.output);
-        if (webPlate && globalThis.HaamuBrowserPlateText?.project) {
+        if (globalThis.HaamuBrowserPlateText?.project) {
           for (const target of plateLayer.querySelectorAll('[data-logical-plate="' + plateId + '"]')) {
-            HaamuBrowserPlateText.project(transaction.output, webPlate, target);
+            const targetMenu=target.closest('.corner-menu');
+            const targetPlatform=targetMenu?.dataset.platform;
+            const targetPlate=webPlates[targetPlatform];
+            if(targetPlate) HaamuBrowserPlateText.project(transaction.output, targetPlate, target);
           }
         }
 
@@ -547,6 +575,7 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       });
     }
     projections.stateSystem = activePlateState ?? plateState ?? null;
+    projections.consoleBinding = consoleBinding;
     menus.set(corner, projections);
     button.setAttribute('aria-expanded', 'false');
     let buttonMorph = null;
@@ -659,6 +688,9 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
     matrices: 8,
     tables: 8,
     logicalPrompts: 4,
+    logicalConsoles: 4,
+    physicalPlates: 8,
+    consoleProjectionModel: 'four-consoles-two-platform-plates-each',
   });
 }
 
