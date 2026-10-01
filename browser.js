@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.132.0',
+  version: '0.133.0',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -60,7 +60,9 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
   substrateCanvas.className='haamu-projection-substrate-canvas';
   substrateCanvas.setAttribute('aria-hidden','true');
   substrate.appendChild(substrateCanvas);
-  shell.appendChild(substrate);
+  /* Keep the projection substrate out of the shell's grid/flex child flow.
+     It is a viewport projection plane, not structural content. */
+  document.body.appendChild(substrate);
 
   // First projected layer after the shell background: centered identity text.
   // Controls and plates remain on their higher established z-index layers.
