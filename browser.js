@@ -248,10 +248,14 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
         }
         const visibleCount=Math.min(maxLines,Math.max(1,lines.length));
         const height=Math.max(oneLine,Math.ceil(paddingTop+paddingBottom+visibleCount*lineHeight));
-        target.style.height=height+'px'; target.style.overflowY='hidden';
-        wrap.style.height=height+'px'; row.style.height=height+'px'; row.style.minHeight=height+'px';
-        menu?.style.setProperty('--prompt-track-height',height+'px');
-        area.style.height=height+'px'; field.style.height=(visibleCount*lineHeight)+'px';
+        const threeLineHeight=Math.max(oneLine,Math.ceil(paddingTop+paddingBottom+maxLines*lineHeight));
+        const governedHeight=lines.length>maxLines?threeLineHeight:height;
+        target.style.height=governedHeight+'px'; target.style.overflowY='hidden';
+        wrap.style.height=governedHeight+'px'; row.style.height=governedHeight+'px'; row.style.minHeight=governedHeight+'px';
+        menu?.style.setProperty('--prompt-track-height',governedHeight+'px');
+        area.style.height=governedHeight+'px';
+        field.style.height=(Math.min(maxLines,visibleCount)*lineHeight)+'px';
+        field.style.transform='none';
         area.classList.toggle('is-empty',!text);
         area.dataset.lineCount=String(lines.length); area.dataset.visibleLines=String(visibleCount);
         area.dataset.firstVisibleLine=String(firstVisible);
