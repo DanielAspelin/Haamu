@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.111.0',
+  version: '0.111.1',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -139,6 +139,14 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       const promptLabel = document.createElement('span');
       promptLabel.className = 'plate-prompt-label';
       promptLabel.textContent = plateTitles[corner];
+      /* Inline projection is intentional: this label is runtime-generated,
+         and the punch-through treatment must survive stale/overridden CSS. */
+      promptLabel.style.cssText = [
+        'display:block','visibility:visible','opacity:1',
+        'color:rgba(0,0,0,.78)','-webkit-text-fill-color:rgba(0,0,0,.78)',
+        '-webkit-text-stroke:0','text-shadow:0 1px 0 rgba(255,255,255,.32)',
+        'mix-blend-mode:normal'
+      ].join(';');
       promptWrap.appendChild(prompt);
       promptWrap.appendChild(promptLabel);
       prompt.addEventListener('input', () => {
