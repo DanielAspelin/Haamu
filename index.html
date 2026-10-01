@@ -6,7 +6,7 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<meta name="haamu-build" content="0.137.5">
+<meta name="haamu-build" content="0.137.6">
   <meta name="description" content="Haamu — open community, technology and culture">
   <title>Haamu</title>
   <style>
@@ -206,18 +206,24 @@
        on the Plate corner that faces the center of the screen. */
     .plate-state-toggle{
       position:absolute;z-index:9;
-      width:44px;height:44px;padding:0;
-      border:0;border-radius:0;
+      width:44px;height:44px;padding:1px;
+      border:1px solid rgba(255,255,255,.50);
+      border-radius:0;
       display:grid;place-items:center;pointer-events:auto;
-      background:rgba(255,255,255,.018);
-      color:rgba(255,255,255,.96);
-      box-shadow:inset 0 0 0 1px rgba(255,255,255,.18);
-      backdrop-filter:blur(3px);
-      -webkit-backdrop-filter:blur(3px);
-      font:600 20px/1 'Rajdhani',sans-serif;cursor:pointer;
+      background:rgba(255,255,255,.012);
+      color:rgba(255,255,255,.92);
+      box-shadow:inset 0 0 5px rgba(255,255,255,.06);
+      backdrop-filter:blur(2px);
+      -webkit-backdrop-filter:blur(2px);
+      font:600 18px/1 'Rajdhani',sans-serif;cursor:pointer;
     }
-    .plate-state-toggle:hover{background:rgba(255,255,255,.05);box-shadow:inset 0 0 0 1px rgba(255,255,255,.28)}
-    .plate-state-toggle:focus-visible{outline:1px solid rgba(235,247,255,.62);outline-offset:-1px}
+    .plate-state-toggle:hover{background:rgba(255,255,255,.03);box-shadow:inset 0 0 5px rgba(255,255,255,.10)}
+    .plate-state-toggle:focus-visible{outline:1px solid rgba(235,247,255,.50);outline-offset:-2px}
+    /* Only the corner pointing inward into the Plate is softened. */
+    .corner-menu[data-corner="top-left"] .plate-state-toggle{border-radius:7px 0 0 0}
+    .corner-menu[data-corner="top-right"] .plate-state-toggle{border-radius:0 7px 0 0}
+    .corner-menu[data-corner="bottom-left"] .plate-state-toggle{border-radius:0 0 0 7px}
+    .corner-menu[data-corner="bottom-right"] .plate-state-toggle{border-radius:0 0 7px 0}
     .corner-menu[data-platform="mobile"] .plate-state-toggle{display:none!important}
     /* The control occupies the Prompt track itself, outside content padding.
        Its corner is always the Plate corner nearest the screen center. */
@@ -229,9 +235,15 @@
     .corner-menu[data-platform="desktop"][data-corner$="-left"] .plate-prompt-wrap{padding-right:44px}
     .corner-menu[data-platform="desktop"][data-corner$="-right"] .plate-prompt-wrap{padding-left:44px}
     .haamu-desktop .corner-menu[data-platform="desktop"][data-plate-state="maximized"]{
-      --plate-inline:calc(100% - 24px);
-      --plate-block:calc(100% - 24px);
-      top:12px;right:12px;bottom:auto;left:12px;
+      /* Expand by viewport ratio while preserving a safety lane around all
+         four owning-button glows. The Plate never enters a corner aura. */
+      --plate-max-clearance:calc(var(--corner) + 18px);
+      --plate-inline:calc(100% - (2 * var(--plate-max-clearance)));
+      --plate-block:calc(100% - (2 * var(--plate-max-clearance)));
+      top:var(--plate-max-clearance);
+      right:var(--plate-max-clearance);
+      bottom:auto;
+      left:var(--plate-max-clearance);
     }
     /* Every platform plate owns an invisible visual matrix/table.
        Only its outward prompt row is projected; matrix/table lines remain invisible. */
@@ -519,72 +531,72 @@
     <i class="mobile-compartment second" data-compartment="lower-right"></i>
   </div>
   <div id="haamu-root"><noscript>Haamu requires JavaScript for its runtime projection.</noscript></div>
-  <script src="entry.pre.js?v=0.137.5"></script>
-  <script src="entry.post.js?v=0.137.5"></script>
-  <script src="index.js?v=0.137.5"></script>
-  <script src="default.js?v=0.137.5"></script>
-  <script src="haamu.js?v=0.137.5"></script>
-  <script src="browser.entry.js?v=0.137.5"></script>
-  <script src="browser.plate.state.js?v=0.137.5"></script>
-  <script src="browser.js?v=0.137.5"></script>
-  <script src="browser.input.js?v=0.137.5"></script>
-  <script src="browser.output.js?v=0.137.5"></script>
-  <script src="browser.plate.systems.js?v=0.137.5"></script>
-  <script src="browser.plate.text.js?v=0.137.5"></script>
-  <script src="browser.search.js?v=0.137.5"></script>
-  <script src="browser.cookies.js?v=0.137.5"></script>
-  <script src="browser.api.js?v=0.137.5"></script>
-  <script src="browser.window.js?v=0.137.5"></script>
-  <script src="browser.windowing.js?v=0.137.5"></script>
-  <script src="browser.prompt.systems.js?v=0.137.5"></script>
-  <script src="web.entry.js?v=0.137.5"></script>
-  <script src="web.concurrency.js?v=0.137.5"></script>
-  <script src="web.parallelism.js?v=0.137.5"></script>
-  <script src="shell.input.js?v=0.137.5"></script>
-  <script src="shell.output.js?v=0.137.5"></script>
-  <script src="search.input.js?v=0.137.5"></script>
-  <script src="search.output.js?v=0.137.5"></script>
-  <script src="shell.js?v=0.137.5"></script>
-  <script src="terminal.input.js?v=0.137.5"></script>
-  <script src="terminal.output.js?v=0.137.5"></script>
-  <script src="command.input.js?v=0.137.5"></script>
-  <script src="command.channel.js?v=0.137.5"></script>
-  <script src="command.js?v=0.137.5"></script>
-  <script src="command.line.js?v=0.137.5"></script>
-  <script src="terminal.shell.js?v=0.137.5"></script>
-  <script src="terminal.search.js?v=0.137.5"></script>
-  <script src="terminal.js?v=0.137.5"></script>
-  <script src="web.shell.js?v=0.137.5"></script>
-  <script src="web.terminal.js?v=0.137.5"></script>
-  <script src="web.search.js?v=0.137.5"></script>
-  <script src="text.parsing.js?v=0.137.5"></script>
-  <script src="text.processing.js?v=0.137.5"></script>
-  <script src="text.allocation.js?v=0.137.5"></script>
-  <script src="text.scheduling.js?v=0.137.5"></script>
-  <script src="web.text.js?v=0.137.5"></script>
-  <script src="audio.parsing.js?v=0.137.5"></script>
-  <script src="audio.processing.js?v=0.137.5"></script>
-  <script src="audio.allocation.js?v=0.137.5"></script>
-  <script src="audio.scheduling.js?v=0.137.5"></script>
-  <script src="web.audio.js?v=0.137.5"></script>
-  <script src="video.parsing.js?v=0.137.5"></script>
-  <script src="video.processing.js?v=0.137.5"></script>
-  <script src="video.allocation.js?v=0.137.5"></script>
-  <script src="video.scheduling.js?v=0.137.5"></script>
-  <script src="web.video.js?v=0.137.5"></script>
-  <script src="web.parsing.js?v=0.137.5"></script>
-  <script src="web.processing.js?v=0.137.5"></script>
-  <script src="web.allocation.js?v=0.137.5"></script>
-  <script src="web.scheduling.js?v=0.137.5"></script>
-  <script src="web.interpreter.js?v=0.137.5"></script>
-  <script src="web.matrix.js?v=0.137.5"></script>
-  <script src="web.grid.js?v=0.137.5"></script>
-  <script src="web.mesh.js?v=0.137.5"></script>
-  <script src="web.plate.js?v=0.137.5"></script>
-  <script src="web.assembly.js?v=0.137.5"></script>
-  <script src="web.gpu.js?v=0.137.5"></script>
-  <script src="web.js?v=0.137.5"></script>
-  <script src="browser.plate.text.test.js?v=0.137.5"></script>
+  <script src="entry.pre.js?v=0.137.6"></script>
+  <script src="entry.post.js?v=0.137.6"></script>
+  <script src="index.js?v=0.137.6"></script>
+  <script src="default.js?v=0.137.6"></script>
+  <script src="haamu.js?v=0.137.6"></script>
+  <script src="browser.entry.js?v=0.137.6"></script>
+  <script src="browser.plate.state.js?v=0.137.6"></script>
+  <script src="browser.js?v=0.137.6"></script>
+  <script src="browser.input.js?v=0.137.6"></script>
+  <script src="browser.output.js?v=0.137.6"></script>
+  <script src="browser.plate.systems.js?v=0.137.6"></script>
+  <script src="browser.plate.text.js?v=0.137.6"></script>
+  <script src="browser.search.js?v=0.137.6"></script>
+  <script src="browser.cookies.js?v=0.137.6"></script>
+  <script src="browser.api.js?v=0.137.6"></script>
+  <script src="browser.window.js?v=0.137.6"></script>
+  <script src="browser.windowing.js?v=0.137.6"></script>
+  <script src="browser.prompt.systems.js?v=0.137.6"></script>
+  <script src="web.entry.js?v=0.137.6"></script>
+  <script src="web.concurrency.js?v=0.137.6"></script>
+  <script src="web.parallelism.js?v=0.137.6"></script>
+  <script src="shell.input.js?v=0.137.6"></script>
+  <script src="shell.output.js?v=0.137.6"></script>
+  <script src="search.input.js?v=0.137.6"></script>
+  <script src="search.output.js?v=0.137.6"></script>
+  <script src="shell.js?v=0.137.6"></script>
+  <script src="terminal.input.js?v=0.137.6"></script>
+  <script src="terminal.output.js?v=0.137.6"></script>
+  <script src="command.input.js?v=0.137.6"></script>
+  <script src="command.channel.js?v=0.137.6"></script>
+  <script src="command.js?v=0.137.6"></script>
+  <script src="command.line.js?v=0.137.6"></script>
+  <script src="terminal.shell.js?v=0.137.6"></script>
+  <script src="terminal.search.js?v=0.137.6"></script>
+  <script src="terminal.js?v=0.137.6"></script>
+  <script src="web.shell.js?v=0.137.6"></script>
+  <script src="web.terminal.js?v=0.137.6"></script>
+  <script src="web.search.js?v=0.137.6"></script>
+  <script src="text.parsing.js?v=0.137.6"></script>
+  <script src="text.processing.js?v=0.137.6"></script>
+  <script src="text.allocation.js?v=0.137.6"></script>
+  <script src="text.scheduling.js?v=0.137.6"></script>
+  <script src="web.text.js?v=0.137.6"></script>
+  <script src="audio.parsing.js?v=0.137.6"></script>
+  <script src="audio.processing.js?v=0.137.6"></script>
+  <script src="audio.allocation.js?v=0.137.6"></script>
+  <script src="audio.scheduling.js?v=0.137.6"></script>
+  <script src="web.audio.js?v=0.137.6"></script>
+  <script src="video.parsing.js?v=0.137.6"></script>
+  <script src="video.processing.js?v=0.137.6"></script>
+  <script src="video.allocation.js?v=0.137.6"></script>
+  <script src="video.scheduling.js?v=0.137.6"></script>
+  <script src="web.video.js?v=0.137.6"></script>
+  <script src="web.parsing.js?v=0.137.6"></script>
+  <script src="web.processing.js?v=0.137.6"></script>
+  <script src="web.allocation.js?v=0.137.6"></script>
+  <script src="web.scheduling.js?v=0.137.6"></script>
+  <script src="web.interpreter.js?v=0.137.6"></script>
+  <script src="web.matrix.js?v=0.137.6"></script>
+  <script src="web.grid.js?v=0.137.6"></script>
+  <script src="web.mesh.js?v=0.137.6"></script>
+  <script src="web.plate.js?v=0.137.6"></script>
+  <script src="web.assembly.js?v=0.137.6"></script>
+  <script src="web.gpu.js?v=0.137.6"></script>
+  <script src="web.js?v=0.137.6"></script>
+  <script src="browser.plate.text.test.js?v=0.137.6"></script>
   <script>
     /* Website-scoped freshness boundary. Haamu versions and refreshes only
        Haamu resources; the host browser remains outside Haamu control. */
