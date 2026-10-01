@@ -15,7 +15,7 @@ const HaamuWebText = Object.freeze({
   family: 'web',
   role: 'web.text',
   type: 'text-input-output-processor-allocator-symbolizer-parser-mutator-deparser-font-renderer',
-  version: '1.27.0',
+  version: '1.27.1',
 
   key(event = {}) {
     const key = event.key ?? null;
@@ -420,7 +420,8 @@ const HaamuWebText = Object.freeze({
         type:'web-text-mesh-node',
         index,row,column,
         address:row+':'+column,
-        text:units[index],
+        text:units[index].value,
+        grapheme:units[index],
         occupied:true,
       }));
     }
@@ -432,7 +433,7 @@ const HaamuWebText = Object.freeze({
       capacity,
       populated:nodes.length,
       overflow:units.length>capacity,
-      displaced:Object.freeze(units.slice(capacity)),
+      displaced:Object.freeze(units.slice(capacity).map(unit=>unit.value)),
       preservesSource:true,
       mayResizePlate:false,
       rendererConnected:false,
@@ -526,7 +527,9 @@ const HaamuWebText = Object.freeze({
     const rowGap=Math.max(0,finite(options.promptCell?.rowGap??options.spacing?.line,0));
     const pitchX=cellWidth+columnGap,pitchY=cellHeight+rowGap;
     const columns=area.width>0?Math.max(0,Math.floor((area.width+columnGap)/pitchX)):0;
-    const rows=area.height>0?Math.max(0,Math.floor((area.height+rowGap)/pitchY)):0;
+    const availableRows=area.height>0?Math.max(0,Math.floor((area.height+rowGap)/pitchY)):0;
+    const maxRows=Math.max(1,Math.trunc(finite(options.promptMaxRows,3)));
+    const rows=Math.min(availableRows,maxRows);
     const right=area.x+area.width,bottom=area.y+area.height;
     const anchor=Object.freeze({
       corner,
