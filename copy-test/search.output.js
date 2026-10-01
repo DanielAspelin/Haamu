@@ -1,5 +1,8 @@
 'use strict';
 
+
+/* module-private execution scope */
+(() => {
 /** Haamu Search Output — renderer-independent search egress contract. */
 globalThis.HaamuFamilies ??= Object.create(null);
 let sequence=0;
@@ -18,3 +21,4 @@ const HaamuSearchOutput=Object.freeze({
 });
 globalThis.HaamuFamilies['search.output']=Object.freeze({family:'search',role:'search.output',type:'search-output-contract',version:'0.1.0'});
 globalThis.HaamuSearchOutput=HaamuSearchOutput;
+})();
