@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.121.1',
+  version: '0.121.2',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -274,6 +274,12 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
           projection.style.transform = 'none';
         }
       };
+      prompt.addEventListener('focus', () => {
+        prompt.closest('.plate-prompt-wrap')?.classList.add('is-focused');
+      });
+      prompt.addEventListener('blur', () => {
+        prompt.closest('.plate-prompt-wrap')?.classList.remove('is-focused');
+      });
       prompt.addEventListener('input', () => {
         logicalPrompts.set(promptId, prompt.value);
         promptProjection.textContent = prompt.value;
