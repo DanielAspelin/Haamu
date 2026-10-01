@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.138.0',
+  version: '0.139.0',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -113,6 +113,9 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
   const menus = new Map();
   const logicalPrompts = new Map();
   let substratePhase=0, substrateRaf=0;
+  /* Immutable Plate-local alignment latch. Text flow may consume this
+     coordinate but can never mutate or recompute it. */
+  let clientPromptAlignment=null;
   const renderSubstrateClientPrompt=()=>{
     const client=menus.get('bottom-right')?.mobile;
     const prompt=client?.querySelector('.plate-prompt');
@@ -132,13 +135,24 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
        history is projected in a Plate-local field extending upward from it.
        The field does not participate in Plate/shell layout. */
     const plateRect=client.getBoundingClientRect();
+    if(!clientPromptAlignment){
+      const promptTop=Math.max(0,Math.round(wr.top-plateRect.top));
+      clientPromptAlignment=Object.freeze({
+        promptTop,
+        baseline:promptTop+Math.round(44/2+5),
+        lineHeight:17,
+        leftInset:12,
+        rightInset:12
+      });
+      client.dataset.promptAlignment='latched';
+      client.dataset.promptBaseline=String(clientPromptAlignment.baseline);
+    }
     const localWidth=Math.max(1,Math.floor(wr.width));
     const localHeight=Math.max(44,Math.floor(wr.bottom-plateRect.top));
-    const promptTop=Math.max(0,Math.floor(wr.top-plateRect.top));
     off.width=localWidth;off.height=localHeight;
-    const text=prompt.value,leftInset=12,rightInset=leftInset,
-      wrapWidth=Math.max(1,localWidth-leftInset-rightInset),
-      anchorBaseline=promptTop+Math.round(44/2+5),lineHeight=17,lines=[''];
+    const {baseline:anchorBaseline,lineHeight,leftInset,rightInset}=clientPromptAlignment;
+    const text=prompt.value,
+      wrapWidth=Math.max(1,localWidth-leftInset-rightInset),lines=[''];
     for(const ch of text){if(ch==='\n'){lines.push('');continue;}const current=lines[lines.length-1];
       if(current&&oc.measureText(current+ch).width>wrapWidth)lines.push(ch);else lines[lines.length-1]=current+ch;}
     const caretIndex=Math.max(0,Math.min(text.length,prompt.selectionStart??text.length));
