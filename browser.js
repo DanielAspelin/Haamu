@@ -220,7 +220,10 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
           mirror.textContent = target.value || '\u200b';
         }
         const measured = mirror ? mirror.scrollHeight : target.scrollHeight;
-        const height = Math.min(maxHeight, Math.max(oneLine, measured));
+        const measuredTextHeight = Math.max(lineHeight, measured - paddingY);
+        const lineCount = Math.max(1, Math.ceil(measuredTextHeight / lineHeight));
+        const visibleLineCount = Math.min(3, lineCount);
+        const height = Math.min(maxHeight, Math.max(oneLine, Math.ceil(paddingY + visibleLineCount * lineHeight)));
         target.style.height = height + 'px';
         target.style.overflowY = 'hidden';
         if (wrap) wrap.style.height = height + 'px';
@@ -233,6 +236,13 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
         if (projection) {
           const text = target.value;
           projection.classList.toggle('is-empty', !text);
+          projection.dataset.lineCount = String(lineCount);
+          projection.dataset.visibleLines = String(visibleLineCount);
+          projection.dataset.overflowing = lineCount > 3 ? 'true' : 'false';
+          if (textField) {
+            textField.dataset.lineCount = String(lineCount);
+            textField.dataset.visibleLines = String(visibleLineCount);
+          }
           if (!text) {
             textField?.replaceChildren();
           } else if (!mirror || measured <= maxHeight) {
@@ -277,6 +287,7 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
           }
           projection.style.height = height + 'px';
           projection.style.transform = 'none';
+          if (textField) textField.style.maxHeight = (visibleLineCount * lineHeight) + 'px';
         }
       };
       prompt.addEventListener('focus', () => {
