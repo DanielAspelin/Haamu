@@ -15,7 +15,7 @@ const HaamuWebText = Object.freeze({
   family: 'web',
   role: 'web.text',
   type: 'text-input-output-processor-allocator-symbolizer-parser-mutator-deparser-font-renderer',
-  version: '1.11.0',
+  version: '1.12.0',
 
   key(event = {}) {
     const key = event.key ?? null;
@@ -357,9 +357,14 @@ const HaamuWebText = Object.freeze({
 
   allocateLines(value = '', options = {}) {
     const text=this.normalize(value);
-    const source=Array.isArray(options.lines) ? options.lines : this.lines(text).map((line,index)=>({
-      start:0,end:line.length,value:line,softBreak:false,hardBreak:index<this.lines(text).length-1
-    }));
+    const hardLines=this.lines(text);
+    let offset=0;
+    const fallbackLines=hardLines.map((line,index)=>{
+      const start=offset,end=start+line.length;
+      offset=end+(index<hardLines.length-1?1:0);
+      return {start,end,value:line,softBreak:false,hardBreak:index<hardLines.length-1};
+    });
+    const source=Array.isArray(options.lines) ? options.lines : fallbackLines;
     const capacity=Math.max(1,Math.trunc(finite(options.capacity,3)));
     const normalized=source.map((line,index)=>Object.freeze({
       type:'web-text-line',
