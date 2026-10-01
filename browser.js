@@ -293,17 +293,22 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
         [pair.mobile, pair.desktop].some(candidate => candidate?.classList.contains('open')));
       const same = current && current[0] === targetPosition;
 
-      const openTarget = () => {
+      const openTargetNow = () => {
         if (same) return;
         const menu = projections[activePlatform];
         projections.stateSystem?.restore('desktop');
         menu.setAttribute('aria-hidden', 'false');
         button.setAttribute('aria-expanded', 'true');
-        requestAnimationFrame(() => menu.classList.add('open'));
+        /* Force the closed geometry to be committed before applying .open.
+           This gives the browser a real start state while still beginning the
+           incoming and outgoing transitions in the same interaction turn. */
+        void menu.offsetWidth;
+        menu.classList.add('open', 'plate-transition-in');
+        setTimeout(() => menu.classList.remove('plate-transition-in'), 520);
       };
 
       if (!current) {
-        openTarget();
+        openTargetNow();
         return;
       }
 
@@ -313,19 +318,13 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       const wasMaximized = activePlatform === 'desktop'
         && pair.desktop?.dataset.plateState === 'maximized';
 
-      /* Independent concurrent lifecycles. Start the destination immediately.
-         The source restores/closes on its own timer; neither Plate gates,
-         waits for, or schedules the other Plate's animation. */
+      /* Same-turn concurrent handoff. There is deliberately no rAF or delay
+         between starting the outgoing contraction and incoming expansion. */
       closingState?.restore('desktop');
       if (wasMaximized) activeCurrent?.classList.add('plate-restoring');
       activeCurrent?.classList.add('plate-transition-out');
-      if (!same) {
-        openTarget();
-        projections[activePlatform]?.classList.add('plate-transition-in');
-        setTimeout(() => projections[activePlatform]?.classList.remove('plate-transition-in'), 520);
-      }
+      if (!same) openTargetNow();
 
-      /* Source-only completion. This timer owns only the outgoing Plate. */
       setTimeout(() => {
         for (const active of [pair.mobile, pair.desktop]) {
           active?.classList.remove('open', 'plate-restoring', 'plate-transition-out');
