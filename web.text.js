@@ -15,7 +15,7 @@ const HaamuWebText = Object.freeze({
   family: 'web',
   role: 'web.text',
   type: 'text-input-output-processor-allocator-symbolizer-parser-mutator-deparser-font-renderer',
-  version: '1.24.0',
+  version: '1.25.0',
 
   key(event = {}) {
     const key = event.key ?? null;
@@ -403,6 +403,58 @@ const HaamuWebText = Object.freeze({
     });
   },
 
+  displayTopology(options = {}) {
+    const reservation=this.reserveField(options);
+    const field=reservation.field;
+    const corner=String(options.corner??'top-left');
+    const corners=new Set(['top-left','top-right','bottom-left','bottom-right']);
+    if(!corners.has(corner))throw new RangeError('Unknown Plate corner.');
+    const cellWidth=Math.max(1,finite(options.cell?.width,1));
+    const cellHeight=Math.max(1,finite(options.cell?.height,1));
+    const columnGap=Math.max(0,finite(options.cell?.columnGap??options.spacing?.symbol,0));
+    const rowGap=Math.max(0,finite(options.cell?.rowGap??options.spacing?.line,0));
+    const pitchX=cellWidth+columnGap,pitchY=cellHeight+rowGap;
+    const columns=field.width>0?Math.max(0,Math.floor((field.width+columnGap)/pitchX)):0;
+    const rows=field.height>0?Math.max(0,Math.floor((field.height+rowGap)/pitchY)):0;
+    const right=field.x+field.width,bottom=field.y+field.height;
+    const anchor=Object.freeze({
+      corner,
+      x:corner.endsWith('right')?right:field.x,
+      y:corner.startsWith('bottom')?bottom:field.y,
+      inlineDirection:corner.endsWith('right')?'left':'right',
+      blockDirection:corner.startsWith('bottom')?'up':'down',
+    });
+    const matrix=Object.freeze({
+      type:'web-text-display-matrix',rows,columns,
+      address:'row-column',bounds:field,anchor,
+    });
+    const grid=Object.freeze({
+      type:'web-text-display-grid',rows,columns,
+      cell:Object.freeze({width:cellWidth,height:cellHeight,columnGap,rowGap,pitchX,pitchY}),
+      anchor,bounds:field,
+    });
+    const mesh=Object.freeze({
+      type:'web-text-display-mesh',
+      capacity:rows*columns,
+      nodes:Object.freeze([]),
+      anchor,bounds:field,
+      population:'deferred',
+    });
+    return Object.freeze({
+      type:'web-text-display-topology',
+      plateAuthority:'read-only',
+      dependency:'plate -> display-area -> matrix -> grid -> mesh',
+      corner,
+      field,
+      anchor,
+      matrix,grid,mesh,
+      mayResizePlate:false,
+      mayMovePlate:false,
+      rendererConnected:false,
+      changesGeometry:false,
+    });
+  },
+
   reserveField(options = {}) {
     const area=this.area(options.area ?? {});
     const padding=Object.freeze({
@@ -770,10 +822,10 @@ const HaamuWebText = Object.freeze({
       padding,
       spacing,
       placementTopology:Object.freeze({
-        matrix:'detached',
-        grid:'detached',
-        mesh:'detached',
-        authority:'area-allocation',
+        matrix:'available-via-display-topology',
+        grid:'available-via-display-topology',
+        mesh:'available-via-display-topology',
+        authority:'plate-derived-area-allocation',
       }),
       alignment,
       origin,
