@@ -83,7 +83,7 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
    */
   const plateLayer = document.createElement('div');
   plateLayer.className = 'plate-layer';
-  plateLayer.setAttribute('aria-hidden', 'true');
+  plateLayer.setAttribute('aria-label', 'Haamu plates');
   shell.prepend(plateLayer);
 
   const menus = new Map();
