@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.139.0',
+  version: '0.134.0',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -113,9 +113,6 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
   const menus = new Map();
   const logicalPrompts = new Map();
   let substratePhase=0, substrateRaf=0;
-  /* Immutable Plate-local alignment latch. Text flow may consume this
-     coordinate but can never mutate or recompute it. */
-  let clientPromptAlignment=null;
   const renderSubstrateClientPrompt=()=>{
     const client=menus.get('bottom-right')?.mobile;
     const prompt=client?.querySelector('.plate-prompt');
@@ -131,28 +128,8 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
     const off=document.createElement('canvas'),oc=off.getContext('2d',{willReadFrequently:true});
     off.width=Math.max(1,Math.floor(wr.width));off.height=Math.max(1,Math.floor(wr.height));
     oc.font='600 14px Rajdhani,sans-serif';oc.textBaseline='alphabetic';oc.fillStyle='#fff';
-    /* Prompt input authority remains a 44px anchor track, but particle
-       history is projected in a Plate-local field extending upward from it.
-       The field does not participate in Plate/shell layout. */
-    const plateRect=client.getBoundingClientRect();
-    if(!clientPromptAlignment){
-      const promptTop=Math.max(0,Math.round(wr.top-plateRect.top));
-      clientPromptAlignment=Object.freeze({
-        promptTop,
-        baseline:promptTop+Math.round(44/2+5),
-        lineHeight:17,
-        leftInset:12,
-        rightInset:12
-      });
-      client.dataset.promptAlignment='latched';
-      client.dataset.promptBaseline=String(clientPromptAlignment.baseline);
-    }
-    const localWidth=Math.max(1,Math.floor(wr.width));
-    const localHeight=Math.max(44,Math.floor(wr.bottom-plateRect.top));
-    off.width=localWidth;off.height=localHeight;
-    const {baseline:anchorBaseline,lineHeight,leftInset,rightInset}=clientPromptAlignment;
-    const text=prompt.value,
-      wrapWidth=Math.max(1,localWidth-leftInset-rightInset),lines=[''];
+    const text=prompt.value,leftInset=12,rightInset=12,wrapWidth=Math.max(1,wr.width-leftInset-rightInset),
+      anchorBaseline=Math.round(44/2+5),lineHeight=17,lines=[''];
     for(const ch of text){if(ch==='\n'){lines.push('');continue;}const current=lines[lines.length-1];
       if(current&&oc.measureText(current+ch).width>wrapWidth)lines.push(ch);else lines[lines.length-1]=current+ch;}
     const caretIndex=Math.max(0,Math.min(text.length,prompt.selectionStart??text.length));
@@ -160,28 +137,26 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
     for(let li=0;li<lines.length;li++){const len=lines[li].length;
       if(caretIndex<=consumed+len){caretLine=li;caretColumn=Math.max(0,caretIndex-consumed);break;}
       consumed+=len;if(text[consumed]==='\n')consumed++;caretLine=Math.min(li+1,lines.length-1);caretColumn=lines[caretLine]?.length||0;}
-    /* Verbatim v8.3 line transform recovered from the qualified test
-       checkpoint f1a9fecf: baselineShift is the sole line-window transform. */
-    const activeLine=Math.max(0,lines.length-1),
-      visibleStart=Math.max(0,activeLine-2),
-      baselineShift=activeLine*lineHeight;
-    for(let li=visibleStart;li<lines.length;li++)
-      oc.fillText(lines[li],leftInset,anchorBaseline+(li*lineHeight)-baselineShift);
-    const metricSample=lines[caretLine]||text||'Hg',
-      metrics=oc.measureText(metricSample),ascent=metrics.actualBoundingBoxAscent||11,
+    const activeLine=Math.max(0,lines.length-1),visibleStart=Math.max(0,activeLine-2);
+    /* Qualified v8.3 conveyor invariant: the newest/active line always owns
+       the original Prompt baseline. Older visible lines are displaced upward
+       by exact line-height increments and clipped by the projection raster. */
+    for(let li=visibleStart;li<lines.length;li++){
+      const age=activeLine-li;
+      oc.fillText(lines[li],leftInset,anchorBaseline-(age*lineHeight));
+    }
+    const metrics=oc.measureText(lines[caretLine]||text||'Hg'),ascent=metrics.actualBoundingBoxAscent||11,
       descent=metrics.actualBoundingBoxDescent||3,
-      caretBaseline=anchorBaseline+(caretLine*lineHeight)-baselineShift,
+      caretBaseline=anchorBaseline-((activeLine-caretLine)*lineHeight),
       textTop=caretBaseline-ascent,textBottom=caretBaseline+descent,textHeight=textBottom-textTop,
       caretHeight=textHeight*1.025*(.75+.275*((Math.sin(substratePhase)+1)/2)),
       caretCenter=(textTop+textBottom)/2-1,caretTop=caretCenter-caretHeight/2,
-      caretText=(lines[caretLine]||'').slice(0,caretColumn),
-      caretX=Math.min(localWidth-rightInset-1,leftInset+oc.measureText(caretText).width+2);
+      caretX=Math.min(wr.width-rightInset-1,leftInset+oc.measureText((lines[caretLine]||'').slice(0,caretColumn)).width+2);
     if(document.activeElement===prompt&&caretLine>=visibleStart)oc.fillRect(caretX,caretTop,1,caretHeight);
     /* The substrate is viewport-fixed and outside the shell context.
        Project with viewport coordinates only; never feed its geometry back
        into shell, button, split or Plate layout. */
-    const data=oc.getImageData(0,0,off.width,off.height).data,
-      ox=wr.left,oy=plateRect.top;
+    const data=oc.getImageData(0,0,off.width,off.height).data,ox=wr.left,oy=wr.top;
     pc.fillStyle='#dce8f5';let n=0;
     for(let y=0;y<off.height;y++)for(let x=0;x<off.width;x++){const a=data[(y*off.width+x)*4+3];
       if(a>8){const z=.76;pc.globalAlpha=Math.max(.18,a/255);pc.beginPath();pc.moveTo(ox+x,oy+y-z);pc.lineTo(ox+x+z,oy+y);
@@ -551,24 +526,6 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       promptWrap.appendChild(promptProjection);
       promptWrap.appendChild(prompt);
       promptWrap.appendChild(promptLabel);
-
-      /* CLIENT/mobile qualification boundary: physically retire every legacy
-         visual painter instead of relying on cascade precedence. The textarea
-         remains present, focusable and editable at full geometry, but is
-         optically transparent. Only the external particle substrate may paint. */
-      if(platform==='mobile' && scope==='client'){
-        promptProjection.hidden=true;
-        promptProjection.style.display='none';
-        promptMeasure.hidden=true;
-        promptMeasure.style.display='none';
-        promptLabel.hidden=true;
-        promptLabel.style.setProperty('display','none','important');
-        prompt.style.setProperty('color','transparent','important');
-        prompt.style.setProperty('-webkit-text-fill-color','transparent','important');
-        prompt.style.setProperty('caret-color','transparent','important');
-        prompt.style.setProperty('text-shadow','none','important');
-        prompt.dataset.visualAuthority='particle-substrate-v8.3';
-      }
       /* Prompt activation belongs to the Prompt track, not to whichever
          projection/label layer happens to be under the pointer. This makes
          tapping the visible Prompt name a deterministic focus operation while
