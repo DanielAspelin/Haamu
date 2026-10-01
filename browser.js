@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.127.4',
+  version: '0.127.5',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -615,7 +615,6 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       let handoffAuthorized = !same;
 
       const openTargetNow = () => {
-        if (!handoffAuthorized) return;
         const menu = projections[activePlatform];
         projections.stateSystem?.restore('desktop');
         menu.setAttribute('aria-hidden', 'false');
