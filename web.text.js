@@ -15,7 +15,7 @@ const HaamuWebText = Object.freeze({
   family: 'web',
   role: 'web.text',
   type: 'text-input-output-processor-allocator-symbolizer-parser-mutator-deparser-font-renderer',
-  version: '1.18.0',
+  version: '1.19.0',
 
   key(event = {}) {
     const key = event.key ?? null;
@@ -446,6 +446,54 @@ const HaamuWebText = Object.freeze({
       overlap:false,
       changesGeometry:false,
     });
+  },
+
+  streamRecord(output, options = {}) {
+    if(!output||typeof output!=='object')throw new TypeError('Textual output record required.');
+    const type=String(output.type??'text');
+    let stream='text',semantic='text',text='',source=type;
+    if(type==='terminal-output'){
+      stream='terminal';
+      semantic=output.stream==='stderr'?'error':output.stream==='system'?'status':'result';
+      text=String(output.payload??'');
+      source=String(output.shell??'terminal');
+    }else if(type==='shell-output'){
+      stream='shell';
+      semantic=output.stream==='stderr'?'error':output.stream==='system'?'status':'result';
+      text=String(output.payload??'');
+      source=String(output.shell??'shell');
+    }else if(type==='search-output'){
+      stream='search'; semantic='result'; source='search';
+      text=(output.results??[]).map(result=>typeof result==='string'?result:JSON.stringify(result)).join('\n');
+    }else if(type==='prompt-interpretation'){
+      stream='command'; semantic='input'; source='prompt'; text=String(output.source??output.body??'');
+    }else if(type==='web-text-output'){
+      stream=String(options.stream??'text'); semantic=String(options.semantic??'text');
+      source=String(options.source??'web-text');
+      text=String(output.aligned?.text??output.render?.source?.text??'');
+    }else{
+      stream=String(options.stream??output.stream??'text');
+      semantic=String(options.semantic??output.semantic??(stream==='error'?'error':stream==='status'?'status':'text'));
+      source=String(options.source??output.source??type);
+      text=String(output.text??output.value??output.payload??'');
+    }
+    return Object.freeze({
+      type:'web-text-stream-record',
+      sequence:Math.max(0,Math.trunc(finite(options.sequence??output.sequence,0))),
+      stream,source,semantic,text,
+      state:String(output.state??options.state??'completed'),
+      channelId:String(output.channelId??options.channelId??'unbound'),
+      sessionId:String(output.sessionId??options.sessionId??'haamu'),
+      originType:type,
+      preservesSourceIdentity:true,
+    });
+  },
+
+  streamRecords(outputs = [], options = {}) {
+    return Object.freeze(Array.from(outputs, (output,index)=>this.streamRecord(output,{
+      ...options,
+      sequence:output?.sequence??index,
+    })));
   },
 
   allocateStreams(records = [], options = {}) {
