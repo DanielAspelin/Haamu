@@ -15,7 +15,7 @@ const HaamuWebText = Object.freeze({
   family: 'web',
   role: 'web.text',
   type: 'text-input-output-processor-allocator-symbolizer-parser-mutator-deparser-font-renderer',
-  version: '1.22.0',
+  version: '1.23.0',
 
   key(event = {}) {
     const key = event.key ?? null;
@@ -531,6 +531,46 @@ const HaamuWebText = Object.freeze({
     return Object.freeze(['server','local','global','client'].map(scope=>
       this.context(scope,{...options,...(definitions[scope]??{})})
     ));
+  },
+
+  transaction(scope, input = '', options = {}) {
+    const context=this.context(scope,options);
+    const sequence=Math.max(1,Math.trunc(finite(options.sequence,1)));
+    const id=String(options.id??(context.contextId+':tx:'+sequence));
+    const source=this.normalize(input);
+    const allowed=Object.freeze({
+      submitted:Object.freeze(['accepted','rejected']),
+      accepted:Object.freeze(['processing','completed','rejected']),
+      processing:Object.freeze(['completed','rejected']),
+      completed:Object.freeze([]),
+      rejected:Object.freeze([]),
+    });
+    const snapshots=[];
+    const snapshot=(state,detail={})=>Object.freeze({
+      type:'web-text-transaction-state',
+      id,scope:context.scope,state,
+      sequence:snapshots.length+1,
+      semantic:detail.semantic??state,
+      text:this.normalize(detail.text??''),
+      reason:detail.reason??null,
+    });
+    snapshots.push(snapshot('submitted',{semantic:'input',text:source}));
+    const transition=(state,detail={})=>{
+      const current=snapshots[snapshots.length-1];
+      if(!allowed[current.state]?.includes(state))throw new RangeError('Invalid textual transaction transition.');
+      const next=snapshot(state,detail); snapshots.push(next); return next;
+    };
+    return Object.freeze({
+      type:'web-text-transaction',
+      id,scope:context.scope,context,source,
+      initial:snapshots[0],
+      state:()=>snapshots[snapshots.length-1],
+      history:()=>Object.freeze([...snapshots]),
+      transition,
+      executable:false,
+      rendererConnected:false,
+      changesGeometry:false,
+    });
   },
 
   pipeline(scope, outputs = [], options = {}) {
