@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.133.0',
+  version: '0.134.0',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -199,21 +199,6 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       prompt.setAttribute('data-gramm', 'false');
       prompt.setAttribute('data-gramm_editor', 'false');
       prompt.setAttribute('data-enable-grammarly', 'false');
-      /* Android/Chrome IMEs may render composition decoration independently
-         of CSS. Keep composition native for caret correctness, but force the
-         editable surface to reassert undecorated text after composition. */
-      prompt.addEventListener('compositionstart', () => {
-        prompt.dataset.composing = 'true';
-      });
-      prompt.addEventListener('compositionend', () => {
-        delete prompt.dataset.composing;
-        const start = prompt.selectionStart;
-        const end = prompt.selectionEnd;
-        const value = prompt.value;
-        prompt.value = value;
-        if (start !== null && end !== null) prompt.setSelectionRange(start, end);
-        prompt.dispatchEvent(new Event('input', { bubbles:true }));
-      });
       prompt.setAttribute('aria-label', plateTitles[corner] + ' prompt');
       prompt.dataset.logicalPrompt = promptId;
       prompt.dataset.outputSocket = promptSystems?.outputSocket?.socket?.id ?? '';
@@ -238,8 +223,10 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
            the mirror exists only to obtain browser-exact wrap geometry. */
         const webText=globalThis.HaamuWebText;
         const symbols=webText?.symbolize ? webText.symbolize(text) : Array.from(text);
+        const selectionDirection=target.selectionDirection||'none';
         const selectionState=webText?.selection ? webText.selection({
-          anchor:selection, focus:selectionEnd,
+          anchor:selectionDirection==='backward'?selectionEnd:selection,
+          focus:selectionDirection==='backward'?selection:selectionEnd,
         }) : null;
         const cursor=webText?.cursor ? webText.cursor({
           position:selection, anchor:selection, focus:selectionEnd,
@@ -261,12 +248,13 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
         const node=mirror.firstChild, lines=[];
         if(node?.nodeType===Node.TEXT_NODE && text.length){
           const range=document.createRange(); let active=null;
-          for(let i=0;i<text.length;i+=1){
-            range.setStart(node,i); range.setEnd(node,i+1);
+          for(const symbol of symbols){
+            const start=symbol.utf16?.start??0,end=symbol.utf16?.end??start+symbol.value.length;
+            range.setStart(node,start); range.setEnd(node,end);
             const rect=range.getBoundingClientRect(); if(!rect.height)continue;
             if(!active||Math.abs(rect.top-active.top)>1){
-              active={top:rect.top,start:i,end:i+1}; lines.push(active);
-            }else active.end=i+1;
+              active={top:rect.top,start,end}; lines.push(active);
+            }else active.end=end;
           }
           range.detach?.();
         }
@@ -354,35 +342,6 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
           resizePrompt(peer);
         }
       };
-      /* beforeinput records the browser/IME editing intention through
-         WebText without replacing the native editor's authoritative mutation. */
-      prompt.addEventListener('beforeinput', event => {
-        const webText=globalThis.HaamuWebText;
-        if(!webText?.input)return;
-        const state=webText.input(event,{
-          selectionStart:prompt.selectionStart ?? 0,
-          selectionEnd:prompt.selectionEnd ?? 0,
-        });
-        prompt.dataset.inputType=state.inputType ?? '';
-        prompt.dataset.inputProducesText=String(state.producesText);
-        if(webText.edit){
-          const edit=webText.edit(prompt.value,{
-            inputType:state.inputType,
-            data:state.data,
-            selectionStart:state.selection.start,
-            selectionEnd:state.selection.end,
-          });
-          prompt.dataset.editOperation=edit.operation ?? edit.type;
-        }
-      });
-      prompt.addEventListener('keydown', event => {
-        const key=globalThis.HaamuWebText?.key?.(event);
-        if(key){
-          prompt.dataset.key=key.key ?? '';
-          prompt.dataset.keyCode=key.code ?? '';
-          prompt.dataset.keyPhase=key.phase;
-        }
-      });
       prompt.addEventListener('input', () => synchronizePrompt(prompt));
       /* Selection is independent from value mutation. Re-project on native
          caret/selection movement so the visual Text Field can subsequently
