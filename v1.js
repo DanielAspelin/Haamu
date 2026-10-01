@@ -3,8 +3,8 @@
 /**
  * Haamu V1 monolith.
  *
- * V1 is constructed class by class in semantic and dependency order.
- * V0 provides the nested scaffold boundary for preceding version lineages.
+ * Classes are constructed in ascending version order from top to bottom.
+ * Classes remain parallel unless an explicit relationship is established.
  */
 class V0 {
   static NAME = 'Haamu V0';
@@ -19,18 +19,18 @@ class V0 {
   }
 }
 
-class V2 {
-  static NAME = 'Haamu V2';
-  static VERSION = '2';
-  static STATE = 'under-construction';
-}
-
 class V1 {
   static NAME = 'Haamu V1';
   static VERSION = '1.0.0';
   static STATE = 'under-construction';
 }
 
+class V2 {
+  static NAME = 'Haamu V2';
+  static VERSION = '2';
+  static STATE = 'under-construction';
+}
+
 globalThis.V0 = V0;
-globalThis.V2 = V2;
 globalThis.V1 = V1;
+globalThis.V2 = V2;
