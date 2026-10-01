@@ -22,6 +22,9 @@ async function qualify(browser,name,viewport,isMobile){
      if(await particle.count()!==1)throw Error(name+' '+pos+' particle projection count '+await particle.count());
      const particleCount=Number(await particle.getAttribute('data-particles')||0);
      if(!(particleCount>0))throw Error(name+' '+pos+' particle projection empty');
+     const geom=await particle.evaluate(el=>{const r=el.getBoundingClientRect(),h=el.parentElement.getBoundingClientRect();return{x:r.x,y:r.y,width:r.width,height:r.height,hx:h.x,hy:h.y,hwidth:h.width,hheight:h.height}});
+     const eps=.6;
+     if(Math.abs(geom.x-geom.hx)>eps||Math.abs(geom.y-geom.hy)>eps||Math.abs(geom.width-geom.hwidth)>eps||Math.abs(geom.height-geom.hheight)>eps)throw Error(name+' '+pos+' particle boundary escaped Prompt host '+JSON.stringify(geom));
      const native=await prompt.evaluate(el=>getComputedStyle(el).color);
      if(!/rgba?\(0, 0, 0, 0\)|transparent/.test(native))throw Error(name+' '+pos+' native Prompt text became visible: '+native);
    }
