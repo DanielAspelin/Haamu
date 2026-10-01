@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.124.0',
+  version: '0.125.0',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -454,7 +454,12 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
         delete prompt.dataset.continuationReason;
 
         if (!promptSystems || !plateSystems) return;
-        let state=promptSystems.transition?.('submitted',{reason:'enter'});
+        const interpretation=promptSystems.interpret?.(prompt.value);
+        if(interpretation){
+          prompt.dataset.promptIntent=interpretation.mode;
+          prompt.dataset.promptPrefix=interpretation.prefix ?? '';
+        }
+        let state=promptSystems.transition?.('submitted',{reason:interpretation?.mode ?? 'enter'});
         if(state) prompt.dataset.promptState=state.state;
         state=promptSystems.transition?.('executing',{reason:'dispatch'});
         if(state) prompt.dataset.promptState=state.state;
