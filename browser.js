@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.127.3',
+  version: '0.127.4',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -692,6 +692,13 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       activeCurrent?.addEventListener('transitionend', onCloseTransitionEnd);
       requestAnimationFrame(() => {
         activeCurrent?.classList.remove('open');
+        /* Desktop handoff is concurrent: as the previous Plate begins its
+           contraction/fade, the selected Plate begins expanding in the same
+           animation frame. Mobile retains its qualified sequential handoff. */
+        if (activePlatform === 'desktop' && handoffAuthorized) {
+          handoffAuthorized = false;
+          openTargetNow();
+        }
       });
       closeFallback = setTimeout(closeCurrent, wasMaximized ? 620 : 600);
 
