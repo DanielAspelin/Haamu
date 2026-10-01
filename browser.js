@@ -8,7 +8,7 @@ globalThis.HaamuFamilies ??= Object.create(null);
 globalThis.HaamuFamilies['browser'] = Object.freeze({
   family: 'browser',
   role: 'browser',
-  version: '0.122.2',
+  version: '0.122.3',
   position: 'between-browser-entry-and-web-entry',
 });
 
@@ -256,8 +256,18 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
         for(let i=0;i<lines.length;i+=1){
           if(lines[i].start<=selection)cursorLine=i; else break;
         }
-        const firstVisible=Math.max(0,lines.length-maxLines);
-        const visible=lines.slice(firstVisible);
+        const measuredLines=lines.map((line,index)=>({
+          start:line.start,
+          end:line.end,
+          value:text.slice(line.start,line.end).replace(/\n$/,''),
+          hardBreak:text.slice(line.start,line.end).endsWith('\n'),
+          softBreak:index<lines.length-1 && !text.slice(line.start,line.end).endsWith('\n'),
+        }));
+        const allocation=webText?.allocateLines
+          ? webText.allocateLines(text,{lines:measuredLines,capacity:maxLines})
+          : {first:Math.max(0,lines.length-maxLines),visible:measuredLines.slice(Math.max(0,lines.length-maxLines)),overflowing:lines.length>maxLines};
+        const firstVisible=allocation.first;
+        const visible=lines.slice(firstVisible,firstVisible+allocation.visible.length);
 
         if(!caret){
           caret=document.createElement('span');
@@ -296,6 +306,8 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
         area.dataset.lineCount=String(lines.length);
         area.dataset.visibleLines=String(visibleCount);
         area.dataset.firstVisibleLine=String(firstVisible);
+        area.dataset.overflowing=String(!!allocation.overflowing);
+        area.dataset.flowDirection=allocation.overflowing?'up':'none';
         field.dataset.symbolCount=String(symbols.length);
         if(font) field.dataset.fontFamily=String(font.family);
         if(cursor) field.dataset.cursorPosition=String(cursor.position);
