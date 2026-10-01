@@ -288,13 +288,17 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       }, 620));
 
       const activePlatform = mobilePlatform ? 'mobile' : 'desktop';
+      const targetPosition = button.dataset.position;
       const current = [...menus.entries()].find(([, pair]) =>
         [pair.mobile, pair.desktop].some(candidate => candidate?.classList.contains('open')));
-      const same = current && current[0] === button.dataset.position;
+      const same = current && current[0] === targetPosition;
 
       const openTarget = () => {
         if (same) return;
         const menu = projections[activePlatform];
+        /* Opening is a normalization boundary: a Plate never inherits a
+           previous maximized presentation after another corner was selected. */
+        projections.stateSystem?.restore('desktop');
         menu.setAttribute('aria-hidden', 'false');
         button.setAttribute('aria-expanded', 'true');
         requestAnimationFrame(() => menu.classList.add('open'));
@@ -307,25 +311,23 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
 
       const [position, pair] = current;
       const activeCurrent = pair[activePlatform];
-      const closingDesktop = pair.desktop;
       const closingState = pair.stateSystem ?? null;
-      const mustRestore = activePlatform === 'desktop'
-        && closingState?.state('desktop') === 'maximized';
 
       const closeCurrent = () => {
+        /* Closing is also a normalization boundary. Restore unconditionally
+           rather than depending on a potentially stale presentation query. */
+        closingState?.restore('desktop');
         for (const active of [pair.mobile, pair.desktop]) {
-          active.classList.remove('open', 'plate-restoring');
-          active.setAttribute('aria-hidden', 'true');
+          active?.classList.remove('open', 'plate-restoring');
+          active?.setAttribute('aria-hidden', 'true');
         }
         shell.querySelector('.corner.start[data-position="' + position + '"]')
           ?.setAttribute('aria-expanded', 'false');
       };
 
-      if (mustRestore) {
+      if (activePlatform === 'desktop' && pair.desktop?.dataset.plateState === 'maximized') {
         activeCurrent?.classList.add('plate-restoring');
-        closingState.restore('desktop');
-        /* Let the maximized Plate visibly morph back to normal before it
-           closes and the newly selected corner Plate opens. */
+        closingState?.restore('desktop');
         setTimeout(() => {
           closeCurrent();
           if (!same) setTimeout(openTarget, 70);
@@ -345,11 +347,10 @@ function projectHaamuBrowser(root = document.getElementById('haamu-root')) {
       if (!open.length) continue;
       const desktop = pair.desktop;
       const plateState = pair.stateSystem ?? null;
-      if (plateState?.state('desktop') === 'maximized') {
-        desktop?.classList.add('plate-restoring');
-        plateState.restore('desktop');
-        setTimeout(() => desktop?.classList.remove('plate-restoring'), 560);
+      if (desktop?.dataset.plateState === 'maximized') {
+        desktop.classList.add('plate-restoring');
       }
+      plateState?.restore('desktop');
       for (const active of open) {
         active.classList.remove('open');
         active.setAttribute('aria-hidden', 'true');
