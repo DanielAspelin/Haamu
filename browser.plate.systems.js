@@ -69,5 +69,5 @@ const HaamuBrowserPlateSystems=Object.freeze({
  remove(id){return systems.delete(String(id));},
  plates(){return Object.freeze(Array.from(systems.keys()));}
 });
-globalThis.HaamuFamilies['browser.plate.systems']=Object.freeze({family:'browser',role:'browser.plate.systems',type:'per-plate-output-systems',version:'0.5.1'});
+globalThis.HaamuFamilies['browser.plate.systems']=Object.freeze({family:'browser',role:'browser.plate.systems',type:'per-plate-input-output-receiver',version:'0.6.1'});
 globalThis.HaamuBrowserPlateSystems=HaamuBrowserPlateSystems;
