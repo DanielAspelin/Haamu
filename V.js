@@ -5,7 +5,7 @@
  *
  * V1 vocabulary rule:
  * - singular uppercase members are classes;
- * - plural uppercase members ending in "_" are dynamic arrays;
+ * - plural uppercase members are dynamic arrays when their names do not conflict;
  * - members are parallel within V1 unless an explicit relationship is established.
  */
 class V2 {
@@ -20,718 +20,718 @@ class V1 {
   static STATE = 'under-construction';
 
   static RUNTIME = class RUNTIME {};
-  static RUNTIMES_ = [];
+  static RUNTIMES = [];
 
   static IO = class IO {};
-  static IOS_ = [];
+  static IOS = [];
 
   static PLATFORM = class PLATFORM {};
-  static PLATFORMS_ = [];
+  static PLATFORMS = [];
 
   static BROWSER = class BROWSER {};
-  static BROWSERS_ = [];
+  static BROWSERS = [];
 
   static WEB = class WEB {};
-  static WEBS_ = [];
+  static WEBS = [];
 
   static SYSTEM = class SYSTEM {};
-  static SYSTEMS_ = [];
+  static SYSTEMS = [];
 
   static WORKER = class WORKER {};
-  static WORKERS_ = [];
+  static WORKERS = [];
 
   static KIT = class KIT {};
-  static KITS_ = [];
+  static KITS = [];
 
   static PROGRAM = class PROGRAM {};
-  static PROGRAMS_ = [];
+  static PROGRAMS = [];
 
   static APPLICATION = class APPLICATION {};
-  static APPLICATIONS_ = [];
+  static APPLICATIONS = [];
 
   static GENERATOR = class GENERATOR {};
-  static GENERATORS_ = [];
+  static GENERATORS = [];
 
   static AUTOMATOR = class AUTOMATOR {};
-  static AUTOMATORS_ = [];
+  static AUTOMATORS = [];
 
   static TOOL = class TOOL {};
-  static TOOLS_ = [];
+  static TOOLS = [];
 
   static PLATE = class PLATE {};
-  static PLATES_ = [];
+  static PLATES = [];
 
   static MATRIX = class MATRIX {};
-  static MATRIXES_ = [];
+  static MATRIXES = [];
 
   static GRID = class GRID {};
-  static GRIDS_ = [];
+  static GRIDS = [];
 
   static MESH = class MESH {};
-  static MESHES_ = [];
+  static MESHES = [];
 
   static MENU = class MENU {};
-  static MENUS_ = [];
+  static MENUS = [];
 
   static PAGE = class PAGE {};
-  static PAGES_ = [];
+  static PAGES = [];
 
   static VIEW = class VIEW {};
-  static VIEWS_ = [];
+  static VIEWS = [];
 
   static PANE = class PANE {};
-  static PANES_ = [];
+  static PANES = [];
 
   static PANEL = class PANEL {};
-  static PANELS_ = [];
+  static PANELS = [];
 
   static BAR = class BAR {};
-  static BARS_ = [];
+  static BARS = [];
 
   static BUTTON = class BUTTON {};
-  static BUTTONS_ = [];
+  static BUTTONS = [];
 
   static SHELL = class SHELL {};
-  static SHELLS_ = [];
+  static SHELLS = [];
 
   static TERMINAL = class TERMINAL {};
-  static TERMINALS_ = [];
+  static TERMINALS = [];
 
   static CONSOLE = class CONSOLE {};
-  static CONSOLES_ = [];
+  static CONSOLES = [];
 
   static TEXT = class TEXT {};
-  static TEXTS_ = [];
+  static TEXTS = [];
 
   static AUDIO = class AUDIO {};
-  static AUDIOS_ = [];
+  static AUDIOS = [];
 
   static VIDEO = class VIDEO {};
-  static VIDEOS_ = [];
+  static VIDEOS = [];
 
   static MEDIA = class MEDIA {};
-  static MEDIAS_ = [];
+  static MEDIAS = [];
 
   static MULTIMEDIA = class MULTIMEDIA {};
-  static MULTIMEDIAS_ = [];
+  static MULTIMEDIAS = [];
 
   static VECTOR = class VECTOR {};
-  static VECTORS_ = [];
+  static VECTORS = [];
 
   static BLOCK = class BLOCK {};
-  static BLOCKS_ = [];
+  static BLOCKS = [];
 
   static LINE = class LINE {};
-  static LINES_ = [];
+  static LINES = [];
 
   static SCRIPT = class SCRIPT {};
-  static SCRIPTS_ = [];
+  static SCRIPTS = [];
 
   static BINARY = class BINARY {};
-  static BINARIES_ = [];
+  static BINARIES = [];
 
   static PROCESSOR = class PROCESSOR {};
-  static PROCESSORS_ = [];
+  static PROCESSORS = [];
 
   static ALLOCATOR = class ALLOCATOR {};
-  static ALLOCATORS_ = [];
+  static ALLOCATORS = [];
 
   static REALLOCATOR = class REALLOCATOR {};
-  static REALLOCATORS_ = [];
+  static REALLOCATORS = [];
 
   static DEALLOCATOR = class DEALLOCATOR {};
-  static DEALLOCATORS_ = [];
+  static DEALLOCATORS = [];
 
   static READER = class READER {};
-  static READERS_ = [];
+  static READERS = [];
 
   static WRITER = class WRITER {};
-  static WRITERS_ = [];
+  static WRITERS = [];
 
   static RENDERER = class RENDERER {};
-  static RENDERERS_ = [];
+  static RENDERERS = [];
 
   static INTERPRETER = class INTERPRETER {};
-  static INTERPRETERS_ = [];
+  static INTERPRETERS = [];
 
   static PARSER = class PARSER {};
-  static PARSERS_ = [];
+  static PARSERS = [];
 
   static SCHEDULER = class SCHEDULER {};
-  static SCHEDULERS_ = [];
+  static SCHEDULERS = [];
 
   static SYNCHRONIZER = class SYNCHRONIZER {};
-  static SYNCHRONIZERS_ = [];
+  static SYNCHRONIZERS = [];
 
   static PARALLELIZER = class PARALLELIZER {};
-  static PARALLELIZERS_ = [];
+  static PARALLELIZERS = [];
 
   static CONCURRENCER = class CONCURRENCER {};
-  static CONCURRENCERS_ = [];
+  static CONCURRENCERS = [];
 
   static REGULATOR = class REGULATOR {};
-  static REGULATORS_ = [];
+  static REGULATORS = [];
 
   static CONTROLLER = class CONTROLLER {};
-  static CONTROLLERS_ = [];
+  static CONTROLLERS = [];
 
   static ADAPTER = class ADAPTER {};
-  static ADAPTERS_ = [];
+  static ADAPTERS = [];
 
   static SENSOR = class SENSOR {};
-  static SENSORS_ = [];
+  static SENSORS = [];
 
   static INITIALIZER = class INITIALIZER {};
-  static INITIALIZERS_ = [];
+  static INITIALIZERS = [];
 
   static DETECTOR = class DETECTOR {};
-  static DETECTORS_ = [];
+  static DETECTORS = [];
 
   static LOADER = class LOADER {};
-  static LOADERS_ = [];
+  static LOADERS = [];
 
   static VALIDATOR = class VALIDATOR {};
-  static VALIDATORS_ = [];
+  static VALIDATORS = [];
 
   static VERIFIER = class VERIFIER {};
-  static VERIFIERS_ = [];
+  static VERIFIERS = [];
 
   static QUALIFIER = class QUALIFIER {};
-  static QUALIFIERS_ = [];
+  static QUALIFIERS = [];
 
   static QUANTIFIER = class QUANTIFIER {};
-  static QUANTIFIERS_ = [];
+  static QUANTIFIERS = [];
 
   static REPLICATOR = class REPLICATOR {};
-  static REPLICATORS_ = [];
+  static REPLICATORS = [];
 
   static BROADCASTER = class BROADCASTER {};
-  static BROADCASTERS_ = [];
+  static BROADCASTERS = [];
 
   static STREAMER = class STREAMER {};
-  static STREAMERS_ = [];
+  static STREAMERS = [];
 
   static BUILDER = class BUILDER {};
-  static BUILDERS_ = [];
+  static BUILDERS = [];
 
   static REBUILDER = class REBUILDER {};
-  static REBUILDERS_ = [];
+  static REBUILDERS = [];
 
   static CONSTRUCTOR = class CONSTRUCTOR {};
-  static CONSTRUCTORS_ = [];
+  static CONSTRUCTORS = [];
 
   static DESTRUCTOR = class DESTRUCTOR {};
-  static DESTRUCTORS_ = [];
+  static DESTRUCTORS = [];
 
   static CALLER = class CALLER {};
-  static CALLERS_ = [];
+  static CALLERS = [];
 
   static RETURNER = class RETURNER {};
-  static RETURNERS_ = [];
+  static RETURNERS = [];
 
   static EXECUTOR = class EXECUTOR {};
-  static EXECUTORS_ = [];
+  static EXECUTORS = [];
 
   static LOOPER = class LOOPER {};
-  static LOOPERS_ = [];
+  static LOOPERS = [];
 
   static PROCESS = class PROCESS {};
-  static PROCESSES_ = [];
+  static PROCESSES = [];
 
   static ALLOCATION = class ALLOCATION {};
-  static ALLOCATIONS_ = [];
+  static ALLOCATIONS = [];
 
   static PROCESSING = class PROCESSING {};
-  static PROCESSINGS_ = [];
+  static PROCESSINGS = [];
 
   static SCHEDULING = class SCHEDULING {};
-  static SCHEDULINGS_ = [];
+  static SCHEDULINGS = [];
 
   static CONCURRENCY = class CONCURRENCY {};
-  static CONCURRENCIES_ = [];
+  static CONCURRENCIES = [];
 
   static PARALLELISM = class PARALLELISM {};
-  static PARALLELISMS_ = [];
+  static PARALLELISMS = [];
 
   static PERSISTENCE = class PERSISTENCE {};
-  static PERSISTENCES_ = [];
+  static PERSISTENCES = [];
 
   static CACHING = class CACHING {};
-  static CACHINGS_ = [];
+  static CACHINGS = [];
 
   static DELIVERY = class DELIVERY {};
-  static DELIVERIES_ = [];
+  static DELIVERIES = [];
 
   static ASSEMBLY = class ASSEMBLY {};
-  static ASSEMBLIES_ = [];
+  static ASSEMBLIES = [];
 
   static SNAPPING = class SNAPPING {};
-  static SNAPPINGS_ = [];
+  static SNAPPINGS = [];
 
   static MORPHING = class MORPHING {};
-  static MORPHINGS_ = [];
+  static MORPHINGS = [];
 
   static NAVIGATION = class NAVIGATION {};
-  static NAVIGATIONS_ = [];
+  static NAVIGATIONS = [];
 
   static SEARCH = class SEARCH {};
-  static SEARCHES_ = [];
+  static SEARCHES = [];
 
   static COMMUNICATION = class COMMUNICATION {};
-  static COMMUNICATIONS_ = [];
+  static COMMUNICATIONS = [];
 
   static CONNECTION = class CONNECTION {};
-  static CONNECTIONS_ = [];
+  static CONNECTIONS = [];
 
   static LOCATION = class LOCATION {};
-  static LOCATIONS_ = [];
+  static LOCATIONS = [];
 
   static CRYPT = class CRYPT {};
-  static CRYPTS_ = [];
+  static CRYPTS = [];
 
   static ENCRYPTION = class ENCRYPTION {};
-  static ENCRYPTIONS_ = [];
+  static ENCRYPTIONS = [];
 
   static ENCODING = class ENCODING {};
-  static ENCODINGS_ = [];
+  static ENCODINGS = [];
 
   static IDENTITY = class IDENTITY {};
-  static IDENTITIES_ = [];
+  static IDENTITIES = [];
 
   static SESSION = class SESSION {};
-  static SESSIONS_ = [];
+  static SESSIONS = [];
 
   static TOKEN = class TOKEN {};
-  static TOKENS_ = [];
+  static TOKENS = [];
 
   static UUID = class UUID {};
-  static UUIDS_ = [];
+  static UUIDS = [];
 
   static NUMBER = class NUMBER {};
-  static NUMBERS_ = [];
+  static NUMBERS = [];
 
   static DNS = class DNS {};
-  static DNSES_ = [];
+  static DNSES = [];
 
   static DHCP = class DHCP {};
-  static DHCPS_ = [];
+  static DHCPS = [];
 
   static VPN = class VPN {};
-  static VPNS_ = [];
+  static VPNS = [];
 
   static IP = class IP {};
-  static IPS_ = [];
+  static IPS = [];
 
   static TCP = class TCP {};
-  static TCPS_ = [];
+  static TCPS = [];
 
   static UDP = class UDP {};
-  static UDPS_ = [];
+  static UDPS = [];
 
   static NAT = class NAT {};
-  static NATS_ = [];
+  static NATS = [];
 
   static NIC = class NIC {};
-  static NICS_ = [];
+  static NICS = [];
 
   static LAN = class LAN {};
-  static LANS_ = [];
+  static LANS = [];
 
   static WAN = class WAN {};
-  static WANS_ = [];
+  static WANS = [];
 
   static ROUTER = class ROUTER {};
-  static ROUTERS_ = [];
+  static ROUTERS = [];
 
   static SWITCH = class SWITCH {};
-  static SWITCHES_ = [];
+  static SWITCHES = [];
 
   static FIREWALL = class FIREWALL {};
-  static FIREWALLS_ = [];
+  static FIREWALLS = [];
 
   static PROXY = class PROXY {};
-  static PROXIES_ = [];
+  static PROXIES = [];
 
   static ANTIVIRUS = class ANTIVIRUS {};
-  static ANTIVIRUSES_ = [];
+  static ANTIVIRUSES = [];
 
   static NETWORK = class NETWORK {};
-  static NETWORKS_ = [];
+  static NETWORKS = [];
 
   static SCANNER = class SCANNER {};
-  static SCANNERS_ = [];
+  static SCANNERS = [];
 
   static MAPPER = class MAPPER {};
-  static MAPPERS_ = [];
+  static MAPPERS = [];
 
   static DISCOVERY = class DISCOVERY {};
-  static DISCOVERIES_ = [];
+  static DISCOVERIES = [];
 
   static INTERRUPT = class INTERRUPT {};
-  static INTERRUPTS_ = [];
+  static INTERRUPTS = [];
 
   static API = class API {};
-  static APIS_ = [];
+  static APIS = [];
 
   static PLUGIN = class PLUGIN {};
-  static PLUGINS_ = [];
+  static PLUGINS = [];
 
   static PLUG = class PLUG {};
-  static PLUGS_ = [];
+  static PLUGS = [];
 
   static SOCKET = class SOCKET {};
-  static SOCKETS_ = [];
+  static SOCKETS = [];
 
   static WIRE = class WIRE {};
-  static WIRES_ = [];
+  static WIRES = [];
 
   static WIRING = class WIRING {};
-  static WIRINGS_ = [];
+  static WIRINGS = [];
 
   static GROUP = class GROUP {};
-  static GROUPS_ = [];
+  static GROUPS = [];
 
   static GROUPING = class GROUPING {};
-  static GROUPINGS_ = [];
+  static GROUPINGS = [];
 
   static GROUPER = class GROUPER {};
-  static GROUPERS_ = [];
+  static GROUPERS = [];
 
   static CLASS = class CLASS {};
-  static CLASSES_ = [];
+  static CLASSES = [];
 
   static REGISTRY = class REGISTRY {};
-  static REGISTRIES_ = [];
+  static REGISTRIES = [];
 
   static REGISTRAR = class REGISTRAR {};
-  static REGISTRARS_ = [];
+  static REGISTRARS = [];
 
   static LOGGER = class LOGGER {};
-  static LOGGERS_ = [];
+  static LOGGERS = [];
 
   static REPORTER = class REPORTER {};
-  static REPORTERS_ = [];
+  static REPORTERS = [];
 
   static TRANSACTOR = class TRANSACTOR {};
-  static TRANSACTORS_ = [];
+  static TRANSACTORS = [];
 
   static PROJECT = class PROJECT {};
-  static PROJECTS_ = [];
+  static PROJECTS = [];
 
   static MANAGER = class MANAGER {};
-  static MANAGERS_ = [];
+  static MANAGERS = [];
 
   static ARCHIVE = class ARCHIVE {};
-  static ARCHIVES_ = [];
+  static ARCHIVES = [];
 
   static ZIP = class ZIP {};
-  static ZIPS_ = [];
+  static ZIPS = [];
 
   static SNAPSHOT = class SNAPSHOT {};
-  static SNAPSHOTS_ = [];
+  static SNAPSHOTS = [];
 
   static CHECKPOINT = class CHECKPOINT {};
-  static CHECKPOINTS_ = [];
+  static CHECKPOINTS = [];
 
   static KNOWLEDGE = class KNOWLEDGE {};
-  static KNOWLEDGES_ = [];
+  static KNOWLEDGES = [];
 
   static DATABASE = class DATABASE {};
-  static DATABASES_ = [];
+  static DATABASES = [];
 
   static TABLE = class TABLE {};
-  static TABLES_ = [];
+  static TABLES = [];
 
   static SHEET = class SHEET {};
-  static SHEETS_ = [];
+  static SHEETS = [];
 
   static ROW = class ROW {};
-  static ROWS_ = [];
+  static ROWS = [];
 
   static COLUMN = class COLUMN {};
-  static COLUMNS_ = [];
+  static COLUMNS = [];
 
   static CELL = class CELL {};
-  static CELLS_ = [];
+  static CELLS = [];
 
   static TUPLE = class TUPLE {};
-  static TUPLES_ = [];
+  static TUPLES = [];
 
   static HEADER = class HEADER {};
-  static HEADERS_ = [];
+  static HEADERS = [];
 
   static CAPABILITY = class CAPABILITY {};
-  static CAPABILITIES_ = [];
+  static CAPABILITIES = [];
 
   static SELECTION = class SELECTION {};
-  static SELECTIONS_ = [];
+  static SELECTIONS = [];
 
   static ARITHMETIC = class ARITHMETIC {};
-  static ARITHMETICS_ = [];
+  static ARITHMETICS = [];
 
   static ICON = class ICON {};
-  static ICONS_ = [];
+  static ICONS = [];
 
   static SCOPE = class SCOPE {};
-  static SCOPES_ = [];
+  static SCOPES = [];
 
   static ZONE = class ZONE {};
-  static ZONES_ = [];
+  static ZONES = [];
 
   static REGION = class REGION {};
-  static REGIONS_ = [];
+  static REGIONS = [];
 
   static AREA = class AREA {};
-  static AREAS_ = [];
+  static AREAS = [];
 
   static ENVIRONMENT = class ENVIRONMENT {};
-  static ENVIRONMENTS_ = [];
+  static ENVIRONMENTS = [];
 
   static FACTORY = class FACTORY {};
-  static FACTORIES_ = [];
+  static FACTORIES = [];
 
   static INDUSTRY = class INDUSTRY {};
-  static INDUSTRIES_ = [];
+  static INDUSTRIES = [];
 
   static MANUFACTURING = class MANUFACTURING {};
-  static MANUFACTURINGS_ = [];
+  static MANUFACTURINGS = [];
 
   static PRODUCTION = class PRODUCTION {};
-  static PRODUCTIONS_ = [];
+  static PRODUCTIONS = [];
 
   static TRANSFER = class TRANSFER {};
-  static TRANSFERS_ = [];
+  static TRANSFERS = [];
 
   static SOURCE = class SOURCE {};
-  static SOURCES_ = [];
+  static SOURCES = [];
 
   static TARGET = class TARGET {};
-  static TARGETS_ = [];
+  static TARGETS = [];
 
   static SIMULATION = class SIMULATION {};
-  static SIMULATIONS_ = [];
+  static SIMULATIONS = [];
 
   static CAD = class CAD {};
-  static CADS_ = [];
+  static CADS = [];
 
   static INTERFACE = class INTERFACE {};
-  static INTERFACES_ = [];
+  static INTERFACES = [];
 
   static FEATURE = class FEATURE {};
-  static FEATURES_ = [];
+  static FEATURES = [];
 
   static INTERPRETATION = class INTERPRETATION {};
-  static INTERPRETATIONS_ = [];
+  static INTERPRETATIONS = [];
 
   static MUTATION = class MUTATION {};
-  static MUTATIONS_ = [];
+  static MUTATIONS = [];
 
   static LIFECYCLE = class LIFECYCLE {};
-  static LIFECYCLES_ = [];
+  static LIFECYCLES = [];
 
   static ENTITY = class ENTITY {};
-  static ENTITIES_ = [];
+  static ENTITIES = [];
 
   static ARCHITECTURE = class ARCHITECTURE {};
-  static ARCHITECTURES_ = [];
+  static ARCHITECTURES = [];
 
   static NATIVE = class NATIVE {};
-  static NATIVES_ = [];
+  static NATIVES = [];
 
   static VIRTUAL = class VIRTUAL {};
-  static VIRTUALS_ = [];
+  static VIRTUALS = [];
 
   static EMULATION = class EMULATION {};
-  static EMULATIONS_ = [];
+  static EMULATIONS = [];
 
   static HYPERVISOR = class HYPERVISOR {};
-  static HYPERVISORS_ = [];
+  static HYPERVISORS = [];
 
   static KVM = class KVM {};
-  static KVMS_ = [];
+  static KVMS = [];
 
   static QEMU = class QEMU {};
-  static QEMUS_ = [];
+  static QEMUS = [];
 
   static VM = class VM {};
-  static VMS_ = [];
+  static VMS = [];
 
   static CONTAINER = class CONTAINER {};
-  static CONTAINERS_ = [];
+  static CONTAINERS = [];
 
   static CONTAINERIZATION = class CONTAINERIZATION {};
-  static CONTAINERIZATIONS_ = [];
+  static CONTAINERIZATIONS = [];
 
   static INTERCONNECTION = class INTERCONNECTION {};
-  static INTERCONNECTIONS_ = [];
+  static INTERCONNECTIONS = [];
 
   static INTERCOMMUNICATION = class INTERCOMMUNICATION {};
-  static INTERCOMMUNICATIONS_ = [];
+  static INTERCOMMUNICATIONS = [];
 
   static NEGOTIATION = class NEGOTIATION {};
-  static NEGOTIATIONS_ = [];
+  static NEGOTIATIONS = [];
 
   static RFC = class RFC {};
-  static RFCS_ = [];
+  static RFCS = [];
 
   static DATA = class DATA {};
-  static DATAS_ = [];
+  static DATAS = [];
 
   static INVOCATION = class INVOCATION {};
-  static INVOCATIONS_ = [];
+  static INVOCATIONS = [];
 
   static EXECUTION = class EXECUTION {};
-  static EXECUTIONS_ = [];
+  static EXECUTIONS = [];
 
   static LOADING = class LOADING {};
-  static LOADINGS_ = [];
+  static LOADINGS = [];
 
   static INSTANTIATION = class INSTANTIATION {};
-  static INSTANTIATIONS_ = [];
+  static INSTANTIATIONS = [];
 
   static INITIALIZATION = class INITIALIZATION {};
-  static INITIALIZATIONS_ = [];
+  static INITIALIZATIONS = [];
 
   static TYPE = class TYPE {};
-  static TYPES_ = [];
+  static TYPES = [];
 
   static MODE = class MODE {};
-  static MODES_ = [];
+  static MODES = [];
 
   static CONDITION = class CONDITION {};
-  static CONDITIONS_ = [];
+  static CONDITIONS = [];
 
   static STATE = class STATE {};
-  static STATES_ = [];
+  static STATES = [];
 
   static GOAL = class GOAL {};
-  static GOALS_ = [];
+  static GOALS = [];
 
   static PROPHECY = class PROPHECY {};
-  static PROPHECIES_ = [];
+  static PROPHECIES = [];
 
   static PREDICTION = class PREDICTION {};
-  static PREDICTIONS_ = [];
+  static PREDICTIONS = [];
 
   static POSITION = class POSITION {};
-  static POSITIONS_ = [];
+  static POSITIONS = [];
 
   static WEATHER = class WEATHER {};
-  static WEATHERS_ = [];
+  static WEATHERS = [];
 
   static FORECAST = class FORECAST {};
-  static FORECASTS_ = [];
+  static FORECASTS = [];
 
   static NEWS = class NEWS {};
-  static NEWSES_ = [];
+  static NEWSES = [];
 
   static PODCAST = class PODCAST {};
-  static PODCASTS_ = [];
+  static PODCASTS = [];
 
   static RADIO = class RADIO {};
-  static RADIOS_ = [];
+  static RADIOS = [];
 
   static MESSAGING = class MESSAGING {};
-  static MESSAGINGS_ = [];
+  static MESSAGINGS = [];
 
   static MESSENGER = class MESSENGER {};
-  static MESSENGERS_ = [];
+  static MESSENGERS = [];
 
   static COMMENT = class COMMENT {};
-  static COMMENTS_ = [];
+  static COMMENTS = [];
 
   static NOTATION = class NOTATION {};
-  static NOTATIONS_ = [];
+  static NOTATIONS = [];
 
   static FORENSICS = class FORENSICS {};
-  static FORENSICSES_ = [];
+  static FORENSICSES = [];
 
   static AGENT = class AGENT {};
-  static AGENTS_ = [];
+  static AGENTS = [];
 
   static PARENT = class PARENT {};
-  static PARENTS_ = [];
+  static PARENTS = [];
 
   static CHILD = class CHILD {};
-  static CHILDREN_ = [];
+  static CHILDREN = [];
 
   static SIBLING = class SIBLING {};
-  static SIBLINGS_ = [];
+  static SIBLINGS = [];
 
   static MINING = class MINING {};
-  static MININGS_ = [];
+  static MININGS = [];
 
   static BOT = class BOT {};
-  static BOTS_ = [];
+  static BOTS = [];
 
   static CLASSIFICATION = class CLASSIFICATION {};
-  static CLASSIFICATIONS_ = [];
+  static CLASSIFICATIONS = [];
 
   static PHYLUM = class PHYLUM {};
-  static PHYLA_ = [];
+  static PHYLA = [];
 
   static ORDER = class ORDER {};
-  static ORDERS_ = [];
+  static ORDERS = [];
 
   static BROADCAST = class BROADCAST {};
-  static BROADCASTS_ = [];
+  static BROADCASTS = [];
 
   static STREAM = class STREAM {};
-  static STREAMS_ = [];
+  static STREAMS = [];
 
   static TRANSMISSION = class TRANSMISSION {};
-  static TRANSMISSIONS_ = [];
+  static TRANSMISSIONS = [];
 
   static TRANSCEIVER = class TRANSCEIVER {};
-  static TRANSCEIVERS_ = [];
+  static TRANSCEIVERS = [];
 
   static RECEIVER = class RECEIVER {};
-  static RECEIVERS_ = [];
+  static RECEIVERS = [];
 
   static SENDER = class SENDER {};
-  static SENDERS_ = [];
+  static SENDERS = [];
 
   static LAW = class LAW {};
-  static LAWS_ = [];
+  static LAWS = [];
 
   static RULE = class RULE {};
-  static RULES_ = [];
+  static RULES = [];
 
   static REGULATION = class REGULATION {};
-  static REGULATIONS_ = [];
+  static REGULATIONS = [];
 
   static EDUCATION = class EDUCATION {};
-  static EDUCATIONS_ = [];
+  static EDUCATIONS = [];
 
   static TEACHER = class TEACHER {};
-  static TEACHERS_ = [];
+  static TEACHERS = [];
 
   static STUDENT = class STUDENT {};
-  static STUDENTS_ = [];
+  static STUDENTS = [];
 
   static SUBSYSTEM = class SUBSYSTEM {};
-  static SUBSYSTEMS_ = [];
+  static SUBSYSTEMS = [];
 
   static SUBSHELL = class SUBSHELL {};
-  static SUBSHELLS_ = [];
+  static SUBSHELLS = [];
 
   static BOOTSTRAP = class BOOTSTRAP {};
-  static BOOTSTRAPS_ = [];
+  static BOOTSTRAPS = [];
 
   static STATEMENT = class STATEMENT {};
-  static STATEMENTS_ = [];
+  static STATEMENTS = [];
 
   static STATING = class STATING {};
-  static STATINGS_ = [];
+  static STATINGS = [];
 
   static STATER = class STATER {};
-  static STATERS_ = [];
+  static STATERS = [];
 
   static GENERATION = class GENERATION {};
-  static GENERATIONS_ = [];
+  static GENERATIONS = [];
 
   static AUTOMATION = class AUTOMATION {};
-  static AUTOMATIONS_ = [];
+  static AUTOMATIONS = [];
 }
 
 class V0 {
